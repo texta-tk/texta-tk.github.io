@@ -5,6 +5,7 @@
 
 .. image:: ../../../static/img/texta_logo.png
     :alt: Texta
+    :scale: 10 %
 
 .. toctree::
     :maxdepth: 2
