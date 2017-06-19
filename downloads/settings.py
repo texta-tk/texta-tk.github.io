@@ -91,11 +91,18 @@ USER_MODELS = os.path.join(BASE_DIR,'data','usermodels')
 # 
 MODELS_DIR = os.path.join(BASE_DIR,'data','models')
 
+# Path to Sven's projects
+#
+SVEN_DIR = os.path.join(MEDIA_ROOT, 'sven')
+
 if not os.path.exists(MODELS_DIR):
     os.makedirs(MODELS_DIR)
 
 if not os.path.exists(MODELS_DIR):
     os.makedirs(MODELS_DIR)
+
+if not os.path.exists(SVEN_DIR):
+    os.makedirs(SVEN_DIR)
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static_general'),) # TODO remove
 
@@ -105,6 +112,10 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+
+# New user are created as activated or deactivated (in which case superuser has to activate them manually)
+USER_ISACTIVE_DEFAULT = False
+
 
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -144,8 +155,8 @@ SECRET_KEY = '+$18(*8p_h0u6-)z&zu^@=$2h@=8qe+3uwyv+3#v9*)fy9hy&f'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
-        'APP_DIRS': False,
+        'DIRS': [],
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -156,12 +167,12 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
-                'texta.utils.context_processors.get_version'
+                'utils.context_processors.get_version'
             ],
-            'loaders': [
-                'django.template.loaders.filesystem.Loader',
-                'django.template.loaders.app_directories.Loader',
-            ],
+#            'loaders': [
+#                'django.template.loaders.filesystem.Loader',
+#                'django.template.loaders.app_directories.Loader',
+#            ],
             'debug': DEBUG,
         },
     },
@@ -186,18 +197,18 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'django.contrib.staticfiles',
-    'texta.lm',
-    'texta.conceptualiser',
-    'texta.mwe_miner',
-    'texta.account',
-    'texta.home',
-    'texta.corpus_tool',
-    'texta.model_manager',
-    'texta.ontology_viewer',
-    'texta.base',
-    'texta.permission_admin',
-    'texta.grammar_builder',
-    'texta.document_miner',
+    'lm',
+    'conceptualiser',
+    'mwe_miner',
+    'account',
+    'home',
+    'corpus_tool',
+    'model_manager',
+    'classification_manager',
+    'ontology_viewer',
+    'base',
+    'permission_admin',
+    'grammar_builder',
 )
 
 ############################ Elasticsearch ###########################
@@ -312,7 +323,7 @@ LOGGING = {
 
 if os.path.split(os.getcwd())[1] == 'texta':
 
-    from texta.utils.setup import write_navigation_file, ensure_dir_existence
+    from utils.setup import write_navigation_file, ensure_dir_existence
 
     write_navigation_file(URL_PREFIX, STATIC_URL)
     ensure_dir_existence(LOG_PATH)

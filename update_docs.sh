@@ -4,12 +4,12 @@
 # to fit Github Pages' standards. Expects that texta-tk.github.io and
 # TEXTA repository reside in the same parent folder, e.g. "Repos".
 
-DOC_PATH=../texta/documentation/sphinx/build/html
+DOC_PATH=../texta/texta/documentation/sphinx/build/html
 
 echo "Copying files from `realpath $DOC_PATH` to `realpath .`."
 cp -R $DOC_PATH/* .
 
-declare -a SOURCE_FOLDERS=("_downloads" "_images" "_sources" "_static")
+declare -a SOURCE_FOLDERS=("downloads" "images" "sources" "static")
 declare -a DESTINATION_FOLDERS=("downloads" "images" "sources" "static")
 
 NUMBER_OF_FOLDERS=${#SOURCE_FOLDERS[@]}
