@@ -9,7 +9,7 @@ DOC_PATH=../texta/texta/documentation/sphinx/build/html
 echo "Copying files from `realpath $DOC_PATH` to `realpath .`."
 cp -R $DOC_PATH/* .
 
-declare -a SOURCE_FOLDERS=("downloads" "images" "sources" "static")
+declare -a SOURCE_FOLDERS=("_downloads" "_images" "_sources" "_static")
 declare -a DESTINATION_FOLDERS=("downloads" "images" "sources" "static")
 
 NUMBER_OF_FOLDERS=${#SOURCE_FOLDERS[@]}

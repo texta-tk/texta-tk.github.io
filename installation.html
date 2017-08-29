@@ -8,8 +8,8 @@
     
     <title>Installation &#8212; TEXTA 0.1 documentation</title>
     
-    <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,15 +21,15 @@
         SOURCELINK_SUFFIX: '.txt'
       };
     </script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Configuration" href="configuration.html" />
-    <link rel="prev" title="TEXTA’s documentation" href="index.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="index.html" />
    
-  <link rel="stylesheet" href="static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -99,7 +99,7 @@ executables and libraries. In this section we cover <em>Anaconda</em>, as it ena
 use <em>pip</em> or one of its alternatives.</p>
 <p>Installation instructions are at <a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a>.</p>
 <p>To create a new <em>Anaconda</em> environment called <em>texta</em> that uses Python 2.7, we issue the command</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda create --name texta <span class="nv">python</span><span class="o">=</span>2.7
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda create --name texta <span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7
 </pre></div>
 </div>
 <div class="admonition note">
@@ -116,19 +116,19 @@ the original Python&#8217;s executables to that of the isolated environment&#821
 <div class="section" id="installing-python-dependencies">
 <span id="id3"></span><h3>Installing Python dependencies<a class="headerlink" href="#installing-python-dependencies" title="Permalink to this headline">¶</a></h3>
 <p>The following code block lists all the Python libraries that TEXTA depends on along with Python&#8217;s library downloading tool <em>pip</em>&#8216;s commands.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install requests
-pip install numpy
-pip install cython <span class="c1">#needed for fast gensim</span>
-pip install scipy
-pip install sklearn
-pip install gensim
-pip install django
-pip install pathlib
+<p>3rd party Python libraries can be installed with package management systems such as <em>Anaconda</em> or <em>pip</em>.</p>
+<p>Installing with Anaconda:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">(</span>your_activated_conda_env<span class="o">)</span> texta_root_dir$ chmod u+x conda_install.sh
+<span class="o">(</span>your_activated_conda_env<span class="o">)</span> texta_root_dir$ ./conda_install.sh
+</pre></div>
+</div>
+<p>With pip:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>texta_root_dir$ pip install -r requirements.txt
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If using <a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a>, all can be substituted with <em>conda install library_name</em>.</p>
+<p class="last"><cite>sudo pip install -r requirements.txt</cite> if not using conda or virtualenv</p>
 </div>
 </div>
 </div>
@@ -143,14 +143,13 @@ configure Elasticsearch&#8217;s address if remote approach is used.</p>
 <p>Elasticsearch can be downloaded from <a class="reference external" href="https://www.elastic.co/products/elasticsearch">here</a>.</p>
 </div>
 <div class="section" id="final-touches">
-<span id="id6"></span><h2>Final touches<a class="headerlink" href="#final-touches" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>Final touches<a class="headerlink" href="#final-touches" title="Permalink to this headline">¶</a></h2>
 <p>All that is left is to synchronize database state by running</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>python manage.py makemigrations lm conceptualiser mwe_miner account home corpus_tool model_manager ontology_viewer base permission_admin grammar_builder document_miner
-python manage.py migrate
+<div class="highlight-bash"><div class="highlight"><pre><span></span>texta_root_dir$ python migrate.py
 </pre></div>
 </div>
 <p>and create a superuser for TEXTA to assign application permissions</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>python manage.py createsuperuser
+<div class="highlight-bash"><div class="highlight"><pre><span></span>texta_root_dir$ python manage.py createsuperuser
 </pre></div>
 </div>
 <div class="admonition note">
@@ -159,22 +158,22 @@ python manage.py migrate
 </div>
 </div>
 <div class="section" id="example-dataset">
-<span id="id7"></span><h2>Example dataset<a class="headerlink" href="#example-dataset" title="Permalink to this headline">¶</a></h2>
+<span id="id6"></span><h2>Example dataset<a class="headerlink" href="#example-dataset" title="Permalink to this headline">¶</a></h2>
 <p>TEXTA comes with example dataset to play around with. After Elasticsearch has been started and the correct Elasticsearch URL has been set in
 <a class="reference internal" href="configuration.html#configuration"><span class="std std-ref">configuration steps</span></a>, we have to run</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>python scripts/example/example_import.py
+<div class="highlight-bash"><div class="highlight"><pre><span></span>texta_root_dir$ python scripts/example/example_import.py
 </pre></div>
 </div>
 </div>
 <div class="section" id="running-texta">
-<span id="id8"></span><h2>Running TEXTA<a class="headerlink" href="#running-texta" title="Permalink to this headline">¶</a></h2>
+<span id="id7"></span><h2>Running TEXTA<a class="headerlink" href="#running-texta" title="Permalink to this headline">¶</a></h2>
 <p>To start TEXTA on localhost:8000, it suffices to run</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>python manage.py runserver
+<div class="highlight-bash"><div class="highlight"><pre><span></span>texta_root_dir$ python manage.py runserver
 </pre></div>
 </div>
 <p>If we want to run on some other network interface or port, we can specify it via IP-port pair.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>python manage.py runserver localhost:80
-python manage.py runserver 0.0.0.0:8080
+<div class="highlight-bash"><div class="highlight"><pre><span></span>texta_root_dir$ python manage.py runserver localhost:80
+texta_root_dir$ python manage.py runserver <span class="m">0</span>.0.0.0:8080
 </pre></div>
 </div>
 </div>
@@ -207,7 +206,7 @@ python manage.py runserver 0.0.0.0:8080
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">TEXTA&#8217;s documentation</a></li>
+      <li>Previous: <a href="index.html" title="previous chapter">&lt;no title&gt;</a></li>
       <li>Next: <a href="configuration.html" title="next chapter">Configuration</a></li>
   </ul></li>
 </ul>
@@ -215,7 +214,7 @@ python manage.py runserver 0.0.0.0:8080
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="sources/installation.rst.txt"
+      <li><a href="_sources/installation.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -237,11 +236,11 @@ python manage.py runserver 0.0.0.0:8080
       &copy;2016, Raul Sirel, Karl-Oskar Masing, Carlos Bentes.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="sources/installation.rst.txt"
+      <a href="_sources/installation.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
