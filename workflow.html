@@ -8,8 +8,8 @@
     
     <title>Workflow &#8212; TEXTA 0.1 documentation</title>
     
-    <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,15 +21,15 @@
         SOURCELINK_SUFFIX: '.txt'
       };
     </script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Elasticsearch data layout" href="elastic_schema.html" />
     <link rel="prev" title="Configuration" href="configuration.html" />
    
-  <link rel="stylesheet" href="static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -52,7 +52,7 @@ Since it is a web application, we have to navigate to the corresponding address 
 (e.g. <a class="reference external" href="http://localhost:8000/">http://localhost:8000/</a> if running locally). We are welcomed by a login page as depicted in
 Figure 1.</p>
 <div class="figure" id="id1">
-<span id="figure-1"></span><img alt="images/01_welcome.png" src="images/01_welcome.png" />
+<span id="figure-1"></span><img alt="_images/01_welcome.png" src="_images/01_welcome.png" />
 <p class="caption"><span class="caption-text">Figure 1. <em>Welcome screen</em></span></p>
 <div class="legend">
 <ol class="arabic simple">
@@ -71,7 +71,7 @@ with the difference that it has additional rights to access some sensitive featu
 <p>Once we have logged in with our super user (currently by the name of &#8220;superkom&#8221;), we reach the home page, which looks much like the page before,
 with the exception of a list of tools and some global settings.</p>
 <div class="figure" id="id2">
-<span id="figure-2"></span><img alt="images/02_after_login.png" src="images/02_after_login.png" />
+<span id="figure-2"></span><img alt="_images/02_after_login.png" src="_images/02_after_login.png" />
 <p class="caption"><span class="caption-text">Figure 2. <em>Home page</em></span></p>
 <div class="legend">
 <ol class="arabic simple">
@@ -93,7 +93,7 @@ Therefore, we need to link our data, which resides in Elasticsearch.</p>
 <p>First off, we need a populated Elasticsearch index such as defined in <a class="reference internal" href="installation.html#example-dataset"><span class="std std-ref">setting up example dataset</span></a>.</p>
 <p>Once we have a dataset in Elasticsearch, we have to tell TEXTA that we are interested in accessing it. We can do that from the &#8220;Admin panel&#8221;.</p>
 <div class="figure" id="id3">
-<span id="figure-3"></span><img alt="images/03_admin_panel.png" src="images/03_admin_panel.png" />
+<span id="figure-3"></span><img alt="_images/03_admin_panel.png" src="_images/03_admin_panel.png" />
 <p class="caption"><span class="caption-text">Figure 3. <em>Admin panel</em></span></p>
 <div class="legend">
 <ol class="arabic simple">
@@ -109,17 +109,17 @@ some arbitrarily late and early dates respectively.</p>
 <p>If we are using the example dataset, we should insert something like on the following figure (date range may differ). We&#8217;re adding mapping
 &#8220;articles&#8221; from index &#8220;journal&#8221;.</p>
 <div class="figure" id="id4">
-<img alt="images/03-1_admin_panel_filled_in.png" src="images/03-1_admin_panel_filled_in.png" />
+<img alt="_images/03-1_admin_panel_filled_in.png" src="_images/03-1_admin_panel_filled_in.png" />
 <p class="caption"><span class="caption-text">Figure 3.1. <em>Filled dataset management fields</em></span></p>
 </div>
 <p>After successfully linking an Elasticsearch mapping to TEXTA, we should see a panel with the following entry.</p>
 <div class="figure" id="id5">
-<img alt="images/03-2_admin_panel_first_entry.png" src="images/03-2_admin_panel_first_entry.png" />
+<img alt="_images/03-2_admin_panel_first_entry.png" src="_images/03-2_admin_panel_first_entry.png" />
 <p class="caption"><span class="caption-text">Figure 3.2. <em>First dataset entry</em></span></p>
 </div>
 <p>If we now head back to the home page, we should see that our new entry is chosen by default in the &#8220;Global settings&#8221; panel.</p>
 <div class="figure" id="id6">
-<img alt="images/03-3_home_page.png" src="images/03-3_home_page.png" />
+<img alt="_images/03-3_home_page.png" src="_images/03-3_home_page.png" />
 <p class="caption"><span class="caption-text">Figure 3.3. <em>Back on home page</em></span></p>
 </div>
 <p>Clicking on &#8220;Update settings&#8221; will activate the chosen entry. Activated dataset will be used in all our tools.</p>
@@ -133,7 +133,7 @@ To train language models, we have to navigate to &#8220;Model Manager&#8221; und
 a dataset, we can familiarize ourselves with the data using the tool.</p>
 <p>Searcher&#8217;s graphical interface consists of serveral important panels, which are depicted in figure 4.</p>
 <div class="figure" id="id7">
-<img alt="images/04_corpus_tool.png" src="images/04_corpus_tool.png" />
+<img alt="_images/04_corpus_tool.png" src="_images/04_corpus_tool.png" />
 <p class="caption"><span class="caption-text">Figure 4. <em>Searcher&#8217;s first look</em></span></p>
 <div class="legend">
 <ol class="arabic simple">
@@ -154,7 +154,7 @@ must occur in the interested document subset.</p>
 <p>Suppose we are interested in finding all the documents which contains &#8220;bribery&#8221; in Estonian. It makes sense to abuse lemmas
 whenever possible to account for inflection.</p>
 <div class="figure" id="id8">
-<img alt="images/04-1_bribe_search_constraints.png" src="images/04-1_bribe_search_constraints.png" />
+<img alt="_images/04-1_bribe_search_constraints.png" src="_images/04-1_bribe_search_constraints.png" />
 <p class="caption"><span class="caption-text">Figure 4.1. <em>&#8220;Bribe&#8221; search constraints</em></span></p>
 </div>
 <p>Figure 4.1 shows how we have defined that we want to find all the documents which contain either &#8220;pistis&#8221; <em>or</em> &#8220;altkäemaks&#8221;
@@ -168,7 +168,7 @@ whenever possible to account for inflection.</p>
 <p>If we click on &#8220;Search&#8221; button, we will see the matching data in a tabular form, where layered features share feature name&#8217;s prefix, and
 matches are highlighted.</p>
 <div class="figure" id="id9">
-<img alt="images/04-2_bribe_results.png" src="images/04-2_bribe_results.png" />
+<img alt="_images/04-2_bribe_results.png" src="_images/04-2_bribe_results.png" />
 <p class="caption"><span class="caption-text">Figure 4.2. <em>Bribe search results</em></span></p>
 </div>
 <p>We can see some basic statistics and if there are too many features, we can hide them by clicking on their green names.</p>
@@ -179,7 +179,7 @@ matches are highlighted.</p>
 classifier on enriched sample. To get the enriched sample (in which some classes or tokens are over-represented), we can apply the search
 constraints to retrieve the data and then use query result actions, such as <em>export</em>.</p>
 <div class="figure" id="id10">
-<img alt="images/04-3_export_panel.png" src="images/04-3_export_panel.png" />
+<img alt="_images/04-3_export_panel.png" src="_images/04-3_export_panel.png" />
 <p class="caption"><span class="caption-text">Figure 4.3. <em>Export panel</em></span></p>
 </div>
 <p>Export panel allows to specify, how many rows and which features are we interested in. Exported data is in CSV format.</p>
@@ -193,7 +193,7 @@ permanently from the Elasticsearch.</p>
 <h3>Using saved searches<a class="headerlink" href="#using-saved-searches" title="Permalink to this headline">¶</a></h3>
 <p>Searches can be saved. If we save our &#8220;bribery&#8221; search under &#8220;bribery&#8221;, we can see it being listed in &#8220;Saved Searches&#8221; panel.</p>
 <div class="figure" id="id11">
-<img alt="images/04-4_saved_search.png" src="images/04-4_saved_search.png" />
+<img alt="_images/04-4_saved_search.png" src="_images/04-4_saved_search.png" />
 <p class="caption"><span class="caption-text">Figure 4.4. <em>Saved searches</em></span></p>
 </div>
 <p>Now, whenever we check it, we can use it to browse data or apply in summarization.</p>
@@ -206,14 +206,14 @@ word distributions. Searcher allows to do all of that and more through the &#822
 category counts. For example, lets assume we are interested in seeing how are the top words distributed in our sample data defined by our
 &#8220;bribery&#8221; search. By requesting aggregation as shown on figure 4.5, we get the result on the same figure.</p>
 <div class="figure" id="id12">
-<img alt="images/04-5_simple_aggregation.png" src="images/04-5_simple_aggregation.png" />
+<img alt="_images/04-5_simple_aggregation.png" src="_images/04-5_simple_aggregation.png" />
 <p class="caption"><span class="caption-text">Figure 4.5. <em>Simple aggregation</em></span></p>
 </div>
 <p>From the results we can see raw word distributions for both checked &#8220;bribery&#8221; search and &#8220;Current Search&#8221; (which doesn&#8217;t have any constraints,
 a.k.a sample is all the data we have). Since we queried raw count, many common words overlap. We can change &#8220;Sort by&#8221; setting to significance
 in order to get uncommon over-represented words for that specific sample dataset.</p>
 <div class="figure" id="id13">
-<img alt="images/04-6_significance_aggregation.png" src="images/04-6_significance_aggregation.png" />
+<img alt="_images/04-6_significance_aggregation.png" src="_images/04-6_significance_aggregation.png" />
 <p class="caption"><span class="caption-text">Figure 4.6. <em>Aggregation sorted by significance</em></span></p>
 </div>
 <p>In figure 4.6 we can see that now the words are much more specific to the &#8220;bribery&#8221; dataset. &#8220;Current Search&#8221; has no results, because it is
@@ -229,7 +229,7 @@ used as prior.</p>
 <p>Now that we have saved some searches, we can train a language model to start creating topic specific lexicons. Language models can be trained
 with &#8220;Model Manager&#8221; tool under &#8220;Document Management&#8221;.</p>
 <div class="figure" id="id14">
-<img alt="images/05_model_manager.png" src="images/05_model_manager.png" />
+<img alt="_images/05_model_manager.png" src="_images/05_model_manager.png" />
 <p class="caption"><span class="caption-text">Figure 5. <em>Model Manager</em></span></p>
 <div class="legend">
 <ol class="arabic simple">
@@ -249,17 +249,17 @@ punctuation marks with a single token and numbers with another one. Replacing nu
 different numerical values rarely add any semantical value.</p>
 <p>Let&#8217;s train a new language model on our whole data. For that we use our &#8220;all&#8221; search without any constraints.</p>
 <div class="figure" id="id15">
-<img alt="images/05-1_model_parameters.png" src="images/05-1_model_parameters.png" />
+<img alt="_images/05-1_model_parameters.png" src="_images/05-1_model_parameters.png" />
 <p class="caption"><span class="caption-text">Figure 5.1. <em>Model parameters</em></span></p>
 </div>
 <p>After starting the model training task, we can see the progress. For progress upgrade, we have to refresh the page.</p>
 <div class="figure" id="id16">
-<img alt="images/05-2_model_training_progress.png" src="images/05-2_model_training_progress.png" />
+<img alt="_images/05-2_model_training_progress.png" src="_images/05-2_model_training_progress.png" />
 <p class="caption"><span class="caption-text">Figure 5.2. <em>Model training progress</em></span></p>
 </div>
 <p>Once the training completes, we can see the following.</p>
 <div class="figure" id="id17">
-<img alt="images/05-3_model_training_completed.png" src="images/05-3_model_training_completed.png" />
+<img alt="_images/05-3_model_training_completed.png" src="_images/05-3_model_training_completed.png" />
 <p class="caption"><span class="caption-text">Figure 5.3. <em>Training completed</em></span></p>
 </div>
 </div>
@@ -267,7 +267,7 @@ different numerical values rarely add any semantical value.</p>
 <h2>Setting up a language model<a class="headerlink" href="#setting-up-a-language-model" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have trained a language model, we can activate it from the home page by selecting the model and updating settings.</p>
 <div class="figure" id="id18">
-<img alt="images/06_activating_language_model.png" src="images/06_activating_language_model.png" />
+<img alt="_images/06_activating_language_model.png" src="_images/06_activating_language_model.png" />
 <p class="caption"><span class="caption-text">Figure 6. <em>Activating language model</em></span></p>
 </div>
 </div>
@@ -276,12 +276,12 @@ different numerical values rarely add any semantical value.</p>
 <p>We can start creating topic-related lexicons. From toolbar we can find &#8220;Base Lexicon Miner&#8221; under &#8220;Terminology Management&#8221;.</p>
 <p>Let&#8217;s create a lexicon that contains verbs accompanied with &#8220;bribery&#8221;.</p>
 <div class="figure" id="id19">
-<img alt="images/07_creating_verb_lexicon.png" src="images/07_creating_verb_lexicon.png" />
+<img alt="_images/07_creating_verb_lexicon.png" src="_images/07_creating_verb_lexicon.png" />
 <p class="caption"><span class="caption-text">Figure 7. <em>Creating lexicon of bribery verbs</em></span></p>
 </div>
 <p>After clicking on the newly created lexicon, we have to provide some seed words.</p>
 <div class="figure" id="id20">
-<img alt="images/07-1_lexicon_seed_words.png" src="images/07-1_lexicon_seed_words.png" />
+<img alt="_images/07-1_lexicon_seed_words.png" src="_images/07-1_lexicon_seed_words.png" />
 <p class="caption"><span class="caption-text">Figure 7.1. <em>Providing seed words</em></span></p>
 </div>
 <p>The process of creating (or expanding) the lexicon is iterative. We keep asking for suggestions and from those we have to pick the ones that
@@ -289,7 +289,7 @@ make sense to us. We keep asking for suggestions until we get no more meaningful
 &#8220;preclustering&#8221; in it or end the process, as the training data didn&#8217;t give us more.</p>
 <p>The first batch of suggested words are shown in figure 7.2.</p>
 <div class="figure" id="id21">
-<img alt="images/07-2_first_suggestion_batch.png" src="images/07-2_first_suggestion_batch.png" />
+<img alt="_images/07-2_first_suggestion_batch.png" src="_images/07-2_first_suggestion_batch.png" />
 <p class="caption"><span class="caption-text">Figure 7.2. <em>First suggestion batch</em></span></p>
 </div>
 <p>The first suggested word - &#8220;kahtlustama&#8221; - makes sense, while the others not so much. To add it to the lexicon, we simply have to click on it. In the next batches
@@ -310,13 +310,13 @@ in 2-dimensional space.</p>
 <p>In our scenario, we have small and homogeneous lexicons and therefore each lexicon forms just one concept.</p>
 <p>After checking the lexicons and plotting them, we get to the state depicted in figure 8.</p>
 <div class="figure" id="id22">
-<img alt="images/08_conceptualiser_initial_plot.png" src="images/08_conceptualiser_initial_plot.png" />
+<img alt="_images/08_conceptualiser_initial_plot.png" src="_images/08_conceptualiser_initial_plot.png" />
 <p class="caption"><span class="caption-text">Figure 8. <em>Conceptualiser&#8217;s initial plot</em></span></p>
 </div>
 <p>We can visually detect that two more or less coherent clusters have formed and &#8220;avastama&#8221; is an outlier. It was also the last word suggested by
 <em>Lexicon Miner</em>. For that reason we leave that word out from our concepts.</p>
 <div class="figure" id="id23">
-<img alt="images/08-1_grouped_concepts.png" src="images/08-1_grouped_concepts.png" />
+<img alt="_images/08-1_grouped_concepts.png" src="_images/08-1_grouped_concepts.png" />
 <p class="caption"><span class="caption-text">Figure 8.1. <em>After grouping the words into concepts</em></span></p>
 </div>
 <p>Now that we have found the concepts, we can commit the changes to save them.</p>
@@ -333,7 +333,7 @@ and now we try to find which of them are located nearby or side-by-side. Ideally
 but since our dataset is small, we have to make it with lemmas and low frequency threshold.</p>
 <p>Mining task requires parameters - much like training language models. In figure 9 we can see the parameters we can use.</p>
 <div class="figure" id="id24">
-<img alt="images/09_mwe_parameters.png" src="images/09_mwe_parameters.png" />
+<img alt="_images/09_mwe_parameters.png" src="_images/09_mwe_parameters.png" />
 <p class="caption"><span class="caption-text">Figure 9. <em>Multi-word expression mining parameters</em></span></p>
 </div>
 <p>We have to define the feature or field, which should be the same we trained our language models on for mining lexicons. Expression lengths
@@ -342,19 +342,19 @@ and slop determines, how far apart can the words be from one another. Finally, w
 bribery phrases which contain both noun and accusing verb, we check both lexicons.</p>
 <p>Because the data and lexicons are small, the task completes instantly.</p>
 <div class="figure" id="id25">
-<img alt="images/09-1_mwe_progress.png" src="images/09-1_mwe_progress.png" />
+<img alt="_images/09-1_mwe_progress.png" src="_images/09-1_mwe_progress.png" />
 <p class="caption"><span class="caption-text">Figure 9.1. <em>Multi-word expression task progress</em></span></p>
 </div>
 <p>By looking at the results, we can see that there are 9 different patterns (denoted by &#8220;Terms&#8221; feature) containing &#8220;süüdistama&#8221; and &#8220;altkäemaks&#8221;
 concepts&#8217; lemmas which are frequent enough to catch our interest.</p>
 <div class="figure" id="id26">
-<img alt="images/09-2_mwe_results.png" src="images/09-2_mwe_results.png" />
+<img alt="_images/09-2_mwe_results.png" src="_images/09-2_mwe_results.png" />
 <p class="caption"><span class="caption-text">Figure 9.2. <em>Multi-word expression results</em></span></p>
 </div>
 <p>We can expand the result by clicking on the &#8220;plus&#8221;-sign under &#8220;Accepted&#8221; feature to see which patterns actually existed and with which
 frequency.</p>
 <div class="figure" id="id27">
-<img alt="images/09-3_expanded_results.png" src="images/09-3_expanded_results.png" />
+<img alt="_images/09-3_expanded_results.png" src="_images/09-3_expanded_results.png" />
 <p class="caption"><span class="caption-text">Figure 9.3. <em>Expanded results</em></span></p>
 </div>
 <p>The expanded results show how some patterns are much more common in real use of language.</p>
@@ -370,7 +370,7 @@ a regular expression, while more complicated ones may cover whole phrase and sen
 created, we can test it on a data sample and see, which documents matched and how and which did not. <em>Grammar Miner</em> is under <em>Terminology
 Management</em> tools.</p>
 <div class="figure" id="id28">
-<img alt="images/10_grammar_miner.png" src="images/10_grammar_miner.png" />
+<img alt="_images/10_grammar_miner.png" src="_images/10_grammar_miner.png" />
 <p class="caption"><span class="caption-text">Figure 10. <em>Grammar Miner&#8217;s first look</em></span></p>
 <div class="legend">
 <ol class="arabic simple">
@@ -382,7 +382,7 @@ Management</em> tools.</p>
 </div>
 <p>Building a new grammar begins with assigning an operation to the root node.</p>
 <div class="figure" id="id29">
-<img alt="images/10-1_root_node_operation.png" src="images/10-1_root_node_operation.png" />
+<img alt="_images/10-1_root_node_operation.png" src="_images/10-1_root_node_operation.png" />
 <p class="caption"><span class="caption-text">Figure 10.1. <em>Assigning operation to aggregative node</em></span></p>
 </div>
 <div class="admonition note">
@@ -446,12 +446,12 @@ children.</p>
 <p>Aggregative nodes can (must) have child nodes (at least one). A child can be added by opening context menu with right click on the appropriate
 node. This allows to add either a <em>basic</em> (terminal) or <em>aggregation</em> node.</p>
 <div class="figure" id="id30">
-<img alt="images/10-2_node_context_menu.png" src="images/10-2_node_context_menu.png" />
+<img alt="_images/10-2_node_context_menu.png" src="_images/10-2_node_context_menu.png" />
 <p class="caption"><span class="caption-text">Figure 10.2. <em>Context menu for adding child nodes</em></span></p>
 </div>
 <p>After adding a terminal node and clicking on it, we can edit the details in opened &#8220;Component Details&#8221; panel.</p>
 <div class="figure" id="id31">
-<img alt="images/10-3_basic_component_details.png" src="images/10-3_basic_component_details.png" />
+<img alt="_images/10-3_basic_component_details.png" src="_images/10-3_basic_component_details.png" />
 <p class="caption"><span class="caption-text">Figure 10.3. <em>Specifying terminal node details</em></span></p>
 </div>
 <p>We can choose either &#8220;Exact match&#8221; or &#8220;Regular Expression&#8221; for <em>Type</em> and one of the features or feature-layer combinations for the <em>Layer</em>.
@@ -465,18 +465,18 @@ node&#8217;s context menu.</p>
 the most frequent pattern in the corresponding documents contain the lemmas &#8220;süüdistama&#8221; and &#8220;altkäemaks&#8221; in that order with the slop of 3.
 Let&#8217;s create the grammar tree.</p>
 <div class="figure" id="id32">
-<img alt="images/10-4_bribery_grammar.png" src="images/10-4_bribery_grammar.png" />
+<img alt="_images/10-4_bribery_grammar.png" src="_images/10-4_bribery_grammar.png" />
 <p class="caption"><span class="caption-text">Figure 10.4. <em>Simple bribery grammar</em></span></p>
 </div>
 <p>So far we have been on the &#8220;Grammar&#8221; tab. If we test our grammar by clicking on &#8220;Test whole tree&#8221;, for example, we are taken to the &#8220;Test&#8221; tab
 and all the positive matches (documents which our grammar matched) are displayed along with the match highlights.</p>
 <div class="figure" id="id33">
-<img alt="images/10-5_bribery_positive_results.png" src="images/10-5_bribery_positive_results.png" />
+<img alt="_images/10-5_bribery_positive_results.png" src="_images/10-5_bribery_positive_results.png" />
 <p class="caption"><span class="caption-text">Figure 10.5. <em>Positive results when testing</em></span></p>
 </div>
 <p>When navigating to &#8220;Unmatched documents&#8221; subtab, we can see the documents which didn&#8217;t match our grammar.</p>
 <div class="figure" id="id34">
-<img alt="images/10-6_bribery_negative_results.png" src="images/10-6_bribery_negative_results.png" />
+<img alt="_images/10-6_bribery_negative_results.png" src="_images/10-6_bribery_negative_results.png" />
 <p class="caption"><span class="caption-text">Figure 10.6. <em>Negative results when testing</em></span></p>
 </div>
 <p>We can see that all our highlighted words are &#8220;süüdistama&#8221; and &#8220;altkäemaks&#8221;, where they are no more than 3 tokens apart - just as our grammar
@@ -545,7 +545,7 @@ grammar on more relevant dataset.</p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="sources/workflow.rst.txt"
+      <li><a href="_sources/workflow.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -571,7 +571,7 @@ grammar on more relevant dataset.</p>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="sources/workflow.rst.txt"
+      <a href="_sources/workflow.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
