@@ -9,7 +9,7 @@ DOC_PATH=../texta/texta/documentation/sphinx/build/html
 echo "Copying files from `realpath $DOC_PATH` to `realpath .`."
 cp -R $DOC_PATH/* .
 
-declare -a SOURCE_FOLDERS=("downloads" "downloads" "sources" "static")
+declare -a SOURCE_FOLDERS=("_downloads" "_images" "_sources" "_static")
 declare -a DESTINATION_FOLDERS=("downloads" "images" "sources" "static")
 
 NUMBER_OF_FOLDERS=${#SOURCE_FOLDERS[@]}
@@ -24,17 +24,10 @@ do
 	destination_folder=${DESTINATION_FOLDERS[$folder_idx]}
 	rm -r $destination_folder
 	mv $source_folder $destination_folder
-	git grep -l $source_folder | xargs sed -i "s/$source_folder/$destination_folder/g"
+	sed -i "s/$source_folder/$destination_folder/g" *.html
 done
 
 sleep 2s
-
-echo "Fixing git indices."
-
-rm -f .git/index
-git reset
-
-sleep 1s
 
 echo "Commiting changes to Github."
 
