@@ -43,18 +43,27 @@ BASE_DIR = os.path.realpath(os.path.dirname(__file__))
 # DEBUG - whether to display verbose variable values and stack trace when
 #         error occurs during page resolving.
 
+STATIC_ROOT = os.path.join(os.path.abspath(os.path.join(BASE_DIR, os.pardir)), 'static')
+
 SERVER_TYPE = 'development'
 
 if SERVER_TYPE == 'development':
-    URL_PREFIX_DOMAIN = 'http://localhost:8000'
+    PROTOCOL = 'http://'
+    DOMAIN = 'localhost'
+    PORT = '8000'
+    
+    URL_PREFIX_DOMAIN = '{0}{1}:{2}'.format(PROTOCOL, DOMAIN, PORT)
     URL_PREFIX_RESOURCE = ''
     ROOT_URLCONF = 'texta.urls'
     STATIC_URL = URL_PREFIX_DOMAIN + '/static/'
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     DEBUG = True
+
 elif SERVER_TYPE == 'production':
-    URL_PREFIX_DOMAIN = 'http://textadev.stacc.ee'
-    URL_PREFIX_RESOURCE = '/texta'
+    PROTOCOL = 'http://'
+    DOMAIN = 'dev.texta.ee'
+    
+    URL_PREFIX_DOMAIN = '{0}{1}'.format(PROTOCOL,DOMAIN)
+    URL_PREFIX_RESOURCE = '/texta_dev'
     ROOT_URLCONF = 'texta.urls'
     STATIC_URL = '/texta/static/'
     DEBUG = False
@@ -91,11 +100,18 @@ USER_MODELS = os.path.join(BASE_DIR,'data','usermodels')
 # 
 MODELS_DIR = os.path.join(BASE_DIR,'data','models')
 
+# Path to Sven's projects
+#
+SCRIPT_MANAGER_DIR = os.path.join(MEDIA_ROOT, 'script_manager')
+
 if not os.path.exists(MODELS_DIR):
     os.makedirs(MODELS_DIR)
 
 if not os.path.exists(MODELS_DIR):
     os.makedirs(MODELS_DIR)
+
+if not os.path.exists(SCRIPT_MANAGER_DIR):
+    os.makedirs(SCRIPT_MANAGER_DIR)
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static_general'),) # TODO remove
 
@@ -106,12 +122,20 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+# New user are created as activated or deactivated (in which case superuser has to activate them manually)
+USER_ISACTIVE_DEFAULT = False
+
+# Defines whether added datasets are 'public' or 'private'. Public datasets are accessible by all the existing users and
+# new users alike. Access from a specific user can be revoked. Private datasets are not accessible by default, but
+# access privilege can be granted.
+DATASET_ACCESS_DEFAULT = 'private'
+
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # List of all host headers which are accepted to prevent host header poisoning.
 # Should be altered if hosted on a remote machine.
 #
-ALLOWED_HOSTS = ['localhost','texta.stacc.ee','textadev.stacc.ee']
+ALLOWED_HOSTS = [DOMAIN]
 
 # Defines which database backend does the application use. TEXTA uses only default with sqlite engine.
 # Can change engine and database info as one sees fit.
@@ -144,8 +168,8 @@ SECRET_KEY = '+$18(*8p_h0u6-)z&zu^@=$2h@=8qe+3uwyv+3#v9*)fy9hy&f'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
-        'APP_DIRS': False,
+        'DIRS': [],
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -156,12 +180,12 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
-                'texta.utils.context_processors.get_version'
+                'utils.context_processors.get_version'
             ],
-            'loaders': [
-                'django.template.loaders.filesystem.Loader',
-                'django.template.loaders.app_directories.Loader',
-            ],
+#            'loaders': [
+#                'django.template.loaders.filesystem.Loader',
+#                'django.template.loaders.app_directories.Loader',
+#            ],
             'debug': DEBUG,
         },
     },
@@ -186,18 +210,19 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'django.contrib.staticfiles',
-    'texta.lm',
-    'texta.conceptualiser',
-    'texta.mwe_miner',
-    'texta.account',
-    'texta.home',
-    'texta.corpus_tool',
-    'texta.model_manager',
-    'texta.ontology_viewer',
-    'texta.base',
-    'texta.permission_admin',
-    'texta.grammar_builder',
-    'texta.document_miner',
+    'lm',
+    'conceptualiser',
+    'mwe_miner',
+    'account',
+    'home',
+    'corpus_tool',
+    'model_manager',
+    'classification_manager',
+    'ontology_viewer',
+    'base',
+    'permission_admin',
+    'grammar_builder',
+    'search_api',
 )
 
 ############################ Elasticsearch ###########################
@@ -213,7 +238,7 @@ INSTALLED_APPS = (
 es_url = os.getenv('TEXTA_ELASTICSEARCH_URL')
 if es_url is None:
     es_url = 'http://localhost:9200'
-    #es_url = 'http://elasticsearch2.stacc.ee:9201'
+    #es_url = 'http://10.6.6.93:9200'
 
 # Elasticsearch links to outside world
 # ('index_name','mapping_name','field_name'):('url_prefix','url_suffix')
@@ -308,13 +333,13 @@ LOGGING = {
 ############################ Boot scripts ###########################
 
 # Several scripts ran during the boot to set up files and directories.
-# Scripts will only be run if settings is imported from 'texta' directory, e.g. as a result of manager.py
+# Scripts will only be run if settings is imported from 'texta' directory, e.g. as a result of manager.py, or by Apache (user httpd / apache)
 
-if os.path.split(os.getcwd())[1] == 'texta':
+if os.path.split(os.getcwd())[1] in ['texta','httpd','apache']:
 
-    from texta.utils.setup import write_navigation_file, ensure_dir_existence
+    from utils.setup import write_navigation_file, ensure_dir_existence
 
-    write_navigation_file(URL_PREFIX, STATIC_URL)
+    write_navigation_file(URL_PREFIX, STATIC_URL, STATIC_ROOT)
     ensure_dir_existence(LOG_PATH)
     ensure_dir_existence(MODELS_DIR)
     ensure_dir_existence(USER_MODELS)
