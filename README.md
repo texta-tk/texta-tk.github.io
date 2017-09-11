@@ -2,7 +2,7 @@
 
 ## About
 
-The repository stores documentation for TEXTA, which is automatically deployed to [Github Pages](https://texta-tk.github.io/) after pushing.
+The repository stores documentation for [TEXTA](https://github.com/texta-tk/texta), which is automatically deployed to [Github Pages](https://texta-tk.github.io/) after pushing.
 
 ## Updating documentation
 
