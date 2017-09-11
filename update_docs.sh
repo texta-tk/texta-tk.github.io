@@ -1,8 +1,7 @@
 #!/bin/bash
 #
-# Gathers Sphinx's built HTML files from TEXTA repository and transforms it
-# to fit Github Pages' standards. Expects that texta-tk.github.io and
-# TEXTA repository reside in the same parent folder, e.g. "Repos".
+# Gathers Sphinx's built HTML files from and transforms them
+# to meet Github Pages' standards.
 
 DOC_PATH=sphinx/build/html
 
@@ -26,6 +25,12 @@ do
 	mv $source_folder $destination_folder
 	sed -i "s/$source_folder/$destination_folder/g" *.html
 done
+
+sleep 2s
+
+echo "Changing index.html title."
+
+sed -i "s/&lt;no title&gt; &#8212; TEXTA 0.1 documentation/TEXTA Documentation/g" index.html
 
 sleep 2s
 
