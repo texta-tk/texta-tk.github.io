@@ -46,6 +46,29 @@
 <span id="id1"></span><h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
 <p>TEXTA API can be used to query or process data without the need to interact with the graphical user interface.</p>
 <p>It can be accessed from the address <em>&lt;texta_address&gt;/api</em></p>
+<div class="section" id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h2>
+<p>TEXTA API requires authentication in order to access any features. API authentication is handled by revokable authentication tokens. To make any API calls, one has to provide a valid authentication token, which is used to verify user permissions for different datasets.</p>
+<div class="section" id="retrieving-the-token">
+<h3>Retrieving the token<a class="headerlink" href="#retrieving-the-token" title="Permalink to this headline">¶</a></h3>
+<p>To retrieve an authorization token, one has to perform the following query:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl http://localhost:8000/account/get_auth_token -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;username&quot;: &quot;my_texta_username&quot;,</span>
+<span class="s1">    &quot;password&quot;: &quot;my_texta_password&quot;</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+</div>
+<p>If authentication was successful, the authentication token is returned in the following format:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;auth_token&quot;</span><span class="p">:</span> <span class="s2">&quot;9c05321f821f6e&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The returned authentication token doesn&#8217;t expire and will be returned every time a token is requested by the user, until explicity revoked. If authentication token is likely to be compromised, it&#8217;s possible to revoke the token with the command</p>
+<p>which returns</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="search">
 <h2>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h2>
 <p>Searching functionality allows to query documents based on the defined constraints and projections. Documents are queried and returned in JSON format.</p>
@@ -56,12 +79,14 @@
 </div>
 <p>To download all the documents from the dataset with ID 4, it suffices to call</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4</span>
 <span class="s1">}&#39;</span>
 </pre></div>
 </div>
 <p>Retrieving all the documents isn&#8217;t necessarily the smartest thing to do. Next we might want to limit the number of documents we receive to 100 and get only the titles and the authors.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4,</span>
 <span class="s1">    &quot;fields&quot;: [&quot;title&quot;, &quot;author&quot;],</span>
 <span class="s1">    &quot;parameters&quot;: {&quot;limit&quot;: 100}</span>
@@ -70,6 +95,7 @@
 </div>
 <p>Although we now have some control over how we receive our data, we can&#8217;t still control what we receive. For that, we have to define constraints which the returned documents must satisfy. Let&#8217;s retrieve the title and the content of 15 articles published in 2017 by the renowned author John Doe.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4,</span>
 <span class="s1">    &quot;fields&quot;: [&quot;title&quot;, &quot;content&quot;],</span>
 <span class="s1">    &quot;parameters&quot;: {&quot;limit&quot;: 15},</span>
@@ -89,6 +115,7 @@
 </div>
 <p>Although streaming is great for downloading huge files, it can be inconvenient to download and process programmatically, which is why TEXTA API also allows to download one batch at a time using the scroll mechanism.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4,</span>
 <span class="s1">    &quot;fields&quot;: [&quot;title&quot;, &quot;content&quot;],</span>
 <span class="s1">    &quot;parameters&quot;: {&quot;size&quot;: 20},</span>
@@ -115,6 +142,7 @@
 </div>
 <p>Now, when we want to get the next batch of documents, it suffices to query</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4,</span>
 <span class="s1">    &quot;scroll_id&quot;: &quot;that very long hash string we retrieved before&quot;</span>
 <span class="s1">}&#39;</span>
@@ -217,6 +245,7 @@
 </div>
 <p>If we are interested in finding out, how many articles has each author writtern, we can query it as follows:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/aggregate&#39;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;searches&quot;: [{&quot;dataset&quot;: 4}],</span>
 <span class="s1">    &quot;aggregation&quot;: [{&quot;field&quot;: &quot;author&quot;, &quot;type&quot;: &quot;string&quot;, &quot;sort_by&quot;: &quot;terms&quot;}]</span>
 <span class="s1">}&#39;</span>
@@ -225,6 +254,7 @@
 <p>As we can see, aggregation query depends on two attributes - &#8220;searches&#8221; and &#8220;aggregation&#8221;. &#8220;Searches&#8221; is a list of search definitions which we have already met in the previous section. Search defines the subset of the original data on which we run the aggregation. This time it&#8217;s used internally: we are not receiving and documents.</p>
 <p>The possiblity to aggregate against several data subsets allows us to find interesting comparable statistics. For example, we can get the most eager authors on cars and dogs with the following query:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/aggregate&#39;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;searches&quot;: [</span>
 <span class="s1">        {</span>
 <span class="s1">            &quot;dataset&quot;: 4,</span>
@@ -244,6 +274,7 @@
 <p>TEXTA API aggregation allows to aggregate over several levels.</p>
 <p>To find out the most active authors on a monthly basis, we can execute the following query:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/aggregate&#39;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;searches&quot;: [{&quot;dataset&quot;: 4}],</span>
 <span class="s1">    &quot;aggregation&quot;: [</span>
 <span class="s1">        {&quot;field&quot;:&quot;published&quot;,&quot;type&quot;:&quot;daterange&quot;,&quot;start&quot;:&quot;2010-02-02&quot;,&quot;end&quot;:&quot;2017-09-01&quot;,&quot;frequency&quot;:&quot;raw_frequency&quot;,&quot;interval&quot;:&quot;month&quot;}</span>
@@ -300,7 +331,9 @@
 <h2>List datasets<a class="headerlink" href="#list-datasets" title="Permalink to this headline">¶</a></h2>
 <p>Listing datasets is important in order to construct queries on correct datasets.</p>
 <p>To get the list of available and permitted datasets, we issue the following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl http://localhost:8000/search_api/list/datasets
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl http://localhost:8000/search_api/list/datasets -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">}&#39;</span>
 </pre></div>
 </div>
 <p>which returns</p>
@@ -318,7 +351,10 @@
 <h2>Get dataset field details<a class="headerlink" href="#get-dataset-field-details" title="Permalink to this headline">¶</a></h2>
 <p>It is necessary to know the existing fields and their data types to construct accurate queries.</p>
 <p>One can get detailed structure of the dataset with ID 4 with the following query:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl http://localhost:8000/search_api/list/4
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl http://localhost:8000/search_api/list -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">    &quot;dataset&quot;: 4</span>
+<span class="s1">}&#39;</span>
 </pre></div>
 </div>
 <p>The response is however rather complicated and often it makes more sense to use TEXTA graphical user interface&#8217;s Searcher tool to explore the dataset.</p>
@@ -334,6 +370,10 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">API</a><ul>
+<li><a class="reference internal" href="#authentication">Authentication</a><ul>
+<li><a class="reference internal" href="#retrieving-the-token">Retrieving the token</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#search">Search</a><ul>
 <li><a class="reference internal" href="#constraints">Constraints</a><ul>
 <li><a class="reference internal" href="#textual">Textual</a></li>

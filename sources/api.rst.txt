@@ -7,6 +7,44 @@ TEXTA API can be used to query or process data without the need to interact with
 
 It can be accessed from the address *<texta_address>/api*
 
+Authentication
+--------------
+
+TEXTA API requires authentication in order to access any features. API authentication is handled by revokable authentication tokens. To make any API calls, one has to provide a valid authentication token, which is used to verify user permissions for different datasets.
+
+Retrieving the token
+^^^^^^^^^^^^^^^^^^^^
+
+To retrieve an authorization token, one has to perform the following query:
+
+.. code-block:: bash
+
+    $ curl http://localhost:8000/account/get_auth_token -d '{
+        "username": "my_texta_username",
+        "password": "my_texta_password"
+    }'
+
+If authentication was successful, the authentication token is returned in the following format:
+
+.. code-block:: python
+
+    {"auth_token": "9c05321f821f6e"}
+
+The returned authentication token doesn't expire and will be returned every time a token is requested by the user, until explicity revoked. If authentication token is likely to be compromised, it's possible to revoke the token with the command
+
+.. code-block:
+
+    $ curl http://localhost:8000/account/revoke_auth_token -d '{
+        "username": "my_texta_username",
+        "password": "my_texta_password"
+    }'
+    
+which returns
+
+.. code-block:: python
+
+    {"success": true}
+
 Search
 ------
 
@@ -23,6 +61,7 @@ To download all the documents from the dataset with ID 4, it suffices to call
 .. code-block:: bash
 
     $ curl -XPOST 'http://localhost:8000/api/search' -d '{
+        "auth_token": "9c05321f821f6e",
         "dataset": 4
     }'
 
@@ -31,6 +70,7 @@ Retrieving all the documents isn't necessarily the smartest thing to do. Next we
 .. code-block:: bash
 
     $ curl -XPOST 'http://localhost:8000/api/search' -d '{
+        "auth_token": "9c05321f821f6e",
         "dataset": 4,
         "fields": ["title", "author"],
         "parameters": {"limit": 100}
@@ -41,6 +81,7 @@ Although we now have some control over how we receive our data, we can't still c
 .. code-block:: bash
 
     $ curl -XPOST 'http://localhost:8000/api/search' -d '{
+        "auth_token": "9c05321f821f6e",
         "dataset": 4,
         "fields": ["title", "content"],
         "parameters": {"limit": 15},
@@ -64,6 +105,7 @@ Although streaming is great for downloading huge files, it can be inconvenient t
 .. code-block:: bash
 
     $ curl -XPOST 'http://localhost:8000/api/search' -d '{
+        "auth_token": "9c05321f821f6e",
         "dataset": 4,
         "fields": ["title", "content"],
         "parameters": {"size": 20},
@@ -94,6 +136,7 @@ Now, when we want to get the next batch of documents, it suffices to query
 .. code-block:: bash
 
     $ curl -XPOST 'http://localhost:8000/api/search' -d '{
+        "auth_token": "9c05321f821f6e",
         "dataset": 4,
         "scroll_id": "that very long hash string we retrieved before"
     }'
@@ -226,6 +269,7 @@ If we are interested in finding out, how many articles has each author writtern,
 .. code-block:: bash
 
     $ curl -XPOST 'http://localhost:8000/api/aggregate' -d '{
+        "auth_token": "9c05321f821f6e",
         "searches": [{"dataset": 4}],
         "aggregation": [{"field": "author", "type": "string", "sort_by": "terms"}]
     }'
@@ -237,6 +281,7 @@ The possiblity to aggregate against several data subsets allows us to find inter
 .. code-block:: bash
 
     $ curl -XPOST 'http://localhost:8000/api/aggregate' -d '{
+        "auth_token": "9c05321f821f6e",
         "searches": [
             {
                 "dataset": 4,
@@ -261,6 +306,7 @@ To find out the most active authors on a monthly basis, we can execute the follo
 .. code-block:: bash
 
     $ curl -XPOST 'http://localhost:8000/api/aggregate' -d '{
+        "auth_token": "9c05321f821f6e",
         "searches": [{"dataset": 4}],
         "aggregation": [
             {"field":"published","type":"daterange","start":"2010-02-02","end":"2017-09-01","frequency":"raw_frequency","interval":"month"}
@@ -336,7 +382,9 @@ To get the list of available and permitted datasets, we issue the following comm
 
 .. code-block:: bash
 
-    curl http://localhost:8000/search_api/list/datasets
+    curl http://localhost:8000/search_api/list/datasets -d '{
+        "auth_token": "9c05321f821f6e",
+    }'
 
 which returns
 
@@ -363,6 +411,9 @@ One can get detailed structure of the dataset with ID 4 with the following query
 
 .. code-block:: bash
 
-    curl http://localhost:8000/search_api/list/4
+    curl http://localhost:8000/search_api/list -d '{
+        "auth_token": "9c05321f821f6e",
+        "dataset": 4
+    }'
     
 The response is however rather complicated and often it makes more sense to use TEXTA graphical user interface's Searcher tool to explore the dataset.
