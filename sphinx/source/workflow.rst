@@ -1,16 +1,13 @@
-Using TEXTA Toolkit
-===================
+Workflow
+========
 
-First steps
------------
+The beginning
+-------------
 
-
-The login screen
-++++++++++++++++
-
-After starting up TEXTA, as described in the :ref:`installation step <running-texta>`, the next intuitive thing is to start using it.
+After starting TEXTA, as described in the :ref:`installation step <running-texta>`, the next intuitive thing is to start using it.
 Since it is a web application, we have to navigate to the corresponding address in our browser
-(e.g. `http://localhost:8000/ <http://localhost:8000/>`_ if running locally). We are welcomed by a login page as depicted in Figure 1.
+(e.g. `http://localhost:8000/ <http://localhost:8000/>`_ if running locally). We are welcomed by a login page as depicted in 
+Figure 1.
 
 .. _figure-1:
 
@@ -23,16 +20,14 @@ Since it is a web application, we have to navigate to the corresponding address 
 
 Login page allows to login, as well as create a user. 
 
-.. note::
+When using the TEXTA instance for the first time, it is crucial to login with the super user account set up in the
+:ref:`installation's final touches <final-touches>`. Super user account is much like an account one can create from the "Create user" button,
+with the difference that it has additional rights to access some sensitive features like user permissions, user deletion and defining datasets.
 
-	When starting up the TEXTA instance for the first time, it is crucial to create the superuser account (:ref:`installation's final touches <final-touches>`).
-	The supersuser account is used to set up TEXTA and it's features to all other users.
+After the log in
+----------------
 
-
-After the login
-++++++++++++++++
-
-Once we have logged in with our superuser, we reach the home page, which looks much like the page before,
+Once we have logged in with our super user (currently by the name of "superkom"), we reach the home page, which looks much like the page before,
 with the exception of a list of tools and some global settings.
 
 .. _figure-2:
@@ -41,73 +36,188 @@ with the exception of a list of tools and some global settings.
 
     Figure 2. *Home page*
     
-As we can see from the global settings panel, we don't have any datasets nor language models.
-Therefore, we need to do some setting up in "Administration".
+    1. Tools
+    2. Global settings
+    3. Admin panel
 
 .. note::
 
-    Restricted contains the superuser tools for managing users, datasets, language models and text classifiers.
+    Admin panel is only visible to super users.
+    
+As we can see from the global settings panel, we don't have access to any datasets. A data analytics tool without data is not too intriguing.
+Therefore, we need to link our data, which resides in Elasticsearch.
+    
+Setting up datasets
+-------------------
+
+First off, we need a populated Elasticsearch index such as defined in :ref:`setting up example dataset <example-dataset>`.
+
+Once we have a dataset in Elasticsearch, we have to tell TEXTA that we are interested in accessing it. We can do that from the "Admin panel".
+
+.. _figure-3:
+
+.. figure:: images/03_admin_panel.png
+
+    Figure 3. *Admin panel*
+    
+    1. User management
+    2. Dataset management
+    
+One TEXTA instance can have only one Elasticsearch database which may have many indices. In dataset management, we can list the indices and 
+mappings we are interested in. By choosing the desired index, corresponding mapping and a daterange, we can link the dataset to TEXTA. Daterange acts as a
+filter for [TODOOOOO map searcher] Searcher's aggregations. If we are not interested, we can set the "to" and "from" to
+some arbitrarily late and early dates respectively.
+
+If we are using the example dataset, we should insert something like on the following figure (date range may differ). We're adding mapping
+"articles" from index "journal".
+
+.. figure:: images/03-1_admin_panel_filled_in.png
+
+    Figure 3.1. *Filled dataset management fields*
+    
+After successfully linking an Elasticsearch mapping to TEXTA, we should see a panel with the following entry.
+
+.. figure:: images/03-2_admin_panel_first_entry.png
+
+    Figure 3.2. *First dataset entry*
+    
+If we now head back to the home page, we should see that our new entry is chosen by default in the "Global settings" panel.
+
+.. figure:: images/03-3_home_page.png
+
+    Figure 3.3. *Back on home page*
+    
+Clicking on "Update settings" will activate the chosen entry. Activated dataset will be used in all our tools.
+
+In figure 3.3 there is still a gap - we are missing a language model. Language model is used to generate topic related lexicons and much more. 
+To train language models, we have to navigate to "Model Manager" under "Document Management" tab in the tool menu.
+
+However, training language models needs a *search* to limit the number of processed documements. Training on all will often take too long.
 
 
-Administration: Manage Users and Datasets
------------------------------------------
+Searches
+--------
 
-The biggest bosses in TEXTA Toolkit are the superusers, whose privileges include:
-	1. Managing Users and their access rights (in Administration)
-	2. Managing datasets (in Administration)
-	3. Training language models (in Model Manager)
-	4. Training and applying text classifiers (in Classification Manager)
+"Searcher" tool is responsible for both creating the searches for language models and browsing-summarizing the data. After we have activated
+a dataset, we can familiarize ourselves with the data using the tool.
 
-Naturally, there can be more than one superusers.
-New superusers can be created by either by promoting existing user to superusers in Administration or by using the command described in 
-:ref:`installation's final touches <final-touches>`.
+Searcher's graphical interface consists of serveral important panels, which are depicted in figure 4.
+
+.. figure:: images/04_corpus_tool.png
+
+    Figure 4. *Searcher's first look*
+    
+    1. Current Search
+    2. Saved Searches
+    3. Aggregations
+    4. Results
+    
+Creating a new search
++++++++++++++++++++++
+
+Data browsing and summarization depend on searches. Search consists of a set of constraints on feature values. We can define our constraints on
+the data using the "Current Search" panel. Without saving the constraints, we are in a "test mode", which means that we can use the search in
+Searcher, but we cannot use the search in other tools. After saving the search, it is available also to other tools.
+
+In order to add a constraint, we must first choose a field. After the field is selected, we can then specify which textual tokens should or
+must occur in the interested document subset.
+
+Suppose we are interested in finding all the documents which contains "bribery" in Estonian. It makes sense to abuse lemmas
+whenever possible to account for inflection.
+
+.. figure:: images/04-1_bribe_search_constraints.png
+
+    Figure 4.1. *"Bribe" search constraints*
+
+Figure 4.1 shows how we have defined that we want to find all the documents which contain either "pistis" *or* "altkäemaks"
+("bribery" in Estonian). "Match" and "Match phrase" mean that we want to find exact matches, whereas "Match phrase prefix" matches prefixes
+(meaning suffixes may differ).
+
+Should we be interested in more detailed searches, we can add more constraints like the previous one.
+
+After we have come up with a suitable search, we can save it for later uses.
+ 
+ 
+Browsing data
++++++++++++++
+
+If we click on "Search" button, we will see the matching data in a tabular form, where layered features share feature name's prefix, and
+matches are highlighted.
+
+.. figure:: images/04-2_bribe_results.png
+
+    Figure 4.2. *Bribe search results*
+
+We can see some basic statistics and if there are too many features, we can hide them by clicking on their green names.
 
 
-Managing users and their access rights
-++++++++++++++++++++++++++++++++++++++
+Exporting data
+++++++++++++++
 
-Users and their access to datasets can be configured in the "User Access Management" panel in "Administration":
+Sometimes we want to work with a subset of data in some other application or external calculation. For example, we might want to train a 
+classifier on enriched sample. To get the enriched sample (in which some classes or tokens are over-represented), we can apply the search
+constraints to retrieve the data and then use query result actions, such as *export*.
 
-.. figure:: images/03_user.png
+.. figure:: images/04-3_export_panel.png
 
-    Figure 3. *Panel in Administration for managing users*
+    Figure 4.3. *Export panel*
 
-Each new user will be created either as activated or deactivated, in which case a superuser has to manually activate each user by clicking "activate".
-By default, new users will be created as deactivated, but this can be changed in settings.py by:
+Export panel allows to specify, how many rows and which features are we interested in. Exported data is in CSV format.
+    
+    
+Deleting data
++++++++++++++
 
-.. code-block:: python
+The second action on search results is deletion - if we detect some malformed data or are simply not interested in some subset, we can remove it
+permanently from the Elasticsearch.
+    
+Using saved searches
+++++++++++++++++++++
 
-	USER_ISACTIVE_DEFAULT = True
-	
-User's access to existing datasets can be managed by clicking on the username, which opens a modal:
+Searches can be saved. If we save our "bribery" search under "bribery", we can see it being listed in "Saved Searches" panel.
 
-.. figure:: images/04_user_datasets.png
+.. figure:: images/04-4_saved_search.png
 
-    Figure 4. *The datasets can be moved between the two fields to determine user's access to it*
+    Figure 4.4. *Saved searches*
 
+Now, whenever we check it, we can use it to browse data or apply in summarization.
+    
+Summarizing data
+++++++++++++++++
 
-Managing datasets
-+++++++++++++++++
+As fun as browsing through the data is, it is not always enough. Sometimes we want to get an overview of our data, such as topics over time or
+word distributions. Searcher allows to do all of that and more through the "Aggregations" panel.
 
-Superusers can add datasets by selecting the according index and mapping in the "Dataset Management" panel:
+Aggregations have two components - data and features it aggregates over. Selecting a search determines the sample we get our data from. By defining a feature, we can group by that feature and get
+category counts. For example, lets assume we are interested in seeing how are the top words distributed in our sample data defined by our
+"bribery" search. By requesting aggregation as shown on figure 4.5, we get the result on the same figure.
 
-.. figure:: images/05_datasets.png
+.. figure:: images/04-5_simple_aggregation.png
 
-    Figure 4. *Adding a new dataset*
+    Figure 4.5. *Simple aggregation*
 
-Each new dataset can either be public or private. Public datasets are accessible for all users by default, but exceptions can be made in "User Management" panel.
-In contrast to public datasets, private datasets are closed to everyone (except the supersusers) by default. Again, individual access can be granted in "User Management" panel.
+From the results we can see raw word distributions for both checked "bribery" search and "Current Search" (which doesn't have any constraints,
+a.k.a sample is all the data we have). Since we queried raw count, many common words overlap. We can change "Sort by" setting to significance
+in order to get uncommon over-represented words for that specific sample dataset.
 
-Datasets can be closed and opened. Closed datasets are not listed to the users. Datasets can also be removed from TEXTA.
+.. figure:: images/04-6_significance_aggregation.png
+
+    Figure 4.6. *Aggregation sorted by significance*
+
+In figure 4.6 we can see that now the words are much more specific to the "bribery" dataset. "Current Search" has no results, because it is
+used as prior.
+    
 
 .. note::
-	Removing dataset in TEXTA does not delete the actual dataset on the disk, but rather deletes the link between Elasticsearch index and TEXTA.
 
+    Let's also define and save an empty search (without any constriants) under "all" to include all the data.
+    
+    
 Training language models
-++++++++++++++++++++++++
+------------------------
 
-In order to successfully extract terminology from a dataset, one needs a language model. Language models can be trained
-with "Model Manager" application under "Terminology Management".
+Now that we have saved some searches, we can train a language model to start creating topic specific lexicons. Language models can be trained
+with "Model Manager" tool under "Document Management".
 
 .. figure:: images/05_model_manager.png
 
@@ -116,16 +226,18 @@ with "Model Manager" application under "Terminology Management".
     1. New model parameters
     2. Trained models
     
-To train a model, we need to specify the training data (by using the corresponding search).
-By default, all exsisting documents in the given dataset are used.
+.. note::
 
-The training process also requires a field in the given dataset to be used as input for the language model.
+    Language models can currently be trained and the tool be seen only by super users.
+    
+To train a model, we need to specify the training data (by using the corresponding search), feature, and hyperparameters. When we are interested
+in creating lexicons, lemma layer is often the wisest, as it reduces data sparsity.
 
 We can reduce the lexicon or data sparsity further by coding punctuation and numbers. This means that we replace all occurrences of
 punctuation marks with a single token and numbers with another one. Replacing numbers makes often sense when training language models, as
 different numerical values rarely add any semantical value.
 
-Let's train a new language model on our whole data. For that we use the default empty search.
+Let's train a new language model on our whole data. For that we use our "all" search without any constraints.
 
 .. figure:: images/05-1_model_parameters.png
 
@@ -142,148 +254,20 @@ Once the training completes, we can see the following.
 .. figure:: images/05-3_model_training_completed.png
 
     Figure 5.3. *Training completed*
-
-	
-Home: Select datasets and language models
------------------------------------------
-
-The Home application is where the users can select dataset and language model they are working with.
-In order to update the changes, the user is required to press "Update settings":
-
-.. figure:: images/02_settings.png
-
-.. note::
-	Datasets can be defined in the Administration panel.
-	Languagem models can be trained in the Model Manager application.
-
-Searcher: Explore the Data
---------------------------
-
-The Searcher application is responsible for both creating the searches for other Toolkit's other applications and browsing-summarizing the data.
-
-.. note::
-	In order to use Searcher, at least one dataset must be defined in Administration application.
-
-Searcher's graphical interface consists of serveral important panels, which are depicted in figure 6.
-
-.. figure:: images/06_corpus_tool.png
-
-    Figure 6. *Searcher's first look*
-    
-    1. Current Search
-    2. Saved Searches
-    3. Aggregations
-    4. Results
-
-
-Creating a new search
-+++++++++++++++++++++
-
-Data browsing and summarization depend on searches. Search consists of a set of constraints on feature values. We can define our constraints on
-the data using the "Current Search" panel. Without saving the constraints, we are in a "test mode", which means that we can use the search in
-Searcher, but we cannot use the search in other tools. After saving the search, it is available also to other tools.
-
-In order to add a constraint, we must first choose a field. After the field is selected, we can then specify which textual tokens should or
-must occur in the interested document subset.
-
-Suppose we are interested in finding all the documents which contains "bribery" in Estonian. It makes sense to abuse lemmas
-whenever possible to account for inflection.
-
-.. figure:: images/06-1_bribe_search_constraints.png
-
-    Figure 6.1. *"Bribe" search constraints*
-
-Figure 6.1 shows how we have defined that we want to find all the documents which contain either "pistis" *or* "altkäemaks"
-("bribery" in Estonian). "Match" and "Match phrase" mean that we want to find exact matches, whereas "Match phrase prefix" matches prefixes
-(meaning suffixes may differ).
-
-Should we be interested in more detailed searches, we can add more constraints like the previous one.
-
-After we have come up with a suitable search, we can save it for later uses.
- 
- 
-Browsing data
-+++++++++++++
-
-If we click on "Search" button, we will see the matching data in a tabular form, where layered features share feature name's prefix, and
-matches are highlighted.
-
-.. figure:: images/06-2_bribe_results.png
-
-    Figure 6.2. *Bribe search results*
-
-We can see some basic statistics and if there are too many features, we can hide them by clicking on their green names.
-
-
-Exporting data
-++++++++++++++
-
-Sometimes we want to work with a subset of data in some other application or external calculation. For example, we might want to train a 
-classifier on enriched sample. To get the enriched sample (in which some classes or tokens are over-represented), we can apply the search
-constraints to retrieve the data and then use query result actions, such as *export*.
-
-.. figure:: images/06-3_export_panel.png
-
-    Figure 6.3. *Export panel*
-
-Export panel allows to specify, how many rows and which features are we interested in. Exported data is in CSV format.
     
     
-Deleting data
-+++++++++++++
+Setting up a language model
+---------------------------
 
-The second action on search results is deletion - if we detect some malformed data or are simply not interested in some subset, we can remove it
-permanently from the Elasticsearch.
+Now that we have trained a language model, we can activate it from the home page by selecting the model and updating settings.
+
+.. figure:: images/06_activating_language_model.png
+
+    Figure 6. *Activating language model*
     
-Using saved searches
-++++++++++++++++++++
-
-Searches can be saved. If we save our "bribery" search under "bribery", we can see it being listed in "Saved Searches" panel.
-
-.. figure:: images/06-4_saved_search.png
-
-    Figure 6.4. *Saved searches*
-
-Now, whenever we check it, we can use it to browse data or apply in summarization.
-    
-Summarizing data
-++++++++++++++++
-
-As fun as browsing through the data is, it is not always enough. Sometimes we want to get an overview of our data, such as topics over time or
-word distributions. Searcher allows to do all of that and more through the "Aggregations" panel.
-
-Aggregations have two components - data and features it aggregates over. Selecting a search determines the sample we get our data from. By defining a feature, we can group by that feature and get
-category counts. For example, lets assume we are interested in seeing how are the top words distributed in our sample data defined by our
-"bribery" search. By requesting aggregation as shown on figure 6.5, we get the result on the same figure.
-
-.. figure:: images/06-5_simple_aggregation.png
-
-    Figure 6.5. *Simple aggregation*
-
-From the results we can see raw word distributions for both checked "bribery" search and "Current Search" (which doesn't have any constraints,
-a.k.a sample is all the data we have). Since we queried raw count, many common words overlap. We can change "Sort by" setting to significance
-in order to get uncommon over-represented words for that specific sample dataset.
-
-.. figure:: images/06-6_significance_aggregation.png
-
-    Figure 6.6. *Aggregation sorted by significance*
-
-In figure 6.6 we can see that now the words are much more specific to the "bribery" dataset. "Current Search" has no results, because it is
-used as prior.
-    
-
-Extracting Terminology
-----------------------
-
-In order to learn more about the dataset, it is useful to know the domain terminology.
-TEXTA Toolkit's terminology extraction tools support the user through the process of creating lexicons,
-grouping them into concepts and mining for multiword expressions.
-
-.. note::
-	Extracting Terminology requires a language model, which can be trained by superusers in Model Manager.
 
 Creating lexicons
-+++++++++++++++++
+-----------------
 
 We can start creating topic-related lexicons. From toolbar we can find "Base Lexicon Miner" under "Terminology Management".
 
@@ -316,7 +300,7 @@ the training phase.
 
 
 Creating concepts
-+++++++++++++++++
+-----------------
 
 Once we have saved the lexicons we are interested in, the next step would be to group parts of them into concepts. A lexicon may contain 
 somewhat similar words which still differ from one another in some important aspects. Concepts are created with "Conceptualiser" under 
@@ -352,7 +336,7 @@ Now that we have found the concepts, we can commit the changes to save them.
     manner in *Grammar tool*.
     
 Mining multi-word expressions
-+++++++++++++++++++++++++++++
+-----------------------------
 
 Mining multi-word expressions is a way to find actually used phrases. We approched the problem bottom-up. First we defined the individual tokens
 and now we try to find which of them are located nearby or side-by-side. Ideally, phrases should be found using the words with inflection data,
@@ -393,10 +377,9 @@ The expanded results show how some patterns are much more common in real use of 
 
 We can approve specific patterns to turn them into a concept containing multi-word expressions and therefore use the more complicated structures
 in other tools, such as in the *Searcher*.
-
- 
-Grammar Miner: Extract Information
-----------------------------------
+    
+Exracting information
+---------------------
 
 TEXTA comes with an interactive grammar building tool *Grammar Miner*. "Grammars" are rule-based formulas which allow to match specific
 content using exact matching, context, and logical operators. The simplest grammar can just match a fixed word, for example "bribe", or be
@@ -538,51 +521,3 @@ Deleting grammar
 ++++++++++++++++
 
 We can delete grammar trees by selecting the appropriate grammar from the drop-down menu and clicking on "Delete".
-
-
-Classificaton Manager: Tag the Texts
-------------------------------------
-
-When we have a set of documents in our dataset that we know are somehow important, we can build a text classifier to automatically detect such documents in the future.
-In order to complete such a task, we can use the "Classification Manager" application.
-
-Training a classificaton model
-++++++++++++++++++++++++++++++
-
-In order to train a model, we are required to define some mandatory parameters:
-
-	1. A search to define the set of documents used to train the model (positive documents).
-	2. The field describes the field of the document used to build the classification model.
-	3. The name for the class or "tag", which is later user to tag the documents.
-
-By setting these three, we can now train a classifier. However, we can also fine-tune the classifier by changing additional parameters such as
-feature extraction, dimensionality reduction and classifier model.
-
-.. figure:: images/11-1_new_model.png
-
-    Figure 11.1. *Choosing parameters for the classification model*
-
-Trained models are shown in the "Classification Models" panel, where each epoch is equipped with precision and recall and some information about the classifier model.
-	
-.. figure:: images/11-2_trained_models.png
-
-    Figure 11.2. *Trained models*
-
-Tagging the dataset with the model
-++++++++++++++++++++++++++++++++++
-
-By clicking "Apply" in "Classification Models" panel, user can apply the classifier on selected documents:
-
-.. figure:: images/11-3_apply_model.png
-
-    Figure 11.2. *Select search to define the dataset to be tagged with the selected classifier*
-
-After pressing "Apply the Tagger", a tagging job will start and it's results will be shown in the table when completed. 
-	
-.. figure:: images/11-4_applied_models.png
-
-    Figure 11.2. *Applied classification models*
-	
-.. note::
-	If the dataset contains many documents, the tagging process can be expected to take a few minutes.
-

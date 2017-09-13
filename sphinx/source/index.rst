@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. image:: images/toolkit_logo.png
+.. image:: images/texta_logo.png
     :alt: Texta
 
 .. toctree::
