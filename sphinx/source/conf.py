@@ -50,9 +50,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'TEXTA'
-copyright = u'2016, Raul Sirel, Karl-Oskar Masing, Carlos Bentes'
-author = u'Raul Sirel, Karl-Oskar Masing, Carlos Bentes'
+project = u'TEXTA Toolkit'
+copyright = u'2017 TEXTA'
+author = u'TEXTA'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -132,7 +132,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'TEXTA.tex', u'TEXTA Documentation',
-     u'Raul Sirel, Karl-Oskar Masing, Carlos Bentes', 'manual'),
+     u'TEXTA', 'manual'),
 ]
 
 
