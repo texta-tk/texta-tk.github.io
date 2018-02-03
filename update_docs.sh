@@ -3,6 +3,16 @@
 # Gathers Sphinx's built HTML files from and transforms them
 # to meet Github Pages' standards.
 
+echo "Rendering HTML from .rst files."
+
+sleep 2s
+
+cd sphinx
+make html
+cd ..
+
+sleep 2s
+
 DOC_PATH=sphinx/build/html
 
 echo "Copying files from `realpath $DOC_PATH` to `realpath .`."
@@ -30,7 +40,7 @@ sleep 2s
 
 echo "Changing index.html title."
 
-sed -i "s/&lt;no title&gt; &#8212; TEXTA 0.1 documentation/TEXTA Documentation/g" index.html
+sed -i "s/&lt;no title&gt; &#8212; TEXTA Toolkit 0.1 documentation/TEXTA Documentation/g" index.html
 
 sleep 2s
 
@@ -39,3 +49,4 @@ echo "Commiting changes to Github."
 git add .
 git commit -m "Automatic documentation update from TEXTA"
 git push
+

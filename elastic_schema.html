@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Elasticsearch data layout &#8212; TEXTA 0.1 documentation</title>
+    <title>Elasticsearch data layout &#8212; TEXTA Toolkit 0.1 documentation</title>
     
     <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="API" href="api.html" />
-    <link rel="prev" title="Workflow" href="workflow.html" />
+    <link rel="prev" title="Using TEXTA Toolkit" href="workflow.html" />
    
   <link rel="stylesheet" href="static/custom.css" type="text/css" />
   
@@ -51,11 +51,6 @@
 <p>The following code-block shows how the data looks like in the example &#8220;journal&#8221; dataset.</p>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;journal&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;texta&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;facts&quot;</span><span class="p">:</span> <span class="p">[</span>
-
-            <span class="p">]</span>
-        <span class="p">},</span>
         <span class="nt">&quot;articles&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
                 <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;some author&quot;</span><span class="p">,</span>
@@ -67,7 +62,10 @@
                 <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;some id&quot;</span><span class="p">,</span>
                 <span class="nt">&quot;issue&quot;</span><span class="p">:</span> <span class="s2">&quot;some issue&quot;</span><span class="p">,</span>
                 <span class="nt">&quot;rubric&quot;</span><span class="p">:</span> <span class="s2">&quot;some rubric&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;some title&quot;</span>
+                <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;some title&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;texta_facts&quot;</span><span class="p">:</span> <span class="p">[</span>
+
+                <span class="p">]</span>
             <span class="p">}</span>
         <span class="p">]</span>
     <span class="p">}</span>
@@ -80,29 +78,52 @@
 <p>There are several important aspects when it comes to data.</p>
 <div class="section" id="facts">
 <h3>Facts<a class="headerlink" href="#facts" title="Permalink to this headline">¶</a></h3>
-<p>First of all is the &#8220;texta&#8221; mapping with &#8220;facts&#8221; in it. <strong>Facts</strong> denote annotations
+<p>First of all is the &#8220;texta_facts&#8221; nested field with &#8220;facts&#8221; in it. <strong>Facts</strong> denote annotations
 with which we provide some extra knowledge to the words or phrases. Annotations in TEXTA context are used to represent information extraction
 output. Maybe we have built a grammar which describes how to extract monetary values along with units. In this case we can detect the matched
 text segments and attach corresponding labels which we can later either browse or enhance our search engine with.</p>
-<p>Each fact has the following structure:</p>
+<p>Each <strong>simple</strong> fact has the following structure:</p>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;content.text&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;doc_type&quot;</span><span class="p">:</span> <span class="s2">&quot;articles&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;doc_id&quot;</span><span class="p">:</span> <span class="s2">&quot;15&quot;</span><span class="p">,</span>
     <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;money&quot;</span><span class="p">,</span>
     <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[12, 15]]&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>which we can interpret as mapping <em>doc_type</em> has document with <em>ID</em> 15, the document has a nested feature <em>content.text</em>, the feature has a
-substring in character position range [12,14] (last index is excluded) and the content of the substring is money-related.</p>
+<p>which we can interpret as the document has a nested feature <em>content.text</em>, the feature has a
+substring in character position range [12,14] (last index is excluded) and the content of the substring is money-related.
+Therefore, the &#8220;fact&#8221; can be thought of as a category for the additional knowledge.</p>
 <p>If the corresponding document&#8217;s <em>content.text</em> was &#8220;I inherited $10 from my poor grandfather.&#8221;, it would highlight &#8220;<em>$10</em>&#8221;.</p>
+<p>TEXTA can also deal with <strong>fact values</strong>. Sometimes we don&#8217;t want to just highlight or query documents which are money-related
+(<em>texta_facts</em> contain at least one fact of which <em>fact</em> attribute&#8217;s value is &#8220;money&#8221;). We can also store knowledge about the
+value for the corresponding fact. In our previous example, if we also wanted to store the currency, so that we could search for documents
+which contain United States&#8217; currency, we should have the fact structure as follows:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;content.text&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;money&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[12, 15]]&quot;</span>
+    <span class="s2">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;usd&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Notice the additional &#8220;str_val&#8221;, which stores some specific textual value for the fact. Now we can search for documents which contain
+not just &#8220;money&#8221; related topics, but also those, where there is a specific monetary unit.</p>
+<p>Currently, only textual values are fully supported. Support for numerical values is in development, but the schema for numerical facts
+is as follows:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;content.text&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;usd&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[12, 15]]&quot;</span>
+    <span class="s2">&quot;num_val&quot;</span><span class="p">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>We don&#8217;t have any facts in the initial dataset.</p>
 </div>
 <div class="section" id="data-mapping">
 <h3>Data mapping<a class="headerlink" href="#data-mapping" title="Permalink to this headline">¶</a></h3>
 <p>Each index should have an arbitrarily named mapping which contains the actual data. In example data it is called &#8220;articles&#8221; but it could be
-anything as long as it explains the underlying data reasonably well. Ideally index shouldn&#8217;t contain more than one data mapping.</p>
+anything as long as it explains the underlying data reasonably well. Dataset Importer tool creates indices and mappings with the same name.</p>
 </div>
 <div class="section" id="feature-structure">
 <h3>Feature structure<a class="headerlink" href="#feature-structure" title="Permalink to this headline">¶</a></h3>
@@ -136,7 +157,7 @@ lemma and part-of-speech layers.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Now we can query documents which contain lemma &#8220;go&#8221; and have noun <em>N</em> at the corressponding token index.</p>
+<p>Now we can query documents which contain lemma &#8220;go&#8221; and have noun <em>N</em> at the corresponding token index.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">In order for interlayer queries to work, the layers must have the same number of tokens.</p>
@@ -168,7 +189,7 @@ lemma and part-of-speech layers.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="workflow.html" title="previous chapter">Workflow</a></li>
+      <li>Previous: <a href="workflow.html" title="previous chapter">Using TEXTA Toolkit</a></li>
       <li>Next: <a href="api.html" title="next chapter">API</a></li>
   </ul></li>
 </ul>
@@ -195,7 +216,7 @@ lemma and part-of-speech layers.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2016, Raul Sirel, Karl-Oskar Masing, Carlos Bentes.
+      &copy;2017 TEXTA.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>

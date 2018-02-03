@@ -15,3 +15,4 @@
     workflow
     elastic_schema
     api
+    docker
