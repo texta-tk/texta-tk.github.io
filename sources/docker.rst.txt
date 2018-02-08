@@ -79,3 +79,9 @@ Using TEXTA Toolkit
 
 While TEXTA containers are running, TEXTA instance is accessible from `localhost:8000 <http://localhost:8000>`_.
 Note that port 8000 has to be available.
+
+TEXTA Toolkit has a default admin user in its Docker image:
+
+**Username**: admin
+
+**Password**: 1234
