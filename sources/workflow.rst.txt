@@ -25,7 +25,7 @@ Login page allows to login, as well as create a user.
 
 .. note::
 
-	When starting up the TEXTA instance for the first time, it is crucial to create the superuser account (:ref:`installation's final touches <final-touches>`).
+    When starting up the TEXTA instance for the first time, it is crucial to create the superuser account (:ref:`installation's final touches <final-touches>`).
 	The supersuser account is used to set up TEXTA and it's features to all other users.
 
 
@@ -49,6 +49,118 @@ Therefore, we need to do some setting up in "Administration".
     Restricted contains the superuser tools for managing users, datasets, language models and text classifiers.
 
 
+Importing data
+--------------
+
+To start analyzing data, we need some in the first place.  As the toolkit relies on Elasticsearch database, we could
+insert data manually, while conforming to the rules and schema described
+:ref:`here <elastic-schema>`.
+
+However, as this might take a lot of work, the toolkit comes with a graphical data importing tool called "Dataset Importer",
+which can be found under "Restricted" menu on the top.
+
+
+Dataset Importer
+++++++++++++++++
+
+Dataset Importer ("importer" from now on) is a tool which allows to insert data in many formats, preprocess it, and
+finally store it in the underlying Elasticsearch database, so that it could be then used for analyzing using the other
+tools the importer provides.
+
+.. figure:: images/dataset_importer/01_overview.png
+
+    Figure: Dataset Importer
+
+We insert data with import jobs - requests for the server to process and store the provided documents.
+
+Creating a new import job
+*************************
+
+Selecting formats
+^^^^^^^^^^^^^^^^^
+
+To create a new import job, we must first list all the formats that we have and from which we want to import. For that
+we select all the applicable formats from the "Select all applicable formats" drop-down menu. For example, let's suppose
+we want to import data from PDF and TXT and that they are in a ZIP archive.
+
+.. figure:: images/dataset_importer/02_selecting_formats.png
+
+    Figure: Selecting formats which we want to import to TEXTA Toolkit from our data source
+
+.. note:: **Simple documents** store the content of the file to the field named "text". Simple document *a.ext* can also be accompanied
+          in an archive by *a.meta.json* JSON file, which has other features, such as author, timestamp, or topic. All the
+          JSON file's keys and values end up in the final dataset as columns and values.
+
+Specifying input data parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After we have selected the formats, the necessary fields which need filling will be displayed under "Input Data" section.
+We need to fill in additional information because importer has to know which data and from where to fetch. Also, some
+formats need further instructions - e.g a password for a ZIP archive or an XPath query for an XML document.
+
+For TXT, PDF, and ZIP files we currently only have to specify the source from where should the importer retrieve the data.
+For regular files, the importer supports uploading a single file (could be an archive as well), downloading the file
+from an URL, or loading from the server's local file system.
+
+.. figure:: images/dataset_importer/03_specifying_input_data.png
+
+    Figure: Specifying data source
+
+Specifying storage options
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once the importer knows where to get the data from - and in some instances, how - we now need to specify to where and how
+to store the imported data. For that we need to fill in the fields under "TEXTA Dataset" section.
+We must name the dataset (will be used as both Elasticsearch index and mapping name).
+
+In addition, we can optionally
+  * specify a list of fields to be left untouched by Elasticsearch'es processors;
+  * ask to keep the database synchronized with the data source, if possible, and
+  * ask to overwrite an existing dataset, if the names collide.
+
+.. figure:: images/dataset_importer/04_specifying_storage_options.png
+
+    Figure: Specifying storage options
+
+Specifying preprocessors
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Finally, we can optionally specify the preprocessors we want to apply. Each preprocessor enhances the final dataset (data table) with
+additional features (columns). To apply a preprocessor to the import job, select the desired preprocessor and fill in
+the fields it requires. For example, if we want to lemmatize our documents and detect the language, we can use TEXTA's
+Multilingual Processor.
+
+.. figure:: images/dataset_importer/05_specifying_preprocessors.png
+
+    Figure: Specifying preprocessors
+
+
+Submitting the import job
+*************************
+
+After we have filled in all the necessary fields, we are allowed to press "Import" button.
+
+
+Tracking the import jobs
+************************
+
+All the import jobs that have been completed or are still in progress are displayed in the "Import Jobs" table. Here we
+can see how far are the current import jobs and also which are the parameters and other details of all the started
+import jobs.
+
+.. figure:: images/dataset_importer/06_tracking_import_jobs.png
+
+    Figure: Tracking current and past import jobs
+
+We can also remove an import job entry or see further details by clicking on the eye icon.
+
+.. figure:: images/dataset_importer/07_import_job_details.png
+
+    Figure: Specific import job's details
+
+The parameters JSON content is the internal representation of the job and can mostly be used for debugging.
+
+
 Administration: Manage Users and Datasets
 -----------------------------------------
 
@@ -58,7 +170,7 @@ The biggest bosses in TEXTA Toolkit are the superusers, whose privileges include
 	3. Training language models (in Model Manager)
 	4. Training and applying text classifiers (in Classification Manager)
 
-Naturally, there can be more than one superusers.
+Naturally, there can be more than one superuser.
 New superusers can be created by either by promoting existing user to superusers in Administration or by using the command described in 
 :ref:`installation's final touches <final-touches>`.
 

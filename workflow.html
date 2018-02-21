@@ -65,8 +65,10 @@ Since it is a web application, we have to navigate to the corresponding address 
 <p>Login page allows to login, as well as create a user.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">When starting up the TEXTA instance for the first time, it is crucial to create the superuser account (<a class="reference internal" href="installation.html#final-touches"><span class="std std-ref">installation&#8217;s final touches</span></a>).
-The supersuser account is used to set up TEXTA and it&#8217;s features to all other users.</p>
+<dl class="last docutils">
+<dt>When starting up the TEXTA instance for the first time, it is crucial to create the superuser account (<a class="reference internal" href="installation.html#final-touches"><span class="std std-ref">installation&#8217;s final touches</span></a>).</dt>
+<dd>The supersuser account is used to set up TEXTA and it&#8217;s features to all other users.</dd>
+</dl>
 </div>
 </div>
 <div class="section" id="after-the-login">
@@ -85,6 +87,107 @@ Therefore, we need to do some setting up in &#8220;Administration&#8221;.</p>
 </div>
 </div>
 </div>
+<div class="section" id="importing-data">
+<h2>Importing data<a class="headerlink" href="#importing-data" title="Permalink to this headline">¶</a></h2>
+<p>To start analyzing data, we need some in the first place.  As the toolkit relies on Elasticsearch database, we could
+insert data manually, while conforming to the rules and schema described
+<a class="reference internal" href="elastic_schema.html#elastic-schema"><span class="std std-ref">here</span></a>.</p>
+<p>However, as this might take a lot of work, the toolkit comes with a graphical data importing tool called &#8220;Dataset Importer&#8221;,
+which can be found under &#8220;Restricted&#8221; menu on the top.</p>
+<div class="section" id="dataset-importer">
+<h3>Dataset Importer<a class="headerlink" href="#dataset-importer" title="Permalink to this headline">¶</a></h3>
+<p>Dataset Importer (&#8220;importer&#8221; from now on) is a tool which allows to insert data in many formats, preprocess it, and
+finally store it in the underlying Elasticsearch database, so that it could be then used for analyzing using the other
+tools the importer provides.</p>
+<div class="figure" id="id3">
+<img alt="images/01_overview.png" src="images/01_overview.png" />
+<p class="caption"><span class="caption-text">Figure: Dataset Importer</span></p>
+</div>
+<p>We insert data with import jobs - requests for the server to process and store the provided documents.</p>
+<div class="section" id="creating-a-new-import-job">
+<h4>Creating a new import job<a class="headerlink" href="#creating-a-new-import-job" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="selecting-formats">
+<h5>Selecting formats<a class="headerlink" href="#selecting-formats" title="Permalink to this headline">¶</a></h5>
+<p>To create a new import job, we must first list all the formats that we have and from which we want to import. For that
+we select all the applicable formats from the &#8220;Select all applicable formats&#8221; drop-down menu. For example, let&#8217;s suppose
+we want to import data from PDF and TXT and that they are in a ZIP archive.</p>
+<div class="figure" id="id4">
+<img alt="images/02_selecting_formats.png" src="images/02_selecting_formats.png" />
+<p class="caption"><span class="caption-text">Figure: Selecting formats which we want to import to TEXTA Toolkit from our data source</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Simple documents</strong> store the content of the file to the field named &#8220;text&#8221;. Simple document <em>a.ext</em> can also be accompanied
+in an archive by <em>a.meta.json</em> JSON file, which has other features, such as author, timestamp, or topic. All the
+JSON file&#8217;s keys and values end up in the final dataset as columns and values.</p>
+</div>
+</div>
+<div class="section" id="specifying-input-data-parameters">
+<h5>Specifying input data parameters<a class="headerlink" href="#specifying-input-data-parameters" title="Permalink to this headline">¶</a></h5>
+<p>After we have selected the formats, the necessary fields which need filling will be displayed under &#8220;Input Data&#8221; section.
+We need to fill in additional information because importer has to know which data and from where to fetch. Also, some
+formats need further instructions - e.g a password for a ZIP archive or an XPath query for an XML document.</p>
+<p>For TXT, PDF, and ZIP files we currently only have to specify the source from where should the importer retrieve the data.
+For regular files, the importer supports uploading a single file (could be an archive as well), downloading the file
+from an URL, or loading from the server&#8217;s local file system.</p>
+<div class="figure" id="id5">
+<img alt="images/03_specifying_input_data.png" src="images/03_specifying_input_data.png" />
+<p class="caption"><span class="caption-text">Figure: Specifying data source</span></p>
+</div>
+</div>
+<div class="section" id="specifying-storage-options">
+<h5>Specifying storage options<a class="headerlink" href="#specifying-storage-options" title="Permalink to this headline">¶</a></h5>
+<p>Once the importer knows where to get the data from - and in some instances, how - we now need to specify to where and how
+to store the imported data. For that we need to fill in the fields under &#8220;TEXTA Dataset&#8221; section.
+We must name the dataset (will be used as both Elasticsearch index and mapping name).</p>
+<dl class="docutils">
+<dt>In addition, we can optionally</dt>
+<dd><ul class="first last simple">
+<li>specify a list of fields to be left untouched by Elasticsearch&#8217;es processors;</li>
+<li>ask to keep the database synchronized with the data source, if possible, and</li>
+<li>ask to overwrite an existing dataset, if the names collide.</li>
+</ul>
+</dd>
+</dl>
+<div class="figure" id="id6">
+<img alt="images/04_specifying_storage_options.png" src="images/04_specifying_storage_options.png" />
+<p class="caption"><span class="caption-text">Figure: Specifying storage options</span></p>
+</div>
+</div>
+<div class="section" id="specifying-preprocessors">
+<h5>Specifying preprocessors<a class="headerlink" href="#specifying-preprocessors" title="Permalink to this headline">¶</a></h5>
+<p>Finally, we can optionally specify the preprocessors we want to apply. Each preprocessor enhances the final dataset (data table) with
+additional features (columns). To apply a preprocessor to the import job, select the desired preprocessor and fill in
+the fields it requires. For example, if we want to lemmatize our documents and detect the language, we can use TEXTA&#8217;s
+Multilingual Processor.</p>
+<div class="figure" id="id7">
+<img alt="images/05_specifying_preprocessors.png" src="images/05_specifying_preprocessors.png" />
+<p class="caption"><span class="caption-text">Figure: Specifying preprocessors</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="submitting-the-import-job">
+<h4>Submitting the import job<a class="headerlink" href="#submitting-the-import-job" title="Permalink to this headline">¶</a></h4>
+<p>After we have filled in all the necessary fields, we are allowed to press &#8220;Import&#8221; button.</p>
+</div>
+<div class="section" id="tracking-the-import-jobs">
+<h4>Tracking the import jobs<a class="headerlink" href="#tracking-the-import-jobs" title="Permalink to this headline">¶</a></h4>
+<p>All the import jobs that have been completed or are still in progress are displayed in the &#8220;Import Jobs&#8221; table. Here we
+can see how far are the current import jobs and also which are the parameters and other details of all the started
+import jobs.</p>
+<div class="figure" id="id8">
+<img alt="images/06_tracking_import_jobs.png" src="images/06_tracking_import_jobs.png" />
+<p class="caption"><span class="caption-text">Figure: Tracking current and past import jobs</span></p>
+</div>
+<p>We can also remove an import job entry or see further details by clicking on the eye icon.</p>
+<div class="figure" id="id9">
+<img alt="images/07_import_job_details.png" src="images/07_import_job_details.png" />
+<p class="caption"><span class="caption-text">Figure: Specific import job&#8217;s details</span></p>
+</div>
+<p>The parameters JSON content is the internal representation of the job and can mostly be used for debugging.</p>
+</div>
+</div>
+</div>
 <div class="section" id="administration-manage-users-and-datasets">
 <h2>Administration: Manage Users and Datasets<a class="headerlink" href="#administration-manage-users-and-datasets" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
@@ -97,13 +200,13 @@ Therefore, we need to do some setting up in &#8220;Administration&#8221;.</p>
 </ol>
 </dd>
 </dl>
-<p>Naturally, there can be more than one superusers.
+<p>Naturally, there can be more than one superuser.
 New superusers can be created by either by promoting existing user to superusers in Administration or by using the command described in
 <a class="reference internal" href="installation.html#final-touches"><span class="std std-ref">installation&#8217;s final touches</span></a>.</p>
 <div class="section" id="managing-users-and-their-access-rights">
 <h3>Managing users and their access rights<a class="headerlink" href="#managing-users-and-their-access-rights" title="Permalink to this headline">¶</a></h3>
 <p>Users and their access to datasets can be configured in the &#8220;User Access Management&#8221; panel in &#8220;Administration&#8221;:</p>
-<div class="figure" id="id3">
+<div class="figure" id="id10">
 <img alt="images/03_user.png" src="images/03_user.png" />
 <p class="caption"><span class="caption-text">Figure 3. <em>Panel in Administration for managing users</em></span></p>
 </div>
@@ -113,7 +216,7 @@ By default, new users will be created as deactivated, but this can be changed in
 </pre></div>
 </div>
 <p>User&#8217;s access to existing datasets can be managed by clicking on the username, which opens a modal:</p>
-<div class="figure" id="id4">
+<div class="figure" id="id11">
 <img alt="images/04_user_datasets.png" src="images/04_user_datasets.png" />
 <p class="caption"><span class="caption-text">Figure 4. <em>The datasets can be moved between the two fields to determine user&#8217;s access to it</em></span></p>
 </div>
@@ -121,7 +224,7 @@ By default, new users will be created as deactivated, but this can be changed in
 <div class="section" id="managing-datasets">
 <h3>Managing datasets<a class="headerlink" href="#managing-datasets" title="Permalink to this headline">¶</a></h3>
 <p>Superusers can add datasets by selecting the according index and mapping in the &#8220;Dataset Management&#8221; panel:</p>
-<div class="figure" id="id5">
+<div class="figure" id="id12">
 <img alt="images/05_datasets.png" src="images/05_datasets.png" />
 <p class="caption"><span class="caption-text">Figure 4. <em>Adding a new dataset</em></span></p>
 </div>
@@ -137,7 +240,7 @@ In contrast to public datasets, private datasets are closed to everyone (except 
 <h3>Training language models<a class="headerlink" href="#training-language-models" title="Permalink to this headline">¶</a></h3>
 <p>In order to successfully extract terminology from a dataset, one needs a language model. Language models can be trained
 with &#8220;Model Manager&#8221; application under &#8220;Terminology Management&#8221;.</p>
-<div class="figure" id="id6">
+<div class="figure" id="id13">
 <img alt="images/05_model_manager.png" src="images/05_model_manager.png" />
 <p class="caption"><span class="caption-text">Figure 5. <em>Model Manager</em></span></p>
 <div class="legend">
@@ -154,17 +257,17 @@ By default, all exsisting documents in the given dataset are used.</p>
 punctuation marks with a single token and numbers with another one. Replacing numbers makes often sense when training language models, as
 different numerical values rarely add any semantical value.</p>
 <p>Let&#8217;s train a new language model on our whole data. For that we use the default empty search.</p>
-<div class="figure" id="id7">
+<div class="figure" id="id14">
 <img alt="images/05-1_model_parameters.png" src="images/05-1_model_parameters.png" />
 <p class="caption"><span class="caption-text">Figure 5.1. <em>Model parameters</em></span></p>
 </div>
 <p>After starting the model training task, we can see the progress. For progress upgrade, we have to refresh the page.</p>
-<div class="figure" id="id8">
+<div class="figure" id="id15">
 <img alt="images/05-2_model_training_progress.png" src="images/05-2_model_training_progress.png" />
 <p class="caption"><span class="caption-text">Figure 5.2. <em>Model training progress</em></span></p>
 </div>
 <p>Once the training completes, we can see the following.</p>
-<div class="figure" id="id9">
+<div class="figure" id="id16">
 <img alt="images/05-3_model_training_completed.png" src="images/05-3_model_training_completed.png" />
 <p class="caption"><span class="caption-text">Figure 5.3. <em>Training completed</em></span></p>
 </div>
@@ -191,7 +294,7 @@ Languagem models can be trained in the Model Manager application.</p>
 <p class="last">In order to use Searcher, at least one dataset must be defined in Administration application.</p>
 </div>
 <p>Searcher&#8217;s graphical interface consists of serveral important panels, which are depicted in figure 6.</p>
-<div class="figure" id="id10">
+<div class="figure" id="id17">
 <img alt="images/06_corpus_tool.png" src="images/06_corpus_tool.png" />
 <p class="caption"><span class="caption-text">Figure 6. <em>Searcher&#8217;s first look</em></span></p>
 <div class="legend">
@@ -212,7 +315,7 @@ Searcher, but we cannot use the search in other tools. After saving the search, 
 must occur in the interested document subset.</p>
 <p>Suppose we are interested in finding all the documents which contains &#8220;bribery&#8221; in Estonian. It makes sense to abuse lemmas
 whenever possible to account for inflection.</p>
-<div class="figure" id="id11">
+<div class="figure" id="id18">
 <img alt="images/06-1_bribe_search_constraints.png" src="images/06-1_bribe_search_constraints.png" />
 <p class="caption"><span class="caption-text">Figure 6.1. <em>&#8220;Bribe&#8221; search constraints</em></span></p>
 </div>
@@ -226,7 +329,7 @@ whenever possible to account for inflection.</p>
 <h3>Browsing data<a class="headerlink" href="#browsing-data" title="Permalink to this headline">¶</a></h3>
 <p>If we click on &#8220;Search&#8221; button, we will see the matching data in a tabular form, where layered features share feature name&#8217;s prefix, and
 matches are highlighted.</p>
-<div class="figure" id="id12">
+<div class="figure" id="id19">
 <img alt="images/06-2_bribe_results.png" src="images/06-2_bribe_results.png" />
 <p class="caption"><span class="caption-text">Figure 6.2. <em>Bribe search results</em></span></p>
 </div>
@@ -237,7 +340,7 @@ matches are highlighted.</p>
 <p>Sometimes we want to work with a subset of data in some other application or external calculation. For example, we might want to train a
 classifier on enriched sample. To get the enriched sample (in which some classes or tokens are over-represented), we can apply the search
 constraints to retrieve the data and then use query result actions, such as <em>export</em>.</p>
-<div class="figure" id="id13">
+<div class="figure" id="id20">
 <img alt="images/06-3_export_panel.png" src="images/06-3_export_panel.png" />
 <p class="caption"><span class="caption-text">Figure 6.3. <em>Export panel</em></span></p>
 </div>
@@ -251,7 +354,7 @@ permanently from the Elasticsearch.</p>
 <div class="section" id="using-saved-searches">
 <h3>Using saved searches<a class="headerlink" href="#using-saved-searches" title="Permalink to this headline">¶</a></h3>
 <p>Searches can be saved. If we save our &#8220;bribery&#8221; search under &#8220;bribery&#8221;, we can see it being listed in &#8220;Saved Searches&#8221; panel.</p>
-<div class="figure" id="id14">
+<div class="figure" id="id21">
 <img alt="images/06-4_saved_search.png" src="images/06-4_saved_search.png" />
 <p class="caption"><span class="caption-text">Figure 6.4. <em>Saved searches</em></span></p>
 </div>
@@ -264,14 +367,14 @@ word distributions. Searcher allows to do all of that and more through the &#822
 <p>Aggregations have two components - data and features it aggregates over. Selecting a search determines the sample we get our data from. By defining a feature, we can group by that feature and get
 category counts. For example, lets assume we are interested in seeing how are the top words distributed in our sample data defined by our
 &#8220;bribery&#8221; search. By requesting aggregation as shown on figure 6.5, we get the result on the same figure.</p>
-<div class="figure" id="id15">
+<div class="figure" id="id22">
 <img alt="images/06-5_simple_aggregation.png" src="images/06-5_simple_aggregation.png" />
 <p class="caption"><span class="caption-text">Figure 6.5. <em>Simple aggregation</em></span></p>
 </div>
 <p>From the results we can see raw word distributions for both checked &#8220;bribery&#8221; search and &#8220;Current Search&#8221; (which doesn&#8217;t have any constraints,
 a.k.a sample is all the data we have). Since we queried raw count, many common words overlap. We can change &#8220;Sort by&#8221; setting to significance
 in order to get uncommon over-represented words for that specific sample dataset.</p>
-<div class="figure" id="id16">
+<div class="figure" id="id23">
 <img alt="images/06-6_significance_aggregation.png" src="images/06-6_significance_aggregation.png" />
 <p class="caption"><span class="caption-text">Figure 6.6. <em>Aggregation sorted by significance</em></span></p>
 </div>
@@ -292,12 +395,12 @@ grouping them into concepts and mining for multiword expressions.</p>
 <h3>Creating lexicons<a class="headerlink" href="#creating-lexicons" title="Permalink to this headline">¶</a></h3>
 <p>We can start creating topic-related lexicons. From toolbar we can find &#8220;Base Lexicon Miner&#8221; under &#8220;Terminology Management&#8221;.</p>
 <p>Let&#8217;s create a lexicon that contains verbs accompanied with &#8220;bribery&#8221;.</p>
-<div class="figure" id="id17">
+<div class="figure" id="id24">
 <img alt="images/07_creating_verb_lexicon.png" src="images/07_creating_verb_lexicon.png" />
 <p class="caption"><span class="caption-text">Figure 7. <em>Creating lexicon of bribery verbs</em></span></p>
 </div>
 <p>After clicking on the newly created lexicon, we have to provide some seed words.</p>
-<div class="figure" id="id18">
+<div class="figure" id="id25">
 <img alt="images/07-1_lexicon_seed_words.png" src="images/07-1_lexicon_seed_words.png" />
 <p class="caption"><span class="caption-text">Figure 7.1. <em>Providing seed words</em></span></p>
 </div>
@@ -305,7 +408,7 @@ grouping them into concepts and mining for multiword expressions.</p>
 make sense to us. We keep asking for suggestions until we get no more meaningful responses. Then we should either change to some approach with
 &#8220;preclustering&#8221; in it or end the process, as the training data didn&#8217;t give us more.</p>
 <p>The first batch of suggested words are shown in figure 7.2.</p>
-<div class="figure" id="id19">
+<div class="figure" id="id26">
 <img alt="images/07-2_first_suggestion_batch.png" src="images/07-2_first_suggestion_batch.png" />
 <p class="caption"><span class="caption-text">Figure 7.2. <em>First suggestion batch</em></span></p>
 </div>
@@ -326,13 +429,13 @@ in 2-dimensional space.</p>
 <p>One of several dimension reduction methods can be chosen, but they give approximately the same results.</p>
 <p>In our scenario, we have small and homogeneous lexicons and therefore each lexicon forms just one concept.</p>
 <p>After checking the lexicons and plotting them, we get to the state depicted in figure 8.</p>
-<div class="figure" id="id20">
+<div class="figure" id="id27">
 <img alt="images/08_conceptualiser_initial_plot.png" src="images/08_conceptualiser_initial_plot.png" />
 <p class="caption"><span class="caption-text">Figure 8. <em>Conceptualiser&#8217;s initial plot</em></span></p>
 </div>
 <p>We can visually detect that two more or less coherent clusters have formed and &#8220;avastama&#8221; is an outlier. It was also the last word suggested by
 <em>Lexicon Miner</em>. For that reason we leave that word out from our concepts.</p>
-<div class="figure" id="id21">
+<div class="figure" id="id28">
 <img alt="images/08-1_grouped_concepts.png" src="images/08-1_grouped_concepts.png" />
 <p class="caption"><span class="caption-text">Figure 8.1. <em>After grouping the words into concepts</em></span></p>
 </div>
@@ -349,7 +452,7 @@ manner in <em>Grammar tool</em>.</p>
 and now we try to find which of them are located nearby or side-by-side. Ideally, phrases should be found using the words with inflection data,
 but since our dataset is small, we have to make it with lemmas and low frequency threshold.</p>
 <p>Mining task requires parameters - much like training language models. In figure 9 we can see the parameters we can use.</p>
-<div class="figure" id="id22">
+<div class="figure" id="id29">
 <img alt="images/09_mwe_parameters.png" src="images/09_mwe_parameters.png" />
 <p class="caption"><span class="caption-text">Figure 9. <em>Multi-word expression mining parameters</em></span></p>
 </div>
@@ -358,19 +461,19 @@ determine the output phrase lengths (or combination lengths, which are searched 
 and slop determines, how far apart can the words be from one another. Finally, we have to specify the lexicons used. Since we want to find
 bribery phrases which contain both noun and accusing verb, we check both lexicons.</p>
 <p>Because the data and lexicons are small, the task completes instantly.</p>
-<div class="figure" id="id23">
+<div class="figure" id="id30">
 <img alt="images/09-1_mwe_progress.png" src="images/09-1_mwe_progress.png" />
 <p class="caption"><span class="caption-text">Figure 9.1. <em>Multi-word expression task progress</em></span></p>
 </div>
 <p>By looking at the results, we can see that there are 9 different patterns (denoted by &#8220;Terms&#8221; feature) containing &#8220;süüdistama&#8221; and &#8220;altkäemaks&#8221;
 concepts&#8217; lemmas which are frequent enough to catch our interest.</p>
-<div class="figure" id="id24">
+<div class="figure" id="id31">
 <img alt="images/09-2_mwe_results.png" src="images/09-2_mwe_results.png" />
 <p class="caption"><span class="caption-text">Figure 9.2. <em>Multi-word expression results</em></span></p>
 </div>
 <p>We can expand the result by clicking on the &#8220;plus&#8221;-sign under &#8220;Accepted&#8221; feature to see which patterns actually existed and with which
 frequency.</p>
-<div class="figure" id="id25">
+<div class="figure" id="id32">
 <img alt="images/09-3_expanded_results.png" src="images/09-3_expanded_results.png" />
 <p class="caption"><span class="caption-text">Figure 9.3. <em>Expanded results</em></span></p>
 </div>
@@ -387,7 +490,7 @@ a regular expression, while more complicated ones may cover whole phrase and sen
 <p>We build grammars from top to bottom using a graphical tree building tool <em>jstree</em>. Once a suitable grammar expression in the form of a tree is
 created, we can test it on a data sample and see, which documents matched and how and which did not. <em>Grammar Miner</em> is under <em>Terminology
 Management</em> tools.</p>
-<div class="figure" id="id26">
+<div class="figure" id="id33">
 <img alt="images/10_grammar_miner.png" src="images/10_grammar_miner.png" />
 <p class="caption"><span class="caption-text">Figure 10. <em>Grammar Miner&#8217;s first look</em></span></p>
 <div class="legend">
@@ -399,7 +502,7 @@ Management</em> tools.</p>
 </div>
 </div>
 <p>Building a new grammar begins with assigning an operation to the root node.</p>
-<div class="figure" id="id27">
+<div class="figure" id="id34">
 <img alt="images/10-1_root_node_operation.png" src="images/10-1_root_node_operation.png" />
 <p class="caption"><span class="caption-text">Figure 10.1. <em>Assigning operation to aggregative node</em></span></p>
 </div>
@@ -463,12 +566,12 @@ children.</p>
 <h3>Adding a child<a class="headerlink" href="#adding-a-child" title="Permalink to this headline">¶</a></h3>
 <p>Aggregative nodes can (must) have child nodes (at least one). A child can be added by opening context menu with right click on the appropriate
 node. This allows to add either a <em>basic</em> (terminal) or <em>aggregation</em> node.</p>
-<div class="figure" id="id28">
+<div class="figure" id="id35">
 <img alt="images/10-2_node_context_menu.png" src="images/10-2_node_context_menu.png" />
 <p class="caption"><span class="caption-text">Figure 10.2. <em>Context menu for adding child nodes</em></span></p>
 </div>
 <p>After adding a terminal node and clicking on it, we can edit the details in opened &#8220;Component Details&#8221; panel.</p>
-<div class="figure" id="id29">
+<div class="figure" id="id36">
 <img alt="images/10-3_basic_component_details.png" src="images/10-3_basic_component_details.png" />
 <p class="caption"><span class="caption-text">Figure 10.3. <em>Specifying terminal node details</em></span></p>
 </div>
@@ -482,18 +585,18 @@ node&#8217;s context menu.</p>
 <p>Suppose we are interested in finding (and later labeling) the documents which talk about bribery accusations. We have already found out that
 the most frequent pattern in the corresponding documents contain the lemmas &#8220;süüdistama&#8221; and &#8220;altkäemaks&#8221; in that order with the slop of 3.
 Let&#8217;s create the grammar tree.</p>
-<div class="figure" id="id30">
+<div class="figure" id="id37">
 <img alt="images/10-4_bribery_grammar.png" src="images/10-4_bribery_grammar.png" />
 <p class="caption"><span class="caption-text">Figure 10.4. <em>Simple bribery grammar</em></span></p>
 </div>
 <p>So far we have been on the &#8220;Grammar&#8221; tab. If we test our grammar by clicking on &#8220;Test whole tree&#8221;, for example, we are taken to the &#8220;Test&#8221; tab
 and all the positive matches (documents which our grammar matched) are displayed along with the match highlights.</p>
-<div class="figure" id="id31">
+<div class="figure" id="id38">
 <img alt="images/10-5_bribery_positive_results.png" src="images/10-5_bribery_positive_results.png" />
 <p class="caption"><span class="caption-text">Figure 10.5. <em>Positive results when testing</em></span></p>
 </div>
 <p>When navigating to &#8220;Unmatched documents&#8221; subtab, we can see the documents which didn&#8217;t match our grammar.</p>
-<div class="figure" id="id32">
+<div class="figure" id="id39">
 <img alt="images/10-6_bribery_negative_results.png" src="images/10-6_bribery_negative_results.png" />
 <p class="caption"><span class="caption-text">Figure 10.6. <em>Negative results when testing</em></span></p>
 </div>
@@ -528,12 +631,12 @@ In order to complete such a task, we can use the &#8220;Classification Manager&#
 </div></blockquote>
 <p>By setting these three, we can now train a classifier. However, we can also fine-tune the classifier by changing additional parameters such as
 feature extraction, dimensionality reduction and classifier model.</p>
-<div class="figure" id="id33">
+<div class="figure" id="id40">
 <img alt="images/11-1_new_model.png" src="images/11-1_new_model.png" />
 <p class="caption"><span class="caption-text">Figure 11.1. <em>Choosing parameters for the classification model</em></span></p>
 </div>
 <p>Trained models are shown in the &#8220;Classification Models&#8221; panel, where each epoch is equipped with precision and recall and some information about the classifier model.</p>
-<div class="figure" id="id34">
+<div class="figure" id="id41">
 <img alt="images/11-2_trained_models.png" src="images/11-2_trained_models.png" />
 <p class="caption"><span class="caption-text">Figure 11.2. <em>Trained models</em></span></p>
 </div>
@@ -541,12 +644,12 @@ feature extraction, dimensionality reduction and classifier model.</p>
 <div class="section" id="tagging-the-dataset-with-the-model">
 <h3>Tagging the dataset with the model<a class="headerlink" href="#tagging-the-dataset-with-the-model" title="Permalink to this headline">¶</a></h3>
 <p>By clicking &#8220;Apply&#8221; in &#8220;Classification Models&#8221; panel, user can apply the classifier on selected documents:</p>
-<div class="figure" id="id35">
+<div class="figure" id="id42">
 <img alt="images/11-3_apply_model.png" src="images/11-3_apply_model.png" />
 <p class="caption"><span class="caption-text">Figure 11.2. <em>Select search to define the dataset to be tagged with the selected classifier</em></span></p>
 </div>
 <p>After pressing &#8220;Apply the Tagger&#8221;, a tagging job will start and it&#8217;s results will be shown in the table when completed.</p>
-<div class="figure" id="id36">
+<div class="figure" id="id43">
 <img alt="images/11-4_applied_models.png" src="images/11-4_applied_models.png" />
 <p class="caption"><span class="caption-text">Figure 11.2. <em>Applied classification models</em></span></p>
 </div>
@@ -570,6 +673,21 @@ feature extraction, dimensionality reduction and classifier model.</p>
 <li><a class="reference internal" href="#first-steps">First steps</a><ul>
 <li><a class="reference internal" href="#the-login-screen">The login screen</a></li>
 <li><a class="reference internal" href="#after-the-login">After the login</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#importing-data">Importing data</a><ul>
+<li><a class="reference internal" href="#dataset-importer">Dataset Importer</a><ul>
+<li><a class="reference internal" href="#creating-a-new-import-job">Creating a new import job</a><ul>
+<li><a class="reference internal" href="#selecting-formats">Selecting formats</a></li>
+<li><a class="reference internal" href="#specifying-input-data-parameters">Specifying input data parameters</a></li>
+<li><a class="reference internal" href="#specifying-storage-options">Specifying storage options</a></li>
+<li><a class="reference internal" href="#specifying-preprocessors">Specifying preprocessors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#submitting-the-import-job">Submitting the import job</a></li>
+<li><a class="reference internal" href="#tracking-the-import-jobs">Tracking the import jobs</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#administration-manage-users-and-datasets">Administration: Manage Users and Datasets</a><ul>

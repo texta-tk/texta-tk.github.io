@@ -1,3 +1,4 @@
+.. _elastic-schema:
 
 Elasticsearch data layout
 =========================
