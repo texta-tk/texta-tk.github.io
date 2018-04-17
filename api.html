@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>API &#8212; TEXTA Toolkit 0.1 documentation</title>
-    
     <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -26,6 +23,7 @@
     <script type="text/javascript" src="static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Docker" href="docker.html" />
     <link rel="prev" title="Elasticsearch data layout" href="elastic_schema.html" />
    
   <link rel="stylesheet" href="static/custom.css" type="text/css" />
@@ -34,7 +32,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -62,7 +60,7 @@
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;auth_token&quot;</span><span class="p">:</span> <span class="s2">&quot;9c05321f821f6e&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>The returned authentication token doesn&#8217;t expire and will be returned every time a token is requested by the user, until explicity revoked. If authentication token is likely to be compromised, it&#8217;s possible to revoke the token with the command</p>
+<p>The returned authentication token doesn’t expire and will be returned every time a token is requested by the user, until explicity revoked. If authentication token is likely to be compromised, it’s possible to revoke the token with the command</p>
 <p>which returns</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">}</span>
 </pre></div>
@@ -74,8 +72,8 @@
 <p>Searching functionality allows to query documents based on the defined constraints and projections. Documents are queried and returned in JSON format.</p>
 <div class="topic">
 <p class="topic-title first">Example scenario</p>
-<p>Let&#8217;s presume we have stored a variety of news articles with the following features: title, content, publish date, and author.</p>
-<p>We can use TEXTA API to find all the articles by some fixed authors, articles which contain specific keywords or phrases, or articles which are published between two dates by selected authors and of which content contains keywords &#8220;president&#8221; and &#8220;speech&#8221;, and not keywords &#8220;poverty&#8221;, &#8220;unhappiness&#8221;, and &#8220;falling behind&#8221;.</p>
+<p>Let’s presume we have stored a variety of news articles with the following features: title, content, publish date, and author.</p>
+<p>We can use TEXTA API to find all the articles by some fixed authors, articles which contain specific keywords or phrases, or articles which are published between two dates by selected authors and of which content contains keywords “president” and “speech”, and not keywords “poverty”, “unhappiness”, and “falling behind”.</p>
 </div>
 <p>To download all the documents from the dataset with ID 4, it suffices to call</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
@@ -84,7 +82,7 @@
 <span class="s1">}&#39;</span>
 </pre></div>
 </div>
-<p>Retrieving all the documents isn&#8217;t necessarily the smartest thing to do. Next we might want to limit the number of documents we receive to 100 and get only the titles and the authors.</p>
+<p>Retrieving all the documents isn’t necessarily the smartest thing to do. Next we might want to limit the number of documents we receive to 100 and get only the titles and the authors.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4,</span>
@@ -93,7 +91,7 @@
 <span class="s1">}&#39;</span>
 </pre></div>
 </div>
-<p>Although we now have some control over how we receive our data, we can&#8217;t still control what we receive. For that, we have to define constraints which the returned documents must satisfy. Let&#8217;s retrieve the title and the content of 15 articles published in 2017 by the renowned author John Doe.</p>
+<p>Although we now have some control over how we receive our data, we can’t still control what we receive. For that, we have to define constraints which the returned documents must satisfy. Let’s retrieve the title and the content of 15 articles published in 2017 by the renowned author John Doe.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4,</span>
@@ -127,7 +125,7 @@
 <span class="s1">}&#39;</span>
 </pre></div>
 </div>
-<p>Here we set the &#8220;scroll&#8221; flag to <em>True</em> and defined batch size in the parameters. Batch size defines how many documents will be returned in a single query. The result of the query looks like this:</p>
+<p>Here we set the “scroll” flag to <em>True</em> and defined batch size in the parameters. Batch size defines how many documents will be returned in a single query. The result of the query looks like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;scroll_id&quot;</span><span class="p">:</span> <span class="s2">&quot;some very long hash string&quot;</span><span class="p">,</span>
     <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">1572</span><span class="p">,</span>
@@ -161,7 +159,7 @@
 <p>Constraints are distinguished by classes.</p>
 <div class="section" id="textual">
 <h4>Textual<a class="headerlink" href="#textual" title="Permalink to this headline">¶</a></h4>
-<p>Textual constraint&#8217;s class is <strong>string</strong>.</p>
+<p>Textual constraint’s class is <strong>string</strong>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span><span class="s2">&quot;author&quot;</span><span class="p">,</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;must&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;match_phrase&quot;</span><span class="p">,</span><span class="s2">&quot;slop&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;strings&quot;</span><span class="p">:[</span><span class="s2">&quot;John Doe&quot;</span><span class="p">],</span> <span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -169,21 +167,21 @@
 <p><strong>strings:</strong> keywords or phrases to search for.</p>
 <p><strong>operator:</strong> relationship between the keyword.</p>
 <blockquote>
-<div><p><strong>&#8220;must&#8221;</strong> - <em>default</em> - conjunctive (AND) directive, all the listed keywords must exist in the document.</p>
-<p><strong>&#8220;should&#8221;</strong> - disjunctive (OR) directive, at least one keyword must exist in the document.</p>
-<p><strong>&#8220;must_not&#8221;</strong> - prohibitive (NOT) directive, none of the listed keywords can exist in the document.</p>
+<div><p><strong>“must”</strong> - <em>default</em> - conjunctive (AND) directive, all the listed keywords must exist in the document.</p>
+<p><strong>“should”</strong> - disjunctive (OR) directive, at least one keyword must exist in the document.</p>
+<p><strong>“must_not”</strong> - prohibitive (NOT) directive, none of the listed keywords can exist in the document.</p>
 </div></blockquote>
 <p><strong>type:</strong> defines how the keywords must match.</p>
 <blockquote>
-<div><p><strong>&#8220;match&#8221;</strong> - at least on token of whitespace split keywords must match, often used for single token keywords, like &#8220;John&#8221;.</p>
-<p><strong>&#8220;match_phrase&#8221;</strong> - <em>default</em> - all the tokens of the keywords must match, can have &#8220;slop&#8221; number of non-matching words in-between, matches also single tokens.</p>
-<p><strong>&#8220;match_phrase_prefix&#8221;</strong> - listed keywords must be the preficies of the words actually in the document. Good for matching &#8220;look&#8221; -&gt; &#8220;looking&#8221;</p>
+<div><p><strong>“match”</strong> - at least on token of whitespace split keywords must match, often used for single token keywords, like “John”.</p>
+<p><strong>“match_phrase”</strong> - <em>default</em> - all the tokens of the keywords must match, can have “slop” number of non-matching words in-between, matches also single tokens.</p>
+<p><strong>“match_phrase_prefix”</strong> - listed keywords must be the preficies of the words actually in the document. Good for matching “look” -&gt; “looking”</p>
 </div></blockquote>
-<p><strong>slop:</strong> defines how many other tokens/words can be between any phrase components. Slop 0 wouldn&#8217;t match &#8220;John Doe&#8221; to &#8220;John Edward Doe&#8221;, slop 1 would.</p>
+<p><strong>slop:</strong> defines how many other tokens/words can be between any phrase components. Slop 0 wouldn’t match “John Doe” to “John Edward Doe”, slop 1 would.</p>
 </div>
 <div class="section" id="temporal">
 <h4>Temporal<a class="headerlink" href="#temporal" title="Permalink to this headline">¶</a></h4>
-<p>Temporal constraint&#8217;s class is <strong>date</strong>.</p>
+<p>Temporal constraint’s class is <strong>date</strong>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span><span class="s2">&quot;published&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;start&quot;</span><span class="p">:</span><span class="s2">&quot;2017-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span><span class="s2">&quot;2017-12-31&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -192,16 +190,16 @@
 </div>
 <div class="section" id="simple-annotational">
 <h4>Simple annotational<a class="headerlink" href="#simple-annotational" title="Permalink to this headline">¶</a></h4>
-<p>Annotation data is on top of regular features and gives semantical meaning to parts of the feature (words, phrases, sentences, paragraphs). For example, if in our dataset we have articles about annual presidential speeches, we might want to annotate occurrences of &#8220;Vladimir Putin&#8221;, &#8220;Donald Trump&#8221; or &#8220;Barack Obama&#8221; with the keyword &#8220;president&#8221;, so that we could later on query the documents, which talk about presidents or presidential speeches, rather than individually list all the presidents that have ever been or will be in the query. Annotation is done via information extraction - either using TEXTA Grammar Miner or external tools.</p>
-<p>Simple annotation&#8217;s constraint class is <strong>fact</strong>. The following constraint finds all the documents, for which there are phrases labelled as &#8220;president&#8221; AND (beacause of must operator) &#8220;prime_minister&#8221;, meaning that it finds all articles which mention both heads of a state.</p>
+<p>Annotation data is on top of regular features and gives semantical meaning to parts of the feature (words, phrases, sentences, paragraphs). For example, if in our dataset we have articles about annual presidential speeches, we might want to annotate occurrences of “Vladimir Putin”, “Donald Trump” or “Barack Obama” with the keyword “president”, so that we could later on query the documents, which talk about presidents or presidential speeches, rather than individually list all the presidents that have ever been or will be in the query. Annotation is done via information extraction - either using TEXTA Grammar Miner or external tools.</p>
+<p>Simple annotation’s constraint class is <strong>fact</strong>. The following constraint finds all the documents, for which there are phrases labelled as “president” AND (beacause of must operator) “prime_minister”, meaning that it finds all articles which mention both heads of a state.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span><span class="s2">&quot;content&quot;</span><span class="p">,</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;must&quot;</span><span class="p">,</span><span class="s2">&quot;strings&quot;</span><span class="p">:[</span><span class="s2">&quot;president&quot;</span><span class="p">,</span> <span class="s2">&quot;prime_minister&quot;</span><span class="p">],</span> <span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;fact&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="advanced-annotational">
 <h4>Advanced annotational<a class="headerlink" href="#advanced-annotational" title="Permalink to this headline">¶</a></h4>
-<p>&#8220;Advanced&#8221; annotation queries include the value of the annotation. If simple annotation was only concerned about the fact, whether an article contained a reference to an arbitrary president or prime minister, then advanced annotation allows to query articles, which are about specific presidents. For example about president Donald Trump. The value also helps to differentiate between articles in which Donald Trump was in his presidential role, and articles, in which he wasn&#8217;t.</p>
-<p>Advanced annotation&#8217;s constraint class is <strong>fact_val</strong>. The following constraint finds all the documents, in which Trump isn&#8217;t meddling with Russian interests.</p>
+<p>“Advanced” annotation queries include the value of the annotation. If simple annotation was only concerned about the fact, whether an article contained a reference to an arbitrary president or prime minister, then advanced annotation allows to query articles, which are about specific presidents. For example about president Donald Trump. The value also helps to differentiate between articles in which Donald Trump was in his presidential role, and articles, in which he wasn’t.</p>
+<p>Advanced annotation’s constraint class is <strong>fact_val</strong>. The following constraint finds all the documents, in which Trump isn’t meddling with Russian interests.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;field&quot;</span><span class="p">:</span><span class="s2">&quot;content&quot;</span><span class="p">,</span>
     <span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;must&quot;</span><span class="p">,</span>
@@ -216,20 +214,20 @@
 </div>
 <p><strong>type:</strong> type of the fact value.</p>
 <blockquote>
-<div><p><strong>&#8220;str&#8221;</strong> - textual fact values.</p>
-<p><strong>&#8220;num&#8221;</strong> - numerical fact values (numbers, dates, etc).</p>
+<div><p><strong>“str”</strong> - textual fact values.</p>
+<p><strong>“num”</strong> - numerical fact values (numbers, dates, etc).</p>
 </div></blockquote>
 <p><strong>constraints:</strong> list of fact value constraints, which must match a document, in order for it to be returned.</p>
 <blockquote>
-<div><p>Fact value constraints have always <strong>&#8220;name&#8221;</strong>, <strong>&#8220;operator&#8221;</strong>, and <strong>&#8220;value&#8221;</strong> attributes.</p>
-<p>&#8220;Operator&#8221; and &#8220;value&#8221; attribute values depend on &#8220;type&#8221; value.</p>
+<div><p>Fact value constraints have always <strong>“name”</strong>, <strong>“operator”</strong>, and <strong>“value”</strong> attributes.</p>
+<p>“Operator” and “value” attribute values depend on “type” value.</p>
 <dl class="docutils">
-<dt>If &#8220;type&#8221; is &#8220;str&#8221;:</dt>
-<dd>&#8220;operator&#8221; can obtain values &#8220;=&#8221; and &#8221;!=&#8221;;
-&#8220;value&#8221; is string and in quotes.</dd>
-<dt>If &#8220;type&#8221; is &#8220;num&#8221;:</dt>
-<dd>&#8220;operator&#8221; can obtain values &#8220;=&#8221;, &#8221;!=&#8221;, &#8220;&gt;&#8221;, &#8220;&gt;=&#8221;, &#8220;&lt;&#8221;, &#8220;&lt;=&#8221;;
-&#8220;value&#8221; is numeric for numbers, string in correct date format for dates.</dd>
+<dt>If “type” is “str”:</dt>
+<dd>“operator” can obtain values “=” and “!=”;
+“value” is string and in quotes.</dd>
+<dt>If “type” is “num”:</dt>
+<dd>“operator” can obtain values “=”, “!=”, “&gt;”, “&gt;=”, “&lt;”, “&lt;=”;
+“value” is numeric for numbers, string in correct date format for dates.</dd>
 </dl>
 </div></blockquote>
 </div>
@@ -240,7 +238,7 @@
 <p>Aggregation allows to calculate document distributions by grouping over specific feature values.</p>
 <div class="topic">
 <p class="topic-title first">Example scenario</p>
-<p>Let&#8217;s presume we have stored a variety of news articles with the following features: title, content, publish date, and author.</p>
+<p>Let’s presume we have stored a variety of news articles with the following features: title, content, publish date, and author.</p>
 <p>With aggregation we can find out, how many articles were written each month, by aggregating over publish date with monthly interval. We can also find the top publishing authors each year or the most relevant keywords from articles mentioning prime minister candidate during an election period.</p>
 </div>
 <p>If we are interested in finding out, how many articles has each author writtern, we can query it as follows:</p>
@@ -251,7 +249,7 @@
 <span class="s1">}&#39;</span>
 </pre></div>
 </div>
-<p>As we can see, aggregation query depends on two attributes - &#8220;searches&#8221; and &#8220;aggregation&#8221;. &#8220;Searches&#8221; is a list of search definitions which we have already met in the previous section. Search defines the subset of the original data on which we run the aggregation. This time it&#8217;s used internally: we are not receiving and documents.</p>
+<p>As we can see, aggregation query depends on two attributes - “searches” and “aggregation”. “Searches” is a list of search definitions which we have already met in the previous section. Search defines the subset of the original data on which we run the aggregation. This time it’s used internally: we are not receiving and documents.</p>
 <p>The possiblity to aggregate against several data subsets allows us to find interesting comparable statistics. For example, we can get the most eager authors on cars and dogs with the following query:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/aggregate&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
@@ -288,27 +286,27 @@
 <h3>Aggregation types<a class="headerlink" href="#aggregation-types" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id2">
 <h4>Textual<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<p>The most common aggregation is over the existing text body and its type is &#8220;string&#8221;.</p>
-<p>{&#8220;field&#8221;: &#8220;content&#8221;, &#8220;type&#8221;: &#8220;string&#8221;, &#8220;sort_by&#8221;: &#8220;significant_terms&#8221;}</p>
+<p>The most common aggregation is over the existing text body and its type is “string”.</p>
+<p>{“field”: “content”, “type”: “string”, “sort_by”: “significant_terms”}</p>
 <p><strong>sort_by:</strong> defines, how the results will be scored and ordered.</p>
 <blockquote>
-<div><p><strong>&#8220;term&#8221;</strong> - order by raw document count. If &#8220;car&#8221; is in more documents than &#8220;dog&#8221;, then &#8220;car&#8221; takes precedence over &#8220;dog&#8221;.</p>
-<p><strong>&#8220;significant_term&#8221;</strong> - order by the level of interest. Term is more interesting if it is more common in the observed data subset than in all the documents.</p>
+<div><p><strong>“term”</strong> - order by raw document count. If “car” is in more documents than “dog”, then “car” takes precedence over “dog”.</p>
+<p><strong>“significant_term”</strong> - order by the level of interest. Term is more interesting if it is more common in the observed data subset than in all the documents.</p>
 </div></blockquote>
 </div>
 <div class="section" id="id3">
 <h4>Temporal<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<p>Temporal aggregation has type &#8220;daterange&#8221;.</p>
-<p>{&#8220;field&#8221;:&#8221;published&#8221;,&#8221;type&#8221;:&#8221;daterange&#8221;,&#8221;start&#8221;:&#8221;2010-02-02&#8221;,&#8221;end&#8221;:&#8221;2017-09-01&#8221;,
-&#8220;frequency&#8221;:&#8221;raw_frequency&#8221;,&#8221;interval&#8221;:&#8221;year&#8221;}</p>
+<p>Temporal aggregation has type “daterange”.</p>
+<p>{“field”:”published”,”type”:”daterange”,”start”:”2010-02-02”,”end”:”2017-09-01”,
+“frequency”:”raw_frequency”,”interval”:”year”}</p>
 <p><strong>frequency:</strong></p>
-<p><strong>interval:</strong> length of the time periods into which the time from &#8220;start&#8221; to &#8220;end&#8221; is divided.</p>
+<p><strong>interval:</strong> length of the time periods into which the time from “start” to “end” is divided.</p>
 <blockquote>
-<div><strong>&#8220;day&#8221;</strong>, <strong>&#8220;week&#8221;</strong>, <strong>&#8220;month&#8221;</strong>, <strong>&#8220;quarter&#8221;</strong>, <strong>&#8220;year&#8221;</strong></div></blockquote>
+<div><strong>“day”</strong>, <strong>“week”</strong>, <strong>“month”</strong>, <strong>“quarter”</strong>, <strong>“year”</strong></div></blockquote>
 </div>
 <div class="section" id="id4">
 <h4>Simple annotational<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<p>Simple annotation aggregation has type &#8220;fact&#8221;.</p>
+<p>Simple annotation aggregation has type “fact”.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;fact&quot;</span><span class="p">,</span> <span class="s2">&quot;sort_by&quot;</span><span class="p">:</span> <span class="s2">&quot;terms&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -316,11 +314,11 @@
 <div class="section" id="id5">
 <h4>Advanced annotational<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p>Advanced annotation aggregation has a type, which depends on the data type of the values.</p>
-<p>If we are interested in textual annotations, we use the type &#8220;fact_str&#8221;.</p>
+<p>If we are interested in textual annotations, we use the type “fact_str”.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;fact_str&quot;</span><span class="p">,</span> <span class="s2">&quot;sort_by&quot;</span><span class="p">:</span> <span class="s2">&quot;terms&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>If we are interested in numeric/temporal annotations, we use the type &#8220;fact_num&#8221;.</p>
+<p>If we are interested in numeric/temporal annotations, we use the type “fact_num”.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;fact_num&quot;</span><span class="p">,</span> <span class="s2">&quot;sort_by&quot;</span><span class="p">:</span> <span class="s2">&quot;terms&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -357,7 +355,72 @@
 <span class="s1">}&#39;</span>
 </pre></div>
 </div>
-<p>The response is however rather complicated and often it makes more sense to use TEXTA graphical user interface&#8217;s Searcher tool to explore the dataset.</p>
+<p>The response is however rather complicated and often it makes more sense to use TEXTA graphical user interface’s Searcher tool to explore the dataset.</p>
+</div>
+<div class="section" id="importer-api">
+<h2>Importer API<a class="headerlink" href="#importer-api" title="Permalink to this headline">¶</a></h2>
+<p>To insert data into Elasticsearch, a convenient API is provided for both single and bulk insertion at the <strong>/import/document_insertion</strong> endpoint.
+Each call to the Importer <strong>MUST</strong> have the following fields:</p>
+<blockquote>
+<div><p><strong>auth_token</strong> - Authentication token provided from the Authentication API</p>
+<p><strong>index</strong> - Name of the target index you want to push the data to. In case one doesn’t exist, it will be created.</p>
+<p><strong>doc_type</strong> - Target “table” you want to push your data into.</p>
+<p><strong>data</strong> - List of JSON object or a single object. In case of a list, the Bulk API will be used for insertion.</p>
+</div></blockquote>
+<p>Optionally you can also specify a <strong>mapping</strong> field, in case the index of the specified name does not exist and is created,
+a check for the <strong>mapping</strong> field is made, and if it exists it is inserted into the target doc_type.</p>
+<p>In case an invalid authentication token is provided or a mandatory field is missing a corresponding error message will be returned
+to the end user.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">    &quot;index&quot;: &quot;texta&quot;,</span>
+<span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
+<span class="s1">    &quot;data&quot;: {&quot;court_case_6543&quot;: &quot;guilty&quot;}</span>
+<span class="s1">}&#39;</span>
+
+<span class="c1"># {&quot;message&quot;: &quot;Item(s) successfully saved.&quot;}</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">    &quot;index&quot;: &quot;texta&quot;,</span>
+<span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
+<span class="s1">    &quot;data&quot;: [{&quot;court_case_6543&quot;: &quot;guilty&quot;}, {&quot;court_case_9614&quot;: &quot;fined&quot;}, {&quot;court_case_7896&quot;: &quot;innocent&quot;}]</span>
+<span class="s1">}&#39;</span>
+
+<span class="c1"># {&quot;message&quot;: &quot;Item(s) successfully saved.&quot;}</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f8&quot;,</span>
+<span class="s1">    &quot;index&quot;: &quot;texta&quot;,</span>
+<span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
+<span class="s1">    &quot;data&quot;: {&quot;court_case_6543&quot;: &quot;guilty&quot;}</span>
+<span class="s1">}&#39;</span>
+
+<span class="c1"># {&quot;message&quot;: &quot;Authentication failed - invalid auth token.&quot;}</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">    &quot;index&quot;: &quot;&quot;,</span>
+<span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
+<span class="s1">    &quot;data&quot;: [{&quot;court_case_6543&quot;: &quot;guilty&quot;}, {&quot;court_case_9614&quot;: &quot;fined&quot;}, {&quot;court_case_7896&quot;: &quot;innocent&quot;}]</span>
+<span class="s1">}&#39;</span>
+
+<span class="c1"># {&quot;message&quot;: &quot;Mandatory field &#39;index&#39; can not be empty.&quot;}</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+
+<span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
+<span class="s1">    &quot;data&quot;: [{&quot;court_case_6543&quot;: &quot;guilty&quot;}, {&quot;court_case_9614&quot;: &quot;fined&quot;}, {&quot;court_case_7896&quot;: &quot;innocent&quot;}]</span>
+<span class="s1">}&#39;</span>
+
+<span class="c1"># {&quot;message&quot;: &quot;Mandatory field &#39;index&#39; is missing.&quot;}</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -396,6 +459,7 @@
 </li>
 <li><a class="reference internal" href="#list-datasets">List datasets</a></li>
 <li><a class="reference internal" href="#get-dataset-field-details">Get dataset field details</a></li>
+<li><a class="reference internal" href="#importer-api">Importer API</a></li>
 </ul>
 </li>
 </ul>
@@ -404,6 +468,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="elastic_schema.html" title="previous chapter">Elasticsearch data layout</a></li>
+      <li>Next: <a href="docker.html" title="next chapter">Docker</a></li>
   </ul></li>
 </ul>
 </div>
@@ -432,7 +497,7 @@
       &copy;2017 TEXTA.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

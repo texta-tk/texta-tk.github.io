@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Installation &#8212; TEXTA Toolkit 0.1 documentation</title>
-    
     <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -35,7 +32,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -62,7 +59,7 @@
 </div>
 <div class="section" id="resolving-system-wide-dependencies">
 <h2>Resolving system-wide dependencies<a class="headerlink" href="#resolving-system-wide-dependencies" title="Permalink to this headline">¶</a></h2>
-<p>First lets update our aptitude&#8217;s package list to get the most up-to-date software versions.</p>
+<p>First lets update our aptitude’s package list to get the most up-to-date software versions.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get update
 </pre></div>
 </div>
@@ -104,18 +101,18 @@ use <em>pip</em> or one of its alternatives.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">It&#8217;s a good practice to give environments descriptive names and to create an environment for each separate application. In our case we
-created an environement called &#8220;texta&#8221;.</p>
+<p class="last">It’s a good practice to give environments descriptive names and to create an environment for each separate application. In our case we
+created an environement called “texta”.</p>
 </div>
-<p>After we have created the environment, we have to activate it. Activating an environment changes the current terminal session&#8217;s paths to switch
-the original Python&#8217;s executables to that of the isolated environment&#8217;s.</p>
+<p>After we have created the environment, we have to activate it. Activating an environment changes the current terminal session’s paths to switch
+the original Python’s executables to that of the isolated environment’s.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">source</span> activate texta
 </pre></div>
 </div>
 </div>
 <div class="section" id="installing-python-dependencies">
 <span id="id3"></span><h3>Installing Python dependencies<a class="headerlink" href="#installing-python-dependencies" title="Permalink to this headline">¶</a></h3>
-<p>The following code block lists all the Python libraries that TEXTA depends on along with Python&#8217;s library downloading tool <em>pip</em>&#8216;s commands.</p>
+<p>The following code block lists all the Python libraries that TEXTA depends on along with Python’s library downloading tool <em>pip</em>’s commands.</p>
 <p>3rd party Python libraries can be installed with package management systems such as <em>Anaconda</em> or <em>pip</em>.</p>
 <p>Installing with Anaconda:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">(</span>your_activated_conda_env<span class="o">)</span> texta_root_dir$ chmod u+x conda_install.sh
@@ -138,7 +135,7 @@ the original Python&#8217;s executables to that of the isolated environment&#821
 meaning that not only can we query by specific columns, but we can also query documents using specific words or phrases in a column.</p>
 <p>Elasticsearch behaves like a RESTful server, which accepts queries with JSON data. The server can either run locally or remotely.
 Small datasets can be maintained on personal computer, while gigabytes of data should preferably be kept on a remote server. It is vital to
-configure Elasticsearch&#8217;s address if remote approach is used.</p>
+configure Elasticsearch’s address if remote approach is used.</p>
 <p>In Elasticsearch terminology a database is called an index and table is called either mapping or type.</p>
 <p>Elasticsearch can be downloaded from <a class="reference external" href="https://www.elastic.co/products/elasticsearch">here</a>.</p>
 </div>
@@ -236,7 +233,7 @@ texta_root_dir$ python manage.py runserver <span class="m">0</span>.0.0.0:8080
       &copy;2017 TEXTA.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

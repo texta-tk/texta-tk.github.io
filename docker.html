@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Docker &#8212; TEXTA Toolkit 0.1 documentation</title>
-    
     <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -34,7 +31,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -62,10 +59,10 @@ sudo apt-get install docker docker-compose -y
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>Windows has currently three ways to run Docker. The easiest is to create a Ubuntu virtual machine and follow Linux instructions.
 For example using <a class="reference external" href="https://www.virtualbox.org/">VirtualBox</a>.
-Should this prove to be too crude, there are also 2 other ways to run it, using Docker&#8217;s native support for the operating system.</p>
+Should this prove to be too crude, there are also 2 other ways to run it, using Docker’s native support for the operating system.</p>
 <p><a class="reference external" href="https://docs.docker.com/toolbox/toolbox_install_windows/">Docker Toolbox</a> is a legacy solution to run Docker on Windows and it relies on VirtualBox.
-Despite being legacy, it&#8217;s still the way to go for many systems, as the recommended alternative needs Windows 10 Professional, Enterprise, or Windows 2016 server.</p>
-<p>The recommended, yet somewhat ambitious, alternative is the <a class="reference external" href="https://docs.docker.com/docker-for-windows/">Docker for Windows</a>, which relies on Microsoft&#8217;s new
+Despite being legacy, it’s still the way to go for many systems, as the recommended alternative needs Windows 10 Professional, Enterprise, or Windows 2016 server.</p>
+<p>The recommended, yet somewhat ambitious, alternative is the <a class="reference external" href="https://docs.docker.com/docker-for-windows/">Docker for Windows</a>, which relies on Microsoft’s new
 native virtualization solution <a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-technology-overview">Hyper-V</a>
 and is allegedly a more efficient way to run virtual machines on Windows. Note, however, that
 while Hyper-V is enabled in system settings, other virtual machines will fail.</p>
@@ -78,9 +75,9 @@ while Hyper-V is enabled in system settings, other virtual machines will fail.</
 <div class="section" id="running-texta-toolkit">
 <h2>Running TEXTA Toolkit<a class="headerlink" href="#running-texta-toolkit" title="Permalink to this headline">¶</a></h2>
 <p>To run TEXTA Toolkit, we must first download the TEXTA Docker images from <a class="reference external" href="http://dockerhub.com/">DockerHub</a>.</p>
-<p>In order to do that, navigate to your local TEXTA repository&#8217;s root directory and go to &#8220;docker&#8221; child directory.
-If you haven&#8217;t cloned the <a class="reference external" href="https://github.com/texta-tk/texta">TEXTA code</a> and don&#8217;t want to, downloading the &#8220;docker&#8221; directory will suffice as well.</p>
-<p>Once inside the &#8220;docker&#8221; directory, run</p>
+<p>In order to do that, navigate to your local TEXTA repository’s root directory and go to “docker” child directory.
+If you haven’t cloned the <a class="reference external" href="https://github.com/texta-tk/texta">TEXTA code</a> and don’t want to, downloading the “docker” directory will suffice as well.</p>
+<p>Once inside the “docker” directory, run</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo docker-compose pull
 </pre></div>
 </div>
@@ -158,7 +155,7 @@ Note that port 8000 has to be available.</p>
       &copy;2017 TEXTA.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

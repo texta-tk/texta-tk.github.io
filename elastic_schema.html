@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Elasticsearch data layout &#8212; TEXTA Toolkit 0.1 documentation</title>
-    
     <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -35,7 +32,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -48,7 +45,7 @@
 <p>In order to get the most from all the tools, the recommended specification should be followed when importing data to Elasticsearch.</p>
 <div class="section" id="example-layout">
 <h2>Example layout<a class="headerlink" href="#example-layout" title="Permalink to this headline">¶</a></h2>
-<p>The following code-block shows how the data looks like in the example &#8220;journal&#8221; dataset.</p>
+<p>The following code-block shows how the data looks like in the example “journal” dataset.</p>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;journal&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;articles&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -78,7 +75,7 @@
 <p>There are several important aspects when it comes to data.</p>
 <div class="section" id="facts">
 <h3>Facts<a class="headerlink" href="#facts" title="Permalink to this headline">¶</a></h3>
-<p>First of all is the &#8220;texta_facts&#8221; nested field with &#8220;facts&#8221; in it. <strong>Facts</strong> denote annotations
+<p>First of all is the “texta_facts” nested field with “facts” in it. <strong>Facts</strong> denote annotations
 with which we provide some extra knowledge to the words or phrases. Annotations in TEXTA context are used to represent information extraction
 output. Maybe we have built a grammar which describes how to extract monetary values along with units. In this case we can detect the matched
 text segments and attach corresponding labels which we can later either browse or enhance our search engine with.</p>
@@ -92,12 +89,12 @@ text segments and attach corresponding labels which we can later either browse o
 </div>
 <p>which we can interpret as the document has a nested feature <em>content.text</em>, the feature has a
 substring in character position range [12,14] (last index is excluded) and the content of the substring is money-related.
-Therefore, the &#8220;fact&#8221; can be thought of as a category for the additional knowledge.</p>
-<p>If the corresponding document&#8217;s <em>content.text</em> was &#8220;I inherited $10 from my poor grandfather.&#8221;, it would highlight &#8220;<em>$10</em>&#8221;.</p>
-<p>TEXTA can also deal with <strong>fact values</strong>. Sometimes we don&#8217;t want to just highlight or query documents which are money-related
-(<em>texta_facts</em> contain at least one fact of which <em>fact</em> attribute&#8217;s value is &#8220;money&#8221;). We can also store knowledge about the
+Therefore, the “fact” can be thought of as a category for the additional knowledge.</p>
+<p>If the corresponding document’s <em>content.text</em> was “I inherited $10 from my poor grandfather.”, it would highlight “<em>$10</em>”.</p>
+<p>TEXTA can also deal with <strong>fact values</strong>. Sometimes we don’t want to just highlight or query documents which are money-related
+(<em>texta_facts</em> contain at least one fact of which <em>fact</em> attribute’s value is “money”). We can also store knowledge about the
 value for the corresponding fact. In our previous example, if we also wanted to store the currency, so that we could search for documents
-which contain United States&#8217; currency, we should have the fact structure as follows:</p>
+which contain United States’ currency, we should have the fact structure as follows:</p>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;content.text&quot;</span><span class="p">,</span>
     <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;money&quot;</span><span class="p">,</span>
@@ -106,8 +103,8 @@ which contain United States&#8217; currency, we should have the fact structure a
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Notice the additional &#8220;str_val&#8221;, which stores some specific textual value for the fact. Now we can search for documents which contain
-not just &#8220;money&#8221; related topics, but also those, where there is a specific monetary unit.</p>
+<p>Notice the additional “str_val”, which stores some specific textual value for the fact. Now we can search for documents which contain
+not just “money” related topics, but also those, where there is a specific monetary unit.</p>
 <p>Currently, only textual values are fully supported. Support for numerical values is in development, but the schema for numerical facts
 is as follows:</p>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -118,11 +115,11 @@ is as follows:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>We don&#8217;t have any facts in the initial dataset.</p>
+<p>We don’t have any facts in the initial dataset.</p>
 </div>
 <div class="section" id="data-mapping">
 <h3>Data mapping<a class="headerlink" href="#data-mapping" title="Permalink to this headline">¶</a></h3>
-<p>Each index should have an arbitrarily named mapping which contains the actual data. In example data it is called &#8220;articles&#8221; but it could be
+<p>Each index should have an arbitrarily named mapping which contains the actual data. In example data it is called “articles” but it could be
 anything as long as it explains the underlying data reasonably well. Dataset Importer tool creates indices and mappings with the same name.</p>
 </div>
 <div class="section" id="feature-structure">
@@ -134,9 +131,9 @@ anything as long as it explains the underlying data reasonably well. Dataset Imp
 </pre></div>
 </div>
 <p>In fact, string is the preferred data type for text blobs, dates and ids.</p>
-<p>Sometimes we are, however, interested in storing some metadata or &#8220;layers&#8221; about our feature. In our context it is mostly linguistic data about our
+<p>Sometimes we are, however, interested in storing some metadata or “layers” about our feature. In our context it is mostly linguistic data about our
 text blob which allows us to make more elaborate queries and write more detailed grammar definitions.</p>
-<p>Suppose that we want to find all documents which talk about &#8220;bribing&#8221;. Due to inflection, we can&#8217;t come up with (or atleast it&#8217;s not convenient)
+<p>Suppose that we want to find all documents which talk about “bribing”. Due to inflection, we can’t come up with (or atleast it’s not convenient)
 to consider all the possible sufficies or word formations we should potentially keep our eyes out for. What we can do is store a lemmatized
 layer along with the raw text.</p>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -145,7 +142,7 @@ layer along with the raw text.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Now, whenever we search some of its words in canonical form or &#8220;lemma&#8221;, we can get the original documents that covered the topic.</p>
+<p>Now, whenever we search some of its words in canonical form or “lemma”, we can get the original documents that covered the topic.</p>
 <p>Another scenario is when we want to make more elaborate grammar definitions that expect part of the match to occur on one layer and part on
 another layer of the same feature. For example, we may be interested in documents which are about the game GO. Since a very common verb has
 the same spelling, we would like to limit our matches, so that only documents in which GO is a noun are returned. For that reason we need
@@ -157,7 +154,7 @@ lemma and part-of-speech layers.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Now we can query documents which contain lemma &#8220;go&#8221; and have noun <em>N</em> at the corresponding token index.</p>
+<p>Now we can query documents which contain lemma “go” and have noun <em>N</em> at the corresponding token index.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">In order for interlayer queries to work, the layers must have the same number of tokens.</p>
@@ -219,7 +216,7 @@ lemma and part-of-speech layers.</p>
       &copy;2017 TEXTA.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

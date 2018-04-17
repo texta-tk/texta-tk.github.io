@@ -417,3 +417,81 @@ One can get detailed structure of the dataset with ID 4 with the following query
     }'
     
 The response is however rather complicated and often it makes more sense to use TEXTA graphical user interface's Searcher tool to explore the dataset.
+
+
+Importer API
+------------
+
+To insert data into Elasticsearch, a convenient API is provided for both single and bulk insertion at the **/import/document_insertion** endpoint.
+Each call to the Importer **MUST** have the following fields:
+    
+    **auth_token** - Authentication token provided from the Authentication API
+    
+    **index** - Name of the target index you want to push the data to. In case one doesn't exist, it will be created.
+    
+    **doc_type** - Target "table" you want to push your data into.
+    
+    **data** - List of JSON object or a single object. In case of a list, the Bulk API will be used for insertion.
+
+Optionally you can also specify a **mapping** field, in case the index of the specified name does not exist and is created,
+a check for the **mapping** field is made, and if it exists it is inserted into the target doc_type.
+
+In case an invalid authentication token is provided or a mandatory field is missing a corresponding error message will be returned
+to the end user.
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/import/document_insertion' -d '{ 
+        "auth_token": "9c05321f821f6e",
+        "index": "texta",
+        "doc_type": "texta_facts",
+        "data": {"court_case_6543": "guilty"}
+    }'
+
+    # {"message": "Item(s) successfully saved."}
+
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/import/document_insertion' -d '{ 
+        "auth_token": "9c05321f821f6e",
+        "index": "texta",
+        "doc_type": "texta_facts",
+        "data": [{"court_case_6543": "guilty"}, {"court_case_9614": "fined"}, {"court_case_7896": "innocent"}]
+    }'
+
+    # {"message": "Item(s) successfully saved."}
+
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/import/document_insertion' -d '{ 
+        "auth_token": "9c05321f8",
+        "index": "texta",
+        "doc_type": "texta_facts",
+        "data": {"court_case_6543": "guilty"}
+    }'
+
+    # {"message": "Authentication failed - invalid auth token."}
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/import/document_insertion' -d '{ 
+        "auth_token": "9c05321f821f6e",
+        "index": "",
+        "doc_type": "texta_facts",
+        "data": [{"court_case_6543": "guilty"}, {"court_case_9614": "fined"}, {"court_case_7896": "innocent"}]
+    }'
+
+    # {"message": "Mandatory field 'index' can not be empty."}
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/import/document_insertion' -d '{ 
+        "auth_token": "9c05321f821f6e",
+        
+        "doc_type": "texta_facts",
+        "data": [{"court_case_6543": "guilty"}, {"court_case_9614": "fined"}, {"court_case_7896": "innocent"}]
+    }'
+
+    # {"message": "Mandatory field 'index' is missing."}

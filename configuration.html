@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Configuration &#8212; TEXTA Toolkit 0.1 documentation</title>
-    
     <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -35,7 +32,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -45,8 +42,8 @@
             
   <div class="section" id="configuration">
 <span id="id1"></span><h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
-<p>TEXTA&#8217;s configuration is in <code class="xref download docutils literal"><span class="pre">settings.py</span></code> file, which contains both adjustable and unadjustable options.
-Adjustable options allow to tailor the paths, addresses and backend to one&#8217;s needs, while altering unadjustable options will break the
+<p>TEXTA’s configuration is in <code class="xref download docutils literal"><span class="pre">settings.py</span></code> file, which contains both adjustable and unadjustable options.
+Adjustable options allow to tailor the paths, addresses and backend to one’s needs, while altering unadjustable options will break the
 application. Unadjustable options are mostly related to Django.</p>
 <p>For most part, TEXTA has dual settings. This means that one can switch between development and production configuration,
 while having to change just a single variable <em>SERVER_TYPE</em>.</p>
@@ -61,7 +58,7 @@ while having to change just a single variable <em>SERVER_TYPE</em>.</p>
 </div>
 <p>The most important variables are <em>URL_PREFIX_*</em>. <em>URL_PREFIX_DOMAIN</em> specifies the address of the server hosting TEXTA and
 <em>URL_PREFIX_RESOURCE</em> yields the resource path of TEXTA, if many applications are registered for a single domain.</p>
-<p><em>ROOT_URLCONF</em> is for Django&#8217;s inner workings and should not be changed unless package structure is altered. <em>STATIC*</em> should be changed
+<p><em>ROOT_URLCONF</em> is for Django’s inner workings and should not be changed unless package structure is altered. <em>STATIC*</em> should be changed
 only when running development version locally and for some reason static paths are aletered.</p>
 <p><em>DEBUG</em> determines whether stacktrace and variable values are shown when error occurs while server is generating a response.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="s1">&#39;texta.stacc.ee&#39;</span><span class="p">,</span><span class="s1">&#39;textadev.stacc.ee&#39;</span><span class="p">]</span>
@@ -96,12 +93,12 @@ hashes.</p>
 </pre></div>
 </div>
 <p>or set in the environment variables as <em>TEXTA_ELASTICSEARCH_URL</em>.</p>
-<p>To fully utilize TEXTA&#8217;s text summarization power, the temporal data in Elasticsearch should follow a certain format.</p>
+<p>To fully utilize TEXTA’s text summarization power, the temporal data in Elasticsearch should follow a certain format.</p>
 <p>By default TEXTA assumes</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">date_format</span> <span class="o">=</span> <span class="s1">&#39;yyyy-MM-dd&#39;</span>
 </pre></div>
 </div>
-<p>but it can be changed, if it&#8217;s more convenient.</p>
+<p>but it can be changed, if it’s more convenient.</p>
 <p>If Elastichsearch is protected by authentication</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">es_use_ldap</span> <span class="o">=</span> <span class="bp">False</span>
 </pre></div>
@@ -218,7 +215,7 @@ hashes.</p>
       &copy;2017 TEXTA.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
