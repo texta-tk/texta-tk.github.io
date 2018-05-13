@@ -422,7 +422,8 @@ The response is however rather complicated and often it makes more sense to use 
 Importer API
 ------------
 
-To insert data into Elasticsearch, a convenient API is provided for both single and bulk insertion at the **/import/document_insertion** endpoint.
+To insert data into Elasticsearch, a convenient API is provided for both single and bulk insertion at the **/import_api/document_insertion** 
+endpoint.
 Each call to the Importer **MUST** have the following fields:
     
     **auth_token** - Authentication token provided from the Authentication API
@@ -441,7 +442,7 @@ to the end user.
 
 .. code-block:: bash
 
-    $ curl -XPOST 'http://localhost:8000/import/document_insertion' -d '{ 
+    $ curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{ 
         "auth_token": "9c05321f821f6e",
         "index": "texta",
         "doc_type": "texta_facts",
@@ -453,7 +454,7 @@ to the end user.
 
 .. code-block:: bash
 
-    $ curl -XPOST 'http://localhost:8000/import/document_insertion' -d '{ 
+    $ curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{ 
         "auth_token": "9c05321f821f6e",
         "index": "texta",
         "doc_type": "texta_facts",
@@ -465,7 +466,7 @@ to the end user.
 
 .. code-block:: bash
 
-    $ curl -XPOST 'http://localhost:8000/import/document_insertion' -d '{ 
+    $ curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{ 
         "auth_token": "9c05321f8",
         "index": "texta",
         "doc_type": "texta_facts",
@@ -476,7 +477,7 @@ to the end user.
 
 .. code-block:: bash
 
-    $ curl -XPOST 'http://localhost:8000/import/document_insertion' -d '{ 
+    $ curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{ 
         "auth_token": "9c05321f821f6e",
         "index": "",
         "doc_type": "texta_facts",
@@ -487,7 +488,7 @@ to the end user.
 
 .. code-block:: bash
 
-    $ curl -XPOST 'http://localhost:8000/import/document_insertion' -d '{ 
+    $ curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{ 
         "auth_token": "9c05321f821f6e",
         
         "doc_type": "texta_facts",

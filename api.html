@@ -359,7 +359,8 @@
 </div>
 <div class="section" id="importer-api">
 <h2>Importer API<a class="headerlink" href="#importer-api" title="Permalink to this headline">¶</a></h2>
-<p>To insert data into Elasticsearch, a convenient API is provided for both single and bulk insertion at the <strong>/import/document_insertion</strong> endpoint.
+<p>To insert data into Elasticsearch, a convenient API is provided for both single and bulk insertion at the <strong>/import_api/document_insertion</strong>
+endpoint.
 Each call to the Importer <strong>MUST</strong> have the following fields:</p>
 <blockquote>
 <div><p><strong>auth_token</strong> - Authentication token provided from the Authentication API</p>
@@ -371,7 +372,7 @@ Each call to the Importer <strong>MUST</strong> have the following fields:</p>
 a check for the <strong>mapping</strong> field is made, and if it exists it is inserted into the target doc_type.</p>
 <p>In case an invalid authentication token is provided or a mandatory field is missing a corresponding error message will be returned
 to the end user.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;index&quot;: &quot;texta&quot;,</span>
 <span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
@@ -381,7 +382,7 @@ to the end user.</p>
 <span class="c1"># {&quot;message&quot;: &quot;Item(s) successfully saved.&quot;}</span>
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;index&quot;: &quot;texta&quot;,</span>
 <span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
@@ -391,7 +392,7 @@ to the end user.</p>
 <span class="c1"># {&quot;message&quot;: &quot;Item(s) successfully saved.&quot;}</span>
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f8&quot;,</span>
 <span class="s1">    &quot;index&quot;: &quot;texta&quot;,</span>
 <span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
@@ -401,7 +402,7 @@ to the end user.</p>
 <span class="c1"># {&quot;message&quot;: &quot;Authentication failed - invalid auth token.&quot;}</span>
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;index&quot;: &quot;&quot;,</span>
 <span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
@@ -411,7 +412,7 @@ to the end user.</p>
 <span class="c1"># {&quot;message&quot;: &quot;Mandatory field &#39;index&#39; can not be empty.&quot;}</span>
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 
 <span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
