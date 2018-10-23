@@ -80,7 +80,7 @@ To create a new *Anaconda* environment called *texta* that uses Python 2.7, we i
 
 .. code-block:: bash
 
-    conda create --name texta python=2.7
+    conda create --name texta python=3.5
 
 .. note::
 
