@@ -1,0 +1,240 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Elasticsearch data layout &#8212; TEXTA Toolkit 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Using TEXTA Toolkit" href="workflow.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="elasticsearch-data-layout">
+<span id="elastic-schema"></span><h1>Elasticsearch data layout<a class="headerlink" href="#elasticsearch-data-layout" title="Permalink to this headline">¶</a></h1>
+<p>In order to get the most from all the tools, the recommended specification should be followed when importing data to Elasticsearch.</p>
+<div class="section" id="example-layout">
+<h2>Example layout<a class="headerlink" href="#example-layout" title="Permalink to this headline">¶</a></h2>
+<p>The following code-block shows how the data looks like in the example “journal” dataset.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;journal&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;articles&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;some author&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;some content raw text blob&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;lemmas&quot;</span><span class="p">:</span> <span class="s2">&quot;some content lemmas&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;some date&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;some id&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;issue&quot;</span><span class="p">:</span> <span class="s2">&quot;some issue&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;rubric&quot;</span><span class="p">:</span> <span class="s2">&quot;some rubric&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;some title&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;texta_facts&quot;</span><span class="p">:</span> <span class="p">[</span>
+
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<p>There are several important aspects when it comes to data.</p>
+<div class="section" id="facts">
+<h3>Facts<a class="headerlink" href="#facts" title="Permalink to this headline">¶</a></h3>
+<p>First of all is the “texta_facts” nested field with “facts” in it. <strong>Facts</strong> denote annotations
+with which we provide some extra knowledge to the words or phrases. Annotations in TEXTA context are used to represent information extraction
+output. Maybe we have built a grammar which describes how to extract monetary values along with units. In this case we can detect the matched
+text segments and attach corresponding labels which we can later either browse or enhance our search engine with.</p>
+<p>Each <strong>simple</strong> fact has the following structure:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;content.text&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;money&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[12, 15]]&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>which we can interpret as the document has a nested feature <em>content.text</em>, the feature has a
+substring in character position range [12,14] (last index is excluded) and the content of the substring is money-related.
+Therefore, the “fact” can be thought of as a category for the additional knowledge.</p>
+<p>If the corresponding document’s <em>content.text</em> was “I inherited $10 from my poor grandfather.”, it would highlight “<em>$10</em>”.</p>
+<p>TEXTA can also deal with <strong>fact values</strong>. Sometimes we don’t want to just highlight or query documents which are money-related
+(<em>texta_facts</em> contain at least one fact of which <em>fact</em> attribute’s value is “money”). We can also store knowledge about the
+value for the corresponding fact. In our previous example, if we also wanted to store the currency, so that we could search for documents
+which contain United States’ currency, we should have the fact structure as follows:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;content.text&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;money&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[12, 15]]&quot;</span>
+    <span class="s2">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;usd&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Notice the additional “str_val”, which stores some specific textual value for the fact. Now we can search for documents which contain
+not just “money” related topics, but also those, where there is a specific monetary unit.</p>
+<p>Currently, only textual values are fully supported. Support for numerical values is in development, but the schema for numerical facts
+is as follows:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;content.text&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;usd&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[12, 15]]&quot;</span>
+    <span class="s2">&quot;num_val&quot;</span><span class="p">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We don’t have any facts in the initial dataset.</p>
+</div>
+<div class="section" id="data-mapping">
+<h3>Data mapping<a class="headerlink" href="#data-mapping" title="Permalink to this headline">¶</a></h3>
+<p>Each index should have an arbitrarily named mapping which contains the actual data. In example data it is called “articles” but it could be
+anything as long as it explains the underlying data reasonably well. Dataset Importer tool creates indices and mappings with the same name.</p>
+</div>
+<div class="section" id="feature-structure">
+<h3>Feature structure<a class="headerlink" href="#feature-structure" title="Permalink to this headline">¶</a></h3>
+<p>Features can either be plain (single values) or in nested format. The most common data type for plain features is string. For example</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Terry Pratchett&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In fact, string is the preferred data type for text blobs, dates and ids.</p>
+<p>Sometimes we are, however, interested in storing some metadata or “layers” about our feature. In our context it is mostly linguistic data about our
+text blob which allows us to make more elaborate queries and write more detailed grammar definitions.</p>
+<p>Suppose that we want to find all documents which talk about “bribing”. Due to inflection, we can’t come up with (or atleast it’s not convenient)
+to consider all the possible sufficies or word formations we should potentially keep our eyes out for. What we can do is store a lemmatized
+layer along with the raw text.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Many dogs jumped over the rainbows .&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lemmas&quot;</span><span class="p">:</span> <span class="s2">&quot;many dog jump over the rainbow .&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now, whenever we search some of its words in canonical form or “lemma”, we can get the original documents that covered the topic.</p>
+<p>Another scenario is when we want to make more elaborate grammar definitions that expect part of the match to occur on one layer and part on
+another layer of the same feature. For example, we may be interested in documents which are about the game GO. Since a very common verb has
+the same spelling, we would like to limit our matches, so that only documents in which GO is a noun are returned. For that reason we need
+lemma and part-of-speech layers.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Let&#39;s play GO .&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lemmas&quot;</span><span class="p">:</span> <span class="s2">&quot;let&#39;s play go .&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;pos&quot;</span><span class="p">:</span> <span class="s2">&quot;V V N Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now we can query documents which contain lemma “go” and have noun <em>N</em> at the corresponding token index.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order for interlayer queries to work, the layers must have the same number of tokens.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TEXTA Toolkit</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Using TEXTA Toolkit</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Elasticsearch data layout</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-layout">Example layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="workflow.html" title="previous chapter">Using TEXTA Toolkit</a></li>
+      <li>Next: <a href="api.html" title="next chapter">API</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017 TEXTA.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/elastic_schema.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
