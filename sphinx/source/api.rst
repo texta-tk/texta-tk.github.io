@@ -496,3 +496,263 @@ to the end user.
     }'
 
     # {"message": "Mandatory field 'index' is missing."}
+
+
+
+Task Manager
+--------------
+
+Get API version
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    curl -X GET http://localhost:8000/task_manager/api/v1
+
+
+Get List of Tasks
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/task_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+
+Get Task Status
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/task_status 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "task_id": 55
+        }'
+
+
+Start Model Train Task
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/train_model 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "min_freq": 10,
+            "field": "field_value_en",
+            "description": "API-test",
+            "search": "all_docs",
+            "dataset": 1,
+            "num_dimensions": 100,
+            "num_workers": 2
+        }'
+
+
+Start Tagger Train Task
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/train_tagger 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "normalizer_opt": "0",
+            "classifier_opt": "0",
+            "description": "API-A",
+            "field": "field_value_en",
+            "reductor_opt": "0",
+            "dataset": 1,
+            "search": "1",
+            "extractor_opt": "0"
+        }'
+
+
+Apply Preprocessor Task
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/apply 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "text_tagger_taggers": ["6"],
+            "search": "2",
+            "text_tagger_feature_names": ["field_value_en"],
+            "preprocessor_key": "text_tagger",
+            "dataset": 1,
+            "description": "API-T"
+        }'
+
+
+Get List of Valid Datasets
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/dataset_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+
+Get List of Valid Searches
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/search_list 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1
+        }'
+
+
+Get List of Valid Normalizers
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/normalizer_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+
+Get List of Valid Classifiers
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/classifier_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+
+Get List of Valid Reductors
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/reductor_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+
+Get List of Valid Extractors
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/extractor_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+
+Get List of Valid Taggers
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/tagger_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+
+Get Information about a Tagger
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/tagger_info 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "tagger": "66"
+        }'
+
+
+Get Unique Tags in a Dataset
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/tag_list 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1
+        }'
+
+
+Get Unique Fields in a Dataset
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/field_list 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1
+        }'
+
+
+Start Mass Trainer Task
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/mass_train_tagger 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1,
+            "tags": ["A"],
+            "field": "field_value_en",
+            "normalizer_opt": "0",
+            "classifier_opt": "0",
+            "reductor_opt": "0",
+            "extractor_opt": "0"
+        }'
+
+
+Start Mass Tagger Task
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/mass_tagger 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1,
+            "search": 1,
+            "field": "field_value_en",
+            "taggers": ["14"]
+        }'
+
+
+Start Hybrid Tagger Task
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/hybrid_tagger 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1,
+            "search": 1,
+            "max_taggers": 10,
+            "min_count_threshold": 50,
+            "field": "field_value_en"
+        }'
+
+
+Apply Tagger to Non-Indexed Text
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/tag_text 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "text": {"field_value_en": "Maybe I can reply to them by e-mail."},
+            "taggers": [4, 7]
+        }'
+
+
+Get Documents Tags
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/document_tags_list 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1,
+            "document_ids": ["GYtrE2QB28-0KXnd6zcj"]
+        }'
+
+
+Apply Feedback to Document Tag
+^^^^^^^^^^^^^^^^^^^^
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/tag_feedback 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1,
+            "field": "field_value_en",
+            "document_ids": ["GYtrE2QB28-0KXnd6zcj"], 
+            "tag": "A",
+            "value": 1
+        }'
