@@ -534,7 +534,7 @@ Get Task Status
 
 
 Start Model Train Task
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -552,7 +552,7 @@ Start Model Train Task
 
 
 Start Tagger Train Task
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -571,7 +571,9 @@ Start Tagger Train Task
 
 
 Apply Preprocessor Task
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/apply 
     -d '{
@@ -586,7 +588,9 @@ Apply Preprocessor Task
 
 
 Get List of Valid Datasets
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/dataset_list 
     -d '{
@@ -595,7 +599,9 @@ Get List of Valid Datasets
 
 
 Get List of Valid Searches
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/search_list 
     -d '{
@@ -605,7 +611,9 @@ Get List of Valid Searches
 
 
 Get List of Valid Normalizers
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/normalizer_list 
     -d '{
@@ -614,7 +622,9 @@ Get List of Valid Normalizers
 
 
 Get List of Valid Classifiers
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/classifier_list 
     -d '{
@@ -623,7 +633,9 @@ Get List of Valid Classifiers
 
 
 Get List of Valid Reductors
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/reductor_list 
     -d '{
@@ -632,7 +644,9 @@ Get List of Valid Reductors
 
 
 Get List of Valid Extractors
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/extractor_list 
     -d '{
@@ -641,7 +655,9 @@ Get List of Valid Extractors
 
 
 Get List of Valid Taggers
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/tagger_list 
     -d '{
@@ -650,7 +666,9 @@ Get List of Valid Taggers
 
 
 Get Information about a Tagger
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/tagger_info 
     -d '{
@@ -660,7 +678,9 @@ Get Information about a Tagger
 
 
 Get Unique Tags in a Dataset
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/tag_list 
     -d '{
@@ -670,7 +690,9 @@ Get Unique Tags in a Dataset
 
 
 Get Unique Fields in a Dataset
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/field_list 
     -d '{
@@ -680,7 +702,9 @@ Get Unique Fields in a Dataset
 
 
 Start Mass Trainer Task
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/mass_train_tagger 
     -d '{
@@ -696,7 +720,9 @@ Start Mass Trainer Task
 
 
 Start Mass Tagger Task
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/mass_tagger 
     -d '{
@@ -709,7 +735,9 @@ Start Mass Tagger Task
 
 
 Start Hybrid Tagger Task
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/hybrid_tagger 
     -d '{
@@ -723,7 +751,9 @@ Start Hybrid Tagger Task
 
 
 Apply Tagger to Non-Indexed Text
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/tag_text 
     -d '{
@@ -734,7 +764,9 @@ Apply Tagger to Non-Indexed Text
 
 
 Get Documents Tags
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/document_tags_list 
     -d '{
@@ -745,7 +777,9 @@ Get Documents Tags
 
 
 Apply Feedback to Document Tag
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/tag_feedback 
     -d '{
