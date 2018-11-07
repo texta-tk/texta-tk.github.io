@@ -502,8 +502,15 @@ to the end user.
 Task Manager
 --------------
 
+Task manager API exposes model tanning and prediction capabilities in a programmatic way. 
+This section describes the different endpoints available in the version 1.0 of the API.
+
 Get API version
 ^^^^^^^^^^^^^^^^^^^^
+
+Provides information about the API version and can be used as a monitoring checkpoint for online status.
+
+Example:
 
 .. code-block:: bash
 
@@ -512,6 +519,10 @@ Get API version
 
 Get List of Tasks
 ^^^^^^^^^^^^^^^^^^^^
+
+Lists all tasks present in the system.
+
+Example: 
 
 .. code-block:: bash
 
@@ -524,6 +535,10 @@ Get List of Tasks
 Get Task Status
 ^^^^^^^^^^^^^^^^^^^^
 
+Get status for a specific task in the system. Can be used to monitor the progress of a task (via multiple calls to API) or check the final status of a task when it is done.
+
+Example:
+
 .. code-block:: bash
 
     curl -X POST http://localhost:8000/task_manager/api/v1/task_status 
@@ -535,6 +550,10 @@ Get Task Status
 
 Start Model Train Task
 ^^^^^^^^^^^^^^^^^^^^
+
+Creates a task for model training. The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
 
 .. code-block:: bash
 
@@ -553,6 +572,10 @@ Start Model Train Task
 
 Start Tagger Train Task
 ^^^^^^^^^^^^^^^^^^^^
+
+Creates a task for document tagger. The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
 
 .. code-block:: bash
 
@@ -573,6 +596,10 @@ Start Tagger Train Task
 Apply Preprocessor Task
 ^^^^^^^^^^^^^^^^^^^^
 
+Creates a task for document model prediction for a given * preprocessor_key*. The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
+
     curl -X POST http://localhost:8000/task_manager/api/v1/apply 
     -d '{
             "auth_token": "9c05321f821f6e",
@@ -588,6 +615,10 @@ Apply Preprocessor Task
 Get List of Valid Datasets
 ^^^^^^^^^^^^^^^^^^^^
 
+This endpoint can be used to list all valid datasets added to the system via web interface. 
+
+Example:
+
     curl -X POST http://localhost:8000/task_manager/api/v1/dataset_list 
     -d '{
             "auth_token": "9c05321f821f6e"
@@ -596,6 +627,10 @@ Get List of Valid Datasets
 
 Get List of Valid Searches
 ^^^^^^^^^^^^^^^^^^^^
+
+This endpoint can be used to list all valid searches created in the system via search web interface. 
+
+Example:
 
     curl -X POST http://localhost:8000/task_manager/api/v1/search_list 
     -d '{
@@ -607,6 +642,10 @@ Get List of Valid Searches
 Get List of Valid Normalizers
 ^^^^^^^^^^^^^^^^^^^^
 
+This endpoint can be used to list all valid normalizers available in the system.
+
+Example:
+
     curl -X POST http://localhost:8000/task_manager/api/v1/normalizer_list 
     -d '{
             "auth_token": "9c05321f821f6e"
@@ -615,6 +654,10 @@ Get List of Valid Normalizers
 
 Get List of Valid Classifiers
 ^^^^^^^^^^^^^^^^^^^^
+
+This endpoint can be used to list all valid classifiers available in the system.
+
+Example:
 
     curl -X POST http://localhost:8000/task_manager/api/v1/classifier_list 
     -d '{
@@ -634,6 +677,10 @@ Get List of Valid Reductors
 Get List of Valid Extractors
 ^^^^^^^^^^^^^^^^^^^^
 
+This endpoint can be used to list all valid extractors available in the system.
+
+Example:
+
     curl -X POST http://localhost:8000/task_manager/api/v1/extractor_list 
     -d '{
             "auth_token": "9c05321f821f6e"
@@ -643,6 +690,10 @@ Get List of Valid Extractors
 Get List of Valid Taggers
 ^^^^^^^^^^^^^^^^^^^^
 
+This endpoint can be used to list all valid taggers available in the system.
+
+Example:
+
     curl -X POST http://localhost:8000/task_manager/api/v1/tagger_list 
     -d '{
             "auth_token": "9c05321f821f6e"
@@ -651,6 +702,10 @@ Get List of Valid Taggers
 
 Get Information about a Tagger
 ^^^^^^^^^^^^^^^^^^^^
+
+To get more information about a tagger model, use this endpoint with desired tagger identifier.
+
+Example:
 
     curl -X POST http://localhost:8000/task_manager/api/v1/tagger_info 
     -d '{
@@ -662,6 +717,10 @@ Get Information about a Tagger
 Get Unique Tags in a Dataset
 ^^^^^^^^^^^^^^^^^^^^
 
+This endpoint can be used to list all unique tags present in a dataset, independently if a tagger exists or not.
+
+Example:
+
     curl -X POST http://localhost:8000/task_manager/api/v1/tag_list 
     -d '{
             "auth_token": "9c05321f821f6e",
@@ -672,6 +731,10 @@ Get Unique Tags in a Dataset
 Get Unique Fields in a Dataset
 ^^^^^^^^^^^^^^^^^^^^
 
+This endpoint can be used to list all unique fields from a dataset.
+
+Example:
+
     curl -X POST http://localhost:8000/task_manager/api/v1/field_list 
     -d '{
             "auth_token": "9c05321f821f6e",
@@ -681,6 +744,10 @@ Get Unique Fields in a Dataset
 
 Start Mass Trainer Task
 ^^^^^^^^^^^^^^^^^^^^
+
+The creation of mass train task is controlled by this API function. The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
 
     curl -X POST http://localhost:8000/task_manager/api/v1/mass_train_tagger 
     -d '{
@@ -698,6 +765,10 @@ Start Mass Trainer Task
 Start Mass Tagger Task
 ^^^^^^^^^^^^^^^^^^^^
 
+Creates a task for mass tagger. The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
+
     curl -X POST http://localhost:8000/task_manager/api/v1/mass_tagger 
     -d '{
             "auth_token": "9c05321f821f6e",
@@ -710,6 +781,12 @@ Start Mass Tagger Task
 
 Start Hybrid Tagger Task
 ^^^^^^^^^^^^^^^^^^^^
+
+Creates a task for hybrid tagger. 
+A hybrid tagger optimizes the tagger work by tag inspection and relevant tagger selection, in a way that a smaller number of tagger (only the relevant ones) are activated.
+The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
 
     curl -X POST http://localhost:8000/task_manager/api/v1/hybrid_tagger 
     -d '{
@@ -725,6 +802,10 @@ Start Hybrid Tagger Task
 Apply Tagger to Non-Indexed Text
 ^^^^^^^^^^^^^^^^^^^^
 
+This endpoint is used to online tagging (tag non-indexed documents).
+
+Example:
+
     curl -X POST http://localhost:8000/task_manager/api/v1/tag_text 
     -d '{
             "auth_token": "9c05321f821f6e",
@@ -736,6 +817,10 @@ Apply Tagger to Non-Indexed Text
 Get Documents Tags
 ^^^^^^^^^^^^^^^^^^^^
 
+Recovers the list of all tags applied to a document.
+
+Example:
+
     curl -X POST http://localhost:8000/task_manager/api/v1/document_tags_list 
     -d '{
             "auth_token": "9c05321f821f6e",
@@ -746,6 +831,10 @@ Get Documents Tags
 
 Apply Feedback to Document Tag
 ^^^^^^^^^^^^^^^^^^^^
+
+Add tag correction feedback for a given list of document ids. The feedback is later used during model retrain process to improve overall classification quality.
+
+Example:
 
     curl -X POST http://localhost:8000/task_manager/api/v1/tag_feedback 
     -d '{
