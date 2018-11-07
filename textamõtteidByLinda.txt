@@ -1,0 +1,15 @@
+texta's server v kus see jookseb?
+
+mis restricted alt täpsemalt saab teha?Text classifiereid küll mitte.'
+
+Kui importimisel midagi pekki läheb, siis ei saa täpsustavat errorit mis ja kus pekki läks.
+
+import data's on abistavad küsimärgid. Train a model'is ei ole.
+
+Testi mitut processorit korraga kasutamist.
+
+
+In order to use Searcher, at least one dataset must be defined in Administration application. Kas saan ka mitut kasutada?
+
+Searcheri juures jäin pidama.
+174

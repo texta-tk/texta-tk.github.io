@@ -4,13 +4,12 @@ Using TEXTA Toolkit
 First steps
 -----------
 
-
 The login screen
 ++++++++++++++++
 
 After starting up TEXTA, as described in the :ref:`installation step <running-texta>`, the next intuitive thing is to start using it.
 Since it is a web application, we have to navigate to the corresponding address in our browser
-(e.g. `http://localhost:8000/ <http://localhost:8000/>`_ if running locally). We are welcomed by a login page as depicted in Figure 1.
+(e.g. `http://localhost:8000/ <http://localhost:8000/>`_ if running locally or `https://live.texta.ee/ <https://live.texta.ee/>`_ if running on Texta's server). We are welcomed by a login page as depicted in Figure 1.
 
 .. _figure-1:
 
@@ -19,9 +18,9 @@ Since it is a web application, we have to navigate to the corresponding address 
     Figure 1. *Welcome screen*
     
     1. Login area
-    2. Create user
+    2. Registration
 
-Login page allows to login, as well as create a user. 
+Login page allows to login, as well as to register. 
 
 .. note::
 
@@ -33,7 +32,7 @@ After the login
 ++++++++++++++++
 
 Once we have logged in with our superuser, we reach the home page, which looks much like the page before,
-with the exception of a list of tools and some global settings.
+with the exception of a list of tools and some global settings in the upper panel. On the home page you can change your password.
 
 .. _figure-2:
 
@@ -87,7 +86,7 @@ we want to import data from PDF and TXT and that they are in a ZIP archive.
 
     Figure: Selecting formats which we want to import to TEXTA Toolkit from our data source
 
-.. note:: **Simple documents** store the content of the file to the field named "text". Simple document *a.ext* can also be accompanied
+.. note:: **Simple documents** store the content of the file to the field named "text". Simple document *a.txt* can also be accompanied
           in an archive by *a.meta.json* JSON file, which has other features, such as author, timestamp, or topic. All the
           JSON file's keys and values end up in the final dataset as columns and values.
 
@@ -127,13 +126,19 @@ Specifying preprocessors
 
 Finally, we can optionally specify the preprocessors we want to apply. Each preprocessor enhances the final dataset (data table) with
 additional features (columns). To apply a preprocessor to the import job, select the desired preprocessor and fill in
-the fields it requires. For example, if we want to lemmatize our documents and detect the language, we can use TEXTA's
-Multilingual Processor.
+the fields it requires. 
 
 .. figure:: images/dataset_importer/05_specifying_preprocessors.png
 
     Figure: Specifying preprocessors
 
+Date conversion preprocessor converts date field values to correct Texta date format. Texta predicts the current format of the date based on the language. If we have a date field, we add the field to get data from and choose the language in which the data format is written. 
+
+Text Tagger preprocessor tags documents with Texta Text Taggers previously trained on other documents. If we already have a :ref:`tagger trained <classificationmanager>` we can choose to tag the text with it while importing. Don't forget to add the field to get data from. 
+
+Multilingual preprocessor identifies the language of the text and extracts the facts (for example, addresses and the names of organisations, personas and locations) with what we can later work. So far it supports Estonian, Russian and English. If we choose the preprocessor we add the field to get data from.
+
+All those preprocessors can be applied :ref:`after importing <applyPreprocessor>` as well. 
 
 Submitting the import job
 *************************
@@ -152,23 +157,22 @@ import jobs.
 
     Figure: Tracking current and past import jobs
 
-We can also remove an import job entry or see further details by clicking on the eye icon.
+We can also remove an import job entry by clicking on the X in the Remove column or see further details by clicking on the eye icon in the View Details column.
 
 .. figure:: images/dataset_importer/07_import_job_details.png
 
     Figure: Specific import job's details
-
-The parameters JSON content is the internal representation of the job and can mostly be used for debugging.
 
 
 Administration: Manage Users and Datasets
 -----------------------------------------
 
 The biggest bosses in TEXTA Toolkit are the superusers, whose privileges include:
-	1. Managing Users and their access rights (in Administration)
-	2. Managing datasets (in Administration)
-	3. Training language models (in Model Manager)
-	4. Training and applying text classifiers (in Classification Manager)
+	1. Managing Users and their access rights (Access & Dataset Management in Administration under Restricted)
+	2. Managing and importing datasets (Access & Dataset Management in Administration and dataset Importer under Restricted)
+	3. Training language models (Train Language Model in Task Manager under Restricted)
+	4. Training and applying text classifiers (Train Text Tagger in Task Manager under Restricted)
+	5. Apply preprocessors (Apply preprocessor in Task Manager under Restricted)
 
 Naturally, there can be more than one superuser.
 New superusers can be created by either by promoting existing user to superusers in Administration or by using the command described in 
@@ -184,7 +188,7 @@ Users and their access to datasets can be configured in the "User Access Managem
 
     Figure 3. *Panel in Administration for managing users*
 
-Each new user will be created either as activated or deactivated, in which case a superuser has to manually activate each user by clicking "activate".
+Each new user will be created either as activated or deactivated, in which case a superuser has to manually activate each user by clicking "activate". Users can be given superuser status by clicking on the arrow next to 'false' in the Superuser column. 
 By default, new users will be created as deactivated, but this can be changed in settings.py by:
 
 .. code-block:: python
@@ -219,30 +223,37 @@ Training language models
 ++++++++++++++++++++++++
 
 In order to successfully extract terminology from a dataset, one needs a language model. Language models can be trained
-with "Model Manager" application under "Terminology Management".
+with "Train Language Model" application under "Task Manager" under "Restricted" (available for superusers only).
 
 .. figure:: images/05_model_manager.png
 
     Figure 5. *Model Manager*
 
-    1. New model parameters
-    2. Trained models
-    
-To train a model, we need to specify the training data (by using the corresponding search).
-By default, all exsisting documents in the given dataset are used.
-
-The training process also requires a field in the given dataset to be used as input for the language model.
-
-We can reduce the lexicon or data sparsity further by coding punctuation and numbers. This means that we replace all occurrences of
-punctuation marks with a single token and numbers with another one. Replacing numbers makes often sense when training language models, as
-different numerical values rarely add any semantical value.
-
-Let's train a new language model on our whole data. For that we use the default empty search.
+    1. The training data
+	2. New model parameters
+    3. Trained models
+	
+To train a model, we need to specify the training data. The model uses the data we have chosen from the upper panel. 
+By default, all exsisting documents in the given dataset are used ('Select a search: Empty (all documents)'). We can also train a model on the data we have filtered out with the :ref:`Searcher <running-texta>`.
 
 .. figure:: images/05-1_model_parameters.png
 
     Figure 5.1. *Model parameters*
     
+The training process also requires a field in the given dataset to be used as input for the language model. This is on what the model starts to train.
+
+!!!!!No of dimensions is basically the number of attributes or the size of a word vector. The higher the number, the slower the training. Higher number is recommended with a bigger set of data. If we don't know which number to choose, we can use the default value.
+
+No of workers is the amount of nodes in which the training takes place. 
+
+Frequency threshold determinates the lowest frequency of a phrase occurrence that is significant. If we don't know, which one to choose, we can use the default value.
+
+Max vocab size defines the size of the model vocabulary. If the there's no limit, then the vocabulary is a set of the all the words in the data (like ['several', 'difficulties']. If there's a limit, then the vocabulary consists of subwords segmented from the data based on the frequencies of the segments (like ['s', 'eve', 'ral', 'diffi', 'cult', 'ies']). !!!!->We don't have to deal with the subwords afterwards, this is just something for the training.
+
+Description will be the model's name. It is advisable to choose it carefully and make it informative, so we would remember what we did later as well.
+
+Let's train a new language model on our whole data. For that we use the default empty search. 
+
 After starting the model training task, we can see the progress. For progress upgrade, we have to refresh the page.
     
 .. figure:: images/05-2_model_training_progress.png
@@ -256,17 +267,17 @@ Once the training completes, we can see the following.
     Figure 5.3. *Training completed*
 
 	
-Home: Select datasets and language models
+Select datasets and language models
 -----------------------------------------
 
-The Home application is where the users can select dataset and language model they are working with.
-In order to update the changes, the user is required to press "Update settings":
+The users can select dataset and language model they are working with on the upper Administration panel.
+In order to switch the data or the model you are working with, just choose the preferred item from the drop-down menu on the upper panel. If the change was successfull, we'll get a confirmation. 
 
-.. figure:: images/02_settings.png
+.. figure:: images/02_updated.png
 
-.. note::
-	Datasets can be defined in the Administration panel.
-	Languagem models can be trained in the Model Manager application.
+    Figure 5.2. *Confirmation of updating the resources*
+	
+.. _searcher:
 
 Searcher: Explore the Data
 --------------------------
@@ -274,7 +285,7 @@ Searcher: Explore the Data
 The Searcher application is responsible for both creating the searches for other Toolkit's other applications and browsing-summarizing the data.
 
 .. note::
-	In order to use Searcher, at least one dataset must be defined in Administration application.
+	In order to use Searcher, dataset must be defined in Administration application.
 
 Searcher's graphical interface consists of serveral important panels, which are depicted in figure 6.
 
@@ -652,6 +663,8 @@ Deleting grammar
 We can delete grammar trees by selecting the appropriate grammar from the drop-down menu and clicking on "Delete".
 
 
+.. _classificationmanager:
+
 Classificaton Manager: Tag the Texts
 ------------------------------------
 
@@ -697,4 +710,8 @@ After pressing "Apply the Tagger", a tagging job will start and it's results wil
 	
 .. note::
 	If the dataset contains many documents, the tagging process can be expected to take a few minutes.
+	
+.. _applyPreprocessor:
 
+Apply preprocessor
+------------------
