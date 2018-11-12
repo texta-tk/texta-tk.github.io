@@ -2,12 +2,14 @@
 
 Installation
 ====================
+Currently edited 
+====================
 
 .. note::
 
     Installation instructions are currently only for Debian based Linux distributions and tested on Ubuntu.
 
-DownloadingAFASDFASDASDAAS
+Downloading
 -----------
     
 TEXTA can be downloaded from Git repository. If you are missing *git*, you can download it with

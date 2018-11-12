@@ -9,13 +9,13 @@ The login screen
 
 After starting up TEXTA, as described in the :ref:`installation step <running-texta>`, the next intuitive thing is to start using it.
 Since it is a web application, we have to navigate to the corresponding address in our browser
-(e.g. `http://localhost:8000/ <http://localhost:8000/>`_ if running locally or `https://live.texta.ee/ <https://live.texta.ee/>`_ if running on Texta's server). We are welcomed by a login page as depicted in Figure 1.
+(e.g. `http://localhost:8000/ <http://localhost:8000/>`_ if running locally or `https://live.texta.ee/ <https://live.texta.ee/>`_ if running on Texta's server). We are welcomed by a login page as depicted in Figure 1.1.
 
 .. _figure-1:
 
 .. figure:: images/01_welcome.png
 
-    Figure 1. *Welcome screen*
+    Figure 1.1. *Welcome screen*
     
     1. Login area
     2. Registration
@@ -38,7 +38,7 @@ with the exception of a list of tools and some global settings in the upper pane
 
 .. figure:: images/02_after_login.png
 
-    Figure 2. *Home page*
+    Figure 1.2. *Home page*
     
 As we can see from the global settings panel, we don't have any datasets nor language models.
 Therefore, we need to do some setting up in "Administration".
@@ -46,10 +46,67 @@ Therefore, we need to do some setting up in "Administration".
 .. note::
 
     Restricted contains the superuser tools for managing users, datasets, language models and text classifiers.
+	
+	
+	
+Administration: Manage Users and Datasets
+-----------------------------------------
+
+The biggest bosses in TEXTA Toolkit are the superusers, whose privileges include:
+	1. Managing Users and their access rights (Access & Dataset Management in Administration under Restricted)
+	2. Managing and importing datasets (Access & Dataset Management in Administration and dataset Importer under Restricted)
+	3. Training language models (Train Language Model in Task Manager under Restricted)
+	4. Training and applying text classifiers (Train Text Tagger in Task Manager under Restricted)
+	5. Apply preprocessors (Apply preprocessor in Task Manager under Restricted)
+
+Naturally, there can be more than one superuser.
+New superusers can be created by either by promoting existing user to superusers in Administration or by using the command described in 
+:ref:`installation's final touches <final-touches>`.
 
 
-Importing data
---------------
+Managing users and their access rights
+++++++++++++++++++++++++++++++++++++++
+
+Users and their access to datasets can be configured in the "User Access Management" panel in "Administration":
+
+.. figure:: images/03_user.png
+
+    Figure 2.1. *Panel in Administration for managing users*
+
+Each new user will be created either as activated or deactivated, in which case a superuser has to manually activate each user by clicking "activate". Users can be given superuser status by clicking on the arrow next to 'false' in the Superuser column. 
+By default, new users will be created as deactivated, but this can be changed in settings.py by:
+
+.. code-block:: python
+
+	USER_ISACTIVE_DEFAULT = True
+	
+User's access to existing datasets can be managed by clicking on the username, which opens a modal:
+
+.. figure:: images/04_user_datasets.png
+
+    Figure 2.2. *The datasets can be moved between the two fields to determine user's access to it*
+
+
+Managing datasets
++++++++++++++++++
+
+Superusers can add datasets by selecting the according index and mapping in the "Dataset Management" panel:
+
+.. figure:: images/05_datasets.png
+
+    Figure 2.3. *Adding a new dataset*
+
+Each new dataset can either be public or private. Public datasets are accessible for all users by default, but exceptions can be made in "User Management" panel.
+In contrast to public datasets, private datasets are closed to everyone (except the supersusers) by default. Again, individual access can be granted in "User Management" panel.
+
+Datasets can be closed and opened. Closed datasets are not listed to the users. Datasets can also be removed from TEXTA.
+
+.. note::
+	Removing dataset in TEXTA does not delete the actual dataset on the disk, but rather deletes the link between Elasticsearch index and TEXTA.
+
+
+Dataset Importer: Importing data
+--------------------------------
 
 To start analyzing data, we need some in the first place.  As the toolkit relies on Elasticsearch database, we could
 insert data manually, while conforming to the rules and schema described
@@ -58,17 +115,13 @@ insert data manually, while conforming to the rules and schema described
 However, as this might take a lot of work, the toolkit comes with a graphical data importing tool called "Dataset Importer",
 which can be found under "Restricted" menu on the top.
 
-
-Dataset Importer
-++++++++++++++++
-
 Dataset Importer ("importer" from now on) is a tool which allows to insert data in many formats, preprocess it, and
 finally store it in the underlying Elasticsearch database, so that it could be then used for analyzing using the other
 tools the importer provides.
 
 .. figure:: images/dataset_importer/01_overview.png
 
-    Figure: Dataset Importer
+    Figure 3.1. *Dataset Importer*
 
 We insert data with import jobs - requests for the server to process and store the provided documents.
 
@@ -84,7 +137,7 @@ we want to import data from PDF and TXT and that they are in a ZIP archive.
 
 .. figure:: images/dataset_importer/02_selecting_formats.png
 
-    Figure: Selecting formats which we want to import to TEXTA Toolkit from our data source
+    Figure 3.2. *Selecting formats which we want to import to TEXTA Toolkit from our data source*
 
 .. note:: **Simple documents** store the content of the file to the field named "text". Simple document *a.txt* can also be accompanied
           in an archive by *a.meta.json* JSON file, which has other features, such as author, timestamp, or topic. All the
@@ -103,7 +156,7 @@ from an URL, or loading from the server's local file system.
 
 .. figure:: images/dataset_importer/03_specifying_input_data.png
 
-    Figure: Specifying data source
+    Figur 3.3. *Specifying data source*
 
 Specifying storage options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -119,7 +172,7 @@ In addition, we can optionally
 
 .. figure:: images/dataset_importer/04_specifying_storage_options.png
 
-    Figure: Specifying storage options
+    Figure 3.4. *Specifying storage options*
 
 Specifying preprocessors
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -130,7 +183,7 @@ the fields it requires.
 
 .. figure:: images/dataset_importer/05_specifying_preprocessors.png
 
-    Figure: Specifying preprocessors
+    Figure 3.5. *Specifying preprocessors*
 
 Date conversion preprocessor converts date field values to correct Texta date format. Texta predicts the current format of the date based on the language. If we have a date field, we add the field to get data from and choose the language in which the data format is written. 
 
@@ -155,90 +208,48 @@ import jobs.
 
 .. figure:: images/dataset_importer/06_tracking_import_jobs.png
 
-    Figure: Tracking current and past import jobs
+    Figure 3.6. *Tracking current and past import jobs*
 
 We can also remove an import job entry by clicking on the X in the Remove column or see further details by clicking on the eye icon in the View Details column.
 
 .. figure:: images/dataset_importer/07_import_job_details.png
 
-    Figure: Specific import job's details
-
-
-Administration: Manage Users and Datasets
+    Figure 3.7. *Specific import job's details*
+	
+	
+Select datasets and language models
 -----------------------------------------
 
-The biggest bosses in TEXTA Toolkit are the superusers, whose privileges include:
-	1. Managing Users and their access rights (Access & Dataset Management in Administration under Restricted)
-	2. Managing and importing datasets (Access & Dataset Management in Administration and dataset Importer under Restricted)
-	3. Training language models (Train Language Model in Task Manager under Restricted)
-	4. Training and applying text classifiers (Train Text Tagger in Task Manager under Restricted)
-	5. Apply preprocessors (Apply preprocessor in Task Manager under Restricted)
+The users can select dataset and language model they are working with on the upper Administration panel.
+In order to switch the data or the model you are working with, just choose the preferred item from the drop-down menu on the upper panel. If the change was successfull, we'll get a confirmation. 
 
-Naturally, there can be more than one superuser.
-New superusers can be created by either by promoting existing user to superusers in Administration or by using the command described in 
-:ref:`installation's final touches <final-touches>`.
+.. figure:: images/02_updated.png
 
-
-Managing users and their access rights
-++++++++++++++++++++++++++++++++++++++
-
-Users and their access to datasets can be configured in the "User Access Management" panel in "Administration":
-
-.. figure:: images/03_user.png
-
-    Figure 3. *Panel in Administration for managing users*
-
-Each new user will be created either as activated or deactivated, in which case a superuser has to manually activate each user by clicking "activate". Users can be given superuser status by clicking on the arrow next to 'false' in the Superuser column. 
-By default, new users will be created as deactivated, but this can be changed in settings.py by:
-
-.. code-block:: python
-
-	USER_ISACTIVE_DEFAULT = True
+    Figure 4.1. *Confirmation of updating the resources*
 	
-User's access to existing datasets can be managed by clicking on the username, which opens a modal:
 
-.. figure:: images/04_user_datasets.png
-
-    Figure 4. *The datasets can be moved between the two fields to determine user's access to it*
-
-
-Managing datasets
-+++++++++++++++++
-
-Superusers can add datasets by selecting the according index and mapping in the "Dataset Management" panel:
-
-.. figure:: images/05_datasets.png
-
-    Figure 4. *Adding a new dataset*
-
-Each new dataset can either be public or private. Public datasets are accessible for all users by default, but exceptions can be made in "User Management" panel.
-In contrast to public datasets, private datasets are closed to everyone (except the supersusers) by default. Again, individual access can be granted in "User Management" panel.
-
-Datasets can be closed and opened. Closed datasets are not listed to the users. Datasets can also be removed from TEXTA.
-
-.. note::
-	Removing dataset in TEXTA does not delete the actual dataset on the disk, but rather deletes the link between Elasticsearch index and TEXTA.
-
-Training language models
-++++++++++++++++++++++++
+Training Language Models
+------------------------
 
 In order to successfully extract terminology from a dataset, one needs a language model. Language models can be trained
 with "Train Language Model" application under "Task Manager" under "Restricted" (available for superusers only).
 
 .. figure:: images/05_model_manager.png
 
-    Figure 5. *Model Manager*
+    Figure 5.1. *Model Manager*
 
     1. The training data
 	2. New model parameters
     3. Trained models
+	
+	
 	
 To train a model, we need to specify the training data. The model uses the data we have chosen from the upper panel. 
 By default, all exsisting documents in the given dataset are used ('Select a search: Empty (all documents)'). We can also train a model on the data we have filtered out with the :ref:`Searcher <running-texta>`.
 
 .. figure:: images/05-1_model_parameters.png
 
-    Figure 5.1. *Model parameters*
+    Figure 5.2. *Model parameters*
     
 The training process also requires a field in the given dataset to be used as input for the language model. This is on what the model starts to train.
 
@@ -258,40 +269,79 @@ After starting the model training task, we can see the progress. For progress up
     
 .. figure:: images/05-2_model_training_progress.png
 
-    Figure 5.2. *Model training progress*
+    Figure 5.3. *Model training progress*
     
 Once the training completes, we can see the following.
 
 .. figure:: images/05-3_model_training_completed.png
 
-    Figure 5.3. *Training completed*
-
+    Figure 5.4. *Training completed*
 	
-Select datasets and language models
------------------------------------------
+	
+Training Text Taggers
+---------------------
 
-The users can select dataset and language model they are working with on the upper Administration panel.
-In order to switch the data or the model you are working with, just choose the preferred item from the drop-down menu on the upper panel. If the change was successfull, we'll get a confirmation. 
+**ADD STUFF HERE**
 
-.. figure:: images/02_updated.png
+In order to train a model, we are required to define some mandatory parameters:
 
-    Figure 5.2. *Confirmation of updating the resources*
+	1. A search to define the set of documents used to train the model (positive documents).
+	2. The field describes the field of the document used to build the classification model.
+	3. The name for the class or "tag", which is later user to tag the documents.
+
+By setting these three, we can now train a classifier. However, we can also fine-tune the classifier by changing additional parameters such as
+feature extraction, dimensionality reduction and classifier model.
+
+.. figure:: images/11-1_new_model.png
+
+    Figure 11.1. *Choosing parameters for the classification model*
+
+Trained models are shown in the "Classification Models" panel, where each epoch is equipped with precision and recall and some information about the classifier model.
+	
+.. figure:: images/11-2_trained_models.png
+
+    Figure 11.2. *Trained models*
+
+**Tagging the dataset with the model**
+
+By clicking "Apply" in "Classification Models" panel, user can apply the classifier on selected documents:
+
+.. figure:: images/11-3_apply_model.png
+
+    Figure 11.2. *Select search to define the dataset to be tagged with the selected classifier*
+
+After pressing "Apply the Tagger", a tagging job will start and it's results will be shown in the table when completed. 
+	
+.. figure:: images/11-4_applied_models.png
+
+    Figure 11.2. *Applied classification models*
+	
+.. note::
+	If the dataset contains many documents, the tagging process can be expected to take a few minutes.
+	
+	
+.. _applyPreprocessor:
+
+Applying Preprocessors
+----------------------
+
+**ADD STUFF HERE**
 	
 .. _searcher:
 
 Searcher: Explore the Data
---------------------------
+-----------------------------
 
 The Searcher application is responsible for both creating the searches for other Toolkit's other applications and browsing-summarizing the data.
 
 .. note::
-	In order to use Searcher, at least one dataset must be defined in Administration application.
+	In order to use Searcher, dataset must be defined in upper panel.
 
-Searcher's graphical interface consists of serveral important panels, which are depicted in figure 6.
+Searcher's graphical interface consists of serveral important panels, which are depicted in figure 8.1.
 
 .. figure:: images/06_corpus_tool.png
 
-    Figure 6. *Searcher's first look*
+    Figure 8.1. *Searcher's first look*
     
     1. Current Search
     2. Saved Searches
@@ -306,66 +356,146 @@ Data browsing and summarization depend on searches. Search consists of a set of 
 the data using the "Current Search" panel. Without saving the constraints, we are in a "test mode", which means that we can use the search in
 Searcher, but we cannot use the search in other tools. After saving the search, it is available also to other tools.
 
+**Build Search**
+
+We will start with Build Search. If you are interested in what is :ref:`Expand Search <expandsearch>` and :ref:`Cluster Search <clustersearch>` under the title Current Search, read below.
+
 In order to add a constraint, we must first choose a field. After the field is selected, we can then specify which textual tokens should or
 must occur in the interested document subset.
 
-Suppose we are interested in finding all the documents which contains "bribery" in Estonian. It makes sense to abuse lemmas
-whenever possible to account for inflection.
+We must notice that the search will be done on the dataset chosen in the upper panel. We will search documents with the the article_text_mlp -> text field.
+
+.. figure:: images/06-00_choosing_a_field.png
+
+    Figure 8.2. *Choosing a field to filter out*
+
+Suppose we are interested in finding all the documents which contains "bribery" and "official" from a text.
+
+.. figure:: images/06-1_bribe_search_constraints_exact.png
+
+    Figure 8.3. *"Bribery" and "official" search constraints*
+
+Figure 8.3 shows how we have defined that we want to find all the documents which contain "bribery" *and* "official". We can also choose '*or*' or '*not*' under the Bool. In this case we either get documents containing at least one of the words ('*or*') or, in the last case, definitely not containing the words listed ('*not*').
+
+"Match" means that we want to find exact matches of the word(s) written and "Match phrase" means that we want to find exact matches of the phrases we are looking for, whereas "Match phrase prefix" matches prefixes. This means suffixes may differ: for example searching for 'bribe' will find you 'bribetaking', 'bribers', 'bribery' and other words starting with 'bribe'. 
+
+We can also use Slop. Via Slop we can define up to how many words can be between the two words we wrote on one row in case the range is important for us. For example Figure 6.3 results in documents containing phrases like '...today with Estonia,' and 'Today Tallinn , Estonia , will host..'. 
+
+.. figure:: images/06-02-example-search.png
+
+	Figure 8.4. *Example search using Slop*
+	
+Knowing all that we can modify our first bribery search as shown in the Figure 8.5 below and get all instances, where's a word or words starting with 'bribe' (let's suppose we lost interest in words starting with 'offic'). In case we are interested only in word 'bribe' it is worth choosing  to search within the lemma field, where you can filter out the exact word without worrying about it's inflection ('bribes' lemma is still 'bribe').
 
 .. figure:: images/06-1_bribe_search_constraints.png
 
-    Figure 6.1. *"Bribe" search constraints*
+	Figure 8.5. *Searching documents with words starting with 'bribe'*
+	
+Should we be interested in more detailed searches, we can add more constraints like the previous one via 'Add Filter'.
 
-Figure 6.1 shows how we have defined that we want to find all the documents which contain either "pistis" *or* "altkäemaks"
-("bribery" in Estonian). "Match" and "Match phrase" mean that we want to find exact matches, whereas "Match phrase prefix" matches prefixes
-(meaning suffixes may differ).
+We can also search documents in a certain date range in case we have a proper preprocessed date field. See example in Figure 8.6. We won't do it at the moment.
 
-Should we be interested in more detailed searches, we can add more constraints like the previous one.
+.. figure:: images/06-05_choose_date_range.png
 
-After we have come up with a suitable search, we can save it for later uses.
- 
- 
-Browsing data
-+++++++++++++
+	Figure 8.6. *Choosing a date range from the 1st of May 2010 to the 31st of August 2010*
 
-If we click on "Search" button, we will see the matching data in a tabular form, where layered features share feature name's prefix, and
-matches are highlighted.
+If we are working with long documents, we can also choose to look up short version of the text in the Search Options as shown in Figure 8.7. In the figure the window size selected is 3 words. That means we can see the word and 3 words before and after the word we are looking for. In our example search we will leave this unticked.
+
+.. figure:: images/06-5_choosing_search_context_range.png
+
+	Figure 8.7. *Choosing context window size*
+
+If we click on "Search" button, we will see the matching data in a tabular form (see Figure 8.9), where layered features share feature name's prefix, and
+matches are highlighted. If we have ticked the 'Search as you type' option, the results are updating while modifying the filters.
+
+If there are too many features (columns), we can hide them by clicking on their green names. The columns hidden are red.
 
 .. figure:: images/06-2_bribe_results.png
 
-    Figure 6.2. *Bribe search results*
+    Figure 8.9. *Bribe search results*
 
-We can see some basic statistics and if there are too many features, we can hide them by clicking on their green names.
+	1. Show all or hide all option
+	2. Shown features
+	3. Actions (:ref:`export results <exportresults>` or :ref:`delete results <deleteresults>`)
 
+After we have come up with a suitable search, we can save it for later uses (see figure 8.10).
+
+ 
+.. figure:: images/06-7_saving_a_search.png
+
+	Figure 8.10. *Searcher's save icon and query*
+	
+	1. Save icon
+	2. Query
+ 
+
+.. _expandsearch:
+
+**Expand Search**
+
+Expand Search executes Elasticsearch's More Like This Query. You can read about it more `here <https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-mlt-query.html>`_. 
+
+Now we have done the search in Figure 6.4. Suppose we would like to get more documents similar to the ones we have filtered out. Then we click on the Expand Search option after searching for 'bribe' in Build Search (it won't work if we have nothing to base your search on). We can select fields the Searcher starts finding similarities in. We can also select a stopword lexicon from the lexicons we have already created. These word are not considerated while sorting.
+
+We can also choose how to handle rejected documents. Elasticsearch can either ignore them or take into consideration while offering next documents (won't offer documents similar to the ones we rejected).
+
+When we click on the 'Search for Similar' button, we get a table of suggestions. The suggestions are based on our Build Search query and finds documents with similar content to the query. For example, if we search for a certan politician name then it will suggest us documents consisting of other politicians' names. We could, perhaps, expect documents consisting of the term 'corruption'. In fact, this is the case.
+
+We can make the size of the columns narrower by dragging the edges closer with our mouse. We can accept or reject a suggestion. If we accept, the document's ID will appear in the 'Selected documents'.
+
+If we have selected all the documents we desire, we can click on the save icon next to Current Search title (see Figure 6.7). If we do this, only those selected documents will be saved as one subset (not the ones filtered out in the Build Search for example).
+
+.. _clustersearch:
+
+**Cluster Search**
+
+We can also do a cluster search (see Figure 8.11) on the documents we have filtered out in Build Search. If we want to cluster the whole dataset, we can leave the Build Search empty. We can select a field the clustering will work on, clusering method (`K-means <https://en.wikipedia.org/wiki/K-means_clustering>`_ or `hierarchical (agglomerative) <https://en.wikipedia.org/wiki/Hierarchical_clustering>`_). 
+
+We can select CountVectorizer, which lowercases letters, disregards punctuation and stopwords (doesn't lemmatize or stem) and uses occurrence counting, or TfidfVectorizer, which combines CountVectorizer and TfidTransformer and decreases the impact of frequent and hence less informative tokens. Read more about the vectorizers `here <https://www.kaggle.com/adamschroeder/countvectorizer-tfidfvectorizer-predict-comments>`_ or `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_. 
+
+We can select the number of clusters (default value 10) we want to achieve, maximum number of documents within a cluster (default 1000), number of keywords per cluster (default 10), maximum total words per document (default 1000) on which the Cluster Search calculates the clustering. We can increase it to 5000-10000 words as the 1000 words is rather more (of course, it depends on our dataset). If we have already some lexicons, we can choose them as stopword lexicons. We can also adjust the outcome by only seeing short version or documents with keyword matches. The first shows keywords with a couple of words before and after, the last excludes documents that are in the cluster, but do not have any keywords to highlight.
+
+.. figure:: images/06-07_cluster_searcher.png
+
+	Figure 8.11. *Cluster Searcher's first look*
+
+
+.. figure:: images/06-10_example_result_of_cluster_search.png
+
+	Figure 8.12. *Example result of Cluster Search without a stopword lexicon*
+	
+	
+.. _exportresults:
 
 Exporting data
 ++++++++++++++
 
 Sometimes we want to work with a subset of data in some other application or external calculation. For example, we might want to train a 
 classifier on enriched sample. To get the enriched sample (in which some classes or tokens are over-represented), we can apply the search
-constraints to retrieve the data and then use query result actions, such as *export*.
+constraints to retrieve the data and then use query result actions (see Figure 8.13), such as *export*.
 
 .. figure:: images/06-3_export_panel.png
 
-    Figure 6.3. *Export panel*
+    Figure 8.13. *Export panel*
 
-Export panel allows to specify, how many rows and which features are we interested in. Exported data is in CSV format.
+Export panel allows to specify, how many rows and which features are we interested in. Exported data is in CSV format. If we select 'Selected features', only shown features are exported (hidden (red) features are not exported).
     
-    
+.. _deleteresults:
+
 Deleting data
 +++++++++++++
 
-The second action on search results is deletion - if we detect some malformed data or are simply not interested in some subset, we can remove it
+The second action on search results (see Figure **MIS SIIN 6.7** ) is deletion - if we detect some malformed data or are simply not interested in some subset, we can remove it
 permanently from the Elasticsearch.
     
 Using saved searches
 ++++++++++++++++++++
 
-Searches can be saved. If we save our "bribery" search under "bribery", we can see it being listed in "Saved Searches" panel.
+Searches can be saved with clicking on the save icon next to Current Search title (see Figure **MIS SIIN 6.8**). If we save our "bribery" search under "bribery", we can see it being listed in "Saved Searches" panel.
 
 .. figure:: images/06-4_saved_search.png
 
-    Figure 6.4. *Saved searches*
+    Figure 8.14. *Saved searches*
 
 Now, whenever we check it, we can use it to browse data or apply in summarization.
     
@@ -377,25 +507,64 @@ word distributions. Searcher allows to do all of that and more through the "Aggr
 
 Aggregations have two components - data and features it aggregates over. Selecting a search determines the sample we get our data from. By defining a feature, we can group by that feature and get
 category counts. For example, lets assume we are interested in seeing how are the top words distributed in our sample data defined by our
-"bribery" search. By requesting aggregation as shown on figure 6.5, we get the result on the same figure.
+"bribe" search. By requesting aggregation as shown on figure 8.15, we get the result on the same figure.
 
 .. figure:: images/06-5_simple_aggregation.png
 
-    Figure 6.5. *Simple aggregation*
+    Figure 8.15. *Simple aggregation*
 
-From the results we can see raw word distributions for both checked "bribery" search and "Current Search" (which doesn't have any constraints,
-a.k.a sample is all the data we have). Since we queried raw count, many common words overlap. We can change "Sort by" setting to significance
-in order to get uncommon over-represented words for that specific sample dataset.
+From the results in Figure 6.12 we can see raw word distributions for both checked "bribe" search and "Current Search" (which doesn't have any constraints,
+a.k.a sample is all the data we have). Since we queried significant words, common words do not overlap. We can change "Aggregation" setting to significant items or frequent items in order to get significant (by normalised count) or frequent (by count) items. If we want, we can hide current search in results.
 
-.. figure:: images/06-6_significance_aggregation.png
+Visualizing facts
++++++++++++++++++
 
-    Figure 6.6. *Aggregation sorted by significance*
+The last item in our Searcher is Fact Graph (Figure 8.16) which visualizes the facts and its' cooccurances with other facts. Number of fact values per fact name defines how many fact values (certain names of personas, places, etc) will be shown under one fact name (PER, LOC, etc). **These are chosen by their frequency, IS IT TRUE**. By default it's 15. 
 
-In figure 6.6 we can see that now the words are much more specific to the "bribery" dataset. "Current Search" has no results, because it is
-used as prior.
+In Figure 8.17 we can see one example graph. We can move the graph by clicking on it, holding and dragging. We can zoom in and out with the mouse scroll wheel. By clicking on the fact names in the graph legend we can hide or reveal the facts. If we click on certain fact values in the graph we can see a list of fact values it's connected to. If we untick the option 'Show cooccurances for visible nodes only' we'll get a list of all the cooccurances even if currently not shown in the graph. To unshow the list, we can click somewhere else. We can clean the graph from less frequent fact values by increasing the value of option 'hide facts with lower count than'.
+
+If we right-click on some fact value, we can add that node to Build Search, hide facts with this type (you can later reveal them in the graph legend), hide this fact (you can later reveal them again in the bottom left hidden nodes list) or delete this fact from the dataset.
+
+.. figure:: images/06-13_visualizing_facts.png
+
+    Figure 8.16. *Fact Graph*
     
+.. figure:: images/06-14_visualizing_facts_results.png
 
-Extracting Terminology
+    Figure 8.17. *Fact Graph Results*
+	
+	1. Show cooccurances for visible nodes only
+	2. Hide facts with lower count than
+	3. Graph legend
+	4. List of hidden nodes
+	
+.. _factnames:
+
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| Label    | Meaning     | Comment                                                                                                                      |
++==========+=============+==============================================================================================================================+
+| PER      | Persona     | Name of a person.                                                                                                            |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| ORG      | Organisation| Name of an organisation, gotten statistically.                                                                               |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| LOC      | Location    | Name of a location, gotten statistically.                                                                                    |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| COMPANY  | Company     | Names of company registered in Estonia, gotten from `Estonian Open Data <https://opendata.riik.ee/datasets/ariregister/>`_.  |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| ADDR     | Address     | Estonian address, gotten from `Estonian Open Data <https://opendata.riik.ee/datasets/aadressiandmed/>`_.                     |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| DRUG     | Drug        | Name of a medicine.                                                                                                          |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| SUBSTANCE| Substance   | Ingredient of a drug.                                                                                                        |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| EML      | E-mail      | E-mail address.                                                                                                              |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| PHO      | Phone       | Phone number.                                                                                                                |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+
+It is important to notice that COMPANY and ADDR identify only companies and addresses registered in Estonian Open Data. It won't tag any foreign company nor address while ORG and LOC identify all of them.
+	
+Terminology Management
 ----------------------
 
 In order to learn more about the dataset, it is useful to know the domain terminology.
@@ -405,8 +574,8 @@ grouping them into concepts and mining for multiword expressions.
 .. note::
 	Extracting Terminology requires a language model, which can be trained by superusers in Model Manager.
 
-Creating lexicons
-+++++++++++++++++
+Lexicon Miner: Creating lexicons
+--------------------------------
 
 We can start creating topic-related lexicons. From toolbar we can find "Base Lexicon Miner" under "Terminology Management".
 
@@ -438,8 +607,8 @@ too small. We had less than 5000 documents, most of which didn't even contain th
 the training phase.
 
 
-Creating concepts
-+++++++++++++++++
+Conceptualiser: Creating concepts
+---------------------------------
 
 Once we have saved the lexicons we are interested in, the next step would be to group parts of them into concepts. A lexicon may contain 
 somewhat similar words which still differ from one another in some important aspects. Concepts are created with "Conceptualiser" under 
@@ -474,8 +643,8 @@ Now that we have found the concepts, we can commit the changes to save them.
     Concepts can be used in *Searcher* by prepending an "@"-sign. So we don't have to list words one by one. They can also be used in the same
     manner in *Grammar tool*.
     
-Mining multi-word expressions
-+++++++++++++++++++++++++++++
+MWE Miner: Mining Multi-Word Expressions
+----------------------------------------
 
 Mining multi-word expressions is a way to find actually used phrases. We approched the problem bottom-up. First we defined the individual tokens
 and now we try to find which of them are located nearby or side-by-side. Ideally, phrases should be found using the words with inflection data,
@@ -516,202 +685,4 @@ The expanded results show how some patterns are much more common in real use of 
 
 We can approve specific patterns to turn them into a concept containing multi-word expressions and therefore use the more complicated structures
 in other tools, such as in the *Searcher*.
-
- 
-Grammar Miner: Extract Information
-----------------------------------
-
-TEXTA comes with an interactive grammar building tool *Grammar Miner*. "Grammars" are rule-based formulas which allow to match specific
-content using exact matching, context, and logical operators. The simplest grammar can just match a fixed word, for example "bribe", or be
-a regular expression, while more complicated ones may cover whole phrase and sentence structures.
-
-We build grammars from top to bottom using a graphical tree building tool *jstree*. Once a suitable grammar expression in the form of a tree is
-created, we can test it on a data sample and see, which documents matched and how and which did not. *Grammar Miner* is under *Terminology
-Management* tools.
-
-.. figure:: images/10_grammar_miner.png
-
-    Figure 10. *Grammar Miner's first look*
-    
-    1. View tab
-    2. Grammar building area
-    3. Grammar component details
-    
-Building a new grammar begins with assigning an operation to the root node.
-
-.. figure:: images/10-1_root_node_operation.png
-
-    Figure 10.1. *Assigning operation to aggregative node*
-    
-.. note::
-
-    Whenever making changes to a node, make sure to click on "Change" button.
-
-Node types
-++++++++++
-
-Each node has an icon, indicating which type of node it is. Nodes can be either **terminal** (regular expression, exact match) or 
-**aggregative** (logical or sequential operations).
-Logical operations are intersection and union, where intersection needs all of its child expressions to
-match, but union just one.
-
-Sequential operations are concatenation and gap. Concatenation requires matches to reside side by side. For example, when we have a
-concatenation of "took", "the", and "bribe", the concatenation matches only documents in which there are substrings "took the bribe". The gap
-on the other hand can have matches with some distance from one another, defined by *slop* parameter. If we were looking for "took" and "bribe",
-gap with *slop* of at least 1, it would match the documents which have "took the bribe" in them.
-
-.. note::
-
-    Logical operations don't take match order into account, whereas sequential operations do.
-
-For a better overview, nodes with different operations have different icons.
-    
-.. |na_icon| image:: images/icons/na.ico
-    
-.. |exact_icon| image:: images/icons/exact.ico
-    
-.. |regex_icon| image:: images/icons/regex.ico
-    
-.. |and_icon| image:: images/icons/and.ico
-    
-.. |or_icon| image:: images/icons/or.ico
-    
-.. |concat_icon| image:: images/icons/concat.ico
-
-.. |gap_icon| image:: images/icons/gap.ico
-
-
-=============    ==================
-Icon             Operation    
-=============    ==================
-|na_icon|        Not assigned
-|exact_icon|     Exact match
-|regex_icon|     Regular expression
-|and_icon|       Intersection
-|or_icon|        Union
-|concat_icon|    Concatenation
-|gap_icon|       Gap
-=============    ==================
-
-Root node is always aggregative. Aggregative nodes can have both terminal and aggregative nodes as children. Terminal nodes can't have any
-children.
-
-
-Adding a child
-++++++++++++++
-
-Aggregative nodes can (must) have child nodes (at least one). A child can be added by opening context menu with right click on the appropriate
-node. This allows to add either a *basic* (terminal) or *aggregation* node.
-
-.. figure:: images/10-2_node_context_menu.png
-
-    Figure 10.2. *Context menu for adding child nodes*
-
-After adding a terminal node and clicking on it, we can edit the details in opened "Component Details" panel.
-
-.. figure:: images/10-3_basic_component_details.png
-
-    Figure 10.3. *Specifying terminal node details*
-    
-We can choose either "Exact match" or "Regular Expression" for *Type* and one of the features or feature-layer combinations for the *Layer*.
-Content is a list of words on separate lines for an *Exact match* or a one-liner regular expression for *Regular Expression*.
-
-Testing grammar
-+++++++++++++++
-
-We can either test the whole grammar tree by clicking on the "Test whole tree" button or a subtree by clicking on "Test" in the appropriate
-node's context menu.
-
-Suppose we are interested in finding (and later labeling) the documents which talk about bribery accusations. We have already found out that 
-the most frequent pattern in the corresponding documents contain the lemmas "süüdistama" and "altkäemaks" in that order with the slop of 3.
-Let's create the grammar tree.
-
-.. figure:: images/10-4_bribery_grammar.png
-
-    Figure 10.4. *Simple bribery grammar*
-
-So far we have been on the "Grammar" tab. If we test our grammar by clicking on "Test whole tree", for example, we are taken to the "Test" tab
-and all the positive matches (documents which our grammar matched) are displayed along with the match highlights.
-    
-.. figure:: images/10-5_bribery_positive_results.png
-
-    Figure 10.5. *Positive results when testing*
-    
-When navigating to "Unmatched documents" subtab, we can see the documents which didn't match our grammar.
-    
-.. figure:: images/10-6_bribery_negative_results.png
-
-    Figure 10.6. *Negative results when testing*
-    
-We can see that all our highlighted words are "süüdistama" and "altkäemaks", where they are no more than 3 tokens apart - just as our grammar
-required. Also, all the features which are displayed in the result table occur in the grammar, except for *id*.
-
-By default, "Full search" is used. We can change it to our "bribery", navigate back to "Grammar" tab and test the grammar again to test our
-grammar on more relevant dataset.
-
-Saving and loading grammar
-++++++++++++++++++++++++++
-
-Grammar tree can be stored for later use by clicking "Save". Root node's label is used for the name.
-
-Whenever we want to reuse a saved grammar, we can simply select it from drop-down menu and press "Load".
-
-
-Deleting grammar
-++++++++++++++++
-
-We can delete grammar trees by selecting the appropriate grammar from the drop-down menu and clicking on "Delete".
-
-
-.. _classificationmanager:
-
-Classificaton Manager: Tag the Texts
-------------------------------------
-
-When we have a set of documents in our dataset that we know are somehow important, we can build a text classifier to automatically detect such documents in the future.
-In order to complete such a task, we can use the "Classification Manager" application.
-
-Training a classificaton model
-++++++++++++++++++++++++++++++
-
-In order to train a model, we are required to define some mandatory parameters:
-
-	1. A search to define the set of documents used to train the model (positive documents).
-	2. The field describes the field of the document used to build the classification model.
-	3. The name for the class or "tag", which is later user to tag the documents.
-
-By setting these three, we can now train a classifier. However, we can also fine-tune the classifier by changing additional parameters such as
-feature extraction, dimensionality reduction and classifier model.
-
-.. figure:: images/11-1_new_model.png
-
-    Figure 11.1. *Choosing parameters for the classification model*
-
-Trained models are shown in the "Classification Models" panel, where each epoch is equipped with precision and recall and some information about the classifier model.
 	
-.. figure:: images/11-2_trained_models.png
-
-    Figure 11.2. *Trained models*
-
-Tagging the dataset with the model
-++++++++++++++++++++++++++++++++++
-
-By clicking "Apply" in "Classification Models" panel, user can apply the classifier on selected documents:
-
-.. figure:: images/11-3_apply_model.png
-
-    Figure 11.2. *Select search to define the dataset to be tagged with the selected classifier*
-
-After pressing "Apply the Tagger", a tagging job will start and it's results will be shown in the table when completed. 
-	
-.. figure:: images/11-4_applied_models.png
-
-    Figure 11.2. *Applied classification models*
-	
-.. note::
-	If the dataset contains many documents, the tagging process can be expected to take a few minutes.
-	
-.. _applyPreprocessor:
-
-Apply preprocessor
-------------------
