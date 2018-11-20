@@ -2,23 +2,23 @@ texta's server v kus see jookseb?
 
 Testi mitut processorit korraga kasutamist.
 
-Vaja teha veel: Train Text tagger, Apply Preprocessor, Terminology stuff
+Vaja teha veel: Tagging the dataset with the model 
  
 Kontrolli deleting data't millegagi Searcheris.
 
 Kontrolli kas, fact graphis töötab paremklõps 'delete this fact from dataset'.
 
- Issue. Fact Graph otsused.
- Vaja panna dokusse kirja, mille alusel valitakse need default 15 fakti väärtust välja.
- 
 lingid neile: dimensionality reduction (Tone or Truncated SVD), Classifier Model (Logistic Regression, LinearSVC, K-Neighbors, Radius Neighbors) rida 292
 
+rida 624 -> Millised vectorid seal on? KAS ON VAJA SELETADA Lexicon Mineri vektoreid? 
+ rida 651 -> One of several dimension reduction methods can be chosen, but they give approximately the same results. **Lisada, mis on PCA, TSNE ja MDS**
+ 
  
 /---/
 
  Uued Issued
   
- Issue. Sputnikmodelis termini kandidaatide seas on komadega sõnad. Kas see on OK?
+
  
 /----/ 
  
@@ -28,9 +28,6 @@ lingid neile: dimensionality reduction (Tone or Truncated SVD), Classifier Model
  https://en.wikipedia.org/wiki/K-means_clustering
  https://en.wikipedia.org/wiki/Hierarchical_clustering
  Estonian Open Data asjad. See OK.
- 
-
- 
  
  
  /----/
@@ -88,4 +85,5 @@ Otsin Searcheris 'match phrase prefix'i ja Slopiga fraasi 'Today Za', saan vaid 
  
  Issue. Train Text Taggeris (texta live's) tuli memory error ca 2000-se searchiga (sputniku kõik textid, kus on 'bribe'-ga algavad sõnad sees).
  
+  Issue. Sputnikmodelis termini kandidaatide seas on komadega sõnad. Kas see on OK?
  /----/

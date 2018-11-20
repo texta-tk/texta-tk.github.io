@@ -67,7 +67,7 @@ New superusers can be created by either by promoting existing user to superusers
 Managing users and their access rights
 ++++++++++++++++++++++++++++++++++++++
 
-Users and their access to datasets can be configured in the "User Access Management" panel in "Administration":
+Users and their access to datasets can be configured in the User Access Management panel in Administration under Restricted:
 
 .. figure:: images/03_user.png
 
@@ -192,7 +192,7 @@ the fields it requires.
 
 Date conversion preprocessor converts date field values to correct Texta date format. Texta predicts the current format of the date based on the language. If we have a date field, we add the field to get data from and choose the language in which the data format is written. 
 
-Text Tagger preprocessor tags documents with Texta Text Taggers previously trained on other documents. If we already have a :ref:`tagger trained <classificationmanager>` we can choose to tag the text with it while importing. Don't forget to add the field to get data from. 
+Text Tagger preprocessor tags documents with Texta Text Tagger's tag previously trained on other documents. If we already have a :ref:`tagger trained <classificationmanager>` we can choose to tag the text with it while importing. Don't forget to add the field to get data from. 
 
 Multilingual preprocessor identifies the language of the text and extracts the facts (for example, addresses and the names of organisations, personas and locations) with what we can later work. So far it supports Estonian, Russian and English. If we choose the preprocessor we add the field to get data from.
 
@@ -226,7 +226,7 @@ Select datasets and language models
 -----------------------------------------
 
 The users can select dataset and language model they are working with on the upper Administration panel.
-In order to switch the data or the model you are working with, just choose the preferred item from the drop-down menu on the upper panel. If the change was successfull, we'll get a confirmation. 
+In order to switch the data or the model we are working with, we can just choose the preferred item from the drop-down menu on the upper panel. If the change was successfull, we'll get a confirmation. 
 
 .. figure:: images/02_updated.png
 
@@ -237,7 +237,7 @@ Training Language Models
 ------------------------
 
 In order to successfully extract terminology from a dataset, one needs a language model. Language models can be trained
-with "Train Language Model" application under "Task Manager" under "Restricted" (available for superusers only).
+with "Train Language Model" application in "Task Manager" under "Restricted" (available for superusers only).
 
 .. figure:: images/05_model_manager.png
 
@@ -245,7 +245,7 @@ with "Train Language Model" application under "Task Manager" under "Restricted" 
 
     1. The training data
 	2. New model parameters
-    3. Trained models
+	3. Trained models
 	
 To train a model, we need to specify the training data. The model uses the data we have chosen from the upper panel. 
 By default, all exsisting documents in the given dataset are used ('Select a search: Empty (all documents)'). We can also train a model on the data we have filtered out with the :ref:`Searcher <running-texta>`.
@@ -256,13 +256,13 @@ By default, all exsisting documents in the given dataset are used ('Select a sea
     
 The training process also requires a field in the given dataset to be used as input for the language model. This is on what the model starts to train.
 
-**!!!!!**No of dimensions is basically the number of attributes or the size of a word vector. The higher the number, the slower the training. Higher number is recommended with a bigger set of data. If we don't know which number to choose, we can use the default value.
+**!!KONTROLLI VAJA!!!**No of dimensions is basically the number of attributes or the size of a word vector. The higher the number, the slower the training. Higher number is recommended with a bigger set of data. If we don't know which number to choose, we can use the default value.
 
 No of workers is the amount of nodes in which the training takes place. 
 
 Frequency threshold determinates the lowest frequency of a phrase occurrence that is significant. If we don't know, which one to choose, we can use the default value.
 
-Max vocab size defines the size of the model vocabulary. If the there's no limit, then the vocabulary is a set of the all the words in the data (like ['several', 'difficulties']. If there's a limit, then the vocabulary consists of subwords segmented from the data based on the frequencies of the segments (like ['s', 'eve', 'ral', 'diffi', 'cult', 'ies']). **!!!!**->We don't have to deal with the subwords afterwards, this is just something for the training.
+Max vocab size defines the size of the model vocabulary. If the there's no limit, then the vocabulary is a set of all the words in the data (like ['several', 'difficulties']. If there's a limit, then the vocabulary consists of subwords segmented from the data based on the frequencies of the segments (like ['s', 'eve', 'ral', 'diffi', 'cult', 'ies']). We don't have to deal with the subwords afterwards, this is just something for the training.
 
 Description will be the model's name. It is advisable to choose it carefully and make it informative, so we would remember what we did later as well.
 
@@ -285,7 +285,7 @@ Once the training completes, we can see the following.**MUUDA PILTI, KUNA UUS. *
 Training Text Taggers
 ---------------------
 
-In order to train a Classification Model or a Text Tagger, we are required to define some mandatory parameters:
+Text Tagger is a classification model which creates :ref:`an extra tag for the Searcher <factnames>` on a certain set of documents which should have the tag. In order to train a Text Tagger, we are required to define some mandatory parameters (see Figure 6.1.):
 
 	1. A :ref:`search <searcher>` to define the set of documents used to train the model (positive documents).
 	2. The field describes the field of the document used to build the classification model.
@@ -305,7 +305,7 @@ Trained models and models in training are shown in the "Tasks for: Train Text Ta
 	
 .. figure:: images/11-2_trained_models.png
 
-    Figure 11.2. *Trained models **UUS PILT SIIA** *
+   **UUS PILT SIIA** Figure 11.2. *Trained models  *
 
 **Tagging the dataset with the model TEGEMATA**
 
@@ -332,19 +332,20 @@ Applying Preprocessors
 In Figure 7.1 we can see the general outlook of Apply Preprocessor. Here we can apply the same :ref:`preprocessors <preprocessors>` we could have applied in the Dataset Importer. We can use all the documents or a subset gotten via Search. We can select a field and start preprocessing. We can see the results in 'Tasks for: Apply Preprocessor'.
 
 **ADD Figure 7.1**
+
+	
+These tags we can later search for in the :ref:`Searcher <searcher>` (Figure 7.2). We can get the tagged documents via 'fact_text_values' field under TEXTA_TAG. In the example below we can choose to search for documents with (*is*) or without (*not*) the tag chosen in the box 'Value (case sensitive)'.
 	
 .. figure:: images/07-02_searching_tagged.png
 
     Figure 7.2. *Searching for tagged documents in the Searcher*
-	
-These tags we can later search for in the :ref:`Searcher <searcher>` (Figure 7.2). We can get the tagged documents via 'fact_text_values' field under TEXTA_TAG. In the example below we can choose to search for documents with (*is*) or without (*not*) the tag we choose in the box 'Value (case sensitive)'.
  
 .. _searcher:
 
 Searcher: Explore the Data
 -----------------------------
 
-The Searcher application is responsible for both creating the searches for other Toolkit's other applications and browsing-summarizing the data.
+The Searcher application is responsible for both creating the searches for Toolkit's other applications and browsing-summarizing the data.
 
 .. note::
 	In order to use Searcher, dataset must be defined in upper panel.
@@ -387,17 +388,17 @@ Suppose we are interested in finding all the documents which contains "bribery" 
 
     Figure 8.3. *"Bribery" and "official" search constraints*
 
-Figure 8.3 shows how we have defined that we want to find all the documents which contain "bribery" *and* "official". We can also choose '*or*' or '*not*' under the Bool. In this case we either get documents containing at least one of the words ('*or*') or, in the last case, definitely not containing the words listed ('*not*').
+Figure 8.3 shows how we have defined that we want to find all the documents which contain "bribery" *and* "official". We can also choose '*or*' or '*not*' under the Bool. In this case we either get documents containing at least one of the words ('*or*') or definitely not containing the words listed ('*not*').
 
 "Match" means that we want to find exact matches of the word(s) written and "Match phrase" means that we want to find exact matches of the phrases we are looking for, whereas "Match phrase prefix" matches prefixes. This means suffixes may differ: for example searching for 'bribe' will find you 'bribetaking', 'bribers', 'bribery' and other words starting with 'bribe'. 
 
-We can also use Slop. Via Slop we can define up to how many words can be between the two words we wrote on one row in case the range is important for us. For example Figure 6.3 results in documents containing phrases like '...today with Estonia,' and 'Today Tallinn , Estonia , will host..'. 
+We can also use Slop. Via Slop we can define up to how many words can be between the two words we wrote on one row in case the range is important for us. For example Figure 8.4 results in documents containing phrases like *...today with Estonia,* and *Today Tallinn , Estonia , will host..*. 
 
 .. figure:: images/06-02-example-search.png
 
 	Figure 8.4. *Example search using Slop*
 	
-Knowing all that we can modify our first bribery search as shown in the Figure 8.5 below and get all instances, where's a word or words starting with 'bribe' (let's suppose we lost interest in words starting with 'offic'). In case we are interested only in word 'bribe' it is worth choosing  to search within the lemma field, where you can filter out the exact word without worrying about it's inflection ('bribes' lemma is still 'bribe').
+Knowing all that we can modify our first bribery search as shown in the Figure 8.5 below and get all instances, where's a word or are words starting with 'bribe' (let's suppose we lost interest in words starting with 'offic'). In case we are interested only in word 'bribe' it is worth choosing  to search within the lemma field, where you can filter out the exact word without worrying about it's inflection (*bribes* lemma is still *bribe*).
 
 .. figure:: images/06-1_bribe_search_constraints.png
 
@@ -448,11 +449,11 @@ After we have come up with a suitable search, we can save it for later uses (see
 
 Expand Search executes Elasticsearch's More Like This Query. You can read about it more `here <https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-mlt-query.html>`_. 
 
-Now we have done the search in Figure 6.4. Suppose we would like to get more documents similar to the ones we have filtered out. Then we click on the Expand Search option after searching for 'bribe' in Build Search (it won't work if we have nothing to base your search on). We can select fields the Searcher starts finding similarities in. We can also select a stopword lexicon from the lexicons we have already created. These word are not considerated while sorting.
+Now we have done the search in Figure 8.5. Suppose we would like to get more documents similar to the ones we have filtered out. Then we click on the Expand Search option after searching for 'bribe' in Build Search (it won't work if we have nothing to base your search on). We can select fields the Searcher starts finding similarities in. We can also select a stopword lexicon from :ref:`the lexicons we have already created <lexiconminer>`. These word are not considerated while sorting.
 
 We can also choose how to handle rejected documents. Elasticsearch can either ignore them or take into consideration while offering next documents (won't offer documents similar to the ones we rejected).
 
-When we click on the 'Search for Similar' button, we get a table of suggestions. The suggestions are based on our Build Search query and finds documents with similar content to the query. For example, if we search for a certan politician name then it will suggest us documents consisting of other politicians' names. We could, perhaps, expect documents consisting of the term 'corruption'. In fact, this is the case.
+When we click on the 'Search for Similar' button, we get a table of suggestions. The suggestions are based on our Build Search query and finds documents with similar content to the query. For example, if we search for a certan politician name then it will suggest us documents consisting of other politicians' names. We could, perhaps, expect documents consisting of the term *corruption*. In fact, this is the case.
 
 We can make the size of the columns narrower by dragging the edges closer with our mouse. We can accept or reject a suggestion. If we accept, the document's ID will appear in the 'Selected documents'.
 
@@ -466,7 +467,7 @@ We can also do a cluster search (see Figure 8.11) on the documents we have filte
 
 We can select CountVectorizer, which lowercases letters, disregards punctuation and stopwords (doesn't lemmatize or stem) and uses occurrence counting, or TfidfVectorizer, which combines CountVectorizer and TfidTransformer and decreases the impact of frequent and hence less informative tokens. Read more about the vectorizers `here <https://www.kaggle.com/adamschroeder/countvectorizer-tfidfvectorizer-predict-comments>`_ or `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_. 
 
-We can select the number of clusters (default value 10) we want to achieve, maximum number of documents within a cluster (default 1000), number of keywords per cluster (default 10), maximum total words per document (default 1000) on which the Cluster Search calculates the clustering. We can increase it to 5000-10000 words as the 1000 words is rather more (of course, it depends on our dataset). If we have already some lexicons, we can choose them as stopword lexicons. We can also adjust the outcome by only seeing short version or documents with keyword matches. The first shows keywords with a couple of words before and after, the last excludes documents that are in the cluster, but do not have any keywords to highlight.
+We can select the number of clusters (default value 10) we want to achieve, maximum number of documents within a cluster (default 1000), number of keywords per cluster (default 10), maximum total words per document (default 1000) on which the Cluster Search calculates the clustering. We can increase it to 5000-10000 words as the 1000 words is rather small (of course, it depends on our dataset). If we have already some `lexicons <lexiconminer>`, we can choose them as stopword lexicons. We can also adjust the outcome by only seeing short version or documents with keyword matches. The first shows keywords with a couple of words before and after, the last excludes documents that are in the cluster, but do not have any keywords to highlight.
 
 .. figure:: images/06-07_cluster_searcher.png
 
@@ -498,13 +499,13 @@ Export panel allows to specify, how many rows and which features are we interest
 Deleting data
 +++++++++++++
 
-The second action on search results (see Figure **MIS SIIN 6.7** ) is deletion - if we detect some malformed data or are simply not interested in some subset, we can remove it
+The second action on search results (see Figure 8.9.) is deletion - if we detect some malformed data or are simply not interested in some subset, we can remove it
 permanently from the Elasticsearch.
     
 Using saved searches
 ++++++++++++++++++++
 
-Searches can be saved with clicking on the save icon next to Current Search title (see Figure **MIS SIIN 6.8**). If we save our "bribery" search under "bribery", we can see it being listed in "Saved Searches" panel.
+Searches can be saved with clicking on the save icon next to Current Search title (see Figure 8.10). If we save our "bribery" search under "bribery", we can see it being listed in "Saved Searches" panel.
 
 .. figure:: images/06-4_saved_search.png
 
@@ -512,27 +513,27 @@ Searches can be saved with clicking on the save icon next to Current Search titl
 
 Now, whenever we check it, we can use it to browse data or apply in summarization.
     
-Summarizing data
-++++++++++++++++
+Aggregations: Summarizing data
+++++++++++++++++++++++++++++++
 
 As fun as browsing through the data is, it is not always enough. Sometimes we want to get an overview of our data, such as topics over time or
 word distributions. Searcher allows to do all of that and more through the "Aggregations" panel.
 
 Aggregations have two components - data and features it aggregates over. Selecting a search determines the sample we get our data from. By defining a feature, we can group by that feature and get
 category counts. For example, lets assume we are interested in seeing how are the top words distributed in our sample data defined by our
-"bribe" search. By requesting aggregation as shown on figure 8.15, we get the result on the same figure.
+"bribe" search. By requesting aggregation as shown on Figure 8.15, we get the result on the same figure.
 
 .. figure:: images/06-5_simple_aggregation.png
 
     Figure 8.15. *Simple aggregation*
 
-From the results in Figure 6.12 we can see raw word distributions for both checked "bribe" search and "Current Search" (which doesn't have any constraints,
-a.k.a sample is all the data we have). Since we queried significant words, common words do not overlap. We can change "Aggregation" setting to significant items or frequent items in order to get significant (by normalised count) or frequent (by count) items. If we want, we can hide current search in results.
+From the results in Figure 8.15 we can see raw word distributions for both checked "bribe" search and "Current Search" (which doesn't have any constraints,
+a.k.a sample is all the data we have). Since we queried significant words, common words do not overlap. We can change "Aggregations" setting to significant items or frequent items in order to get significant (by normalised count) or frequent (by count) items. If we want, we can hide current search in results.
 
-Visualizing facts
-+++++++++++++++++
+Fact Graph: Visualizing facts
++++++++++++++++++++++++++++++
 
-The last item in our Searcher is Fact Graph (Figure 8.16) which visualizes the facts and its' cooccurances with other facts. Number of fact values per fact name defines how many fact values (certain names of personas, places, etc) will be shown under one fact name (PER, LOC, etc). **These are chosen by their frequency, IS IT TRUE**. By default it's 15. 
+The last item in our Searcher is Fact Graph (Figure 8.16) which visualizes the facts and its' cooccurances with other facts. Number of fact values per fact name defines how many fact values (certain names of personas, places, etc) will be shown under one fact name (PER, LOC, etc). These are chosen by their frequency. By default it's 15. 
 
 In Figure 8.17 we can see one example graph. We can move the graph by clicking on it, holding and dragging. We can zoom in and out with the mouse scroll wheel. By clicking on the fact names in the graph legend we can hide or reveal the facts. If we click on certain fact values in the graph we can see a list of fact values it's connected to. If we untick the option 'Show cooccurances for visible nodes only' we'll get a list of all the cooccurances even if currently not shown in the graph. To unshow the list, we can click somewhere else. We can clean the graph from less frequent fact values by increasing the value of option 'hide facts with lower count than'.
 
@@ -577,14 +578,14 @@ If we right-click on some fact value, we can add that node to Build Search, hide
 | TEXTA_TAG| Own tag     | Tags we have trained in :ref:`the Text Tagger <classificationmanager>`                                                       |
 +----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
 
-It is important to notice that COMPANY and ADDR identify only companies and addresses registered in Estonian Open Data. It won't tag any foreign company nor address while ORG and LOC identify all of them.
+	Table 8.1. *Meaning of tags*
+	
+It is important to notice that COMPANY and ADDR identify only companies and addresses registered in Estonian Open Data. It won't tag any foreign company nor address while ORG and LOC identifies all of them.
 	
 Terminology Management
 ----------------------
 
-In order to learn more about the dataset, it is useful to know the domain terminology.
-TEXTA Toolkit's terminology extraction tools support the user through the process of creating lexicons,
-grouping them into concepts and mining for multiword expressions.
+In order to learn more about the dataset, it is useful to know the domain terminology or create a stopword lexicon. TEXTA Toolkit's terminology extraction tools support the user through the process of `creating lexicons  <lexiconminer>`, `grouping them into concepts <conceptualiser>` and `mining for multiword expressions <mweminer>`.
 
 .. note::
 	Extracting Terminology requires a language model, which can be trained by superusers in Model Manager.
@@ -602,6 +603,7 @@ Here we can get an overview of our lexicons created and concepts commited. In Fi
 
 	Figure 9.2. *Removing concept*
 	
+.. _lexiconminer:
 Lexicon Miner: Creating lexicons
 --------------------------------
 
@@ -619,9 +621,7 @@ After clicking on the newly created lexicon, we have to provide some seed words.
 
     Figure 10.2. *Providing seed words*
     
-The process of creating (or expanding) the lexicon is iterative. We keep asking for suggestions and from those we have to pick the ones that
-make sense to us. We keep asking for suggestions until we get no more meaningful responses. Then we should either change to some approach with
-"preclustering" in it or end the process, as the training data didn't give us more.
+The process of creating (or expanding) the lexicon is iterative. We keep asking for suggestions and from those we have to pick the ones that make sense to us. We keep asking for suggestions until we get no more meaningful responses. Then we should either change to some approach with "preclustering" in it or end the process, as the training data didn't give us more.
 
 The first batch of suggested words are shown in figure 10.3. The result would be better if we had trained our model on lemmas. This one is trained on text field, therefore we get all forms of 'accuse' in the candidates list.
 
@@ -629,13 +629,13 @@ The first batch of suggested words are shown in figure 10.3. The result would be
 
     Figure 10.3. *First suggestion batch*
     
-To add a suitable word to the lexicon, we simply have to click on it. If we want to delete something we chose we can erase the verb from the list. 
+To add a suitable word to the lexicon, we simply have to click on it. If we want to delete something we already chose we can erase the verb from the list. 
 
 Button 'Reset suggestions' erases the words we didn't choose from the memory and it will start to suggest words we might have already seen. Otherwise it doesn't.
 
 When we're ready, we can save the lexicon. The number of base lexicons created under the Terminology Overview will increase by 1.
 
-
+.. _conceptualiser:
 Conceptualiser: Creating concepts
 ---------------------------------
 
@@ -648,7 +648,7 @@ Word coordinates in scatter plot are derived by applying dimension reduction on 
 distributional semantics, meaning that words with similar context are similar and have in our case similar vectors - or are close to each other
 in 2-dimensional space.
 
-One of several dimension reduction methods can be chosen, but they give approximately the same results. **Lisada, mis on PCA, TSNE ja MDS**
+One of several dimension reduction methods can be chosen, but they give approximately the same results.
 
 After checking the lexicons and plotting them, we get to the state depicted in figure 11.1.
 
@@ -671,19 +671,20 @@ Now that we have found the concepts, we can commit the results to save them.
 
 .. note::
 
-    Concepts can be used in *Searcher* by prepending an "@"-sign. So we don't have to list words one by one.
-    
+    Concepts can be used in *Searcher* by prepending an "@"-sign. So we don't have to list words one by one. The Searcher will suggest us them if we start typing a name of some concept in the search field.
+  
+.. _mweminer:  
 MWE Miner: Mining Multi-Word Expressions
 ----------------------------------------
 
 Mining multi-word expressions is a way to find actually used phrases. We approched the problem bottom-up. First we defined the individual tokens
 and now we try to find which of them are located nearby or side-by-side.
 
-Mining task requires parameters - much like training language models. In figure 9 we can see the parameters we can use.
+Mining task requires parameters - much like training language models. In Figure 12.1 we can see the parameters we can use.
 
 .. figure:: images/09_mwe_parameters.png
 
-    Figure 9. *Multi-word expression mining parameters*
+    Figure 12.1. *Multi-word expression mining parameters*
 
 We have to define the feature or field, which should be the same we trained our language models on for mining lexicons. Expression lengths
 determine the output phrase lengths (or combination lengths, which are searched for). Phrase occurrencies below frequency threshold are ignored
@@ -713,5 +714,5 @@ frequency.
 The expanded results show how some patterns are much more common in real use of language.
 
 We can approve specific patterns to turn them into a concept containing multi-word expressions and therefore use the more complicated structures
-in other tools, such as in the *Searcher*. In order to approve, we have to reverse value into *True* by ticking the pairs' box and clicking on the arrow button.
+in other tools, such as in the *Searcher*. In order to approve, we have to reverse value into *True* by ticking the pairs' box and clicking on the arrow button. We can then check the Terminology Overview.
 	
