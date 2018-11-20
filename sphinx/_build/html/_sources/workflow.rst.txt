@@ -185,6 +185,11 @@ the fields it requires.
 
     Figure 3.5. *Specifying preprocessors*
 
+.. _preprocessors:
+**Lexicon Tagger preprocessor**.
+
+**Comment preprocessor**.
+
 Date conversion preprocessor converts date field values to correct Texta date format. Texta predicts the current format of the date based on the language. If we have a date field, we add the field to get data from and choose the language in which the data format is written. 
 
 Text Tagger preprocessor tags documents with Texta Text Taggers previously trained on other documents. If we already have a :ref:`tagger trained <classificationmanager>` we can choose to tag the text with it while importing. Don't forget to add the field to get data from. 
@@ -242,8 +247,6 @@ with "Train Language Model" application under "Task Manager" under "Restricted" 
 	2. New model parameters
     3. Trained models
 	
-	
-	
 To train a model, we need to specify the training data. The model uses the data we have chosen from the upper panel. 
 By default, all exsisting documents in the given dataset are used ('Select a search: Empty (all documents)'). We can also train a model on the data we have filtered out with the :ref:`Searcher <running-texta>`.
 
@@ -271,38 +274,40 @@ After starting the model training task, we can see the progress. For progress up
 
     Figure 5.3. *Model training progress*
     
-Once the training completes, we can see the following.
+Once the training completes, we can see the following.**MUUDA PILTI, KUNA UUS. **
 
 .. figure:: images/05-3_model_training_completed.png
 
     Figure 5.4. *Training completed*
 	
 	
+.. _classificationmanager:
 Training Text Taggers
 ---------------------
 
-**ADD STUFF HERE**
+In order to train a Classification Model or a Text Tagger, we are required to define some mandatory parameters:
 
-In order to train a model, we are required to define some mandatory parameters:
-
-	1. A search to define the set of documents used to train the model (positive documents).
+	1. A :ref:`search <searcher>` to define the set of documents used to train the model (positive documents).
 	2. The field describes the field of the document used to build the classification model.
 	3. The name for the class or "tag", which is later user to tag the documents.
 
 By setting these three, we can now train a classifier. However, we can also fine-tune the classifier by changing additional parameters such as
-feature extraction, dimensionality reduction and classifier model.
+Feature Extraction (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_), dimensionality reduction (Tone or Truncated SVD), Normalization (None or `Normalizer <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Normalizer.html>`_), and Classifier Model (Logistic Regression, LinearSVC, K-Neighbors, Radius Neighbors). We might get an error with LinearSVC in case we don't have enough data in the search.
 
 .. figure:: images/11-1_new_model.png
 
-    Figure 11.1. *Choosing parameters for the classification model*
+    Figure 6.1. *Choosing parameters for the classification model*
+	
+.. note::
+	In order to train a Text Tagger we must have :ref:`a search saved in the Searcher <searcher_save>`. 
 
-Trained models are shown in the "Classification Models" panel, where each epoch is equipped with precision and recall and some information about the classifier model.
+Trained models and models in training are shown in the "Tasks for: Train Text Tagger" panel with their training status, parameters, etc. Under 'Actions' we can delete the model or download it. You can see the changes by refreshing the page.
 	
 .. figure:: images/11-2_trained_models.png
 
-    Figure 11.2. *Trained models*
+    Figure 11.2. *Trained models **UUS PILT SIIA** *
 
-**Tagging the dataset with the model**
+**Tagging the dataset with the model TEGEMATA**
 
 By clicking "Apply" in "Classification Models" panel, user can apply the classifier on selected documents:
 
@@ -324,9 +329,16 @@ After pressing "Apply the Tagger", a tagging job will start and it's results wil
 
 Applying Preprocessors
 ----------------------
+In Figure 7.1 we can see the general outlook of Apply Preprocessor. Here we can apply the same :ref:`preprocessors <preprocessors>` we could have applied in the Dataset Importer. We can use all the documents or a subset gotten via Search. We can select a field and start preprocessing. We can see the results in 'Tasks for: Apply Preprocessor'.
 
-**ADD STUFF HERE**
+**ADD Figure 7.1**
 	
+.. figure:: images/07-02_searching_tagged.png
+
+    Figure 7.2. *Searching for tagged documents in the Searcher*
+	
+These tags we can later search for in the :ref:`Searcher <searcher>` (Figure 7.2). We can get the tagged documents via 'fact_text_values' field under TEXTA_TAG. In the example below we can choose to search for documents with (*is*) or without (*not*) the tag we choose in the box 'Value (case sensitive)'.
+ 
 .. _searcher:
 
 Searcher: Explore the Data
@@ -417,6 +429,7 @@ If there are too many features (columns), we can hide them by clicking on their 
 	1. Show all or hide all option
 	2. Shown features
 	3. Actions (:ref:`export results <exportresults>` or :ref:`delete results <deleteresults>`)
+.. _searcher_save:
 
 After we have come up with a suitable search, we can save it for later uses (see figure 8.10).
 
@@ -561,6 +574,8 @@ If we right-click on some fact value, we can add that node to Build Search, hide
 +----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
 | PHO      | Phone       | Phone number.                                                                                                                |
 +----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| TEXTA_TAG| Own tag     | Tags we have trained in :ref:`the Text Tagger <classificationmanager>`                                                       |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
 
 It is important to notice that COMPANY and ADDR identify only companies and addresses registered in Estonian Open Data. It won't tag any foreign company nor address while ORG and LOC identify all of them.
 	
@@ -573,7 +588,20 @@ grouping them into concepts and mining for multiword expressions.
 
 .. note::
 	Extracting Terminology requires a language model, which can be trained by superusers in Model Manager.
+	
+Terminology Overview
+--------------------
 
+Here we can get an overview of our lexicons created and concepts commited. In Figure 9.1 we can already see some concepts. The creation of these concepts are described below. We can delete the concepts by clicking on the little minus sign and then confirming our decision by choosing *Yes* in the question box shown in Figure 9.2.
+
+.. figure:: images/09-01_terminology_overview.png
+
+	Figure 9.1. *Terminology Overview*
+
+.. figure:: images/09-02_remove_entry.png
+
+	Figure 9.2. *Removing concept*
+	
 Lexicon Miner: Creating lexicons
 --------------------------------
 
@@ -583,28 +611,29 @@ Let's create a lexicon that contains verbs accompanied with "bribery".
 
 .. figure:: images/07_creating_verb_lexicon.png
 
-    Figure 7. *Creating lexicon of bribery verbs*
+    Figure 10.1. *Creating lexicon of bribery verbs*
     
 After clicking on the newly created lexicon, we have to provide some seed words.
 
 .. figure:: images/07-1_lexicon_seed_words.png
 
-    Figure 7.1. *Providing seed words*
+    Figure 10.2. *Providing seed words*
     
 The process of creating (or expanding) the lexicon is iterative. We keep asking for suggestions and from those we have to pick the ones that
 make sense to us. We keep asking for suggestions until we get no more meaningful responses. Then we should either change to some approach with
 "preclustering" in it or end the process, as the training data didn't give us more.
 
-The first batch of suggested words are shown in figure 7.2.
+The first batch of suggested words are shown in figure 10.3. The result would be better if we had trained our model on lemmas. This one is trained on text field, therefore we get all forms of 'accuse' in the candidates list.
 
 .. figure:: images/07-2_first_suggestion_batch.png
 
-    Figure 7.2. *First suggestion batch*
+    Figure 10.3. *First suggestion batch*
     
-The first suggested word - "kahtlustama" - makes sense, while the others not so much. To add it to the lexicon, we simply have to click on it. In the next batches
-we also get "seostama" and "avastama". However, the yield is not as good as we hoped for. The reason behind this is that the training data is
-too small. We had less than 5000 documents, most of which didn't even contain the relevant words and therefore the model had difficulties during
-the training phase.
+To add a suitable word to the lexicon, we simply have to click on it. If we want to delete something we chose we can erase the verb from the list. 
+
+Button 'Reset suggestions' erases the words we didn't choose from the memory and it will start to suggest words we might have already seen. Otherwise it doesn't.
+
+When we're ready, we can save the lexicon. The number of base lexicons created under the Terminology Overview will increase by 1.
 
 
 Conceptualiser: Creating concepts
@@ -619,36 +648,36 @@ Word coordinates in scatter plot are derived by applying dimension reduction on 
 distributional semantics, meaning that words with similar context are similar and have in our case similar vectors - or are close to each other
 in 2-dimensional space.
 
-One of several dimension reduction methods can be chosen, but they give approximately the same results.
+One of several dimension reduction methods can be chosen, but they give approximately the same results. **Lisada, mis on PCA, TSNE ja MDS**
 
-In our scenario, we have small and homogeneous lexicons and therefore each lexicon forms just one concept.
-
-After checking the lexicons and plotting them, we get to the state depicted in figure 8.
+After checking the lexicons and plotting them, we get to the state depicted in figure 11.1.
 
 .. figure:: images/08_conceptualiser_initial_plot.png
 
-    Figure 8. *Conceptualiser's initial plot*
+    Figure 11.1. *Conceptualiser's initial plot*
 
-We can visually detect that two more or less coherent clusters have formed and "avastama" is an outlier. It was also the last word suggested by
-*Lexicon Miner*. For that reason we leave that word out from our concepts.
+We can visually detect that three more or less coherent clusters have formed. We group the terms into consepts using the shortcuts mentioned on the left.
 
+.. figure:: images/	08-03_grouping_concepts.png
+
+	Figure 11.2. *Grouping concepts and naming a concept*
+	
+	
 .. figure:: images/08-1_grouped_concepts.png
     
-    Figure 8.1. *After grouping the words into concepts*
+    Figure 11.3. *After grouping the words into concepts*
     
-Now that we have found the concepts, we can commit the changes to save them.
+Now that we have found the concepts, we can commit the results to save them.
 
 .. note::
 
-    Concepts can be used in *Searcher* by prepending an "@"-sign. So we don't have to list words one by one. They can also be used in the same
-    manner in *Grammar tool*.
+    Concepts can be used in *Searcher* by prepending an "@"-sign. So we don't have to list words one by one.
     
 MWE Miner: Mining Multi-Word Expressions
 ----------------------------------------
 
 Mining multi-word expressions is a way to find actually used phrases. We approched the problem bottom-up. First we defined the individual tokens
-and now we try to find which of them are located nearby or side-by-side. Ideally, phrases should be found using the words with inflection data,
-but since our dataset is small, we have to make it with lemmas and low frequency threshold.
+and now we try to find which of them are located nearby or side-by-side.
 
 Mining task requires parameters - much like training language models. In figure 9 we can see the parameters we can use.
 
@@ -667,8 +696,8 @@ Because the data and lexicons are small, the task completes instantly.
 
     Figure 9.1. *Multi-word expression task progress*
 
-By looking at the results, we can see that there are 9 different patterns (denoted by "Terms" feature) containing "süüdistama" and "altkäemaks"
-concepts' lemmas which are frequent enough to catch our interest. 
+By looking at the results, we can see that there are 43 different patterns (denoted by "Terms" feature) containing 'accused' and 'corruption'
+concepts' words which are frequent enough to catch our interest. 12 'corrupton'-'admit' pairs and 1 'corruption'-'discredit' pair.
 
 .. figure:: images/09-2_mwe_results.png
 
@@ -684,5 +713,5 @@ frequency.
 The expanded results show how some patterns are much more common in real use of language.
 
 We can approve specific patterns to turn them into a concept containing multi-word expressions and therefore use the more complicated structures
-in other tools, such as in the *Searcher*.
+in other tools, such as in the *Searcher*. In order to approve, we have to reverse value into *True* by ticking the pairs' box and clicking on the arrow button.
 	
