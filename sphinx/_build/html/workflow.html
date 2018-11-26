@@ -70,8 +70,7 @@ with the exception of a list of tools and some global settings in the upper pane
 <span id="figure-2"></span><img alt="_images/02_after_login.png" src="_images/02_after_login.png" />
 <p class="caption"><span class="caption-text">Figure 1.2. <em>Home page</em></span></p>
 </div>
-<p>As we can see from the global settings panel, we don’t have any datasets nor language models.
-Therefore, we need to do some setting up in “Administration”.</p>
+<p>As we can see from the global settings panel, we already have one Sputnik dataset and a model trained on that. Learn <a class="reference internal" href="#datasetimporter"><span class="std std-ref">here</span></a> how to import datasets and <a class="reference internal" href="#trainlanguagemodel"><span class="std std-ref">here</span></a> to train a model.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Restricted contains the superuser tools for managing users, datasets, language models and text classifiers.</p>
@@ -129,7 +128,7 @@ In contrast to public datasets, private datasets are closed to everyone (except 
 </div>
 </div>
 <div class="section" id="dataset-importer-importing-data">
-<h2>Dataset Importer: Importing data<a class="headerlink" href="#dataset-importer-importing-data" title="Permalink to this headline">¶</a></h2>
+<span id="datasetimporter"></span><h2>Dataset Importer: Importing data<a class="headerlink" href="#dataset-importer-importing-data" title="Permalink to this headline">¶</a></h2>
 <p>To start analyzing data, we need some in the first place.  As the toolkit relies on Elasticsearch database, we could
 insert data manually, while conforming to the rules and schema described
 <a class="reference internal" href="elastic_schema.html#elastic-schema"><span class="std std-ref">here</span></a>.</p>
@@ -240,7 +239,7 @@ In order to switch the data or the model we are working with, we can just choose
 </div>
 </div>
 <div class="section" id="training-language-models">
-<h2>Training Language Models<a class="headerlink" href="#training-language-models" title="Permalink to this headline">¶</a></h2>
+<span id="trainlanguagemodel"></span><h2>Training Language Models<a class="headerlink" href="#training-language-models" title="Permalink to this headline">¶</a></h2>
 <p>In order to successfully extract terminology from a dataset, one needs a language model. Language models can be trained
 with “Train Language Model” application in “Task Manager” under “Restricted” (available for superusers only).</p>
 <div class="figure" id="id18">
@@ -753,7 +752,7 @@ in other tools, such as in the <em>Searcher</em>. In order to approve, we have t
       &copy;2017 TEXTA.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.0+/ebfdd9f</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.0+/780b86b</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

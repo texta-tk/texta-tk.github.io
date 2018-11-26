@@ -40,8 +40,7 @@ with the exception of a list of tools and some global settings in the upper pane
 
     Figure 1.2. *Home page*
     
-As we can see from the global settings panel, we don't have any datasets nor language models.
-Therefore, we need to do some setting up in "Administration".
+As we can see from the global settings panel, we already have one Sputnik dataset and a model trained on that. Learn :ref:`here <datasetimporter>` how to import datasets and :ref:`here <trainlanguagemodel>` to train a model.
 
 .. note::
 
@@ -104,6 +103,7 @@ Datasets can be closed and opened. Closed datasets are not listed to the users. 
 .. note::
 	Removing dataset in TEXTA does not delete the actual dataset on the disk, but rather deletes the link between Elasticsearch index and TEXTA.
 
+.. _datasetimporter:
 
 Dataset Importer: Importing data
 --------------------------------
@@ -233,6 +233,7 @@ In order to switch the data or the model we are working with, we can just choose
 
     Figure 4.1. *Confirmation of updating the resources*
 	
+.. _trainlanguagemodel:
 
 Training Language Models
 ------------------------
