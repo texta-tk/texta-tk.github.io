@@ -126,7 +126,7 @@ tools the importer provides.
 We insert data with import jobs - requests for the server to process and store the provided documents.
 
 Creating a new import job
-*************************
++++++++++++++++++++++++++
 
 Selecting formats
 ^^^^^^^^^^^^^^^^^
@@ -186,6 +186,7 @@ the fields it requires.
     Figure 3.5. *Specifying preprocessors*
 
 .. _preprocessors:
+
 **Lexicon Tagger preprocessor**.
 
 **Comment preprocessor**.
@@ -256,7 +257,7 @@ By default, all exsisting documents in the given dataset are used ('Select a sea
     
 The training process also requires a field in the given dataset to be used as input for the language model. This is on what the model starts to train.
 
-**!!KONTROLLI VAJA!!!**No of dimensions is basically the number of attributes or the size of a word vector. The higher the number, the slower the training. Higher number is recommended with a bigger set of data. If we don't know which number to choose, we can use the default value.
+No of dimensions is basically the number of attributes or the size of a word vector. The higher the number, the slower the training. Higher number is recommended with a bigger set of data. If we don't know which number to choose, we can use the default value.
 
 No of workers is the amount of nodes in which the training takes place. 
 
@@ -268,20 +269,15 @@ Description will be the model's name. It is advisable to choose it carefully and
 
 Let's train a new language model on our whole data. For that we use the default empty search. 
 
-After starting the model training task, we can see the progress. For progress upgrade, we have to refresh the page.
-    
-.. figure:: images/05-2_model_training_progress.png
-
-    Figure 5.3. *Model training progress*
-    
-Once the training completes, we can see the following.**MUUDA PILTI, KUNA UUS. **
+After starting the model training task, we can see the progress. For progress upgrade, we have to refresh the page. Once the training completes, we can see the following.
 
 .. figure:: images/05-3_model_training_completed.png
 
-    Figure 5.4. *Training completed*
+    Figure 5.3. *Training completed*
 	
 	
 .. _classificationmanager:
+
 Training Text Taggers
 ---------------------
 
@@ -292,7 +288,7 @@ Text Tagger is a classification model which creates :ref:`an extra tag for the S
 	3. The name for the class or "tag", which is later user to tag the documents.
 
 By setting these three, we can now train a classifier. However, we can also fine-tune the classifier by changing additional parameters such as
-Feature Extraction (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_), dimensionality reduction (Tone or Truncated SVD), Normalization (None or `Normalizer <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Normalizer.html>`_), and Classifier Model (Logistic Regression, LinearSVC, K-Neighbors, Radius Neighbors). We might get an error with LinearSVC in case we don't have enough data in the search.
+Feature Extraction (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_), dimensionality reduction (None or `Truncated SVD <https://scikit-learn.org/stable/modules/decomposition.html#lsa>`_), Normalization (None or `Normalizer <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Normalizer.html>`_), and Classifier Model (`Logistic Regression <https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression>`_, `LinearSVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_, `K-Neighbors, Radius Neighbors <https://scikit-learn.org/stable/modules/neighbors.html#classification>`_). We might get an error with LinearSVC in case we don't have enough data in the search.
 
 .. figure:: images/11-1_new_model.png
 
@@ -305,7 +301,7 @@ Trained models and models in training are shown in the "Tasks for: Train Text Ta
 	
 .. figure:: images/11-2_trained_models.png
 
-   **UUS PILT SIIA** Figure 11.2. *Trained models  *
+   **UUS PILT SIIA** Figure 11.2. *Trained models*
 
 **Tagging the dataset with the model TEGEMATA**
 
@@ -467,7 +463,7 @@ We can also do a cluster search (see Figure 8.11) on the documents we have filte
 
 We can select CountVectorizer, which lowercases letters, disregards punctuation and stopwords (doesn't lemmatize or stem) and uses occurrence counting, or TfidfVectorizer, which combines CountVectorizer and TfidTransformer and decreases the impact of frequent and hence less informative tokens. Read more about the vectorizers `here <https://www.kaggle.com/adamschroeder/countvectorizer-tfidfvectorizer-predict-comments>`_ or `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_. 
 
-We can select the number of clusters (default value 10) we want to achieve, maximum number of documents within a cluster (default 1000), number of keywords per cluster (default 10), maximum total words per document (default 1000) on which the Cluster Search calculates the clustering. We can increase it to 5000-10000 words as the 1000 words is rather small (of course, it depends on our dataset). If we have already some `lexicons <lexiconminer>`, we can choose them as stopword lexicons. We can also adjust the outcome by only seeing short version or documents with keyword matches. The first shows keywords with a couple of words before and after, the last excludes documents that are in the cluster, but do not have any keywords to highlight.
+We can select the number of clusters (default value 10) we want to achieve, maximum number of documents within a cluster (default 1000), number of keywords per cluster (default 10), maximum total words per document (default 1000) on which the Cluster Search calculates the clustering. We can increase it to 5000-10000 words as the 1000 words is rather small (of course, it depends on our dataset). If we have already some :ref:`lexicons <lexiconminer>`, we can choose them as stopword lexicons. We can also adjust the outcome by only seeing short version or documents with keyword matches. The first shows keywords with a couple of words before and after, the last excludes documents that are in the cluster, but do not have any keywords to highlight.
 
 .. figure:: images/06-07_cluster_searcher.png
 
@@ -585,7 +581,7 @@ It is important to notice that COMPANY and ADDR identify only companies and addr
 Terminology Management
 ----------------------
 
-In order to learn more about the dataset, it is useful to know the domain terminology or create a stopword lexicon. TEXTA Toolkit's terminology extraction tools support the user through the process of `creating lexicons  <lexiconminer>`, `grouping them into concepts <conceptualiser>` and `mining for multiword expressions <mweminer>`.
+In order to learn more about the dataset, it is useful to know the domain terminology or create a stopword lexicon. TEXTA Toolkit's terminology extraction tools support the user through the process of :ref:`creating lexicons  <lexiconminer>`, :ref:`grouping them into concepts <conceptualiser>` and :ref:`mining for multiword expressions <mweminer>`.
 
 .. note::
 	Extracting Terminology requires a language model, which can be trained by superusers in Model Manager.
@@ -603,7 +599,9 @@ Here we can get an overview of our lexicons created and concepts commited. In Fi
 
 	Figure 9.2. *Removing concept*
 	
+	
 .. _lexiconminer:
+
 Lexicon Miner: Creating lexicons
 --------------------------------
 
@@ -621,7 +619,11 @@ After clicking on the newly created lexicon, we have to provide some seed words.
 
     Figure 10.2. *Providing seed words*
     
-The process of creating (or expanding) the lexicon is iterative. We keep asking for suggestions and from those we have to pick the ones that make sense to us. We keep asking for suggestions until we get no more meaningful responses. Then we should either change to some approach with "preclustering" in it or end the process, as the training data didn't give us more.
+The process of creating (or expanding) the lexicon is iterative. We keep asking for suggestions and from those we have to pick the ones that make sense to us. We keep asking for suggestions until we get no more meaningful responses. Then we should either change to some approach with "preclustering" in it or end the process, as the training data didn't give us more. 
+
+.. note::
+	**Which method to choose?** 
+	If you are not certain, take the default mean vector (`most_similar <https://radimrehurek.com/gensim/models/deprecated/keyedvectors.html#id2>`_) as done above. Mean vector takes the mean of all the seed words' vectors (words in the selected lexicon list) and finds words similar to the mean. Multiplicative combination objective (`most_similar_cosmul <https://radimrehurek.com/gensim/models/deprecated/keyedvectors.html#id2>`_) multiplies the seed words' vectors with each other and finds words similar to the result vector. Preclustering means that the means or multiplicative combination objectives are found within previously formed clusters. Clusters have been created by comparing corresponding words' vectors. All rank aggregations in the list are `robust <https://cran.r-project.org/web/packages/RobustRankAggreg/index.html>`_ . If we choose just Robust Ranking Aggregation (RRA) alone we'll get the aggregation of  the suggestions for each seed word.
 
 The first batch of suggested words are shown in figure 10.3. The result would be better if we had trained our model on lemmas. This one is trained on text field, therefore we get all forms of 'accuse' in the candidates list.
 
@@ -636,6 +638,7 @@ Button 'Reset suggestions' erases the words we didn't choose from the memory and
 When we're ready, we can save the lexicon. The number of base lexicons created under the Terminology Overview will increase by 1.
 
 .. _conceptualiser:
+
 Conceptualiser: Creating concepts
 ---------------------------------
 
@@ -648,7 +651,7 @@ Word coordinates in scatter plot are derived by applying dimension reduction on 
 distributional semantics, meaning that words with similar context are similar and have in our case similar vectors - or are close to each other
 in 2-dimensional space.
 
-One of several dimension reduction methods can be chosen, but they give approximately the same results.
+One of several dimension reduction methods can be chosen, but they give approximately the same results. Read more about the methods here: `PCA <https://scikit-learn.org/stable/modules/decomposition.html#pca>`_, `MDS <https://scikit-learn.org/stable/modules/manifold.html#multidimensional-scaling>`_, `TSNE <https://scikit-learn.org/stable/modules/manifold.html#t-sne>`_.
 
 After checking the lexicons and plotting them, we get to the state depicted in figure 11.1.
 
@@ -674,6 +677,7 @@ Now that we have found the concepts, we can commit the results to save them.
     Concepts can be used in *Searcher* by prepending an "@"-sign. So we don't have to list words one by one. The Searcher will suggest us them if we start typing a name of some concept in the search field.
   
 .. _mweminer:  
+
 MWE Miner: Mining Multi-Word Expressions
 ----------------------------------------
 

@@ -8,11 +8,9 @@ Kontrolli deleting data't millegagi Searcheris.
 
 Kontrolli kas, fact graphis töötab paremklõps 'delete this fact from dataset'.
 
-lingid neile: dimensionality reduction (Tone or Truncated SVD), Classifier Model (Logistic Regression, LinearSVC, K-Neighbors, Radius Neighbors) rida 292
-
 rida 624 -> Millised vectorid seal on? KAS ON VAJA SELETADA Lexicon Mineri vektoreid? 
- rida 651 -> One of several dimension reduction methods can be chosen, but they give approximately the same results. **Lisada, mis on PCA, TSNE ja MDS**
  
+ MIKS MAKE HTML ANNAB: WARNING: Title level inconsistent:
  
 /---/
 
