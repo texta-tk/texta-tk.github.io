@@ -423,6 +423,255 @@ to the end user.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="task-manager">
+<h2>Task Manager<a class="headerlink" href="#task-manager" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-api-version">
+<h3>Get API version<a class="headerlink" href="#get-api-version" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X GET http://localhost:8000/task_manager/api/v1
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-list-of-tasks">
+<h3>Get List of Tasks<a class="headerlink" href="#get-list-of-tasks" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/task_list
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-task-status">
+<h3>Get Task Status<a class="headerlink" href="#get-task-status" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/task_status
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;task_id&quot;: 55</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-model-train-task">
+<h3>Start Model Train Task<a class="headerlink" href="#start-model-train-task" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/train_model
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;min_freq&quot;: 10,</span>
+<span class="s1">        &quot;field&quot;: &quot;field_value_en&quot;,</span>
+<span class="s1">        &quot;description&quot;: &quot;API-test&quot;,</span>
+<span class="s1">        &quot;search&quot;: &quot;all_docs&quot;,</span>
+<span class="s1">        &quot;dataset&quot;: 1,</span>
+<span class="s1">        &quot;num_dimensions&quot;: 100,</span>
+<span class="s1">        &quot;num_workers&quot;: 2</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-tagger-train-task">
+<h3>Start Tagger Train Task<a class="headerlink" href="#start-tagger-train-task" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/train_tagger
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;normalizer_opt&quot;: &quot;0&quot;,</span>
+<span class="s1">        &quot;classifier_opt&quot;: &quot;0&quot;,</span>
+<span class="s1">        &quot;description&quot;: &quot;API-A&quot;,</span>
+<span class="s1">        &quot;field&quot;: &quot;field_value_en&quot;,</span>
+<span class="s1">        &quot;reductor_opt&quot;: &quot;0&quot;,</span>
+<span class="s1">        &quot;dataset&quot;: 1,</span>
+<span class="s1">        &quot;search&quot;: &quot;1&quot;,</span>
+<span class="s1">        &quot;extractor_opt&quot;: &quot;0&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apply-preprocessor-task">
+<h3>Apply Preprocessor Task<a class="headerlink" href="#apply-preprocessor-task" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/apply
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;text_tagger_taggers&quot;: [&quot;6&quot;],</span>
+<span class="s1">        &quot;search&quot;: &quot;2&quot;,</span>
+<span class="s1">        &quot;text_tagger_feature_names&quot;: [&quot;field_value_en&quot;],</span>
+<span class="s1">        &quot;preprocessor_key&quot;: &quot;text_tagger&quot;,</span>
+<span class="s1">        &quot;dataset&quot;: 1,</span>
+<span class="s1">        &quot;description&quot;: &quot;API-T&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-list-of-valid-datasets">
+<h3>Get List of Valid Datasets<a class="headerlink" href="#get-list-of-valid-datasets" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/dataset_list
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-list-of-valid-searches">
+<h3>Get List of Valid Searches<a class="headerlink" href="#get-list-of-valid-searches" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/search_list
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;dataset&quot;: 1</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-list-of-valid-normalizers">
+<h3>Get List of Valid Normalizers<a class="headerlink" href="#get-list-of-valid-normalizers" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/normalizer_list
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-list-of-valid-classifiers">
+<h3>Get List of Valid Classifiers<a class="headerlink" href="#get-list-of-valid-classifiers" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/classifier_list
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-list-of-valid-reductors">
+<h3>Get List of Valid Reductors<a class="headerlink" href="#get-list-of-valid-reductors" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/reductor_list
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-list-of-valid-extractors">
+<h3>Get List of Valid Extractors<a class="headerlink" href="#get-list-of-valid-extractors" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/extractor_list
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-list-of-valid-taggers">
+<h3>Get List of Valid Taggers<a class="headerlink" href="#get-list-of-valid-taggers" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tagger_list
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-information-about-a-tagger">
+<h3>Get Information about a Tagger<a class="headerlink" href="#get-information-about-a-tagger" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tagger_info
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;tagger&quot;: &quot;66&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-unique-tags-in-a-dataset">
+<h3>Get Unique Tags in a Dataset<a class="headerlink" href="#get-unique-tags-in-a-dataset" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tag_list
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;dataset&quot;: 1</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-unique-fields-in-a-dataset">
+<h3>Get Unique Fields in a Dataset<a class="headerlink" href="#get-unique-fields-in-a-dataset" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/field_list
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;dataset&quot;: 1</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-mass-trainer-task">
+<h3>Start Mass Trainer Task<a class="headerlink" href="#start-mass-trainer-task" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/mass_train_tagger
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;dataset&quot;: 1,</span>
+<span class="s1">        &quot;tags&quot;: [&quot;A&quot;],</span>
+<span class="s1">        &quot;field&quot;: &quot;field_value_en&quot;,</span>
+<span class="s1">        &quot;normalizer_opt&quot;: &quot;0&quot;,</span>
+<span class="s1">        &quot;classifier_opt&quot;: &quot;0&quot;,</span>
+<span class="s1">        &quot;reductor_opt&quot;: &quot;0&quot;,</span>
+<span class="s1">        &quot;extractor_opt&quot;: &quot;0&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-mass-tagger-task">
+<h3>Start Mass Tagger Task<a class="headerlink" href="#start-mass-tagger-task" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/mass_tagger
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;dataset&quot;: 1,</span>
+<span class="s1">        &quot;search&quot;: 1,</span>
+<span class="s1">        &quot;field&quot;: &quot;field_value_en&quot;,</span>
+<span class="s1">        &quot;taggers&quot;: [&quot;14&quot;]</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-hybrid-tagger-task">
+<h3>Start Hybrid Tagger Task<a class="headerlink" href="#start-hybrid-tagger-task" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/hybrid_tagger
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;dataset&quot;: 1,</span>
+<span class="s1">        &quot;search&quot;: 1,</span>
+<span class="s1">        &quot;max_taggers&quot;: 10,</span>
+<span class="s1">        &quot;min_count_threshold&quot;: 50,</span>
+<span class="s1">        &quot;field&quot;: &quot;field_value_en&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apply-tagger-to-non-indexed-text">
+<h3>Apply Tagger to Non-Indexed Text<a class="headerlink" href="#apply-tagger-to-non-indexed-text" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tag_text
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;text&quot;: {&quot;field_value_en&quot;: &quot;Maybe I can reply to them by e-mail.&quot;},</span>
+<span class="s1">        &quot;taggers&quot;: [4, 7]</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-documents-tags">
+<h3>Get Documents Tags<a class="headerlink" href="#get-documents-tags" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/document_tags_list
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;dataset&quot;: 1,</span>
+<span class="s1">        &quot;document_ids&quot;: [&quot;GYtrE2QB28-0KXnd6zcj&quot;]</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apply-feedback-to-document-tag">
+<h3>Apply Feedback to Document Tag<a class="headerlink" href="#apply-feedback-to-document-tag" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tag_feedback
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
+<span class="s1">        &quot;dataset&quot;: 1,</span>
+<span class="s1">        &quot;field&quot;: &quot;field_value_en&quot;,</span>
+<span class="s1">        &quot;document_ids&quot;: [&quot;GYtrE2QB28-0KXnd6zcj&quot;],</span>
+<span class="s1">        &quot;tag&quot;: &quot;A&quot;,</span>
+<span class="s1">        &quot;value&quot;: 1</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -461,6 +710,31 @@ to the end user.</p>
 <li><a class="reference internal" href="#list-datasets">List datasets</a></li>
 <li><a class="reference internal" href="#get-dataset-field-details">Get dataset field details</a></li>
 <li><a class="reference internal" href="#importer-api">Importer API</a></li>
+<li><a class="reference internal" href="#task-manager">Task Manager</a><ul>
+<li><a class="reference internal" href="#get-api-version">Get API version</a></li>
+<li><a class="reference internal" href="#get-list-of-tasks">Get List of Tasks</a></li>
+<li><a class="reference internal" href="#get-task-status">Get Task Status</a></li>
+<li><a class="reference internal" href="#start-model-train-task">Start Model Train Task</a></li>
+<li><a class="reference internal" href="#start-tagger-train-task">Start Tagger Train Task</a></li>
+<li><a class="reference internal" href="#apply-preprocessor-task">Apply Preprocessor Task</a></li>
+<li><a class="reference internal" href="#get-list-of-valid-datasets">Get List of Valid Datasets</a></li>
+<li><a class="reference internal" href="#get-list-of-valid-searches">Get List of Valid Searches</a></li>
+<li><a class="reference internal" href="#get-list-of-valid-normalizers">Get List of Valid Normalizers</a></li>
+<li><a class="reference internal" href="#get-list-of-valid-classifiers">Get List of Valid Classifiers</a></li>
+<li><a class="reference internal" href="#get-list-of-valid-reductors">Get List of Valid Reductors</a></li>
+<li><a class="reference internal" href="#get-list-of-valid-extractors">Get List of Valid Extractors</a></li>
+<li><a class="reference internal" href="#get-list-of-valid-taggers">Get List of Valid Taggers</a></li>
+<li><a class="reference internal" href="#get-information-about-a-tagger">Get Information about a Tagger</a></li>
+<li><a class="reference internal" href="#get-unique-tags-in-a-dataset">Get Unique Tags in a Dataset</a></li>
+<li><a class="reference internal" href="#get-unique-fields-in-a-dataset">Get Unique Fields in a Dataset</a></li>
+<li><a class="reference internal" href="#start-mass-trainer-task">Start Mass Trainer Task</a></li>
+<li><a class="reference internal" href="#start-mass-tagger-task">Start Mass Tagger Task</a></li>
+<li><a class="reference internal" href="#start-hybrid-tagger-task">Start Hybrid Tagger Task</a></li>
+<li><a class="reference internal" href="#apply-tagger-to-non-indexed-text">Apply Tagger to Non-Indexed Text</a></li>
+<li><a class="reference internal" href="#get-documents-tags">Get Documents Tags</a></li>
+<li><a class="reference internal" href="#apply-feedback-to-document-tag">Apply Feedback to Document Tag</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -498,7 +772,7 @@ to the end user.</p>
       &copy;2017 TEXTA.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
