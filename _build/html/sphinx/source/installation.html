@@ -1,0 +1,235 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="et">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Installation &#8212; Toolkit 1.3 dokumentatsioon</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Indeks" href="../../genindex.html" />
+    <link rel="search" title="Otsing" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Püsiviit sellele pealkirjale">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Märkus</p>
+<p class="last">Installation instructions are currently only for Debian based Linux distributions and tested on Ubuntu.</p>
+</div>
+<div class="section" id="downloading">
+<h2>Downloading<a class="headerlink" href="#downloading" title="Püsiviit sellele pealkirjale">¶</a></h2>
+<p>TEXTA can be downloaded from Git repository. If you are missing <em>git</em>, you can download it with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get -y install git
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/ekt68/texta.git
+</pre></div>
+</div>
+<p>This generates a directory called <em>texta</em>, which contains the code base.</p>
+</div>
+<div class="section" id="resolving-system-wide-dependencies">
+<h2>Resolving system-wide dependencies<a class="headerlink" href="#resolving-system-wide-dependencies" title="Püsiviit sellele pealkirjale">¶</a></h2>
+<p>First lets update our aptitude’s package list to get the most up-to-date software versions.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
+</pre></div>
+</div>
+<p>To compile some of the Python libraries, we need the Python header files, which are included in <em>python-dev</em> package.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get -y install python-dev
+</pre></div>
+</div>
+<p>For speeding up <em>gensim</em> and <em>scipy</em> modules, we have to download the following libraries.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get -y install build-essential manpages-dev
+sudo apt-get -y install libblas-dev liblapack-dev libatlas-base-dev gfortran
+</pre></div>
+</div>
+</div>
+<div class="section" id="resolving-python-dependencies">
+<h2>Resolving Python dependencies<a class="headerlink" href="#resolving-python-dependencies" title="Püsiviit sellele pealkirjale">¶</a></h2>
+<p>Next, we need to get the Python libraries that TEXTA relies on.</p>
+<div class="section" id="virtual-python-environment">
+<h3>Virtual Python environment<a class="headerlink" href="#virtual-python-environment" title="Püsiviit sellele pealkirjale">¶</a></h3>
+<p>Since TEXTA is a Python application, we highly recommend to use a virtual Python environment. This is due to the fact that Python stores its
+libraries globally and if some other Python application shares libraries with TEXTA, but they use incompatible versions,
+the previously installed application might seize to work.</p>
+<div class="admonition note">
+<p class="first admonition-title">Märkus</p>
+<p class="last">If you are not concerned about potential Python library conflicts between several applications, you can skip this part and head on to
+<a class="reference internal" href="#installing-python-dependencies">installing Python dependencies</a>.</p>
+</div>
+<p>Two frequently used Python sandbox tools are <a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a> and
+<a class="reference external" href="https://virtualenv.pypa.io/en/stable/">Virtualenv</a>. Both allow to create a local version of Python interpreter by duplicating Python
+executables and libraries. In this section we cover <em>Anaconda</em>, as it enables to install many precompiled libraries with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install python_library_name
+</pre></div>
+</div>
+<p>and therefore is significantly faster than <em>virtualenv</em>. However, not all third-party libraries are available. In this case we still have to
+use <em>pip</em> or one of its alternatives.</p>
+<p>Installation instructions are at <a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a>.</p>
+<p>To create a new <em>Anaconda</em> environment called <em>texta</em> that uses Python 2.7, we issue the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create --name texta <span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Märkus</p>
+<p class="last">It’s a good practice to give environments descriptive names and to create an environment for each separate application. In our case we
+created an environement called „texta“.</p>
+</div>
+<p>After we have created the environment, we have to activate it. Activating an environment changes the current terminal session’s paths to switch
+the original Python’s executables to that of the isolated environment’s.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> activate texta
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-python-dependencies">
+<span id="id3"></span><h3>Installing Python dependencies<a class="headerlink" href="#installing-python-dependencies" title="Püsiviit sellele pealkirjale">¶</a></h3>
+<p>The following code block lists all the Python libraries that TEXTA depends on along with Python’s library downloading tool <em>pip</em>’s commands.</p>
+<p>3rd party Python libraries can be installed with package management systems such as <em>Anaconda</em> or <em>pip</em>.</p>
+<p>Installing with Anaconda:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>your_activated_conda_env<span class="o">)</span> texta_root_dir$ chmod u+x conda_install.sh
+<span class="o">(</span>your_activated_conda_env<span class="o">)</span> texta_root_dir$ ./conda_install.sh
+</pre></div>
+</div>
+<p>With pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>texta_root_dir$ pip install -r requirements.txt
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Märkus</p>
+<p class="last"><cite>sudo pip install -r requirements.txt</cite> if not using conda or virtualenv</p>
+</div>
+</div>
+</div>
+<div class="section" id="elasticsearch">
+<h2>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Püsiviit sellele pealkirjale">¶</a></h2>
+<p>TEXTA uses <a class="reference external" href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a> to store and query data. Elasticsearch allows full-text indexing,
+meaning that not only can we query by specific columns, but we can also query documents using specific words or phrases in a column.</p>
+<p>Elasticsearch behaves like a RESTful server, which accepts queries with JSON data. The server can either run locally or remotely.
+Small datasets can be maintained on personal computer, while gigabytes of data should preferably be kept on a remote server. It is vital to
+configure Elasticsearch’s address if remote approach is used.</p>
+<p>In Elasticsearch terminology a database is called an index and table is called either mapping or type.</p>
+<p>Elasticsearch can be downloaded from <a class="reference external" href="https://www.elastic.co/products/elasticsearch">here</a>.</p>
+</div>
+<div class="section" id="final-touches">
+<span id="id5"></span><h2>Final touches<a class="headerlink" href="#final-touches" title="Püsiviit sellele pealkirjale">¶</a></h2>
+<p>All that is left is to synchronize database state by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>texta_root_dir$ python migrate.py
+</pre></div>
+</div>
+<p>and create a superuser for TEXTA to assign application permissions</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>texta_root_dir$ python manage.py createsuperuser
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Märkus</p>
+<p class="last"><strong>Superuser</strong> is important, as it is also used for defining the datasets we want to work on. Remember the credentials.</p>
+</div>
+</div>
+<div class="section" id="example-dataset">
+<span id="id6"></span><h2>Example dataset<a class="headerlink" href="#example-dataset" title="Püsiviit sellele pealkirjale">¶</a></h2>
+<p>TEXTA comes with example dataset to play around with. After Elasticsearch has been started and the correct Elasticsearch URL has been set in
+<a class="reference internal" href="configuration.html#configuration"><span class="std std-ref">configuration steps</span></a>, we have to run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>texta_root_dir$ python scripts/example/example_import.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-texta">
+<span id="id7"></span><h2>Running TEXTA<a class="headerlink" href="#running-texta" title="Püsiviit sellele pealkirjale">¶</a></h2>
+<p>To start TEXTA on localhost:8000, it suffices to run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>texta_root_dir$ python manage.py runserver
+</pre></div>
+</div>
+<p>If we want to run on some other network interface or port, we can specify it via IP-port pair.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>texta_root_dir$ python manage.py runserver localhost:80
+texta_root_dir$ python manage.py runserver <span class="m">0</span>.0.0.0:8080
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Toolkit</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigatsioon</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Kiirotsing</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Otsi" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Silver Traat.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.0+/7e143a0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/sphinx/source/installation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
