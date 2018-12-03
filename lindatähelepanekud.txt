@@ -1,9 +1,0 @@
-﻿Issue 1
-asukoht: Restricted-> dataset importer -> Data formats -> Select all applicable formats
-probleem: puudub csv faili format seal, kuigi eestikeelses versioonis oli see olemas. Samuti inglis-
-keelses.
-
-Issue 1.1
-asukoht: Restricted-> dataset importer -> Data formats -> Select all applicable formats
-probleem: panin failitüübiks suvaliselt xml ja laadisin kliinik_ee.csv-d. Hakkas importima! (processing 
-ei lõppenud küll). 
