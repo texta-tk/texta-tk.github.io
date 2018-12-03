@@ -252,7 +252,7 @@ with "Train Language Model" application in "Task Manager" under "Restricted" (av
 	3. Trained models
 	
 To train a model, we need to specify the training data. The model uses the data we have chosen from the upper panel. 
-By default, all exsisting documents in the given dataset are used ('Select a search: Empty (all documents)'). We can also train a model on the data we have filtered out with the :ref:`Searcher <searcher>`.
+By default, all exsisting documents in the given dataset are used ('Select a search: Empty (all documents)'). We can also train a model on the data we have filtered out with the :ref:`Searcher <running-texta>`.
 
 .. figure:: images/05-1_model_parameters.png
 
