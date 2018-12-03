@@ -4,23 +4,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Docker &#8212; TEXTA Toolkit 0.1 documentation</title>
     <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="API" href="api.html" />
@@ -30,13 +23,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="docker">
@@ -50,7 +44,7 @@ applications or whole systems comprising of several services to any Docker suppo
 <div class="section" id="linux">
 <h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
 <p>Docker is widely supported in Linux. For Debian based distributions, e.g Ubuntu, it suffices to run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get update
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
 sudo apt-get install docker docker-compose -y
 </pre></div>
 </div>
@@ -78,17 +72,17 @@ while Hyper-V is enabled in system settings, other virtual machines will fail.</
 <p>In order to do that, navigate to your local TEXTA repository’s root directory and go to “docker” child directory.
 If you haven’t cloned the <a class="reference external" href="https://github.com/texta-tk/texta">TEXTA code</a> and don’t want to, downloading the “docker” directory will suffice as well.</p>
 <p>Once inside the “docker” directory, run</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo docker-compose pull
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker-compose pull
 </pre></div>
 </div>
 <p>to download the necessary Docker images.</p>
 <p>Then run</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo docker-compose up
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker-compose up
 </pre></div>
 </div>
 <p>to actually get TEXTA running.</p>
 <p>To stop the container, either press Ctrl+C several times or write</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo docker-compose down
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker-compose down
 </pre></div>
 </div>
 </div>
@@ -104,24 +98,36 @@ Note that port 8000 has to be available.</p>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Docker</a><ul>
-<li><a class="reference internal" href="#installing-docker">Installing Docker</a><ul>
-<li><a class="reference internal" href="#linux">Linux</a></li>
-<li><a class="reference internal" href="#windows">Windows</a></li>
-<li><a class="reference internal" href="#macos">MacOS</a></li>
+<h1 class="logo"><a href="index.html">TEXTA Toolkit</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Using TEXTA Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elastic_schema.html">Elasticsearch data layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-docker">Installing Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-texta-toolkit">Running TEXTA Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-texta-toolkit">Using TEXTA Toolkit</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#running-texta-toolkit">Running TEXTA Toolkit</a></li>
-<li><a class="reference internal" href="#using-texta-toolkit">Using TEXTA Toolkit</a></li>
 </ul>
-</li>
-</ul>
+
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
@@ -130,23 +136,26 @@ Note that port 8000 has to be available.</p>
   </ul></li>
 </ul>
 </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="sources/docker.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -155,8 +164,8 @@ Note that port 8000 has to be available.</p>
       &copy;2017 TEXTA.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="sources/docker.rst.txt"

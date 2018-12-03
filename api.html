@@ -4,23 +4,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>API &#8212; TEXTA Toolkit 0.1 documentation</title>
     <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Docker" href="docker.html" />
@@ -31,13 +24,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="api">
@@ -50,19 +44,19 @@
 <div class="section" id="retrieving-the-token">
 <h3>Retrieving the token<a class="headerlink" href="#retrieving-the-token" title="Permalink to this headline">¶</a></h3>
 <p>To retrieve an authorization token, one has to perform the following query:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl http://localhost:8000/account/get_auth_token -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl http://localhost:8000/account/get_auth_token -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;username&quot;: &quot;my_texta_username&quot;,</span>
 <span class="s1">    &quot;password&quot;: &quot;my_texta_password&quot;</span>
 <span class="s1">}&#39;</span>
 </pre></div>
 </div>
 <p>If authentication was successful, the authentication token is returned in the following format:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;auth_token&quot;</span><span class="p">:</span> <span class="s2">&quot;9c05321f821f6e&quot;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;auth_token&quot;</span><span class="p">:</span> <span class="s2">&quot;9c05321f821f6e&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>The returned authentication token doesn’t expire and will be returned every time a token is requested by the user, until explicity revoked. If authentication token is likely to be compromised, it’s possible to revoke the token with the command</p>
 <p>which returns</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -76,14 +70,14 @@
 <p>We can use TEXTA API to find all the articles by some fixed authors, articles which contain specific keywords or phrases, or articles which are published between two dates by selected authors and of which content contains keywords “president” and “speech”, and not keywords “poverty”, “unhappiness”, and “falling behind”.</p>
 </div>
 <p>To download all the documents from the dataset with ID 4, it suffices to call</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4</span>
 <span class="s1">}&#39;</span>
 </pre></div>
 </div>
 <p>Retrieving all the documents isn’t necessarily the smartest thing to do. Next we might want to limit the number of documents we receive to 100 and get only the titles and the authors.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4,</span>
 <span class="s1">    &quot;fields&quot;: [&quot;title&quot;, &quot;author&quot;],</span>
@@ -92,7 +86,7 @@
 </pre></div>
 </div>
 <p>Although we now have some control over how we receive our data, we can’t still control what we receive. For that, we have to define constraints which the returned documents must satisfy. Let’s retrieve the title and the content of 15 articles published in 2017 by the renowned author John Doe.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4,</span>
 <span class="s1">    &quot;fields&quot;: [&quot;title&quot;, &quot;content&quot;],</span>
@@ -105,14 +99,14 @@
 </pre></div>
 </div>
 <p>The approach so far is streaming all the matching documents, meaning that the user will receive the data over a period of time with a single request. The returned documents have the following format:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe is the best&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;True story.&quot;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe is the best&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;True story.&quot;</span><span class="p">}</span>
 <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe strikes again!&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;Image of a man assaulting tanks with a flower&gt;&quot;</span><span class="p">}</span>
 <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Johnny hit by a 50 ton tank&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Local hero John Doe stormed a tank on a military parade, but couldn&#39;t stop in time.&quot;</span><span class="p">}</span>
 <span class="o">...</span>
 </pre></div>
 </div>
 <p>Although streaming is great for downloading huge files, it can be inconvenient to download and process programmatically, which is why TEXTA API also allows to download one batch at a time using the scroll mechanism.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4,</span>
 <span class="s1">    &quot;fields&quot;: [&quot;title&quot;, &quot;content&quot;],</span>
@@ -126,7 +120,7 @@
 </pre></div>
 </div>
 <p>Here we set the “scroll” flag to <em>True</em> and defined batch size in the parameters. Batch size defines how many documents will be returned in a single query. The result of the query looks like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;scroll_id&quot;</span><span class="p">:</span> <span class="s2">&quot;some very long hash string&quot;</span><span class="p">,</span>
     <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">1572</span><span class="p">,</span>
     <span class="s2">&quot;hits&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -139,7 +133,7 @@
 </pre></div>
 </div>
 <p>Now, when we want to get the next batch of documents, it suffices to query</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/search&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4,</span>
 <span class="s1">    &quot;scroll_id&quot;: &quot;that very long hash string we retrieved before&quot;</span>
@@ -147,7 +141,7 @@
 </pre></div>
 </div>
 <p>When all 1572 documents have been retrieved with the batches, the results look like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;scroll_id&quot;</span><span class="p">:</span> <span class="s2">&quot;some very long hash string&quot;</span><span class="p">,</span>
     <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">1572</span><span class="p">,</span>
     <span class="s2">&quot;hits&quot;</span><span class="p">:</span> <span class="p">[]</span>
@@ -160,7 +154,7 @@
 <div class="section" id="textual">
 <h4>Textual<a class="headerlink" href="#textual" title="Permalink to this headline">¶</a></h4>
 <p>Textual constraint’s class is <strong>string</strong>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span><span class="s2">&quot;author&quot;</span><span class="p">,</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;must&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;match_phrase&quot;</span><span class="p">,</span><span class="s2">&quot;slop&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;strings&quot;</span><span class="p">:[</span><span class="s2">&quot;John Doe&quot;</span><span class="p">],</span> <span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span><span class="s2">&quot;author&quot;</span><span class="p">,</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;must&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;match_phrase&quot;</span><span class="p">,</span><span class="s2">&quot;slop&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;strings&quot;</span><span class="p">:[</span><span class="s2">&quot;John Doe&quot;</span><span class="p">],</span> <span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>field:</strong> name of the field/feature on which the constraint is applied.</p>
@@ -182,7 +176,7 @@
 <div class="section" id="temporal">
 <h4>Temporal<a class="headerlink" href="#temporal" title="Permalink to this headline">¶</a></h4>
 <p>Temporal constraint’s class is <strong>date</strong>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span><span class="s2">&quot;published&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;start&quot;</span><span class="p">:</span><span class="s2">&quot;2017-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span><span class="s2">&quot;2017-12-31&quot;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span><span class="s2">&quot;published&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;start&quot;</span><span class="p">:</span><span class="s2">&quot;2017-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span><span class="s2">&quot;2017-12-31&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>start:</strong> start date.</p>
@@ -192,7 +186,7 @@
 <h4>Simple annotational<a class="headerlink" href="#simple-annotational" title="Permalink to this headline">¶</a></h4>
 <p>Annotation data is on top of regular features and gives semantical meaning to parts of the feature (words, phrases, sentences, paragraphs). For example, if in our dataset we have articles about annual presidential speeches, we might want to annotate occurrences of “Vladimir Putin”, “Donald Trump” or “Barack Obama” with the keyword “president”, so that we could later on query the documents, which talk about presidents or presidential speeches, rather than individually list all the presidents that have ever been or will be in the query. Annotation is done via information extraction - either using TEXTA Grammar Miner or external tools.</p>
 <p>Simple annotation’s constraint class is <strong>fact</strong>. The following constraint finds all the documents, for which there are phrases labelled as “president” AND (beacause of must operator) “prime_minister”, meaning that it finds all articles which mention both heads of a state.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span><span class="s2">&quot;content&quot;</span><span class="p">,</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;must&quot;</span><span class="p">,</span><span class="s2">&quot;strings&quot;</span><span class="p">:[</span><span class="s2">&quot;president&quot;</span><span class="p">,</span> <span class="s2">&quot;prime_minister&quot;</span><span class="p">],</span> <span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;fact&quot;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span><span class="s2">&quot;content&quot;</span><span class="p">,</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;must&quot;</span><span class="p">,</span><span class="s2">&quot;strings&quot;</span><span class="p">:[</span><span class="s2">&quot;president&quot;</span><span class="p">,</span> <span class="s2">&quot;prime_minister&quot;</span><span class="p">],</span> <span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;fact&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -200,7 +194,7 @@
 <h4>Advanced annotational<a class="headerlink" href="#advanced-annotational" title="Permalink to this headline">¶</a></h4>
 <p>“Advanced” annotation queries include the value of the annotation. If simple annotation was only concerned about the fact, whether an article contained a reference to an arbitrary president or prime minister, then advanced annotation allows to query articles, which are about specific presidents. For example about president Donald Trump. The value also helps to differentiate between articles in which Donald Trump was in his presidential role, and articles, in which he wasn’t.</p>
 <p>Advanced annotation’s constraint class is <strong>fact_val</strong>. The following constraint finds all the documents, in which Trump isn’t meddling with Russian interests.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;field&quot;</span><span class="p">:</span><span class="s2">&quot;content&quot;</span><span class="p">,</span>
     <span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;must&quot;</span><span class="p">,</span>
     <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;str&quot;</span><span class="p">,</span>
@@ -242,7 +236,7 @@
 <p>With aggregation we can find out, how many articles were written each month, by aggregating over publish date with monthly interval. We can also find the top publishing authors each year or the most relevant keywords from articles mentioning prime minister candidate during an election period.</p>
 </div>
 <p>If we are interested in finding out, how many articles has each author writtern, we can query it as follows:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/aggregate&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/aggregate&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;searches&quot;: [{&quot;dataset&quot;: 4}],</span>
 <span class="s1">    &quot;aggregation&quot;: [{&quot;field&quot;: &quot;author&quot;, &quot;type&quot;: &quot;string&quot;, &quot;sort_by&quot;: &quot;terms&quot;}]</span>
@@ -251,7 +245,7 @@
 </div>
 <p>As we can see, aggregation query depends on two attributes - “searches” and “aggregation”. “Searches” is a list of search definitions which we have already met in the previous section. Search defines the subset of the original data on which we run the aggregation. This time it’s used internally: we are not receiving and documents.</p>
 <p>The possiblity to aggregate against several data subsets allows us to find interesting comparable statistics. For example, we can get the most eager authors on cars and dogs with the following query:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/aggregate&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/aggregate&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;searches&quot;: [</span>
 <span class="s1">        {</span>
@@ -271,7 +265,7 @@
 <p>So far we have aggregated only over one level - author. However, imagine if we could aggregate over several. For example, what if we want to see the most active author on a monthly basis, without the necessity to explicitly create separate monthly date range searches for several years. Or what if we want to find the favourite words for different authors?</p>
 <p>TEXTA API aggregation allows to aggregate over several levels.</p>
 <p>To find out the most active authors on a monthly basis, we can execute the following query:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/aggregate&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/api/aggregate&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;searches&quot;: [{&quot;dataset&quot;: 4}],</span>
 <span class="s1">    &quot;aggregation&quot;: [</span>
@@ -307,7 +301,7 @@
 <div class="section" id="id4">
 <h4>Simple annotational<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>Simple annotation aggregation has type “fact”.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;fact&quot;</span><span class="p">,</span> <span class="s2">&quot;sort_by&quot;</span><span class="p">:</span> <span class="s2">&quot;terms&quot;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;fact&quot;</span><span class="p">,</span> <span class="s2">&quot;sort_by&quot;</span><span class="p">:</span> <span class="s2">&quot;terms&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -315,11 +309,11 @@
 <h4>Advanced annotational<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p>Advanced annotation aggregation has a type, which depends on the data type of the values.</p>
 <p>If we are interested in textual annotations, we use the type “fact_str”.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;fact_str&quot;</span><span class="p">,</span> <span class="s2">&quot;sort_by&quot;</span><span class="p">:</span> <span class="s2">&quot;terms&quot;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;fact_str&quot;</span><span class="p">,</span> <span class="s2">&quot;sort_by&quot;</span><span class="p">:</span> <span class="s2">&quot;terms&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>If we are interested in numeric/temporal annotations, we use the type “fact_num”.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;fact_num&quot;</span><span class="p">,</span> <span class="s2">&quot;sort_by&quot;</span><span class="p">:</span> <span class="s2">&quot;terms&quot;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;fact_num&quot;</span><span class="p">,</span> <span class="s2">&quot;sort_by&quot;</span><span class="p">:</span> <span class="s2">&quot;terms&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -329,13 +323,13 @@
 <h2>List datasets<a class="headerlink" href="#list-datasets" title="Permalink to this headline">¶</a></h2>
 <p>Listing datasets is important in order to construct queries on correct datasets.</p>
 <p>To get the list of available and permitted datasets, we issue the following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl http://localhost:8000/search_api/list/datasets -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl http://localhost:8000/search_api/list/datasets -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">}&#39;</span>
 </pre></div>
 </div>
 <p>which returns</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="s2">&quot;journalA&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;mappping&quot;</span><span class="p">:</span> <span class="s2">&quot;articles&quot;</span><span class="p">,</span> <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;superadmin&quot;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="s2">&quot;journalA&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;mappping&quot;</span><span class="p">:</span> <span class="s2">&quot;articles&quot;</span><span class="p">,</span> <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;superadmin&quot;</span><span class="p">}</span>
 <span class="p">{</span><span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="s2">&quot;journalB&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;mappping&quot;</span><span class="p">:</span> <span class="s2">&quot;ancient_articles&quot;</span><span class="p">,</span> <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;superadmin&quot;</span><span class="p">}</span>
 <span class="p">{</span><span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="s2">&quot;joy_of_life&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;mappping&quot;</span><span class="p">:</span> <span class="s2">&quot;stories&quot;</span><span class="p">,</span> <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;mystery_admin&quot;</span><span class="p">}</span>
 </pre></div>
@@ -349,7 +343,7 @@
 <h2>Get dataset field details<a class="headerlink" href="#get-dataset-field-details" title="Permalink to this headline">¶</a></h2>
 <p>It is necessary to know the existing fields and their data types to construct accurate queries.</p>
 <p>One can get detailed structure of the dataset with ID 4 with the following query:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl http://localhost:8000/search_api/list -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl http://localhost:8000/search_api/list -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4</span>
 <span class="s1">}&#39;</span>
@@ -372,7 +366,7 @@ Each call to the Importer <strong>MUST</strong> have the following fields:</p>
 a check for the <strong>mapping</strong> field is made, and if it exists it is inserted into the target doc_type.</p>
 <p>In case an invalid authentication token is provided or a mandatory field is missing a corresponding error message will be returned
 to the end user.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;index&quot;: &quot;texta&quot;,</span>
 <span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
@@ -382,7 +376,7 @@ to the end user.</p>
 <span class="c1"># {&quot;message&quot;: &quot;Item(s) successfully saved.&quot;}</span>
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;index&quot;: &quot;texta&quot;,</span>
 <span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
@@ -392,7 +386,7 @@ to the end user.</p>
 <span class="c1"># {&quot;message&quot;: &quot;Item(s) successfully saved.&quot;}</span>
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f8&quot;,</span>
 <span class="s1">    &quot;index&quot;: &quot;texta&quot;,</span>
 <span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
@@ -402,7 +396,7 @@ to the end user.</p>
 <span class="c1"># {&quot;message&quot;: &quot;Authentication failed - invalid auth token.&quot;}</span>
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;index&quot;: &quot;&quot;,</span>
 <span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
@@ -412,7 +406,7 @@ to the end user.</p>
 <span class="c1"># {&quot;message&quot;: &quot;Mandatory field &#39;index&#39; can not be empty.&quot;}</span>
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 
 <span class="s1">    &quot;doc_type&quot;: &quot;texta_facts&quot;,</span>
@@ -431,11 +425,11 @@ This section describes the different endpoints available in the version 1.0 of t
 <h3>Get API version<a class="headerlink" href="#get-api-version" title="Permalink to this headline">¶</a></h3>
 <p>Provides information about the API version and can be used as a monitoring checkpoint for online status.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X GET http://localhost:8000/task_manager/api/v1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET http://localhost:8000/task_manager/api/v1
 </pre></div>
 </div>
 <p>That returns:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;TEXTA Task Manager API&quot;</span><span class="p">,</span>
 <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span>
 <span class="p">}</span>
@@ -446,7 +440,7 @@ This section describes the different endpoints available in the version 1.0 of t
 <h3>Get List of Tasks<a class="headerlink" href="#get-list-of-tasks" title="Permalink to this headline">¶</a></h3>
 <p>Lists all tasks present in the system.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/task_list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/task_list
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
 <span class="s1">    }&#39;</span>
@@ -462,7 +456,7 @@ This section describes the different endpoints available in the version 1.0 of t
 <h3>Get Task Status<a class="headerlink" href="#get-task-status" title="Permalink to this headline">¶</a></h3>
 <p>Get status for a specific task in the system. Can be used to monitor the progress of a task (via multiple calls to API) or check the final status of a task when it is done.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/task_status
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/task_status
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;task_id&quot;: 55</span>
@@ -487,7 +481,7 @@ This section describes the different endpoints available in the version 1.0 of t
 <h3>Start Model Train Task<a class="headerlink" href="#start-model-train-task" title="Permalink to this headline">¶</a></h3>
 <p>Creates a task for model training. The task status can be monitored via <em>task_manager/api/v1/task_status</em> endpoint.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/train_model
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/train_model
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;min_freq&quot;: 10,</span>
@@ -505,7 +499,7 @@ This section describes the different endpoints available in the version 1.0 of t
 <h3>Start Tagger Train Task<a class="headerlink" href="#start-tagger-train-task" title="Permalink to this headline">¶</a></h3>
 <p>Creates a task for document tagger. The task status can be monitored via <em>task_manager/api/v1/task_status</em> endpoint.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/train_tagger
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/train_tagger
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;normalizer_opt&quot;: &quot;0&quot;,</span>
@@ -522,12 +516,12 @@ This section describes the different endpoints available in the version 1.0 of t
 </div>
 <div class="section" id="apply-preprocessor-task">
 <h3>Apply Preprocessor Task<a class="headerlink" href="#apply-preprocessor-task" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>Creates a task for document model prediction for a given * preprocessor_key*. The task status can be monitored via <em>task_manager/api/v1/task_status</em> endpoint.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/apply
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/apply
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;text_tagger_taggers&quot;: [&quot;6&quot;],</span>
@@ -542,12 +536,12 @@ This section describes the different endpoints available in the version 1.0 of t
 </div>
 <div class="section" id="get-list-of-valid-datasets">
 <h3>Get List of Valid Datasets<a class="headerlink" href="#get-list-of-valid-datasets" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>This endpoint can be used to list all valid datasets added to the system via web interface.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/dataset_list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/dataset_list
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
 <span class="s1">    }&#39;</span>
@@ -556,12 +550,12 @@ This section describes the different endpoints available in the version 1.0 of t
 </div>
 <div class="section" id="get-list-of-valid-searches">
 <h3>Get List of Valid Searches<a class="headerlink" href="#get-list-of-valid-searches" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>This endpoint can be used to list all valid searches created in the system via search web interface.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/search_list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/search_list
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;dataset&quot;: 1</span>
@@ -571,38 +565,38 @@ This section describes the different endpoints available in the version 1.0 of t
 </div>
 <div class="section" id="get-list-of-valid-normalizers">
 <h3>Get List of Valid Normalizers<a class="headerlink" href="#get-list-of-valid-normalizers" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>This endpoint can be used to list all valid normalizers available in the system.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/normalizer_list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/normalizer_list
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
 <span class="s1">    }&#39;</span>
 </pre></div>
 </div>
 <p>This return a list of JSON normalizer options, as in:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="s2">&quot;normalizer_opt&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">},</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="s2">&quot;normalizer_opt&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">},</span>
  <span class="p">{</span><span class="s2">&quot;normalizer_opt&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Normalizer&quot;</span><span class="p">}]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="get-list-of-valid-classifiers">
 <h3>Get List of Valid Classifiers<a class="headerlink" href="#get-list-of-valid-classifiers" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>This endpoint can be used to list all valid classifiers available in the system.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/classifier_list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/classifier_list
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
 <span class="s1">    }&#39;</span>
 </pre></div>
 </div>
 <p>This return a list of JSON classifier options, as in:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[{</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
 <span class="s2">&quot;classifier_opt&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
 <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;LinearSVC&quot;</span>
 <span class="p">},</span> <span class="p">{</span>
@@ -620,17 +614,17 @@ This section describes the different endpoints available in the version 1.0 of t
 </div>
 <div class="section" id="get-list-of-valid-reductors">
 <h3>Get List of Valid Reductors<a class="headerlink" href="#get-list-of-valid-reductors" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/reductor_list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/reductor_list
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
 <span class="s1">    }&#39;</span>
 </pre></div>
 </div>
 <p>This return a list of JSON reductor options, as in:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[{</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
 <span class="s2">&quot;reductor_opt&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
 <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span>
 <span class="p">},</span> <span class="p">{</span>
@@ -642,19 +636,19 @@ This section describes the different endpoints available in the version 1.0 of t
 </div>
 <div class="section" id="get-list-of-valid-extractors">
 <h3>Get List of Valid Extractors<a class="headerlink" href="#get-list-of-valid-extractors" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>This endpoint can be used to list all valid extractors available in the system.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/extractor_list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/extractor_list
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
 <span class="s1">    }&#39;</span>
 </pre></div>
 </div>
 <p>This return a list of JSON extractor options, as in:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="p">{</span><span class="s2">&quot;extractor_opt&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Count Vectorizer&quot;</span><span class="p">},</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="p">{</span><span class="s2">&quot;extractor_opt&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Count Vectorizer&quot;</span><span class="p">},</span>
   <span class="p">{</span><span class="s2">&quot;extractor_opt&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Hashing Vectorizer&quot;</span><span class="p">},</span>
   <span class="p">{</span><span class="s2">&quot;extractor_opt&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;TfIdf Vectorizer&quot;</span><span class="p">}</span> <span class="p">]</span>
 </pre></div>
@@ -662,12 +656,12 @@ This section describes the different endpoints available in the version 1.0 of t
 </div>
 <div class="section" id="get-list-of-valid-taggers">
 <h3>Get List of Valid Taggers<a class="headerlink" href="#get-list-of-valid-taggers" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>This endpoint can be used to list all valid taggers available in the system.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tagger_list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tagger_list
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;</span>
 <span class="s1">    }&#39;</span>
@@ -676,12 +670,12 @@ This section describes the different endpoints available in the version 1.0 of t
 </div>
 <div class="section" id="get-information-about-a-tagger">
 <h3>Get Information about a Tagger<a class="headerlink" href="#get-information-about-a-tagger" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>To get more information about a tagger model, use this endpoint with desired tagger identifier.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tagger_info
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tagger_info
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;tagger&quot;: &quot;66&quot;</span>
@@ -691,12 +685,12 @@ This section describes the different endpoints available in the version 1.0 of t
 </div>
 <div class="section" id="get-unique-tags-in-a-dataset">
 <h3>Get Unique Tags in a Dataset<a class="headerlink" href="#get-unique-tags-in-a-dataset" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>This endpoint can be used to list all unique tags present in a dataset, independently if a tagger exists or not.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tag_list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tag_list
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;dataset&quot;: 3</span>
@@ -708,7 +702,7 @@ This section describes the different endpoints available in the version 1.0 of t
 <strong>count:</strong> The number of documents the tag is present
 <strong>has_model:</strong> If the tag has a tagger model present in the system</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[{</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
   <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>
   <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1379</span><span class="p">,</span>
   <span class="s2">&quot;has_model&quot;</span><span class="p">:</span> <span class="n">true</span>
@@ -726,12 +720,12 @@ This section describes the different endpoints available in the version 1.0 of t
 </div>
 <div class="section" id="get-unique-fields-in-a-dataset">
 <h3>Get Unique Fields in a Dataset<a class="headerlink" href="#get-unique-fields-in-a-dataset" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>This endpoint can be used to list all unique fields from a dataset.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/field_list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/field_list
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;dataset&quot;: 1</span>
@@ -742,7 +736,7 @@ This section describes the different endpoints available in the version 1.0 of t
 </div>
 <div class="section" id="start-mass-trainer-task">
 <h3>Start Mass Trainer Task<a class="headerlink" href="#start-mass-trainer-task" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>The creation of mass train task is controlled by this API function.
@@ -751,7 +745,7 @@ Each task status can be monitored via <em>task_manager/api/v1/task_status</em> e
 To determine if a tag is resulting in a new model or a model retrain process,
 the <strong>tag_list</strong> endpoint can be use to check if a model is present in the system or not.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/mass_train_tagger
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/mass_train_tagger
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;dataset&quot;: 1,</span>
@@ -763,7 +757,7 @@ the <strong>tag_list</strong> endpoint can be use to check if a model is present
 <p>This creates list of tasks to train or retrain tagger models as specified in the tags list.
 If a tagger exist, it will be set to retrain. If a tagger does not exist, a new tagger training task is created.
 The expected return is a JSON document with following values:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="s2">&quot;retrain_models&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span>
 <span class="s2">&quot;new_models&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span>
 <span class="p">}</span>
@@ -778,7 +772,7 @@ The expected return is a JSON document with following values:</p>
 <strong>reductor_opt:</strong> The Reduction option. Please refer to <strong>reductor_list</strong> endpoint.
 <strong>extractor_opt:</strong> The Extractor option. Please refer to <strong>extractor_list</strong> endpoint.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/mass_train_tagger
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/mass_train_tagger
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;dataset&quot;: 1,</span>
@@ -794,12 +788,12 @@ The expected return is a JSON document with following values:</p>
 </div>
 <div class="section" id="start-mass-tagger-task">
 <h3>Start Mass Tagger Task<a class="headerlink" href="#start-mass-tagger-task" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>Creates a task for mass tagger. The task status can be monitored via <em>task_manager/api/v1/task_status</em> endpoint.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/mass_tagger
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/mass_tagger
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;dataset&quot;: 1,</span>
@@ -812,14 +806,14 @@ The expected return is a JSON document with following values:</p>
 </div>
 <div class="section" id="start-hybrid-tagger-task">
 <h3>Start Hybrid Tagger Task<a class="headerlink" href="#start-hybrid-tagger-task" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>Creates a task for hybrid tagger.
 A hybrid tagger optimizes the tagger work by tag inspection and relevant tagger selection, in a way that a smaller number of tagger (only the relevant ones) are activated.
 The task status can be monitored via <em>task_manager/api/v1/task_status</em> endpoint.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/hybrid_tagger
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/hybrid_tagger
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;dataset&quot;: 1,</span>
@@ -833,12 +827,12 @@ The task status can be monitored via <em>task_manager/api/v1/task_status</em> en
 </div>
 <div class="section" id="apply-tagger-to-non-indexed-text">
 <h3>Apply Tagger to Non-Indexed Text<a class="headerlink" href="#apply-tagger-to-non-indexed-text" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>This endpoint is used to online tagging (tag non-indexed documents).</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tag_text
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tag_text
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;text&quot;: {&quot;field_value_en&quot;: &quot;Maybe I can reply to them by e-mail.&quot;},</span>
@@ -849,12 +843,12 @@ The task status can be monitored via <em>task_manager/api/v1/task_status</em> en
 </div>
 <div class="section" id="get-documents-tags">
 <h3>Get Documents Tags<a class="headerlink" href="#get-documents-tags" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>Recovers the list of all tags applied to a document.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/document_tags_list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/document_tags_list
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;dataset&quot;: 1,</span>
@@ -865,12 +859,12 @@ The task status can be monitored via <em>task_manager/api/v1/task_status</em> en
 </div>
 <div class="section" id="apply-feedback-to-document-tag">
 <h3>Apply Feedback to Document Tag<a class="headerlink" href="#apply-feedback-to-document-tag" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>Add tag correction feedback for a given list of document ids. The feedback is later used during model retrain process to improve overall classification quality.</p>
 <p>Example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tag_feedback
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/task_manager/api/v1/tag_feedback
 -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">        &quot;dataset&quot;: 1,</span>
@@ -887,68 +881,40 @@ The task status can be monitored via <em>task_manager/api/v1/task_status</em> en
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">API</a><ul>
-<li><a class="reference internal" href="#authentication">Authentication</a><ul>
-<li><a class="reference internal" href="#retrieving-the-token">Retrieving the token</a></li>
+<h1 class="logo"><a href="index.html">TEXTA Toolkit</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Using TEXTA Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elastic_schema.html">Elasticsearch data layout</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#authentication">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#search">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aggregate">Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-datasets">List datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-dataset-field-details">Get dataset field details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#importer-api">Importer API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-manager">Task Manager</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#search">Search</a><ul>
-<li><a class="reference internal" href="#constraints">Constraints</a><ul>
-<li><a class="reference internal" href="#textual">Textual</a></li>
-<li><a class="reference internal" href="#temporal">Temporal</a></li>
-<li><a class="reference internal" href="#simple-annotational">Simple annotational</a></li>
-<li><a class="reference internal" href="#advanced-annotational">Advanced annotational</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker</a></li>
 </ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#aggregate">Aggregate</a><ul>
-<li><a class="reference internal" href="#aggregation-types">Aggregation types</a><ul>
-<li><a class="reference internal" href="#id2">Textual</a></li>
-<li><a class="reference internal" href="#id3">Temporal</a></li>
-<li><a class="reference internal" href="#id4">Simple annotational</a></li>
-<li><a class="reference internal" href="#id5">Advanced annotational</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#list-datasets">List datasets</a></li>
-<li><a class="reference internal" href="#get-dataset-field-details">Get dataset field details</a></li>
-<li><a class="reference internal" href="#importer-api">Importer API</a></li>
-<li><a class="reference internal" href="#task-manager">Task Manager</a><ul>
-<li><a class="reference internal" href="#get-api-version">Get API version</a></li>
-<li><a class="reference internal" href="#get-list-of-tasks">Get List of Tasks</a></li>
-<li><a class="reference internal" href="#get-task-status">Get Task Status</a></li>
-<li><a class="reference internal" href="#start-model-train-task">Start Model Train Task</a></li>
-<li><a class="reference internal" href="#start-tagger-train-task">Start Tagger Train Task</a></li>
-<li><a class="reference internal" href="#apply-preprocessor-task">Apply Preprocessor Task</a></li>
-<li><a class="reference internal" href="#get-list-of-valid-datasets">Get List of Valid Datasets</a></li>
-<li><a class="reference internal" href="#get-list-of-valid-searches">Get List of Valid Searches</a></li>
-<li><a class="reference internal" href="#get-list-of-valid-normalizers">Get List of Valid Normalizers</a></li>
-<li><a class="reference internal" href="#get-list-of-valid-classifiers">Get List of Valid Classifiers</a></li>
-<li><a class="reference internal" href="#get-list-of-valid-reductors">Get List of Valid Reductors</a></li>
-<li><a class="reference internal" href="#get-list-of-valid-extractors">Get List of Valid Extractors</a></li>
-<li><a class="reference internal" href="#get-list-of-valid-taggers">Get List of Valid Taggers</a></li>
-<li><a class="reference internal" href="#get-information-about-a-tagger">Get Information about a Tagger</a></li>
-<li><a class="reference internal" href="#get-unique-tags-in-a-dataset">Get Unique Tags in a Dataset</a></li>
-<li><a class="reference internal" href="#get-unique-fields-in-a-dataset">Get Unique Fields in a Dataset</a></li>
-<li><a class="reference internal" href="#start-mass-trainer-task">Start Mass Trainer Task</a></li>
-<li><a class="reference internal" href="#start-mass-tagger-task">Start Mass Tagger Task</a></li>
-<li><a class="reference internal" href="#start-hybrid-tagger-task">Start Hybrid Tagger Task</a></li>
-<li><a class="reference internal" href="#apply-tagger-to-non-indexed-text">Apply Tagger to Non-Indexed Text</a></li>
-<li><a class="reference internal" href="#get-documents-tags">Get Documents Tags</a></li>
-<li><a class="reference internal" href="#apply-feedback-to-document-tag">Apply Feedback to Document Tag</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
@@ -958,23 +924,26 @@ The task status can be monitored via <em>task_manager/api/v1/task_status</em> en
   </ul></li>
 </ul>
 </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="sources/api.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -983,8 +952,8 @@ The task status can be monitored via <em>task_manager/api/v1/task_status</em> en
       &copy;2017 TEXTA.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="sources/api.rst.txt"
