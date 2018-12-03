@@ -1,6 +1,8 @@
 Using TEXTA Toolkit
 ===================
 
+This is version 1.3.5 documentation.
+
 First steps
 -----------
 
@@ -32,7 +34,7 @@ After the login
 ++++++++++++++++
 
 Once we have logged in with our superuser, we reach the home page, which looks much like the page before,
-with the exception of a list of tools and some global settings in the upper panel. On the home page you can change your password.
+with the exception of a list of tools and some global settings in the upper Administration panel. On the home page you can change your password.
 
 .. _figure-2:
 
@@ -44,7 +46,7 @@ As we can see from the global settings panel, we already have one Sputnik datase
 
 .. note::
 
-    Restricted contains the superuser tools for managing users, datasets, language models and text classifiers.
+    Restricted contains the superfuser tools for managing users, datasets, language models and text classifiers.
 	
 	
 	
@@ -98,7 +100,7 @@ Superusers can add datasets by selecting the according index and mapping in the 
 Each new dataset can either be public or private. Public datasets are accessible for all users by default, but exceptions can be made in "User Management" panel.
 In contrast to public datasets, private datasets are closed to everyone (except the supersusers) by default. Again, individual access can be granted in "User Management" panel.
 
-Datasets can be closed and opened. Closed datasets are not listed to the users. Datasets can also be removed from TEXTA.
+Datasets can be closed and opened. Closed datasets are not listed to the users. Datasets can also be removed from TEXTA and Elasticsearch.
 
 .. note::
 	Removing dataset in TEXTA does not delete the actual dataset on the disk, but rather deletes the link between Elasticsearch index and TEXTA.
@@ -302,21 +304,21 @@ Trained models and models in training are shown in the "Tasks for: Train Text Ta
 	
 .. figure:: images/11-2_trained_models.png
 
-   **UUS PILT SIIA** Figure 11.2. *Trained models*
+	Figure 6.2. *Trained models*
 
-**Tagging the dataset with the model TEGEMATA**
+**Tagging the dataset with the model**
 
-By clicking "Apply" in "Classification Models" panel, user can apply the classifier on selected documents:
+Now we can tag a dataset with our trained tagger via :ref:`Apply Preprocessor <applyPreprocessor>`. All taggers we have trained with Texta tool, can be found under 'Text Tagger preprocessor'.
 
 .. figure:: images/11-3_apply_model.png
 
-    Figure 11.2. *Select search to define the dataset to be tagged with the selected classifier*
+    Figure 6.3. *Tagging a dataset with our tag*
 
-After pressing "Apply the Tagger", a tagging job will start and it's results will be shown in the table when completed. 
+After pressing 'Start task', a tagging job will start and it's task status will be shown in the table when completed. We can check the progress by refreshing the page.
 	
 .. figure:: images/11-4_applied_models.png
 
-    Figure 11.2. *Applied classification models*
+    Figure 6.4. *Applied classification models*
 	
 .. note::
 	If the dataset contains many documents, the tagging process can be expected to take a few minutes.
@@ -326,12 +328,14 @@ After pressing "Apply the Tagger", a tagging job will start and it's results wil
 
 Applying Preprocessors
 ----------------------
-In Figure 7.1 we can see the general outlook of Apply Preprocessor. Here we can apply the same :ref:`preprocessors <preprocessors>` we could have applied in the Dataset Importer. We can use all the documents or a subset gotten via Search. We can select a field and start preprocessing. We can see the results in 'Tasks for: Apply Preprocessor'.
+In Figure 7.1 we can see the general outlook of Apply Preprocessor. Here we can apply the same :ref:`preprocessors <preprocessors>` we could have applied in the Dataset Importer or apply :ref:`the taggers <classificationmanager>` we have trained ourselves (under ‘Text Tagger preprocessor’). We can use all the documents or a subset gotten via Search. We can select a field and start preprocessing. We can see the results in 'Tasks for: Apply Preprocessor'.
 
-**ADD Figure 7.1**
+.. figure:: images/11-4_applypreprocessoroutlook.png
+
+	Figure 7.1. *Apply Preprocessor outlook*
 
 	
-These tags we can later search for in the :ref:`Searcher <searcher>` (Figure 7.2). We can get the tagged documents via 'fact_text_values' field under TEXTA_TAG. In the example below we can choose to search for documents with (*is*) or without (*not*) the tag chosen in the box 'Value (case sensitive)'.
+These tags we can later search for in the :ref:`Searcher <searcher>` (Figure 7.2). We can get the tagged documents via 'fact_text_values' field with FACT_NAME as TEXTA_TAG. In the example below we can choose to search for documents with (*is*) or without (*not*) the tag chosen in the FACT_VAL box 'Value (case sensitive)'.
 	
 .. figure:: images/07-02_searching_tagged.png
 

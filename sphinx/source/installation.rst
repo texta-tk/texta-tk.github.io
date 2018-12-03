@@ -2,8 +2,6 @@
 
 Installation
 ====================
-Currently edited 
-====================
 
 .. note::
 
