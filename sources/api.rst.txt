@@ -502,16 +502,37 @@ to the end user.
 Task Manager
 --------------
 
+Task manager API exposes model tanning and prediction capabilities in a programmatic way. 
+This section describes the different endpoints available in the version 1.0 of the API.
+
 Get API version
 ^^^^^^^^^^^^^^^^^^^^
+
+Provides information about the API version and can be used as a monitoring checkpoint for online status.
+
+Example:
 
 .. code-block:: bash
 
     curl -X GET http://localhost:8000/task_manager/api/v1
 
 
+That returns:
+
+.. code-block:: python
+
+    {
+    "name": "TEXTA Task Manager API",
+    "version": "1.0"
+    }
+
+
 Get List of Tasks
 ^^^^^^^^^^^^^^^^^^^^
+
+Lists all tasks present in the system.
+
+Example: 
 
 .. code-block:: bash
 
@@ -520,9 +541,20 @@ Get List of Tasks
             "auth_token": "9c05321f821f6e"
         }'
 
+This returns a list of json documents, with the following structure:
+
+**task_id:** The unique task id
+**task_type:** A identifier for the type of task
+**status:** The status of the task processing
+**user:** The username who created the task
+
 
 Get Task Status
 ^^^^^^^^^^^^^^^^^^^^
+
+Get status for a specific task in the system. Can be used to monitor the progress of a task (via multiple calls to API) or check the final status of a task when it is done.
+
+Example:
 
 .. code-block:: bash
 
@@ -533,8 +565,28 @@ Get Task Status
         }'
 
 
+The returned JSON document has the following structure:
+
+**task_id:** The unique task id, same as used in the request
+**user:** The user who created the task
+**description:** The task description
+**task_type:** A identifier for the type of task
+**parameters:** The parameters used in the task creation as JSON encoded as string
+**result:** A JSON encoded as string result set
+**status:** The task status
+**progress:** A indication of the task processing progress
+**progress_message:** String representation of task progress of easy UI integration
+**time_started:** Task started time in ISO format
+**last_update:** Task update time in ISO format
+**time_completed:** Task finalization time in ISO format
+
+
 Start Model Train Task
 ^^^^^^^^^^^^^^^^^^^^^^
+
+Creates a task for model training. The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
 
 .. code-block:: bash
 
@@ -553,6 +605,10 @@ Start Model Train Task
 
 Start Tagger Train Task
 ^^^^^^^^^^^^^^^^^^^^^^^
+
+Creates a task for document tagger. The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
 
 .. code-block:: bash
 
@@ -575,6 +631,12 @@ Apply Preprocessor Task
 
 .. code-block:: bash
 
+Creates a task for document model prediction for a given * preprocessor_key*. The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
+
+.. code-block:: bash
+
     curl -X POST http://localhost:8000/task_manager/api/v1/apply 
     -d '{
             "auth_token": "9c05321f821f6e",
@@ -592,6 +654,12 @@ Get List of Valid Datasets
 
 .. code-block:: bash
 
+This endpoint can be used to list all valid datasets added to the system via web interface. 
+
+Example:
+
+.. code-block:: bash
+
     curl -X POST http://localhost:8000/task_manager/api/v1/dataset_list 
     -d '{
             "auth_token": "9c05321f821f6e"
@@ -600,6 +668,12 @@ Get List of Valid Datasets
 
 Get List of Valid Searches
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint can be used to list all valid searches created in the system via search web interface. 
+
+Example:
 
 .. code-block:: bash
 
@@ -615,14 +689,33 @@ Get List of Valid Normalizers
 
 .. code-block:: bash
 
+This endpoint can be used to list all valid normalizers available in the system.
+
+Example:
+
+.. code-block:: bash
+
     curl -X POST http://localhost:8000/task_manager/api/v1/normalizer_list 
     -d '{
             "auth_token": "9c05321f821f6e"
         }'
 
+This return a list of JSON normalizer options, as in:
+
+.. code-block:: python
+
+    [{"normalizer_opt": 0, "label": "None"}, 
+     {"normalizer_opt": 1, "label": "Normalizer"}]
+
 
 Get List of Valid Classifiers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint can be used to list all valid classifiers available in the system.
+
+Example:
 
 .. code-block:: bash
 
@@ -632,8 +725,29 @@ Get List of Valid Classifiers
         }'
 
 
+This return a list of JSON classifier options, as in:
+
+.. code-block:: python
+
+    [{
+    "classifier_opt": 0,
+    "label": "LinearSVC"
+    }, {
+    "classifier_opt": 1,
+    "label": "Bernoulli Naive Bayes"
+    }, {
+    "classifier_opt": 2,
+    "label": "K-Neighbors"
+    }, {
+    "classifier_opt": 3,
+    "label": "Radius Neighbors"
+    }]
+
+
 Get List of Valid Reductors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
 .. code-block:: bash
 
@@ -642,9 +756,27 @@ Get List of Valid Reductors
             "auth_token": "9c05321f821f6e"
         }'
 
+This return a list of JSON reductor options, as in:
+
+.. code-block:: python
+
+    [{
+    "reductor_opt": 0,
+    "label": "None"
+    }, {
+    "reductor_opt": 1,
+    "label": "Truncated SVD"
+    }]
+
 
 Get List of Valid Extractors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint can be used to list all valid extractors available in the system.
+
+Example:
 
 .. code-block:: bash
 
@@ -653,9 +785,23 @@ Get List of Valid Extractors
             "auth_token": "9c05321f821f6e"
         }'
 
+This return a list of JSON extractor options, as in:
+
+.. code-block:: python
+
+    [ {"extractor_opt": 0, "label": "Count Vectorizer"}, 
+      {"extractor_opt": 1, "label": "Hashing Vectorizer"}, 
+      {"extractor_opt": 2, "label": "TfIdf Vectorizer"} ]
+
 
 Get List of Valid Taggers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint can be used to list all valid taggers available in the system.
+
+Example:
 
 .. code-block:: bash
 
@@ -667,6 +813,12 @@ Get List of Valid Taggers
 
 Get Information about a Tagger
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+To get more information about a tagger model, use this endpoint with desired tagger identifier.
+
+Example:
 
 .. code-block:: bash
 
@@ -682,15 +834,51 @@ Get Unique Tags in a Dataset
 
 .. code-block:: bash
 
+This endpoint can be used to list all unique tags present in a dataset, independently if a tagger exists or not.
+
+Example:
+
+.. code-block:: bash
+
     curl -X POST http://localhost:8000/task_manager/api/v1/tag_list 
     -d '{
             "auth_token": "9c05321f821f6e",
-            "dataset": 1
+            "dataset": 3
         }'
+
+That returns a list of JSON documents with following structure:
+
+**description:** The tag identification as tag description
+**count:** The number of documents the tag is present
+**has_model:** If the tag has a tagger model present in the system
+
+Example:
+
+.. code-block:: python
+
+    [{
+      "description": "A",
+      "count": 1379,
+      "has_model": true
+    }, {
+      "description": "B",
+      "count": 16446,
+      "has_model": false
+    }, {
+      "description": "C",
+      "count": 10464,
+      "has_model": false
+    }]
 
 
 Get Unique Fields in a Dataset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint can be used to list all unique fields from a dataset.
+
+Example:
 
 .. code-block:: bash
 
@@ -700,9 +888,56 @@ Get Unique Fields in a Dataset
             "dataset": 1
         }'
 
+This returns a list of strings with every **field** identifier present in the requested **dataset**.
+
 
 Start Mass Trainer Task
 ^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+The creation of mass train task is controlled by this API function.
+A mass trainer execution creates many tasks related to the training or retraining of specific tagger models.
+Each task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+To determine if a tag is resulting in a new model or a model retrain process,
+the **tag_list** endpoint can be use to check if a model is present in the system or not.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/mass_train_tagger 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1,
+            "tags": ["A"],
+            "field": "field_value_en",
+        }'
+
+This creates list of tasks to train or retrain tagger models as specified in the tags list.
+If a tagger exist, it will be set to retrain. If a tagger does not exist, a new tagger training task is created. 
+The expected return is a JSON document with following values:
+
+.. code-block:: python
+
+    {
+    "retrain_models": [ ... ],
+    "new_models": [ ... ]
+    }
+
+where:
+
+**retrain_models:** List of tasks created for model retrain
+**new_models:** List of tasks created for new model training
+
+Optionally, it is possible to specify the new tagger parameters (for tags that does not have a model yet), as follows:
+
+**normalizer_opt:** The Normalizer option. Please refer to **normalizer_list** endpoint.
+**classifier_opt:** The Classifier option. Please refer to **classifier_list** endpoint.
+**reductor_opt:** The Reduction option. Please refer to **reductor_list** endpoint.
+**extractor_opt:** The Extractor option. Please refer to **extractor_list** endpoint.
+
+Example:
 
 .. code-block:: bash
 
@@ -724,6 +959,12 @@ Start Mass Tagger Task
 
 .. code-block:: bash
 
+Creates a task for mass tagger. The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
+
+.. code-block:: bash
+
     curl -X POST http://localhost:8000/task_manager/api/v1/mass_tagger 
     -d '{
             "auth_token": "9c05321f821f6e",
@@ -736,6 +977,14 @@ Start Mass Tagger Task
 
 Start Hybrid Tagger Task
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+Creates a task for hybrid tagger. 
+A hybrid tagger optimizes the tagger work by tag inspection and relevant tagger selection, in a way that a smaller number of tagger (only the relevant ones) are activated.
+The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
 
 .. code-block:: bash
 
@@ -755,6 +1004,12 @@ Apply Tagger to Non-Indexed Text
 
 .. code-block:: bash
 
+This endpoint is used to online tagging (tag non-indexed documents).
+
+Example:
+
+.. code-block:: bash
+
     curl -X POST http://localhost:8000/task_manager/api/v1/tag_text 
     -d '{
             "auth_token": "9c05321f821f6e",
@@ -768,6 +1023,12 @@ Get Documents Tags
 
 .. code-block:: bash
 
+Recovers the list of all tags applied to a document.
+
+Example:
+
+.. code-block:: bash
+
     curl -X POST http://localhost:8000/task_manager/api/v1/document_tags_list 
     -d '{
             "auth_token": "9c05321f821f6e",
@@ -778,6 +1039,12 @@ Get Documents Tags
 
 Apply Feedback to Document Tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+Add tag correction feedback for a given list of document ids. The feedback is later used during model retrain process to improve overall classification quality.
+
+Example:
 
 .. code-block:: bash
 
