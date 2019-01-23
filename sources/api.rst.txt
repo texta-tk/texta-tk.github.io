@@ -382,7 +382,7 @@ To get the list of available and permitted datasets, we issue the following comm
 
 .. code-block:: bash
 
-    curl http://localhost:8000/api/list/datasets -d '{
+    curl http://localhost:8000/search_api/list/datasets -d '{
         "auth_token": "9c05321f821f6e",
     }'
 
@@ -411,7 +411,7 @@ One can get detailed structure of the dataset with ID 4 with the following query
 
 .. code-block:: bash
 
-    curl http://localhost:8000/api/list -d '{
+    curl http://localhost:8000/search_api/list -d '{
         "auth_token": "9c05321f821f6e",
         "dataset": 4
     }'
