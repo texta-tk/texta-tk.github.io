@@ -323,7 +323,7 @@
 <h2>List datasets<a class="headerlink" href="#list-datasets" title="Permalink to this headline">¶</a></h2>
 <p>Listing datasets is important in order to construct queries on correct datasets.</p>
 <p>To get the list of available and permitted datasets, we issue the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl http://localhost:8000/search_api/list/datasets -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl http://localhost:8000/api/list/datasets -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">}&#39;</span>
 </pre></div>
@@ -343,7 +343,7 @@
 <h2>Get dataset field details<a class="headerlink" href="#get-dataset-field-details" title="Permalink to this headline">¶</a></h2>
 <p>It is necessary to know the existing fields and their data types to construct accurate queries.</p>
 <p>One can get detailed structure of the dataset with ID 4 with the following query:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl http://localhost:8000/search_api/list -d <span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl http://localhost:8000/api/list -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9c05321f821f6e&quot;,</span>
 <span class="s1">    &quot;dataset&quot;: 4</span>
 <span class="s1">}&#39;</span>
