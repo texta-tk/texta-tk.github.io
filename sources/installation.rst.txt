@@ -144,16 +144,6 @@ All that is left is to synchronize database state by running
 .. code-block:: bash
 
     texta_root_dir$ python migrate.py
-    
-and create a superuser for TEXTA to assign application permissions
-
-.. code-block:: bash
-
-    texta_root_dir$ python manage.py createsuperuser
-
-.. note::
-
-    **Superuser** is important, as it is also used for defining the datasets we want to work on. Remember the credentials.
 
 .. _example-dataset:
     
