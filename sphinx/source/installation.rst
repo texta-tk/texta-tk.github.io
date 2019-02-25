@@ -63,7 +63,7 @@ the previously installed application might seize to work.
     If you are not concerned about potential Python library conflicts between several applications, you can skip this part and head on to
     `installing Python dependencies`_.
 
-Two frequently used Python sandbox tools are `Anaconda <https://www.continuum.io/downloads>`_ and 
+Two frequently used Python sandbox tools are `Anaconda <https://www.anaconda.com/distribution/#download-section>`_ and 
 `Virtualenv <https://virtualenv.pypa.io/en/stable/>`_. Both allow to create a local version of Python interpreter by duplicating Python
 executables and libraries. In this section we cover *Anaconda*, as it enables to install many precompiled libraries with
 
@@ -74,9 +74,9 @@ executables and libraries. In this section we cover *Anaconda*, as it enables to
 and therefore is significantly faster than *virtualenv*. However, not all third-party libraries are available. In this case we still have to
 use *pip* or one of its alternatives.
 
-Installation instructions are at `Anaconda <https://www.continuum.io/downloads>`_.
+Installation instructions are at `Anaconda <https://www.anaconda.com/distribution/#download-section>`_.
 
-To create a new *Anaconda* environment called *texta* that uses Python 2.7, we issue the command
+To create a new *Anaconda* environment called *texta* that uses Python 3.5, we issue the command
 
 .. code-block:: bash
 
@@ -105,12 +105,12 @@ The following code block lists all the Python libraries that TEXTA depends on al
 
 3rd party Python libraries can be installed with package management systems such as *Anaconda* or *pip*. 
 
-Installing with Anaconda:
+Installing with Anaconda. This will create an 'texta-toolkit' environment in Anaconda:
 
 .. code-block:: bash
 
-    (your_activated_conda_env) texta_root_dir$ chmod u+x conda_install.sh
-    (your_activated_conda_env) texta_root_dir$ ./conda_install.sh
+    texta_root_dir$ conda env create -f conda-environment.yaml
+    texta_root_dir$ source activate texta-toolkit	
 
 With pip:
 
@@ -132,8 +132,15 @@ configure Elasticsearch's address if remote approach is used.
 
 In Elasticsearch terminology a database is called an index and table is called either mapping or type.
     
-Elasticsearch can be downloaded from `here <https://www.elastic.co/products/elasticsearch>`_.
-    
+Elasticsearch can be downloaded from `here <https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.0.deb>`_. We are using the .deb package (to open, use *dpkg -i elasticsearch-6.6.0.deb* command. One should also have Java installed (*apt-get install default-jre*)). 
+
+Before running the Texta Toolkit Elasticsearch should be started with the command below.
+
+.. code-block:: bash
+
+    texta_root_dir$ service elasticsearch start
+
+
 .. _final-touches:
     
 Final touches
@@ -144,6 +151,12 @@ All that is left is to synchronize database state by running
 .. code-block:: bash
 
     texta_root_dir$ python migrate.py
+
+Adding *purge_migrations* to the command deletes old migrations if needed. *migrate.py* command creates a superuser automatically (username: admin, password: 1234). One can create a superuser with this command also:
+
+.. code-block:: bash
+
+    texta_root_dir$ python migrate.py createsuperuser
 
 .. _example-dataset:
     
