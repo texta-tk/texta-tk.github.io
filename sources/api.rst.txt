@@ -169,6 +169,8 @@ Textual constraint's class is **string**.
 
 **strings:** keywords or phrases to search for.
 
+**class:** Specific details for this mandatory parameter are below.
+
 **operator:** relationship between the keyword.
 
     **"must"** - *default* - conjunctive (AND) directive, all the listed keywords must exist in the document.
@@ -411,7 +413,7 @@ One can get detailed structure of the dataset with ID 4 with the following query
 
 .. code-block:: bash
 
-    curl http://localhost:8000/api/list -d '{
+    curl http://localhost:8000/api/list/dataset -d '{
         "auth_token": "9c05321f821f6e",
         "dataset": 4
     }'
@@ -437,7 +439,16 @@ Each call to the Importer **MUST** have the following fields:
 Optionally you can also specify a **mapping** field, in case the index of the specified name does not exist and is created,
 a check for the **mapping** field is made, and if it exists it is inserted into the target doc_type.
 
-In case an invalid authentication token is provided or a mandatory field is missing a corresponding error message will be returned
+Furthermore, you can specify an analyzer you want Elasticsearch to use by adding an optional **analyzer** field to the payload.
+If the query is successful, the usual "Item(s) successfully saved" message will appear. However, if you specify an analyzer that
+does not exist, an error message is returned. You can check the available analyzers using the /import_api/analyzers endpoint.
+
+.. code-block::
+    $ curl 'http://localhost:8000/import_api/analyzers'
+
+    # {"analyzers": ["standard", "whitespace", "pattern", "simple", "stop", "keyword", "fingerprint", "estonian"]}
+
+Overall, whenever an invalid authentication token is provided or a mandatory field is missing a corresponding error message will be returned
 to the end user.
 
 .. code-block:: bash
@@ -496,6 +507,29 @@ to the end user.
     }'
 
     # {"message": "Mandatory field 'index' is missing."}
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{
+        "auth_token": "9c05321f821f6e",
+        "index": "texta",
+        "doc_type": "texta_facts",
+        "data": {"court_case_6543": "guilty"},
+        "analyzer": "estonian"
+    }'
+
+    # {"message": "Item(s) successfully saved."}
+
+    curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{
+        "auth_token": "9c05321f821f6e",
+        "index": "texta",
+        "doc_type": "texta_facts",
+        "data": {"court_case_6543": "guilty"},
+        "analyzer": "estonianzos"
+    }'
+
+    # {"message": "Analyzer 'estonianzos' not available. Available analyzers are: '['standard', 'whitespace', 'pattern', 'simple', 'stop', 'keyword', 'fingerprint', 'estonian']'"}
+
 
 
 
