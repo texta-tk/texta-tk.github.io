@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ed8adb4-e664-4aa2-a68b-4e4b0c0093f9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/sources/api.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sources/api.rst.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sphinx/source/api.rst" beforeDir="false" afterPath="$PROJECT_DIR$/sphinx/source/api.rst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,49 +11,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/sources/api.rst.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="69">
-                  <caret line="511" selection-start-line="511" selection-end-line="533" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sphinx/source/api.rst">
-              <provider selected="true" editor-type-id="restructured-text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/README.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-                <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="460">
-                    <caret line="20" selection-start-line="20" selection-end-line="20" />
-                  </first_editor>
-                  <second_editor>
-                    <markdownNavigatorState />
-                  </second_editor>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/sphinx/source/api.rst">
-              <provider selected="true" editor-type-id="restructured-text-editor" />
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sphinx/source/api.rst">
+          <provider selected="true" editor-type-id="restructured-text-editor" />
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -154,12 +117,12 @@
       <workItem from="1552572943865" duration="125000" />
       <workItem from="1552573079600" duration="171000" />
       <workItem from="1552573262562" duration="165000" />
-      <workItem from="1552573439617" duration="1822000" />
+      <workItem from="1552573439617" duration="1953000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2752000" />
+    <option name="totallyTimeSpent" value="2883000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1046" extended-state="6" />
@@ -277,6 +240,14 @@
     <entry file="file://$PROJECT_DIR$/sources/configuration.rst.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/sources/api.rst.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="511" selection-start-line="511" selection-end-line="533" />
+        </state>
+      </provider>
+      <provider editor-type-id="restructured-text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
@@ -288,14 +259,6 @@
           </second_editor>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/api.rst.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="511" selection-start-line="511" selection-end-line="533" />
-        </state>
-      </provider>
-      <provider editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/sphinx/source/api.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />

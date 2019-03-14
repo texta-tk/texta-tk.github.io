@@ -443,7 +443,7 @@ Furthermore, you can specify an analyzer you want Elasticsearch to use by adding
 If the query is successful, the usual "Item(s) successfully saved" message will appear. However, if you specify an analyzer that
 does not exist, an error message is returned. You can check the available analyzers using the /import_api/analyzers endpoint.
 
-.. code-block::
+.. code-block:: bash
     $ curl 'http://localhost:8000/import_api/analyzers'
 
     # {"analyzers": ["standard", "whitespace", "pattern", "simple", "stop", "keyword", "fingerprint", "estonian"]}
