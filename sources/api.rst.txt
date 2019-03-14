@@ -444,6 +444,7 @@ If the query is successful, the usual "Item(s) successfully saved" message will 
 does not exist, an error message is returned. You can check the available analyzers using the /import_api/analyzers endpoint.
 
 .. code-block:: bash
+
     $ curl 'http://localhost:8000/import_api/analyzers'
 
     # {"analyzers": ["standard", "whitespace", "pattern", "simple", "stop", "keyword", "fingerprint", "estonian"]}

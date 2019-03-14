@@ -367,6 +367,11 @@ a check for the <strong>mapping</strong> field is made, and if it exists it is i
 <p>Furthermore, you can specify an analyzer you want Elasticsearch to use by adding an optional <strong>analyzer</strong> field to the payload.
 If the query is successful, the usual “Item(s) successfully saved” message will appear. However, if you specify an analyzer that
 does not exist, an error message is returned. You can check the available analyzers using the /import_api/analyzers endpoint.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl <span class="s1">&#39;http://localhost:8000/import_api/analyzers&#39;</span>
+
+<span class="c1"># {&quot;analyzers&quot;: [&quot;standard&quot;, &quot;whitespace&quot;, &quot;pattern&quot;, &quot;simple&quot;, &quot;stop&quot;, &quot;keyword&quot;, &quot;fingerprint&quot;, &quot;estonian&quot;]}</span>
+</pre></div>
+</div>
 <p>Overall, whenever an invalid authentication token is provided or a mandatory field is missing a corresponding error message will be returned
 to the end user.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST <span class="s1">&#39;http://localhost:8000/import_api/document_insertion&#39;</span> -d <span class="s1">&#39;{</span>
