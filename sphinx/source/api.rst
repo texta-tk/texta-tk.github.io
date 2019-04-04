@@ -165,18 +165,16 @@ Following request parameters are **MANDATORY**:
 
     **like** - List of dictionaries which specify the documents on which you base your search.
 
-        **_index** - Index of where your documents are.
+        **dataset_id** - ID of the dataset you wish to target.
 
-        **_type** - Doctype of where your documents are.
+        **document_id** - ID of the document you want to use as comparison.
 
-        **_id** - ID of the document you want to use as comparison.
+    **fields** - List of fields that you use as a baseline for comparing all documents. You can also use a wildcard.
 
-    **fields** - List of strings of fields that you use as a baseline for comparing all documents.
+Optionally, to reduce the load to the server, you can limit both the amount of documents you want
+to get back and the fields you are interested in.
 
-Optionally, to reduce the load to the server and the memory footprint of the request, you can limit
-both the amount of documents you want to get back and the fields you are interested in.
-
-    **returned_fields** - (Optional) List of strings, the fields you want the returned documents to have, excluding everything else.
+    **returned_fields** - (Optional) List of fields that you want to have in the returned documents, excluding everything else.
 
     **size** - (Optional) Number of documents you want to get back, has to be under 10000. Default: 10
 
@@ -187,9 +185,8 @@ Example:
     curl -X POST http://localhost:8000/api/more_like_this -d '{
         "auth_token": "9cc5adalked4066",
         "like": [{
-            "_index": "sample_index",
-            "_type": "sample_doctype",
-            "_id": "34d2092b-c352-41ab-85af-3274a11adac4"}
+            "dataset_id": 5",
+            "document_id": "34d2092b-c352-41ab-85af-3274a11adac4"}
         ],
 
         "fields": [
@@ -209,14 +206,12 @@ Example:
         "auth_token": "9cc5adalked4066",
         "like": [
             {
-                "_index": "sample_index",
-                "_type": "sample_doctype",
-                "_id": "34d2092b-c352-41ab-85af-3274a11adac4"
+                "dataset_id": 5,
+                "document_id": "34d2092b-c352-41ab-85af-3274a11adac4"
             },
             {
-                "_index": "sample_index",
-                "_type": "sample_doctype",
-                "_id": "4589ad692b-c472-41ab-85af-3dada59ac4"
+                "dataset_id": 5,
+                "document_id": "4589ad692b-c472-41ab-85af-3dada59ac4"
             }
         ],
 

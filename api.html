@@ -157,25 +157,23 @@ you feed to it, which is performed by ElasticSearch’s More Like This query.</p
 <div><p><strong>auth_token</strong> - Authentication token.</p>
 <p><strong>like</strong> - List of dictionaries which specify the documents on which you base your search.</p>
 <blockquote>
-<div><p><strong>_index</strong> - Index of where your documents are.</p>
-<p><strong>_type</strong> - Doctype of where your documents are.</p>
-<p><strong>_id</strong> - ID of the document you want to use as comparison.</p>
+<div><p><strong>dataset_id</strong> - ID of the dataset you wish to target.</p>
+<p><strong>document_id</strong> - ID of the document you want to use as comparison.</p>
 </div></blockquote>
-<p><strong>fields</strong> - List of strings of fields that you use as a baseline for comparing all documents.</p>
+<p><strong>fields</strong> - List of fields that you use as a baseline for comparing all documents. You can also use a wildcard.</p>
 </div></blockquote>
-<p>Optionally, to reduce the load to the server and the memory footprint of the request, you can limit
-both the amount of documents you want to get back and the fields you are interested in.</p>
+<p>Optionally, to reduce the load to the server, you can limit both the amount of documents you want
+to get back and the fields you are interested in.</p>
 <blockquote>
-<div><p><strong>returned_fields</strong> - (Optional) List of strings, the fields you want the returned documents to have, excluding everything else.</p>
+<div><p><strong>returned_fields</strong> - (Optional) List of fields that you want to have in the returned documents, excluding everything else.</p>
 <p><strong>size</strong> - (Optional) Number of documents you want to get back, has to be under 10000. Default: 10</p>
 </div></blockquote>
 <p>Example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/api/more_like_this -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;9cc5adalked4066&quot;,</span>
 <span class="s1">    &quot;like&quot;: [{</span>
-<span class="s1">        &quot;_index&quot;: &quot;sample_index&quot;,</span>
-<span class="s1">        &quot;_type&quot;: &quot;sample_doctype&quot;,</span>
-<span class="s1">        &quot;_id&quot;: &quot;34d2092b-c352-41ab-85af-3274a11adac4&quot;}</span>
+<span class="s1">        &quot;dataset_id&quot;: 5&quot;,</span>
+<span class="s1">        &quot;document_id&quot;: &quot;34d2092b-c352-41ab-85af-3274a11adac4&quot;}</span>
 <span class="s1">    ],</span>
 
 <span class="s1">    &quot;fields&quot;: [</span>
@@ -194,14 +192,12 @@ both the amount of documents you want to get back and the fields you are interes
 <span class="s1">    &quot;auth_token&quot;: &quot;9cc5adalked4066&quot;,</span>
 <span class="s1">    &quot;like&quot;: [</span>
 <span class="s1">        {</span>
-<span class="s1">            &quot;_index&quot;: &quot;sample_index&quot;,</span>
-<span class="s1">            &quot;_type&quot;: &quot;sample_doctype&quot;,</span>
-<span class="s1">            &quot;_id&quot;: &quot;34d2092b-c352-41ab-85af-3274a11adac4&quot;</span>
+<span class="s1">            &quot;dataset_id&quot;: 5,</span>
+<span class="s1">            &quot;document_id&quot;: &quot;34d2092b-c352-41ab-85af-3274a11adac4&quot;</span>
 <span class="s1">        },</span>
 <span class="s1">        {</span>
-<span class="s1">            &quot;_index&quot;: &quot;sample_index&quot;,</span>
-<span class="s1">            &quot;_type&quot;: &quot;sample_doctype&quot;,</span>
-<span class="s1">            &quot;_id&quot;: &quot;4589ad692b-c472-41ab-85af-3dada59ac4&quot;</span>
+<span class="s1">            &quot;dataset_id&quot;: 5,</span>
+<span class="s1">            &quot;document_id&quot;: &quot;4589ad692b-c472-41ab-85af-3dada59ac4&quot;</span>
 <span class="s1">        }</span>
 <span class="s1">    ],</span>
 
