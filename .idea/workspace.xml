@@ -11,11 +11,28 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/texta_tk_github_io$docutils_task_in_update_docs_sh.coverage" NAME="docutils task in update_docs.sh Coverage Results" MODIFIED="1554383240605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sphinx/source/api.rst">
           <provider selected="true" editor-type-id="restructured-text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="460">
+                <caret line="20" selection-start-line="20" selection-end-line="20" />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -27,6 +44,7 @@
       <find>field</find>
       <find>Field</find>
       <find>list/dataset</find>
+      <find>Search</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -48,15 +66,15 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="956" />
-    <option name="height" value="1046" />
+    <option name="x" value="4" />
+    <option name="width" value="1272" />
+    <option name="height" value="693" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -64,15 +82,27 @@
               <item name="texta-tk.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="texta-tk.github.io" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="texta-tk.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="texta-tk.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="sphinx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="texta-tk.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="texta-tk.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="sphinx" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../texta" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -87,6 +117,30 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="docutils task in update_docs.sh" type="docs" factoryName="Docutils task" temporary="true">
+      <module name="texta-tk.github.io" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="docutils_input_file" value="$PROJECT_DIR$/update_docs.sh" />
+      <option name="docutils_output_file" value="$PROJECT_DIR$/update_docs.html" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="rst2html" />
+      <option name="docutils_open_in_browser" value="true" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python docs.docutils task in update_docs.sh" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -105,16 +159,19 @@
       <workItem from="1552573439617" duration="2220000" />
       <workItem from="1552575674315" duration="120000" />
       <workItem from="1552575801401" duration="55000" />
+      <workItem from="1552575856812" duration="352000" />
+      <workItem from="1554381584195" duration="1533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3325000" />
+    <option name="totallyTimeSpent" value="5210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1046" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14140876" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14461046" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -125,7 +182,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.27876106" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.12278761" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Python Console" order="11" />
@@ -169,44 +226,44 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/sphinx/source/elastic_schema.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/sphinx/source/index.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/sphinx/source/docker.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1173">
           <caret line="69" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/sphinx/source/workflow.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="465" column="29" selection-start-line="465" selection-start-column="29" selection-end-line="465" selection-end-column="29" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/sphinx/source/installation.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="2312">
           <caret line="136" column="9" selection-start-line="136" selection-start-column="4" selection-end-line="136" selection-end-column="9" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor" />
@@ -227,12 +284,12 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/sources/api.rst.txt">
+      <provider editor-type-id="restructured-text-editor" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="511" selection-start-line="511" selection-end-line="533" />
         </state>
       </provider>
-      <provider editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
