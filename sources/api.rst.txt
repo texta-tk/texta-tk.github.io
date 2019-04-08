@@ -171,6 +171,7 @@ Following request parameters are **MANDATORY**:
 
     **fields** - List of fields that you use as a baseline for comparing all documents. You can also use a wildcard.
 
+
 Optionally, to reduce the load to the server, you can limit both the amount of documents you want
 to get back and the fields you are interested in.
 
@@ -238,6 +239,9 @@ Example:
     }'
 
 
+.. code-block:: bash
+
+
     curl -X POST http://localhost:8000/api/more_like_this -d '{
         "auth_token": "{{AUTH_TOKEN}}",
         "like": [{"dataset_id": {{DATASET_ID}}, "document_id": "{{DOCUMENT_ID}}"}],
@@ -250,7 +254,8 @@ Example:
         ]
     }'
 
-    Response:{
+    Response:
+    {
     "aggregations": {
         "count": {
             "value": 3951

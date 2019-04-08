@@ -221,9 +221,9 @@ returned in {“aggregation_name”: {…}, “second_aggregation”: {…}}.</d
 <span class="s1">        &quot;shortDescription&quot;,</span>
 <span class="s1">    ]</span>
 <span class="s1">}&#39;</span>
-
-
-curl -X POST http://localhost:8000/api/more_like_this -d <span class="s1">&#39;{</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST http://localhost:8000/api/more_like_this -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;auth_token&quot;: &quot;{{AUTH_TOKEN}}&quot;,</span>
 <span class="s1">    &quot;like&quot;: [{&quot;dataset_id&quot;: {{DATASET_ID}}, &quot;document_id&quot;: &quot;{{DOCUMENT_ID}}&quot;}],</span>
 <span class="s1">    &quot;fields&quot;: [&quot;*&quot;],</span>
@@ -235,7 +235,8 @@ curl -X POST http://localhost:8000/api/more_like_this -d <span class="s1">&#39;{
 <span class="s1">    ]</span>
 <span class="s1">}&#39;</span>
 
-Response:<span class="o">{</span>
+Response:
+<span class="o">{</span>
 <span class="s2">&quot;aggregations&quot;</span>: <span class="o">{</span>
     <span class="s2">&quot;count&quot;</span>: <span class="o">{</span>
         <span class="s2">&quot;value&quot;</span>: <span class="m">3951</span>
