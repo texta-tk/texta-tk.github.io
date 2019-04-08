@@ -174,6 +174,23 @@ Following request parameters are **MANDATORY**:
 Optionally, to reduce the load to the server, you can limit both the amount of documents you want
 to get back and the fields you are interested in.
 
+    **filters** - (Optional) List of dictionaries that contain ElasticSearch query dictionaries for filtering the input
+    of matched similar documents. Those dictionaries must not contain the top "query" key.
+
+        **bucket_name** - Name of the aggregation.
+
+        **agg_type** - What aggregation you wish to apply. Only "percentiles", "avg", "value_count", "extended_stats", "min", "max", "stats", "sum" are supported.
+
+        **field** - Field you wish to apply the aggregation on.
+
+    **aggregations** - (Optional) List of aggregation dictionaries you want to apply on the matched similar documents.
+    Currently only "percentiles", "avg", "value_count", "extended_stats", "min", "max", "stats", "sum"
+    aggregations are supported. However, if the aggregation results are empty, it is not included to the response.
+
+    **if_agg_only** - (Optional) By default, all similar documents are returned in the query,
+                       however if you set this field to a boolean true, only a dict with the aggregation results are
+                       returned in {"aggregation_name": {...}, "second_aggregation": {...}}.
+
     **returned_fields** - (Optional) List of fields that you want to have in the returned documents, excluding everything else.
 
     **size** - (Optional) Number of documents you want to get back, has to be under 10000. Default: 10
@@ -188,7 +205,6 @@ Example:
             "dataset_id": 5",
             "document_id": "34d2092b-c352-41ab-85af-3274a11adac4"}
         ],
-
         "fields": [
             "title",
             "shortDescription",
@@ -220,6 +236,35 @@ Example:
             "shortDescription",
         ]
     }'
+
+
+    curl -X POST http://localhost:8000/api/more_like_this -d '{
+        "auth_token": "{{AUTH_TOKEN}}",
+        "like": [{"dataset_id": {{DATASET_ID}}, "document_id": "{{DOCUMENT_ID}}"}],
+        "fields": ["*"],
+        "aggregations": [{"bucket_name": "count", "agg_type": "value_count", "field": "price"}],
+        "returned_fields": ["id", "mileage", "price"],
+        "filters": [
+            {"range": {"lastScrapedInUTC": {"gte": "now/M", "lt": "now", "time_zone": "+01:00"}}},
+            {"bool": {"must_not": [{"range": {"lastScrapedInUTC": {"gte": "now/d", "lt": "now", "time_zone": "+01:00"}}}]}}
+        ]
+    }'
+
+    Response:{
+    "aggregations": {
+        "count": {
+            "value": 3951
+        }
+    },
+    "hits": [{
+            "price": 319000,
+            "mileage": 2325,
+            "id": "20d4687a-02d1-42b7-8871-c107e460dbfc"
+        },{
+            "price": 369900,
+            "mileage": 1071,
+            "id": "88cfcdc7-d357-433f-8d40-3ad07e433a6a"
+    }]}
 
 
 Constraints
