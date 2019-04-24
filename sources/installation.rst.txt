@@ -38,61 +38,20 @@ To compile some of the Python libraries, we need the Python header files, which 
 
     sudo apt-get -y install python-dev
     
-For speeding up *gensim* and *scipy* modules, we have to download the following libraries.
+For resolving textract dependencies, we have to download the following libraries.
 
 .. code-block:: bash
 
-    sudo apt-get -y install build-essential manpages-dev
-    sudo apt-get -y install libblas-dev liblapack-dev libatlas-base-dev gfortran    
+	mysql-server
+	libmysqlclient-dev
+	libpulse-dev poppler-utils antiword unrtf
+	conda env create -f conda-environment.yaml
 
     
 Resolving Python dependencies
 -----------------------------
 
 Next, we need to get the Python libraries that TEXTA relies on.
-
-Virtual Python environment
-++++++++++++++++++++++++++
-
-Since TEXTA is a Python application, we highly recommend to use a virtual Python environment. This is due to the fact that Python stores its
-libraries globally and if some other Python application shares libraries with TEXTA, but they use incompatible versions, 
-the previously installed application might seize to work.
-
-.. note::
-
-    If you are not concerned about potential Python library conflicts between several applications, you can skip this part and head on to
-    `installing Python dependencies`_.
-
-Two frequently used Python sandbox tools are `Anaconda <https://www.anaconda.com/distribution/#download-section>`_ and 
-`Virtualenv <https://virtualenv.pypa.io/en/stable/>`_. Both allow to create a local version of Python interpreter by duplicating Python
-executables and libraries. In this section we cover *Anaconda*, as it enables to install many precompiled libraries with
-
-.. code-block:: bash
-
-    conda install python_library_name
-
-and therefore is significantly faster than *virtualenv*. However, not all third-party libraries are available. In this case we still have to
-use *pip* or one of its alternatives.
-
-Installation instructions are at `Anaconda <https://www.anaconda.com/distribution/#download-section>`_.
-
-To create a new *Anaconda* environment called *texta* that uses Python 3.5, we issue the command
-
-.. code-block:: bash
-
-    conda create --name texta python=3.5
-
-.. note::
-
-    It's a good practice to give environments descriptive names and to create an environment for each separate application. In our case we
-    created an environement called "texta".
-    
-After we have created the environment, we have to activate it. Activating an environment changes the current terminal session's paths to switch
-the original Python's executables to that of the isolated environment's.
-
-.. code-block:: bash
-
-    source activate texta
 
     
 .. _`installing Python dependencies`:    

@@ -35,7 +35,7 @@
             
   <div class="section" id="using-texta-toolkit">
 <h1>Using TEXTA Toolkit<a class="headerlink" href="#using-texta-toolkit" title="Permalink to this headline">¶</a></h1>
-<p>This is version 1.3.5 documentation</p>
+<p>This is version 1.3.5 documentation.</p>
 <div class="section" id="first-steps">
 <h2>First steps<a class="headerlink" href="#first-steps" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="the-login-screen">
@@ -82,11 +82,11 @@ with the exception of a list of tools and some global settings in the upper Admi
 <dl class="docutils">
 <dt>The biggest bosses in TEXTA Toolkit are the superusers, whose privileges include:</dt>
 <dd><ol class="first last arabic simple">
-<li>Managing Users and their access rights (Access &amp; Dataset Management in Administration under Restricted)</li>
-<li>Managing and importing datasets (Access &amp; Dataset Management in Administration and dataset Importer under Restricted)</li>
-<li>Training language models (Train Language Model in Task Manager under Restricted)</li>
-<li>Training and applying text classifiers (Train Text Tagger in Task Manager under Restricted)</li>
-<li>Apply preprocessors (Apply preprocessor in Task Manager under Restricted)</li>
+<li>Managing Users and their access rights (User Access in Admin)</li>
+<li>Managing and importing datasets (Dataset Management in Admin and Importer)</li>
+<li>Training language models (Train Language Model in Task Manager)</li>
+<li>Training and applying text classifiers (Train Text Tagger in Task Manager)</li>
+<li>Apply preprocessors (Apply Preprocessor in Task Manager)</li>
 </ol>
 </dd>
 </dl>
@@ -95,7 +95,7 @@ New superusers can be created by either by promoting existing user to superusers
 <a class="reference internal" href="installation.html#final-touches"><span class="std std-ref">installation’s final touches</span></a>.</p>
 <div class="section" id="managing-users-and-their-access-rights">
 <h3>Managing users and their access rights<a class="headerlink" href="#managing-users-and-their-access-rights" title="Permalink to this headline">¶</a></h3>
-<p>Users and their access to datasets can be configured in the User Access Management panel in Administration under Restricted:</p>
+<p>Users and their access to datasets can be configured in the User Access Management panel in Admin:</p>
 <div class="figure" id="id7">
 <img alt="images/03_user.png" src="images/03_user.png" />
 <p class="caption"><span class="caption-text">Figure 2.1. <em>Panel in Administration for managing users</em></span></p>
@@ -120,11 +120,10 @@ By default, new users will be created as deactivated, but this can be changed in
 </div>
 <p>Each new dataset can either be public or private. Public datasets are accessible for all users by default, but exceptions can be made in “User Management” panel.
 In contrast to public datasets, private datasets are closed to everyone (except the supersusers) by default. Again, individual access can be granted in “User Management” panel.</p>
-<p>Datasets can be closed and opened. Closed datasets are not listed to the users. Datasets can also be removed from TEXTA and Elasticsearch.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Removing dataset in TEXTA does not delete the actual dataset on the disk, but rather deletes the link between Elasticsearch index and TEXTA.</p>
-</div>
+<p>Datasets can be closed and opened. Closed datasets are not listed to the users.
+The size of the dataset can be seen in the table and the doc count means how big this index is.
+Datasets can be deleted from TEXTA and Elasticsearch or only the link between Elasticsearch index and TEXTA can be removed.</p>
+<p>Multiple datasets can be added using wildcards.</p>
 </div>
 </div>
 <div class="section" id="dataset-importer-importing-data">
@@ -133,9 +132,9 @@ In contrast to public datasets, private datasets are closed to everyone (except 
 insert data manually, while conforming to the rules and schema described
 <a class="reference internal" href="elastic_schema.html#elastic-schema"><span class="std std-ref">here</span></a>.</p>
 <p>However, as this might take a lot of work, the toolkit comes with a graphical data importing tool called “Dataset Importer”,
-which can be found under “Restricted” menu on the top.</p>
-<p>Dataset Importer (“importer” from now on) is a tool which allows to insert data in many formats, preprocess it, and
-finally store it in the underlying Elasticsearch database, so that it could be then used for analyzing using the other
+which can be found under “Importer” menu on the top.</p>
+<p>Dataset Importer (“importer” from now on) is a tool which allows to insert data in many formats and
+store it in the underlying Elasticsearch database, so that it could be then used for analyzing using the other
 tools the importer provides.</p>
 <div class="figure" id="id10">
 <img alt="images/01_overview.png" src="images/01_overview.png" />
@@ -192,39 +191,23 @@ We must name the dataset (will be used as both Elasticsearch index and mapping n
 <p class="caption"><span class="caption-text">Figure 3.4. <em>Specifying storage options</em></span></p>
 </div>
 </div>
-<div class="section" id="specifying-preprocessors">
-<h4>Specifying preprocessors<a class="headerlink" href="#specifying-preprocessors" title="Permalink to this headline">¶</a></h4>
-<p>Finally, we can optionally specify the preprocessors we want to apply. Each preprocessor enhances the final dataset (data table) with
-additional features (columns). To apply a preprocessor to the import job, select the desired preprocessor and fill in
-the fields it requires.</p>
-<div class="figure" id="id14">
-<img alt="images/05_specifying_preprocessors.png" src="images/05_specifying_preprocessors.png" />
-<p class="caption"><span class="caption-text">Figure 3.5. <em>Specifying preprocessors</em></span></p>
-</div>
-<p id="preprocessors"><strong>Lexicon Tagger preprocessor</strong>.</p>
-<p><strong>Comment preprocessor</strong>.</p>
-<p>Date conversion preprocessor converts date field values to correct Texta date format. Texta predicts the current format of the date based on the language. If we have a date field, we add the field to get data from and choose the language in which the data format is written.</p>
-<p>Text Tagger preprocessor tags documents with Texta Text Tagger’s tag previously trained on other documents. If we already have a <a class="reference internal" href="#classificationmanager"><span class="std std-ref">tagger trained</span></a> we can choose to tag the text with it while importing. Don’t forget to add the field to get data from.</p>
-<p>Multilingual preprocessor identifies the language of the text and extracts the facts (for example, addresses and the names of organisations, personas and locations) with what we can later work. So far it supports Estonian, Russian and English. If we choose the preprocessor we add the field to get data from.</p>
-<p>All those preprocessors can be applied <a class="reference internal" href="#applypreprocessor"><span class="std std-ref">after importing</span></a> as well.</p>
 <div class="section" id="submitting-the-import-job">
-<h5>Submitting the import job<a class="headerlink" href="#submitting-the-import-job" title="Permalink to this headline">¶</a></h5>
+<h4>Submitting the import job<a class="headerlink" href="#submitting-the-import-job" title="Permalink to this headline">¶</a></h4>
 <p>After we have filled in all the necessary fields, we are allowed to press “Import” button.</p>
 </div>
 <div class="section" id="tracking-the-import-jobs">
-<h5>Tracking the import jobs<a class="headerlink" href="#tracking-the-import-jobs" title="Permalink to this headline">¶</a></h5>
-<p>All the import jobs that have been completed or are still in progress are displayed in the “Import Jobs” table. Here we
+<h4>Tracking the import jobs<a class="headerlink" href="#tracking-the-import-jobs" title="Permalink to this headline">¶</a></h4>
+<p>All the import jobs that have been completed or are still in progress are displayed on the right panel. Here we
 can see how far are the current import jobs and also which are the parameters and other details of all the started
 import jobs.</p>
-<div class="figure" id="id15">
+<div class="figure" id="id14">
 <img alt="images/06_tracking_import_jobs.png" src="images/06_tracking_import_jobs.png" />
 <p class="caption"><span class="caption-text">Figure 3.6. <em>Tracking current and past import jobs</em></span></p>
 </div>
 <p>We can also remove an import job entry by clicking on the X in the Remove column or see further details by clicking on the eye icon in the View Details column.</p>
-<div class="figure" id="id16">
+<div class="figure" id="id15">
 <img alt="images/07_import_job_details.png" src="images/07_import_job_details.png" />
 <p class="caption"><span class="caption-text">Figure 3.7. <em>Specific import job’s details</em></span></p>
-</div>
 </div>
 </div>
 </div>
@@ -233,7 +216,7 @@ import jobs.</p>
 <h2>Select datasets and language models<a class="headerlink" href="#select-datasets-and-language-models" title="Permalink to this headline">¶</a></h2>
 <p>The users can select dataset and language model they are working with on the upper Administration panel.
 In order to switch the data or the model we are working with, we can just choose the preferred item from the drop-down menu on the upper panel. If the change was successfull, we’ll get a confirmation.</p>
-<div class="figure" id="id17">
+<div class="figure" id="id16">
 <img alt="images/02_updated.png" src="images/02_updated.png" />
 <p class="caption"><span class="caption-text">Figure 4.1. <em>Confirmation of updating the resources</em></span></p>
 </div>
@@ -241,8 +224,8 @@ In order to switch the data or the model we are working with, we can just choose
 <div class="section" id="training-language-models">
 <span id="trainlanguagemodel"></span><h2>Training Language Models<a class="headerlink" href="#training-language-models" title="Permalink to this headline">¶</a></h2>
 <p>In order to successfully extract terminology from a dataset, one needs a language model. Language models can be trained
-with “Train Language Model” application in “Task Manager” under “Restricted” (available for superusers only).</p>
-<div class="figure" id="id18">
+with “Train Language Model” application in “Task Manager” (available for superusers only).</p>
+<div class="figure" id="id17">
 <img alt="images/05_model_manager.png" src="images/05_model_manager.png" />
 <p class="caption"><span class="caption-text">Figure 5.1. <em>Model Manager</em></span></p>
 <div class="legend">
@@ -261,7 +244,7 @@ with “Train Language Model” application in “Task Manager” under “Restr
 </div>
 <p>To train a model, we need to specify the training data. The model uses the data we have chosen from the upper panel.
 By default, all exsisting documents in the given dataset are used (‘Select a search: Empty (all documents)’). We can also train a model on the data we have filtered out with the <a class="reference internal" href="#searcher"><span class="std std-ref">Searcher</span></a>.</p>
-<div class="figure" id="id19">
+<div class="figure" id="id18">
 <img alt="images/05-1_model_parameters.png" src="images/05-1_model_parameters.png" />
 <p class="caption"><span class="caption-text">Figure 5.2. <em>Model parameters</em></span></p>
 </div>
@@ -272,8 +255,8 @@ By default, all exsisting documents in the given dataset are used (‘Select a s
 <p>Max vocab size defines the size of the model vocabulary. If the there’s no limit, then the vocabulary is a set of all the words in the data (like [‘several’, ‘difficulties’]. If there’s a limit, then the vocabulary consists of subwords segmented from the data based on the frequencies of the segments (like [‘s’, ‘eve’, ‘ral’, ‘diffi’, ‘cult’, ‘ies’]). We don’t have to deal with the subwords afterwards, this is just something for the training.</p>
 <p>Description will be the model’s name. It is advisable to choose it carefully and make it informative, so we would remember what we did later as well.</p>
 <p>Let’s train a new language model on our whole data. For that we use the default empty search.</p>
-<p>After starting the model training task, we can see the progress. For progress upgrade, we have to refresh the page. Once the training completes, we can see the following.</p>
-<div class="figure" id="id20">
+<p>After starting the model training task, we can see the progress. For progress upgrade, we have to refresh the page. Once the training completes, we can see the following on the right panel:</p>
+<div class="figure" id="id19">
 <img alt="images/05-3_model_training_completed.png" src="images/05-3_model_training_completed.png" />
 <p class="caption"><span class="caption-text">Figure 5.3. <em>Training completed</em></span></p>
 </div>
@@ -288,29 +271,30 @@ By default, all exsisting documents in the given dataset are used (‘Select a s
 <li>The name for the class or “tag”, which is later user to tag the documents.</li>
 </ol>
 </div></blockquote>
-<p>By setting these three, we can now train a classifier. However, we can also fine-tune the classifier by changing additional parameters such as
-Feature Extraction (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them <a class="reference external" href="https://scikit-learn.org/stable/modules/feature_extraction.html">here</a>), dimensionality reduction (None or <a class="reference external" href="https://scikit-learn.org/stable/modules/decomposition.html#lsa">Truncated SVD</a>), Normalization (None or <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Normalizer.html">Normalizer</a>), and Classifier Model (<a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression">Logistic Regression</a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html">LinearSVC</a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/neighbors.html#classification">K-Neighbors, Radius Neighbors</a>). We might get an error with LinearSVC in case we don’t have enough data in the search.</p>
-<div class="figure" id="id21">
-<img alt="images/11-1_new_model.png" src="images/11-1_new_model.png" />
-<p class="caption"><span class="caption-text">Figure 6.1. <em>Choosing parameters for the classification model</em></span></p>
-</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">In order to train a Text Tagger we must have <a class="reference internal" href="#searcher-save"><span class="std std-ref">a search saved in the Searcher</span></a>.</p>
 </div>
-<p>Trained models and models in training are shown in the “Tasks for: Train Text Tagger” panel with their training status, parameters, etc. Under ‘Actions’ we can delete the model or download it. You can see the changes by refreshing the page.</p>
-<div class="figure" id="id22">
+<p>By setting these three, we can now train a classifier. However, we can also fine-tune the classifier by changing additional parameters such as
+Feature Extraction (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them <a class="reference external" href="https://scikit-learn.org/stable/modules/feature_extraction.html">here</a>), dimensionality reduction (None or <a class="reference external" href="https://scikit-learn.org/stable/modules/decomposition.html#lsa">Truncated SVD</a>), Normalization (None or <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Normalizer.html">Normalizer</a>), and Classifier Model (<a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression">Logistic Regression</a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html">LinearSVC</a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/neighbors.html#classification">K-Neighbors, Radius Neighbors</a>). We might get an error with LinearSVC in case we don’t have enough data in the search.
+We can set negative multiplier to change ratio of negative examples and choose maximum sample size per class. By changing the Training set score we can choose the relevance of the documents that are taken into count and we can choose by changing the language model which area is being clustered.</p>
+<div class="figure" id="id20">
+<img alt="images/11-1_new_model.png" src="images/11-1_new_model.png" />
+<p class="caption"><span class="caption-text">Figure 6.1. <em>Choosing parameters for the classification model</em></span></p>
+</div>
+<p>Trained models and models in training are shown on the right panel with their training status, parameters, etc. We can delete the model or download it. You can see the changes by refreshing the page.</p>
+<div class="figure" id="id21">
 <img alt="images/11-2_trained_models.png" src="images/11-2_trained_models.png" />
-<p class="caption"><span class="caption-text">Figure 6.2. <em>Trained models</em></span></p>
+<p class="caption"><span class="caption-text">Figure 6.2 <em>Trained models</em></span></p>
 </div>
 <p><strong>Tagging the dataset with the model</strong></p>
-<p>Now we can tag a dataset with our trained tagger via <a class="reference internal" href="#applypreprocessor"><span class="std std-ref">Apply Preprocessor</span></a>. All taggers we have trained with Texta tool, can be found under ‘Text Tagger preprocessor’.</p>
-<div class="figure" id="id23">
+<p>Now we can tag a dataset with our trained tagger via <a class="reference internal" href="#applypreprocessor"><span class="std std-ref">Apply Preprocessor</span></a>. All taggers we have trained with Texta tool, can be found under Processor -&gt; ‘Text Tagger’.</p>
+<div class="figure" id="id22">
 <img alt="images/11-3_apply_model.png" src="images/11-3_apply_model.png" />
 <p class="caption"><span class="caption-text">Figure 6.3. <em>Tagging a dataset with our tag</em></span></p>
 </div>
 <p>After pressing ‘Start task’, a tagging job will start and it’s task status will be shown in the table when completed. We can check the progress by refreshing the page.</p>
-<div class="figure" id="id24">
+<div class="figure" id="id23">
 <img alt="images/11-4_applied_models.png" src="images/11-4_applied_models.png" />
 <p class="caption"><span class="caption-text">Figure 6.4. <em>Applied classification models</em></span></p>
 </div>
@@ -319,17 +303,60 @@ Feature Extraction (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - rea
 <p class="last">If the dataset contains many documents, the tagging process can be expected to take a few minutes.</p>
 </div>
 </div>
+<div class="section" id="training-entity-extractor">
+<h2>Training Entity Extractor<a class="headerlink" href="#training-entity-extractor" title="Permalink to this headline">¶</a></h2>
+<p>Entity Extractor lets users manually tag entities and train statistical models to automatically extract them. In order to train a Entity Extractor, we are required to define some mandatory parameters (see Figure 7.1):</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>A <a class="reference internal" href="#searcher"><span class="std std-ref">search</span></a> to define the set of documents used to train the model (positive documents).</li>
+<li><ol class="first arabic">
+<li>The field describes the fact(s), of which the values will be used for training.</li>
+<li>Instead of that or besides that we can also add the lexicon(s) to do the same thing. With this you need to define the field(s) where the lexicon terms will be matched in.</li>
+</ol>
+</li>
+<li>The name for the class or “tag”, which is later user to tag the documents.</li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to train a Entity Extractor we must have <a class="reference internal" href="#searcher-save"><span class="std std-ref">a search saved in the Searcher</span></a>.</p>
+</div>
+<div class="figure" id="id24">
+<img alt="images/12-1_extractor_param.png" src="images/12-1_extractor_param.png" />
+<p class="caption"><span class="caption-text">Figure 7.1 <em>Model parameters</em></span></p>
+</div>
+<p>Trained models and models in training are shown on the right panel with their training status, parameters, etc. We can delete the model by selecting it or download it from the sign next to it. We can see parameters and results by clicking on the green button. You can see the changes by refreshing the page.</p>
+<div class="figure" id="id25">
+<img alt="images/12-2_trained_models_entity.png" src="images/12-2_trained_models_entity.png" />
+<p class="caption"><span class="caption-text">Figure 7.2 <em>Trained Entity Extractor Model</em></span></p>
+</div>
+<p><strong>Tagging the dataset with the model</strong></p>
+<p>Now we can tag a dataset with our trained tagger via <a class="reference internal" href="#applypreprocessor"><span class="std std-ref">Apply Preprocessor</span></a>. All extractors we have trained with Texta tool, can be found under Processor -&gt; ‘Entity Extractor’.</p>
+<div class="figure" id="id26">
+<img alt="images/12-3_apply_model_entity.png" src="images/12-3_apply_model_entity.png" />
+<p class="caption"><span class="caption-text">Figure 7.3. <em>Extracting dataset with our extractor</em></span></p>
+</div>
+<p>After pressing ‘Start task’, a extracting job will start and it’s task status will be shown in the table when completed. We can check the progress by refreshing the page.</p>
+<div class="figure" id="id27">
+<img alt="images/12-4_applypreprocessoroutlook_entity.png" src="images/12-4_applypreprocessoroutlook_entity.png" />
+<p class="caption"><span class="caption-text">Figure 7.4. <em>Applied classification models</em></span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the dataset contains many documents, the extracting process can be expected to take a few minutes.</p>
+</div>
+</div>
 <div class="section" id="applying-preprocessors">
 <span id="applypreprocessor"></span><h2>Applying Preprocessors<a class="headerlink" href="#applying-preprocessors" title="Permalink to this headline">¶</a></h2>
-<p>In Figure 7.1 we can see the general outlook of Apply Preprocessor. Here we can apply the same <a class="reference internal" href="#preprocessors"><span class="std std-ref">preprocessors</span></a> we could have applied in the Dataset Importer or apply <a class="reference internal" href="#classificationmanager"><span class="std std-ref">the taggers</span></a> we have trained ourselves (under ‘Text Tagger preprocessor’). We can use all the documents or a subset gotten via Search. We can select a field and start preprocessing. We can see the results in ‘Tasks for: Apply Preprocessor’.</p>
-<div class="figure" id="id25">
+<p>In Figure 8.1 we can see the general outlook of Apply Preprocessor. Here we can apply the same <span class="xref std std-ref">preprocessors</span> we could have applied in the Dataset Importer or apply <a class="reference internal" href="#classificationmanager"><span class="std std-ref">the taggers</span></a> we have trained ourselves (under Preprocessor -&gt; ‘Text Tagger’). We can use all the documents or a subset gotten via Search. We can select a field and start preprocessing. We can see the results on the right panel.</p>
+<div class="figure" id="id28">
 <img alt="images/11-4_applypreprocessoroutlook.png" src="images/11-4_applypreprocessoroutlook.png" />
-<p class="caption"><span class="caption-text">Figure 7.1. <em>Apply Preprocessor outlook</em></span></p>
+<p class="caption"><span class="caption-text">Figure 8.1. <em>Apply Preprocessor outlook</em></span></p>
 </div>
-<p>These tags we can later search for in the <a class="reference internal" href="#searcher"><span class="std std-ref">Searcher</span></a> (Figure 7.2). We can get the tagged documents via ‘fact_text_values’ field with FACT_NAME as TEXTA_TAG. In the example below we can choose to search for documents with (<em>is</em>) or without (<em>not</em>) the tag chosen in the FACT_VAL box ‘Value (case sensitive)’.</p>
-<div class="figure" id="id26">
+<p>These tags we can later search for in the <a class="reference internal" href="#searcher"><span class="std std-ref">Searcher</span></a> (Figure 8.2).</p>
+<div class="figure" id="id29">
 <img alt="images/07-02_searching_tagged.png" src="images/07-02_searching_tagged.png" />
-<p class="caption"><span class="caption-text">Figure 7.2. <em>Searching for tagged documents in the Searcher</em></span></p>
+<p class="caption"><span class="caption-text">Figure 8.2. <em>Searching for tagged documents in the Searcher</em></span></p>
 </div>
 </div>
 <div class="section" id="searcher-explore-the-data">
@@ -339,10 +366,10 @@ Feature Extraction (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - rea
 <p class="first admonition-title">Note</p>
 <p class="last">In order to use Searcher, dataset must be defined in upper panel.</p>
 </div>
-<p>Searcher’s graphical interface consists of serveral important panels, which are depicted in figure 8.1.</p>
-<div class="figure" id="id27">
+<p>Searcher’s graphical interface consists of serveral important panels, which are depicted in figure 9.1. You can collapse panels by clicking on the minus in the corner or open by clicking on the plus.</p>
+<div class="figure" id="id30">
 <img alt="images/06_corpus_tool.png" src="images/06_corpus_tool.png" />
-<p class="caption"><span class="caption-text">Figure 8.1. <em>Searcher’s first look</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.1. <em>Searcher’s first look</em></span></p>
 <div class="legend">
 <ol class="arabic simple">
 <li>Current Search</li>
@@ -359,65 +386,66 @@ the data using the “Current Search” panel. Without saving the constraints, w
 Searcher, but we cannot use the search in other tools. After saving the search, it is available also to other tools.</p>
 <p><strong>Build Search</strong></p>
 <p>We will start with Build Search. If you are interested in what is <a class="reference internal" href="#expandsearch"><span class="std std-ref">Expand Search</span></a> and <a class="reference internal" href="#clustersearch"><span class="std std-ref">Cluster Search</span></a> under the title Current Search, read below.</p>
-<p>In order to add a constraint, we must first choose a field. After the field is selected, we can then specify which textual tokens should or
+<p>In order to add a constraint, we must first choose one or several fields (don’t forget to add them by clicking “Add”). After the field is selected, we can then specify which textual tokens should or
 must occur in the interested document subset.</p>
 <p>We must notice that the search will be done on the dataset chosen in the upper panel. We will search documents with the the article_text_mlp -&gt; text field.</p>
-<div class="figure" id="id28">
+<div class="figure" id="id31">
 <img alt="images/06-00_choosing_a_field.png" src="images/06-00_choosing_a_field.png" />
-<p class="caption"><span class="caption-text">Figure 8.2. <em>Choosing a field to filter out</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.2. <em>Choosing a field to filter out</em></span></p>
 </div>
 <p>Suppose we are interested in finding all the documents which contains “bribery” and “official” from a text.</p>
-<div class="figure" id="id29">
+<div class="figure" id="id32">
 <img alt="images/06-1_bribe_search_constraints_exact.png" src="images/06-1_bribe_search_constraints_exact.png" />
-<p class="caption"><span class="caption-text">Figure 8.3. <em>“Bribery” and “official” search constraints</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.3. <em>“Bribery” and “official” search constraints</em></span></p>
 </div>
-<p>Figure 8.3 shows how we have defined that we want to find all the documents which contain “bribery” <em>and</em> “official”. We can also choose ‘<em>or</em>’ or ‘<em>not</em>’ under the Bool. In this case we either get documents containing at least one of the words (‘<em>or</em>’) or definitely not containing the words listed (‘<em>not</em>’).</p>
+<p>Figure 9.3 shows how we have defined that we want to find all the documents which contain “bribery” <em>and</em> “official”. We can also choose ‘<em>or</em>’ or ‘<em>not</em>’ under the Bool. In this case we either get documents containing at least one of the words (‘<em>or</em>’) or definitely not containing the words listed (‘<em>not</em>’).</p>
 <p>“Match” means that we want to find exact matches of the word(s) written and “Match phrase” means that we want to find exact matches of the phrases we are looking for, whereas “Match phrase prefix” matches prefixes. This means suffixes may differ: for example searching for ‘bribe’ will find you ‘bribetaking’, ‘bribers’, ‘bribery’ and other words starting with ‘bribe’.</p>
-<p>We can also use Slop. Via Slop we can define up to how many words can be between the two words we wrote on one row in case the range is important for us. For example Figure 8.4 results in documents containing phrases like <em>…today with Estonia,</em> and <em>Today Tallinn , Estonia , will host..</em>.</p>
-<div class="figure" id="id30">
+<p>We can also use Slop. Via Slop we can define up to how many words can be between the two words we wrote on one row in case the range is important for us. For example Figure 9.4 results in documents containing phrases like <em>…today with Estonia,</em> and <em>Today Tallinn , Estonia , will host..</em>.</p>
+<div class="figure" id="id33">
 <img alt="images/06-02-example-search.png" src="images/06-02-example-search.png" />
-<p class="caption"><span class="caption-text">Figure 8.4. <em>Example search using Slop</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.4. <em>Example search using Slop</em></span></p>
 </div>
-<p>Knowing all that we can modify our first bribery search as shown in the Figure 8.5 below and get all instances, where’s a word or are words starting with ‘bribe’ (let’s suppose we lost interest in words starting with ‘offic’). In case we are interested only in word ‘bribe’ it is worth choosing  to search within the lemma field, where you can filter out the exact word without worrying about it’s inflection (<em>bribes</em> lemma is still <em>bribe</em>).</p>
-<div class="figure" id="id31">
+<p>Knowing all that we can modify our first bribery search as shown in the Figure 9.5 below and get all instances, where’s a word or are words starting with ‘bribe’ (let’s suppose we lost interest in words starting with ‘offic’). In case we are interested only in word ‘bribe’ it is worth choosing  to search within the lemma field, where you can filter out the exact word without worrying about it’s inflection (<em>bribes</em> lemma is still <em>bribe</em>).</p>
+<div class="figure" id="id34">
 <img alt="images/06-1_bribe_search_constraints.png" src="images/06-1_bribe_search_constraints.png" />
-<p class="caption"><span class="caption-text">Figure 8.5. <em>Searching documents with words starting with ‘bribe’</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.5. <em>Searching documents with words starting with ‘bribe’</em></span></p>
 </div>
 <p>Should we be interested in more detailed searches, we can add more constraints like the previous one via ‘Add Filter’.</p>
-<p>We can also search documents in a certain date range in case we have a proper preprocessed date field. See example in Figure 8.6. We won’t do it at the moment.</p>
-<div class="figure" id="id32">
+<p>We can also search documents in a certain date range in case we have a proper preprocessed date field. See example in Figure 9.6. We won’t do it at the moment.</p>
+<div class="figure" id="id35">
 <img alt="images/06-05_choose_date_range.png" src="images/06-05_choose_date_range.png" />
-<p class="caption"><span class="caption-text">Figure 8.6. <em>Choosing a date range from the 1st of May 2010 to the 31st of August 2010</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.6. <em>Choosing a date range from the 1st of May 2010 to the 31st of August 2010</em></span></p>
 </div>
-<p>If we are working with long documents, we can also choose to look up short version of the text in the Search Options as shown in Figure 8.7. In the figure the window size selected is 3 words. That means we can see the word and 3 words before and after the word we are looking for. In our example search we will leave this unticked.</p>
-<div class="figure" id="id33">
+<p>If we are working with long documents, we can also choose to look up short version of the text in the Search Options as shown in Figure 9.7. In the figure the window size selected is 3 words. That means we can see the word and 3 words before and after the word we are looking for. In our example search we will leave this unticked.
+As shown on figure 9.7 we can disable html stripping.</p>
+<div class="figure" id="id36">
 <img alt="images/06-5_choosing_search_context_range.png" src="images/06-5_choosing_search_context_range.png" />
-<p class="caption"><span class="caption-text">Figure 8.7. <em>Choosing context window size</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.7. <em>Choosing context window size</em></span></p>
 </div>
-<p>If we click on “Search” button, we will see the matching data in a tabular form (see Figure 8.9), where layered features share feature name’s prefix, and
+<p>If we click on “Search” button, we will see the matching data in a tabular form (see Figure 9.9), where layered features share feature name’s prefix, and
 matches are highlighted. If we have ticked the ‘Search as you type’ option, the results are updating while modifying the filters.</p>
-<p>If there are too many features (columns), we can hide them by clicking on their green names. The columns hidden are red.</p>
-<div class="figure" id="id34">
+<p>If there are too many features (columns), we can hide or show them from the drop-down menu in the upper left corner. We can select or deselect all of them together or by clicking on them saparately.</p>
+<div class="figure" id="id37">
 <img alt="images/06-2_bribe_results.png" src="images/06-2_bribe_results.png" />
-<p class="caption"><span class="caption-text">Figure 8.9. <em>Bribe search results</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.9. <em>Bribe search results</em></span></p>
 <div class="legend">
 <blockquote>
 <div><ol class="arabic simple">
-<li>Show all or hide all option</li>
-<li>Shown features</li>
-<li>Actions (<a class="reference internal" href="#exportresults"><span class="std std-ref">export results</span></a> or <a class="reference internal" href="#deleteresults"><span class="std std-ref">delete results</span></a>)</li>
+<li>Show or hide features</li>
 </ol>
 </div></blockquote>
 </div>
 </div>
-<p id="searcher-save">After we have come up with a suitable search, we can save it for later uses (see figure 8.10).</p>
-<div class="figure" id="id35">
+<p id="searcher-save">After we have come up with a suitable search, we can save it for later uses (see figure 9.10).</p>
+<div class="figure" id="id38">
 <img alt="images/06-7_saving_a_search.png" src="images/06-7_saving_a_search.png" />
-<p class="caption"><span class="caption-text">Figure 8.10. <em>Searcher’s save icon and query</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.10. <em>Searcher’s save and export icon</em></span></p>
 <div class="legend">
 <ol class="arabic simple">
+<li>Export/Delete results</li>
 <li>Save icon</li>
-<li>Query</li>
+<li>View query</li>
+<li>View on full screen</li>
 </ol>
 </div>
 </div>
@@ -426,43 +454,44 @@ matches are highlighted. If we have ticked the ‘Search as you type’ option, 
 <p>Now we have done the search in Figure 8.5. Suppose we would like to get more documents similar to the ones we have filtered out. Then we click on the Expand Search option after searching for ‘bribe’ in Build Search (it won’t work if we have nothing to base your search on). We can select fields the Searcher starts finding similarities in. We can also select a stopword lexicon from <a class="reference internal" href="#lexiconminer"><span class="std std-ref">the lexicons we have already created</span></a>. These word are not considerated while sorting.</p>
 <p>We can also choose how to handle rejected documents. Elasticsearch can either ignore them or take into consideration while offering next documents (won’t offer documents similar to the ones we rejected).</p>
 <p>When we click on the ‘Search for Similar’ button, we get a table of suggestions. The suggestions are based on our Build Search query and finds documents with similar content to the query. For example, if we search for a certan politician name then it will suggest us documents consisting of other politicians’ names. We could, perhaps, expect documents consisting of the term <em>corruption</em>. In fact, this is the case.</p>
-<p>We can make the size of the columns narrower by dragging the edges closer with our mouse. We can accept or reject a suggestion. If we accept, the document’s ID will appear in the ‘Selected documents’.</p>
+<p>We can accept or reject a suggestion. If we accept, the document’s ID will appear in the ‘Selected documents’.</p>
 <p>If we have selected all the documents we desire, we can click on the save icon next to Current Search title (see Figure 6.7). If we do this, only those selected documents will be saved as one subset (not the ones filtered out in the Build Search for example).</p>
 <p id="clustersearch"><strong>Cluster Search</strong></p>
-<p>We can also do a cluster search (see Figure 8.11) on the documents we have filtered out in Build Search. If we want to cluster the whole dataset, we can leave the Build Search empty. We can select a field the clustering will work on, clusering method (<a class="reference external" href="https://en.wikipedia.org/wiki/K-means_clustering">K-means</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Hierarchical_clustering">hierarchical (agglomerative)</a>).</p>
+<p>We can also do a cluster search (see Figure 9.11) on the documents we have filtered out in Build Search. If we want to cluster the whole dataset, we can leave the Build Search empty. We can select a field the clustering will work on, clustering method (<a class="reference external" href="https://en.wikipedia.org/wiki/K-means_clustering">K-means</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Hierarchical_clustering">hierarchical (agglomerative)</a>).</p>
 <p>We can select CountVectorizer, which lowercases letters, disregards punctuation and stopwords (doesn’t lemmatize or stem) and uses occurrence counting, or TfidfVectorizer, which combines CountVectorizer and TfidTransformer and decreases the impact of frequent and hence less informative tokens. Read more about the vectorizers <a class="reference external" href="https://www.kaggle.com/adamschroeder/countvectorizer-tfidfvectorizer-predict-comments">here</a> or <a class="reference external" href="https://scikit-learn.org/stable/modules/feature_extraction.html">here</a>.</p>
 <p>We can select the number of clusters (default value 10) we want to achieve, maximum number of documents within a cluster (default 1000), number of keywords per cluster (default 10), maximum total words per document (default 1000) on which the Cluster Search calculates the clustering. We can increase it to 5000-10000 words as the 1000 words is rather small (of course, it depends on our dataset). If we have already some <a class="reference internal" href="#lexiconminer"><span class="std std-ref">lexicons</span></a>, we can choose them as stopword lexicons. We can also adjust the outcome by only seeing short version or documents with keyword matches. The first shows keywords with a couple of words before and after, the last excludes documents that are in the cluster, but do not have any keywords to highlight.</p>
-<div class="figure" id="id36">
+<div class="figure" id="id39">
 <img alt="images/06-07_cluster_searcher.png" src="images/06-07_cluster_searcher.png" />
-<p class="caption"><span class="caption-text">Figure 8.11. <em>Cluster Searcher’s first look</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.11. <em>Cluster Searcher’s first look</em></span></p>
 </div>
-<div class="figure" id="id37">
+<div class="figure" id="id40">
 <img alt="images/06-10_example_result_of_cluster_search.png" src="images/06-10_example_result_of_cluster_search.png" />
-<p class="caption"><span class="caption-text">Figure 8.12. <em>Example result of Cluster Search without a stopword lexicon</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.12. <em>Example result of Cluster Search without a stopword lexicon</em></span></p>
 </div>
 </div>
 <div class="section" id="exporting-data">
 <span id="exportresults"></span><h3>Exporting data<a class="headerlink" href="#exporting-data" title="Permalink to this headline">¶</a></h3>
 <p>Sometimes we want to work with a subset of data in some other application or external calculation. For example, we might want to train a
 classifier on enriched sample. To get the enriched sample (in which some classes or tokens are over-represented), we can apply the search
-constraints to retrieve the data and then use query result actions (see Figure 8.13), such as <em>export</em>.</p>
-<div class="figure" id="id38">
+constraints to retrieve the data and then use query result actions (see Figure 9.13), such as <em>export</em>.
+Export panel button is shown on the figure 9.10.</p>
+<div class="figure" id="id41">
 <img alt="images/06-3_export_panel.png" src="images/06-3_export_panel.png" />
-<p class="caption"><span class="caption-text">Figure 8.13. <em>Export panel</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.13. <em>Export panel</em></span></p>
 </div>
-<p>Export panel allows to specify, how many rows and which features are we interested in. Exported data is in CSV format. If we select ‘Selected features’, only shown features are exported (hidden (red) features are not exported).</p>
+<p>Export panel allows to specify, how many rows and which features are we interested in. Exported data is in CSV format. If we select ‘Selected features’, only shown features are exported (hidden features are not exported).</p>
 </div>
 <div class="section" id="deleting-data">
 <span id="deleteresults"></span><h3>Deleting data<a class="headerlink" href="#deleting-data" title="Permalink to this headline">¶</a></h3>
-<p>The second action on search results (see Figure 8.9.) is deletion - if we detect some malformed data or are simply not interested in some subset, we can remove it
+<p>The second action on search results (see Figure 9.10.) is deletion - if we detect some malformed data or are simply not interested in some subset, we can remove it
 permanently from the Elasticsearch.</p>
 </div>
 <div class="section" id="using-saved-searches">
 <h3>Using saved searches<a class="headerlink" href="#using-saved-searches" title="Permalink to this headline">¶</a></h3>
-<p>Searches can be saved with clicking on the save icon next to Current Search title (see Figure 8.10). If we save our “bribery” search under “bribery”, we can see it being listed in “Saved Searches” panel.</p>
-<div class="figure" id="id39">
+<p>Searches can be saved with clicking on the save icon next to Current Search title (see Figure 9.10). If we save our “bribery” search under “bribery”, we can see it being listed in “Saved Searches” panel.</p>
+<div class="figure" id="id42">
 <img alt="images/06-4_saved_search.png" src="images/06-4_saved_search.png" />
-<p class="caption"><span class="caption-text">Figure 8.14. <em>Saved searches</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.14. <em>Saved searches</em></span></p>
 </div>
 <p>Now, whenever we check it, we can use it to browse data or apply in summarization.</p>
 </div>
@@ -472,26 +501,26 @@ permanently from the Elasticsearch.</p>
 word distributions. Searcher allows to do all of that and more through the “Aggregations” panel.</p>
 <p>Aggregations have two components - data and features it aggregates over. Selecting a search determines the sample we get our data from. By defining a feature, we can group by that feature and get
 category counts. For example, lets assume we are interested in seeing how are the top words distributed in our sample data defined by our
-“bribe” search. By requesting aggregation as shown on Figure 8.15, we get the result on the same figure.</p>
-<div class="figure" id="id40">
+“bribe” search. By requesting aggregation as shown on Figure 9.15, we get the result on the same figure.</p>
+<div class="figure" id="id43">
 <img alt="images/06-5_simple_aggregation.png" src="images/06-5_simple_aggregation.png" />
-<p class="caption"><span class="caption-text">Figure 8.15. <em>Simple aggregation</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.15. <em>Simple aggregation</em></span></p>
 </div>
-<p>From the results in Figure 8.15 we can see raw word distributions for both checked “bribe” search and “Current Search” (which doesn’t have any constraints,
+<p>From the results in Figure 9.15 we can see raw word distributions for both checked “bribe” search and “Current Search” (which doesn’t have any constraints,
 a.k.a sample is all the data we have). Since we queried significant words, common words do not overlap. We can change “Aggregations” setting to significant items or frequent items in order to get significant (by normalised count) or frequent (by count) items. If we want, we can hide current search in results.</p>
 </div>
 <div class="section" id="fact-graph-visualizing-facts">
 <h3>Fact Graph: Visualizing facts<a class="headerlink" href="#fact-graph-visualizing-facts" title="Permalink to this headline">¶</a></h3>
-<p>The last item in our Searcher is Fact Graph (Figure 8.16) which visualizes the facts and its’ cooccurances with other facts. Number of fact values per fact name defines how many fact values (certain names of personas, places, etc) will be shown under one fact name (PER, LOC, etc). These are chosen by their frequency. By default it’s 15.</p>
-<p>In Figure 8.17 we can see one example graph. We can move the graph by clicking on it, holding and dragging. We can zoom in and out with the mouse scroll wheel. By clicking on the fact names in the graph legend we can hide or reveal the facts. If we click on certain fact values in the graph we can see a list of fact values it’s connected to. If we untick the option ‘Show cooccurances for visible nodes only’ we’ll get a list of all the cooccurances even if currently not shown in the graph. To unshow the list, we can click somewhere else. We can clean the graph from less frequent fact values by increasing the value of option ‘hide facts with lower count than’.</p>
+<p>The last item in our Searcher is Fact Graph (Figure 9.16) which visualizes the facts and its’ cooccurances with other facts. Number of fact values per fact name defines how many fact values (certain names of personas, places, etc) will be shown under one fact name (PER, LOC, etc). These are chosen by their frequency. By default it’s 15.</p>
+<p>In Figure 9.17 we can see one example graph. We can move the graph by clicking on it, holding and dragging. We can zoom in and out with the mouse scroll wheel. By clicking on the fact names in the graph legend we can hide or reveal the facts. If we click on certain fact values in the graph we can see a list of fact values it’s connected to. If we untick the option ‘Show cooccurances for visible nodes only’ we’ll get a list of all the cooccurances even if currently not shown in the graph. To unshow the list, we can click somewhere else. We can clean the graph from less frequent fact values by increasing the value of option ‘hide facts with lower count than’.</p>
 <p>If we right-click on some fact value, we can add that node to Build Search, hide facts with this type (you can later reveal them in the graph legend), hide this fact (you can later reveal them again in the bottom left hidden nodes list) or delete this fact from the dataset.</p>
-<div class="figure" id="id41">
+<div class="figure" id="id44">
 <img alt="images/06-13_visualizing_facts.png" src="images/06-13_visualizing_facts.png" />
-<p class="caption"><span class="caption-text">Figure 8.16. <em>Fact Graph</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.16. <em>Fact Graph</em></span></p>
 </div>
-<div class="figure" id="id42">
+<div class="figure" id="id45">
 <img alt="images/06-14_visualizing_facts_results.png" src="images/06-14_visualizing_facts_results.png" />
-<p class="caption"><span class="caption-text">Figure 8.17. <em>Fact Graph Results</em></span></p>
+<p class="caption"><span class="caption-text">Figure 9.17. <em>Fact Graph Results</em></span></p>
 <div class="legend">
 <blockquote>
 <div><ol class="arabic simple">
@@ -559,12 +588,12 @@ a.k.a sample is all the data we have). Since we queried significant words, commo
 </tbody>
 </table>
 <blockquote>
-<div>Table 8.1. <em>Meaning of tags</em></div></blockquote>
+<div>Table 9.1. <em>Meaning of tags</em></div></blockquote>
 <p>It is important to notice that COMPANY and ADDR identify only companies and addresses registered in Estonian Open Data. It won’t tag any foreign company nor address while ORG and LOC identifies all of them.</p>
 </div>
 </div>
-<div class="section" id="terminology-management">
-<h2>Terminology Management<a class="headerlink" href="#terminology-management" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="terminologies">
+<h2>Terminologies<a class="headerlink" href="#terminologies" title="Permalink to this headline">¶</a></h2>
 <p>In order to learn more about the dataset, it is useful to know the domain terminology or create a stopword lexicon. TEXTA Toolkit’s terminology extraction tools support the user through the process of <a class="reference internal" href="#lexiconminer"><span class="std std-ref">creating lexicons</span></a>, <a class="reference internal" href="#conceptualiser"><span class="std std-ref">grouping them into concepts</span></a> and <a class="reference internal" href="#mweminer"><span class="std std-ref">mining for multiword expressions</span></a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -573,28 +602,28 @@ a.k.a sample is all the data we have). Since we queried significant words, commo
 </div>
 <div class="section" id="terminology-overview">
 <h2>Terminology Overview<a class="headerlink" href="#terminology-overview" title="Permalink to this headline">¶</a></h2>
-<p>Here we can get an overview of our lexicons created and concepts commited. In Figure 9.1 we can already see some concepts. The creation of these concepts are described below. We can delete the concepts by clicking on the little minus sign and then confirming our decision by choosing <em>Yes</em> in the question box shown in Figure 9.2.</p>
-<div class="figure" id="id43">
+<p>Here we can get an overview of our lexicons created and concepts commited. In Figure 10.1 we can already see some concepts. The creation of these concepts are described below. We can delete the concepts by clicking on the little minus sign and then confirming our decision by choosing <em>Yes</em> in the question box shown in Figure 10.2.</p>
+<div class="figure" id="id46">
 <img alt="images/09-01_terminology_overview.png" src="images/09-01_terminology_overview.png" />
-<p class="caption"><span class="caption-text">Figure 9.1. <em>Terminology Overview</em></span></p>
+<p class="caption"><span class="caption-text">Figure 10.1. <em>Terminology Overview</em></span></p>
 </div>
-<div class="figure" id="id44">
+<div class="figure" id="id47">
 <img alt="images/09-02_remove_entry.png" src="images/09-02_remove_entry.png" />
-<p class="caption"><span class="caption-text">Figure 9.2. <em>Removing concept</em></span></p>
+<p class="caption"><span class="caption-text">Figure 10.2. <em>Removing concept</em></span></p>
 </div>
 </div>
 <div class="section" id="lexicon-miner-creating-lexicons">
 <span id="lexiconminer"></span><h2>Lexicon Miner: Creating lexicons<a class="headerlink" href="#lexicon-miner-creating-lexicons" title="Permalink to this headline">¶</a></h2>
-<p>We can start creating topic-related lexicons. From toolbar we can find “Base Lexicon Miner” under “Terminology Management”.</p>
+<p>We can start creating topic-related lexicons. From toolbar we can find “Lexicon Miner” under “Terminologies”.</p>
 <p>Let’s create a lexicon that contains verbs accompanied with “bribery”.</p>
-<div class="figure" id="id45">
+<div class="figure" id="id48">
 <img alt="images/07_creating_verb_lexicon.png" src="images/07_creating_verb_lexicon.png" />
-<p class="caption"><span class="caption-text">Figure 10.1. <em>Creating lexicon of bribery verbs</em></span></p>
+<p class="caption"><span class="caption-text">Figure 11.1. <em>Creating lexicon of bribery verbs</em></span></p>
 </div>
 <p>After clicking on the newly created lexicon, we have to provide some seed words.</p>
-<div class="figure" id="id46">
+<div class="figure" id="id49">
 <img alt="images/07-1_lexicon_seed_words.png" src="images/07-1_lexicon_seed_words.png" />
-<p class="caption"><span class="caption-text">Figure 10.2. <em>Providing seed words</em></span></p>
+<p class="caption"><span class="caption-text">Figure 11.2. <em>Providing seed words</em></span></p>
 </div>
 <p>The process of creating (or expanding) the lexicon is iterative. We keep asking for suggestions and from those we have to pick the ones that make sense to us. We keep asking for suggestions until we get no more meaningful responses. Then we should either change to some approach with “preclustering” in it or end the process, as the training data didn’t give us more.</p>
 <div class="admonition note">
@@ -602,10 +631,10 @@ a.k.a sample is all the data we have). Since we queried significant words, commo
 <p class="last"><strong>Which method to choose?</strong>
 If you are not certain, take the default mean vector (<a class="reference external" href="https://radimrehurek.com/gensim/models/deprecated/keyedvectors.html#id2">most_similar</a>) as done above. Mean vector takes the mean of all the seed words’ vectors (words in the selected lexicon list) and finds words similar to the mean. Multiplicative combination objective (<a class="reference external" href="https://radimrehurek.com/gensim/models/deprecated/keyedvectors.html#id2">most_similar_cosmul</a>) multiplies the seed words’ vectors with each other and finds words similar to the result vector. Preclustering means that the means or multiplicative combination objectives are found within previously formed clusters. Clusters have been created by comparing corresponding words’ vectors. All rank aggregations in the list are <a class="reference external" href="https://cran.r-project.org/web/packages/RobustRankAggreg/index.html">robust</a> . If we choose just Robust Ranking Aggregation (RRA) alone we’ll get the aggregation of  the suggestions for each seed word.</p>
 </div>
-<p>The first batch of suggested words are shown in figure 10.3. The result would be better if we had trained our model on lemmas. This one is trained on text field, therefore we get all forms of ‘accuse’ in the candidates list.</p>
-<div class="figure" id="id47">
+<p>The first batch of suggested words are shown in figure 11.3. The result would be better if we had trained our model on lemmas. This one is trained on text field, therefore we get all forms of ‘accuse’ in the candidates list.</p>
+<div class="figure" id="id50">
 <img alt="images/07-2_first_suggestion_batch.png" src="images/07-2_first_suggestion_batch.png" />
-<p class="caption"><span class="caption-text">Figure 10.3. <em>First suggestion batch</em></span></p>
+<p class="caption"><span class="caption-text">Figure 11.3. <em>First suggestion batch</em></span></p>
 </div>
 <p>To add a suitable word to the lexicon, we simply have to click on it. If we want to delete something we already chose we can erase the verb from the list.</p>
 <p>Button ‘Reset suggestions’ erases the words we didn’t choose from the memory and it will start to suggest words we might have already seen. Otherwise it doesn’t.</p>
@@ -615,25 +644,25 @@ If you are not certain, take the default mean vector (<a class="reference extern
 <span id="conceptualiser"></span><h2>Conceptualiser: Creating concepts<a class="headerlink" href="#conceptualiser-creating-concepts" title="Permalink to this headline">¶</a></h2>
 <p>Once we have saved the lexicons we are interested in, the next step would be to group parts of them into concepts. A lexicon may contain
 somewhat similar words which still differ from one another in some important aspects. Concepts are created with “Conceptualiser” under
-“Terminology Management”. It takes lexicons as input and outputs concepts, which user defines using the graphical tool. Words are displayed on
+“Terminologies”. It takes lexicons as input and outputs concepts, which user defines using the graphical tool. Words are displayed on
 scatter plot and user can group them using selection box or merge one by one using the <em>enter</em> key.</p>
 <p>Word coordinates in scatter plot are derived by applying dimension reduction on high dimension word vectors. Word vectors are relying on
 distributional semantics, meaning that words with similar context are similar and have in our case similar vectors - or are close to each other
 in 2-dimensional space.</p>
 <p>One of several dimension reduction methods can be chosen, but they give approximately the same results. Read more about the methods here: <a class="reference external" href="https://scikit-learn.org/stable/modules/decomposition.html#pca">PCA</a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/manifold.html#multidimensional-scaling">MDS</a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/manifold.html#t-sne">TSNE</a>.</p>
-<p>After checking the lexicons and plotting them, we get to the state depicted in figure 11.1.</p>
-<div class="figure" id="id48">
+<p>After checking the lexicons and plotting them, we get to the state depicted in figure 12.1.</p>
+<div class="figure" id="id51">
 <img alt="images/08_conceptualiser_initial_plot.png" src="images/08_conceptualiser_initial_plot.png" />
-<p class="caption"><span class="caption-text">Figure 11.1. <em>Conceptualiser’s initial plot</em></span></p>
+<p class="caption"><span class="caption-text">Figure 12.1. <em>Conceptualiser’s initial plot</em></span></p>
 </div>
 <p>We can visually detect that three more or less coherent clusters have formed. We group the terms into consepts using the shortcuts mentioned on the left.</p>
-<div class="figure" id="id49">
+<div class="figure" id="id52">
 <img alt="images/08-03_grouping_concepts.png" src="images/08-03_grouping_concepts.png" />
-<p class="caption"><span class="caption-text">Figure 11.2. <em>Grouping concepts and naming a concept</em></span></p>
+<p class="caption"><span class="caption-text">Figure 12.2. <em>Grouping concepts and naming a concept</em></span></p>
 </div>
-<div class="figure" id="id50">
+<div class="figure" id="id53">
 <img alt="images/08-1_grouped_concepts.png" src="images/08-1_grouped_concepts.png" />
-<p class="caption"><span class="caption-text">Figure 11.3. <em>After grouping the words into concepts</em></span></p>
+<p class="caption"><span class="caption-text">Figure 12.3. <em>After grouping the words into concepts</em></span></p>
 </div>
 <p>Now that we have found the concepts, we can commit the results to save them.</p>
 <div class="admonition note">
@@ -645,31 +674,31 @@ in 2-dimensional space.</p>
 <span id="mweminer"></span><h2>MWE Miner: Mining Multi-Word Expressions<a class="headerlink" href="#mwe-miner-mining-multi-word-expressions" title="Permalink to this headline">¶</a></h2>
 <p>Mining multi-word expressions is a way to find actually used phrases. We approched the problem bottom-up. First we defined the individual tokens
 and now we try to find which of them are located nearby or side-by-side.</p>
-<p>Mining task requires parameters - much like training language models. In Figure 12.1 we can see the parameters we can use.</p>
-<div class="figure" id="id51">
+<p>Mining task requires parameters - much like training language models. In Figure 13.1 we can see the parameters we can use.</p>
+<div class="figure" id="id54">
 <img alt="images/09_mwe_parameters.png" src="images/09_mwe_parameters.png" />
-<p class="caption"><span class="caption-text">Figure 12.1. <em>Multi-word expression mining parameters</em></span></p>
+<p class="caption"><span class="caption-text">Figure 13.1. <em>Multi-word expression mining parameters</em></span></p>
 </div>
 <p>We have to define the feature or field, which should be the same we trained our language models on for mining lexicons. Expression lengths
 determine the output phrase lengths (or combination lengths, which are searched for). Phrase occurrencies below frequency threshold are ignored
 and slop determines, how far apart can the words be from one another. Finally, we have to specify the lexicons used. Since we want to find
 bribery phrases which contain both noun and accusing verb, we check both lexicons.</p>
 <p>Because the data and lexicons are small, the task completes instantly.</p>
-<div class="figure" id="id52">
+<div class="figure" id="id55">
 <img alt="images/09-1_mwe_progress.png" src="images/09-1_mwe_progress.png" />
-<p class="caption"><span class="caption-text">Figure 9.1. <em>Multi-word expression task progress</em></span></p>
+<p class="caption"><span class="caption-text">Figure 13.1. <em>Multi-word expression task progress</em></span></p>
 </div>
 <p>By looking at the results, we can see that there are 43 different patterns (denoted by “Terms” feature) containing ‘accused’ and ‘corruption’
 concepts’ words which are frequent enough to catch our interest. 12 ‘corrupton’-‘admit’ pairs and 1 ‘corruption’-‘discredit’ pair.</p>
-<div class="figure" id="id53">
+<div class="figure" id="id56">
 <img alt="images/09-2_mwe_results.png" src="images/09-2_mwe_results.png" />
-<p class="caption"><span class="caption-text">Figure 9.2. <em>Multi-word expression results</em></span></p>
+<p class="caption"><span class="caption-text">Figure 13.2. <em>Multi-word expression results</em></span></p>
 </div>
 <p>We can expand the result by clicking on the “plus”-sign under “Accepted” feature to see which patterns actually existed and with which
 frequency.</p>
-<div class="figure" id="id54">
+<div class="figure" id="id57">
 <img alt="images/09-3_expanded_results.png" src="images/09-3_expanded_results.png" />
-<p class="caption"><span class="caption-text">Figure 9.3. <em>Expanded results</em></span></p>
+<p class="caption"><span class="caption-text">Figure 13.3. <em>Expanded results</em></span></p>
 </div>
 <p>The expanded results show how some patterns are much more common in real use of language.</p>
 <p>We can approve specific patterns to turn them into a concept containing multi-word expressions and therefore use the more complicated structures
@@ -705,9 +734,10 @@ in other tools, such as in the <em>Searcher</em>. In order to approve, we have t
 <li class="toctree-l2"><a class="reference internal" href="#select-datasets-and-language-models">Select datasets and language models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#training-language-models">Training Language Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#training-text-taggers">Training Text Taggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#training-entity-extractor">Training Entity Extractor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#applying-preprocessors">Applying Preprocessors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#searcher-explore-the-data">Searcher: Explore the Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#terminology-management">Terminology Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#terminologies">Terminologies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#terminology-overview">Terminology Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lexicon-miner-creating-lexicons">Lexicon Miner: Creating lexicons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conceptualiser-creating-concepts">Conceptualiser: Creating concepts</a></li>
