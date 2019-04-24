@@ -1,7 +1,7 @@
 Using TEXTA Toolkit
 ===================
 
-This is version 1.3.5 documentation.
+This is version 1.3.5 documentation
 
 First steps
 -----------
