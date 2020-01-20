@@ -1,1 +1,1 @@
-texta-docs
+Shinx documentation for TEXTA Toolkit 2
