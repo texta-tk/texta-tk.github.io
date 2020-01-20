@@ -235,8 +235,8 @@ TODO: ADD EXAMPLE HERE!
 
 .. _texttaggers:
 
-Text Taggers
-------------
+Tagging the Data
+----------------
 
 Different Taggers in Texta Toolkit are classification models which can classify new data with the label/class the model is trained on. We can apply the tagger via API. 
 

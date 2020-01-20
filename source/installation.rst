@@ -73,7 +73,7 @@ For stopping the services:
 
 
 Installation for Development
-========================
+============================
 
 If you want to develop TEXTA Toolkit, want more control over how you run it, or seriously dislike Docker, it is also possible to install Toolkit using Anaconda (or Miniconda as shown in following examples).
 
