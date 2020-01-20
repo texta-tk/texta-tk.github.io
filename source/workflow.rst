@@ -1,7 +1,7 @@
-Using TEXTA Toolkit
+Using TEXTA Toolkit's GUI
 ===================
 
-This is version 2.0 documentation.
+This is documentation is for TEXTA Toolkit version 2 GUI backed with TEXTA Toolkit's RESTful API.
 
 First steps
 ------------------
