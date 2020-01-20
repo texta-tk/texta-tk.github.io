@@ -1,0 +1,1215 @@
+.. _api:
+
+API
+===
+
+TEXTA API can be used to query or process data without the need to interact with the graphical user interface.
+
+It can be accessed from the address *<texta_address>/api*
+
+Authentication
+--------------
+
+TEXTA API requires authentication in order to access any features. API authentication is handled by revokable authentication tokens. To make any API calls, one has to provide a valid authentication token, which is used to verify user permissions for different datasets.
+
+Retrieving the token
+^^^^^^^^^^^^^^^^^^^^
+
+To retrieve an authorization token, one has to perform the following query:
+
+.. code-block:: bash
+
+    $ curl http://localhost:8000/account/get_auth_token -d '{
+        "username": "my_texta_username",
+        "password": "my_texta_password"
+    }'
+
+If authentication was successful, the authentication token is returned in the following format:
+
+.. code-block:: python
+
+    {"auth_token": "9c05321f821f6e"}
+
+The returned authentication token doesn't expire and will be returned every time a token is requested by the user, until explicity revoked. If authentication token is likely to be compromised, it's possible to revoke the token with the command
+
+.. code-block:
+
+    $ curl http://localhost:8000/account/revoke_auth_token -d '{
+        "username": "my_texta_username",
+        "password": "my_texta_password"
+    }'
+    
+which returns
+
+.. code-block:: python
+
+    {"success": true}
+
+Search
+------
+
+Searching functionality allows to query documents based on the defined constraints and projections. Documents are queried and returned in JSON format.
+
+.. topic:: Example scenario
+    
+    Let's presume we have stored a variety of news articles with the following features: title, content, publish date, and author.
+    
+    We can use TEXTA API to find all the articles by some fixed authors, articles which contain specific keywords or phrases, or articles which are published between two dates by selected authors and of which content contains keywords "president" and "speech", and not keywords "poverty", "unhappiness", and "falling behind".
+
+To download all the documents from the dataset with ID 4, it suffices to call
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/api/search' -d '{
+        "auth_token": "9c05321f821f6e",
+        "dataset": 4
+    }'
+
+Retrieving all the documents isn't necessarily the smartest thing to do. Next we might want to limit the number of documents we receive to 100 and get only the titles and the authors.
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/api/search' -d '{
+        "auth_token": "9c05321f821f6e",
+        "dataset": 4,
+        "fields": ["title", "author"],
+        "parameters": {"limit": 100}
+    }'
+
+Although we now have some control over how we receive our data, we can't still control what we receive. For that, we have to define constraints which the returned documents must satisfy. Let's retrieve the title and the content of 15 articles published in 2017 by the renowned author John Doe.
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/api/search' -d '{
+        "auth_token": "9c05321f821f6e",
+        "dataset": 4,
+        "fields": ["title", "content"],
+        "parameters": {"limit": 15},
+        "constraints": [
+            {"field":"author","operator":"must","type":"match_phrase","slop":0,"strings":["John Doe"], "class":"string"},
+            {"field":"published", "class":"date", "start":"2017-01-01", "end":"2017-12-31"}
+        ]
+    }'
+    
+The approach so far is streaming all the matching documents, meaning that the user will receive the data over a period of time with a single request. The returned documents have the following format:
+
+.. code-block:: python
+
+    {"title": "John Doe is the best", "content": "True story."}
+    {"title": "John Doe strikes again!", "content": "<Image of a man assaulting tanks with a flower>"}
+    {"title": "Johnny hit by a 50 ton tank", "content": "Local hero John Doe stormed a tank on a military parade, but couldn't stop in time."}
+    ...
+
+Although streaming is great for downloading huge files, it can be inconvenient to download and process programmatically, which is why TEXTA API also allows to download one batch at a time using the scroll mechanism.
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/api/search' -d '{
+        "auth_token": "9c05321f821f6e",
+        "dataset": 4,
+        "fields": ["title", "content"],
+        "parameters": {"size": 20},
+        "constraints": [
+            {"field":"author","operator":"must","type":"match_phrase","slop":0,"strings":["John Doe"], "class":"string"},
+            {"field":"published", "class":"date", "start":"2017-01-01", "end":"2017-12-31"}
+        ],
+        "scroll": true
+    }'
+
+Here we set the "scroll" flag to *True* and defined batch size in the parameters. Batch size defines how many documents will be returned in a single query. The result of the query looks like this:
+
+.. code-block:: python
+
+    {
+        "scroll_id": "some very long hash string",
+        "total": 1572,
+        "hits": [
+            {"title": "John Doe is the best", "content": "True story."},
+            {"title": "John Doe strikes again!", "content": "<Image of a man assaulting tanks with a flower>"},
+            {"title": "Johnny hit by a 50 ton tank", "content": "Local hero John Doe stormed a tank on a military parade, but couldn't stop in time."},
+            ... x 17
+        ]
+    }
+
+Now, when we want to get the next batch of documents, it suffices to query
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/api/search' -d '{
+        "auth_token": "9c05321f821f6e",
+        "dataset": 4,
+        "scroll_id": "that very long hash string we retrieved before"
+    }'
+    
+When all 1572 documents have been retrieved with the batches, the results look like this:
+
+.. code-block:: python
+
+    {
+        "scroll_id": "some very long hash string",
+        "total": 1572,
+        "hits": []
+    }
+
+
+More Like This
+^^^^^^^^^^^^^^
+You can use the API to perform searches that match the features of the documents
+you feed to it, which is performed by ElasticSearch's More Like This query.
+
+This feature is accessible from the /api/more_like_this endpoint.
+
+Following request parameters are **MANDATORY**:
+
+    **auth_token** - Authentication token.
+
+    **like** - List of dictionaries which specify the documents on which you base your search.
+
+        **dataset_id** - ID of the dataset you wish to target.
+
+        **document_id** - ID of the document you want to use as comparison.
+
+    **fields** - List of fields that you use as a baseline for comparing all documents. You can also use a wildcard.
+
+
+Optionally, to reduce the load to the server, you can limit both the amount of documents you want
+to get back and the fields you are interested in.
+
+    **filters** - (Optional) List of dictionaries that contain ElasticSearch query dictionaries for filtering the input
+    of matched similar documents. Those dictionaries must not contain the top "query" key.
+
+        **bucket_name** - Name of the aggregation.
+
+        **agg_type** - What aggregation you wish to apply. Only "percentiles", "avg", "value_count", "extended_stats", "min", "max", "stats", "sum" are supported.
+
+        **field** - Field you wish to apply the aggregation on.
+
+    **aggregations** - (Optional) List of aggregation dictionaries you want to apply on the matched similar documents.
+    Currently only "percentiles", "avg", "value_count", "extended_stats", "min", "max", "stats", "sum"
+    aggregations are supported. However, if the aggregation results are empty, it is not included to the response.
+
+    **if_agg_only** - (Optional) By default, all similar documents are returned in the query,
+                       however if you set this field to a boolean true, only a dict with the aggregation results are
+                       returned in {"aggregation_name": {...}, "second_aggregation": {...}}.
+
+    **returned_fields** - (Optional) List of fields that you want to have in the returned documents, excluding everything else.
+
+    **size** - (Optional) Number of documents you want to get back, has to be under 10000. Default: 10
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/api/more_like_this -d '{
+        "auth_token": "9cc5adalked4066",
+        "like": [{
+            "dataset_id": 5",
+            "document_id": "34d2092b-c352-41ab-85af-3274a11adac4"}
+        ],
+        "fields": [
+            "title",
+            "shortDescription",
+            "id",
+            "author"
+        ],
+
+        "returned_fields" : ["id", "title"],
+        "size": 100
+    }'
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/api/more_like_this -d '{
+        "auth_token": "9cc5adalked4066",
+        "like": [
+            {
+                "dataset_id": 5,
+                "document_id": "34d2092b-c352-41ab-85af-3274a11adac4"
+            },
+            {
+                "dataset_id": 5,
+                "document_id": "4589ad692b-c472-41ab-85af-3dada59ac4"
+            }
+        ],
+
+        "fields": [
+            "title",
+            "shortDescription",
+        ]
+    }'
+
+
+.. code-block:: bash
+
+
+    curl -X POST http://localhost:8000/api/more_like_this -d '{
+        "auth_token": "{{AUTH_TOKEN}}",
+        "like": [{"dataset_id": {{DATASET_ID}}, "document_id": "{{DOCUMENT_ID}}"}],
+        "fields": ["*"],
+        "aggregations": [{"bucket_name": "count", "agg_type": "value_count", "field": "price"}],
+        "returned_fields": ["id", "mileage", "price"],
+        "filters": [
+            {"range": {"lastScrapedInUTC": {"gte": "now/M", "lt": "now", "time_zone": "+01:00"}}},
+            {"bool": {"must_not": [{"range": {"lastScrapedInUTC": {"gte": "now/d", "lt": "now", "time_zone": "+01:00"}}}]}}
+        ]
+    }'
+
+    Response:
+    {
+    "aggregations": {
+        "count": {
+            "value": 3951
+        }
+    },
+    "hits": [{
+            "price": 319000,
+            "mileage": 2325,
+            "id": "20d4687a-02d1-42b7-8871-c107e460dbfc"
+        },{
+            "price": 369900,
+            "mileage": 1071,
+            "id": "88cfcdc7-d357-433f-8d40-3ad07e433a6a"
+    }]}
+
+
+Constraints
+^^^^^^^^^^^
+
+Constraints are distinguished by classes.
+
+Textual
+"""""""
+
+Textual constraint's class is **string**.
+
+.. code-block:: python
+
+    {"field":"author","operator":"must","type":"match_phrase","slop":0,"strings":["John Doe"], "class":"string"}
+
+**field:** name of the field/feature on which the constraint is applied.
+
+**strings:** keywords or phrases to search for.
+
+**class:** Specific details for this mandatory parameter are below.
+
+**operator:** relationship between the keyword.
+
+    **"must"** - *default* - conjunctive (AND) directive, all the listed keywords must exist in the document.
+    
+    **"should"** - disjunctive (OR) directive, at least one keyword must exist in the document.
+    
+    **"must_not"** - prohibitive (NOT) directive, none of the listed keywords can exist in the document.
+
+**type:** defines how the keywords must match.
+
+    **"match"** - at least on token of whitespace split keywords must match, often used for single token keywords, like "John".
+    
+    **"match_phrase"** - *default* - all the tokens of the keywords must match, can have "slop" number of non-matching words in-between, matches also single tokens.
+    
+    **"match_phrase_prefix"** - listed keywords must be the preficies of the words actually in the document. Good for matching "look" -> "looking"
+
+**slop:** defines how many other tokens/words can be between any phrase components. Slop 0 wouldn't match "John Doe" to "John Edward Doe", slop 1 would.
+
+Temporal
+""""""""
+
+Temporal constraint's class is **date**.
+
+.. code-block:: python
+
+    {"field":"published", "class":"date", "start":"2017-01-01", "end":"2017-12-31"}
+
+**start:** start date.
+
+**end:** end date.
+
+Simple annotational
+"""""""""""""""""""
+
+Annotation data is on top of regular features and gives semantical meaning to parts of the feature (words, phrases, sentences, paragraphs). For example, if in our dataset we have articles about annual presidential speeches, we might want to annotate occurrences of "Vladimir Putin", "Donald Trump" or "Barack Obama" with the keyword "president", so that we could later on query the documents, which talk about presidents or presidential speeches, rather than individually list all the presidents that have ever been or will be in the query. Annotation is done via information extraction - either using TEXTA Grammar Miner or external tools.
+
+Simple annotation's constraint class is **fact**. The following constraint finds all the documents, for which there are phrases labelled as "president" AND (beacause of must operator) "prime_minister", meaning that it finds all articles which mention both heads of a state.
+
+.. code-block:: python
+
+    {"field":"content","operator":"must","strings":["president", "prime_minister"], "class":"fact"}
+
+Advanced annotational
+"""""""""""""""""""""
+
+"Advanced" annotation queries include the value of the annotation. If simple annotation was only concerned about the fact, whether an article contained a reference to an arbitrary president or prime minister, then advanced annotation allows to query articles, which are about specific presidents. For example about president Donald Trump. The value also helps to differentiate between articles in which Donald Trump was in his presidential role, and articles, in which he wasn't.
+
+Advanced annotation's constraint class is **fact_val**. The following constraint finds all the documents, in which Trump isn't meddling with Russian interests.
+
+.. code-block:: python
+
+    {
+        "field":"content",
+        "operator":"must",
+        "type":"str",
+        "constraints":[
+               {"name":"president","operator":"=","value":"Donald Trump"},
+               {"name":"country","operator":"!=","value":"Russian Federation"}
+        ],
+        "class":"fact_val"
+    }
+
+**type:** type of the fact value.
+
+    **"str"** - textual fact values.
+    
+    **"num"** - numerical fact values (numbers, dates, etc).
+
+**constraints:** list of fact value constraints, which must match a document, in order for it to be returned.
+
+    Fact value constraints have always **"name"**, **"operator"**, and **"value"** attributes.
+    
+    "Operator" and "value" attribute values depend on "type" value.
+    
+    If "type" is "str":
+        "operator" can obtain values "=" and "!=";
+        "value" is string and in quotes.
+        
+    If "type" is "num":
+        "operator" can obtain values "=", "!=", ">", ">=", "<", "<=";
+        "value" is numeric for numbers, string in correct date format for dates.
+        
+
+Aggregate
+---------
+
+Aggregation allows to calculate document distributions by grouping over specific feature values.
+
+
+.. topic:: Example scenario
+    
+    Let's presume we have stored a variety of news articles with the following features: title, content, publish date, and author.
+    
+    With aggregation we can find out, how many articles were written each month, by aggregating over publish date with monthly interval. We can also find the top publishing authors each year or the most relevant keywords from articles mentioning prime minister candidate during an election period.
+
+If we are interested in finding out, how many articles has each author writtern, we can query it as follows:
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/api/aggregate' -d '{
+        "auth_token": "9c05321f821f6e",
+        "searches": [{"dataset": 4}],
+        "aggregation": [{"field": "author", "type": "string", "sort_by": "terms"}]
+    }'
+
+As we can see, aggregation query depends on two attributes - "searches" and "aggregation". "Searches" is a list of search definitions which we have already met in the previous section. Search defines the subset of the original data on which we run the aggregation. This time it's used internally: we are not receiving and documents. 
+
+The possiblity to aggregate against several data subsets allows us to find interesting comparable statistics. For example, we can get the most eager authors on cars and dogs with the following query:
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/api/aggregate' -d '{
+        "auth_token": "9c05321f821f6e",
+        "searches": [
+            {
+                "dataset": 4,
+                "constraints": [{"field":"content","operator":"must","type":"match_phrase","slop":0,"strings":["car"], "class":"string"}]
+            },
+            {
+                "dataset": 4,
+                "constraints": [{"field":"content","operator":"must","type":"match_phrase","slop":0,"strings":["dog"], "class":"string"}]
+            },
+        ],
+        "aggregation": [{"field": "author", "type": "string", "sort_by": "terms"}]
+    }'
+
+This returns us a list of two dictionaries - the first dictionary contains aggregation results for the first search, the second dictionary contains results for the second.
+
+So far we have aggregated only over one level - author. However, imagine if we could aggregate over several. For example, what if we want to see the most active author on a monthly basis, without the necessity to explicitly create separate monthly date range searches for several years. Or what if we want to find the favourite words for different authors?
+
+TEXTA API aggregation allows to aggregate over several levels.
+
+To find out the most active authors on a monthly basis, we can execute the following query:
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/api/aggregate' -d '{
+        "auth_token": "9c05321f821f6e",
+        "searches": [{"dataset": 4}],
+        "aggregation": [
+            {"field":"published","type":"daterange","start":"2010-02-02","end":"2017-09-01","frequency":"raw_frequency","interval":"month"}
+            {"field": "author", "type": "string", "sort_by": "terms"}
+        ]
+    }'
+
+This returns us the number of documents written by specific authors per each month in the date range.
+
+Aggregation types
+^^^^^^^^^^^^^^^^^
+
+Textual
+"""""""
+
+The most common aggregation is over the existing text body and its type is "string".
+
+{"field": "content", "type": "string", "sort_by": "significant_terms"}
+
+**sort_by:** defines, how the results will be scored and ordered.
+
+    **"term"** - order by raw document count. If "car" is in more documents than "dog", then "car" takes precedence over "dog".
+
+    **"significant_term"** - order by the level of interest. Term is more interesting if it is more common in the observed data subset than in all the documents.
+
+Temporal
+""""""""
+
+Temporal aggregation has type "daterange".
+
+{"field":"published","type":"daterange","start":"2010-02-02","end":"2017-09-01",
+"frequency":"raw_frequency","interval":"year"}
+
+**frequency:**
+
+**interval:** length of the time periods into which the time from "start" to "end" is divided.
+
+    **"day"**, **"week"**, **"month"**, **"quarter"**, **"year"**
+
+Simple annotational
+"""""""""""""""""""
+
+Simple annotation aggregation has type "fact".
+
+.. code-block:: python
+
+    {"field": "content", "type": "fact", "sort_by": "terms"}
+
+Advanced annotational
+"""""""""""""""""""""
+
+Advanced annotation aggregation has a type, which depends on the data type of the values.
+
+If we are interested in textual annotations, we use the type "fact_str".
+
+.. code-block:: python
+
+    {"field": "content", "type": "fact_str", "sort_by": "terms"}
+
+If we are interested in numeric/temporal annotations, we use the type "fact_num".
+
+.. code-block:: python
+
+    {"field": "content", "type": "fact_num", "sort_by": "terms"}
+
+
+List datasets
+-------------
+
+Listing datasets is important in order to construct queries on correct datasets.
+
+To get the list of available and permitted datasets, we issue the following command:
+
+.. code-block:: bash
+
+    curl http://localhost:8000/api/list/datasets -d '{
+        "auth_token": "9c05321f821f6e",
+    }'
+
+which returns
+
+.. code-block:: python
+
+    {"index": "journalA", "id": 2, "mappping": "articles", "author": "superadmin"}
+    {"index": "journalB", "id": 3, "mappping": "ancient_articles", "author": "superadmin"}
+    {"index": "joy_of_life", "id": 4, "mappping": "stories", "author": "mystery_admin"}
+
+**id:** ID of the dataset, used in TEXTA API searches.
+
+**index:** database name.
+
+**mapping:** table name.
+
+**author:** username of the admin, who added the dataset.
+
+Get dataset field details
+-------------------------
+
+It is necessary to know the existing fields and their data types to construct accurate queries.
+
+One can get detailed structure of the dataset with ID 4 with the following query:
+
+.. code-block:: bash
+
+    curl http://localhost:8000/api/list/dataset -d '{
+        "auth_token": "9c05321f821f6e",
+        "dataset": 4
+    }'
+    
+The response is however rather complicated and often it makes more sense to use TEXTA graphical user interface's Searcher tool to explore the dataset.
+
+
+Importer API
+------------
+
+To insert data into Elasticsearch, a convenient API is provided for both single and bulk insertion at the **/import_api/document_insertion** 
+endpoint.
+Each call to the Importer **MUST** have the following fields:
+    
+    **auth_token** - Authentication token provided from the Authentication API
+    
+    **index** - Name of the target index you want to push the data to. In case one doesn't exist, it will be created.
+    
+    **doc_type** - Target "table" you want to push your data into.
+    
+    **data** - List of JSON object or a single object. In case of a list, the Bulk API will be used for insertion.
+
+Optionally you can also specify a **mapping** field, in case the index of the specified name does not exist and is created,
+a check for the **mapping** field is made, and if it exists it is inserted into the target doc_type.
+
+Furthermore, you can specify an analyzer you want Elasticsearch to use by adding an optional **analyzer** field to the payload.
+If the query is successful, the usual "Item(s) successfully saved" message will appear. However, if you specify an analyzer that
+does not exist, an error message is returned. You can check the available analyzers using the /import_api/analyzers endpoint.
+
+.. code-block:: bash
+
+    $ curl 'http://localhost:8000/import_api/analyzers'
+
+    # {"analyzers": ["standard", "whitespace", "pattern", "simple", "stop", "keyword", "fingerprint", "estonian"]}
+
+Overall, whenever an invalid authentication token is provided or a mandatory field is missing a corresponding error message will be returned
+to the end user.
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{ 
+        "auth_token": "9c05321f821f6e",
+        "index": "texta",
+        "doc_type": "texta_facts",
+        "data": {"court_case_6543": "guilty"}
+    }'
+
+    # {"message": "Item(s) successfully saved."}
+
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{ 
+        "auth_token": "9c05321f821f6e",
+        "index": "texta",
+        "doc_type": "texta_facts",
+        "data": [{"court_case_6543": "guilty"}, {"court_case_9614": "fined"}, {"court_case_7896": "innocent"}]
+    }'
+
+    # {"message": "Item(s) successfully saved."}
+
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{ 
+        "auth_token": "9c05321f8",
+        "index": "texta",
+        "doc_type": "texta_facts",
+        "data": {"court_case_6543": "guilty"}
+    }'
+
+    # {"message": "Authentication failed - invalid auth token."}
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{ 
+        "auth_token": "9c05321f821f6e",
+        "index": "",
+        "doc_type": "texta_facts",
+        "data": [{"court_case_6543": "guilty"}, {"court_case_9614": "fined"}, {"court_case_7896": "innocent"}]
+    }'
+
+    # {"message": "Mandatory field 'index' can not be empty."}
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{ 
+        "auth_token": "9c05321f821f6e",
+        
+        "doc_type": "texta_facts",
+        "data": [{"court_case_6543": "guilty"}, {"court_case_9614": "fined"}, {"court_case_7896": "innocent"}]
+    }'
+
+    # {"message": "Mandatory field 'index' is missing."}
+
+.. code-block:: bash
+
+    $ curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{
+        "auth_token": "9c05321f821f6e",
+        "index": "texta",
+        "doc_type": "texta_facts",
+        "data": {"court_case_6543": "guilty"},
+        "analyzer": "estonian"
+    }'
+
+    # {"message": "Item(s) successfully saved."}
+
+    curl -XPOST 'http://localhost:8000/import_api/document_insertion' -d '{
+        "auth_token": "9c05321f821f6e",
+        "index": "texta",
+        "doc_type": "texta_facts",
+        "data": {"court_case_6543": "guilty"},
+        "analyzer": "estonianzos"
+    }'
+
+    # {"message": "Analyzer 'estonianzos' not available. Available analyzers are: '['standard', 'whitespace', 'pattern', 'simple', 'stop', 'keyword', 'fingerprint', 'estonian']'"}
+
+
+
+
+Task Manager
+--------------
+
+Task manager API exposes model tanning and prediction capabilities in a programmatic way. 
+This section describes the different endpoints available in the version 1.0 of the API.
+
+Get API version
+^^^^^^^^^^^^^^^^^^^^
+
+Provides information about the API version and can be used as a monitoring checkpoint for online status.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X GET http://localhost:8000/task_manager/api/v1
+
+
+That returns:
+
+.. code-block:: python
+
+    {
+    "name": "TEXTA Task Manager API",
+    "version": "1.0"
+    }
+
+
+Get List of Tasks
+^^^^^^^^^^^^^^^^^^^^
+
+Lists all tasks present in the system.
+
+Example: 
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/task_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+This returns a list of json documents, with the following structure:
+
+**task_id:** The unique task id
+**task_type:** A identifier for the type of task
+**status:** The status of the task processing
+**user:** The username who created the task
+
+
+Get Task Status
+^^^^^^^^^^^^^^^^^^^^
+
+Get status for a specific task in the system. Can be used to monitor the progress of a task (via multiple calls to API) or check the final status of a task when it is done.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/task_status 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "task_id": 55
+        }'
+
+
+The returned JSON document has the following structure:
+
+**task_id:** The unique task id, same as used in the request
+**user:** The user who created the task
+**description:** The task description
+**task_type:** A identifier for the type of task
+**parameters:** The parameters used in the task creation as JSON encoded as string
+**result:** A JSON encoded as string result set
+**status:** The task status
+**progress:** A indication of the task processing progress
+**progress_message:** String representation of task progress of easy UI integration
+**time_started:** Task started time in ISO format
+**last_update:** Task update time in ISO format
+**time_completed:** Task finalization time in ISO format
+
+
+Start Model Train Task
+^^^^^^^^^^^^^^^^^^^^^^
+
+Creates a task for model training. The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/train_model 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "min_freq": 10,
+            "field": "field_value_en",
+            "description": "API-test",
+            "search": "all_docs",
+            "dataset": 1,
+            "num_dimensions": 100,
+            "num_workers": 2
+        }'
+
+
+Start Tagger Train Task
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Creates a task for document tagger. The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/train_tagger 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "normalizer_opt": "0",
+            "classifier_opt": "0",
+            "description": "API-A",
+            "field": "field_value_en",
+            "reductor_opt": "0",
+            "dataset": 1,
+            "search": "1",
+            "extractor_opt": "0"
+        }'
+
+
+Apply Preprocessor Task
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+Creates a task for document model prediction for a given * preprocessor_key*. The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/apply 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "text_tagger_taggers": ["6"],
+            "search": "2",
+            "text_tagger_feature_names": ["field_value_en"],
+            "preprocessor_key": "text_tagger",
+            "dataset": 1,
+            "description": "API-T"
+        }'
+
+
+Get List of Valid Datasets
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint can be used to list all valid datasets added to the system via web interface. 
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/dataset_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+
+Get List of Valid Searches
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint can be used to list all valid searches created in the system via search web interface. 
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/search_list 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1
+        }'
+
+
+Get List of Valid Normalizers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint can be used to list all valid normalizers available in the system.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/normalizer_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+This return a list of JSON normalizer options, as in:
+
+.. code-block:: python
+
+    [{"normalizer_opt": 0, "label": "None"}, 
+     {"normalizer_opt": 1, "label": "Normalizer"}]
+
+
+Get List of Valid Classifiers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint can be used to list all valid classifiers available in the system.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/classifier_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+
+This return a list of JSON classifier options, as in:
+
+.. code-block:: python
+
+    [{
+    "classifier_opt": 0,
+    "label": "LinearSVC"
+    }, {
+    "classifier_opt": 1,
+    "label": "Bernoulli Naive Bayes"
+    }, {
+    "classifier_opt": 2,
+    "label": "K-Neighbors"
+    }, {
+    "classifier_opt": 3,
+    "label": "Radius Neighbors"
+    }]
+
+
+Get List of Valid Reductors
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/reductor_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+This return a list of JSON reductor options, as in:
+
+.. code-block:: python
+
+    [{
+    "reductor_opt": 0,
+    "label": "None"
+    }, {
+    "reductor_opt": 1,
+    "label": "Truncated SVD"
+    }]
+
+
+Get List of Valid Extractors
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint can be used to list all valid extractors available in the system.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/extractor_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+This return a list of JSON extractor options, as in:
+
+.. code-block:: python
+
+    [ {"extractor_opt": 0, "label": "Count Vectorizer"}, 
+      {"extractor_opt": 1, "label": "Hashing Vectorizer"}, 
+      {"extractor_opt": 2, "label": "TfIdf Vectorizer"} ]
+
+
+Get List of Valid Taggers
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint can be used to list all valid taggers available in the system.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/tagger_list 
+    -d '{
+            "auth_token": "9c05321f821f6e"
+        }'
+
+
+Get Information about a Tagger
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+To get more information about a tagger model, use this endpoint with desired tagger identifier.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/tagger_info 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "tagger": "66"
+        }'
+
+
+Get Unique Tags in a Dataset
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint can be used to list all unique tags present in a dataset, independently if a tagger exists or not.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/tag_list 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 3
+        }'
+
+That returns a list of JSON documents with following structure:
+
+**description:** The tag identification as tag description
+**count:** The number of documents the tag is present
+**has_model:** If the tag has a tagger model present in the system
+
+Example:
+
+.. code-block:: python
+
+    [{
+      "description": "A",
+      "count": 1379,
+      "has_model": true
+    }, {
+      "description": "B",
+      "count": 16446,
+      "has_model": false
+    }, {
+      "description": "C",
+      "count": 10464,
+      "has_model": false
+    }]
+
+
+Get Unique Fields in a Dataset
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint can be used to list all unique fields from a dataset.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/field_list 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1
+        }'
+
+This returns a list of strings with every **field** identifier present in the requested **dataset**.
+
+
+Start Mass Trainer Task
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+The creation of mass train task is controlled by this API function.
+A mass trainer execution creates many tasks related to the training or retraining of specific tagger models.
+Each task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+To determine if a tag is resulting in a new model or a model retrain process,
+the **tag_list** endpoint can be use to check if a model is present in the system or not.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/mass_train_tagger 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1,
+            "tags": ["A"],
+            "field": "field_value_en",
+        }'
+
+This creates list of tasks to train or retrain tagger models as specified in the tags list.
+If a tagger exist, it will be set to retrain. If a tagger does not exist, a new tagger training task is created. 
+The expected return is a JSON document with following values:
+
+.. code-block:: python
+
+    {
+    "retrain_models": [ ... ],
+    "new_models": [ ... ]
+    }
+
+where:
+
+**retrain_models:** List of tasks created for model retrain
+**new_models:** List of tasks created for new model training
+
+Optionally, it is possible to specify the new tagger parameters (for tags that does not have a model yet), as follows:
+
+**normalizer_opt:** The Normalizer option. Please refer to **normalizer_list** endpoint.
+**classifier_opt:** The Classifier option. Please refer to **classifier_list** endpoint.
+**reductor_opt:** The Reduction option. Please refer to **reductor_list** endpoint.
+**extractor_opt:** The Extractor option. Please refer to **extractor_list** endpoint.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/mass_train_tagger 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1,
+            "tags": ["A"],
+            "field": "field_value_en",
+            "normalizer_opt": "0",
+            "classifier_opt": "0",
+            "reductor_opt": "0",
+            "extractor_opt": "0"
+        }'
+
+
+Start Mass Tagger Task
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+Creates a task for mass tagger. The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/mass_tagger 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1,
+            "search": 1,
+            "field": "field_value_en",
+            "taggers": ["14"]
+        }'
+
+
+Start Hybrid Tagger Task
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+Creates a task for hybrid tagger. 
+A hybrid tagger optimizes the tagger work by tag inspection and relevant tagger selection, in a way that a smaller number of tagger (only the relevant ones) are activated.
+The task status can be monitored via *task_manager/api/v1/task_status* endpoint.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/hybrid_tagger 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1,
+            "search": 1,
+            "max_taggers": 10,
+            "min_count_threshold": 50,
+            "field": "field_value_en"
+        }'
+
+
+Apply Tagger to Non-Indexed Text
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+This endpoint is used to online tagging (tag non-indexed documents).
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/tag_text 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "text": {"field_value_en": "Maybe I can reply to them by e-mail."},
+            "taggers": [4, 7]
+        }'
+
+
+Get Documents Tags
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+Recovers the list of all tags applied to a document.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/document_tags_list 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1,
+            "document_ids": ["GYtrE2QB28-0KXnd6zcj"]
+        }'
+
+
+Apply Feedback to Document Tag
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+Add tag correction feedback for a given list of document ids. The feedback is later used during model retrain process to improve overall classification quality.
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST http://localhost:8000/task_manager/api/v1/tag_feedback 
+    -d '{
+            "auth_token": "9c05321f821f6e",
+            "dataset": 1,
+            "field": "field_value_en",
+            "document_ids": ["GYtrE2QB28-0KXnd6zcj"], 
+            "tag": "A",
+            "value": 1
+        }'

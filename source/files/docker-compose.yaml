@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+    elasticsearch:
+        container_name: elasticsearch
+        restart: on-failure
+        image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.7.2
+        ports:
+        - 9200:9200
+        environment:
+        - bootstrap.memory_lock=true
+        ulimits:
+        memlock:
+            soft: -1
+            hard: -1
+        volumes:
+        - elastic-data:/usr/share/elasticsearch/data
+
+    mysql:
+        container_name: mysql
+        image: mysql:latest
+        ports:
+        - 3306:3306
+        env_file:
+        - env
+
+    toolkit-rest:
+        container_name: toolkit-rest
+        image: docker.texta.ee/texta/texta-rest:latest
+        ports:
+        - 8000:80
+        env_file:
+        - env
+        restart: always
+        depends_on:
+        - mysql
+        - elasticsearch
+        volumes:
+        - /opt/data-volumes/toolkit-data:/var/texta-rest/data
+
+    toolkit-front:
+        container_name: toolkit-front
+        image: docker.texta.ee/texta/texta-rest-front:latest
+        ports:
+        - 4200:80
+        restart: always
+        env_file:
+        - env
+
+volumes:
+elastic-data:
+toolkit-data:
+mysql:
