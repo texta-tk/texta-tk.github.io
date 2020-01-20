@@ -1,16 +1,15 @@
-Using TEXTA Toolkit's GUI
-===================
+Using Toolkit via GUI
+=====================
 
 This is documentation is for TEXTA Toolkit version 2 GUI backed with TEXTA Toolkit's RESTful API.
 
-First steps
-------------------
+Login
+-----
 
 The login screen
 ++++++++++++++++
 
-After starting up TEXTA, as described in the :ref:`installation step <running-texta>`, the next intuitive thing is to start using it.
-Since it is a web application, we have to navigate to the corresponding address in our browser
+Since TEXTA Toolkit is a web application, we have to navigate to the corresponding address in our browser
 (e.g. `http://localhost:8000/ <http://localhost:8000/>`_ if running locally or `https://live.texta.ee/ <https://live.texta.ee/>`_ if running on Texta's server). We are welcomed by a login page as depicted in Figure 1.1.
 
 .. _figure-1:
@@ -31,7 +30,7 @@ Login page allows to login, as well as to register.
 
 
 After the login
-++++++++++++++++
++++++++++++++++
 
 After the login we can see several options from the upper panel. We can see :ref:`our projects <projects>` (also projected as the home page) and we can work with our projects via :ref:`Search <searcher>`, :ref:`Lexicons <lexicons>`, :ref:`Models <models>` and :ref:`Tools <tools>`.
 
@@ -52,8 +51,8 @@ After the login we can see several options from the upper panel. We can see :ref
 
 .. _serversstate:
 
-The state of the Toolkit's server
-----------------------------------
+Health of Toolkit
+-----------------
 
 On the Projects page (also Toolkit's home page) we can see technical info of Texta Toolkit's server on the right. There are four labels that indicate the state of the Toolkit. Blue labels *ElasticSearch Online* and *MLP Online* show that the backend is working properly and ElasticSearch and MLP are running. Red labels *ElasticSearch OFFLINE* and *MLP OFFLINE* indicate that the ElasticSearch or MLP is down and not working properly. Label *API VERSION 2.2.24* shows the backend version and label *VERSION 1.3* shows the frontend version.
 
@@ -63,28 +62,27 @@ This info might be needed when we start working on our projects and want to chec
 
 .. _projects:
 
-Managing projects
+Managing Projects
 ------------------
 
 **A project** is the dataset we are working on and all of it's resources. Resources are :ref:`lexicons <lexicons>`, :ref:`saved searches <savedsearches>`, :ref:`embeddings <embeddings>`, :ref:`taggers <texttaggers>`, etc (these will be explained below). We can think of the resources as the outputs of different tools we can play with in Texta Toolkit 2.0 or all the info regarding to the dataset.
 
-Creating a project
+Creating a Project
 +++++++++++++++++++
 
 But first we must have a project. We can create a project by clicking the *+CREATE* button. We can then give it a title, select users who can work on the project and, of course, select the dataset. 
 
 Afterwards we can see the created new project in the list and can change **the indices** (which are basically the datasets in ElasticSearch) and users via Edit.
 
-Using a project
+Using a Project
 +++++++++++++++++++
 
 In order to work with our project (search info, train taggers) we have to select it from the upper panel next to our user name. 
 
 .. _searcher:
 
-Searcher: Explore the Data
----------------------------
-
+Search: Exploring the Data
+--------------------------
 
 The Searcher application is responsible for both creating the searches for Toolkit's other applications and browsing-summarizing the data.
 
@@ -101,7 +99,7 @@ Searcher's graphical interface consists of serveral important panels, which are 
     4. Results
 
 Current Search
-++++++++++++++++
+++++++++++++++
 
 Data browsing and summarization depend on searches. Search consists of a set of constraints on field values. We can define our constraints on the data using the *Current Search* panel. Without saving the constraints, we are in a “test mode”, which means that we can use the search in Searcher, but we cannot use the search in other tools. After :ref:`saving the search <savedsearches>`, it is available also to other tools.
 
@@ -133,7 +131,7 @@ After we have come up with a suitable search, we can save it for later uses.
 .. _savedsearches:
 
 Saved Searches
-+++++++++++++++
+++++++++++++++
 
 Searches can be saved with clicking on the save icon next to *Current Search* title (see Figure 9.10). If we save our “bribe” search under “bribery”, we can see it being listed in *Saved Searches* panel.
 
@@ -141,8 +139,8 @@ Now, whenever we check it, we can use it to browse data or apply in :ref:`summar
 
 .. _aggregations:
 
-Aggregations: Summarizing data
-+++++++++++++++++++++++++++++++
+Aggregations: Summarizing the Data
+++++++++++++++++++++++++++++++++++
 
 As fun as browsing through the data is, it is not always enough. Sometimes we want to get an overview of our data, such as topics over time or word distributions. Searcher allows to do all of that and more through the “Aggregations” panel.
 
@@ -193,7 +191,7 @@ It is important to notice that COMPANY and ADDR identify only companies and addr
 
 .. _lexicons:
 
-Lexicons: create topic-related lexicons
+Lexicons: Create Topic-related Lexicons
 -----------------------------------------
 
 In order to use lexicons, we must have :ref:`Embeddings model <embeddings>` trained. We can start creating topic-related lexicons.
@@ -210,8 +208,8 @@ When we’re ready, we can save the lexicon.
 
 .. _models:
 
-Models
--------
+Statistical Models
+------------------
 
 Under the *Models* option on the upper panel we can use different taggers and create embeddings.
 
@@ -237,8 +235,8 @@ TODO: ADD EXAMPLE HERE!
 
 .. _texttaggers:
 
-Tag the data!
---------------
+Text Taggers
+------------
 
 Different Taggers in Texta Toolkit are classification models which can classify new data with the label/class the model is trained on. We can apply the tagger via API. 
 
@@ -396,8 +394,8 @@ In the table view we can also select several Tagger Groups and delete them all a
 
 .. _reindexer:
 
-Reindexer
----------
+Reindexing the Data
+-------------------
 
 Reindexer is a useful tool for reindexing Elasticsearch indices. Index is basically our dataset. With reindexer we can remove unwanted fields, change the type of the fields (if we have a field with text value type but actually contains dates, we can change the type to date and use it for our aggregation). 
 

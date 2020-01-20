@@ -6,12 +6,18 @@
 .. image:: files/toolkit_logo.png
     :alt: Texta
 
-This documentation contains information about installing and running TEXTA Toolkit 2.x.
+TEXTA Toolkit is an open-source software for building RESTful text analytics applications.
+It is being developed by `TEXTA Ltd <https://www.texta.ee>`_.
+This documentation contains information about installing and running **TEXTA Toolkit 2.x**.
+
+The source code for Toolkit's Django REST API is available `here <https://git.texta.ee/texta/texta-rest>`_
+and the source code for Toolkit's Angular GUI is available `here <https://git.texta.ee/texta/texta-rest-front>`_.
 
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
     
     installation
-    workflow
+    gui
+    api
    

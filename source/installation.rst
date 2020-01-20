@@ -42,6 +42,15 @@ The compose file is used in combination with *env* file containing environment v
 Run TEXTA Toolkit
 -----------------
 
+.. note::
+
+    TEXTA Toolkit's dockerized version comes with a default superuser account:
+    
+    **user:** admin
+    
+    **password:** 1234
+
+
 With the **docker-compose.yaml** and **env** files present and accounted for, 
 let's pull the images and start the services by executing the following commands in the same directory with *docker-compose.yaml* and *env*:
 
@@ -115,6 +124,14 @@ After the environment has been created and activated, let's prepare the database
 
     python migrate.py
 
+.. note::
+
+    Running **migrate.py** will also create a default superuser account with following credentials:
+
+    **user:** admin
+
+    **password:** 1234
+
 Finally let's run the development server:
 
 .. code-block:: bash
@@ -126,12 +143,3 @@ And in another terminal run the Celery worker responsible for asynchronous tasks
 .. code-block:: bash
 
     celery -A toolkit.taskman worker -l info
-
-
-Checking Toolkit's Health
-=========================
-
-For checking the health of a running Toolkit instance, one can access the **/health** endpoint for operating statistics. 
-The endpoint responds with information abouth the availability of services (e.g. Elasticsearch and TEXTA MLP) and system resources (e.g. disk, memory, GPU usage, etc.).
-
-.. literalinclude:: files/health.json
