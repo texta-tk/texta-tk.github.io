@@ -91,7 +91,7 @@ We choose Miniconda over Anaconda because it's smaller in size, but Toolkit work
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
     sh Miniconda3-latest-Linux-x86_64.sh
 
-Also, let's put Conda to **PATH** variable:
+Also, let's permanently put Conda binaries to **PATH** variable:
 
 .. code-block:: bash
 
@@ -126,6 +126,10 @@ After the environment has been created and activated, let's prepare the database
 .. code-block:: bash
 
     python migrate.py
+
+Running the **migrate.py** script will prepare Django migrations and execute them.
+It is necessary to run the script every time the source code changes because Toolkit's data model might have changed as well.
+It is also required to run the script before using Toolkit for the first time to create both superuser account and database used to store the data model.
 
 .. note::
 
