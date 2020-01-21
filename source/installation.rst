@@ -23,7 +23,7 @@ The easiest way to run TEXTA Toolkit is to use our prebuilt Docker images from o
 Configure docker-compose
 ++++++++++++++++++++++++
 
-We are using *docker-compose* to build an ecosystem of services to support our needs. This is all defined in a file called *docker-compose.yaml*.
+We are using *docker-compose* to build an ecosystem of services to support our needs. This is all defined in a file called **docker-compose.yaml**.
 To successfully run TEXTA Toolkit we need to define following services:
 
 * Elasticsearch for storing the documents (one can also run it without Docker)
@@ -34,11 +34,11 @@ To successfully run TEXTA Toolkit we need to define following services:
 
 * TEXTA Toolkit Angular frontend: docker.texta.ee/texta/texta-rest-front:latest
 
-For executing aforementioned services we have preconfigured an example *docker-compose.yaml* file:
+For executing aforementioned services we have preconfigured an example **docker-compose.yaml** file:
 
 .. literalinclude:: files/docker-compose.yaml
 
-The compose file is used in combination with *env* file containing environment variables needed for operating TEXTA Toolkit:
+The compose file is used in combination with **env** file containing environment variables needed for operating TEXTA Toolkit:
 
 .. literalinclude:: files/env
 
@@ -55,7 +55,7 @@ Run TEXTA Toolkit
 
 
 With the **docker-compose.yaml** and **env** files present and accounted for, 
-let's pull the images and start the services by executing the following commands in the same directory with *docker-compose.yaml* and *env*:
+let's pull the images and start the services by executing the following commands in the same directory with **docker-compose.yaml** and **env**:
 
 .. code-block:: bash
 
