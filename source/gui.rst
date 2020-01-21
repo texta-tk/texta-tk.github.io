@@ -1,5 +1,5 @@
-Using Toolkit via GUI
-=====================
+Tutorial: Using Toolkit via GUI
+===============================
 
 This is documentation is for TEXTA Toolkit version 2 GUI backed with TEXTA Toolkit's RESTful API.
 
@@ -65,7 +65,7 @@ This info might be needed when we start working on our projects and want to chec
 Managing Projects
 ------------------
 
-**A project** is the dataset we are working on and all of it's resources. Resources are :ref:`lexicons <lexicons>`, :ref:`saved searches <savedsearches>`, :ref:`embeddings <embeddings>`, :ref:`taggers <texttaggers>`, etc (these will be explained below). We can think of the resources as the outputs of different tools we can play with in Texta Toolkit 2.0 or all the info regarding to the dataset.
+**A project** is the dataset we are working on and all of it's resources. Resources are :ref:`lexicons <lexicons>`, :ref:`saved searches <savedsearches>`, :ref:`embeddings <embedding>`, :ref:`taggers <texttaggers>`, etc (these will be explained below). We can think of the resources as the outputs of different tools we can play with in Texta Toolkit 2.0 or all the info regarding to the dataset.
 
 Creating a Project
 +++++++++++++++++++
@@ -191,10 +191,10 @@ It is important to notice that COMPANY and ADDR identify only companies and addr
 
 .. _lexicons:
 
-Lexicons: Create Topic-related Lexicons
+Creating Topic-related Lexicons
 -----------------------------------------
 
-In order to use lexicons, we must have :ref:`Embeddings model <embeddings>` trained. We can start creating topic-related lexicons.
+In order to build lexicons, we must have :ref:`Embedding <embedding>` model previously trained. We can start creating topic-related lexicons.
 
 Let’s create a lexicon that contains verbs accompanied with “bribery”.
 
@@ -208,14 +208,14 @@ When we’re ready, we can save the lexicon.
 
 .. _models:
 
-Statistical Models
-------------------
+Statistical Language Modelling
+-------------------------------
 
 Under the *Models* option on the upper panel we can use different taggers and create embeddings.
 
-.. _embeddings:
+.. _embedding:
 
-Embeddings
+Embedding
 ++++++++++
 
 Embeddings are basically words converted into numerical data (into vectors) that are more understandable and usable for the machine than plain strings (words). With these vectors created, we can compare words and find similar ones. We need embeddings to create, for example, :ref:`lexicons <lexicons>`. Texta Toolkit uses word2vec embeddings with `collocation detection <https://radimrehurek.com/gensim/models/phrases.html>`_. It means that the vectors are created on words and phrases. Phrases are chosen with collocation detection which finds often together occuring words and marks them as phrases. 
@@ -361,7 +361,7 @@ We can create a new Tagger Group model by clicking on the '+CREATE' button in th
 
 Our input will be the data under the project that is active (we can check it on the blue panel up-right). We have to select the fields the model learns from. If we choose two, the fields are just concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (*eaten*, *eats* and *ate* will change to it's lemma *eat* and are dealt as one word).
 
-There's also an option to include our :ref:`trained embeddings <embeddings>` into the training. 
+There's also an option to include our existing :ref:` embeddings <embedding>` into the training. 
 
 Then we need to fine-tune the Tagger Group's classifiers by changing additional parameters such as
 Vectorizer (possible feature extractors are: Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_) and Classifier Model (`Logistic Regression <https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression>`_, `LinearSVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). We might get an error with LinearSVC in case we don't have enough data in the search.

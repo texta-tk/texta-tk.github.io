@@ -1,14 +1,17 @@
 .. _installation:
 
-Installation in Docker
-======================
+Installation
+============
+
+Installation Using Docker (recommended)
+---------------------------------------
 
 .. note::
 
     Currently all installation examples for system dependencies are only shown for Debian-based systems.
 
 Install Docker
---------------
+++++++++++++++
     
 The easiest way to run TEXTA Toolkit is to use our prebuilt Docker images from our registries. For doing so, one needs to install *Docker* and *docker-compose*:
 
@@ -18,7 +21,7 @@ The easiest way to run TEXTA Toolkit is to use our prebuilt Docker images from o
     sudo apt-get install docker docker-compose -y
 
 Configure docker-compose
-------------------------
+++++++++++++++++++++++++
 
 We are using *docker-compose* to build an ecosystem of services to support our needs. This is all defined in a file called *docker-compose.yaml*.
 To successfully run TEXTA Toolkit we need to define following services:
@@ -40,7 +43,7 @@ The compose file is used in combination with *env* file containing environment v
 .. literalinclude:: files/env
 
 Run TEXTA Toolkit
------------------
++++++++++++++++++
 
 .. note::
 
@@ -73,12 +76,12 @@ For stopping the services:
 
 
 Installation for Development
-============================
+----------------------------
 
 If you want to develop TEXTA Toolkit, want more control over how you run it, or seriously dislike Docker, it is also possible to install Toolkit using Anaconda (or Miniconda as shown in following examples).
 
 Install Miniconda
-------------------
++++++++++++++++++
 
 First we need to download and install Miniconda to manage Python environments.
 We choose Miniconda over Anaconda because it's smaller in size, but Toolkit works well with both.
@@ -95,7 +98,7 @@ Also, let's put Conda to **PATH** variable:
     echo 'export PATH=/path/to/miniconda3/bin:$PATH' >> ~/.bashrc
 
 Clone the Repository
---------------------
+++++++++++++++++++++
 
 Now, let's clone the repository and move to **texta-rest** direcory:
 
@@ -105,7 +108,7 @@ Now, let's clone the repository and move to **texta-rest** direcory:
     cd texta-rest
 
 Build the Environment
----------------------
+++++++++++++++++++++++
 
 Now that we have **environment.yaml** file from the texta-rest repository, let's use it to build the environment.
 After the environment is built, let's activate it:
@@ -116,7 +119,7 @@ After the environment is built, let's activate it:
     conda activate texta-rest
 
 Migrate & Run Toolkit
----------------------
+++++++++++++++++++++++
 
 After the environment has been created and activated, let's prepare the database:
 
