@@ -1,4 +1,4 @@
-pages:
+toolkit:
   stage: deploy
   script:
   - pip install sphinx
