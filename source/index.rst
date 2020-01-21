@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. image:: files/toolkit_logo.png
+.. image:: images/toolkit_logo.png
     :alt: Texta
 
 TEXTA Toolkit is an open-source software for building RESTful text analytics applications.
