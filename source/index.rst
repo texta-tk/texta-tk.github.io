@@ -14,6 +14,8 @@ The source code for Toolkit's Django REST API is available at `git.texta.ee/text
 
 The source code for Toolkit's Angular GUI is available at `git.texta.ee/texta/texta-rest-front <https://git.texta.ee/texta/texta-rest-front>`_.
 
+
+
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
