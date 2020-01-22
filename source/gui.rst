@@ -4,150 +4,164 @@ Tutorial: Using Toolkit via GUI
 This is documentation is for TEXTA Toolkit version 2 GUI backed with TEXTA Toolkit's RESTful API.
 
 
-Login
------
+Registration & Login
+--------------------
 
-The login screen
-++++++++++++++++
-
-Since TEXTA Toolkit is a web application, we have to navigate to the corresponding address in our browser
-(e.g. `http://localhost:8000/ <http://localhost:8000/>`_ if running locally or `https://live.texta.ee/ <https://live.texta.ee/>`_ if running on Texta's server). We are welcomed by a login page as depicted in Figure 1.1.
+Since TEXTA Toolkit is a web application, we have to navigate to the corresponding address in our browser (e.g. `http://localhost/`).
+We are welcomed by a login page as depicted in Figure 1.
 
 .. _figure-1:
 
-.. figure:: images/01_register.png
+.. figure:: images/login.png
 
-    Figure 1.1. *Register*
+    Figure 1. *Login Screen at Startup*
     
-    1. Register
-    2. Log in
-
-Login page allows to login, as well as to register. 
-
-.. note::
-
-    When starting up the TEXTA instance for the first time, it is crucial to create the superuser account (:ref:`installation's final touches <final-touches>`).
-	The supersuser account is used to set up TEXTA and it's features to all other users.
-
-
-After the login
-+++++++++++++++
-
-After the login we can see several options from the upper panel. We can see :ref:`our projects <projects>` (also projected as the home page) and we can work with our projects via :ref:`Search <searcher>`, :ref:`Lexicons <lexicons>`, :ref:`Models <models>` and :ref:`Tools <tools>`.
+One can also register new users using the registration screen:
 
 .. _figure-2:
 
-.. figure:: images/02_homepage.png
+.. figure:: images/register.png
 
-    Figure 2. *Home page*
-    
-    1. :ref:`Projects <projects>`
-    2. :ref:`State of the Toolkit's server <serversstate>`
-    3. :ref:`Search <searcher>`
-    4. :ref:`Lexicons <lexicons>`
-    5. :ref:`Models <models>`
-    6. :ref:`Tools <tools>`
-    7. Active project
-    8. User
+    Figure 2. *Registration Screen*
 
-.. _serversstate:
+.. note::
+
+    When running for the first time, check the default superuser account **admin** created during installation.
+
+After login have several navigation options in the upper panel.
+We can see our projects (also projected as the home page) and we can work with our projects via :ref:`Search <search>`, :ref:`Lexicons <lexicons>`, :ref:`Models <models>` and :ref:`Tools <tools>`.
+
+.. _figure-3:
+
+.. figure:: images/navbar.png
+
+    Figure 3. *Top Panel for Navigation*
 
 Health of Toolkit
 -----------------
 
-On the Projects page (also Toolkit's home page) we can see technical info of Texta Toolkit's server on the right. There are four labels that indicate the state of the Toolkit. Blue labels *ElasticSearch Online* and *MLP Online* show that the backend is working properly and ElasticSearch and MLP are running. Red labels *ElasticSearch OFFLINE* and *MLP OFFLINE* indicate that the ElasticSearch or MLP is down and not working properly. Label *API VERSION 2.2.24* shows the backend version and label *VERSION 1.3* shows the frontend version.
+On the **Projects page** (also Toolkit's home page) we can see technical information about TEXTA Toolkit's server on the right.
+There are several labels that indicate the state of Toolkit and the host machine its working on (Figure 4):
 
-We can also check how much disk space, memory and CPU is used up. If it's close to 100% the circle will turn red. Below the usage circles we can check how many cached models, active tasks and GPUs do we have.
+.. _figure-4:
 
-This info might be needed when we start working on our projects and want to check if our model trainings or other jobs are running properly.
+.. figure:: images/server_status.png
 
-.. _projects:
+    Figure 4. *Toolkit Status*
+
 
 Managing Projects
 ------------------
 
-**A project** is the dataset we are working on and all of it's resources. Resources are :ref:`lexicons <lexicons>`, :ref:`saved searches <savedsearches>`, :ref:`embeddings <embedding>`, :ref:`taggers <texttaggers>`, etc (these will be explained below). We can think of the resources as the outputs of different tools we can play with in Texta Toolkit 2.0 or all the info regarding to the dataset.
-
 Creating a Project
 +++++++++++++++++++
 
-But first we must have a project. We can create a project by clicking the *+CREATE* button. We can then give it a title, select users who can work on the project and, of course, select the dataset. 
+In order to play with the data, we need to create a new project.
+We can create a project by clicking the **+ CREATE** button at the bottom of the page.
+We can then give it a title, select users who can work on the project and, of course, select datasets (Elasticsearch indices) for the project. 
 
-Afterwards we can see the created new project in the list and can change **the indices** (which are basically the datasets in ElasticSearch) and users via Edit.
+After the project is created, we can see the new project in the list and can change its datasets and user access via the **Edit** button.
 
 Using a Project
 +++++++++++++++++++
 
-In order to work with our project (search info, train taggers) we have to select it from the upper panel next to our user name. 
+In order to work with our project (search info, train taggers) we have to select it from the upper panel next to our username:
 
-.. _searcher:
+.. _figure-5:
+
+.. figure:: images/select_project.png
+
+    Figure 5. *Project Selection*
+
+.. note::
+    Only one project can be activated at a time.
+    
+    Each project can have one or more datasets (Elasticsearch indices).
+    
+    Project resources are shared among the users with access to the project.
 
 Search: Exploring the Data
 --------------------------
 
-The Searcher application is responsible for both creating the searches for Toolkit's other applications and browsing-summarizing the data.
+The Search application is responsible for both creating the searches defining subsets of documents for Toolkit's other applications and browsing-summarizing the data.
 
 .. note::
-	In order to use *Search*, project must be selected in upper panel.
+	In order to use **Search**, project must be selected in upper panel.
 
-Searcher's graphical interface consists of serveral important panels, which are depicted in figure XX.XX. You can collapse or open the panels by clicking on the arrow in the corner.
+Search's graphical interface consists of serveral important panels, which are depicted in Figure 6.
+You can collapse or open the panels by clicking on the arrow in the corner.
 
-    Figure 9.1. *Searcher's first look*
-    
-    1. Current Search
-    2. Saved Searches
-    3. Aggregations
-    4. Results
+.. _figure-6:
+
+.. figure:: images/search_panel.png
+
+    Figure 6. *Search Panel*
 
 Current Search
 ++++++++++++++
 
-Data browsing and summarization depend on searches. Search consists of a set of constraints on field values. We can define our constraints on the data using the *Current Search* panel. Without saving the constraints, we are in a “test mode”, which means that we can use the search in Searcher, but we cannot use the search in other tools. After :ref:`saving the search <savedsearches>`, it is available also to other tools.
+Data browsing and summarization depend on searches. Search consists of a set of constraints on field values. We can define our constraints on the data using the *Current Search* panel.
+Without saving the constraints, we are in a “test mode”, which means that we can use the search in real time, but we cannot use the search in other tools.
+After saving the search, it is available also to other tools.
 
 In order to add a constraint, we must first choose one or several fields. After the field is selected, we can then specify which textual tokens (words or word parts) should or must occur in the interested document subset.
 
 We must notice that the search will be done on the Project's dataset chosen in the upper panel. We will search documents with the article_text_mlp.text field.
 
 Suppose we are interested in finding all the documents which contains “bribery” and “official” from a text.
+Figure 7 shows how we have defined that we want to find all the documents which contain “bribery” and “official” in the article_text_mlp.text field:
 
-Figure 9.3 shows how we have defined that we want to find all the documents which contain “bribery” and “official” in the article_text_mlp.text field. We can also choose ‘or’ or ‘not’ under the Operator. In this case we either get documents containing at least one of the words (‘or’) or definitely not containing the words listed (‘not’).
+.. _figure-7:
 
-“word” means that we want to find exact matches of the word(s) written and “phrase” means that we want to find exact matches of the phrases we are looking for, whereas “Phrase prefix” matches prefixes. This means suffixes may differ: for example searching for ‘bribe’ will find ‘bribetaking’, ‘bribers’, ‘bribery’ and other words starting with ‘bribe’. 'regex' takes the input as `a regular expression <https://www.rexegg.com/regex-quickstart.html>`_ and searches document accordingly. For example 'bribe.{0,2}' will find 'bribe' and 'bribery', but not longer words. If we have a big list of words we want to search for, we can extend the field searcher's panel.
+.. figure:: images/search_constraints.png
 
-We can also use Slop. Via Slop we can define up to how many words can be between the two words we wrote on one row in case the range is important for us. For example Figure 9.4 results in documents containing phrases like …today with Estonia, and Today Tallinn , Estonia , will host...
+    Figure 7. *Example Search Constraints*
 
-Knowing all that we can modify our first bribery search as shown in the Figure 9.5 below and get all instances, where’s a word or are words starting with ‘bribe’ (let’s suppose we lost interest in words starting with ‘offic’). In case we are interested only in word ‘bribe’ it is worth choosing to search within the lemma field, where you can filter out the exact word without worrying about it’s inflection (bribes lemma is still bribe).
+Searches have several parameters to consider:
 
-Should we be interested in more detailed searches, we can add more constraints like the previous one via ‘Add Filter’.
+* We can also choose ‘or’ or ‘not’ under the Operator. In this case we either get documents containing at least one of the words (‘or’) or definitely not containing the words listed (‘not’).
 
-We can also search documents in a certain date range in case we have a proper preprocessed date field. See example in Figure 9.6. We won’t do it at the moment.
+* We can choose from several match types. Type “word” means that we want to find exact matches of the word(s) written and “phrase” means that we want to find exact matches of the phrases we are looking for, whereas “Phrase prefix” matches prefixes. This means suffixes may differ: for example searching for ‘bribe’ will find ‘bribetaking’, ‘bribers’, ‘bribery’ and other words starting with ‘bribe’. 'regex' takes the input as `a regular expression <https://www.rexegg.com/regex-quickstart.html>`_ and searches document accordingly. For example 'bribe.{0,2}' will find 'bribe' and 'bribery', but not longer words. If we have a big list of words we want to search for, we can extend the field searcher's panel.
 
-If we click on “Search” button, we will see the matching data in a tabular form (see Figure 9.9), where layered features share feature name’s prefix, and matches are highlighted in pink. The results might be updating while modifying the filters.
+* We can also use Slop. Via Slop we can define up to how many words can be between the two words we wrote on one row in case the range is important for us.
+
+Should we be interested in more detailed searches, we can add more constraints like the previous ones via **Add Filter** button.
+For example, we can also search documents in a certain date range in case we have a proper preprocessed date field.
+
+If we click on “Search” button, we will see the matching data in a tabular form (see Figure 8), where layered features share feature name’s prefix, and matches are highlighted in pink.
+The results might be updating while modifying the filters.
+
+.. _figure-8:
+
+.. figure:: images/search_results.png
+
+    Figure 8. *Example Search Results*
 
 If there are too many features (columns), we can hide or show them from the drop-down menu in the down left corner. We can select or deselect all of them together (*Select all*) or by clicking on them saparately. We can also hide or get back the Searcher's panels with *Toggle drawer* button. We can browse through Searcher's results with the arrows in the bottom right. We can also choose how many items per page would we want to see.
 
+.. _figure-9:
 
-After we have come up with a suitable search, we can save it for later uses.
+.. figure:: images/search_results_toggle.png
 
-.. _savedsearches:
+    Figure 9. *Select Fields for Search Results*
+
+After we have come up with a suitable search, we can save it for later use by clicking on the **disk** icon.
 
 Saved Searches
 ++++++++++++++
 
-Searches can be saved with clicking on the save icon next to *Current Search* title (see Figure 9.10). If we save our “bribe” search under “bribery”, we can see it being listed in *Saved Searches* panel.
-
-Now, whenever we check it, we can use it to browse data or apply in :ref:`summarization<aggregations>`. We can also send our saved search to other users who have the permission to our project with a copied url. This opens the saved search under the Current Search for the other user. We can also open our saved search in the Current Search simply by clicking on it.
-
-.. _aggregations:
+After saving a search, it becomes available for using in Toolkit's applications.
+Now, whenever we check it, we can use it to browse data or apply in aggregations.
+We can also send our saved search to other users who have the permission to our project with a copied url.
+This opens the saved search under the Current Search for the other user.
+We can also open our saved search in the Current Search simply by clicking on it.
 
 Aggregations: Summarizing the Data
 ++++++++++++++++++++++++++++++++++
 
 As fun as browsing through the data is, it is not always enough. Sometimes we want to get an overview of our data, such as topics over time or word distributions. Searcher allows to do all of that and more through the “Aggregations” panel.
 
-Aggregations have two components - data and features it aggregates over. It will aggregate over the dataset we have under the Current Search. We can also exclude current search (meaning that 'Aggregate over all data except the one we have currently active') and choose the aggregation size. By defining a feature, we can group by that feature and get category counts. For example, lets assume we are interested in seeing how are the top words distributed in our sample data defined by our “bribe” search. For that we simply click on our bribe search under Saved Searches to get it as the current search. By requesting aggregation as shown on Figure 9.15, we get the result on the same figure.
-
-From the results in Figure 9.15 we can see raw word distributions for “bribe” search. Since we queried significant words, we can see that in the top are the words that we actually looked for in our saved search. We can change “Aggregations” setting to significant items or frequent items in order to get significant (by normalised count) or frequent (by count) items. If we want, we can hide current search in results.
+Aggregations have two components - data and features it aggregates over. It will aggregate over the dataset we have under the Current Search. We can also exclude current search (meaning that 'Aggregate over all data except the one we have currently active') and choose the aggregation size. By defining a feature, we can group by that feature and get category counts. For example, lets assume we are interested in seeing how are the top words distributed in our sample data defined by our “bribe” search. For that we simply click on our bribe search under Saved Searches to get it as the current search.
 
 .. note::
 
@@ -221,7 +235,7 @@ Embedding
 
 Embeddings are basically words converted into numerical data (into vectors) that are more understandable and usable for the machine than plain strings (words). With these vectors created, we can compare words and find similar ones. We need embeddings to create, for example, :ref:`lexicons <lexicons>`. Texta Toolkit uses word2vec embeddings with `collocation detection <https://radimrehurek.com/gensim/models/phrases.html>`_. It means that the vectors are created on words and phrases. Phrases are chosen with collocation detection which finds often together occuring words and marks them as phrases. 
 
-We can create a new embedding by clicking on the '+CREATE' button in the bottom-left. Then we must choose the name for the new embedding (*Description*). If we leave *Query* empty, it will take all data in the active project as a input. We can also use :ref:`saved searches <savedsearches>` as our desired input. Then we must choose the fields the embedding learns from. Embedding needs textual data, so we have to choose fields with text or lemmatized text in it. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (*eaten*, *eats* and *ate* will change to it's lemma *eat*).
+We can create a new embedding by clicking on the '+ CREATE' button in the bottom-left. Then we must choose the name for the new embedding (*Description*). If we leave *Query* empty, it will take all data in the active project as a input. We can also use saved searches as our desired input. Then we must choose the fields the embedding learns from. Embedding needs textual data, so we have to choose fields with text or lemmatized text in it. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (*eaten*, *eats* and *ate* will change to it's lemma *eat*).
 
 Then we have to choose the number of dimensions. That means the length of the vectors created. 100-200 dimensions is usually a good place to start with. The minimum frequency defines how many times a word or a phrase has to occur in the data in order to get it's very own word/phrase vector. Rare words/phrases won't have very informative and usable vectors. Minimum frequency of 5 can be left as default if we are not sure of what to use.
 
@@ -246,7 +260,6 @@ We have four ways to train a tagger:
 	1. :ref:`Tagger Groups <taggergroups>`
 	2. :ref:`Taggers <taggers>`
 	3. :ref:`NeuroTaggers <neurotaggers>`
-	4. :ref:`TorchTaggers <torchtaggers>`
 
 Only *Tagger* can be trained with saved searches. Others learn their models on tags in the dataset.
 
@@ -256,7 +269,7 @@ Only *Tagger* can be trained with saved searches. Others learn their models on t
 
 Tagger operates on saved searches and uses machine learning. We can create a new Tagger model by clicking on the '+CREATE' button in the bottom-left. Then we must choose the name for the new Tagger (*Description*) and the fields the model learns from. If we choose two, the fields are just concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (*eaten*, *eats* and *ate* will change to it's lemma *eat* and are dealt as one word).
 
-If we leave *Query* empty, it will take all data in the active project as a input. We can also use :ref:`saved searches <savedsearches>` as our desired input. This input will be our positive examples - later on we want to tag data similar to this one.
+If we leave *Query* empty, it will take all data in the active project as a input. We can also use saved searches as our desired input. This input will be our positive examples - later on we want to tag data similar to this one.
 	
 By setting these three, we can now train a classifier. However, we can also fine-tune the classifier by changing additional parameters such as
 Feature Extraction (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_) and Classifier Model (`Logistic Regression <https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression>`_, `LinearSVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). We might get an error with LinearSVC in case we don't have enough data in the search.
@@ -338,14 +351,6 @@ If we click on the three dots under *Edit*, we can see a list of features to use
 
 In the table view we can also select several models and delete them all at once by clicking on the dustbin button next to the *+CREATE* button in the bottom-left. If we have several models, we can search for the right one by their description or task status. If we have models on several pages we can change pages in the bottom-right.
 
-
-.. _torchtaggers:
-
-**Training TorchTaggers**	
-	
-TODO: Will be similar to NeuroTagger, will replace that. Not working atm.
-	
-
 .. _taggergroups:
 
 **Training Tagger Groups**
@@ -413,14 +418,3 @@ We can create a new index by clicking on the '+CREATE' button in the bottom-left
 We can use *Query* for adding only certain search results to our new index.
 
 *Random subset type* helps us to create an index which contains only certain amount of samples (rows). We can use this in case we want to play with a smaller subset before we apply our tools on a bigger one.
-
-
-
-
-
-
-
-
-
-
-
