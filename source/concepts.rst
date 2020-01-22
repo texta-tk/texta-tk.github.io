@@ -108,7 +108,13 @@ In such scenario input document is compared to training data to determine most p
 Torch Tagger
 ------------
 
-TODO
+While Taggers and Tagger Groups use classical machine learning to produce binary classification models, Texta Toolkit also incorporates deep neural models for binary and multi-class text classification.
+As the models are all programmed using PyTorch, the TTK’s component is called Torch Tagger.
+It allows for the user to use several state-of-art text classification models, including fastText, TextRNN using bi-direction LSTM networks, RCNN using recurrent convolutional neural nets.
+Since all models have been developed using PyTorch, introducing new models is fairly straightforward.
+TorchTagger models also include the possibility to use pre-trained word vectors (e.g. Word2Vec trained in TTK) in the embedding layer of the models.
+To create data processing pipelines, Torch Tagger uses torchtext package.
+Torch Tagger has been validated on monolingual toxic comment detection, reaching accuracy and F1-score of 96%.
 
 Multilingual Processor
 ----------------------
