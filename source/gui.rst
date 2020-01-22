@@ -172,38 +172,6 @@ One cool thing we can also do, is to visualize the frequency of texts with searc
 
 We can also aggregate over texta_facts field in order to see the top entities under some tag. If we click on the black diagram button, we can scroll through the results. We see as many entities as we chose for our aggregation size.
 
-Tags we can have under texta_facts are:
-
-.. _factnames:
-
-+----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
-| Label    | Meaning     | Comment                                                                                                                      |
-+==========+=============+==============================================================================================================================+
-| PER      | Persona     | Name of a person.                                                                                                            |
-+----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
-| ORG      | Organisation| Name of an organisation, gotten statistically.                                                                               |
-+----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
-| LOC      | Location    | Name of a location, gotten statistically.                                                                                    |
-+----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
-| COMPANY  | Company     | Names of company registered in Estonia, gotten from `Estonian Open Data <https://opendata.riik.ee/datasets/ariregister/>`_.  |
-+----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
-| ADDR     | Address     | Estonian address, gotten from `Estonian Open Data <https://opendata.riik.ee/datasets/aadressiandmed/>`_.                     |
-+----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
-| DRUG     | Drug        | Name of a medicine.                                                                                                          |
-+----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
-| SUBSTANCE| Substance   | Ingredient of a drug.                                                                                                        |
-+----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
-| EML      | E-mail      | E-mail address.                                                                                                              |
-+----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
-| PHO      | Phone       | Phone number.                                                                                                                |
-+----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
-| TEXTA_TAG| Own tag     | Tags we have trained in :ref:`the Taggers under Models <texttaggers>`                                                        |
-+----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
-
-	Table 9.1. *Meaning of tags*
-	
-It is important to notice that COMPANY and ADDR identify only companies and addresses registered in Estonian Open Data. It won't tag any foreign company nor address while ORG and LOC identifies all of them.
-
 .. _lexicons:
 
 Creating Topic-related Lexicons

@@ -42,6 +42,40 @@ Facts are objects with following properties:
 
 * spans - JSON string containing the start and end positions in the annotated string
 
+Toolkit comes with several predefined fact names that are used by our Multilingual Processor:
+
+.. _factnames:
+
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| Label    | Meaning     | Comment                                                                                                                      |
++==========+=============+==============================================================================================================================+
+| PER      | Persona     | Name of a person.                                                                                                            |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| ORG      | Organisation| Name of an organisation, gotten statistically.                                                                               |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| LOC      | Location    | Name of a location, gotten statistically.                                                                                    |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| COMPANY  | Company     | Names of company registered in Estonia, gotten from `Estonian Open Data <https://opendata.riik.ee/datasets/ariregister/>`_.  |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| ADDR     | Address     | Estonian address, gotten from `Estonian Open Data <https://opendata.riik.ee/datasets/aadressiandmed/>`_.                     |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| DRUG     | Drug        | Name of a medicine.                                                                                                          |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| SUBSTANCE| Substance   | Ingredient of a drug.                                                                                                        |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| EML      | E-mail      | E-mail address.                                                                                                              |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| PHO      | Phone       | Phone number.                                                                                                                |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+| TEXTA_TAG| Own tag     | Tags we have trained in :ref:`the Taggers under Models <texttaggers>`                                                        |
++----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+
+	Table 1. *Predefined Fact Names used by Multilingual Processor*
+
+It is important to notice that COMPANY and ADDR identify only companies and addresses registered in Estonian Open Data.
+It won't tag any foreign company nor address while ORG and LOC identifies all of them.
+
+
 Embedding
 ---------
 
