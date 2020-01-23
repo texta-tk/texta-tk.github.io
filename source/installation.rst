@@ -15,10 +15,16 @@ Install Docker
     
 The easiest way to run TEXTA Toolkit is to use our prebuilt Docker images from our registries. For doing so, one needs to install *Docker* and *docker-compose*:
 
-.. code-block:: bash
+.. code-block::
 
     sudo apt-get update
     sudo apt-get install docker docker-compose -y
+
+To run Elasticsearch in Docker, we need to increase maximum map count parameter for virtual memory:
+
+.. code-block::
+
+    sudo sysctl -w vm.max_map_count=262144
 
 Configure docker-compose
 ++++++++++++++++++++++++
@@ -28,7 +34,7 @@ To successfully run TEXTA Toolkit we need to define following services:
 
 * Elasticsearch for storing the documents (one can also run it without Docker)
 
-* MySQL for storing user and project data (can also be run without Docker)
+* MySQL or Postgres for storing user and project data (can also be run without Docker)
 
 * TEXTA Toolkit RESTful API for backend: docker.texta.ee/texta/texta-rest:latest
 
@@ -57,22 +63,24 @@ Run TEXTA Toolkit
 With the **docker-compose.yaml** and **env** files present and accounted for, 
 let's pull the images and start the services by executing the following commands in the same directory with **docker-compose.yaml** and **env**:
 
-.. code-block:: bash
+.. code-block::
 
-    docker-compose pull
-    docker-compose up
+    sudo docker-compose pull
+    sudo docker-compose up
 
 For running in detached mode, use the *-d* flag:
 
-.. code-block:: bash
+.. code-block::
 
-    docker-compose up -d
+    sudo docker-compose up -d
+
+When running, TEXTA Toolkit's GUI should be available at port 80 and API at port 8000.
 
 For stopping the services:
 
-.. code-block:: bash
+.. code-block::
 
-    docker-compose down
+    sudo docker-compose down
 
 
 Installation for Development
