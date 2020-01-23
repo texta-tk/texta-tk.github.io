@@ -44,7 +44,7 @@ For executing aforementioned services we have preconfigured an example **docker-
 
 .. literalinclude:: files/docker-compose.yaml
 
-The compose file is used in combination with **env** file containing environment variables needed for operating TEXTA Toolkit:
+The compose file is used in combination with **env** file located in the same directory as *docker-compose.yaml* containing environment variables needed for operating TEXTA Toolkit:
 
 .. literalinclude:: files/env
 
@@ -52,12 +52,11 @@ Run TEXTA Toolkit
 +++++++++++++++++
 
 .. note::
-
-    TEXTA Toolkit's dockerized version comes with a default superuser account:
+    Before running TEXTA Toolkit, we should have 2 files in our current working directory:
     
-    **user:** admin
+    * docker-compose.yaml
     
-    **password:** 1234
+    * env
 
 With the **docker-compose.yaml** and **env** files present and accounted for, 
 let's pull the images and start the services by executing the following commands in the same directory with **docker-compose.yaml** and **env**:
@@ -72,6 +71,13 @@ For running in detached mode, use the *-d* flag:
 .. code-block::
 
     sudo docker-compose up -d
+
+.. note::
+    TEXTA Toolkit's dockerized version comes with a default superuser account:
+    
+    **user:** admin
+    
+    **password:** 1234
 
 When running, TEXTA Toolkit's GUI should be available at:
 
