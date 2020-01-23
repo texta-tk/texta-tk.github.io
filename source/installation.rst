@@ -59,6 +59,11 @@ Run TEXTA Toolkit
     
     **password:** 1234
 
+Before running, let's create an empty directory for all the data:
+
+.. code-block::
+
+    sudo mkdir data
 
 With the **docker-compose.yaml** and **env** files present and accounted for, 
 let's pull the images and start the services by executing the following commands in the same directory with **docker-compose.yaml** and **env**:
@@ -74,7 +79,13 @@ For running in detached mode, use the *-d* flag:
 
     sudo docker-compose up -d
 
-When running, TEXTA Toolkit's GUI should be available at port 80 and API at port 8000.
+When running, TEXTA Toolkit's GUI should be available at:
+
+* http://localhost:4200 
+
+and API at:
+
+* http://localhost/api/v1/
 
 For stopping the services:
 

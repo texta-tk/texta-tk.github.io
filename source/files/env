@@ -1,5 +1,5 @@
 TEXTA_ES_URL=http://texta-elasticsearch:9200
-TEXTA_API_URL=http://texta-rest:8000
+TEXTA_API_URL=http://localhost
 TEXTA_DEBUG=False
 
 DJANGO_DATABASE_ENGINE=django.db.backends.postgresql

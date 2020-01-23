@@ -34,7 +34,7 @@ services:
     container_name: texta-rest
     image: docker.texta.ee/texta/texta-rest:latest
     ports:
-      - 8000:80
+      - 80:80
     env_file:
       - ./env
     volumes:
@@ -47,7 +47,7 @@ services:
     container_name: texta-front
     image: docker.texta.ee/texta/texta-rest-front:latest
     ports:
-      - 80:80
+      - 4200:80
     restart: always
     env_file:
       - ./env
