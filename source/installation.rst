@@ -59,12 +59,6 @@ Run TEXTA Toolkit
     
     **password:** 1234
 
-Before running, let's create an empty directory for all the data:
-
-.. code-block::
-
-    sudo mkdir data
-
 With the **docker-compose.yaml** and **env** files present and accounted for, 
 let's pull the images and start the services by executing the following commands in the same directory with **docker-compose.yaml** and **env**:
 
