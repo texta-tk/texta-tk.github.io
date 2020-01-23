@@ -12,15 +12,24 @@ The endpoint responds with information abouth the availability of services (e.g.
 Authentication
 --------------
 
+* http://localhost/api/v1/rest-auth/registration/
+
+* http://localhost/api/v1/rest-auth/login/
+
 TODO
 
 Browsable API
 -------------
+
+* http://localhost/api/v1/
 
 TODO
 
 API Reference
 -------------
 
-link-to-swagger
-link-to-redoc
+Reference for Toolkit API is available when running the Toolkit:
+
+* http://localhost/api/v1/swagger/
+
+* http://localhost/api/v1/redoc/
