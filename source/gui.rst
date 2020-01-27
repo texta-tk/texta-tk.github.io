@@ -236,19 +236,19 @@ Tagging the Data
 
 Different Taggers in Texta Toolkit are classification models which can classify new data with the label/class the model is trained on. We can apply the tagger via API. 
 
-We have four ways to train a tagger:
+We have three taggers:
 
-	1. :ref:`Tagger Groups <taggergroups>`
-	2. :ref:`Taggers <taggers>`
-	3. :ref:`NeuroTaggers <neurotaggers>`
+	1. :ref:`Tagger Groups <tagger_group_concept>`
+	2. :ref:`Taggers <tagger_concept>`
+	3. NeuroTaggers
 
-Only *Tagger* can be trained with saved searches. Others learn their models on tags in the dataset.
+Only *Tagger* can be trained with saved searches. Others learn their models on tags in the dataset. Below we will see how to train them.
 
 .. _taggers:
 	
 **Training Taggers**
 
-Tagger operates on saved searches and uses machine learning. We can create a new Tagger model by clicking on the '+CREATE' button in the bottom-left. Then we must choose the name for the new Tagger (*Description*) and the fields the model learns from. If we choose two, the fields are just concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (*eaten*, *eats* and *ate* will change to it's lemma *eat* and are dealt as one word).
+:ref:`Tagger <tagger_concept>` operates on saved searches and uses machine learning. We can create a new Tagger model by clicking on the '+CREATE' button in the bottom-left. Then we must choose the name for the new Tagger (*Description*) and the fields the model learns from. If we choose two, the fields are just concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (*eaten*, *eats* and *ate* will change to it's lemma *eat* and are dealt as one word).
 
 If we leave *Query* empty, it will take all data in the active project as a input. We can also use saved searches as our desired input. This input will be our positive examples - later on we want to tag data similar to this one.
 	
@@ -271,7 +271,7 @@ If we click on the three dots under *Edit*, we can see a list of features to use
 
 *Stop words* is for adding stop words. Stop words are words that the model do not consider while looking for clues of similarities. It is wise to add most frequent words in the list like *am*, *on*, *in*, *are*. Separate the words with space (' '). 
 
-*Tag text* is to check how does the model work. If we click on that a window opens. We can paste there some text, choose to lemmatize it (necessary if our model was trained on a lemmatized text) and post it. We then recieve the result (True if this text gets the tag and false otherwise) and the probability. Probability shows how confident is our model in it's prediction. 
+*Tag text* is to check how does the model work. If we click on that a window opens. We can paste there some text, choose to lemmatize it (necessary if our model was trained on a lemmatized text) and post it. We then recieve the result (True if this text gets the tag and False otherwise) and the probability. Probability shows how confident is our model in it's prediction. 
 
 *Tag doc* is similar to *Tag text*, except the input is in the json format. 
 
@@ -348,7 +348,7 @@ We can create a new Tagger Group model by clicking on the '+CREATE' button in th
 
 Our input will be the data under the project that is active (we can check it on the blue panel up-right). We have to select the fields the model learns from. If we choose two, the fields are just concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (*eaten*, *eats* and *ate* will change to it's lemma *eat* and are dealt as one word).
 
-There's also an option to include our existing :ref:` embeddings <embedding>` into the training. 
+There's also an option to include our existing :ref:`embeddings <embedding>` into the training. 
 
 Then we need to fine-tune the Tagger Group's classifiers by changing additional parameters such as
 Vectorizer (possible feature extractors are: Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_) and Classifier Model (`Logistic Regression <https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression>`_, `LinearSVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). We might get an error with LinearSVC in case we don't have enough data in the search.
