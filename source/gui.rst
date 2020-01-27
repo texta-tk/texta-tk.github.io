@@ -140,7 +140,7 @@ The results might be updating while modifying the filters.
 .. _figure-8:
 
 .. figure:: images/search_results.png
-    :width: 1500
+    :width: 2000pt
 
     Figure 8. *Example Search Results*
 
