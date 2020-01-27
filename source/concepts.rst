@@ -18,6 +18,8 @@ Search
 
 One of the most central components in TTK are Searches, which are used to define subsets of data for training text classification models and performing various aggregations. Searches are managed via GUI and can contain one or more constraints on feature values (e.g. strings and dates). Documents matching the search criteria can be used in various actions/functionalities in TTK, e.g. extraction of relevant keywords, data summarisation and exploration, and training text classifiers.
 
+.. _texta_fact:
+
 Fact
 ----
 
