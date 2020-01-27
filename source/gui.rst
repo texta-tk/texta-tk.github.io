@@ -385,7 +385,7 @@ We can use *Query* for adding only certain search results to our new index.
 .. _reindexer:
 
 
-Uploading datasets
+Uploading the Data
 ------------------
 
 We can upload new data via Dataset Importer under Tools
