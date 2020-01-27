@@ -13,6 +13,8 @@ Task
 
 TEXTA Toolkit allows to build several different statistical models to process the text. The training process is initiated via TTK API or GUI, which results in creating of the object in TTK data model and starting the asynchronous training task. Tasks are data objects for keeping track of training progress of trainable statistical models.
 
+.. _search_concept:
+
 Search
 ------
 
@@ -76,6 +78,21 @@ Toolkit comes with several predefined fact names that are used by our Multilingu
 
 It is important to notice that COMPANY and ADDR identify only companies and addresses registered in Estonian Open Data.
 It won't tag any foreign company nor address while ORG and LOC identifies all of them.
+
+.. _index_concept:
+
+Index
+----
+
+Index is a collection of documents in Elasticsearch. In Search output the table consists of all the suitable documents filtered out from that index and one row indicates a document.
+
+.. _field_concept:
+
+Field
+----
+
+Each document is a collection of fields. Field is a separated piece of information in that document. For example, we can have an article with fields containing the text, the date of publishing, headline, etc.
+
 
 .. _embedding_concept:
 
