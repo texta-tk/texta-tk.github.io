@@ -296,56 +296,6 @@ In the table view we can also select several models and delete them all at once 
     Figure 12. *Bribe_tag tagger*
 
 
-.. _neurotaggers:
-
-**Training NeuroTaggers**
-
-NeuroTagger operates on tags and uses neural networks. This means that we must already have our own tags created in the dataset in order to train it. If we don't know what to use, we can leave all of the parameters by default. But we can also try some parameter tuning.
-
-We definetly have to name the model (*Description*), select fields it will be trained on (*Select Fields*, multible fields will be concatenated together) and choose the tag it will be trained on (*Fact Name*). 
-
-NeuroTagger enables us to use `Feedforward Neural Network <https://en.wikipedia.org/wiki/Feedforward_neural_network>`_ (*fnn*), `Convolutional Neural Network <https://en.wikipedia.org/wiki/Convolutional_neural_network>`_ (*CNN*), `Neural Network with Gated Recurrent Unit <https://en.wikipedia.org/wiki/Gated_recurrent_unit>`_ (*gru*), `Neural Network with Long Short-Term Memory <https://en.wikipedia.org/wiki/Long_short-term_memory>`_ (*lstm*), Convolutional Neural Network with Gater Recurrent Unit (*gruCNN*) or Convolutional Neural Network with Long Short-Term Memory (*lstmCNN*).
-
-Parameters we can play with are as follows:
-
-*Validation split* gives the fraction of the data that will be used as the validation data (test set).
-
-*Score threshold* chooses the relevance of the documents that are taken into count. If the score goes below the threshold, no more docs are added.
-
-*Sequence length* is the length of the feature vectors.
-
-*Maximum sample size* per class. TODO
-
-*Negative Multiplier* changes the ratio of negative examples.
-
-*Num Epochs* how many times the network goes trough the dataset.
-
-*Vocab size* is the vocabulary size of the neural network. TODO
-
-*Min fact doc count* TODO
-
-*Max fact doc count* TODO
-
-After choosing the mandatory fields and tuning the parameters we can hit create and see the training process and result of the NeuroTagger.
-
-Whenever we create a new NeuroTagger model, we can track it's progress from the table under *Task*. If we click on the job, we can see all the training info, how long did it took, and check how successful it was. Let's not forget that:
-	1. Training accuracy is the ratio of correctly labeled instances among all instances in the training set.
-	2. Training loss is the ratio of wrongly labeled instances among all instances in the training set.
-	3. Validation accuracy is the ratio of correctly labeled instances among all instances in the test set.
-	4. Validation loss is the ratio of wrongly labeled instances among all instances in the test set.
-
-If we click on the three dots under *Edit*, we can see a list of features to use.
-
-*Tag text* is to check how does the model work. If we click on that a window opens. We can paste there some text, choose to lemmatize it (necessary if our model was trained on a lemmatized text) and post it. We then recieve the result (True if this text gets the tag and false otherwise) and the probability. Probability shows how confident is our model in it's prediction. 
-
-*Tag doc* is similar to *Tag text*, except the input is in the json format. 
-
-*Tag random doc* takes a random instance from our dataset, displays it and returns the result and the probability of this result being correct. 
-
-*Delete* is for deleting the model.
-
-In the table view we can also select several models and delete them all at once by clicking on the dustbin button next to the *+CREATE* button in the bottom-left. If we have several models, we can search for the right one by their description or task status. If we have models on several pages we can change pages in the bottom-right.
-
 .. _taggergroups:
 
 **Training Tagger Groups**
@@ -425,3 +375,56 @@ We can use *Query* for adding only certain search results to our new index.
 .. figure:: images/reindexer.png
 
     Figure 15. *Creating a new index*
+    
+    
+    
+.. 
+    _neurotaggers:
+
+    **Training NeuroTaggers**
+
+    NeuroTagger operates on tags and uses neural networks. This means that we must already have our own tags created in the dataset in order to train it. If we don't know what to use, we can leave all of the parameters by default. But we can also try some parameter tuning.
+
+    We definetly have to name the model (*Description*), select fields it will be trained on (*Select Fields*, multible fields will be concatenated together) and choose the tag it will be trained on (*Fact Name*). 
+
+    NeuroTagger enables us to use `Feedforward Neural Network <https://en.wikipedia.org/wiki/Feedforward_neural_network>`_ (*fnn*), `Convolutional Neural Network <https://en.wikipedia.org/wiki/Convolutional_neural_network>`_ (*CNN*), `Neural Network with Gated Recurrent Unit <https://en.wikipedia.org/wiki/Gated_recurrent_unit>`_ (*gru*), `Neural Network with Long Short-Term Memory <https://en.wikipedia.org/wiki/Long_short-term_memory>`_ (*lstm*), Convolutional Neural Network with Gater Recurrent Unit (*gruCNN*) or Convolutional Neural Network with Long Short-Term Memory (*lstmCNN*).
+    
+    Parameters we can play with are as follows:
+    
+    *Validation split* gives the fraction of the data that will be used as the validation data (test set).
+    
+    *Score threshold* chooses the relevance of the documents that are taken into count. If the score goes below the threshold, no more docs are added.
+    
+    *Sequence length* is the length of the feature vectors.
+    
+    *Maximum sample size* per class. TODO
+    
+    *Negative Multiplier* changes the ratio of negative examples.
+    
+    *Num Epochs* how many times the network goes trough the dataset.
+    
+    *Vocab size* is the vocabulary size of the neural network. TODO
+    
+    *Min fact doc count* TODO
+    
+    *Max fact doc count* TODO
+    
+    After choosing the mandatory fields and tuning the parameters we can hit create and see the training process and result of the NeuroTagger.
+    
+    Whenever we create a new NeuroTagger model, we can track it's progress from the table under *Task*. If we click on the job, we can see all the training info, how long did it took, and check how successful it was. Let's not forget that:
+    1. Training accuracy is the ratio of correctly labeled instances among all instances in the training set.
+    2. Training loss is the ratio of wrongly labeled instances among all instances in the training set.
+    3. Validation accuracy is the ratio of correctly labeled instances among all instances in the test set.
+    4. Validation loss is the ratio of wrongly labeled instances among all instances in the test set.
+    
+    If we click on the three dots under *Edit*, we can see a list of features to use.
+    
+    *Tag text* is to check how does the model work. If we click on that a window opens. We can paste there some text, choose to lemmatize it (necessary if our model was trained on a lemmatized text) and post it. We then recieve the result (True if this text gets the tag and false otherwise) and the probability. Probability shows how confident is our model in it's prediction. 
+    
+    *Tag doc* is similar to *Tag text*, except the input is in the json format. 
+    
+    *Tag random doc* takes a random instance from our dataset, displays it and returns the result and the probability of this result being correct. 
+    
+    *Delete* is for deleting the model.
+    
+    In the table view we can also select several models and delete them all at once by clicking on the dustbin button next to the *+CREATE* button in the bottom-left. If we have several models, we can search for the right one by their description or task status. If we have models on several pages we can change pages in the bottom-right.
