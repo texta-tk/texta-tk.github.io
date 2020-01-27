@@ -368,7 +368,13 @@ Then we need to fine-tune the Tagger Group's classifiers by changing additional 
 Vectorizer (possible feature extractors are: Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_) and Classifier (`Logistic Regression <https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression>`_, `LinearSVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). We might get an error with LinearSVC in case we don't have enough data in the search.
 We can set negative multiplier to change ratio of negative examples in the training set. 
 
-Then we can hit create and see the training process and result of the tagger.
+Then we can hit create and see the training process and result of the tagger as seen in Figure 14.
+
+.. _figure-14:
+
+.. figure:: images/created_tagger_group.png
+
+    Figure 14. *Created Tagger Group*
 
 Whenever we create new Tagger Group models, we can track it's progress from the table under *Task*. If we click on the job, we can see all the training info, how long did it took, and check how successful it was. Let's not forget that:
 	1. Recall is the ratio of correctly labeled positives among all true positives. Avg.recall is the average of all the models' recalls.
@@ -413,3 +419,9 @@ We can create a new index by clicking on the '+CREATE' button in the bottom-left
 We can use *Query* for adding only certain search results to our new index.
 
 *Random subset type* helps us to create an index which contains only certain amount of samples (rows). We can use this in case we want to play with a smaller subset before we apply our tools on a bigger one.
+
+.. _figure-15:
+
+.. figure:: images/reindexer.png
+
+    Figure 15. *Creating a new index*
