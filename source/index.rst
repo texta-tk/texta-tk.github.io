@@ -6,9 +6,6 @@
 .. image:: images/toolkit_logo.png
     :alt: Texta
 
-
-
-
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
