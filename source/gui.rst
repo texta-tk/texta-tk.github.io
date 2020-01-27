@@ -221,10 +221,13 @@ Keep in mind that the bigger the data, the better results!
 
 After creating the new embedding we can view the learning process and results in the embeddings' table. We can see which user created this embedding in this project, the name of the embedding model, field(s) it was trained on, the time it took to train, dimensions, minimum frequency and created vocabulary size. By clicking on the new model's row we can see similar info again. 
 
-Three dots under *Edit* gives us access to deleting the embedding model or using *Phrase*. *Phrase* is a feature that helps us to check which phrases occur in the embedding model as vectors on their own. It outputs the words and connects phrases with '_'. For example,
+Three dots under *Edit* gives us access to deleting the embedding model or using *Phrase*. *Phrase* is a feature that helps us to check which phrases occur in the embedding model as vectors on their own. It outputs the words and connects phrases with '_'. For example, we can create an embedding model with our saved search 'bribery' (figure 10). If we leave the query empty, the model will be trained on the whole dataset.
 
-TODO: ADD EXAMPLE HERE!
+.. _figure-10:
 
+.. figure:: images/create_embedding.png
+
+    Figure 10. *Create embedding with saved search*
 
 .. _texttaggers:
 
