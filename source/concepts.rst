@@ -88,6 +88,8 @@ Furthermore, vectors from word embeddings can also be used in neural classificat
 TTK currently only supports Word2Vec embeddings, but work is being done to incorporate state of the art embedding models (e.g. BERT from Google Research).
 Furthermore, TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support multilingual text classification.
 
+.. _tagger_concept:
+
 Tagger
 ------
 
@@ -99,6 +101,8 @@ TTK automatically splits the training data into training and testing data (by de
 SVM model is also used for feature selection to remove unimportant features from the model making it smaller.
 For features, both word-based and character-based n-grams are used.
 
+.. _tagger_group_concept:
+
 Tagger Group
 ------------
 
@@ -107,6 +111,8 @@ As its name suggests, Tagger Groups incorporate multiple (binary) taggers, which
 Tagger Group has been successfully tested with over 6000 binary models and prediction times are usually less than 1 second.
 To achieve this, TTK has employed a hybrid approach for multi-label tagging, which uses unsupervised machine learning (document vectors) to limit the number of binary models used for prediction.
 In such scenario input document is compared to training data to determine most probable models to produce valid tags.
+
+.. _torch_tagger_concept:
 
 Torch Tagger
 ------------
