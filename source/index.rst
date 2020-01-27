@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 
-section title |yourimage|
+|yourimage|
 =====================================
 
 .. |yourimage| image:: toolkit_logo.png
