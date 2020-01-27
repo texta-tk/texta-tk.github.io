@@ -5,7 +5,6 @@
 
 
 |yourimage|
-=====================================
 
 .. |yourimage| image:: toolkit_logo.png
 
