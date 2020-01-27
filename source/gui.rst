@@ -89,13 +89,19 @@ The Search application is responsible for both creating the searches defining su
 	In order to use **Search**, project must be selected in upper panel.
 
 Search's graphical interface consists of serveral important panels, which are depicted in Figure 6.
-You can collapse or open the panels by clicking on the arrow in the corner.
+We can collapse or open the panels by clicking on the arrow in the corner.
 
 .. _figure-6:
 
 .. figure:: images/search_panel.png
 
     Figure 6. *Search Panel*
+    
+    1. :ref:`Current Search <currentsearch>`
+    2. :ref:`Saved Searches <savedsearches>`
+    3. :ref:`Aggregations <aggregations>`
+
+.. _currentsearch:
 
 Current Search
 ++++++++++++++
@@ -106,7 +112,7 @@ After saving the search, it is available also to other tools.
 
 In order to add a constraint, we must first choose one or several fields. After the field is selected, we can then specify which textual tokens (words or word parts) should or must occur in the interested document subset.
 
-We must notice that the search will be done on the Project's dataset chosen in the upper panel. We will search documents with the article_text_mlp.text field.
+We must notice that the search will be done on the Project's dataset chosen in the upper panel.
 
 Suppose we are interested in finding all the documents which contains “bribery” and “official” from a text.
 Figure 7 shows how we have defined that we want to find all the documents which contain “bribery” and “official” in the article_text_mlp.text field:
@@ -137,7 +143,7 @@ The results might be updating while modifying the filters.
 
     Figure 8. *Example Search Results*
 
-If there are too many features (columns), we can hide or show them from the drop-down menu in the down left corner. We can select or deselect all of them together (*Select all*) or by clicking on them saparately. We can also hide or get back the Searcher's panels with *Toggle drawer* button. We can browse through Searcher's results with the arrows in the bottom right. We can also choose how many items per page would we want to see.
+If there are too many features (columns), we can hide or show them from the drop-down menu in the down left corner. We can select or deselect all of them together (*Select all*) or by clicking on them separately. We can also hide or get back the Searcher's panels with *Toggle drawer* button. We can browse through Searcher's results with the arrows in the bottom right. We can also choose how many items per page would we want to see.
 
 .. _figure-9:
 
@@ -145,7 +151,9 @@ If there are too many features (columns), we can hide or show them from the drop
 
     Figure 9. *Select Fields for Search Results*
 
-After we have come up with a suitable search, we can save it for later use by clicking on the **disk** icon.
+After we have come up with a suitable search, we can save it for later use by clicking on the **disk** icon up-right in the Current Search panel. The **eye** icon next to the disk icon shows us the actual Elasticsearch query we built by choosing the Operators and words to search for.
+
+.. _savedsearches:
 
 Saved Searches
 ++++++++++++++
@@ -155,6 +163,8 @@ Now, whenever we check it, we can use it to browse data or apply in aggregations
 We can also send our saved search to other users who have the permission to our project with a copied url.
 This opens the saved search under the Current Search for the other user.
 We can also open our saved search in the Current Search simply by clicking on it.
+
+.. _aggregations:
 
 Aggregations: Summarizing the Data
 ++++++++++++++++++++++++++++++++++
