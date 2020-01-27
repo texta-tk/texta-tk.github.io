@@ -58,7 +58,7 @@ Creating a Project
 
 In order to play with the data, we need to create a new project.
 We can create a project by clicking the **+ CREATE** button at the bottom of the page.
-We can then give it a title, select users who can work on the project and, of course, select datasets (Elasticsearch indices) for the project. 
+We can then give it a title, select users who can work on the project and, of course, select datasets (Elasticsearch :ref:`indices <index_concept>`) for the project. 
 
 After the project is created, we can see the new project in the list and can change its datasets and user access via the **Edit** button.
 
@@ -106,7 +106,7 @@ We can collapse or open the panels by clicking on the arrow in the corner.
 Current Search
 ++++++++++++++
 
-Data browsing and summarization depend on searches. Search consists of a set of constraints on field values. We can define our constraints on the data using the *Current Search* panel.
+Data browsing and summarization depend on searches. Search consists of a set of constraints on :ref:`field <field_concept>` values. We can define our constraints on the data using the *Current Search* panel.
 Without saving the constraints, we are in a “test mode”, which means that we can use the search in real time, but we cannot use the search in other tools.
 After saving the search, it is available also to other tools.
 
@@ -359,7 +359,7 @@ In the table view we can also select several Tagger Groups and delete them all a
 Reindexing the Data
 -------------------
 
-Reindexer is a useful tool for reindexing Elasticsearch indices. We can think of index as our dataset. With reindexer we can remove unwanted fields, change the type of the fields (if we have a field with text value type but actually contains dates, we can change the type to date and use it for our aggregation). 
+Reindexer is a useful tool for reindexing Elasticsearch :ref:`indices <index_concept>`. We can think of index as our dataset. With reindexer we can remove unwanted fields, change the type of the fields (if we have a field with text value type but actually contains dates, we can change the type to date and use it for our aggregation). 
 
 We can create a new index by clicking on the '+CREATE' button in the bottom-left.
 
