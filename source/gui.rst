@@ -97,9 +97,9 @@ We can collapse or open the panels by clicking on the arrow in the corner.
 
     Figure 6. *Search Panel*
     
-    1. :ref:`Current Search <currentsearch>`
-    2. :ref:`Saved Searches <savedsearches>`
-    3. :ref:`Aggregations <aggregations>`
+        1. :ref:`Current Search <currentsearch>`
+        2. :ref:`Saved Searches <savedsearches>`
+        3. :ref:`Aggregations <aggregations>`
 
 .. _currentsearch:
 
@@ -236,11 +236,10 @@ Tagging the Data
 
 Different Taggers in Texta Toolkit are classification models which can classify new data with the label/class the model is trained on. We can apply the tagger via API. 
 
-We have three taggers:
+We have two taggers:
 
 	1. :ref:`Tagger Groups <tagger_group_concept>`
 	2. :ref:`Taggers <tagger_concept>`
-	3. NeuroTaggers
 
 Only *Tagger* can be trained with saved searches. Others learn their models on tags in the dataset. Below we will see how to train them.
 
