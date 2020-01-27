@@ -259,7 +259,7 @@ Then we can hit create and see the training process and result of the tagger.
 
 .. _figure-11:
 
-.. figure:: images/create_embedding.png
+.. figure:: images/create_tagger.png
 
     Figure 11. *Creating Bribe_tag tagger*
 
@@ -382,7 +382,25 @@ We can use *Query* for adding only certain search results to our new index.
     Figure 15. *Creating a new index*
     
     
+.. _reindexer:
+
+
+Uploading datasets
+------------------
+
+We can upload new data via Dataset Importer under Tools
+
+.. 
+    unless we want to do it via API-> viide.
+
+.. _figure-16:
+
+.. figure:: images/dataset_importer.png
+
+    Figure 16. *Importing a new dataset*
     
+
+
 .. 
     _neurotaggers:
 
