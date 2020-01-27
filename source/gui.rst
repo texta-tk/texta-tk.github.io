@@ -253,10 +253,17 @@ Only *Tagger* can be trained with saved searches. Others learn their models on t
 If we leave *Query* empty, it will take all data in the active project as a input. We can also use saved searches as our desired input. This input will be our positive examples - later on we want to tag data similar to this one.
 	
 By setting these three, we can now train a classifier. However, we can also fine-tune the classifier by changing additional parameters such as
-Feature Extraction (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_) and Classifier Model (`Logistic Regression <https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression>`_, `LinearSVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). We might get an error with LinearSVC in case we don't have enough data in the search.
+Vectorizer (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_) and Classifier (`Logistic Regression <https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression>`_, `LinearSVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). We might get an error with LinearSVC in case we don't have enough data in the search.
 We can set negative multiplier to change ratio of negative examples and choose maximum sample size per class.
 
 Then we can hit create and see the training process and result of the tagger.
+
+.. _figure-11:
+
+.. figure:: images/create_embedding.png
+
+    Figure 11. *Creating Bribe_tag tagger*
+
 
 Whenever we create a new Tagger model, we can track it's progress from the table under *Task*. If we click on the job, we can see all the training info, how long did it took, and check how successful it was. Let's not forget that:
 	1. Recall is the ratio of correctly labeled positives among all true positives.
@@ -280,6 +287,13 @@ If we click on the three dots under *Edit*, we can see a list of features to use
 *Delete* is for deleting the model.
 
 In the table view we can also select several models and delete them all at once by clicking on the dustbin button next to the *+CREATE* button in the bottom-left. If we have several models, we can search for the right one by their description or task status. If we have models on several pages we can change pages in the bottom-right.
+
+
+.. _figure-12:
+
+.. figure:: images/tagger_result.png
+
+    Figure 12. *Bribe_tag tagger*
 
 
 .. _neurotaggers:
@@ -351,7 +365,7 @@ Our input will be the data under the project that is active (we can check it on 
 There's also an option to include our existing :ref:`embeddings <embedding>` into the training. 
 
 Then we need to fine-tune the Tagger Group's classifiers by changing additional parameters such as
-Vectorizer (possible feature extractors are: Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_) and Classifier Model (`Logistic Regression <https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression>`_, `LinearSVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). We might get an error with LinearSVC in case we don't have enough data in the search.
+Vectorizer (possible feature extractors are: Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_) and Classifier (`Logistic Regression <https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression>`_, `LinearSVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). We might get an error with LinearSVC in case we don't have enough data in the search.
 We can set negative multiplier to change ratio of negative examples in the training set. 
 
 Then we can hit create and see the training process and result of the tagger.
@@ -384,7 +398,7 @@ In the table view we can also select several Tagger Groups and delete them all a
 Reindexing the Data
 -------------------
 
-Reindexer is a useful tool for reindexing Elasticsearch indices. Index is basically our dataset. With reindexer we can remove unwanted fields, change the type of the fields (if we have a field with text value type but actually contains dates, we can change the type to date and use it for our aggregation). 
+Reindexer is a useful tool for reindexing Elasticsearch indices. We can think of index as our dataset. With reindexer we can remove unwanted fields, change the type of the fields (if we have a field with text value type but actually contains dates, we can change the type to date and use it for our aggregation). 
 
 We can create a new index by clicking on the '+CREATE' button in the bottom-left.
 
