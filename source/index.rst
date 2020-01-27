@@ -4,9 +4,8 @@
    contain the root `toctree` directive.
 
 
-|yourimage|
-
-.. |yourimage| image:: toolkit_logo.png
+.. image:: images/toolkit_logo.png
+    :alt: Texta
 
 
 TEXTA Toolkit is an open-source software for building RESTful text analytics applications.
