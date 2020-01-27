@@ -254,7 +254,7 @@ If we leave *Query* empty, it will take all data in the active project as a inpu
 	
 By setting these three, we can now train a classifier. However, we can also fine-tune the classifier by changing additional parameters such as
 Vectorizer (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_) and Classifier (`Logistic Regression <https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression>`_, `LinearSVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). We might get an error with LinearSVC in case we don't have enough data in the search.
-We can set negative multiplier to change ratio of negative examples and choose maximum sample size per class.
+We can set negative multiplier to change ratio of negative examples. We can use maximum sample size per class in case we want to limit the size of data the model trains on.
 
 Then we can hit create and see the training process and result of the tagger.
 
@@ -316,7 +316,13 @@ There's also an option to include our existing :ref:`embeddings <embedding>` int
 
 Then we need to fine-tune the Tagger Group's classifiers by changing additional parameters such as
 Vectorizer (possible feature extractors are: Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_) and Classifier (`Logistic Regression <https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression>`_, `LinearSVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). We might get an error with LinearSVC in case we don't have enough data in the search.
-We can set negative multiplier to change ratio of negative examples in the training set. 
+We can set negative multiplier to change ratio of negative examples in the training set. We can use maximum sample size per class in case we want to limit the size of data the model trains on.
+
+.. _figure-13:
+
+.. figure:: images/create_tagger_group.png
+
+    Figure 13. *Creating a Tagger Group*
 
 Then we can hit create and see the training process and result of the tagger as seen in Figure 14.
 
