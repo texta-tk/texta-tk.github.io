@@ -75,6 +75,7 @@ Toolkit comes with several predefined fact names that are used by our Multilingu
 It is important to notice that COMPANY and ADDR identify only companies and addresses registered in Estonian Open Data.
 It won't tag any foreign company nor address while ORG and LOC identifies all of them.
 
+.. _embedding_concept:
 
 Embedding
 ---------
