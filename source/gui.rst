@@ -291,7 +291,8 @@ In the table view we can also select several models and delete them all at once 
 
 .. _figure-12:
 
-.. figure:: images/tagger_result.png
+.. image:: images/tagger_result.png
+    :width: 100 %
 
     Figure 12. *Bribe_tag tagger*
 
@@ -328,8 +329,9 @@ Then we can hit create and see the training process and result of the tagger as 
 
 .. _figure-14:
 
-.. figure:: images/created_tagger_group.png
-
+.. image:: images/created_tagger_group.png
+    :width: 100 %
+    
     Figure 14. *Created Tagger Group*
 
 Whenever we create new Tagger Group models, we can track it's progress from the table under *Task*. If we click on the job, we can see all the training info, how long did it took, and check how successful it was. Let's not forget that:
