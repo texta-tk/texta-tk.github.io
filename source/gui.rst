@@ -270,7 +270,7 @@ Whenever we create a new Tagger model, we can track it's progress from the table
 	2. Precision is the ratio of correctly labeled positives among all instances that got a positive label.
 	3. F1 score is the harmonic mean of these two and should be more informative expecially with unbalanced data.
 
-If we click on the three dots under *Edit*, we can see a list of features to use.
+If we click on the three dots under *Edit*, we can see a list of extra actions to use.
 
 *List features* lists the word-features and their coefficients that the model used. Works with models that used Count Vectorizer or Tfldf Vectorizer since their output is displayable.
 
@@ -339,7 +339,7 @@ Whenever we create new Tagger Group models, we can track it's progress from the 
 	2. Precision is the ratio of correctly labeled positives among all instances that got a positive label. Avg.precision is the average of all the models' precisions.
 	3. F1 score is the harmonic mean of these two and should be more informative expecially with unbalanced data. Avg.F1_score is the average of all the models' F1 scores.
 
-If we click on the three dots under *Edit*, we can see a list of features to use.
+If we click on the three dots under *Edit*, we can see a list of extra actions to use.
 
 *Models retrain* retrains all of the Tagger Group models with all the chosen parameters. It's useful in case our dataset changes or we have added some stop words.
 
