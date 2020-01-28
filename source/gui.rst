@@ -148,7 +148,7 @@ If there are too many features (columns), we can hide or show them from the drop
 
 .. _figure-9:
 
-.. figure:: images/search_results_toggle.png
+.. image:: images/search_results_toggle.png
 
     Figure 9. *Select Fields for Search Results*
 
