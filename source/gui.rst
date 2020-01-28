@@ -139,7 +139,7 @@ The results might be updating while modifying the filters.
 
 .. _figure-8:
 
-.. image:: images/search_results.png
+.. figure:: images/search_results.png
     :width: 100 %
 
     Figure 8. *Example Search Results*
@@ -148,7 +148,7 @@ If there are too many features (columns), we can hide or show them from the drop
 
 .. _figure-9:
 
-.. image:: images/search_results_toggle.png
+.. figure:: images/search_results_toggle.png
 
     Figure 9. *Select Fields for Search Results*
 
@@ -291,7 +291,7 @@ In the table view we can also select several models and delete them all at once 
 
 .. _figure-12:
 
-.. image:: images/tagger_result.png
+.. figure:: images/tagger_result.png
     :width: 100 %
 
     Figure 12. *Bribe_tag tagger*
@@ -329,7 +329,7 @@ Then we can hit create and see the training process and result of the tagger as 
 
 .. _figure-14:
 
-.. image:: images/created_tagger_group.png
+.. figure:: images/created_tagger_group.png
     :width: 100 %
     
     Figure 14. *Created Tagger Group*
