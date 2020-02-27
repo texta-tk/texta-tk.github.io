@@ -17,6 +17,13 @@ services:
     volumes:
       - elastic-data:/usr/share/elasticsearch/data
 
+  texta-redis:
+    container_name: texta-redis
+    image: redis
+    restart: on-failure
+    ports:
+    - 6379:6379
+
   texta-postgres:
     container_name: texta-postgres
     image: postgres:11
@@ -42,6 +49,7 @@ services:
     depends_on:
       - texta-postgres
       - texta-elasticsearch
+      - texta-redis
 
   texta-front:
     container_name: texta-front
