@@ -1,4 +1,5 @@
 TEXTA_ES_URL=http://texta-elasticsearch:9200
+TEXTA_REDIS_URL=redis://redis:6379/0
 TEXTA_API_URL=http://localhost
 TEXTA_DEBUG=False
 
