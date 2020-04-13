@@ -246,8 +246,8 @@ Only *Tagger* can be trained with saved searches. Others learn their models on t
 
 .. _taggers:
 	
-Training Taggers
-^^^^^^^^^^^^^^^^^
+**Training Taggers**
+
 
 :ref:`Tagger <tagger_concept>` operates on saved searches and uses machine learning. We can create a new Tagger model by clicking on the '+CREATE' button in the bottom-left. Then we must choose the name for the new Tagger (*Description*) and the fields the model learns from. If we choose two, the fields are just concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (*eaten*, *eats* and *ate* will change to it's lemma *eat* and are dealt as one word).
 
@@ -300,8 +300,8 @@ In the table view we can also select several models and delete them all at once 
 
 .. _taggergroups:
 
-Training Tagger Groups
-^^^^^^^^^^^^^^^^^^^^^^^^
+**Training Tagger Groups**
+
 
 Tagger Group is for training multible classes at once and it also uses tags in the dataset given.
 
