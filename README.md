@@ -1,4 +1,4 @@
-# Shinx documentation for TEXTA Toolkit 2
+# Sphinx documentation for TEXTA Toolkit 2
 
 Documentation is built and uploaded automatically to docs.texta.ee website.
 
