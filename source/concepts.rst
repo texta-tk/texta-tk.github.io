@@ -146,3 +146,26 @@ Multilingual Processor
 ----------------------
 
 TODO
+
+.. _topic_analyzer_concept:
+
+Topic Analyzer
+------------
+
+Topic Analyzer is a tool that detects groups of similar documents in the data. It can be used for example to explore the structure of the unlabeled data in order to get the understanding about what it contains. However, the main purpose of the tool is to take it one step further and make actual use of one's exploration by tranforming their discoveries into the labelling. It can then be used to build supervised machine learning models.
+
+Topic Analyzer puts to use the best parts of unsupervised clustering and manual labelling. While clustering is a fast and efficient method to create groups of rather similar texts, it still lacks preciseness required to use these clusters as a labelling of the data. For example, while some clusters may indeed contain similar documents, some other will completely fail in capturing the similarity and most of them will probably be so-and-so. 
+
+Topic Analyzer allows user to look inside each cluster and make the decision about the quality manually. Users can also perform various actions on the cluster: remove documents, add more similar documents, and move documents to another more suitable cluster. Finally, user can choose to label the documents inside the cluster if it has reached a sufficient quality.
+
+
+
+
+
+
+
+
+
+
+
+
