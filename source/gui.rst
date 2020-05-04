@@ -371,6 +371,7 @@ To create a new grouping (or clustering, as we name it) navigate to Models -> Cl
 If desired, one can do some fine-tuning as well by choosing clustering algorithm and vectorizer and specifying the number of clusters (*Num clusters*) and the number of document vector dimensions (*Num dims*). 
 
 .. note::
+
 	**How to choose the number of clusters?**
 	General advice would be to better have too many clusters than too few. Think about how many documents you are planning to cluster and choose the number so that the average cluster is small enough to inspect it manually with ease. For example, if you are going to cluster 1000 documents to 50 clusters then average cluster would contain 20 documents. 
 
@@ -392,10 +393,12 @@ To see the clusters, click *View clusters* under Actions. This view gives us an 
 .. _figure-16
 
 .. figure:: images/clusters_view.png
+    :width: 100 %
 
     Figure 16. *Clusters view*
 
 .. note::
+
 	**Interpreting document count**
 	Cluster with significantly larger document count often indicates that the clustering algorithm has failed to separate these documents by the topic. It doesn't necessarily mean that the clustering process in general has been unsuccessful as often it is impossible to cluster all documents perfectly. However, you still might want to take a closer look to such clusters as there may be other reasons for such results as well. For example, the documents in that cluster may contain similar noise or stopwords that makes them artifically similar to each other. Sometimes increasing the number of clusters might help as well.
 
@@ -419,6 +422,7 @@ To query similar documents, click on a "More like this" button. In the opened vi
 .. _figure-17
 
 .. figure:: images/cluster_details_view.png
+    :width: 100 %
 
     Figure 17. *Cluster details view*
 
