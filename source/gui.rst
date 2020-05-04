@@ -412,7 +412,7 @@ To see content of a cluster, simply click on a cluster that is in your interest,
 
 **Operations with cluster**
 
-Cluster Details view allows us to inspect the actuals documents belonging to a cluster.
+Cluster Details view allows us to inspect actual documents belonging to a cluster.
 
 If we are satisfied with what it contains, we can tag the content by click "Tag" button. This operation adds a texta_fact to each of the document in the cluster, with specified name and a string value. From now on, these documents will be ignored in further clustering processes.
 
