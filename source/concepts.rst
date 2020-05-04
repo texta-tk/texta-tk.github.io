@@ -25,7 +25,7 @@ One of the most central components in TTK are Searches, which are used to define
 Fact
 ----
 
-In TEXTA jargon text annotations are regarded as facts: 
+In TTK text annotations are regarded as facts: 
 
 .. code-block:: bash
 
@@ -110,7 +110,7 @@ Furthermore, TTK will also employ cross-lingual embeddings developed by EMBEDDIA
 Tagger
 ------
 
-In TEXTA jargon taggers are monolingual binary text classifiers used to predict tags for documents, e.g. whether a tweet is toxic or talking about Brexit.
+Taggers are monolingual binary text classifiers used to predict tags for documents, e.g. whether a tweet is toxic or talking about Brexit.
 Taggers are trained using a subset of documents defined by a TTK search or a raw Elasticsearch query (big ugly JSON object).
 The subset of documents defines the “positive” set of examples (the documents about the topic being tagged), whilst “negative” examples will be selected automatically (to be unlike the positive ones).
 TTK taggers are trained using scikit-learn pipelines and includes models like logistic regression and SVM.
