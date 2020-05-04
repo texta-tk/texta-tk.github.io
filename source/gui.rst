@@ -359,7 +359,7 @@ In the table view we can also select several Tagger Groups and delete them all a
 
 .. _topic_analyzer:
 
-Using Topic Analyser
+Using Topic Analyzer
 --------------------
 
 Topic Analyzer is a tool that helps us to find groups of similar documents from the data and transform these groups into labels.
