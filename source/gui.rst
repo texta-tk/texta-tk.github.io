@@ -373,6 +373,7 @@ If desired, one can do some fine-tuning as well by choosing clustering algorithm
 .. note::
 
 	**How to choose the number of clusters?**
+	
 	General advice would be to better have too many clusters than too few. Think about how many documents you are planning to cluster and choose the number so that the average cluster is small enough to inspect it manually with ease. For example, if you are going to cluster 1000 documents to 50 clusters then average cluster would contain 20 documents. 
 
 Instead of using document-term matrix for clustering, we can also use compressed approximation of this matrix (with parameter *Use LSI*) which is constructed before the clustering process begins. However, LSI also requires the number of topics (dimensions in low-rank matrix) to be specified (*Num topics*).
@@ -400,9 +401,11 @@ To see the clusters, click *View clusters* under Actions. This view gives us an 
 .. note::
 
 	**Interpreting document count**
+	
 	Cluster with significantly larger document count often indicates that the clustering algorithm has failed to separate these documents by the topic. It doesn't necessarily mean that the clustering process in general has been unsuccessful as often it is impossible to cluster all documents perfectly. However, you still might want to take a closer look to such clusters as there may be other reasons for such results as well. For example, the documents in that cluster may contain similar noise or stopwords that makes them artifically similar to each other. Sometimes increasing the number of clusters might help as well.
 
 	**Interpreting average similarity**
+	
 	Average similarity is an average cosine similarity between all the documents in the cluster. It ranges between 0 and 1 and higher score indicates that the documents in that cluster are more similar to each other. However, the score has some disadvantages. For example, when a cluster contains 9 documents that are very similar to each other and 10th document is very different from all others, then the score might appear low althought fixing that cluster would be very easy.
 
 To see content of a cluster, simply click on a cluster that is in your interest, this opens you a Cluster Details view.
