@@ -414,7 +414,7 @@ To see content of a cluster, simply click on a cluster that is in your interest,
 
 Cluster Details view allows us to inspect actual documents belonging to a cluster.
 
-If we are satisfied with what it contains, we can tag the content by click "Tag" button. This operation adds a texta_fact to each of the document in the cluster, with specified name and a string value. From now on, these documents will be ignored in further clustering processes.
+If we are satisfied with what it contains, we can tag the content by clicking "Tag" button. This operation adds a texta_fact to each of the document in the cluster, with specified name and a string value. **From now on, these documents will be ignored in further clustering processes**.
 
 If not satisfied, we probably want to do some corrections in the cluster content manually, that is, remove some documents from it. This can be done by selecting the documents that we want to remove and clicking on trash bin icon. Note that these documents will not be ignored in further clustering process.
 
