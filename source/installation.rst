@@ -38,8 +38,6 @@ To successfully run TEXTA Toolkit we need to define following services:
 
 * TEXTA Toolkit RESTful API for backend: docker.texta.ee/texta/texta-rest:latest
 
-* TEXTA Toolkit Angular frontend: docker.texta.ee/texta/texta-rest-front:latest
-
 For executing aforementioned services we have preconfigured an example **docker-compose.yaml** file:
 
 .. literalinclude:: files/docker-compose.yaml
@@ -81,7 +79,7 @@ For running in detached mode, use the *-d* flag:
 
 When running, TEXTA Toolkit's GUI should be available at:
 
-* http://localhost:4200 
+* http://localhost
 
 and API at:
 
