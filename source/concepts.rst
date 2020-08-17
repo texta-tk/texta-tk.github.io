@@ -82,14 +82,14 @@ It won't tag any foreign company nor address while ORG and LOC identifies all of
 .. _index_concept:
 
 Index
-----
+-----
 
 Index is a collection of documents in Elasticsearch. In Search output the table consists of all the suitable documents filtered out from that index and one row indicates a document.
 
 .. _field_concept:
 
 Field
-----
+-----
 
 Each document is a collection of fields. Field is a separated piece of information in that document. For example, we can have an article with fields containing the text, the date of publishing, headline, etc.
 
@@ -150,7 +150,7 @@ TODO
 .. _topic_analyzer_concept:
 
 Topic Analyzer
-------------
+--------------
 
 Topic Analyzer is a tool that detects groups of similar documents in the data. It can be used for example to explore the structure of the unlabeled data in order to get the understanding about what it contains. However, the main purpose of the tool is to take it one step further and make actual use of one's exploration by transforming their discoveries into the labelling. It can then be used to build supervised machine learning models.
 

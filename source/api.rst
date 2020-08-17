@@ -289,10 +289,42 @@ Response:
             "probability": 0.36259710788726807
         }           
 
+
+Dataset Importer
+----------------
+
+This module allows the user to insert jsonlines, csv and excel files into Elasticsearch
+to make them accessible by the Toolkit. Please note that this process reads the whole
+file into the memory and can thus create memory issues when trying to process bigger files, it is advisable to split such
+files up into smaller chunks and process each one separately.
+
+This whole process is asynchronous so the response to the call will be instantaneous and it since it takes a bit time
+to load the file into the memory, the first 10 seconds might not display any signs of the progress changing.
+
+Parameters:
++++++++++++
+
+* description - Normal description to separate any given task from the other ones.
+* index - Name of the newly created index, please note that Elasticsearch index naming restrictions apply.
+* separator - Only needed for .csv files, defaults to a coma (,). Allows to configure the separator for csv files.
+
+
+Example:
+
+@ is special syntax for reading the binary of the given file name.
+
+.. code-block:: bash
+
+        curl -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -F "description=Articles" \
+        -F "index=en_articles" \
+        -F "file=@FILE_NAME.csv" \
+        http://localhost:8000/api/v1/projects/11/dataset_imports/
+
 Browsable API
 -------------
 
-* http://localhost/api/v1/
+* http://localhost:8000/api/v1/
 
 TODO
 
@@ -303,6 +335,6 @@ API Reference
 
 Reference for Toolkit API is available when running the Toolkit:
 
-* http://localhost/api/v1/swagger/
+* http://localhost:8000/api/v1/swagger/
 
-* http://localhost/api/v1/redoc/
+* http://localhost:8000/api/v1/redoc/
