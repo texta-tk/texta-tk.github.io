@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Installation &#8212; TEXTA Toolkit 2 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Main Concepts of Toolkit" href="concepts.html" />
+    <link rel="prev" title="Texta Toolkit" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation-using-docker-recommended">
+<h2>Installation Using Docker (recommended)<a class="headerlink" href="#installation-using-docker-recommended" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently all installation examples for system dependencies are only shown for Debian-based systems.</p>
+</div>
+<div class="section" id="install-docker">
+<h3>Install Docker<a class="headerlink" href="#install-docker" title="Permalink to this headline">¶</a></h3>
+<p>The easiest way to run TEXTA Toolkit is to use our prebuilt Docker images from our registries. For doing so, one needs to install <em>Docker</em> and <em>docker-compose</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">docker</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="o">-</span><span class="n">y</span>
+</pre></div>
+</div>
+<p>To run Elasticsearch in Docker, we need to increase maximum map count parameter for virtual memory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">sysctl</span> <span class="o">-</span><span class="n">w</span> <span class="n">vm</span><span class="o">.</span><span class="n">max_map_count</span><span class="o">=</span><span class="mi">262144</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-docker-compose">
+<h3>Configure docker-compose<a class="headerlink" href="#configure-docker-compose" title="Permalink to this headline">¶</a></h3>
+<p>We are using <em>docker-compose</em> to build an ecosystem of services to support our needs. This is all defined in a file called <strong>docker-compose.yaml</strong>.
+To successfully run TEXTA Toolkit we need to define following services:</p>
+<ul class="simple">
+<li><p>Elasticsearch for storing the documents (one can also run it without Docker)</p></li>
+<li><p>MySQL or Postgres for storing user and project data (can also be run without Docker)</p></li>
+<li><p>TEXTA Toolkit RESTful API for backend: docker.texta.ee/texta/texta-rest:latest</p></li>
+<li><p>TEXTA Toolkit Angular frontend: docker.texta.ee/texta/texta-rest-front:latest</p></li>
+</ul>
+<p>For executing aforementioned services we have preconfigured an example <strong>docker-compose.yaml</strong> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s1">&#39;3&#39;</span>
+
+<span class="n">services</span><span class="p">:</span>
+
+  <span class="n">texta</span><span class="o">-</span><span class="n">elasticsearch</span><span class="p">:</span>
+    <span class="n">container_name</span><span class="p">:</span> <span class="n">texta</span><span class="o">-</span><span class="n">elasticsearch</span>
+    <span class="n">restart</span><span class="p">:</span> <span class="n">on</span><span class="o">-</span><span class="n">failure</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">docker</span><span class="o">.</span><span class="n">elastic</span><span class="o">.</span><span class="n">co</span><span class="o">/</span><span class="n">elasticsearch</span><span class="o">/</span><span class="n">elasticsearch</span><span class="o">-</span><span class="n">oss</span><span class="p">:</span><span class="mf">6.7</span><span class="o">.</span><span class="mi">2</span>
+    <span class="n">ports</span><span class="p">:</span>
+      <span class="o">-</span> <span class="mi">9200</span><span class="p">:</span><span class="mi">9200</span>
+    <span class="n">environment</span><span class="p">:</span>
+     <span class="o">-</span> <span class="n">bootstrap</span><span class="o">.</span><span class="n">memory_lock</span><span class="o">=</span><span class="n">true</span>
+    <span class="n">ulimits</span><span class="p">:</span>
+      <span class="n">memlock</span><span class="p">:</span>
+        <span class="n">soft</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">hard</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">volumes</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">elastic</span><span class="o">-</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">elasticsearch</span><span class="o">/</span><span class="n">data</span>
+
+  <span class="n">texta</span><span class="o">-</span><span class="n">redis</span><span class="p">:</span>
+    <span class="n">container_name</span><span class="p">:</span> <span class="n">texta</span><span class="o">-</span><span class="n">redis</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">redis</span>
+    <span class="n">restart</span><span class="p">:</span> <span class="n">on</span><span class="o">-</span><span class="n">failure</span>
+    <span class="n">ports</span><span class="p">:</span>
+    <span class="o">-</span> <span class="mi">6379</span><span class="p">:</span><span class="mi">6379</span>
+
+  <span class="n">texta</span><span class="o">-</span><span class="n">postgres</span><span class="p">:</span>
+    <span class="n">container_name</span><span class="p">:</span> <span class="n">texta</span><span class="o">-</span><span class="n">postgres</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">postgres</span><span class="p">:</span><span class="mi">11</span>
+    <span class="n">restart</span><span class="p">:</span> <span class="n">on</span><span class="o">-</span><span class="n">failure</span>
+    <span class="n">ports</span><span class="p">:</span>
+      <span class="o">-</span> <span class="mi">5432</span><span class="p">:</span><span class="mi">5432</span>
+    <span class="n">environment</span><span class="p">:</span>
+      <span class="n">POSTGRES_DATABASE</span><span class="p">:</span> <span class="n">docker</span>
+      <span class="n">POSTGRES_USER</span><span class="p">:</span> <span class="n">docker</span>
+      <span class="n">POSTGRES_PASSWORD</span><span class="p">:</span> <span class="n">docker</span>
+    <span class="n">volumes</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">postgres</span><span class="o">-</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">postgresql</span><span class="o">/</span><span class="n">data</span>
+
+  <span class="n">texta</span><span class="o">-</span><span class="n">rest</span><span class="p">:</span>
+    <span class="n">container_name</span><span class="p">:</span> <span class="n">texta</span><span class="o">-</span><span class="n">rest</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">docker</span><span class="o">.</span><span class="n">texta</span><span class="o">.</span><span class="n">ee</span><span class="o">/</span><span class="n">texta</span><span class="o">/</span><span class="n">texta</span><span class="o">-</span><span class="n">rest</span><span class="p">:</span><span class="n">latest</span>
+    <span class="n">ports</span><span class="p">:</span>
+      <span class="o">-</span> <span class="mi">80</span><span class="p">:</span><span class="mi">80</span>
+    <span class="n">env_file</span><span class="p">:</span>
+      <span class="o">-</span> <span class="o">./</span><span class="n">env</span>
+    <span class="n">volumes</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">toolkit</span><span class="o">-</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">texta</span><span class="o">-</span><span class="n">rest</span><span class="o">/</span><span class="n">data</span>
+    <span class="n">depends_on</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">texta</span><span class="o">-</span><span class="n">postgres</span>
+      <span class="o">-</span> <span class="n">texta</span><span class="o">-</span><span class="n">elasticsearch</span>
+      <span class="o">-</span> <span class="n">texta</span><span class="o">-</span><span class="n">redis</span>
+
+  <span class="n">texta</span><span class="o">-</span><span class="n">front</span><span class="p">:</span>
+    <span class="n">container_name</span><span class="p">:</span> <span class="n">texta</span><span class="o">-</span><span class="n">front</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">docker</span><span class="o">.</span><span class="n">texta</span><span class="o">.</span><span class="n">ee</span><span class="o">/</span><span class="n">texta</span><span class="o">/</span><span class="n">texta</span><span class="o">-</span><span class="n">rest</span><span class="o">-</span><span class="n">front</span><span class="p">:</span><span class="n">latest</span>
+    <span class="n">ports</span><span class="p">:</span>
+      <span class="o">-</span> <span class="mi">4200</span><span class="p">:</span><span class="mi">80</span>
+    <span class="n">restart</span><span class="p">:</span> <span class="n">always</span>
+    <span class="n">env_file</span><span class="p">:</span>
+      <span class="o">-</span> <span class="o">./</span><span class="n">env</span>
+
+<span class="n">volumes</span><span class="p">:</span>
+  <span class="n">elastic</span><span class="o">-</span><span class="n">data</span><span class="p">:</span>
+  <span class="n">toolkit</span><span class="o">-</span><span class="n">data</span><span class="p">:</span>
+  <span class="n">postgres</span><span class="o">-</span><span class="n">data</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>The compose file is used in combination with <strong>env</strong> file located in the same directory as <em>docker-compose.yaml</em> containing environment variables needed for operating TEXTA Toolkit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TEXTA_ES_URL</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">texta</span><span class="o">-</span><span class="n">elasticsearch</span><span class="p">:</span><span class="mi">9200</span>
+<span class="n">TEXTA_REDIS_URL</span><span class="o">=</span><span class="n">redis</span><span class="p">:</span><span class="o">//</span><span class="n">texta</span><span class="o">-</span><span class="n">redis</span><span class="p">:</span><span class="mi">6379</span><span class="o">/</span><span class="mi">0</span>
+<span class="n">TEXTA_API_URL</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span>
+<span class="n">TEXTA_DEBUG</span><span class="o">=</span><span class="kc">False</span>
+
+<span class="n">DJANGO_DATABASE_ENGINE</span><span class="o">=</span><span class="n">django</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">postgresql</span>
+<span class="n">DJANGO_DATABASE_NAME</span><span class="o">=</span><span class="n">docker</span>
+<span class="n">DJANGO_DATABASE_USER</span><span class="o">=</span><span class="n">docker</span>
+<span class="n">DJANGO_DATABASE_PASSWORD</span><span class="o">=</span><span class="n">docker</span>
+<span class="n">DJANGO_DATABASE_HOST</span><span class="o">=</span><span class="n">texta</span><span class="o">-</span><span class="n">postgres</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-texta-toolkit">
+<h3>Run TEXTA Toolkit<a class="headerlink" href="#run-texta-toolkit" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before running TEXTA Toolkit, we should have 2 files in our current working directory:</p>
+<ul class="simple">
+<li><p>docker-compose.yaml</p></li>
+<li><p>env</p></li>
+</ul>
+</div>
+<p>With the <strong>docker-compose.yaml</strong> and <strong>env</strong> files present and accounted for,
+let’s pull the images and start the services by executing the following commands in the same directory with <strong>docker-compose.yaml</strong> and <strong>env</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">pull</span>
+<span class="n">sudo</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span>
+</pre></div>
+</div>
+<p>For running in detached mode, use the <em>-d</em> flag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>TEXTA Toolkit’s dockerized version comes with a default superuser account:</p>
+<p><strong>user:</strong> admin</p>
+<p><strong>password:</strong> 1234</p>
+</div>
+<p>When running, TEXTA Toolkit’s GUI should be available at:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://localhost:4200">http://localhost:4200</a></p></li>
+</ul>
+<p>and API at:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://localhost/api/v1/">http://localhost/api/v1/</a></p></li>
+</ul>
+<p>For stopping the services:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">down</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="installation-for-development">
+<h2>Installation for Development<a class="headerlink" href="#installation-for-development" title="Permalink to this headline">¶</a></h2>
+<p>If you want to develop TEXTA Toolkit, want more control over how you run it, or seriously dislike Docker, it is also possible to install Toolkit using Anaconda (or Miniconda as shown in following examples).</p>
+<div class="section" id="install-miniconda">
+<h3>Install Miniconda<a class="headerlink" href="#install-miniconda" title="Permalink to this headline">¶</a></h3>
+<p>First we need to download and install Miniconda to manage Python environments.
+We choose Miniconda over Anaconda because it’s smaller in size, but Toolkit works well with both.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sh Miniconda3-latest-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>Also, let’s permanently put Conda binaries to <strong>PATH</strong> variable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;export PATH=/path/to/miniconda3/bin:$PATH&#39;</span> &gt;&gt; ~/.bashrc
+</pre></div>
+</div>
+</div>
+<div class="section" id="clone-the-repository">
+<h3>Clone the Repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this headline">¶</a></h3>
+<p>Now, let’s clone the repository and move to <strong>texta-rest</strong> direcory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://git.texta.ee/texta/texta-rest
+<span class="nb">cd</span> texta-rest
+</pre></div>
+</div>
+</div>
+<div class="section" id="build-the-environment">
+<h3>Build the Environment<a class="headerlink" href="#build-the-environment" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have <strong>environment.yaml</strong> file from the texta-rest repository, let’s use it to build the environment.
+After the environment is built, let’s activate it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yaml
+conda activate texta-rest
+</pre></div>
+</div>
+</div>
+<div class="section" id="migrate-run-toolkit">
+<h3>Migrate &amp; Run Toolkit<a class="headerlink" href="#migrate-run-toolkit" title="Permalink to this headline">¶</a></h3>
+<p>After the environment has been created and activated, let’s prepare the database:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python migrate.py
+</pre></div>
+</div>
+<p>Running the <strong>migrate.py</strong> script will prepare Django migrations and execute them.
+It is necessary to run the script every time the source code changes because Toolkit’s data model might have changed as well.
+It is also required to run the script before using Toolkit for the first time to create both superuser account and database used to store the data model.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Running <strong>migrate.py</strong> will also create a default superuser account with following credentials:</p>
+<p><strong>user:</strong> admin</p>
+<p><strong>password:</strong> 1234</p>
+</div>
+<p>Finally let’s run the development server:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python manage.py runserver
+</pre></div>
+</div>
+<p>And in another terminal run the Celery worker responsible for asynchronous tasks:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>celery -A toolkit.taskman worker -l info
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TEXTA Toolkit</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation-using-docker-recommended">Installation Using Docker (recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-for-development">Installation for Development</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Main Concepts of Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">Tutorial: Using Toolkit via GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Tutorial: Using Toolkit via API</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Texta Toolkit</a></li>
+      <li>Next: <a href="concepts.html" title="next chapter">Main Concepts of Toolkit</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020 TEXTA.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/installation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
