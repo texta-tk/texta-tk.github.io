@@ -1,38 +1,58 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2020 TEXTA
-# This file is distributed under the same license as the TEXTA Toolkit package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 12:04+0300\n"
+"POT-Creation-Date: 2020-08-27 15:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
 
-#: ../../source/index.rst:21
 #: ../../source/index.rst:21
 msgid "Contents:"
 msgstr "Sisukord:"
 
 #: ../../source/index.rst:7
 msgid "Texta Toolkit"
-msgstr ""
+msgstr "Texta Toolkit"
 
 #: ../../source/index.rst:9
-msgid "TEXTA Toolkit is an open-source software for building RESTful text analytics applications. It is being developed by `TEXTA Ltd <https://www.texta.ee>`_. This documentation contains information about installing and running **TEXTA Toolkit 2.x**."
-msgstr "SEE LEHT MUUTUB EESTIKEELSEKS."
+#, fuzzy
+msgid ""
+"TEXTA Toolkit is an open-source software for building RESTful text "
+"analytics applications. It is being developed by `TEXTA Ltd "
+"<https://www.texta.ee>`_. This documentation contains information about "
+"installing and running **TEXTA Toolkit 2.x**."
+msgstr ""
+"TEXTA Toolkit on vabavaraline tekstianalüütika tarkvara, mis kasutab RESTi."
+"Seda arendab `TEXTA OÜ "
+"<https://www.texta.ee>`_. Siin leiab infot **TEXTA Toolkit 2.x**-e installimise"
+"ja käivitamise kohta."
 
 #: ../../source/index.rst:13
-msgid "The source code for Toolkit's Django REST API is available at `git.texta.ee/texta/texta-rest <https://git.texta.ee/texta/texta-rest>`_."
+msgid ""
+"The source code for Toolkit's Django REST API is available at "
+"`git.texta.ee/texta/texta-rest <https://git.texta.ee/texta/texta-rest>`_."
 msgstr ""
+"Toolkiti Django REST API lähtekood on aadressil "
+"`git.texta.ee/texta/texta-rest <https://git.texta.ee/texta/texta-rest>`_."
 
 #: ../../source/index.rst:15
-msgid "The source code for Toolkit's Angular GUI is available at `git.texta.ee/texta/texta-rest-front <https://git.texta.ee/texta/texta-rest-front>`_."
+msgid ""
+"The source code for Toolkit's Angular GUI is available at "
+"`git.texta.ee/texta/texta-rest-front <https://git.texta.ee/texta/texta-"
+"rest-front>`_."
 msgstr ""
+"Toolkit's Angular GUI lähtekood on aadressil"
+"`git.texta.ee/texta/texta-rest-front <https://git.texta.ee/texta/texta-"
+"rest-front>`_."

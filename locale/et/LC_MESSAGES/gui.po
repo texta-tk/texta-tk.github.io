@@ -18,115 +18,115 @@ msgstr ""
 
 #: ../../source/gui.rst:2
 msgid "Tutorial: Using Toolkit via GUI"
-msgstr ""
+msgstr "Juhend: Toolkiti GUI kasutamine"
 
 #: ../../source/gui.rst:4
 msgid "This is documentation is for TEXTA Toolkit version 2 GUI backed with TEXTA Toolkit's RESTful API."
-msgstr ""
+msgstr "See dokumentatsioon on TEXTA Toolkiti teise versiooni GUI kohta, mille taustaprogrammiks on Texta Toolkiti RESTful API."
 
 #: ../../source/gui.rst:8
 msgid "Registration & Login"
-msgstr ""
+msgstr "Registreerimine ja sisse logimine"
 
 #: ../../source/gui.rst:10
 msgid "Since TEXTA Toolkit is a web application, we have to navigate to the corresponding address in our browser (e.g. `http://localhost/`). We are welcomed by a login page as depicted in Figure 1."
-msgstr ""
+msgstr "Kuna TEXTA Toolkit on veebirakendus, peame navigeerima vastavale aadressile oma brauseris (nt `http://localhost/`). Joonisel 1 on näha sisselogimislehte."
 
 #: ../../source/gui.rst:17
 msgid "Figure 1. *Login Screen at Startup*"
-msgstr ""
+msgstr "Joonis 2. *Sisselogimisleht*"
 
 #: ../../source/gui.rst:19
 msgid "One can also register new users using the registration screen:"
-msgstr ""
+msgstr "Registreerimislehel saab registreerida uusi kasutajaid:"
 
 #: ../../source/gui.rst:25
 msgid "Figure 2. *Registration Screen*"
-msgstr ""
+msgstr "Joonis 2. *Registreerimisleht* "
 
 #: ../../source/gui.rst:29
 msgid "When running for the first time, check the default superuser account **admin** created during installation."
-msgstr ""
+msgstr "Toolkiti esimest korda jooksutamisel, uuri vaikimisi superkasutaja kontot **admin**, mis loodi installimise ajal."
 
 #: ../../source/gui.rst:31
 msgid "After login have several navigation options in the upper panel. We can see our projects (also projected as the home page) and we can work with our projects via :ref:`Search <search>`, :ref:`Lexicons <lexicons>`, :ref:`Models <models>` and :ref:`Tools <tools>`."
-msgstr ""
+msgstr "Peale sisse logimist on meil ülemisel ribal mitu valikut. Me võime näha oma projekte (see vaade on ka avalehena) ja me saame oma prohektidega töötada erinevate tööriistadega: :ref:`Search <search>`, :ref:`Lexicons <lexicons>`, :ref:`Models <models>` ja :ref:`Tools <tools>`"
 
 #: ../../source/gui.rst:38
 msgid "Figure 3. *Top Panel for Navigation*"
-msgstr ""
+msgstr "Joonis 3. *Ülemine riba navigeerimiseks*"
 
 #: ../../source/gui.rst:41
 msgid "Health of Toolkit"
-msgstr ""
+msgstr "Toolkiti seisund"
 
 #: ../../source/gui.rst:43
 msgid "On the **Projects page** (also Toolkit's home page) we can see technical information about TEXTA Toolkit's server on the right. There are several labels that indicate the state of Toolkit and the host machine its working on (Figure 4):"
-msgstr ""
+msgstr "**Projects** all (Toolkiti avalehel) näeme tehnilist infot TEXTA Toolkiti serveri seisundi kohta. Seal on mitmeid mõõdikuid, mis kirjeldavad Toolkiti ja masina, milles see töötab, seisundit (Joonis 4):"
 
 #: ../../source/gui.rst:50
 msgid "Figure 4. *Toolkit Status*"
-msgstr ""
+msgstr "Joonis 4. *Toolkiti staatus*"
 
 #: ../../source/gui.rst:54
 msgid "Managing Projects"
-msgstr ""
+msgstr "Projektide haldamine"
 
 #: ../../source/gui.rst:57
 msgid "Creating a Project"
-msgstr ""
+msgstr "Projekti loomine"
 
 #: ../../source/gui.rst:59
 msgid "In order to play with the data, we need to create a new project. We can create a project by clicking the **+ CREATE** button at the bottom of the page. We can then give it a title, select users who can work on the project and, of course, select datasets (Elasticsearch :ref:`indices <index_concept>`) for the project."
-msgstr ""
+msgstr "Andmestikuga mängimiseks on vaja luua uus projekt. Uut projekti saab luua vajutades **+ CREATE** nupule lehe allosas. Seejärel saame projektile anda nime, valida projektiga tegelevad kasutajad ning, muidugi, kõige tähtsama - andmestiku, millel mängima hakkame (Elasticsearchi :ref:`indeksid <index_concept>`)."
 
 #: ../../source/gui.rst:63
 msgid "After the project is created, we can see the new project in the list and can change its datasets and user access via the **Edit** button."
-msgstr ""
+msgstr "Pärast projekti loomist näeme uut projekti projektide nimekirjas. **Edit** nupuga saame jooksvalt muuta projekti andmestikke ja kasutajate ligipääse."
 
 #: ../../source/gui.rst:66
 msgid "Using a Project"
-msgstr ""
+msgstr "Projekti kasutamine"
 
 #: ../../source/gui.rst:68
 msgid "In order to work with our project (search info, train taggers) we have to select it from the upper panel next to our username:"
-msgstr ""
+msgstr "Projektis töötamiseks (valitud andmestikul info otsimiseks ja märgendajate treenimiseks) peame valima projektinime ülemisel ribal kasutajanime kõrval: "
 
 #: ../../source/gui.rst:74
 msgid "Figure 5. *Project Selection*"
-msgstr ""
+msgstr "Joonis 5. *Projekti valimine*"
 
 #: ../../source/gui.rst:77
 msgid "Only one project can be activated at a time."
-msgstr ""
+msgstr "Korraga saab aktiveeritud olla ainult üks projekt."
 
 #: ../../source/gui.rst:79
 msgid "Each project can have one or more datasets (Elasticsearch indices)."
-msgstr ""
+msgstr "Igal projektil võib olla üks või rohkem andmestikku (Elasticsearchi indeksit)."
 
 #: ../../source/gui.rst:81
 msgid "Project resources are shared among the users with access to the project."
-msgstr ""
+msgstr "Kasutajad, kellel on ligipääs antud projektile, jagavad projekti ressursse."
 
 #: ../../source/gui.rst:84
 msgid "Search: Exploring the Data"
-msgstr ""
+msgstr "Search: Andmestiku uurimine"
 
 #: ../../source/gui.rst:86
 msgid "The Search application is responsible for both creating the searches defining subsets of documents for Toolkit's other applications and browsing-summarizing the data."
-msgstr ""
+msgstr "Otsingurakenduses (*Search*) saab andmeid lehitseda ja kokku võtta ning luua andmete alamhulki, mida saab hiljem kasutada Toolkiti järgmistes rakendustes."
 
 #: ../../source/gui.rst:89
 msgid "In order to use **Search**, project must be selected in upper panel."
-msgstr ""
+msgstr "**Search**-i kasutamiseks peab olema projekt aktiveeritud (valitud) ülemisel paneelribal."
 
 #: ../../source/gui.rst:91
 msgid "Search's graphical interface consists of serveral important panels, which are depicted in Figure 6. We can collapse or open the panels by clicking on the arrow in the corner."
-msgstr ""
+msgstr "Search-i graafilises kasutajaliideses on mitu olulist paneeli (kujutatud Joonisel 6). Me saame neid avada või kokku panna, kui vajutame paneeli nurgas olevale noolekesele."
 
 #: ../../source/gui.rst:98
 msgid "Figure 6. *Search Panel*"
-msgstr ""
+msgstr "Joonis 6. *Otsingupaneel*"
 
 #: ../../source/gui.rst:100
 msgid ":ref:`Current Search <currentsearch>`"
@@ -146,7 +146,7 @@ msgstr ""
 
 #: ../../source/gui.rst:109
 msgid "Data browsing and summarization depend on searches. Search consists of a set of constraints on :ref:`field <field_concept>` values. We can define our constraints on the data using the *Current Search* panel. Without saving the constraints, we are in a “test mode”, which means that we can use the search in real time, but we cannot use the search in other tools. After saving the search, it is available also to other tools."
-msgstr ""
+msgstr "Andmete lehitsemine ja kokkuvõtete tegemine sõltub otsingutest. Otsing on hulk piiranguid mingi(te)le :ref: `field (välja) <field_concept>` väärtustele. Me saame defineerida oma piiranguid andmete filtreerimiseks *Current Search* paneelil. Seni, kuni me ei salvesta oma piiranguid, oleme “testimisrežiimis”, mis tähendab, et me saame oma otsingut kasutada ja uurida **Search**-is, aga ei saa seda kasutada teistes vahendites. Salvestamine muudab selle teistele vahenditele kättesaadavaks."
 
 #: ../../source/gui.rst:113
 msgid "In order to add a constraint, we must first choose one or several fields. After the field is selected, we can then specify which textual tokens (words or word parts) should or must occur in the interested document subset."

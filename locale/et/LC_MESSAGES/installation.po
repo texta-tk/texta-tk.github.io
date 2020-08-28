@@ -18,67 +18,67 @@ msgstr ""
 
 #: ../../source/installation.rst:4
 msgid "Installation"
-msgstr ""
+msgstr "Installimine"
 
 #: ../../source/installation.rst:7
 msgid "Installation Using Docker (recommended)"
-msgstr ""
+msgstr "Installimine Dockeriga (soovitatud)"
 
 #: ../../source/installation.rst:11
 msgid "Currently all installation examples for system dependencies are only shown for Debian-based systems."
-msgstr ""
+msgstr "Hetkel on kõik süsteeminõuete installimise näited siin vaid Debian-i põhistel süsteemidel."
 
 #: ../../source/installation.rst:14
 msgid "Install Docker"
-msgstr ""
+msgstr "Dockeri installimine"
 
 #: ../../source/installation.rst:16
 msgid "The easiest way to run TEXTA Toolkit is to use our prebuilt Docker images from our registries. For doing so, one needs to install *Docker* and *docker-compose*:"
-msgstr ""
+msgstr "Lihtsaim viis TEXTA Toolkiti jooksutamiseks on käivitada ettevalmistatud dokeripilte meie registritest. Selleks peab installima *Docker*-i and *docker-compose*-i:"
 
 #: ../../source/installation.rst:23
 msgid "To run Elasticsearch in Docker, we need to increase maximum map count parameter for virtual memory:"
-msgstr ""
+msgstr "Elasticsearchi Docker-is kasutamiseks on vaja tõsta maksimaalset map count parameetrit virtuaalmälule:"
 
 #: ../../source/installation.rst:30
 msgid "Configure docker-compose"
-msgstr ""
+msgstr "Seadista docker-compose"
 
 #: ../../source/installation.rst:32
 msgid "We are using *docker-compose* to build an ecosystem of services to support our needs. This is all defined in a file called **docker-compose.yaml**. To successfully run TEXTA Toolkit we need to define following services:"
-msgstr ""
+msgstr "Me kasutame *docker-compose*-i selleks, et meil oleks keskkond, mille teenused rahuldaksid meie vajadusi. Need teenused on defineeritud failis **docker-compose.yaml**. TEXTA Toolkiti edukaks jooksutamiseks on vaja järgnevaid teenuseid:"
 
 #: ../../source/installation.rst:35
 msgid "Elasticsearch for storing the documents (one can also run it without Docker)"
-msgstr ""
+msgstr "Elasticsearch dokumentide hoiustamiseks (saab kasutada ka Docerita)"
 
 #: ../../source/installation.rst:37
 msgid "MySQL or Postgres for storing user and project data (can also be run without Docker)"
-msgstr ""
+msgstr "MySQL ja Postgres kasutaja ja projektiandmete hoiustamiseks (saab kasutada ka Docerita)"
 
 #: ../../source/installation.rst:39
 msgid "TEXTA Toolkit RESTful API for backend: docker.texta.ee/texta/texta-rest:latest"
-msgstr ""
+msgstr "TEXTA Toolkit RESTful API (*backend*): docker.texta.ee/texta/texta-rest:latest"
 
 #: ../../source/installation.rst:41
 msgid "TEXTA Toolkit Angular frontend: docker.texta.ee/texta/texta-rest-front:latest"
-msgstr ""
+msgstr "TEXTA Toolkit Angular (*frontend*): docker.texta.ee/texta/texta-rest-front:latest"
 
 #: ../../source/installation.rst:43
 msgid "For executing aforementioned services we have preconfigured an example **docker-compose.yaml** file:"
-msgstr ""
+msgstr "Eelnimetatud teenuste käivitamiseks oleme loonud **docker-compose.yaml** näidisfaili: "
 
 #: ../../source/installation.rst:47
 msgid "The compose file is used in combination with **env** file located in the same directory as *docker-compose.yaml* containing environment variables needed for operating TEXTA Toolkit:"
-msgstr ""
+msgstr "Seda faili kasutatakse üheskoos **env** failiga, mis on *docker-compose.yaml*-iga samas kaustas ja mis sisaldab endas *enviroment* muutujaid, mida on TEXTA Toolkiti jooksutamiseks tarvis:"
 
 #: ../../source/installation.rst:52
 msgid "Run TEXTA Toolkit"
-msgstr ""
+msgstr "TEXTA Toolkiti käivitamine"
 
 #: ../../source/installation.rst:55
 msgid "Before running TEXTA Toolkit, we should have 2 files in our current working directory:"
-msgstr ""
+msgstr "Enne TEXTA Toolkiti käivitamist peab töökaustas olema 2 faili:"
 
 #: ../../source/installation.rst:57
 msgid "docker-compose.yaml"
@@ -90,15 +90,15 @@ msgstr ""
 
 #: ../../source/installation.rst:61
 msgid "With the **docker-compose.yaml** and **env** files present and accounted for, let's pull the images and start the services by executing the following commands in the same directory with **docker-compose.yaml** and **env**:"
-msgstr ""
+msgstr "Kui failid **docker-compose.yaml** ja **env** on valmis, võib dokkeripildid alla tõmmata ja teenused käivitada, kasutades järgnevaid käske **docker-compose.yaml** ja **env** failidega samas kaustas:"
 
 #: ../../source/installation.rst:69
 msgid "For running in detached mode, use the *-d* flag:"
-msgstr ""
+msgstr "*Detached mode*-i kasutamiseks kasuta *-d* lippu: "
 
 #: ../../source/installation.rst:76
 msgid "TEXTA Toolkit's dockerized version comes with a default superuser account:"
-msgstr ""
+msgstr "TEXTA Toolkit-i dokkeriversiooniga tuleb vaikimisi kaasa superkasutaja konto:"
 
 #: ../../source/installation.rst:78
 #: ../../source/installation.rst:157
@@ -112,7 +112,7 @@ msgstr ""
 
 #: ../../source/installation.rst:82
 msgid "When running, TEXTA Toolkit's GUI should be available at:"
-msgstr ""
+msgstr "Kui TEXTA Toolkit jookseb, on selle GUI saadaval aadressil:"
 
 #: ../../source/installation.rst:84
 msgid "http://localhost:4200"
@@ -120,7 +120,7 @@ msgstr ""
 
 #: ../../source/installation.rst:86
 msgid "and API at:"
-msgstr ""
+msgstr "ja api aadressil:"
 
 #: ../../source/installation.rst:88
 msgid "http://localhost/api/v1/"
@@ -128,64 +128,64 @@ msgstr ""
 
 #: ../../source/installation.rst:90
 msgid "For stopping the services:"
-msgstr ""
+msgstr "Teenuste peatamiseks kasuta käsku:"
 
 #: ../../source/installation.rst:98
 msgid "Installation for Development"
-msgstr ""
+msgstr "Installimine arenduse jaoks"
 
 #: ../../source/installation.rst:100
 msgid "If you want to develop TEXTA Toolkit, want more control over how you run it, or seriously dislike Docker, it is also possible to install Toolkit using Anaconda (or Miniconda as shown in following examples)."
-msgstr ""
+msgstr "Kui Sulle ei meeldi Docker või soovid TEXTA Toolkitti arendada ja saada selle jooksutamise üle rohkem kontrolli, võid Toolkitti installida ka Anacondaga (või Minicondaga nagu on näidetes näha)."
 
 #: ../../source/installation.rst:103
 msgid "Install Miniconda"
-msgstr ""
+msgstr "Installi Miniconda"
 
 #: ../../source/installation.rst:105
 msgid "First we need to download and install Miniconda to manage Python environments. We choose Miniconda over Anaconda because it's smaller in size, but Toolkit works well with both."
-msgstr ""
+msgstr "Esiteks tuleb alla laadida ja installida Miniconda Pythoni keskkondade haldamiseks. Me eelistame Minicondat Anacondale, kuna see on mahult väiksem, kuid Toolkit töötab hästi mõlemas."
 
 #: ../../source/installation.rst:113
 msgid "Also, let's permanently put Conda binaries to **PATH** variable:"
-msgstr ""
+msgstr "Esiteks määrame Conda binaarfailid **PATH** muutujasse:"
 
 #: ../../source/installation.rst:120
 msgid "Clone the Repository"
-msgstr ""
+msgstr "Repositooriumi kloonimine"
 
 #: ../../source/installation.rst:122
 msgid "Now, let's clone the repository and move to **texta-rest** direcory:"
-msgstr ""
+msgstr "Kloonime repositooriumi ja viime selle **texta-rest** kausta:"
 
 #: ../../source/installation.rst:130
 msgid "Build the Environment"
-msgstr ""
+msgstr "Ehita Conda keskkond"
 
 #: ../../source/installation.rst:132
 msgid "Now that we have **environment.yaml** file from the texta-rest repository, let's use it to build the environment. After the environment is built, let's activate it:"
-msgstr ""
+msgstr "Nüüd, kus meil on **environment.yaml** fail texta-rest repositooriumist, kasutame seda keskkonna ehitamiseks. Seejärel aktiveerime selle:"
 
 #: ../../source/installation.rst:141
 msgid "Migrate & Run Toolkit"
-msgstr ""
+msgstr "Migreeri ja käivita Toolkit"
 
 #: ../../source/installation.rst:143
 msgid "After the environment has been created and activated, let's prepare the database:"
-msgstr ""
+msgstr "Pärast keskkonna loomist ja aktiveerimist, valmistame ette andmebaasi:"
 
 #: ../../source/installation.rst:149
 msgid "Running the **migrate.py** script will prepare Django migrations and execute them. It is necessary to run the script every time the source code changes because Toolkit's data model might have changed as well. It is also required to run the script before using Toolkit for the first time to create both superuser account and database used to store the data model."
-msgstr ""
+msgstr "**migrate.py** skripti jooksutamine valmistab ette Django migratsioonid ja käivitab need. Seda skripti peab kasutama iga kord, kui algkood muutub, kuna Toolkiti andmemudel võib samuti olla muutunud. Lisaks on seda skripti vaja jooksutada enne Toolkiti esimest korda kasutamist, kuna see tekitab superkasutaja konto ja andmebaasi, mida kasutatakse andmemudeli hoiustamiseks."
 
 #: ../../source/installation.rst:155
 msgid "Running **migrate.py** will also create a default superuser account with following credentials:"
-msgstr ""
+msgstr "**migrate.py** jooksutamine tekitab vaikimisi superkasutaja konto järgnevate andmetega:"
 
 #: ../../source/installation.rst:161
 msgid "Finally let's run the development server:"
-msgstr ""
+msgstr "Lõpetuks jooksutame arendusserverit:"
 
 #: ../../source/installation.rst:167
 msgid "And in another terminal run the Celery worker responsible for asynchronous tasks:"
-msgstr ""
+msgstr "Ja teises terminalis jooksutame Celery't, mis vastutab asünkrooniliste ülesannete eest:"
