@@ -8,8 +8,10 @@ This requires some configuration, both on the UAA server and in Toolkit.
 Configuring the UAA server locally
 -----------------
 
-The UAA server will require configuring a client application for toolkit, mainly the ``redirect_uri``.
-UAA by default already provides an example "login" client, which will be used for demonstration.
+The UAA server will require configuring a client application for toolkit, eg setting the ``redirect_uri``.
+An example "login" client is already provided in UAA by default, which will be used for the example.
+
+Example:
 
 - First, deploy the UAA server locally and install the CF UAA Command Line Client (UAAC) as detailed `here <https://docs.cloudfoundry.org/concepts/architecture/uaa.html#quickstart>`_.
 - Target the local UAA server by running ``$ uaac target http://localhost:8080/uaa``
@@ -25,6 +27,7 @@ The **oauth/authorize** URL needs to be sent with the proper parameters:
 http://localhost:8080/uaa/oauth/authorize?response_type=code&client_id=login&scope=openid&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fapi%2Fv1%2Fuaa/callback
 
 To break it down:
+
 - ``response_type=code`` Lets the server know we want a code in response.
 - ``client_id=login`` Is the name/id of our client application we have on the UAA server/
 - ``scope=openid`` Is the OAuth scope which toolkit uses in order to authenticate/create the user on Toolkit's side with the email and password.
@@ -41,6 +44,7 @@ For further reference:
 Configuring the Toolkit server
 -----------------
 To configure the Toolkit server client application, UAA related environment variables need to be set:
+
 - ``TEXTA_USE_UAA`` expects input "False" to disable UAA, which will otherwise be enabled.
 - ``TEXTA_UAA_URL`` needs to be the URL of the UAA server, eg http://localhost:8080/uaa
 - ``TEXTA_UAA_REDIRECT_URI`` needs to be the ``redirect_uri`` as set on the UAA server client, eg http://localhost:8000/api/v1/uaa/callback
@@ -52,8 +56,10 @@ To configure the Toolkit server client application, UAA related environment vari
 Using UAA on the front-end
 -----------------
 To use UAA with the Angular front-end, it needs to be configured in an `environment.ts` file.
+
 - ``useCloudFoundryUAA`` is a boolean. If false, the UAA login option will be hidden.
 - ``uaaConf`` is an object with fields for UAA parameters, eg:
+
 .. code-block:: javascript
     uaaConf: {
         uaaURL: 'http://localhost:8080/uaa/oauth/authorize',
