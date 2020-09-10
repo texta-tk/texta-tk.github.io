@@ -26,3 +26,4 @@ The source code for Toolkit's Angular GUI is available at `git.texta.ee/texta/te
     concepts
     gui
     api
+    uaa
