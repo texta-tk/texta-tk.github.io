@@ -1,3 +1,6 @@
+`In English <https://docs.texta.ee/uua.html>`_
+`eesti keeles <https://docs.texta.ee/et/uua.html>`_
+
 Authenticating Toolkit through CloudFoundry UAA 
 ===============================================
 
@@ -108,3 +111,4 @@ Upon a 401 Unauthorized response from the server, the ``refresh_token`` token wi
 On the Toolkit REST backend, the refresh token will be used to make a request to the UAA server's **/oauth/token** endpoint to get a new ``access_token``. If the ``refresh_token`` is invalid or expired, the Toolkit REST backend's **uaa/refresh-token** endpoint will give a 403 response.
 
 For reference: https://docs.cloudfoundry.org/api/uaa/version/74.24.0/index.html#refresh-token
+

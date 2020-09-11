@@ -1,3 +1,6 @@
+`In English <https://docs.texta.ee/gui.html>`_
+`eesti keeles <https://docs.texta.ee/et/gui.html>`_
+
 Tutorial: Using Toolkit via GUI
 ===============================
 
@@ -380,7 +383,7 @@ Instead of using document-term matrix for clustering, we can also use compressed
 
 In some cases we may already have some knowledge about the data that we are about to cluster. For example, we may be aware of some domain-specific stopwords which we would like to ignore. As name already suggests, these can be listed in the field *Stopwords*. 
 
-.. _figure-15
+.. _figure-15:
 
 .. figure:: images/create_clustering.png
 
@@ -391,7 +394,7 @@ In some cases we may already have some knowledge about the data that we are abou
 
 To see the clusters, click *View clusters* under Actions. This view gives us an overwiew about obtained clusters. For each cluster the document count and average cosine similarity between its documents is shown. Additionally, a list of significant words for each cluster is given - it is a list of words that, when compared to other documents, appear notably often in documents which belong to that cluster.
 
-.. _figure-16
+.. _figure-16:
 
 .. figure:: images/clusters_view.png
     :width: 100 %
@@ -422,7 +425,7 @@ We could also be interested in whether there is more documents in the index that
 
 To query similar documents, click on a "More like this" button. In the opened view, select document which you would like to add to the cluster and click on a "+" button.
 
-.. _figure-17
+.. _figure-17:
 
 .. figure:: images/cluster_details_view.png
     :width: 100 %
@@ -460,9 +463,6 @@ We can use *Query* for adding only certain search results to our new index.
     Figure 18. *Creating a new index*
     
     
-.. _reindexer:
-
-
 Uploading the Data
 ------------------
 
@@ -528,4 +528,4 @@ We can upload new data via Dataset Importer under Tools
     
     *Delete* is for deleting the model.
     
-    In the table view we can also select several models and delete them all at once by clicking on the dustbin button next to the *+CREATE* button in the bottom-left. If we have several models, we can search for the right one by their description or task status. If we have models on several pages we can change pages in the bottom-right.
+    In the table view we can also select several models and delete them all at once by clicking on the dustbin button next to the *+CREATE* button in the bottom-left. If we have several models, we can search for the right one by their description or task status. If we have models on several pages we can change pages in the bottom-right

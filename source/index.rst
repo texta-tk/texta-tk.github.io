@@ -3,6 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
    
+`In English <https://docs.texta.ee/index.html>`_
+`eesti keeles <https://docs.texta.ee/et/index.html>`_
+
 Texta Toolkit
 =============
 

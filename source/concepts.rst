@@ -1,3 +1,6 @@
+`In English <https://docs.texta.ee/concepts.html>`_
+`eesti keeles <https://docs.texta.ee/et/concepts.html>`_
+
 Main Concepts of Toolkit
 ========================
 

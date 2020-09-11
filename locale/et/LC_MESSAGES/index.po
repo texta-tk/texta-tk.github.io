@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-27 15:57+0300\n"
+"POT-Creation-Date: 2020-09-11 11:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../source/index.rst:21
+#: ../../source/index.rst:24
 msgid "Contents:"
 msgstr "Sisukord:"
 
-#: ../../source/index.rst:7
+#: ../../source/index.rst:6
+msgid ""
+"`In English <https://docs.texta.ee/index.html>`_ `eesti keeles "
+"<https://docs.texta.ee/et/index.html>`_"
+msgstr ""
+
+#: ../../source/index.rst:10
 msgid "Texta Toolkit"
 msgstr "Texta Toolkit"
 
-#: ../../source/index.rst:9
+#: ../../source/index.rst:12
 #, fuzzy
 msgid ""
 "TEXTA Toolkit is an open-source software for building RESTful text "
@@ -34,25 +40,24 @@ msgid ""
 "<https://www.texta.ee>`_. This documentation contains information about "
 "installing and running **TEXTA Toolkit 2.x**."
 msgstr ""
-"TEXTA Toolkit on vabavaraline tekstianalüütika tarkvara, mis kasutab RESTi."
-"Seda arendab `TEXTA OÜ "
-"<https://www.texta.ee>`_. Siin leiab infot **TEXTA Toolkit 2.x**-e installimise"
-"ja käivitamise kohta."
+"TEXTA Toolkit on vabavaraline tekstianalüütika tarkvara, mis kasutab "
+"RESTi.Seda arendab `TEXTA OÜ <https://www.texta.ee>`_. Siin leiab infot "
+"**TEXTA Toolkit 2.x**-e installimiseja käivitamise kohta."
 
-#: ../../source/index.rst:13
+#: ../../source/index.rst:16
 msgid ""
 "The source code for Toolkit's Django REST API is available at "
 "`git.texta.ee/texta/texta-rest <https://git.texta.ee/texta/texta-rest>`_."
 msgstr ""
-"Toolkiti Django REST API lähtekood on aadressil "
-"`git.texta.ee/texta/texta-rest <https://git.texta.ee/texta/texta-rest>`_."
+"Toolkiti Django REST API lähtekood on aadressil `git.texta.ee/texta"
+"/texta-rest <https://git.texta.ee/texta/texta-rest>`_."
 
-#: ../../source/index.rst:15
+#: ../../source/index.rst:18
 msgid ""
 "The source code for Toolkit's Angular GUI is available at "
 "`git.texta.ee/texta/texta-rest-front <https://git.texta.ee/texta/texta-"
 "rest-front>`_."
 msgstr ""
-"Toolkit's Angular GUI lähtekood on aadressil"
-"`git.texta.ee/texta/texta-rest-front <https://git.texta.ee/texta/texta-"
-"rest-front>`_."
+"Toolkit's Angular GUI lähtekood on aadressil`git.texta.ee/texta/texta-"
+"rest-front <https://git.texta.ee/texta/texta-rest-front>`_."
+
