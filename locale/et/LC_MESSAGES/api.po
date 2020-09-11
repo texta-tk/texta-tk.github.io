@@ -1,214 +1,235 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2020 TEXTA
-# This file is distributed under the same license as the TEXTA Toolkit package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 12:04+0300\n"
+"POT-Creation-Date: 2020-09-11 11:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../source/api.rst:2
 msgid "Tutorial: Using Toolkit via API"
 msgstr ""
 
 #: ../../source/api.rst:4
-msgid "The purpose of this tutorial is to get you started with using Toolkit API. The tutorial gives you an overview of the most fundamental API operations together with illustrating examples. For more detailed documentations please see :ref:`API reference <api_reference>`."
+msgid ""
+"`In English <https://docs.texta.ee/api.html>`_ `eesti keeles "
+"<https://docs.texta.ee/et/api.html>`_"
 msgstr ""
 
-#: ../../source/api.rst:10
+#: ../../source/api.rst:7
+msgid ""
+"The purpose of this tutorial is to get you started with using Toolkit "
+"API. The tutorial gives you an overview of the most fundamental API "
+"operations together with illustrating examples. For more detailed "
+"documentations please see :ref:`API reference <api_reference>`."
+msgstr ""
+
+#: ../../source/api.rst:13
 msgid "Health of Toolkit"
 msgstr ""
 
-#: ../../source/api.rst:12
-msgid "For checking the health of a running Toolkit instance, one can access the **/health** endpoint for operating statistics. The endpoint responds with information abouth the availability of services (e.g. Elasticsearch and TEXTA MLP) and system resources (e.g. disk, memory, GPU usage, etc.)."
+#: ../../source/api.rst:15
+msgid ""
+"For checking the health of a running Toolkit instance, one can access the"
+" **/health** endpoint for operating statistics. The endpoint responds "
+"with information abouth the availability of services (e.g. Elasticsearch "
+"and TEXTA MLP) and system resources (e.g. disk, memory, GPU usage, etc.)."
 msgstr ""
 
-#: ../../source/api.rst:18
+#: ../../source/api.rst:21
 msgid "Registration"
 msgstr ""
 
-#: ../../source/api.rst:20
+#: ../../source/api.rst:23
 msgid "Endpoint: **/rest-auth/registration/**"
 msgstr ""
 
-#: ../../source/api.rst:22
-#: ../../source/api.rst:50
-#: ../../source/api.rst:78
-#: ../../source/api.rst:101
-#: ../../source/api.rst:126
-#: ../../source/api.rst:147
-#: ../../source/api.rst:180
-#: ../../source/api.rst:205
-#: ../../source/api.rst:247
-#: ../../source/api.rst:270
-#: ../../source/api.rst:312
+#: ../../source/api.rst:25 ../../source/api.rst:53 ../../source/api.rst:81
+#: ../../source/api.rst:104 ../../source/api.rst:129 ../../source/api.rst:150
+#: ../../source/api.rst:183 ../../source/api.rst:208 ../../source/api.rst:250
+#: ../../source/api.rst:273 ../../source/api.rst:315
 msgid "Example:"
 msgstr ""
 
-#: ../../source/api.rst:36
-#: ../../source/api.rst:61
-#: ../../source/api.rst:160
-#: ../../source/api.rst:220
-#: ../../source/api.rst:283
+#: ../../source/api.rst:39 ../../source/api.rst:64 ../../source/api.rst:163
+#: ../../source/api.rst:223 ../../source/api.rst:286
 msgid "Response:"
 msgstr ""
 
-#: ../../source/api.rst:42
-#: ../../source/api.rst:67
-msgid "Response is the Token key that you will later need to authenticate requests."
+#: ../../source/api.rst:45 ../../source/api.rst:70
+msgid ""
+"Response is the Token key that you will later need to authenticate "
+"requests."
 msgstr ""
 
-#: ../../source/api.rst:46
+#: ../../source/api.rst:49
 msgid "Logging in"
 msgstr ""
 
-#: ../../source/api.rst:48
+#: ../../source/api.rst:51
 msgid "Endpoint: **/rest-auth/login/**"
 msgstr ""
 
-#: ../../source/api.rst:71
+#: ../../source/api.rst:74
 msgid "Projects"
 msgstr ""
 
-#: ../../source/api.rst:74
+#: ../../source/api.rst:77
 msgid "Create a new project"
 msgstr ""
 
-#: ../../source/api.rst:76
+#: ../../source/api.rst:79
 msgid "Endpoint: **/projects/**"
 msgstr ""
 
-#: ../../source/api.rst:94
+#: ../../source/api.rst:97
 msgid "Embeddings"
 msgstr ""
 
-#: ../../source/api.rst:97
+#: ../../source/api.rst:100
 msgid "Train a new embedding"
 msgstr ""
 
-#: ../../source/api.rst:99
+#: ../../source/api.rst:102
 msgid "Endpoint: **/projects/{project_pk}/embeddings/**"
 msgstr ""
 
-#: ../../source/api.rst:119
+#: ../../source/api.rst:122
 msgid "Taggers"
 msgstr ""
 
-#: ../../source/api.rst:122
+#: ../../source/api.rst:125
 msgid "Train a new tagger"
 msgstr ""
 
-#: ../../source/api.rst:124
+#: ../../source/api.rst:127
 msgid "Endpoint: **/projects/{project_pk}/taggers/**"
 msgstr ""
 
-#: ../../source/api.rst:143
-#: ../../source/api.rst:201
-#: ../../source/api.rst:266
+#: ../../source/api.rst:146 ../../source/api.rst:204 ../../source/api.rst:269
 msgid "Tag text"
 msgstr ""
 
-#: ../../source/api.rst:145
+#: ../../source/api.rst:148
 msgid "Endpoint **/projects/{project_pk}/taggers/{id}/tag_text/**"
 msgstr ""
 
-#: ../../source/api.rst:173
+#: ../../source/api.rst:176
 msgid "Tagger Groups"
 msgstr ""
 
-#: ../../source/api.rst:176
+#: ../../source/api.rst:179
 msgid "Train a new tagger group"
 msgstr ""
 
-#: ../../source/api.rst:178
+#: ../../source/api.rst:181
 msgid "Endpoint: **/projects/{project_pk}/tagger_groups/**"
 msgstr ""
 
-#: ../../source/api.rst:203
+#: ../../source/api.rst:206
 msgid "Endpoint: **/projects/{project_pk}/tagger_groups/{id}/tag_text/**"
 msgstr ""
 
-#: ../../source/api.rst:240
+#: ../../source/api.rst:243
 msgid "Torch Tagger"
 msgstr ""
 
-#: ../../source/api.rst:243
+#: ../../source/api.rst:246
 msgid "Train a new Torch Tagger"
 msgstr ""
 
-#: ../../source/api.rst:245
+#: ../../source/api.rst:248
 msgid "Endpoint: **/projects/{project_pk}/torchtaggers/**"
 msgstr ""
 
-#: ../../source/api.rst:268
+#: ../../source/api.rst:271
 msgid "Endpoint: **/projects/{project_pk}/torchtaggers/{id}/tag_text/**"
 msgstr ""
 
-#: ../../source/api.rst:294
+#: ../../source/api.rst:297
 msgid "Dataset Importer"
 msgstr ""
 
-#: ../../source/api.rst:296
-msgid "This module allows the user to insert jsonlines, csv and excel files into Elasticsearch to make them accessible by the Toolkit. Please note that this process reads the whole file into the memory and can thus create memory issues when trying to process bigger files, it is advisable to split such files up into smaller chunks and process each one separately."
+#: ../../source/api.rst:299
+msgid ""
+"This module allows the user to insert jsonlines, csv and excel files into"
+" Elasticsearch to make them accessible by the Toolkit. Please note that "
+"this process reads the whole file into the memory and can thus create "
+"memory issues when trying to process bigger files, it is advisable to "
+"split such files up into smaller chunks and process each one separately."
 msgstr ""
 
-#: ../../source/api.rst:301
-msgid "This whole process is asynchronous so the response to the call will be instantaneous and it since it takes a bit time to load the file into the memory, the first 10 seconds might not display any signs of the progress changing."
-msgstr ""
-
-#: ../../source/api.rst:305
-msgid "Parameters:"
-msgstr ""
-
-#: ../../source/api.rst:307
-msgid "description - Normal description to separate any given task from the other ones."
+#: ../../source/api.rst:304
+msgid ""
+"This whole process is asynchronous so the response to the call will be "
+"instantaneous and it since it takes a bit time to load the file into the "
+"memory, the first 10 seconds might not display any signs of the progress "
+"changing."
 msgstr ""
 
 #: ../../source/api.rst:308
-msgid "index - Name of the newly created index, please note that Elasticsearch index naming restrictions apply."
+msgid "Parameters:"
 msgstr ""
 
-#: ../../source/api.rst:309
-msgid "separator - Only needed for .csv files, defaults to a coma (,). Allows to configure the separator for csv files."
+#: ../../source/api.rst:310
+msgid ""
+"description - Normal description to separate any given task from the "
+"other ones."
 msgstr ""
 
-#: ../../source/api.rst:314
+#: ../../source/api.rst:311
+msgid ""
+"index - Name of the newly created index, please note that Elasticsearch "
+"index naming restrictions apply."
+msgstr ""
+
+#: ../../source/api.rst:312
+msgid ""
+"separator - Only needed for .csv files, defaults to a coma (,). Allows to"
+" configure the separator for csv files."
+msgstr ""
+
+#: ../../source/api.rst:317
 msgid "@ is special syntax for reading the binary of the given file name."
 msgstr ""
 
-#: ../../source/api.rst:325
+#: ../../source/api.rst:328
 msgid "Browsable API"
 msgstr ""
 
-#: ../../source/api.rst:327
+#: ../../source/api.rst:330
 msgid "http://localhost:8000/api/v1/"
 msgstr ""
 
-#: ../../source/api.rst:329
+#: ../../source/api.rst:332
 msgid "TODO"
 msgstr ""
 
-#: ../../source/api.rst:334
+#: ../../source/api.rst:337
 msgid "API Reference"
 msgstr ""
 
-#: ../../source/api.rst:336
+#: ../../source/api.rst:339
 msgid "Reference for Toolkit API is available when running the Toolkit:"
 msgstr ""
 
-#: ../../source/api.rst:338
+#: ../../source/api.rst:341
 msgid "http://localhost:8000/api/v1/swagger/"
 msgstr ""
 
-#: ../../source/api.rst:340
+#: ../../source/api.rst:343
 msgid "http://localhost:8000/api/v1/redoc/"
 msgstr ""
+
