@@ -2,6 +2,7 @@ Tutorial: Using Toolkit via API
 ===============================
 
 `In English <https://docs.texta.ee/api.html>`_
+
 `eesti keeles <https://docs.texta.ee/et/api.html>`_
 
 The purpose of this tutorial is to get you started with using Toolkit API.
