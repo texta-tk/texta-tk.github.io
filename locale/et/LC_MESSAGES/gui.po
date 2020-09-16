@@ -1055,6 +1055,9 @@ msgid ""
 "Recall is the ratio of correctly labeled positives among all true "
 "positives. Avg.recall is the average of all the models' recalls."
 msgstr ""
+"Recall ehk saagis on õigesti positiivseks märgendatute ja kõigi positiivsete elementide "
+"suhe. Avg.recall ehk saagise keskmine on kõigi mudeli saagiste "
+"keskmine."
 
 #: ../../source/gui.rst:344
 msgid ""
@@ -1062,6 +1065,9 @@ msgid ""
 " that got a positive label. Avg.precision is the average of all the "
 "models' precisions."
 msgstr ""
+"Precision ehk täpsus on õigesti positiivseks märgendatud ja kõigi positiivseks märgendatud elementide"
+" suhe. Avg.precision ehk täpsuse keskmine on kõigi mudeli täpsuste "
+"keskmine."
 
 #: ../../source/gui.rst:345
 msgid ""
@@ -1069,6 +1075,9 @@ msgid ""
 " expecially with unbalanced data. Avg.F1_score is the average of all the "
 "models' F1 scores."
 msgstr ""
+"F1-skoor on nende kahe harmooniline keskmine ning peaks olema informatiivsem, eriti"
+" just tasakaalust väljas oleva andmestiku puhul. Avg.F1_score on kõigi mudeli "
+"F1-skooride keskmine."
 
 #: ../../source/gui.rst:349
 msgid ""
@@ -1076,12 +1085,17 @@ msgid ""
 "chosen parameters. It's useful in case our dataset changes or we have "
 "added some stop words."
 msgstr ""
+"*Models retrain* treenib kogu Tagger Group-i uuesti samade "
+"parameetritega. See on kasulik, kui andmestik muutub või lisatakse uusi"
+" stopp-sõnu."
 
 #: ../../source/gui.rst:351
 msgid ""
 "*Models list* displays us the models the Tagger Group trained. We can "
 "inspect which kind of labels were trained."
 msgstr ""
+"*Models list* kuvab mudeleid, mille Tagger Group treenis. Sealt saab "
+"vaadata, milliseid sildid/täägid treeniti."
 
 #: ../../source/gui.rst:353
 msgid ""
@@ -1095,6 +1109,14 @@ msgid ""
 "documents to the document in question. Tags given to these documents are "
 "tested on the document to be tagged."
 msgstr ""
+"*Tag text* aitab hõlpsasti kontrollida, kuidas mudel töötab. Sellele vajutades "
+"avaneb aken. Aknasse saab kleepida/kirjutada teksti, valida selle lemmatiseerimine "
+"(vajalik, kui mudel on treenitud lemmatiseeritud tekstil) ning seejärel see 'postitada' (vajuta *Post*-nuppu). "
+"'Postitamine' väljastab tulemuse (kõik täägid, mille kohta mudel ennustas sellele tekstile "
+"True) ja iga täägi kohta tõenäosuse (probability), et see tääg käib selle teksti kohta. Tõenäosus näitab, kui kindel on "
+"antud mudel oma ennustuses. *Number of similar documents* on antud dokumendiga sarnaste dokumentide"
+"arv. Nendele dokumentidele märgendatud tääge testitakse "
+"uue antud dokumendi peal."
 
 #: ../../source/gui.rst:355
 msgid ""
@@ -1103,6 +1125,10 @@ msgid ""
 "documents to the document in question. Tags given to these documents are "
 "tested on the document to be tagged."
 msgstr ""
+"*Tag doc* on sarnane *Tag text*-ile, ainult et sisend on "
+"json-formaadis. *Number of similar documents* on antud dokumendiga sarnaste dokumentide"
+"arv. Nendele dokumentidele märgendatud tääge testitakse "
+"uue antud dokumendi peal."
 
 #: ../../source/gui.rst:357
 msgid ""
@@ -1110,6 +1136,9 @@ msgid ""
 "and returns the positive results of our models and the probability of "
 "these results being correct."
 msgstr ""
+"*Tag random doc* võtab suvalise dokumendi andmestikust, väljastab selle "
+"ja tagastab tulemuse ja vastavasse klassi "
+"kuulumise tõenäosuse."
 
 #: ../../source/gui.rst:361
 msgid ""
@@ -1119,20 +1148,27 @@ msgid ""
 "search for the right one by their description or task status. If we have "
 "models on several pages we can change pages in the bottom-right."
 msgstr ""
+"Tabeli vaates saame valida mitu mudelit korraga ja kustutada need, "
+"kasutades prügikasti nupukest *+CREATE* nupukese kõrval all vasakul."
+" Mitme Tagger Groups mudeli seast saab õiget otsida nende kirjelduse või"
+" task status-e kaudu. Kui mudeleid on palju, saame vahetada"
+"kuvamislehekülge all paremal."
 
 #: ../../source/gui.rst:366
 msgid "Using Topic Analyzer"
-msgstr ""
+msgstr "Topic Analyzer-i kasutamine"
 
 #: ../../source/gui.rst:368
 msgid ""
 "Topic Analyzer is a tool that helps us to find groups of similar "
 "documents from the data and transform these groups into labels."
 msgstr ""
+"Topic Analyzer (Teemaanalüsaator) on vahed, millega saab andmestikust leida sarnaste "
+"dokumentide gruppe ja muuta need grupid ühe sildi alla kuuluvateks klassideks"
 
 #: ../../source/gui.rst:370
 msgid "**Grouping the data**"
-msgstr ""
+msgstr "**Andmestiku grupeerimine**"
 
 #: ../../source/gui.rst:372
 msgid ""
@@ -1143,6 +1179,12 @@ msgid ""
 "restrict the set of documents to be used in clustering by specifying the "
 "filter with a *Query* parameter."
 msgstr ""
+"Uue grupeeringu (või klasterdamine, nagu me seda nimetame) loomiseks navigeeri "
+"Models -> Clustering alla ja vajuta \"Create\". Sarnaselt Tagger Group-iga "
+"peab andma sellele nime (*Description*), valima indeksid ja väljad,"
+" mille põhjal grupeerima hakatakse. Lisaks saab piirata "
+"klasterdamises kasutatavat andmestiku *Query* parameetri kaudu, valides andmestikuks "
+"selle alamhulga."
 
 #: ../../source/gui.rst:374
 msgid ""
@@ -1150,10 +1192,13 @@ msgid ""
 "algorithm and vectorizer and specifying the number of clusters (*Num "
 "clusters*) and the number of document vector dimensions (*Num dims*)."
 msgstr ""
+"Soovi korral saab teha täppishäälestust, valides klasterdamisalgoritmi"
+"ja vectorizer-it ning määrates klastrite arvu (*Num "
+"clusters*) ning dokumendivektori dimensioonide arvu (*Num dims*)."
 
 #: ../../source/gui.rst:378
 msgid "**How to choose the number of clusters?**"
-msgstr ""
+msgstr "**Kuidas valida klastrite arvu?**"
 
 #: ../../source/gui.rst:380
 msgid ""
@@ -1163,6 +1208,11 @@ msgid ""
 "manually with ease. For example, if you are going to cluster 1000 "
 "documents to 50 clusters then average cluster would contain 20 documents."
 msgstr ""
+"Üldine nõuanne on, et parem on valida liiga palju klastreid kui liiga vähe. "
+"Mõtle, mitut dokumenti hakkad klasterdama, ning vali number nii, et"
+" keskmine klaster on piisavalt väike, et seda käsitsi "
+"hõlpsasti kontrollida. Näiteks, kui klasterdad 1000 "
+"dokumenti 50 klastrisse, sisaldab keskmine klaster 20 dokumenti."
 
 #: ../../source/gui.rst:382
 msgid ""
@@ -1172,6 +1222,11 @@ msgid ""
 "requires the number of topics (dimensions in low-rank matrix) to be "
 "specified (*Num topics*)."
 msgstr ""
+"document-term matrix-i asemel võib klasterdamisel kasutada ka "
+"selle maatriksi tihendatud üldistust (compressed approximation) (parameetriga *Use LSI*), mis "
+"luuakse enne klasterdamist. LSI jaoks on vaja kindlasti "
+"määrata teemade arv (dimensioonid 'low-rank' maatriksis) "
+"(*Num topics* all)."
 
 #: ../../source/gui.rst:384
 msgid ""
@@ -1180,14 +1235,18 @@ msgid ""
 "specific stopwords which we would like to ignore. As name already "
 "suggests, these can be listed in the field *Stopwords*."
 msgstr ""
+"Mõnel juhul on juba ette teada, milline antud andmestik, mida klasterdama "
+"hakatakse, on. Näiteks võib olla teada, millised on domeeni-"
+"spetsiifilised stopp-sõnad, mida võiks ignoreerida. Neid saame "
+"lisada väljas *Stopwords*."
 
 #: ../../source/gui.rst:390
 msgid "Figure 15. *Creating a Clustering*"
-msgstr ""
+msgstr "Joonis 15. *Klasterdaja loomine*"
 
 #: ../../source/gui.rst:393
 msgid "**Evaluating clusters**"
-msgstr ""
+msgstr "**Klastrite hindamine**"
 
 #: ../../source/gui.rst:395
 msgid ""
@@ -1198,14 +1257,20 @@ msgid ""
 "is a list of words that, when compared to other documents, appear notably"
 " often in documents which belong to that cluster."
 msgstr ""
+"Klastreid saab vaadata Actionite all (*View clusters*). Sealt saab"
+" ülevaate tekitatud klastrite kohta. Iga klastri kohta antakse "
+"dokumentide arv ja keskmine koosinussarnasus dokumentide vahel. "
+"Lisaks antakse iga klastri oluliste (tähenduslike) sõnade nimekiri - sinna kuuluvad "
+"need sõnad, mis võrreldes teiste dokumentidega on märkimisväärselt"
+" sagedasemad nendes dokumentides, mis sellesse klastrisse kuuluvad."
 
 #: ../../source/gui.rst:402
 msgid "Figure 16. *Clusters view*"
-msgstr ""
+msgstr "Joonis 16. *Klastri vaade (Clusters view)*"
 
 #: ../../source/gui.rst:406
 msgid "**Interpreting document count**"
-msgstr ""
+msgstr "**Dokumendi arvu tõlgendamine**"
 
 #: ../../source/gui.rst:408
 msgid ""
@@ -1219,10 +1284,19 @@ msgid ""
 "stopwords that makes them artifically similar to each other. Sometimes "
 "increasing the number of clusters might help as well."
 msgstr ""
+"Teiste klastritega märkimisväärselt suurema dokumentide arvuga klaster viitab sellele,"
+" klasterdamisalgoritmil ei õnnestunud nende dokumentide teemadesse "
+"jaotamine. See ei pruugi kohe tähendada, et klasterdamisprotsess üleüldiselt"
+" ebaõnnestus, kuna tihti ei olegi võimalik kõiki dokumente täiuslikult"
+" klasterdada. Siiski tasub sellistele klastritele hoolega otsa vaadata, "
+"sest sellist klastrite tekkeks võib olla ka muid põhjuseid. "
+"Näiteks võivad dokumendid selles klastris sisaldada sarnast müra "
+"või stopp-sõnu, mis teevad neid tehislikult sarnasemaks. Mõnikord võib "
+"abiks olla klastrite arvu suurendamine."
 
 #: ../../source/gui.rst:410
 msgid "**Interpreting average similarity**"
-msgstr ""
+msgstr "**Average similarity (keskmise sarnasuse) tõlgendamine**"
 
 #: ../../source/gui.rst:412
 msgid ""
@@ -1234,22 +1308,33 @@ msgid ""
 " document is very different from all others, then the score might appear "
 "low althought fixing that cluster would be very easy."
 msgstr ""
+"Average similarity on keskmine koosinussarnasus kõigi dokumentide "
+"vahel selles klastris. Skoor on vahemikus 0..1 ning mida kõrgem on skoor, seda suurem "
+"on sarnasus antud klastri dokumentide"
+"vahel. Sellel skooril on ka puuduseid. Näiteks, kui meil on "
+"klaster, kus 9 dokumenti on üksteisele väga sarnased ning kümnes"
+" dokument väga erinev teistest, võib keskmise koosinussarnasuse skoor "
+"näida väga madalana, kuigi selle klastri parandamine oleks väga lihtne."
 
 #: ../../source/gui.rst:414
 msgid ""
 "To see content of a cluster, simply click on a cluster that is in your "
 "interest, this opens you a Cluster Details view."
 msgstr ""
+"Klastri sisu nägemiseks tuleb lihtsalt vajutada huvipakkuvale "
+"klastrile. See avab detailse klastrivaate Cluster Details."
 
 #: ../../source/gui.rst:416
 msgid "**Operations with cluster**"
-msgstr ""
+msgstr "**Klastritega tegelemine**"
 
 #: ../../source/gui.rst:418
 msgid ""
 "Cluster Details view allows us to inspect actual documents belonging to a"
 " cluster."
 msgstr ""
+"Cluster Details vaade laseb vaadata klastrisse kuuluvaid tegelikke"
+" dokumente."
 
 #: ../../source/gui.rst:420
 msgid ""
@@ -1259,6 +1344,11 @@ msgid ""
 "now on, these documents will be ignored in further clustering "
 "processes**."
 msgstr ""
+"Kui klastri sisu on sobiv, saab selle ära märgendada (täägida) "
+"\"Tag\" nupu abil. See lisab texta_fact-i kõigile dokumentidele antud "
+"klastris koos määratud fakti nime ja väärtusega. **Edaspidi "
+"ignoreeritakse neid dokumente järgnevatest klasterdamise "
+"protsessides**."
 
 #: ../../source/gui.rst:422
 msgid ""
@@ -1268,6 +1358,11 @@ msgid ""
 "trash bin icon. Note that these documents will not be ignored in further "
 "clustering process."
 msgstr ""
+"Klastrisisu saab ka käsitsi kohendada, näiteks "
+"eemaldada mõned dokumendid. Seda saab "
+"teha, valides dokumendid, mis klastrisse ei sobi, ning vajutades "
+"prügikastiikoonile. Pane tähele, et neid dokumente ei ignoreerita järgnevates "
+"klasterdamise protsessides."
 
 #: ../../source/gui.rst:424
 msgid ""
@@ -1276,6 +1371,10 @@ msgid ""
 "we might want to add those documents to the cluster as well, so we could "
 "tag them all together."
 msgstr ""
+"Tõenäoliselt pakub klastrite uurimisel huvi ka see, kas indeksis on veel "
+"dokumente, mis on sarnased klastris olevatele. Kui see tõepoolest nii on, "
+"võib tekkida soov needki klastrisse lisada, et saaks kõik "
+"ühe korraga ära märgendada."
 
 #: ../../source/gui.rst:426
 msgid ""
@@ -1283,14 +1382,17 @@ msgid ""
 "opened view, select document which you would like to add to the cluster "
 "and click on a \"+\" button."
 msgstr ""
+"Sarnaste dokumentide leidmiseks on loodud nupp \"More like this\". See avab "
+"vaate, kus saab valida dokumente, mida soovitakse klastrisse lisada "
+"\"+\"-nupu abil."
 
 #: ../../source/gui.rst:433
 msgid "Figure 17. *Cluster details view*"
-msgstr ""
+msgstr "Joonis 17. *Klastrite detailne vaade (Cluster details view)*"
 
 #: ../../source/gui.rst:441
 msgid "Reindexing the Data"
-msgstr ""
+msgstr "Andmestiku reindekseerimine"
 
 #: ../../source/gui.rst:443
 msgid ""
@@ -1300,34 +1402,43 @@ msgid ""
 "field with text value type but actually contains dates, we can change the"
 " type to date and use it for our aggregation)."
 msgstr ""
+"Reindexer ehk Reindekseerija on kasulik vahend Elasticsearchi :ref:`indeksite <index_concept>` reindekseerimiseks. "
+"Indeksist võib mõelda kui oma andmestikust. Reindexeriga saab"
+" eemaldada ebasobivad väljad ja muuta väljatüüpi (näiteks saab "
+"tekstivälju, mis tegelikult sisaldavad kuupäevi, muuta"
+" kuupäevaväljadeks, mida saab oma agregatsioonides kasutada."
 
 #: ../../source/gui.rst:445
 msgid ""
 "We can create a new index by clicking on the '+CREATE' button in the "
 "bottom-left."
 msgstr ""
+"Uut indeksit saab luua '+CREATE' nupu abil "
+"all vasakul."
 
 #: ../../source/gui.rst:447
 msgid "*Description* is the description of new reindexing job."
-msgstr ""
+msgstr "*Description* on uue reindekseerimistöö kirjeldus."
 
 #: ../../source/gui.rst:449
 msgid "*New index name* is the name for our new index."
-msgstr ""
+msgstr "*New index name* on loodava indeksi nimi."
 
 #: ../../source/gui.rst:451
 msgid "*Indices* are all the indices that we want in our new index."
-msgstr ""
+msgstr "*Indices* on kõik indeksid, mida tahame oma uude indeksisse."
 
 #: ../../source/gui.rst:453
 msgid "*Field types* are for changing the type and/or the name of our field(s)."
-msgstr ""
+msgstr "*Field types* abil saab muuta välja(de) tüüpi ja/või nime."
 
 #: ../../source/gui.rst:455
 msgid ""
 "We can use *Query* for adding only certain search results to our new "
 "index."
 msgstr ""
+"*Query* abil saab lisada uute indeksisse kindlaid "
+"otsingutulemusi."
 
 #: ../../source/gui.rst:457
 msgid ""
@@ -1335,20 +1446,23 @@ msgid ""
 "certain amount of samples (rows). We can use this in case we want to play"
 " with a smaller subset before we apply our tools on a bigger one."
 msgstr ""
+"*Random subset type* abil saam luua indeksi, milles on "
+"kindel arv suvaliselt valitud näiteid (ridu). Seda saab kasutada juhul, kui"
+" soovitakse testida Toolkiti vahendeid enne nende kogu andmestikule rakendamist."
 
 #: ../../source/gui.rst:463
 msgid "Figure 18. *Creating a new index*"
-msgstr ""
+msgstr "Joonis 18. *Uue indeksi loomine*"
 
 #: ../../source/gui.rst:467
 msgid "Uploading the Data"
-msgstr ""
+msgstr "Andmestiku üleslaadimine"
 
 #: ../../source/gui.rst:469
 msgid "We can upload new data via Dataset Importer under Tools"
-msgstr ""
+msgstr "Tools-i all oleva Dataset Importeri abil saab uut andmestikku üles laadida."
 
 #: ../../source/gui.rst:478
 msgid "Figure 19. *Importing a new dataset*"
-msgstr ""
+msgstr "Joonis 19. *Uue andmestiku importimine*"
 
