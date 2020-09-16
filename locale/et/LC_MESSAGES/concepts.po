@@ -438,7 +438,7 @@ msgstr ""
 
 #: ../../source/concepts.rst:156
 msgid "Topic Analyzer"
-msgstr ""
+msgstr "Teemaanalüsaator (Topic Analyzer)"
 
 #: ../../source/concepts.rst:158
 msgid ""
@@ -450,6 +450,13 @@ msgid ""
 "into the labelling. It can then be used to build supervised machine "
 "learning models."
 msgstr ""
+"Topic Analyzer ehk Teemaanaüsaator on vahend, mis tuvastab andmestikus olevaid sarnaste dokumentide "
+"gruppe. Seda saab kasutada näiteks märgendamata andmestiku "
+"uurimiseks, et saada aru, mida see sisaldab. "
+"Vahendi peamine eesmärk on siiski astuda samm edasi ning kasutada "
+"selle tulemusi andmestiku "
+"märgendamiseks. Teemaanalüsaatori abil märgendatud teksti saab kasutada juhendatud "
+"masinõppemudelite treenimiseks."
 
 #: ../../source/concepts.rst:160
 msgid ""
@@ -461,6 +468,12 @@ msgid ""
 " completely fail in capturing the similarity and most of them will "
 "probably be so-and-so."
 msgstr ""
+"Teemaanalüsaator kasutab juhendamata klasterdamise parimaid palu ning "
+"käsitsi märgendamist. Klasterdamine on kiire ja tõhus meetod sarnaste tekstide "
+"grupeerimiseks. Siiski ei pruugi see olla piisavalt täpne, et tulemusi koheselt "
+"kasutada andmete märgendamiseks. Näiteks võivad mõned klastrid tõepoolest sisaldada "
+"sarnaseid dokumente, samas võib teistel klastritel see ebaõnnestuda ning kolmandatel olla hinnanguks " 
+"'nii-ja-naa'."
 
 #: ../../source/concepts.rst:162
 msgid ""
@@ -471,4 +484,10 @@ msgid ""
 "choose to label the documents inside the cluster if it has reached a "
 "sufficient quality."
 msgstr ""
+"Teemaanalüsaatoris saab vaadata iga klastri sisse ning "
+"otsustada kvaliteedi üle käsitsi. Kasutajatel on võimalus ka klastreid muuta: "
+"kustutada dokumente, lisada uusi sarnaseid dokumente ning"
+" liigutada dokumente ühest klastrist teise, sobivamasse klastrisse. Kui klaster on valmis "
+"ja kasutaja on sellega rahul, on võimalik antud dokumente klastris"
+" automaatselt vabalt valitud sildiga ära märgendada."
 
