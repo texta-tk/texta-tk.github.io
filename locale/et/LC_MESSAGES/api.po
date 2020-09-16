@@ -26,7 +26,7 @@ msgstr ""
 
 #: ../../source/api.rst:5
 msgid "Tutorial: Using Toolkit via API"
-msgstr ""
+msgstr "Juhend Toolkiti API kasutamine"
 
 #: ../../source/api.rst:7
 msgid ""
@@ -35,10 +35,14 @@ msgid ""
 "operations together with illustrating examples. For more detailed "
 "documentations please see :ref:`API reference <api_reference>`."
 msgstr ""
+"Selle juhendi eesmärk on õpetada, kuidas teha algust TEXTA Toolkiti "
+"API-ga. Juhend annab ülevaate kõige põhilistemast API "
+"operatsioonidest koos illustreerivate näidetega. Detailsemat"
+"dokumentatsiooni näeb :ref:`API viitest <api_reference>`."
 
 #: ../../source/api.rst:13
 msgid "Health of Toolkit"
-msgstr ""
+msgstr "Toolkiti seisund"
 
 #: ../../source/api.rst:15
 msgid ""
@@ -47,84 +51,90 @@ msgid ""
 "with information abouth the availability of services (e.g. Elasticsearch "
 "and TEXTA MLP) and system resources (e.g. disk, memory, GPU usage, etc.)."
 msgstr ""
+"Töötava Toolkiti seisundit saab uurida"
+" statistika opereerimise **/health** otspunktis (endpoint). Sealt saab kätte "
+"teenuste (e.g. Elasticsearch and TEXTA MLP) ja süsteemi ressursside "
+"(nt disk, mälu, GPU kasutus jne) kättesaadavuse info."
 
 #: ../../source/api.rst:21
 msgid "Registration"
-msgstr ""
+msgstr "Registreerimine"
 
 #: ../../source/api.rst:23
 msgid "Endpoint: **/rest-auth/registration/**"
-msgstr ""
+msgstr "Otspunkt (endpoint): **/rest-auth/registration/**"
 
 #: ../../source/api.rst:25 ../../source/api.rst:53 ../../source/api.rst:81
 #: ../../source/api.rst:104 ../../source/api.rst:129 ../../source/api.rst:150
 #: ../../source/api.rst:183 ../../source/api.rst:208 ../../source/api.rst:250
 #: ../../source/api.rst:273 ../../source/api.rst:315
 msgid "Example:"
-msgstr ""
+msgstr "Näide:"
 
 #: ../../source/api.rst:39 ../../source/api.rst:64 ../../source/api.rst:163
 #: ../../source/api.rst:223 ../../source/api.rst:286
 msgid "Response:"
-msgstr ""
+msgstr "Vastus (response):"
 
 #: ../../source/api.rst:45 ../../source/api.rst:70
 msgid ""
 "Response is the Token key that you will later need to authenticate "
 "requests."
 msgstr ""
+"Vastus (response) on see Tookeni võti (Token key), mida hiljem tuleb kasutada päringute  "
+"autentiseerimiseks."
 
 #: ../../source/api.rst:49
 msgid "Logging in"
-msgstr ""
+msgstr "Sisse logimine"
 
 #: ../../source/api.rst:51
 msgid "Endpoint: **/rest-auth/login/**"
-msgstr ""
+msgstr "Otspunkt: **/rest-auth/login/**"
 
 #: ../../source/api.rst:74
 msgid "Projects"
-msgstr ""
+msgstr "Projektid"
 
 #: ../../source/api.rst:77
 msgid "Create a new project"
-msgstr ""
+msgstr "Loo uus projekt"
 
 #: ../../source/api.rst:79
 msgid "Endpoint: **/projects/**"
-msgstr ""
+msgstr "Otspunkt: **/projects/**"
 
 #: ../../source/api.rst:97
 msgid "Embeddings"
-msgstr ""
+msgstr "Sõnavektorid"
 
 #: ../../source/api.rst:100
 msgid "Train a new embedding"
-msgstr ""
+msgstr "Treeni uus sõnavektorite mudel"
 
 #: ../../source/api.rst:102
 msgid "Endpoint: **/projects/{project_pk}/embeddings/**"
-msgstr ""
+msgstr "Otspunkt: **/projects/{project_pk}/embeddings/**"
 
 #: ../../source/api.rst:122
 msgid "Taggers"
-msgstr ""
+msgstr "Märgendajad (Taggers)"
 
 #: ../../source/api.rst:125
 msgid "Train a new tagger"
-msgstr ""
+msgstr "Treeni uus Tagger"
 
 #: ../../source/api.rst:127
 msgid "Endpoint: **/projects/{project_pk}/taggers/**"
-msgstr ""
+msgstr "Otspunkt: **/projects/{project_pk}/taggers/**"
 
 #: ../../source/api.rst:146 ../../source/api.rst:204 ../../source/api.rst:269
 msgid "Tag text"
-msgstr ""
+msgstr "Märgenda tekst"
 
 #: ../../source/api.rst:148
 msgid "Endpoint **/projects/{project_pk}/taggers/{id}/tag_text/**"
-msgstr ""
+msgstr "Otspunkt: **/projects/{project_pk}/taggers/{id}/tag_text/**"
 
 #: ../../source/api.rst:176
 msgid "Tagger Groups"
@@ -132,15 +142,15 @@ msgstr ""
 
 #: ../../source/api.rst:179
 msgid "Train a new tagger group"
-msgstr ""
+msgstr "Treeni uus Tagger Group"
 
 #: ../../source/api.rst:181
 msgid "Endpoint: **/projects/{project_pk}/tagger_groups/**"
-msgstr ""
+msgstr "Otspunkt: **/projects/{project_pk}/tagger_groups/**"
 
 #: ../../source/api.rst:206
 msgid "Endpoint: **/projects/{project_pk}/tagger_groups/{id}/tag_text/**"
-msgstr ""
+msgstr "Otspunkt: **/projects/{project_pk}/tagger_groups/{id}/tag_text/**"
 
 #: ../../source/api.rst:243
 msgid "Torch Tagger"
@@ -148,19 +158,19 @@ msgstr ""
 
 #: ../../source/api.rst:246
 msgid "Train a new Torch Tagger"
-msgstr ""
+msgstr "Treeni uus Torch Tagger"
 
 #: ../../source/api.rst:248
 msgid "Endpoint: **/projects/{project_pk}/torchtaggers/**"
-msgstr ""
+msgstr "Otspunkt: **/projects/{project_pk}/torchtaggers/**"
 
 #: ../../source/api.rst:271
 msgid "Endpoint: **/projects/{project_pk}/torchtaggers/{id}/tag_text/**"
-msgstr ""
+msgstr "Otspunkt: **/projects/{project_pk}/torchtaggers/{id}/tag_text/**"
 
 #: ../../source/api.rst:297
 msgid "Dataset Importer"
-msgstr ""
+msgstr "Andmete Importija (Dataset Importer)"
 
 #: ../../source/api.rst:299
 msgid ""
@@ -170,6 +180,11 @@ msgid ""
 "memory issues when trying to process bigger files, it is advisable to "
 "split such files up into smaller chunks and process each one separately."
 msgstr ""
+"Selle mooduli abil saab kasutaja sisestada Elasticsearchi jsonlines, csv ja"
+" exceli formaadis faile, muutes need niimoodi Toolkitile ligipääsetavaks. Palun pane "
+"tähele, et see loeb kogu faili mällu, mis võib põhjustada "
+"mäluprobleeme, kui üritatakse üles laadida suuremaid faile. Soovitame taolised suured "
+"failid jagada väiksemateks tükkideks ja neid siis eraldi üles laadida."
 
 #: ../../source/api.rst:304
 msgid ""
@@ -178,36 +193,46 @@ msgid ""
 "memory, the first 10 seconds might not display any signs of the progress "
 "changing."
 msgstr ""
+"Kogu protsess on asünkroonne. St, päringu vastus võib tulla koheselt, kuid "
+"faili mällu laadimine võib võtta natukene rohkem aega. "
+"Esimese 10 sekundi jooksul ei pruugi olla näha mingeid muutuseid"
+"progressis."
 
 #: ../../source/api.rst:308
 msgid "Parameters:"
-msgstr ""
+msgstr "Parameetrid:"
 
 #: ../../source/api.rst:310
 msgid ""
 "description - Normal description to separate any given task from the "
 "other ones."
 msgstr ""
+"description - Tavaline kirjeldus, mis aitab eristada antud ülesannet "
+"teistest."
 
 #: ../../source/api.rst:311
 msgid ""
 "index - Name of the newly created index, please note that Elasticsearch "
 "index naming restrictions apply."
 msgstr ""
+"index - Vastloodud indeksi kirjeldus, palun pane tähele, et sellel kehtivad Elasticsearch-i "
+"indeksi nimetamise piirangud."
 
 #: ../../source/api.rst:312
 msgid ""
 "separator - Only needed for .csv files, defaults to a coma (,). Allows to"
 " configure the separator for csv files."
 msgstr ""
+"separator - Vajalik vaid .csv failide puhul, vaikimisi on koma (,). Laseb seadistada"
+" .csv failide eraldajat."
 
 #: ../../source/api.rst:317
 msgid "@ is special syntax for reading the binary of the given file name."
-msgstr ""
+msgstr "@ on eriline süntaksimärk, millega saab lugeda antud failinime binaari."
 
 #: ../../source/api.rst:328
 msgid "Browsable API"
-msgstr ""
+msgstr "Lehitsetav (browsable) API"
 
 #: ../../source/api.rst:330
 msgid "http://localhost:8000/api/v1/"
@@ -219,11 +244,11 @@ msgstr ""
 
 #: ../../source/api.rst:337
 msgid "API Reference"
-msgstr ""
+msgstr "API viide (reference)"
 
 #: ../../source/api.rst:339
 msgid "Reference for Toolkit API is available when running the Toolkit:"
-msgstr ""
+msgstr "Viide Toolkiti API-le on saadav, kui Toolkit töötab:"
 
 #: ../../source/api.rst:341
 msgid "http://localhost:8000/api/v1/swagger/"
