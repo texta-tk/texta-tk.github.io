@@ -26,15 +26,15 @@ msgstr ""
 
 #: ../../source/concepts.rst:5
 msgid "Main Concepts of Toolkit"
-msgstr ""
+msgstr "Toolkiti põhimõisted"
 
 #: ../../source/concepts.rst:7
 msgid "Here are described the main concepts related to TEXTA Toolkit (TTK)."
-msgstr ""
+msgstr "Siin kirjeldatakse põhimõisteid, mida TEXTA Toolkitis (TTK-s) kasutatakse."
 
 #: ../../source/concepts.rst:10
 msgid "Project"
-msgstr ""
+msgstr "Projekt"
 
 #: ../../source/concepts.rst:12
 msgid ""
@@ -46,10 +46,17 @@ msgid ""
 "and by adding or removing users, one can manage their access to the "
 "project."
 msgstr ""
+"Projekt on põhiühik andmete ja ressurside (sõnavektorite, klassifikaatorite jne) "
+"haldamiseks ja neile ligi pääsemiseks. Projekti defineerivad "
+"tema kirjeldus, Elasticsearchi indeksite nimekiri  "
+"(indeksites on andmed!) ja projektile ning selle ressurssidele "
+"ligipääsu omavate kasutajate nimekiri. Kõik ressursid TTK-s kuuluvad mingisse projekti "
+"ning kasutajaid lisades või eemaldades saab valida, kellel on "
+"projektile ja selle ressurssidele ligipääs."
 
 #: ../../source/concepts.rst:15
 msgid "Task"
-msgstr ""
+msgstr "Ülesanne (Task)"
 
 #: ../../source/concepts.rst:17
 msgid ""
@@ -59,10 +66,15 @@ msgid ""
 "the asynchronous training task. Tasks are data objects for keeping track "
 "of training progress of trainable statistical models."
 msgstr ""
+"TEXTA Toolkitis saab luua mitut erinevat statistilist mudelit "
+"teksti töötlemiseks. Treenimisprotsessi saab alustada TTK API-s või GUI-s, "
+"mis loob TTK andmemudelis objekti ning alustab "
+"asünkroonset treenimisülesannet. Ülesanded on andmeobjektid, mille abil "
+"saab jälgida treenitavate statistiliste mudelite treeningprogressi."
 
 #: ../../source/concepts.rst:22
 msgid "Search"
-msgstr ""
+msgstr "Otsing (Search)"
 
 #: ../../source/concepts.rst:24
 msgid ""
@@ -74,58 +86,73 @@ msgid ""
 "actions/functionalities in TTK, e.g. extraction of relevant keywords, "
 "data summarisation and exploration, and training text classifiers."
 msgstr ""
+"Search on üks TTK põhikomponente. Seda kasutatakse andmestikus teksti "
+"klassifitseerimise mudelite treenimiseks vajalike alamhulkade loomeks "
+"ja erinevate agregatsioonide tegemiseks. Searchi saab hallata GUI-s ning  "
+"see võib sisalda üht või rohkem piirangut mingite tunnuste väärtustele (nt sõned ja  "
+"kuupäevad). Otsingukriteeriumitele vastavaid dokumente saab kasutada erinevates "
+"TTK vahendites, nt asjakohaste võtmesõnade eraldamises, "
+"andmete kokku võtmises ja uurimiseks ning teksti klassifitseerimise treenimises."
 
 #: ../../source/concepts.rst:29
 msgid "Fact"
-msgstr ""
+msgstr "Fakt (Fact)"
 
 #: ../../source/concepts.rst:31
 msgid "In TTK text annotations are regarded as facts:"
-msgstr ""
+msgstr "TTK-s on taolised tekstimärgendid faktid:"
 
 #: ../../source/concepts.rst:42
 msgid "Facts are objects with following properties:"
-msgstr ""
+msgstr "Faktid on järgnevate tunnustega objektid:"
 
 #: ../../source/concepts.rst:44
 msgid "fact - name for the annotation (e.g. PER, LOC, or any arbitrary string)"
-msgstr ""
+msgstr "fakt - märgendi nimi (nt PER, LOC või mõni muu suvaline sõne) "
 
 #: ../../source/concepts.rst:46
 msgid ""
 "str_val - string value for the annotation (e.g. \"Donald Trump\" for "
 "PER). Values don't need to match annotated text segmements."
 msgstr ""
+"str_val - märgendi väärtus sõnena (nt \"Donald Trump\" või "
+"PER). Väärtused ei pea ühilduma märgendatud teksti segmentidega."
 
 #: ../../source/concepts.rst:48
 msgid ""
 "doc_path - path to the field containing the annotated string (e.g. "
 "\"text\", \"text.author\", \"comment.text.author\", etc.)"
 msgstr ""
+"doc_path - tee väljale, kus on sõned märgendatud (nt "
+"\"text\", \"text.author\", \"comment.text.author\" jne.)"
 
 #: ../../source/concepts.rst:50
 msgid ""
 "spans - JSON string containing the start and end positions in the "
 "annotated string"
 msgstr ""
+"spans - JSON sõne, mis sisaldab märgendatud sõne alguse ja "
+"lõpu kaugust algusest."
 
 #: ../../source/concepts.rst:52
 msgid ""
 "Toolkit comes with several predefined fact names that are used by our "
 "Multilingual Processor:"
 msgstr ""
+"Toolkitis on mitu eelnevalt defineeritud fakti, mida saab kasutada TTK-s "
+"Mitmekeelse tekstitöötlejaga (Multilingual Processor):"
 
 #: ../../source/concepts.rst:57
 msgid "Label"
-msgstr ""
+msgstr "Silt"
 
 #: ../../source/concepts.rst:57
 msgid "Meaning"
-msgstr ""
+msgstr "Tähendus"
 
 #: ../../source/concepts.rst:57
 msgid "Comment"
-msgstr ""
+msgstr "Kommentaar"
 
 #: ../../source/concepts.rst:59
 msgid "PER"
@@ -137,7 +164,7 @@ msgstr ""
 
 #: ../../source/concepts.rst:59
 msgid "Name of a person."
-msgstr ""
+msgstr "Inimese nimi"
 
 #: ../../source/concepts.rst:61
 msgid "ORG"
@@ -145,11 +172,11 @@ msgstr ""
 
 #: ../../source/concepts.rst:61
 msgid "Organisation"
-msgstr ""
+msgstr "Asutus"
 
 #: ../../source/concepts.rst:61
 msgid "Name of an organisation, gotten statistically."
-msgstr ""
+msgstr "Asutuse nimi, saadud statistiliselt"
 
 #: ../../source/concepts.rst:63
 msgid "LOC"
@@ -157,11 +184,11 @@ msgstr ""
 
 #: ../../source/concepts.rst:63
 msgid "Location"
-msgstr ""
+msgstr "Asukoht"
 
 #: ../../source/concepts.rst:63
 msgid "Name of a location, gotten statistically."
-msgstr ""
+msgstr "Asukoha nimi, saadud statistiliselt"
 
 #: ../../source/concepts.rst:65
 msgid "COMPANY"
@@ -169,13 +196,15 @@ msgstr ""
 
 #: ../../source/concepts.rst:65
 msgid "Company"
-msgstr ""
+msgstr "Firma"
 
 #: ../../source/concepts.rst:65
 msgid ""
 "Names of company registered in Estonia, gotten from `Estonian Open Data "
 "<https://opendata.riik.ee/datasets/ariregister/>`_."
 msgstr ""
+"Eestis registreeritud firmade nimed, saadud `Estonian Open Data-st "
+"<https://opendata.riik.ee/datasets/ariregister/>`_."
 
 #: ../../source/concepts.rst:67
 msgid "ADDR"
@@ -183,13 +212,15 @@ msgstr ""
 
 #: ../../source/concepts.rst:67
 msgid "Address"
-msgstr ""
+msgstr "Aadress"
 
 #: ../../source/concepts.rst:67
 msgid ""
 "Estonian address, gotten from `Estonian Open Data "
 "<https://opendata.riik.ee/datasets/aadressiandmed/>`_."
 msgstr ""
+"Eesti aadressid, saadud `Estonian Open Data-st "
+"<https://opendata.riik.ee/datasets/aadressiandmed/>`_."
 
 #: ../../source/concepts.rst:69
 msgid "DRUG"
@@ -197,11 +228,11 @@ msgstr ""
 
 #: ../../source/concepts.rst:69
 msgid "Drug"
-msgstr ""
+msgstr "Ravim"
 
 #: ../../source/concepts.rst:69
 msgid "Name of a medicine."
-msgstr ""
+msgstr "Ravimi nimi"
 
 #: ../../source/concepts.rst:71
 msgid "SUBSTANCE"
@@ -209,11 +240,11 @@ msgstr ""
 
 #: ../../source/concepts.rst:71
 msgid "Substance"
-msgstr ""
+msgstr "Koostisosa"
 
 #: ../../source/concepts.rst:71
 msgid "Ingredient of a drug."
-msgstr ""
+msgstr "Ravimi koostisosa"
 
 #: ../../source/concepts.rst:73
 msgid "EML"
@@ -225,7 +256,7 @@ msgstr ""
 
 #: ../../source/concepts.rst:73
 msgid "E-mail address."
-msgstr ""
+msgstr "E-maili aadress."
 
 #: ../../source/concepts.rst:75
 msgid "PHO"
@@ -233,11 +264,11 @@ msgstr ""
 
 #: ../../source/concepts.rst:75
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #: ../../source/concepts.rst:75
 msgid "Phone number."
-msgstr ""
+msgstr "Telefoninumber"
 
 #: ../../source/concepts.rst:77
 msgid "TEXTA_TAG"
@@ -245,15 +276,15 @@ msgstr ""
 
 #: ../../source/concepts.rst:77
 msgid "Own tag"
-msgstr ""
+msgstr "Oma märgend"
 
 #: ../../source/concepts.rst:77
 msgid "Tags we have trained in :ref:`the Taggers under Models <texttaggers>`"
-msgstr ""
+msgstr "Märgendid, mis on treenitud :ref:`Tagger-itega Models-i all <texttaggers>`"
 
 #: ../../source/concepts.rst:80
 msgid "Table 1. *Predefined Fact Names used by Multilingual Processor*"
-msgstr ""
+msgstr "Tabel 1. *Mitmekeelse tekstitöötleja (Multilingual Processor) kasutatavad eelnevalt defineeritud faktid*"
 
 #: ../../source/concepts.rst:82
 msgid ""
@@ -261,10 +292,13 @@ msgid ""
 "and addresses registered in Estonian Open Data. It won't tag any foreign "
 "company nor address while ORG and LOC identifies all of them."
 msgstr ""
+"Pane tähele, et COMPANY ja ADDR oskavad ära tunda ainult neid firmasid"
+"ja aadresse, mis on registreeritud Estonian Open Data-s. See ei märgenda välismaa"
+"firmasid ja aadresse. ORG ja LOC märgendab ka välismaa omi."
 
 #: ../../source/concepts.rst:88
 msgid "Index"
-msgstr ""
+msgstr "Indeks (Index)"
 
 #: ../../source/concepts.rst:90
 msgid ""
@@ -272,10 +306,13 @@ msgid ""
 " table consists of all the suitable documents filtered out from that "
 "index and one row indicates a document."
 msgstr ""
+"Indeks on dokumentide kogum Elasticsearch-is. Otsingus (Search-is) väljastatakse"
+" tabel indeksist välja filtreeritud dokumentidega. Üks rida tabelis on "
+"üks dokument."
 
 #: ../../source/concepts.rst:95
 msgid "Field"
-msgstr ""
+msgstr "Väli (Field)"
 
 #: ../../source/concepts.rst:97
 msgid ""
@@ -283,10 +320,13 @@ msgid ""
 "information in that document. For example, we can have an article with "
 "fields containing the text, the date of publishing, headline, etc."
 msgstr ""
+"Iga dokument on väljade kogum. Väli on eraldatud infoosa "
+"dokumendis. Näiteks võivad meil olla artiklid "
+"sisu, avaldamisaja, pealkirja jms väljadega."
 
 #: ../../source/concepts.rst:103
 msgid "Embedding"
-msgstr ""
+msgstr "Sõnavektor (embedding)"
 
 #: ../../source/concepts.rst:105
 msgid ""
@@ -301,10 +341,20 @@ msgid ""
 "Furthermore, TTK will also employ cross-lingual embeddings developed by "
 "EMBEDDIA to support multilingual text classification."
 msgstr ""
+"Sõnavektorite mudelid on statistilised mudelid, mis kirjeldavad sõnade ja fraaside"
+" jaotuslikke omadusi, mis võimaldavad arvutada erinevate sõnade ja fraaside "
+"vahelisi sarnasusi. TTK-s kasutatakse sõnavektoreid "
+"kontekstuaalselt sarnaste võtmesõnade otsimiseks, mis aitab laiendada otsingu tulemusi ning ehitada "
+"leksikone. Enamgi veel, sõnavektoreid saab kasutada ka TEXTA Toolkiti "
+"tehisnärvivõrgupõhistes klassifikaatorites. TTK toetab hetkel vaid "
+"Word2Vec sõnavektoreid, aga töötatakse selle nimel, et lisada juurde "
+" kõige uuemaid ja veel paremaid sõnavektorite mudeleid (nt BERT-i Google-st). "
+"TTK hakkab kasutama ka mitmekeelseid sõnavektorite mudeleid, mida arendatakse praegu "
+"EMBEDDIA projektis mitmekeelse teksti klassifitseerimiseks."
 
 #: ../../source/concepts.rst:114
 msgid "Tagger"
-msgstr ""
+msgstr "Märgendaja (Tagger)"
 
 #: ../../source/concepts.rst:116
 msgid ""
@@ -323,6 +373,20 @@ msgid ""
 " smaller. For features, both word-based and character-based n-grams are "
 "used."
 msgstr ""
+"Taggers are monolingual binary text classifiers used to predict tags for "
+"documents, e.g. whether a tweet is toxic or talking about Brexit. Taggers"
+" are trained using a subset of documents defined by a TTK search or a raw"
+" Elasticsearch query (big ugly JSON object). The subset of documents "
+"defines the “positive” set of examples (the documents about the topic "
+"being tagged), whilst “negative” examples will be selected automatically "
+"(to be unlike the positive ones). TTK taggers are trained using scikit-"
+"learn pipelines and includes models like logistic regression and SVM. TTK"
+" automatically splits the training data into training and testing data "
+"(by default 80-20) and applies grid search combined with k-fold cross "
+"validation to identify best hyperparameters. SVM model is also used for "
+"feature selection to remove unimportant features from the model making it"
+" smaller. For features, both word-based and character-based n-grams are "
+"used."
 
 #: ../../source/concepts.rst:127
 msgid "Tagger Group"
