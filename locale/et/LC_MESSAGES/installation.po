@@ -231,7 +231,7 @@ msgstr "Repositooriumi kloonimine"
 
 #: ../../source/installation.rst:125
 msgid "Now, let's clone the repository and move to **texta-rest** direcory:"
-msgstr "Kloonime repositooriumi ja viime selle **texta-rest** kausta:"
+msgstr "Kloonime repositooriumi ja navigeerime **texta-rest** kausta:"
 
 #: ../../source/installation.rst:133
 msgid "Build the Environment"
