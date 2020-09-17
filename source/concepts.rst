@@ -28,7 +28,7 @@ One of the most central component in TTK is Search, which is used to define subs
 Fact
 ----
 
-In TTK text annotations are regarded as facts: 
+In TTK text annotations are regarded as facts:
 
 .. code-block:: bash
 
@@ -96,6 +96,12 @@ Field
 
 Each document is a collection of fields. Field is a separated piece of information in that document. For example, we can have an article with fields containing the text, the date of publishing, headline, etc.
 
+.. _anonymizer_concept:
+
+Anonymizer
+-------------
+
+TODO
 
 .. _embedding_concept:
 
@@ -121,6 +127,14 @@ TTK automatically splits the training data into training and testing data (by de
 SVM model is also used for feature selection to remove unimportant features from the model making it smaller.
 For features, both word-based and character-based n-grams are used.
 
+.. _regex_tagger_concept:
+
+Regex Tagger
+--------------
+
+TODO
+
+
 .. _tagger_group_concept:
 
 Tagger Group
@@ -131,6 +145,15 @@ As its name suggests, Tagger Groups incorporate multiple (binary) taggers, which
 Tagger Group has been successfully tested with over 6000 binary models and prediction times are usually less than 1 second.
 To achieve this, TTK has employed a hybrid approach for multi-label tagging, which uses unsupervised machine learning (document vectors) to limit the number of binary models used for prediction.
 In such scenario input document is compared to training data to determine most probable models to produce valid tags.
+
+
+.. _regex_tagger_group_concept:
+
+Regex Tagger Group
+-------------------
+
+TODO
+
 
 .. _torch_tagger_concept:
 
@@ -157,18 +180,6 @@ Topic Analyzer
 
 Topic Analyzer is a tool that detects groups of similar documents in the data. It can be used for example to explore the structure of the unlabeled data in order to get the understanding about what it contains. However, the main purpose of the tool is to take it one step further and make actual use of one's exploration by transforming their discoveries into the labelling. It can then be used to build supervised machine learning models.
 
-Topic Analyzer puts to use the best parts of unsupervised clustering and manual labelling. While clustering is a fast and efficient method to create groups of rather similar texts, it still lacks preciseness required to use these clusters as a labelling of the data. For example, while some clusters may indeed contain similar documents, some other will completely fail in capturing the similarity and most of them will probably be so-and-so. 
+Topic Analyzer puts to use the best parts of unsupervised clustering and manual labelling. While clustering is a fast and efficient method to create groups of rather similar texts, it still lacks preciseness required to use these clusters as a labelling of the data. For example, while some clusters may indeed contain similar documents, some other will completely fail in capturing the similarity and most of them will probably be so-and-so.
 
 Topic Analyzer allows user to look inside each cluster and make the decision about the quality manually. Users can also perform various actions on the cluster: remove documents, add more similar documents, and move documents to another more suitable cluster. Finally, user can choose to label the documents inside the cluster if it has reached a sufficient quality.
-
-
-
-
-
-
-
-
-
-
-
-

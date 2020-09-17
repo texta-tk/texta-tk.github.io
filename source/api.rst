@@ -93,6 +93,83 @@ Example:
         }'
 
 
+Anonymizers
+-------------
+
+Create a new anonymizer
++++++++++++++++++++++++++
+
+Endpoint: **/projects/{project_pk}/anonymizers/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/anonymizers/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "description": "My anonymizer",
+                "replace_misspelled_names": true,
+                "replace_single_last_names": true,
+                "replace_single_first_names": true,
+                "misspelling_threshold": 0.9,
+                "mimic_casing": true,
+                "auto_adjust_threshold": true
+            }'
+
+
+Anonymize text
+++++++++++++++++
+
+Endpoint **/projects/{project_pk}/anonymizers/{id}/anonymize_text/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/anonymizers/1/anonymize_text/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+               "text": "TODO"
+            }'
+
+Response:
+
+.. code-block:: json
+
+        {
+
+        }
+
+Anonymize texts
+++++++++++++++++
+
+Endpoint **/projects/{project_pk}/anonymizers/{id}/anonymize_texts/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/anonymizers/1/anonymize_texts/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+               "texts": []
+            }'
+
+Response:
+
+.. code-block:: json
+
+        {
+
+        }
+
 Embeddings
 ----------
 

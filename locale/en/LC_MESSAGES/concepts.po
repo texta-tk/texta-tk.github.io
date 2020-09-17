@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 17:15+0300\n"
+"POT-Creation-Date: 2020-09-17 18:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -284,11 +284,20 @@ msgid ""
 "fields containing the text, the date of publishing, headline, etc."
 msgstr ""
 
-#: ../../source/concepts.rst:103
+#: ../../source/concepts.rst:102
+msgid "Anonymizer"
+msgstr ""
+
+#: ../../source/concepts.rst:104 ../../source/concepts.rst:135
+#: ../../source/concepts.rst:142 ../../source/concepts.rst:172
+msgid "TODO"
+msgstr ""
+
+#: ../../source/concepts.rst:109
 msgid "Embedding"
 msgstr ""
 
-#: ../../source/concepts.rst:105
+#: ../../source/concepts.rst:111
 msgid ""
 "Embedding is a statistical model describing the distributional properties"
 " of words and phrases, which enables the computation of similarity "
@@ -302,11 +311,11 @@ msgid ""
 "EMBEDDIA to support multilingual text classification."
 msgstr ""
 
-#: ../../source/concepts.rst:114
+#: ../../source/concepts.rst:120
 msgid "Tagger"
 msgstr ""
 
-#: ../../source/concepts.rst:116
+#: ../../source/concepts.rst:122
 msgid ""
 "Taggers are monolingual binary text classifiers used to predict tags for "
 "documents, e.g. whether a tweet is toxic or talking about Brexit. Taggers"
@@ -324,11 +333,19 @@ msgid ""
 "used."
 msgstr ""
 
-#: ../../source/concepts.rst:127
+#: ../../source/concepts.rst:133
+msgid "Regex Tagger"
+msgstr ""
+
+#: ../../source/concepts.rst:140
+msgid "Regex Tagger Group"
+msgstr ""
+
+#: ../../source/concepts.rst:148
 msgid "Tagger Group"
 msgstr ""
 
-#: ../../source/concepts.rst:129
+#: ../../source/concepts.rst:150
 msgid ""
 "Tagger Group is an extension to TTK’s binary taggers to support "
 "monolingual multi-label classification. As its name suggests, Tagger "
@@ -342,11 +359,11 @@ msgid ""
 " to determine most probable models to produce valid tags."
 msgstr ""
 
-#: ../../source/concepts.rst:138
+#: ../../source/concepts.rst:159
 msgid "Torch Tagger"
 msgstr ""
 
-#: ../../source/concepts.rst:140
+#: ../../source/concepts.rst:161
 msgid ""
 "While Taggers and Tagger Groups use classical machine learning to produce"
 " binary classification models, Texta Toolkit also incorporates deep "
@@ -364,19 +381,15 @@ msgid ""
 "96%."
 msgstr ""
 
-#: ../../source/concepts.rst:149
+#: ../../source/concepts.rst:170
 msgid "Multilingual Processor"
 msgstr ""
 
-#: ../../source/concepts.rst:151
-msgid "TODO"
-msgstr ""
-
-#: ../../source/concepts.rst:156
+#: ../../source/concepts.rst:177
 msgid "Topic Analyzer"
 msgstr ""
 
-#: ../../source/concepts.rst:158
+#: ../../source/concepts.rst:179
 msgid ""
 "Topic Analyzer is a tool that detects groups of similar documents in the "
 "data. It can be used for example to explore the structure of the "
@@ -387,7 +400,7 @@ msgid ""
 "learning models."
 msgstr ""
 
-#: ../../source/concepts.rst:160
+#: ../../source/concepts.rst:181
 msgid ""
 "Topic Analyzer puts to use the best parts of unsupervised clustering and "
 "manual labelling. While clustering is a fast and efficient method to "
@@ -398,7 +411,7 @@ msgid ""
 "probably be so-and-so."
 msgstr ""
 
-#: ../../source/concepts.rst:162
+#: ../../source/concepts.rst:183
 msgid ""
 "Topic Analyzer allows user to look inside each cluster and make the "
 "decision about the quality manually. Users can also perform various "

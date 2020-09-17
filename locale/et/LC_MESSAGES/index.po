@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 17:40+0300\n"
+"POT-Creation-Date: 2020-09-17 18:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+
+#: ../../source/index.rst:6
+msgid ""
+"`EN <https://docs.texta.ee/concepts.html>`_ `ET "
+"<https://docs.texta.ee/et/concepts.html>`_"
+msgstr ""
 
 #: ../../source/index.rst:10
 msgid "Texta Toolkit"
@@ -38,8 +44,8 @@ msgid ""
 "The source code for Toolkit's Django REST API is available at "
 "`git.texta.ee/texta/texta-rest <https://git.texta.ee/texta/texta-rest>`_."
 msgstr ""
-"Toolkiti Django REST API lähtekood on saadaval aadressil `git.texta.ee/texta"
-"/texta-rest <https://git.texta.ee/texta/texta-rest>`_."
+"Toolkiti Django REST API lähtekood on saadaval aadressil "
+"`git.texta.ee/texta/texta-rest <https://git.texta.ee/texta/texta-rest>`_."
 
 #: ../../source/index.rst:18
 msgid ""
@@ -47,8 +53,8 @@ msgid ""
 "`git.texta.ee/texta/texta-rest-front <https://git.texta.ee/texta/texta-"
 "rest-front>`_."
 msgstr ""
-"Toolkiti Angular GUI lähtekood on saadaval aadressil `git.texta.ee/texta/texta-"
-"rest-front <https://git.texta.ee/texta/texta-rest-front>`_."
+"Toolkiti Angular GUI lähtekood on saadaval aadressil `git.texta.ee/texta"
+"/texta-rest-front <https://git.texta.ee/texta/texta-rest-front>`_."
 
 #: ../../source/index.rst:24
 msgid "Contents:"
@@ -58,3 +64,4 @@ msgstr "Sisukord:"
 #~ "`In English <https://docs.texta.ee/index.html>`_ "
 #~ "`eesti keeles <https://docs.texta.ee/et/index.html>`_"
 #~ msgstr ""
+
