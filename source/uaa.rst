@@ -43,7 +43,6 @@ For further reference:
 **NOTE:** One caveat one might encounter is getting authentication errors when trying to log in with the email. Even though the log in form asks for the "email" and "password", it actually sends the **username** and password. Therefore, try logging in with the username(type it into the email field)/password instead.
 
 
-
 Configuring the Toolkit server
 ------------------------------
 To configure the Toolkit server client application, UAA related environment variables need to be set:
