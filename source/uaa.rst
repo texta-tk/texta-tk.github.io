@@ -1,5 +1,5 @@
-`In English <https://docs.texta.ee/uua.html>`_
-`eesti keeles <https://docs.texta.ee/et/uua.html>`_
+`EN <https://docs.texta.ee/uua.html>`_
+`ET <https://docs.texta.ee/et/uua.html>`_
 
 Authenticating Toolkit through CloudFoundry UAA 
 ===============================================
