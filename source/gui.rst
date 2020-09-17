@@ -1,6 +1,5 @@
-`In English <https://docs.texta.ee/gui.html>`_
-
-`eesti keeles <https://docs.texta.ee/et/gui.html>`_
+`EN <https://docs.texta.ee/gui.html>`_
+`ET <https://docs.texta.ee/et/gui.html>`_
 
 Tutorial: Using Toolkit via GUI
 ===============================
