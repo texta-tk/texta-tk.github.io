@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Selle juhendi eesmärk on õpetada, kuidas teha algust TEXTA Toolkiti API-"
 "ga. Juhend annab ülevaate kõige põhilistemast API operatsioonidest koos "
-"illustreerivate näidetega. Detailsematdokumentatsiooni näeb :ref:`API "
+"illustreerivate näidetega. Detailsemat dokumentatsiooni näeb :ref:`API "
 "viitest <api_reference>`."
 
 #: ../../source/api.rst:13
@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Töötava Toolkiti seisundit saab uurida statistika opereerimise "
 "**/health** otspunktis (endpoint). Sealt saab kätte teenuste (e.g. "
-"Elasticsearch and TEXTA MLP) ja süsteemi ressursside (nt disk, mälu, GPU "
+"Elasticsearch and TEXTA MLP) ja süsteemi ressursside (nt diski, mälu, GPU "
 "kasutus jne) kättesaadavuse info."
 
 #: ../../source/api.rst:21
@@ -81,7 +81,7 @@ msgid ""
 "Response is the Token key that you will later need to authenticate "
 "requests."
 msgstr ""
-"Vastus (response) on see Tookeni võti (Token key), mida hiljem tuleb "
+"Vastus (response) on see Tokeni võti (Token key), mida hiljem tuleb "
 "kasutada päringute  autentiseerimiseks."
 
 #: ../../source/api.rst:49
@@ -196,7 +196,7 @@ msgid ""
 msgstr ""
 "Kogu protsess on asünkroonne. St, päringu vastus võib tulla koheselt, "
 "kuid faili mällu laadimine võib võtta natukene rohkem aega. Esimese 10 "
-"sekundi jooksul ei pruugi olla näha mingeid muutuseidprogressis."
+"sekundi jooksul ei pruugi olla näha mingeid muutuseid progressis."
 
 #: ../../source/api.rst:308
 msgid "Parameters:"
@@ -215,7 +215,7 @@ msgid ""
 "index - Name of the newly created index, please note that Elasticsearch "
 "index naming restrictions apply."
 msgstr ""
-"index - Vastloodud indeksi kirjeldus, palun pane tähele, et sellel "
+"index - Vastloodud indeksi kirjeldus. Palun pane tähele, et sellel "
 "kehtivad Elasticsearch-i indeksi nimetamise piirangud."
 
 #: ../../source/api.rst:312
@@ -249,7 +249,7 @@ msgstr "API viide (reference)"
 
 #: ../../source/api.rst:339
 msgid "Reference for Toolkit API is available when running the Toolkit:"
-msgstr "Viide Toolkiti API-le on saadav, kui Toolkit töötab:"
+msgstr "Viide Toolkiti API-le on kättesaadav, kui Toolkit töötab:"
 
 #: ../../source/api.rst:341
 msgid "http://localhost:8000/api/v1/swagger/"
