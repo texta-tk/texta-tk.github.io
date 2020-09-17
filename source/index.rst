@@ -2,9 +2,9 @@
    sphinx-quickstart on Mon Dec 12 07:46:35 2016.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-   
-`In English <https://docs.texta.ee/index.html>`_
-`eesti keeles <https://docs.texta.ee/et/index.html>`_
+
+ `EN <https://docs.texta.ee/concepts.html>`_
+ `ET <https://docs.texta.ee/et/concepts.html>`_
 
 Texta Toolkit
 =============
@@ -19,12 +19,12 @@ The source code for Toolkit's Angular GUI is available at `git.texta.ee/texta/te
 
 .. image:: images/toolkit_logo.png
     :alt: Texta
-    
+
 
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
-    
+
     installation
     concepts
     gui
