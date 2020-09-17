@@ -50,8 +50,8 @@ msgid ""
 " from our registries. For doing so, one needs to install *Docker* and "
 "*docker-compose*:"
 msgstr ""
-"Lihtsaim viis TEXTA Toolkiti jooksutamiseks on käivitada ettevalmistatud "
-"dokeripilte meie registritest. Selleks peab installima *Docker*-i and "
+"Lihtsaim viis TEXTA Toolkiti jooksutamiseks on käivitada ette valmistatud "
+"Dockeri pilte meie registritest. Selleks peab installima *Docker*-i and "
 "*docker-compose*-i:"
 
 #: ../../source/installation.rst:26
@@ -59,12 +59,12 @@ msgid ""
 "To run Elasticsearch in Docker, we need to increase maximum map count "
 "parameter for virtual memory:"
 msgstr ""
-"Elasticsearchi Docker-is kasutamiseks on vaja tõsta maksimaalset map "
-"count parameetrit virtuaalmälule:"
+"Elasticsearchi Docker-is kasutamiseks on vaja tõsta maksimaalset *map "
+"count* parameetrit virtuaalmälule:"
 
 #: ../../source/installation.rst:33
 msgid "Configure docker-compose"
-msgstr "Seadista docker-compose"
+msgstr "Seadista *docker-compose*"
 
 #: ../../source/installation.rst:35
 msgid ""
@@ -73,7 +73,7 @@ msgid ""
 "compose.yaml**. To successfully run TEXTA Toolkit we need to define "
 "following services:"
 msgstr ""
-"Me kasutame *docker-compose*-i selleks, et meil oleks keskkond, mille "
+"*docker-compose*-i kasutatakse selleks, et oleks olemas keskkond, mille "
 "teenused rahuldaksid meie vajadusi. Need teenused on defineeritud failis "
 "**docker-compose.yaml**. TEXTA Toolkiti edukaks jooksutamiseks on vaja "
 "järgnevaid teenuseid:"
@@ -82,7 +82,7 @@ msgstr ""
 msgid ""
 "Elasticsearch for storing the documents (one can also run it without "
 "Docker)"
-msgstr "Elasticsearch dokumentide hoiustamiseks (saab kasutada ka Docerita)"
+msgstr "Elasticsearch dokumentide hoiustamiseks (saab kasutada ka Dockerita)"
 
 #: ../../source/installation.rst:40
 msgid ""
@@ -90,7 +90,7 @@ msgid ""
 "without Docker)"
 msgstr ""
 "MySQL ja Postgres kasutaja ja projektiandmete hoiustamiseks (saab "
-"kasutada ka Docerita)"
+"kasutada ka Dockerita)"
 
 #: ../../source/installation.rst:42
 msgid ""
@@ -152,7 +152,7 @@ msgid ""
 " **env**:"
 msgstr ""
 "Kui failid **docker-compose.yaml** ja **env** on valmis, võib "
-"dokkeripildid alla tõmmata ja teenused käivitada, kasutades järgnevaid "
+"Dockeri pildid alla tõmmata ja teenused käivitada, kasutades järgnevaid "
 "käske **docker-compose.yaml** ja **env** failidega samas kaustas:"
 
 #: ../../source/installation.rst:72
@@ -162,7 +162,7 @@ msgstr "*Detached mode*-i kasutamiseks kasuta *-d* lippu: "
 #: ../../source/installation.rst:79
 msgid "TEXTA Toolkit's dockerized version comes with a default superuser account:"
 msgstr ""
-"TEXTA Toolkit-i dokkeriversiooniga tuleb vaikimisi kaasa superkasutaja "
+"TEXTA Toolkit-i Dockeri versiooniga tuleb vaikimisi kaasa superkasutaja "
 "konto:"
 
 #: ../../source/installation.rst:81 ../../source/installation.rst:160
@@ -183,7 +183,7 @@ msgstr ""
 
 #: ../../source/installation.rst:89
 msgid "and API at:"
-msgstr "ja api aadressil:"
+msgstr "ja API aadressil:"
 
 #: ../../source/installation.rst:91
 msgid "http://localhost/api/v1/"
@@ -266,7 +266,7 @@ msgid ""
 " model."
 msgstr ""
 "**migrate.py** skripti jooksutamine valmistab ette Django migratsioonid "
-"ja käivitab need. Seda skripti peab kasutama iga kord, kui algkood "
+"ja käivitab need. Seda skripti peab kasutama iga kord, kui lähtekood "
 "muutub, kuna Toolkiti andmemudel võib samuti olla muutunud. Lisaks on "
 "seda skripti vaja jooksutada enne Toolkiti esimest korda kasutamist, kuna"
 " see tekitab superkasutaja konto ja andmebaasi, mida kasutatakse "
@@ -282,7 +282,7 @@ msgstr ""
 
 #: ../../source/installation.rst:164
 msgid "Finally let's run the development server:"
-msgstr "Lõpetuks jooksutame arendusserverit:"
+msgstr "Lõpuks jooksutame arendusserverit:"
 
 #: ../../source/installation.rst:170
 msgid ""
