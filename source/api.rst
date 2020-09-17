@@ -12,7 +12,7 @@ For more detailed documentations please see :ref:`API reference <api_reference>`
 Health of Toolkit
 -----------------
 
-For checking the health of a running Toolkit instance, one can access the **/health** endpoint for operating statistics. 
+For checking the health of a running Toolkit instance, one can access the **/health** endpoint for operating statistics.
 The endpoint responds with information abouth the availability of services (e.g. Elasticsearch and TEXTA MLP) and system resources (e.g. disk, memory, GPU usage, etc.).
 
 .. literalinclude:: files/health.json
@@ -20,7 +20,7 @@ The endpoint responds with information abouth the availability of services (e.g.
 Registration
 --------------
 
-Endpoint: **/rest-auth/registration/** 
+Endpoint: **/rest-auth/registration/**
 
 Example:
 
@@ -32,7 +32,7 @@ Example:
     -d '{
             "username": "myname",
             "email": "myname@example.com",
-            "password1": "a123s456789", 
+            "password1": "a123s456789",
             "password2": "a123s456789"
         }'
 
@@ -171,6 +171,184 @@ Response:
             "result":true
         }
 
+Regex Taggers
+--------------
+
+Create a new Regex Tagger
++++++++++++++++++++++++++++
+
+Endpoint: **/projects/{project_pk}/regex_taggers/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/regex_taggers/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "description": "My regex tagger",
+                "lexicon": ["cat"],
+                "counter_lexicon": ["no", "not"],
+                "operator": "or",
+                "match_type": "prefix",
+                "required_words": 1.0,
+                "phrase_slop": 0,
+                "counter_slop": 2,
+                "n_allowed_edits": 0,
+                "return_fuzzy_match": true,
+                "ignore_case": true,
+                "ignore_punctuation": false
+
+            }'
+
+Tag doc
+++++++++++++++++
+
+Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_doc/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/regex_taggers/1/tag_doc/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "doc": {"text": "If you are allergic to a thing, it is best not to put that thing in your mouth, particularly if the thing is cats.", "id": 12},
+                "fields": ["text"]
+            }'
+
+Response:
+
+.. code-block:: json
+
+      {
+        "tagger_id": 1,
+        "description": "My regex tagger",
+        "result": true,
+        "matches": [
+            {
+                "str_val": "cats",
+                "spans": [
+                    109,
+                    113
+                ],
+                "description": "My regex tagger",
+                "tagger_id": 1
+            }
+        ]
+      }
+
+Tag random doc
+++++++++++++++++
+
+Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_random_doc/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/regex_taggers/1/tag_random_doc/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "indices": [{"name": "kliinik_ee"}],
+                "fields": ["kysimus_ja_vastus"]
+            }'
+
+Response:
+
+.. code-block:: json
+
+        {
+            "tagger_id": 1,
+            "description": "My regex tagger",
+            "result": true,
+            "matches": [
+                {
+                    "str_val": "cats",
+                    "spans": [
+                        109,
+                        113
+                    ],
+                    "description": "My regex tagger",
+                    "tagger_id": 1
+                }
+            ],
+            "texts": [
+        	"If you are allergic to a thing, it is best not to put that thing in your mouth, particularly if the thing is cats."
+            ]
+        }
+
+
+Tag text
++++++++++
+
+Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_text/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/regex_taggers/1/tag_text/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "text": "If you are allergic to a thing, it is best not to put that thing in your mouth, particularly if the thing is cats.",
+            }'
+
+Response:
+
+.. code-block:: json
+
+      [
+          {
+              "str_val": "cats",
+              "spans": [
+                  109,
+                  113
+              ]
+          }
+      ]
+
+Tag texts
+++++++++++
+
+Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_texts/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/regex_taggers/1/tag_texts/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "texts": ["Black cats and white rats.", "Dogs dogs dogs."]
+            }'
+
+Response:
+
+.. code-block:: json
+
+        [
+            [
+                {
+                    "str_val": "cats",
+                    "spans": [
+                        6,
+                        10
+                    ]
+                }
+            ],
+            []
+        ]
 
 Tagger Groups
 -------------
@@ -191,7 +369,7 @@ Example:
         -d '{
                 "description": "My tagger group",
                 "fact_name": "TEEMA",
-                "tagger": 
+                "tagger":
                         {
                             "fields": ["comment_content_lemmas"],
                             "vectorizer": "TfIdf Vectorizer",
@@ -290,7 +468,7 @@ Response:
         {
             "result": "foo",
             "probability": 0.36259710788726807
-        }           
+        }
 
 
 Dataset Importer
