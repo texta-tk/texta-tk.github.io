@@ -33,7 +33,6 @@ msgid "Texta Toolkit"
 msgstr "Texta Toolkit"
 
 #: ../../source/index.rst:12
-#, fuzzy
 msgid ""
 "TEXTA Toolkit is an open-source software for building RESTful text "
 "analytics applications. It is being developed by `TEXTA Ltd "
@@ -41,8 +40,9 @@ msgid ""
 "installing and running **TEXTA Toolkit 2.x**."
 msgstr ""
 "TEXTA Toolkit on vabavaraline tekstianalüütika tarkvara, mis kasutab "
-"RESTi.Seda arendab `TEXTA OÜ <https://www.texta.ee>`_. Siin leiab infot "
-"**TEXTA Toolkit 2.x**-e installimiseja käivitamise kohta."
+"RESTi. Seda arendab `TEXTA OÜ <https://www.texta.ee>`_. Siin leiab infot "
+"**TEXTA Toolkit 2.x**-e installimise "
+"ja käivitamise kohta."
 
 #: ../../source/index.rst:16
 msgid ""

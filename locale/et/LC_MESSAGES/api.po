@@ -227,7 +227,6 @@ msgstr ""
 " seadistada .csv failide eraldajat."
 
 #: ../../source/api.rst:317
-#, fuzzy
 msgid "@ is special syntax for reading the binary of the given file name."
 msgstr "@ on eriline süntaksimärk, millega saab lugeda antud failinime binaari."
 
