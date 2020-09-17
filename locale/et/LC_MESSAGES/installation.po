@@ -51,7 +51,7 @@ msgid ""
 "*docker-compose*:"
 msgstr ""
 "Lihtsaim viis TEXTA Toolkiti jooksutamiseks on käivitada ette valmistatud "
-"Dockeri pilte meie registritest. Selleks peab installima *Docker*-i and "
+"Dockeri pilte TTK registritest. Selleks peab installima *Docker*-i and "
 "*docker-compose*-i:"
 
 #: ../../source/installation.rst:26
