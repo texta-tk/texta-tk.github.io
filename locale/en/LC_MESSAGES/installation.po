@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-11 11:47+0300\n"
+"POT-Creation-Date: 2020-09-17 13:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/installation.rst:1
 msgid ""
-"`In English <https://docs.texta.ee/installation.html>`_ `eesti keeles "
+"`In English <https://docs.texta.ee/installation.html>`_ `Eesti keeles "
 "<https://docs.texta.ee/et/installation.html>`_"
 msgstr ""
 
@@ -246,4 +246,10 @@ msgid ""
 "And in another terminal run the Celery worker responsible for "
 "asynchronous tasks:"
 msgstr ""
+
+#~ msgid ""
+#~ "`In English <https://docs.texta.ee/installation.html>`_"
+#~ " `eesti keeles "
+#~ "<https://docs.texta.ee/et/installation.html>`_"
+#~ msgstr ""
 

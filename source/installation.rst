@@ -1,5 +1,5 @@
 `In English <https://docs.texta.ee/installation.html>`_
-`eesti keeles <https://docs.texta.ee/et/installation.html>`_
+`Eesti keeles <https://docs.texta.ee/et/installation.html>`_
 
 .. _installation:
 
