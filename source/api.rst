@@ -1,5 +1,5 @@
-`In English <https://docs.texta.ee/api.html>`_
-`eesti keeles <https://docs.texta.ee/et/api.html>`_
+`EN <https://docs.texta.ee/api.html>`_
+`ET <https://docs.texta.ee/et/api.html>`_
 
 Tutorial: Using Toolkit via API
 ===============================
