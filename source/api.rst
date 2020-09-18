@@ -134,16 +134,15 @@ Example:
         -H "Content-Type: application/json" \
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
         -d '{
-               "text": "TODO"
+                "text": "Bonnie Parker and Clyde Barrow are believed to have murdered at least nine police officers.",
+                "names": ["Parker, Bonnie Elizabeth", "Chestnut Barrow, Clyde"]
             }'
 
 Response:
 
 .. code-block:: json
 
-        {
-
-        }
+    "N.Q and X.R are believed to have murdered at least nine police officers."
 
 Anonymize texts
 ++++++++++++++++
@@ -159,16 +158,22 @@ Example:
         -H "Content-Type: application/json" \
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
         -d '{
-               "texts": []
+               "texts": [
+                    "Bonnie Parker and Clyde Barrow are believed to have murdered at least nine police officers.",
+                    "Bonnie and Clyde were killed in May 1934."
+                ],
+               "names": ["Parker, Bonnie Elizabeth", "Chestnut Barrow, Clyde"],
+               "consistent_replacement": true
             }'
 
 Response:
 
 .. code-block:: json
 
-        {
-
-        }
+        [
+            "F.Q and T.T are believed to have murdered at least nine police officers.",
+            "F.Q and T.T were killed in May 1934."
+        ]
 
 Embeddings
 ----------
@@ -456,7 +461,7 @@ Example:
             }'
 
 Tag text
-++++++++
+++++++++++
 
 Endpoint: **/projects/{project_pk}/tagger_groups/{id}/tag_text/**
 
@@ -493,6 +498,230 @@ Response:
                 "result": true
             }
         ]
+
+Regex Tagger Groups
+---------------------
+
+Create a new regex tagger group
+++++++++++++++++++++++++++++++++++
+
+Endpoint: **/projects/{project_pk}/regex_tagger_groups/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/regex_tagger_groups/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "regex_taggers": [92, 93, 94],
+                "description": "animals"
+            }'
+
+Response:
+
+.. code-block:: json
+
+    {
+        "id": 3,
+        "url": "https://rest-dev.texta.ee/api/v1/projects/2/regex_tagger_groups/1/",
+        "regex_taggers": [
+            92,
+            93,
+            94
+        ],
+        "author_username": "my_username",
+        "task": null,
+        "description": "animals",
+        "tagger_info": [
+            {
+                "tagger_id": 92,
+                "description": "cat"
+            },
+            {
+                "tagger_id": 93,
+                "description": "dog"
+            },
+            {
+                "tagger_id": 94,
+                "description": "horse"
+            }
+        ]
+    }
+
+Apply regex tagger group
++++++++++++++++++++++++++++
+
+
+Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/apply_tagger_group/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/regex_tagger_groups/1/apply_tagger_group/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+              "description": "Apply my regex tagger group",
+              "indices": [{"name": ""}],
+              "fields": [],
+              "query": null
+
+            }'
+
+Response:
+
+.. code-block:: json
+
+
+
+Tag doc
++++++++++
+
+
+Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_doc/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/regex_tagger_groups/1/tag_doc/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "doc": {"text": "Black cats and white dogs.", "id": 1},
+                "fields": ["text"]
+            }'
+
+Response:
+
+.. code-block:: json
+
+      {
+          "tagger_group_id": 1,
+          "description": "animals",
+          "result": true,
+          "matches": [
+              {
+                  "str_val": "cats",
+                  "spans": [
+                      6,
+                      10
+                  ],
+                  "description": "cat",
+                  "tagger_id": 92
+              },
+              {
+                  "str_val": "dogs",
+                  "spans": [
+                      21,
+                      25
+                  ],
+                  "description": "dog",
+                  "tagger_id": 93
+              }
+          ]
+      }
+
+Tag random doc
+++++++++++++++++
+
+
+Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_random_doc/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/regex_tagger_groups/1/tag_random_doc/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "indices": [],
+                "fields": []
+            }'
+
+Response:
+
+.. code-block:: json
+
+Tag text
+++++++++++
+
+
+Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_text/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/regex_tagger_groups/1/tag_text/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "text": "Black cats and white dogs."
+            }'
+
+Response:
+
+.. code-block:: json
+
+          {
+              "tagger_group_id": 1,
+              "description": "animals",
+              "result": true,
+              "matches": [
+                  {
+                      "str_val": "cats",
+                      "spans": [
+                          6,
+                          10
+                      ],
+                      "description": "cat",
+                      "tagger_id": 92
+                  },
+                  {
+                      "str_val": "dogs",
+                      "spans": [
+                          21,
+                          25
+                      ],
+                      "description": "dog",
+                      "tagger_id": 93
+                  }
+              ]
+          }
+
+Tag texts
++++++++++++
+
+
+Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_texts/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/regex_tagger_groups/1/tag_texts/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "texts": ["Black cats and white dogs", "Plains and trains.", "Knights and horses." ]
+            }'
+
+Response:
+
+.. code-block:: json
+
+
 
 Torch Tagger
 -------------

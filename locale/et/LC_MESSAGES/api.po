@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 18:38+0300\n"
+"POT-Creation-Date: 2020-09-18 18:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,19 +65,23 @@ msgid "Endpoint: **/rest-auth/registration/**"
 msgstr "Otspunkt (endpoint): **/rest-auth/registration/**"
 
 #: ../../source/api.rst:25 ../../source/api.rst:53 ../../source/api.rst:81
-#: ../../source/api.rst:104 ../../source/api.rst:128 ../../source/api.rst:153
-#: ../../source/api.rst:181 ../../source/api.rst:206 ../../source/api.rst:227
-#: ../../source/api.rst:259 ../../source/api.rst:288 ../../source/api.rst:327
-#: ../../source/api.rst:370 ../../source/api.rst:401 ../../source/api.rst:438
-#: ../../source/api.rst:463 ../../source/api.rst:505 ../../source/api.rst:528
-#: ../../source/api.rst:570
+#: ../../source/api.rst:104 ../../source/api.rst:128 ../../source/api.rst:152
+#: ../../source/api.rst:186 ../../source/api.rst:211 ../../source/api.rst:232
+#: ../../source/api.rst:264 ../../source/api.rst:293 ../../source/api.rst:332
+#: ../../source/api.rst:375 ../../source/api.rst:406 ../../source/api.rst:443
+#: ../../source/api.rst:468 ../../source/api.rst:510 ../../source/api.rst:560
+#: ../../source/api.rst:588 ../../source/api.rst:637 ../../source/api.rst:660
+#: ../../source/api.rst:708 ../../source/api.rst:734 ../../source/api.rst:757
+#: ../../source/api.rst:799
 msgid "Example:"
 msgstr "Näide:"
 
-#: ../../source/api.rst:39 ../../source/api.rst:64 ../../source/api.rst:140
-#: ../../source/api.rst:165 ../../source/api.rst:240 ../../source/api.rst:301
-#: ../../source/api.rst:340 ../../source/api.rst:382 ../../source/api.rst:413
-#: ../../source/api.rst:478 ../../source/api.rst:541
+#: ../../source/api.rst:39 ../../source/api.rst:64 ../../source/api.rst:141
+#: ../../source/api.rst:169 ../../source/api.rst:245 ../../source/api.rst:306
+#: ../../source/api.rst:345 ../../source/api.rst:387 ../../source/api.rst:418
+#: ../../source/api.rst:483 ../../source/api.rst:523 ../../source/api.rst:576
+#: ../../source/api.rst:601 ../../source/api.rst:650 ../../source/api.rst:672
+#: ../../source/api.rst:720 ../../source/api.rst:770
 msgid "Response:"
 msgstr "Vastus (response):"
 
@@ -130,125 +134,165 @@ msgstr "Anonüümi tekst"
 msgid "Endpoint **/projects/{project_pk}/anonymizers/{id}/anonymize_text/**"
 msgstr "Otspunkt: **/projects/{project_pk}/anonymizers/{id}/anonymize_text/**"
 
-#: ../../source/api.rst:149
+#: ../../source/api.rst:148
 msgid "Anonymize texts"
 msgstr "Anonüümi tekstid"
 
-#: ../../source/api.rst:151
+#: ../../source/api.rst:150
 msgid "Endpoint **/projects/{project_pk}/anonymizers/{id}/anonymize_texts/**"
 msgstr "Otspunkt: **/projects/{project_pk}/anonymizers/{id}/anonymize_texts/**"
 
-#: ../../source/api.rst:174
+#: ../../source/api.rst:179
 msgid "Embeddings"
 msgstr "Sõnavektorid"
 
-#: ../../source/api.rst:177
+#: ../../source/api.rst:182
 msgid "Train a new embedding"
 msgstr "Treeni uus sõnavektorite mudel"
 
-#: ../../source/api.rst:179
+#: ../../source/api.rst:184
 msgid "Endpoint: **/projects/{project_pk}/embeddings/**"
 msgstr "Otspunkt: **/projects/{project_pk}/embeddings/**"
 
-#: ../../source/api.rst:199
+#: ../../source/api.rst:204
 msgid "Taggers"
 msgstr "Märgendajad (Taggers)"
 
-#: ../../source/api.rst:202
+#: ../../source/api.rst:207
 msgid "Train a new tagger"
 msgstr "Treeni uus Tagger"
 
-#: ../../source/api.rst:204
+#: ../../source/api.rst:209
 msgid "Endpoint: **/projects/{project_pk}/taggers/**"
 msgstr "Otspunkt: **/projects/{project_pk}/taggers/**"
 
-#: ../../source/api.rst:223 ../../source/api.rst:366 ../../source/api.rst:459
-#: ../../source/api.rst:524
+#: ../../source/api.rst:228 ../../source/api.rst:371 ../../source/api.rst:464
+#: ../../source/api.rst:655 ../../source/api.rst:753
 msgid "Tag text"
 msgstr "Märgenda tekst"
 
-#: ../../source/api.rst:225
+#: ../../source/api.rst:230
 msgid "Endpoint **/projects/{project_pk}/taggers/{id}/tag_text/**"
 msgstr "Otspunkt: **/projects/{project_pk}/taggers/{id}/tag_text/**"
 
-#: ../../source/api.rst:252
+#: ../../source/api.rst:257
 #, fuzzy
 msgid "Regex Taggers"
 msgstr "Mustripõhised märgendajad (Regex Taggers)"
 
-#: ../../source/api.rst:255
+#: ../../source/api.rst:260
 msgid "Create a new Regex Tagger"
 msgstr "Loo uus mustripõhine märgendaja"
 
-#: ../../source/api.rst:257
+#: ../../source/api.rst:262
 msgid "Endpoint: **/projects/{project_pk}/regex_taggers/**"
 msgstr "Otspunkt: **/projects/{project_pk}/regex_taggers/**"
 
-#: ../../source/api.rst:284
+#: ../../source/api.rst:289 ../../source/api.rst:583
 msgid "Tag doc"
 msgstr "Märgenda dokument"
 
-#: ../../source/api.rst:286
+#: ../../source/api.rst:291
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_doc/**"
 msgstr "Otspunkt: **/projects/{project_pk}/regex_taggers/{id}/tag_doc/**"
 
-#: ../../source/api.rst:323
+#: ../../source/api.rst:328 ../../source/api.rst:632
 msgid "Tag random doc"
 msgstr "Märgenda juhuslik dokument"
 
-#: ../../source/api.rst:325
+#: ../../source/api.rst:330
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_random_doc/**"
 msgstr "Otspunkt: **/projects/{project_pk}/regex_taggers/{id}/tag_random_doc/**"
 
-#: ../../source/api.rst:368
+#: ../../source/api.rst:373
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_text/**"
 msgstr "Otspunkt: **/projects/{project_pk}/regex_taggers/{id}/tag_text/**"
 
-#: ../../source/api.rst:397
+#: ../../source/api.rst:402 ../../source/api.rst:703
 msgid "Tag texts"
 msgstr "Märgenda tekstid"
 
-#: ../../source/api.rst:399
+#: ../../source/api.rst:404
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_texts/**"
 msgstr "Otspunkt: **/projects/{project_pk}/regex_taggers/{id}/tag_texts/**"
 
-#: ../../source/api.rst:431
+#: ../../source/api.rst:436
 msgid "Tagger Groups"
 msgstr ""
 
-#: ../../source/api.rst:434
+#: ../../source/api.rst:439
 msgid "Train a new tagger group"
 msgstr "Treeni uus Tagger Group"
 
-#: ../../source/api.rst:436
+#: ../../source/api.rst:441
 msgid "Endpoint: **/projects/{project_pk}/tagger_groups/**"
 msgstr "Otspunkt: **/projects/{project_pk}/tagger_groups/**"
 
-#: ../../source/api.rst:461
+#: ../../source/api.rst:466
 msgid "Endpoint: **/projects/{project_pk}/tagger_groups/{id}/tag_text/**"
 msgstr "Otspunkt: **/projects/{project_pk}/tagger_groups/{id}/tag_text/**"
 
-#: ../../source/api.rst:498
+#: ../../source/api.rst:503
+msgid "Regex Tagger Groups"
+msgstr "Mustripõhiste märgendajate grupid"
+
+#: ../../source/api.rst:506
+msgid "Create a new regex tagger group"
+msgstr "Loo uus mustripõhiste märgendajajate grupp"
+
+#: ../../source/api.rst:508
+msgid "Endpoint: **/projects/{project_pk}/regex_tagger_groups/**"
+msgstr "Otspunkt: **/projects/{project_pk}/regex_tagger_groups/**"
+
+#: ../../source/api.rst:555
+msgid "Apply regex tagger group"
+msgstr "Rakenda mustripõhiste märgendajate gruppi"
+
+#: ../../source/api.rst:558
+msgid ""
+"Endpoint: "
+"**/projects/{project_pk}/regex_tagger_groups/{id}/apply_tagger_group/**"
+msgstr "Otspunkt: **/projects/{project_pk}/regex_tagger_groups/{id}/apply_tagger_group/**"
+
+#: ../../source/api.rst:586
+msgid "Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_doc/**"
+msgstr "Otspunkt: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_doc/**"
+
+#: ../../source/api.rst:635
+msgid ""
+"Endpoint: "
+"**/projects/{project_pk}/regex_tagger_groups/{id}/tag_random_doc/**"
+msgstr "Otspunkt: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_random_doc/**"
+
+#: ../../source/api.rst:658
+msgid "Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_text/**"
+msgstr "Otspunkt: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_text/**"
+
+#: ../../source/api.rst:706
+msgid "Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_texts/**"
+msgstr "Otspunkt: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_texts/**"
+
+#: ../../source/api.rst:727
 msgid "Torch Tagger"
 msgstr ""
 
-#: ../../source/api.rst:501
+#: ../../source/api.rst:730
 msgid "Train a new Torch Tagger"
 msgstr "Treeni uus Torch Tagger"
 
-#: ../../source/api.rst:503
+#: ../../source/api.rst:732
 msgid "Endpoint: **/projects/{project_pk}/torchtaggers/**"
 msgstr "Otspunkt: **/projects/{project_pk}/torchtaggers/**"
 
-#: ../../source/api.rst:526
+#: ../../source/api.rst:755
 msgid "Endpoint: **/projects/{project_pk}/torchtaggers/{id}/tag_text/**"
 msgstr "Otspunkt: **/projects/{project_pk}/torchtaggers/{id}/tag_text/**"
 
-#: ../../source/api.rst:552
+#: ../../source/api.rst:781
 msgid "Dataset Importer"
 msgstr "Andmete Importija (Dataset Importer)"
 
-#: ../../source/api.rst:554
+#: ../../source/api.rst:783
 msgid ""
 "This module allows the user to insert jsonlines, csv and excel files into"
 " Elasticsearch to make them accessible by the Toolkit. Please note that "
@@ -263,7 +307,7 @@ msgstr ""
 "faile. Soovitame taolised suured failid jagada väiksemateks tükkideks ja "
 "neid siis eraldi üles laadida."
 
-#: ../../source/api.rst:559
+#: ../../source/api.rst:788
 msgid ""
 "This whole process is asynchronous so the response to the call will be "
 "instantaneous and it since it takes a bit time to load the file into the "
@@ -274,11 +318,11 @@ msgstr ""
 "kuid faili mällu laadimine võib võtta natukene rohkem aega. Esimese 10 "
 "sekundi jooksul ei pruugi olla näha mingeid muutuseid progressis."
 
-#: ../../source/api.rst:563
+#: ../../source/api.rst:792
 msgid "Parameters:"
 msgstr "Parameetrid:"
 
-#: ../../source/api.rst:565
+#: ../../source/api.rst:794
 msgid ""
 "description - Normal description to separate any given task from the "
 "other ones."
@@ -286,7 +330,7 @@ msgstr ""
 "description - Tavaline kirjeldus, mis aitab eristada antud ülesannet "
 "teistest."
 
-#: ../../source/api.rst:566
+#: ../../source/api.rst:795
 msgid ""
 "index - Name of the newly created index, please note that Elasticsearch "
 "index naming restrictions apply."
@@ -294,7 +338,7 @@ msgstr ""
 "index - Vastloodud indeksi kirjeldus. Palun pane tähele, et sellel "
 "kehtivad Elasticsearch-i indeksi nimetamise piirangud."
 
-#: ../../source/api.rst:567
+#: ../../source/api.rst:796
 msgid ""
 "separator - Only needed for .csv files, defaults to a coma (,). Allows to"
 " configure the separator for csv files."
@@ -302,35 +346,35 @@ msgstr ""
 "separator - Vajalik vaid .csv failide puhul, vaikimisi on koma (,). Laseb"
 " seadistada .csv failide eraldajat."
 
-#: ../../source/api.rst:572
+#: ../../source/api.rst:801
 msgid "@ is special syntax for reading the binary of the given file name."
 msgstr "@ on eriline süntaksimärk, millega saab lugeda antud failinime binaari."
 
-#: ../../source/api.rst:583
+#: ../../source/api.rst:812
 msgid "Browsable API"
 msgstr "Lehitsetav (browsable) API"
 
-#: ../../source/api.rst:585
+#: ../../source/api.rst:814
 msgid "http://localhost:8000/api/v1/"
 msgstr ""
 
-#: ../../source/api.rst:587
+#: ../../source/api.rst:816
 msgid "TODO"
 msgstr ""
 
-#: ../../source/api.rst:592
+#: ../../source/api.rst:821
 msgid "API Reference"
 msgstr "API viide (reference)"
 
-#: ../../source/api.rst:594
+#: ../../source/api.rst:823
 msgid "Reference for Toolkit API is available when running the Toolkit:"
 msgstr "Viide Toolkiti API-le on kättesaadav, kui Toolkit töötab:"
 
-#: ../../source/api.rst:596
+#: ../../source/api.rst:825
 msgid "http://localhost:8000/api/v1/swagger/"
 msgstr ""
 
-#: ../../source/api.rst:598
+#: ../../source/api.rst:827
 msgid "http://localhost:8000/api/v1/redoc/"
 msgstr ""
 
