@@ -433,10 +433,10 @@ Response:
         ]
 
 Tagger Groups
--------------
+--------------------
 
 Train a new tagger group
-++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++
 
 Endpoint: **/projects/{project_pk}/tagger_groups/**
 
@@ -461,7 +461,7 @@ Example:
             }'
 
 Tag text
-++++++++++
++++++++++++++++++++++++++
 
 Endpoint: **/projects/{project_pk}/tagger_groups/{id}/tag_text/**
 
@@ -500,10 +500,10 @@ Response:
         ]
 
 Regex Tagger Groups
----------------------
+--------------------------------
 
 Create a new regex tagger group
-++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
 
 Endpoint: **/projects/{project_pk}/regex_tagger_groups/**
 
@@ -552,7 +552,7 @@ Response:
     }
 
 Apply regex tagger group
-+++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++
 
 
 Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/apply_tagger_group/**
@@ -580,7 +580,7 @@ Response:
 
 
 Tag doc
-+++++++++
+++++++++++++++++++++
 
 
 Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_doc/**
@@ -629,7 +629,7 @@ Response:
       }
 
 Tag random doc
-++++++++++++++++
+++++++++++++++++++++++++++
 
 
 Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_random_doc/**
@@ -652,7 +652,7 @@ Response:
 .. code-block:: json
 
 Tag text
-++++++++++
++++++++++++++++++++++
 
 
 Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_text/**
@@ -700,7 +700,7 @@ Response:
           }
 
 Tag texts
-+++++++++++
+++++++++++++++++++
 
 
 Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_texts/**
@@ -727,7 +727,7 @@ Torch Tagger
 -------------
 
 Train a new Torch Tagger
-++++++++++++++++++++++++
+++++++++++++++++++++++++++
 
 Endpoint: **/projects/{project_pk}/torchtaggers/**
 

@@ -176,7 +176,6 @@ msgid "Endpoint **/projects/{project_pk}/taggers/{id}/tag_text/**"
 msgstr "Otspunkt: **/projects/{project_pk}/taggers/{id}/tag_text/**"
 
 #: ../../source/api.rst:257
-#, fuzzy
 msgid "Regex Taggers"
 msgstr "Mustripõhised märgendajad (Regex Taggers)"
 
