@@ -1,7 +1,7 @@
 `EN <https://docs.texta.ee/gui.html>`_
 `ET <https://docs.texta.ee/et/gui.html>`_
 
-Tutorial: Using Toolkit via GUI
+Tutorial: GUI
 ===============================
 
 This is documentation is for TEXTA Toolkit version 2 GUI backed with TEXTA Toolkit's RESTful API.

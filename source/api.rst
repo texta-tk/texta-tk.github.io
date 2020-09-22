@@ -175,6 +175,41 @@ Response:
             "F.Q and T.T were killed in May 1934."
         ]
 
+MLP
+----
+
+Apply MLP to texts
++++++++++++++++++++++
+
+Endpoint: **/mlp/texts/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/embeddings/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "texts": ["Mis su nimi on?", "Ettepanek minna üle neljapäevasele töönädalale lükati tagasi."]
+            }'
+
+Response:
+
+.. code-block:: json
+
+        [
+            {
+                "text": {"text":"Mis su nimi on ?","lang":"et","lemmas":"mis sina nimi olema ?","pos_tags":"P P S V Z"},
+                "texta_facts":[]
+            },
+            {
+                "text": {"text":"Ettepanek minna üle neljapäevasele töönädalale lükati tagasi .","lang":"et","lemmas":"ettepanek minema üle neljapäevane töönädal lükkama tagasi .","pos_tags":"S V K A S V D Z"},
+                "texta_facts":[]
+            }
+        ]
+
 Embeddings
 ----------
 
@@ -390,7 +425,7 @@ Response:
 
       [
           {
-              "str_val": "cats",
+              "str_val": "cat
               "spans": [
                   109,
                   113

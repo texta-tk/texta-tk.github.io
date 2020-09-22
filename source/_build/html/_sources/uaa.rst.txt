@@ -79,11 +79,11 @@ To use UAA with the Angular front-end, it needs to be configured in an `environm
 
 To log in using UAA, click on the "log in with CloudFoundry" button on the login dialog:
 
-.. _figure-1:
+.. _figure-22:
 
 .. figure:: images/uaa_front_login.png
 
-    Figure 1. *Log In With CloudFoundry Screen on the Angular Front-end*
+    Figure 22. *Log In With CloudFoundry Screen on the Angular Front-end*
 
 This will then redirect you to the UAA login screen. After logging in, if the login was successful, it will redirect you back to the Toolkit front-end.
 
