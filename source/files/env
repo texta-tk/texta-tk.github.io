@@ -1,10 +1,29 @@
+# Service URLs
 TEXTA_ES_URL=http://texta-elasticsearch:9200
 TEXTA_REDIS_URL=redis://texta-redis:6379/0
 TEXTA_API_URL=http://localhost
-TEXTA_DEBUG=False
 
+# General
+TEXTA_TEST_LIVE_SERVER_PORT=7000
+TEXTA_DEBUG=False
+TEXTA_LANGUAGE_CODES=et,en,ru
+
+# TK database settings.
 DJANGO_DATABASE_ENGINE=django.db.backends.postgresql
 DJANGO_DATABASE_NAME=docker
 DJANGO_DATABASE_USER=docker
 DJANGO_DATABASE_PASSWORD=docker
 DJANGO_DATABASE_HOST=texta-postgres
+
+# UAA settings for TK
+USE_UAA=False
+TEXTA_UAA_REDIRECT_URI=http://localhost/api/v1/uaa/callback
+TEXTA_UAA_FRONT_REDIRECT_URL=http://localhost/oauth
+TEXTA_UAA_URL=http://localhost:8080/uaa
+TEXTA_UAA_CLIENT_ID=login
+TEXTA_UAA_CLIENT_SECRET=loginsecret
+
+# Elastic authentication
+# Only usable with the X-Pack security
+#TEXTA_ES_USER=elastic
+#TEXTA_ES_PASSWORD=changeme

@@ -37,11 +37,11 @@ To successfully run TEXTA Toolkit we need to define following services:
 
 * Elasticsearch for storing the documents (one can also run it without Docker)
 
+* Redis for managing message queues in TK (one can also run it without Docker)
+
 * MySQL or Postgres for storing user and project data (can also be run without Docker)
 
 * TEXTA Toolkit RESTful API for backend: docker.texta.ee/texta/texta-rest:latest
-
-* TEXTA Toolkit Angular frontend: docker.texta.ee/texta/texta-rest-front:latest
 
 For executing aforementioned services we have preconfigured an example **docker-compose.yaml** file:
 
@@ -84,7 +84,7 @@ For running in detached mode, use the *-d* flag:
 
 When running, TEXTA Toolkit's GUI should be available at:
 
-* http://localhost:4200 
+* http://localhost
 
 and API at:
 
