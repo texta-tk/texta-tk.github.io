@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-22 12:14+0300\n"
+"POT-Creation-Date: 2020-09-22 19:08+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgid "`EN <https://docs.texta.ee/gui.html>`_ `ET <https://docs.texta.ee/et/gui.
 msgstr ""
 
 #: ../../source/gui.rst:5
-msgid "Tutorial: Using Toolkit via GUI"
+msgid "Tutorial: GUI"
 msgstr ""
 
 #: ../../source/gui.rst:7
@@ -249,7 +249,7 @@ msgid "Preprocessing the Data"
 msgstr ""
 
 #: ../../source/gui.rst:194
-msgid "Preprocessing the data is a standard procedure in natural language processing which in TTK can be done via MLP (multilingual preprocessor) module."
+msgid "Preprocessing the data is a standard procedure in machine learning which in TTK can be done via MLP (multilingual preprocessor) module."
 msgstr ""
 
 #: ../../source/gui.rst:196

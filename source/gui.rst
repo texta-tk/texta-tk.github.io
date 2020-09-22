@@ -191,7 +191,7 @@ We can also aggregate over :ref:`texta_facts <texta_fact>` field in order to see
 Preprocessing the Data
 ----------------------------------------
 
-Preprocessing the data is a standard procedure in natural language processing which in TTK can be done via MLP (multilingual preprocessor) module. 
+Preprocessing the data is a standard procedure in machine learning which in TTK can be done via MLP (multilingual preprocessor) module. 
 
 To use it, navigate to **Tools -> MLP**. Click **Create** button to define a new MLP worker. Select indices and fields on which you want to apply MLP. Since preprocessing the data is quite time-consuming process, it is strongly recommended to select only fields on which applying MLP is actually useful. That is, the fields which you are going to use later to create lexicons or train models on. Lastly, select analyzers which you would like to apply.
 

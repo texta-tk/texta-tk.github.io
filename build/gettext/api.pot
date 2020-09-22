@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-22 12:14+0300\n"
+"POT-Creation-Date: 2020-09-22 18:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,24 +51,25 @@ msgstr ""
 #: ../../source/api.rst:128
 #: ../../source/api.rst:152
 #: ../../source/api.rst:186
-#: ../../source/api.rst:211
-#: ../../source/api.rst:232
-#: ../../source/api.rst:264
-#: ../../source/api.rst:293
-#: ../../source/api.rst:332
-#: ../../source/api.rst:375
-#: ../../source/api.rst:406
-#: ../../source/api.rst:443
-#: ../../source/api.rst:468
-#: ../../source/api.rst:510
-#: ../../source/api.rst:560
-#: ../../source/api.rst:588
-#: ../../source/api.rst:637
-#: ../../source/api.rst:660
-#: ../../source/api.rst:708
-#: ../../source/api.rst:734
-#: ../../source/api.rst:757
-#: ../../source/api.rst:799
+#: ../../source/api.rst:221
+#: ../../source/api.rst:246
+#: ../../source/api.rst:267
+#: ../../source/api.rst:299
+#: ../../source/api.rst:328
+#: ../../source/api.rst:367
+#: ../../source/api.rst:410
+#: ../../source/api.rst:441
+#: ../../source/api.rst:478
+#: ../../source/api.rst:503
+#: ../../source/api.rst:545
+#: ../../source/api.rst:595
+#: ../../source/api.rst:623
+#: ../../source/api.rst:672
+#: ../../source/api.rst:695
+#: ../../source/api.rst:743
+#: ../../source/api.rst:769
+#: ../../source/api.rst:792
+#: ../../source/api.rst:834
 msgid "Example:"
 msgstr ""
 
@@ -76,19 +77,20 @@ msgstr ""
 #: ../../source/api.rst:64
 #: ../../source/api.rst:141
 #: ../../source/api.rst:169
-#: ../../source/api.rst:245
-#: ../../source/api.rst:306
-#: ../../source/api.rst:345
-#: ../../source/api.rst:387
-#: ../../source/api.rst:418
-#: ../../source/api.rst:483
-#: ../../source/api.rst:523
-#: ../../source/api.rst:576
-#: ../../source/api.rst:601
-#: ../../source/api.rst:650
-#: ../../source/api.rst:672
-#: ../../source/api.rst:720
-#: ../../source/api.rst:770
+#: ../../source/api.rst:198
+#: ../../source/api.rst:280
+#: ../../source/api.rst:341
+#: ../../source/api.rst:380
+#: ../../source/api.rst:422
+#: ../../source/api.rst:453
+#: ../../source/api.rst:518
+#: ../../source/api.rst:558
+#: ../../source/api.rst:611
+#: ../../source/api.rst:636
+#: ../../source/api.rst:685
+#: ../../source/api.rst:707
+#: ../../source/api.rst:755
+#: ../../source/api.rst:805
 msgid "Response:"
 msgstr ""
 
@@ -146,208 +148,220 @@ msgid "Endpoint **/projects/{project_pk}/anonymizers/{id}/anonymize_texts/**"
 msgstr ""
 
 #: ../../source/api.rst:179
-msgid "Embeddings"
+msgid "MLP"
 msgstr ""
 
 #: ../../source/api.rst:182
-msgid "Train a new embedding"
+msgid "Apply MLP to texts"
 msgstr ""
 
 #: ../../source/api.rst:184
+msgid "Endpoint: **/mlp/texts/**"
+msgstr ""
+
+#: ../../source/api.rst:214
+msgid "Embeddings"
+msgstr ""
+
+#: ../../source/api.rst:217
+msgid "Train a new embedding"
+msgstr ""
+
+#: ../../source/api.rst:219
 msgid "Endpoint: **/projects/{project_pk}/embeddings/**"
 msgstr ""
 
-#: ../../source/api.rst:204
+#: ../../source/api.rst:239
 msgid "Taggers"
 msgstr ""
 
-#: ../../source/api.rst:207
+#: ../../source/api.rst:242
 msgid "Train a new tagger"
 msgstr ""
 
-#: ../../source/api.rst:209
+#: ../../source/api.rst:244
 msgid "Endpoint: **/projects/{project_pk}/taggers/**"
 msgstr ""
 
-#: ../../source/api.rst:228
-#: ../../source/api.rst:371
-#: ../../source/api.rst:464
-#: ../../source/api.rst:655
-#: ../../source/api.rst:753
+#: ../../source/api.rst:263
+#: ../../source/api.rst:406
+#: ../../source/api.rst:499
+#: ../../source/api.rst:690
+#: ../../source/api.rst:788
 msgid "Tag text"
 msgstr ""
 
-#: ../../source/api.rst:230
+#: ../../source/api.rst:265
 msgid "Endpoint **/projects/{project_pk}/taggers/{id}/tag_text/**"
 msgstr ""
 
-#: ../../source/api.rst:257
+#: ../../source/api.rst:292
 msgid "Regex Taggers"
 msgstr ""
 
-#: ../../source/api.rst:260
+#: ../../source/api.rst:295
 msgid "Create a new Regex Tagger"
 msgstr ""
 
-#: ../../source/api.rst:262
+#: ../../source/api.rst:297
 msgid "Endpoint: **/projects/{project_pk}/regex_taggers/**"
 msgstr ""
 
-#: ../../source/api.rst:289
-#: ../../source/api.rst:583
+#: ../../source/api.rst:324
+#: ../../source/api.rst:618
 msgid "Tag doc"
 msgstr ""
 
-#: ../../source/api.rst:291
+#: ../../source/api.rst:326
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_doc/**"
 msgstr ""
 
-#: ../../source/api.rst:328
-#: ../../source/api.rst:632
+#: ../../source/api.rst:363
+#: ../../source/api.rst:667
 msgid "Tag random doc"
 msgstr ""
 
-#: ../../source/api.rst:330
+#: ../../source/api.rst:365
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_random_doc/**"
 msgstr ""
 
-#: ../../source/api.rst:373
+#: ../../source/api.rst:408
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_text/**"
 msgstr ""
 
-#: ../../source/api.rst:402
-#: ../../source/api.rst:703
+#: ../../source/api.rst:437
+#: ../../source/api.rst:738
 msgid "Tag texts"
 msgstr ""
 
-#: ../../source/api.rst:404
+#: ../../source/api.rst:439
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_texts/**"
 msgstr ""
 
-#: ../../source/api.rst:436
+#: ../../source/api.rst:471
 msgid "Tagger Groups"
 msgstr ""
 
-#: ../../source/api.rst:439
+#: ../../source/api.rst:474
 msgid "Train a new tagger group"
 msgstr ""
 
-#: ../../source/api.rst:441
+#: ../../source/api.rst:476
 msgid "Endpoint: **/projects/{project_pk}/tagger_groups/**"
 msgstr ""
 
-#: ../../source/api.rst:466
+#: ../../source/api.rst:501
 msgid "Endpoint: **/projects/{project_pk}/tagger_groups/{id}/tag_text/**"
 msgstr ""
 
-#: ../../source/api.rst:503
+#: ../../source/api.rst:538
 msgid "Regex Tagger Groups"
 msgstr ""
 
-#: ../../source/api.rst:506
+#: ../../source/api.rst:541
 msgid "Create a new regex tagger group"
 msgstr ""
 
-#: ../../source/api.rst:508
+#: ../../source/api.rst:543
 msgid "Endpoint: **/projects/{project_pk}/regex_tagger_groups/**"
 msgstr ""
 
-#: ../../source/api.rst:555
+#: ../../source/api.rst:590
 msgid "Apply regex tagger group"
 msgstr ""
 
-#: ../../source/api.rst:558
+#: ../../source/api.rst:593
 msgid "Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/apply_tagger_group/**"
 msgstr ""
 
-#: ../../source/api.rst:586
+#: ../../source/api.rst:621
 msgid "Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_doc/**"
 msgstr ""
 
-#: ../../source/api.rst:635
+#: ../../source/api.rst:670
 msgid "Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_random_doc/**"
 msgstr ""
 
-#: ../../source/api.rst:658
+#: ../../source/api.rst:693
 msgid "Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_text/**"
 msgstr ""
 
-#: ../../source/api.rst:706
+#: ../../source/api.rst:741
 msgid "Endpoint: **/projects/{project_pk}/regex_tagger_groups/{id}/tag_texts/**"
 msgstr ""
 
-#: ../../source/api.rst:727
+#: ../../source/api.rst:762
 msgid "Torch Tagger"
 msgstr ""
 
-#: ../../source/api.rst:730
+#: ../../source/api.rst:765
 msgid "Train a new Torch Tagger"
 msgstr ""
 
-#: ../../source/api.rst:732
+#: ../../source/api.rst:767
 msgid "Endpoint: **/projects/{project_pk}/torchtaggers/**"
 msgstr ""
 
-#: ../../source/api.rst:755
+#: ../../source/api.rst:790
 msgid "Endpoint: **/projects/{project_pk}/torchtaggers/{id}/tag_text/**"
 msgstr ""
 
-#: ../../source/api.rst:781
+#: ../../source/api.rst:816
 msgid "Dataset Importer"
 msgstr ""
 
-#: ../../source/api.rst:783
+#: ../../source/api.rst:818
 msgid "This module allows the user to insert jsonlines, csv and excel files into Elasticsearch to make them accessible by the Toolkit. Please note that this process reads the whole file into the memory and can thus create memory issues when trying to process bigger files, it is advisable to split such files up into smaller chunks and process each one separately."
 msgstr ""
 
-#: ../../source/api.rst:788
+#: ../../source/api.rst:823
 msgid "This whole process is asynchronous so the response to the call will be instantaneous and it since it takes a bit time to load the file into the memory, the first 10 seconds might not display any signs of the progress changing."
 msgstr ""
 
-#: ../../source/api.rst:792
+#: ../../source/api.rst:827
 msgid "Parameters:"
 msgstr ""
 
-#: ../../source/api.rst:794
+#: ../../source/api.rst:829
 msgid "description - Normal description to separate any given task from the other ones."
 msgstr ""
 
-#: ../../source/api.rst:795
+#: ../../source/api.rst:830
 msgid "index - Name of the newly created index, please note that Elasticsearch index naming restrictions apply."
 msgstr ""
 
-#: ../../source/api.rst:796
+#: ../../source/api.rst:831
 msgid "separator - Only needed for .csv files, defaults to a coma (,). Allows to configure the separator for csv files."
 msgstr ""
 
-#: ../../source/api.rst:801
+#: ../../source/api.rst:836
 msgid "@ is special syntax for reading the binary of the given file name."
 msgstr ""
 
-#: ../../source/api.rst:812
+#: ../../source/api.rst:847
 msgid "Browsable API"
 msgstr ""
 
-#: ../../source/api.rst:814
+#: ../../source/api.rst:849
 msgid "http://localhost:8000/api/v1/"
 msgstr ""
 
-#: ../../source/api.rst:816
+#: ../../source/api.rst:851
 msgid "TODO"
 msgstr ""
 
-#: ../../source/api.rst:821
+#: ../../source/api.rst:856
 msgid "API Reference"
 msgstr ""
 
-#: ../../source/api.rst:823
+#: ../../source/api.rst:858
 msgid "Reference for Toolkit API is available when running the Toolkit:"
 msgstr ""
 
-#: ../../source/api.rst:825
+#: ../../source/api.rst:860
 msgid "http://localhost:8000/api/v1/swagger/"
 msgstr ""
 
-#: ../../source/api.rst:827
+#: ../../source/api.rst:862
 msgid "http://localhost:8000/api/v1/redoc/"
 msgstr ""

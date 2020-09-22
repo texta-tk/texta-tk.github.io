@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-22 12:14+0300\n"
+"POT-Creation-Date: 2020-09-22 19:08+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,8 +25,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/gui.rst:5
-msgid "Tutorial: Using Toolkit via GUI"
-msgstr "Juhend: Toolkiti GUI kasutamine"
+msgid "Tutorial: GUI"
+msgstr ""
 
 #: ../../source/gui.rst:7
 msgid ""
@@ -498,11 +498,13 @@ msgid "Preprocessing the Data"
 msgstr "**Andmestiku grupeerimine**"
 
 #: ../../source/gui.rst:194
+#, fuzzy
 msgid ""
-"Preprocessing the data is a standard procedure in natural language "
-"processing which in TTK can be done via MLP (multilingual preprocessor) "
-"module."
+"Preprocessing the data is a standard procedure in machine learning which "
+"in TTK can be done via MLP (multilingual preprocessor) module."
 msgstr ""
+"Andmete eeltõõtlemine on masinõppes standardprotseduur mida "
+"TTK-s võimaldab teha MLP (multilingual preprocessor) moodul."
 
 #: ../../source/gui.rst:196
 msgid ""
@@ -514,6 +516,13 @@ msgid ""
 " create lexicons or train models on. Lastly, select analyzers which you "
 "would like to apply."
 msgstr ""
+"Selle kasutamiseks liigu menüüs **Tools -> MLP**. Vajuta **Create** nuppu "
+"et luua uus MLP lõim. Vali indeksid ja väljal, millele soovid MLP-d rakendada. "
+"Kuna MLP rakendamine andmetele võib võrdlemisi palju aega võtta, on rangelt "
+"soovituslik valida ainult väljad, millele MLP rakendamiseks on ka päriselt kasu."
+" See tähendab, et valima peaks ainult väljad, mida on plaanis hiljem kasutada"
+" leksikonide loomiseks või mudelite treenimiseks. Viimaks vali analüsaatorid, "
+"mida soovid andmetel rakendada."
 
 #: ../../source/gui.rst:202
 #, fuzzy
@@ -1514,4 +1523,7 @@ msgstr "Joonis 19. *Uue andmestiku importimine*"
 #~ "`In English <https://docs.texta.ee/gui.html>`_ "
 #~ "`eesti keeles <https://docs.texta.ee/et/gui.html>`_"
 #~ msgstr ""
+
+#~ msgid "Tutorial: Using Toolkit via GUI"
+#~ msgstr "Juhend: Toolkiti GUI kasutamine"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 18:24+0300\n"
+"POT-Creation-Date: 2020-09-22 18:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/concepts.rst:5
-msgid "Main Concepts of Toolkit"
+#, fuzzy
+msgid "Concepts of Toolkit"
 msgstr "Toolkiti põhimõisted"
 
 #: ../../source/concepts.rst:7
@@ -332,7 +333,7 @@ msgid "Anonymizer"
 msgstr "Anonüümija"
 
 #: ../../source/concepts.rst:104 ../../source/concepts.rst:135
-#: ../../source/concepts.rst:142 ../../source/concepts.rst:172
+#: ../../source/concepts.rst:155 ../../source/concepts.rst:174
 msgid "TODO"
 msgstr ""
 
@@ -407,15 +408,11 @@ msgstr ""
 msgid "Regex Tagger"
 msgstr "Mustripõhine märgendaja (Regex Tagger)"
 
-#: ../../source/concepts.rst:140
-msgid "Regex Tagger Group"
-msgstr "Mustripõhiste märgendajate grupp (Regex Tagger Group)"
-
-#: ../../source/concepts.rst:148
+#: ../../source/concepts.rst:141
 msgid "Tagger Group"
 msgstr ""
 
-#: ../../source/concepts.rst:150
+#: ../../source/concepts.rst:143
 msgid ""
 "Tagger Group is an extension to TTK’s binary taggers to support "
 "monolingual multi-label classification. As its name suggests, Tagger "
@@ -440,11 +437,15 @@ msgstr ""
 "märgendus ennustada, võrreldakse esmalt treeningandmetega, et teha "
 "kindlaks mudelid, mis kõige tõenäolisemalt ennustavad soovitud silte."
 
-#: ../../source/concepts.rst:159
+#: ../../source/concepts.rst:153
+msgid "Regex Tagger Group"
+msgstr "Mustripõhiste märgendajate grupp (Regex Tagger Group)"
+
+#: ../../source/concepts.rst:161
 msgid "Torch Tagger"
 msgstr ""
 
-#: ../../source/concepts.rst:161
+#: ../../source/concepts.rst:163
 msgid ""
 "While Taggers and Tagger Groups use classical machine learning to produce"
 " binary classification models, Texta Toolkit also incorporates deep "
@@ -476,15 +477,15 @@ msgstr ""
 "Taggeri ennustusvõimekuse hindamiseks kasutati solvavate kommentaaride "
 "tuvastamise ülesannet, kus saavutati F1 skoor 96%."
 
-#: ../../source/concepts.rst:170
+#: ../../source/concepts.rst:172
 msgid "Multilingual Processor"
 msgstr ""
 
-#: ../../source/concepts.rst:177
+#: ../../source/concepts.rst:179
 msgid "Topic Analyzer"
 msgstr "Teemaanalüsaator (Topic Analyzer)"
 
-#: ../../source/concepts.rst:179
+#: ../../source/concepts.rst:181
 msgid ""
 "Topic Analyzer is a tool that detects groups of similar documents in the "
 "data. It can be used for example to explore the structure of the "
@@ -501,7 +502,7 @@ msgstr ""
 "tulemusi andmestiku märgendamiseks. Teemaanalüsaatori abil märgendatud "
 "teksti saab kasutada juhendatud masinõppemudelite treenimiseks."
 
-#: ../../source/concepts.rst:181
+#: ../../source/concepts.rst:183
 msgid ""
 "Topic Analyzer puts to use the best parts of unsupervised clustering and "
 "manual labelling. While clustering is a fast and efficient method to "
@@ -519,7 +520,7 @@ msgstr ""
 "klastritel see ebaõnnestuda ning kolmandatel olla hinnanguks 'nii-ja-"
 "naa'."
 
-#: ../../source/concepts.rst:183
+#: ../../source/concepts.rst:185
 msgid ""
 "Topic Analyzer allows user to look inside each cluster and make the "
 "decision about the quality manually. Users can also perform various "
@@ -539,3 +540,4 @@ msgstr ""
 #~ "`In English <https://docs.texta.ee/concepts.html>`_ "
 #~ "`eesti keeles <https://docs.texta.ee/et/concepts.html>`_"
 #~ msgstr ""
+

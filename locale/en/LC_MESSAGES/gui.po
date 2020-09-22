@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-22 12:14+0300\n"
+"POT-Creation-Date: 2020-09-22 19:08+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/gui.rst:5
-msgid "Tutorial: Using Toolkit via GUI"
+msgid "Tutorial: GUI"
 msgstr ""
 
 #: ../../source/gui.rst:7
@@ -373,9 +373,8 @@ msgstr ""
 
 #: ../../source/gui.rst:194
 msgid ""
-"Preprocessing the data is a standard procedure in natural language "
-"processing which in TTK can be done via MLP (multilingual preprocessor) "
-"module."
+"Preprocessing the data is a standard procedure in machine learning which "
+"in TTK can be done via MLP (multilingual preprocessor) module."
 msgstr ""
 
 #: ../../source/gui.rst:196
@@ -1126,5 +1125,15 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Figure 19. *Importing a new dataset*"
+#~ msgstr ""
+
+#~ msgid "Tutorial: Using Toolkit via GUI"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Preprocessing the data is a standard "
+#~ "procedure in natural language processing "
+#~ "which in TTK can be done via "
+#~ "MLP (multilingual preprocessor) module."
 #~ msgstr ""
 

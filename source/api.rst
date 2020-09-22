@@ -425,7 +425,7 @@ Response:
 
       [
           {
-              "str_val": "cat
+              "str_val": "cat",
               "spans": [
                   109,
                   113
