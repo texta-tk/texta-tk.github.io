@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-11 11:47+0300\n"
+"POT-Creation-Date: 2020-09-22 12:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgid "Contents:"
 msgstr ""
 
 #: ../../source/index.rst:6
-msgid "`In English <https://docs.texta.ee/index.html>`_ `eesti keeles <https://docs.texta.ee/et/index.html>`_"
+msgid "`EN <https://docs.texta.ee/concepts.html>`_ `ET <https://docs.texta.ee/et/concepts.html>`_"
 msgstr ""
 
 #: ../../source/index.rst:10

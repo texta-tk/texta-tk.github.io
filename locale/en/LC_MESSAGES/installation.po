@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 17:15+0300\n"
+"POT-Creation-Date: 2020-09-22 12:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,20 +75,20 @@ msgstr ""
 
 #: ../../source/installation.rst:40
 msgid ""
-"MySQL or Postgres for storing user and project data (can also be run "
-"without Docker)"
+"Redis for managing message queues in TK (one can also run it without "
+"Docker)"
 msgstr ""
 
 #: ../../source/installation.rst:42
 msgid ""
-"TEXTA Toolkit RESTful API for backend: docker.texta.ee/texta/texta-"
-"rest:latest"
+"MySQL or Postgres for storing user and project data (can also be run "
+"without Docker)"
 msgstr ""
 
 #: ../../source/installation.rst:44
 msgid ""
-"TEXTA Toolkit Angular frontend: docker.texta.ee/texta/texta-rest-"
-"front:latest"
+"TEXTA Toolkit RESTful API for backend: docker.texta.ee/texta/texta-"
+"rest:latest"
 msgstr ""
 
 #: ../../source/installation.rst:46
@@ -151,7 +151,7 @@ msgid "When running, TEXTA Toolkit's GUI should be available at:"
 msgstr ""
 
 #: ../../source/installation.rst:87
-msgid "http://localhost:4200"
+msgid "http://localhost"
 msgstr ""
 
 #: ../../source/installation.rst:89
@@ -257,5 +257,13 @@ msgstr ""
 #~ "`In English <https://docs.texta.ee/installation.html>`_"
 #~ " `Eesti keeles "
 #~ "<https://docs.texta.ee/et/installation.html>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TEXTA Toolkit Angular frontend: "
+#~ "docker.texta.ee/texta/texta-rest-front:latest"
+#~ msgstr ""
+
+#~ msgid "http://localhost:4200"
 #~ msgstr ""
 

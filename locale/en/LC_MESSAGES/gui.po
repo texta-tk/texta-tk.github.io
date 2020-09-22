@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 17:15+0300\n"
+"POT-Creation-Date: 2020-09-22 12:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -368,27 +368,63 @@ msgid ""
 msgstr ""
 
 #: ../../source/gui.rst:192
-msgid "Creating Topic-related Lexicons"
+msgid "Preprocessing the Data"
 msgstr ""
 
 #: ../../source/gui.rst:194
+msgid ""
+"Preprocessing the data is a standard procedure in natural language "
+"processing which in TTK can be done via MLP (multilingual preprocessor) "
+"module."
+msgstr ""
+
+#: ../../source/gui.rst:196
+msgid ""
+"To use it, navigate to **Tools -> MLP**. Click **Create** button to "
+"define a new MLP worker. Select indices and fields on which you want to "
+"apply MLP. Since preprocessing the data is quite time-consuming process, "
+"it is strongly recommended to select only fields on which applying MLP is"
+" actually useful. That is, the fields which you are going to use later to"
+" create lexicons or train models on. Lastly, select analyzers which you "
+"would like to apply."
+msgstr ""
+
+#: ../../source/gui.rst:202
+msgid "Figure 10. *Creating a MLP worker*"
+msgstr ""
+
+#: ../../source/gui.rst:204
+msgid ""
+"The worker adds new fields containing the results to the dataset. You can"
+" see the list of fields using Search."
+msgstr ""
+
+#: ../../source/gui.rst:210
+msgid "Figure 11. *Newly added fields containing results of MLP*"
+msgstr ""
+
+#: ../../source/gui.rst:215
+msgid "Creating Topic-related Lexicons"
+msgstr ""
+
+#: ../../source/gui.rst:217
 msgid ""
 "In order to build lexicons, we must have :ref:`Embedding "
 "<embedding_concept>` model :ref:`previously trained <embedding>` . We can"
 " start creating topic-related lexicons."
 msgstr ""
 
-#: ../../source/gui.rst:196
+#: ../../source/gui.rst:219
 msgid "Let’s create a lexicon that contains verbs accompanied with “bribery”."
 msgstr ""
 
-#: ../../source/gui.rst:198
+#: ../../source/gui.rst:221
 msgid ""
 "After clicking on the newly created lexicon, we have to provide some seed"
 " words like 'accuse'."
 msgstr ""
 
-#: ../../source/gui.rst:200
+#: ../../source/gui.rst:223
 msgid ""
 "The process of creating (or expanding) the lexicon is iterative. We keep "
 "asking for suggestions and from those we have to pick the ones that make "
@@ -399,32 +435,32 @@ msgid ""
 "by clicking on it."
 msgstr ""
 
-#: ../../source/gui.rst:202
+#: ../../source/gui.rst:225
 msgid ""
 "To add a suitable word to the lexicon, we simply have to click on it. If "
 "we want to delete something we already chose we can erase the verb from "
 "the list."
 msgstr ""
 
-#: ../../source/gui.rst:204
+#: ../../source/gui.rst:227
 msgid "When we’re ready, we can save the lexicon."
 msgstr ""
 
-#: ../../source/gui.rst:209
+#: ../../source/gui.rst:232
 msgid "Statistical Language Modelling"
 msgstr ""
 
-#: ../../source/gui.rst:211
+#: ../../source/gui.rst:234
 msgid ""
 "Under the *Models* option on the upper panel we can use different taggers"
 " and create embeddings."
 msgstr ""
 
-#: ../../source/gui.rst:216
+#: ../../source/gui.rst:239
 msgid "Embedding"
 msgstr ""
 
-#: ../../source/gui.rst:218
+#: ../../source/gui.rst:241
 msgid ""
 ":ref:`Embeddings <embedding_concept>` are basically words converted into "
 "numerical data (into vectors) that are more understandable and usable for"
@@ -438,7 +474,7 @@ msgid ""
 " them as phrases."
 msgstr ""
 
-#: ../../source/gui.rst:220
+#: ../../source/gui.rst:243
 msgid ""
 "We can create a new embedding by clicking on the '+ CREATE' button in the"
 " bottom-left. Then we must choose the name for the new embedding "
@@ -452,7 +488,7 @@ msgid ""
 "*ate* will change to it's lemma *eat*)."
 msgstr ""
 
-#: ../../source/gui.rst:222
+#: ../../source/gui.rst:245
 msgid ""
 "Then we have to choose the number of dimensions. That means the length of"
 " the vectors created. 100-200 dimensions is usually a good place to start"
@@ -463,11 +499,11 @@ msgid ""
 " of what to use."
 msgstr ""
 
-#: ../../source/gui.rst:224
+#: ../../source/gui.rst:247
 msgid "Keep in mind that the bigger the data, the better results!"
 msgstr ""
 
-#: ../../source/gui.rst:226
+#: ../../source/gui.rst:249
 msgid ""
 "After creating the new embedding we can view the learning process and "
 "results in the embeddings' table. We can see which user created this "
@@ -477,7 +513,7 @@ msgid ""
 "see similar info again."
 msgstr ""
 
-#: ../../source/gui.rst:228
+#: ../../source/gui.rst:251
 msgid ""
 "Three dots under *Edit* gives us access to deleting the embedding model "
 "or using *Phrase*. *Phrase* is a feature that helps us to check which "
@@ -487,44 +523,44 @@ msgid ""
 "the query empty, the model will be trained on the whole dataset."
 msgstr ""
 
-#: ../../source/gui.rst:234
-msgid "Figure 10. *Create embedding with saved search*"
+#: ../../source/gui.rst:257
+msgid "Figure 12. *Create embedding with saved search*"
 msgstr ""
 
-#: ../../source/gui.rst:239
+#: ../../source/gui.rst:262
 msgid "Tagging the Data"
 msgstr ""
 
-#: ../../source/gui.rst:241
+#: ../../source/gui.rst:264
 msgid ""
 "Different Taggers in Texta Toolkit are classification models which can "
 "classify new data with the label/class the model is trained on. We can "
 "apply the tagger via API."
 msgstr ""
 
-#: ../../source/gui.rst:243
+#: ../../source/gui.rst:266
 msgid "We have two taggers:"
 msgstr ""
 
-#: ../../source/gui.rst:245
+#: ../../source/gui.rst:268
 msgid ":ref:`Tagger Groups <tagger_group_concept>`"
 msgstr ""
 
-#: ../../source/gui.rst:246
+#: ../../source/gui.rst:269
 msgid ":ref:`Taggers <tagger_concept>`"
 msgstr ""
 
-#: ../../source/gui.rst:248
+#: ../../source/gui.rst:271
 msgid ""
 "Only *Tagger* can be trained with saved searches. Others learn their "
 "models on tags in the dataset. Below we will see how to train them."
 msgstr ""
 
-#: ../../source/gui.rst:252
+#: ../../source/gui.rst:275
 msgid "**Training Taggers**"
 msgstr ""
 
-#: ../../source/gui.rst:255
+#: ../../source/gui.rst:278
 msgid ""
 ":ref:`Tagger <tagger_concept>` operates on saved searches and uses "
 "machine learning. We can create a new Tagger model by clicking on the "
@@ -537,7 +573,7 @@ msgid ""
 "change to it's lemma *eat* and are dealt as one word)."
 msgstr ""
 
-#: ../../source/gui.rst:257
+#: ../../source/gui.rst:280
 msgid ""
 "If we leave *Query* empty, it will take all data in the active project as"
 " a input. We can also use saved searches as our desired input. This input"
@@ -545,7 +581,7 @@ msgid ""
 "this one."
 msgstr ""
 
-#: ../../source/gui.rst:259
+#: ../../source/gui.rst:282
 msgid ""
 "By setting these three, we can now train a classifier. However, we can "
 "also fine-tune the classifier by changing additional parameters such as "
@@ -562,17 +598,17 @@ msgid ""
 "limit the size of data the model trains on."
 msgstr ""
 
-#: ../../source/gui.rst:263
+#: ../../source/gui.rst:286
 msgid ""
 "Then we can hit create and see the training process and result of the "
 "tagger."
 msgstr ""
 
-#: ../../source/gui.rst:269
-msgid "Figure 11. *Creating Bribe_tag tagger*"
+#: ../../source/gui.rst:292
+msgid "Figure 13. *Creating Bribe_tag tagger*"
 msgstr ""
 
-#: ../../source/gui.rst:275
+#: ../../source/gui.rst:298
 msgid ""
 "Whenever we create a new Tagger model, we can track it's progress from "
 "the table under *Task*. If we click on the job, we can see all the "
@@ -580,45 +616,45 @@ msgid ""
 "Let's not forget that:"
 msgstr ""
 
-#: ../../source/gui.rst:273
+#: ../../source/gui.rst:296
 msgid ""
 "Recall is the ratio of correctly labeled positives among all true "
 "positives."
 msgstr ""
 
-#: ../../source/gui.rst:274
+#: ../../source/gui.rst:297
 msgid ""
 "Precision is the ratio of correctly labeled positives among all instances"
 " that got a positive label."
 msgstr ""
 
-#: ../../source/gui.rst:275
+#: ../../source/gui.rst:298
 msgid ""
 "F1 score is the harmonic mean of these two and should be more informative"
 " expecially with unbalanced data."
 msgstr ""
 
-#: ../../source/gui.rst:277 ../../source/gui.rst:347
+#: ../../source/gui.rst:300 ../../source/gui.rst:370
 msgid ""
 "If we click on the three dots under *Edit*, we can see a list of extra "
 "actions to use."
 msgstr ""
 
-#: ../../source/gui.rst:279
+#: ../../source/gui.rst:302
 msgid ""
 "*List features* lists the word-features and their coefficients that the "
 "model used. Works with models that used Count Vectorizer or Tfldf "
 "Vectorizer since their output is displayable."
 msgstr ""
 
-#: ../../source/gui.rst:281
+#: ../../source/gui.rst:304
 msgid ""
 "*Retrain tagger* retrains the whole tagger model with all the chosen "
 "parameters. It's useful in case our dataset changes or we have added some"
 " stop words."
 msgstr ""
 
-#: ../../source/gui.rst:283
+#: ../../source/gui.rst:306
 msgid ""
 "*Stop words* is for adding stop words. Stop words are words that the "
 "model do not consider while looking for clues of similarities. It is wise"
@@ -626,7 +662,7 @@ msgid ""
 "Separate the words with space (' ')."
 msgstr ""
 
-#: ../../source/gui.rst:285
+#: ../../source/gui.rst:308
 msgid ""
 "*Tag text* is to check how does the model work. If we click on that a "
 "window opens. We can paste there some text, choose to lemmatize it "
@@ -636,23 +672,23 @@ msgid ""
 "model in it's prediction."
 msgstr ""
 
-#: ../../source/gui.rst:287
+#: ../../source/gui.rst:310
 msgid ""
 "*Tag doc* is similar to *Tag text*, except the input is in the json "
 "format."
 msgstr ""
 
-#: ../../source/gui.rst:289
+#: ../../source/gui.rst:312
 msgid ""
 "*Tag random doc* takes a random instance from our dataset, displays it "
 "and returns the result and the probability of this result being correct."
 msgstr ""
 
-#: ../../source/gui.rst:291 ../../source/gui.rst:359
+#: ../../source/gui.rst:314 ../../source/gui.rst:382
 msgid "*Delete* is for deleting the model."
 msgstr ""
 
-#: ../../source/gui.rst:293
+#: ../../source/gui.rst:316
 msgid ""
 "In the table view we can also select several models and delete them all "
 "at once by clicking on the dustbin button next to the *+CREATE* button in"
@@ -661,25 +697,25 @@ msgid ""
 "pages we can change pages in the bottom-right."
 msgstr ""
 
-#: ../../source/gui.rst:301
-msgid "Figure 12. *Bribe_tag tagger*"
+#: ../../source/gui.rst:324
+msgid "Figure 14. *Bribe_tag tagger*"
 msgstr ""
 
-#: ../../source/gui.rst:306
+#: ../../source/gui.rst:329
 msgid "**Training Tagger Groups**"
 msgstr ""
 
-#: ../../source/gui.rst:309
+#: ../../source/gui.rst:332
 msgid ""
 "Tagger Group is for training multible classes at once and it also uses "
 "tags in the dataset given."
 msgstr ""
 
-#: ../../source/gui.rst:314
+#: ../../source/gui.rst:337
 msgid "**How do Tagger and Tagger Groups differ?**"
 msgstr ""
 
-#: ../../source/gui.rst:314
+#: ../../source/gui.rst:337
 msgid ""
 "One model predicts whether a text is positive (True) or negative (False)."
 " That is, whether this text get's the label or not. Tagger trains only "
@@ -691,7 +727,7 @@ msgid ""
 "trained."
 msgstr ""
 
-#: ../../source/gui.rst:317
+#: ../../source/gui.rst:340
 msgid ""
 "We can create a new Tagger Group model by clicking on the '+CREATE' "
 "button in the bottom-left. Then we must choose the name for the new "
@@ -699,7 +735,7 @@ msgid ""
 "the minimum sample size."
 msgstr ""
 
-#: ../../source/gui.rst:319
+#: ../../source/gui.rst:342
 msgid ""
 "Our input will be the data under the project that is active (we can check"
 " it on the blue panel up-right). We have to select the fields the model "
@@ -710,13 +746,13 @@ msgid ""
 "*ate* will change to it's lemma *eat* and are dealt as one word)."
 msgstr ""
 
-#: ../../source/gui.rst:321
+#: ../../source/gui.rst:344
 msgid ""
 "There's also an option to include our existing :ref:`embeddings "
 "<embedding>` into the training."
 msgstr ""
 
-#: ../../source/gui.rst:323
+#: ../../source/gui.rst:346
 msgid ""
 "Then we need to fine-tune the Tagger Group's classifiers by changing "
 "additional parameters such as Vectorizer (possible feature extractors "
@@ -733,21 +769,21 @@ msgid ""
 " case we want to limit the size of data the model trains on."
 msgstr ""
 
-#: ../../source/gui.rst:331
-msgid "Figure 13. *Creating a Tagger Group*"
+#: ../../source/gui.rst:354
+msgid "Figure 15. *Creating a Tagger Group*"
 msgstr ""
 
-#: ../../source/gui.rst:333
+#: ../../source/gui.rst:356
 msgid ""
 "Then we can hit create and see the training process and result of the "
 "tagger as seen in Figure 14."
 msgstr ""
 
-#: ../../source/gui.rst:340
-msgid "Figure 14. *Created Tagger Group*"
+#: ../../source/gui.rst:363
+msgid "Figure 16. *Created Tagger Group*"
 msgstr ""
 
-#: ../../source/gui.rst:345
+#: ../../source/gui.rst:368
 msgid ""
 "Whenever we create new Tagger Group models, we can track it's progress "
 "from the table under *Task*. If we click on the job, we can see all the "
@@ -755,40 +791,40 @@ msgid ""
 "Let's not forget that:"
 msgstr ""
 
-#: ../../source/gui.rst:343
+#: ../../source/gui.rst:366
 msgid ""
 "Recall is the ratio of correctly labeled positives among all true "
 "positives. Avg.recall is the average of all the models' recalls."
 msgstr ""
 
-#: ../../source/gui.rst:344
+#: ../../source/gui.rst:367
 msgid ""
 "Precision is the ratio of correctly labeled positives among all instances"
 " that got a positive label. Avg.precision is the average of all the "
 "models' precisions."
 msgstr ""
 
-#: ../../source/gui.rst:345
+#: ../../source/gui.rst:368
 msgid ""
 "F1 score is the harmonic mean of these two and should be more informative"
 " expecially with unbalanced data. Avg.F1_score is the average of all the "
 "models' F1 scores."
 msgstr ""
 
-#: ../../source/gui.rst:349
+#: ../../source/gui.rst:372
 msgid ""
 "*Models retrain* retrains all of the Tagger Group models with all the "
 "chosen parameters. It's useful in case our dataset changes or we have "
 "added some stop words."
 msgstr ""
 
-#: ../../source/gui.rst:351
+#: ../../source/gui.rst:374
 msgid ""
 "*Models list* displays us the models the Tagger Group trained. We can "
 "inspect which kind of labels were trained."
 msgstr ""
 
-#: ../../source/gui.rst:353
+#: ../../source/gui.rst:376
 msgid ""
 "*Tag text* is to check how does the model work. If we click on that, a "
 "window opens. We can paste there some text, choose to lemmatize it "
@@ -801,7 +837,7 @@ msgid ""
 "tested on the document to be tagged."
 msgstr ""
 
-#: ../../source/gui.rst:355
+#: ../../source/gui.rst:378
 msgid ""
 "*Tag doc* is similar to *Tag text*, except the input is in the json "
 "format. *Number of similar documents* is the number of most similar "
@@ -809,14 +845,14 @@ msgid ""
 "tested on the document to be tagged."
 msgstr ""
 
-#: ../../source/gui.rst:357
+#: ../../source/gui.rst:380
 msgid ""
 "*Tag random doc* takes a random instance from our dataset, displays it "
 "and returns the positive results of our models and the probability of "
 "these results being correct."
 msgstr ""
 
-#: ../../source/gui.rst:361
+#: ../../source/gui.rst:384
 msgid ""
 "In the table view we can also select several Tagger Groups and delete "
 "them all at once by clicking on the dustbin button next to the *+CREATE* "
@@ -825,21 +861,21 @@ msgid ""
 "models on several pages we can change pages in the bottom-right."
 msgstr ""
 
-#: ../../source/gui.rst:366
+#: ../../source/gui.rst:389
 msgid "Using Topic Analyzer"
 msgstr ""
 
-#: ../../source/gui.rst:368
+#: ../../source/gui.rst:391
 msgid ""
 "Topic Analyzer is a tool that helps us to find groups of similar "
 "documents from the data and transform these groups into labels."
 msgstr ""
 
-#: ../../source/gui.rst:370
+#: ../../source/gui.rst:393
 msgid "**Grouping the data**"
 msgstr ""
 
-#: ../../source/gui.rst:372
+#: ../../source/gui.rst:395
 msgid ""
 "To create a new grouping (or clustering, as we name it) navigate to "
 "Models -> Clustering and click \"Create\". Similarly to Tagger Group "
@@ -849,18 +885,18 @@ msgid ""
 "filter with a *Query* parameter."
 msgstr ""
 
-#: ../../source/gui.rst:374
+#: ../../source/gui.rst:397
 msgid ""
 "If desired, one can do some fine-tuning as well by choosing clustering "
 "algorithm and vectorizer and specifying the number of clusters (*Num "
 "clusters*) and the number of document vector dimensions (*Num dims*)."
 msgstr ""
 
-#: ../../source/gui.rst:378
+#: ../../source/gui.rst:401
 msgid "**How to choose the number of clusters?**"
 msgstr ""
 
-#: ../../source/gui.rst:380
+#: ../../source/gui.rst:403
 msgid ""
 "General advice would be to better have too many clusters than too few. "
 "Think about how many documents you are planning to cluster and choose the"
@@ -869,7 +905,7 @@ msgid ""
 "documents to 50 clusters then average cluster would contain 20 documents."
 msgstr ""
 
-#: ../../source/gui.rst:382
+#: ../../source/gui.rst:405
 msgid ""
 "Instead of using document-term matrix for clustering, we can also use "
 "compressed approximation of this matrix (with parameter *Use LSI*) which "
@@ -878,7 +914,7 @@ msgid ""
 "specified (*Num topics*)."
 msgstr ""
 
-#: ../../source/gui.rst:384
+#: ../../source/gui.rst:407
 msgid ""
 "In some cases we may already have some knowledge about the data that we "
 "are about to cluster. For example, we may be aware of some domain-"
@@ -886,15 +922,15 @@ msgid ""
 "suggests, these can be listed in the field *Stopwords*."
 msgstr ""
 
-#: ../../source/gui.rst:390
-msgid "Figure 15. *Creating a Clustering*"
+#: ../../source/gui.rst:413
+msgid "Figure 17. *Creating a Clustering*"
 msgstr ""
 
-#: ../../source/gui.rst:393
+#: ../../source/gui.rst:416
 msgid "**Evaluating clusters**"
 msgstr ""
 
-#: ../../source/gui.rst:395
+#: ../../source/gui.rst:418
 msgid ""
 "To see the clusters, click *View clusters* under Actions. This view gives"
 " us an overwiew about obtained clusters. For each cluster the document "
@@ -904,15 +940,15 @@ msgid ""
 " often in documents which belong to that cluster."
 msgstr ""
 
-#: ../../source/gui.rst:402
-msgid "Figure 16. *Clusters view*"
+#: ../../source/gui.rst:425
+msgid "Figure 18. *Clusters view*"
 msgstr ""
 
-#: ../../source/gui.rst:406
+#: ../../source/gui.rst:429
 msgid "**Interpreting document count**"
 msgstr ""
 
-#: ../../source/gui.rst:408
+#: ../../source/gui.rst:431
 msgid ""
 "Cluster with significantly larger document count often indicates that the"
 " clustering algorithm has failed to separate these documents by the "
@@ -925,11 +961,11 @@ msgid ""
 "increasing the number of clusters might help as well."
 msgstr ""
 
-#: ../../source/gui.rst:410
+#: ../../source/gui.rst:433
 msgid "**Interpreting average similarity**"
 msgstr ""
 
-#: ../../source/gui.rst:412
+#: ../../source/gui.rst:435
 msgid ""
 "Average similarity is an average cosine similarity between all the "
 "documents in the cluster. It ranges between 0 and 1 and higher score "
@@ -940,23 +976,23 @@ msgid ""
 "low althought fixing that cluster would be very easy."
 msgstr ""
 
-#: ../../source/gui.rst:414
+#: ../../source/gui.rst:437
 msgid ""
 "To see content of a cluster, simply click on a cluster that is in your "
 "interest, this opens you a Cluster Details view."
 msgstr ""
 
-#: ../../source/gui.rst:416
+#: ../../source/gui.rst:439
 msgid "**Operations with cluster**"
 msgstr ""
 
-#: ../../source/gui.rst:418
+#: ../../source/gui.rst:441
 msgid ""
 "Cluster Details view allows us to inspect actual documents belonging to a"
 " cluster."
 msgstr ""
 
-#: ../../source/gui.rst:420
+#: ../../source/gui.rst:443
 msgid ""
 "If we are satisfied with what it contains, we can tag the content by "
 "clicking \"Tag\" button. This operation adds a texta_fact to each of the "
@@ -965,7 +1001,7 @@ msgid ""
 "processes**."
 msgstr ""
 
-#: ../../source/gui.rst:422
+#: ../../source/gui.rst:445
 msgid ""
 "If not satisfied, we probably want to do some corrections in the cluster "
 "content manually, that is, remove some documents from it. This can be "
@@ -974,7 +1010,7 @@ msgid ""
 "clustering process."
 msgstr ""
 
-#: ../../source/gui.rst:424
+#: ../../source/gui.rst:447
 msgid ""
 "We could also be interested in whether there is more documents in the "
 "index that are similar to the ones in given cluster. If indeed there is, "
@@ -982,22 +1018,22 @@ msgid ""
 "tag them all together."
 msgstr ""
 
-#: ../../source/gui.rst:426
+#: ../../source/gui.rst:449
 msgid ""
 "To query similar documents, click on a \"More like this\" button. In the "
 "opened view, select document which you would like to add to the cluster "
 "and click on a \"+\" button."
 msgstr ""
 
-#: ../../source/gui.rst:433
-msgid "Figure 17. *Cluster details view*"
+#: ../../source/gui.rst:456
+msgid "Figure 19. *Cluster details view*"
 msgstr ""
 
-#: ../../source/gui.rst:441
+#: ../../source/gui.rst:464
 msgid "Reindexing the Data"
 msgstr ""
 
-#: ../../source/gui.rst:443
+#: ../../source/gui.rst:466
 msgid ""
 "Reindexer is a useful tool for reindexing Elasticsearch :ref:`indices "
 "<index_concept>`. We can think of index as our dataset. With reindexer we"
@@ -1006,59 +1042,89 @@ msgid ""
 " type to date and use it for our aggregation)."
 msgstr ""
 
-#: ../../source/gui.rst:445
+#: ../../source/gui.rst:468
 msgid ""
 "We can create a new index by clicking on the '+CREATE' button in the "
 "bottom-left."
 msgstr ""
 
-#: ../../source/gui.rst:447
+#: ../../source/gui.rst:470
 msgid "*Description* is the description of new reindexing job."
 msgstr ""
 
-#: ../../source/gui.rst:449
+#: ../../source/gui.rst:472
 msgid "*New index name* is the name for our new index."
 msgstr ""
 
-#: ../../source/gui.rst:451
+#: ../../source/gui.rst:474
 msgid "*Indices* are all the indices that we want in our new index."
 msgstr ""
 
-#: ../../source/gui.rst:453
+#: ../../source/gui.rst:476
 msgid "*Field types* are for changing the type and/or the name of our field(s)."
 msgstr ""
 
-#: ../../source/gui.rst:455
+#: ../../source/gui.rst:478
 msgid ""
 "We can use *Query* for adding only certain search results to our new "
 "index."
 msgstr ""
 
-#: ../../source/gui.rst:457
+#: ../../source/gui.rst:480
 msgid ""
 "*Random subset type* helps us to create an index which contains only "
 "certain amount of samples (rows). We can use this in case we want to play"
 " with a smaller subset before we apply our tools on a bigger one."
 msgstr ""
 
-#: ../../source/gui.rst:463
-msgid "Figure 18. *Creating a new index*"
+#: ../../source/gui.rst:486
+msgid "Figure 20. *Creating a new index*"
 msgstr ""
 
-#: ../../source/gui.rst:467
+#: ../../source/gui.rst:490
 msgid "Uploading the Data"
 msgstr ""
 
-#: ../../source/gui.rst:469
+#: ../../source/gui.rst:492
 msgid "We can upload new data via Dataset Importer under Tools"
 msgstr ""
 
-#: ../../source/gui.rst:478
-msgid "Figure 19. *Importing a new dataset*"
+#: ../../source/gui.rst:501
+msgid "Figure 21. *Importing a new dataset*"
 msgstr ""
 
 #~ msgid ""
 #~ "`In English <https://docs.texta.ee/gui.html>`_ "
 #~ "`eesti keeles <https://docs.texta.ee/et/gui.html>`_"
+#~ msgstr ""
+
+#~ msgid "Figure 10. *Create embedding with saved search*"
+#~ msgstr ""
+
+#~ msgid "Figure 11. *Creating Bribe_tag tagger*"
+#~ msgstr ""
+
+#~ msgid "Figure 12. *Bribe_tag tagger*"
+#~ msgstr ""
+
+#~ msgid "Figure 13. *Creating a Tagger Group*"
+#~ msgstr ""
+
+#~ msgid "Figure 14. *Created Tagger Group*"
+#~ msgstr ""
+
+#~ msgid "Figure 15. *Creating a Clustering*"
+#~ msgstr ""
+
+#~ msgid "Figure 16. *Clusters view*"
+#~ msgstr ""
+
+#~ msgid "Figure 17. *Cluster details view*"
+#~ msgstr ""
+
+#~ msgid "Figure 18. *Creating a new index*"
+#~ msgstr ""
+
+#~ msgid "Figure 19. *Importing a new dataset*"
 #~ msgstr ""
 

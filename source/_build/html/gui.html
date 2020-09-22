@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tutorial: Using Toolkit via GUI &#8212; TEXTA Toolkit 2 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial: Using Toolkit via API" href="api.html" />
+    <link rel="prev" title="Main Concepts of Toolkit" href="concepts.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <p><a class="reference external" href="https://docs.texta.ee/gui.html">EN</a>
+<a class="reference external" href="https://docs.texta.ee/et/gui.html">ET</a></p>
+<div class="section" id="tutorial-using-toolkit-via-gui">
+<h1>Tutorial: Using Toolkit via GUI<a class="headerlink" href="#tutorial-using-toolkit-via-gui" title="Permalink to this headline">¶</a></h1>
+<p>This is documentation is for TEXTA Toolkit version 2 GUI backed with TEXTA Toolkit’s RESTful API.</p>
+<div class="section" id="registration-login">
+<h2>Registration &amp; Login<a class="headerlink" href="#registration-login" title="Permalink to this headline">¶</a></h2>
+<p>Since TEXTA Toolkit is a web application, we have to navigate to the corresponding address in our browser (e.g. <cite>http://localhost/</cite>).
+We are welcomed by a login page as depicted in Figure 1.</p>
+<div class="figure align-default" id="id5">
+<span id="figure-1"></span><img alt="_images/login.png" src="_images/login.png" />
+<p class="caption"><span class="caption-text">Figure 1. <em>Login Screen at Startup</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>One can also register new users using the registration screen:</p>
+<div class="figure align-default" id="id6">
+<span id="figure-2"></span><img alt="_images/register.png" src="_images/register.png" />
+<p class="caption"><span class="caption-text">Figure 2. <em>Registration Screen</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When running for the first time, check the default superuser account <strong>admin</strong> created during installation.</p>
+</div>
+<p>After login have several navigation options in the upper panel.
+We can see our projects (also projected as the home page) and we can work with our projects via <a class="reference internal" href="search.html"><span class="std std-ref">Search</span></a>, <a class="reference internal" href="#lexicons"><span class="std std-ref">Lexicons</span></a>, <a class="reference internal" href="#models"><span class="std std-ref">Models</span></a> and <a class="reference internal" href="#tools"><span class="std std-ref">Tools</span></a>.</p>
+<div class="figure align-default" id="id7">
+<span id="figure-3"></span><img alt="_images/navbar.png" src="_images/navbar.png" />
+<p class="caption"><span class="caption-text">Figure 3. <em>Top Panel for Navigation</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="health-of-toolkit">
+<h2>Health of Toolkit<a class="headerlink" href="#health-of-toolkit" title="Permalink to this headline">¶</a></h2>
+<p>On the <strong>Projects page</strong> (also Toolkit’s home page) we can see technical information about TEXTA Toolkit’s server on the right.
+There are several labels that indicate the state of Toolkit and the host machine its working on (Figure 4):</p>
+<div class="figure align-default" id="id8">
+<span id="figure-4"></span><img alt="_images/server_status.png" src="_images/server_status.png" />
+<p class="caption"><span class="caption-text">Figure 4. <em>Toolkit Status</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="managing-projects">
+<h2>Managing Projects<a class="headerlink" href="#managing-projects" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-a-project">
+<h3>Creating a Project<a class="headerlink" href="#creating-a-project" title="Permalink to this headline">¶</a></h3>
+<p>In order to play with the data, we need to create a new project.
+We can create a project by clicking the <strong>+ CREATE</strong> button at the bottom of the page.
+We can then give it a title, select users who can work on the project and, of course, select datasets (Elasticsearch <a class="reference internal" href="concepts.html#index-concept"><span class="std std-ref">indices</span></a>) for the project.</p>
+<p>After the project is created, we can see the new project in the list and can change its datasets and user access via the <strong>Edit</strong> button.</p>
+</div>
+<div class="section" id="using-a-project">
+<h3>Using a Project<a class="headerlink" href="#using-a-project" title="Permalink to this headline">¶</a></h3>
+<p>In order to work with our project (search info, train taggers) we have to select it from the upper panel next to our username:</p>
+<div class="figure align-default" id="id9">
+<span id="figure-5"></span><img alt="_images/select_project.png" src="_images/select_project.png" />
+<p class="caption"><span class="caption-text">Figure 5. <em>Project Selection</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only one project can be activated at a time.</p>
+<p>Each project can have one or more datasets (Elasticsearch indices).</p>
+<p>Project resources are shared among the users with access to the project.</p>
+</div>
+</div>
+</div>
+<div class="section" id="search-exploring-the-data">
+<h2>Search: Exploring the Data<a class="headerlink" href="#search-exploring-the-data" title="Permalink to this headline">¶</a></h2>
+<p>The Search application is responsible for both creating the searches defining subsets of documents for Toolkit’s other applications and browsing-summarizing the data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to use <strong>Search</strong>, project must be selected in upper panel.</p>
+</div>
+<p>Search’s graphical interface consists of serveral important panels, which are depicted in Figure 6.
+We can collapse or open the panels by clicking on the arrow in the corner.</p>
+<div class="figure align-default" id="id10">
+<span id="figure-6"></span><img alt="_images/search_panel.png" src="_images/search_panel.png" />
+<p class="caption"><span class="caption-text">Figure 6. <em>Search Panel</em></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><a class="reference internal" href="#currentsearch"><span class="std std-ref">Current Search</span></a></p></li>
+<li><p><a class="reference internal" href="#savedsearches"><span class="std std-ref">Saved Searches</span></a></p></li>
+<li><p><a class="reference internal" href="#aggregations"><span class="std std-ref">Aggregations</span></a></p></li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="current-search">
+<span id="currentsearch"></span><h3>Current Search<a class="headerlink" href="#current-search" title="Permalink to this headline">¶</a></h3>
+<p>Data browsing and summarization depend on searches. Search consists of a set of constraints on <a class="reference internal" href="concepts.html#field-concept"><span class="std std-ref">field</span></a> values. We can define our constraints on the data using the <em>Current Search</em> panel.
+Without saving the constraints, we are in a “test mode”, which means that we can use the search in real time, but we cannot use the search in other tools.
+After saving the search, it is available also to other tools.</p>
+<p>In order to add a constraint, we must first choose one or several fields. After the field is selected, we can then specify which textual tokens (words or word parts) should or must occur in the interested document subset.</p>
+<p>We must notice that the search will be done on the Project’s dataset chosen in the upper panel.</p>
+<p>Suppose we are interested in finding all the documents which contains “bribery” and “official” from a text.
+Figure 7 shows how we have defined that we want to find all the documents which contain “bribery” and “official” in the article_text_mlp.text field:</p>
+<div class="figure align-default" id="id11">
+<span id="figure-7"></span><img alt="_images/search_constraints.png" src="_images/search_constraints.png" />
+<p class="caption"><span class="caption-text">Figure 7. <em>Example Search Constraints</em></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>Searches have several parameters to consider:</p>
+<ul class="simple">
+<li><p>We can also choose ‘or’ or ‘not’ under the Operator. In this case we either get documents containing at least one of the words (‘or’) or definitely not containing the words listed (‘not’).</p></li>
+<li><p>We can choose from several match types. Type “word” means that we want to find exact matches of the word(s) written and “phrase” means that we want to find exact matches of the phrases we are looking for, whereas “Phrase prefix” matches prefixes. This means suffixes may differ: for example searching for ‘bribe’ will find ‘bribetaking’, ‘bribers’, ‘bribery’ and other words starting with ‘bribe’. ‘regex’ takes the input as <a class="reference external" href="https://www.rexegg.com/regex-quickstart.html">a regular expression</a> and searches document accordingly. For example ‘bribe.{0,2}’ will find ‘bribe’ and ‘bribery’, but not longer words. If we have a big list of words we want to search for, we can extend the field searcher’s panel.</p></li>
+<li><p>We can also use Slop. Via Slop we can define up to how many words can be between the two words we wrote on one row in case the range is important for us.</p></li>
+</ul>
+<p>Should we be interested in more detailed searches, we can add more constraints like the previous ones via <strong>Add Filter</strong> button.
+For example, we can also search documents in a certain date range in case we have a proper preprocessed date field.</p>
+<p>If we click on “Search” button, we will see the matching data in a tabular form (see Figure 8), where layered features share feature name’s prefix, and matches are highlighted in pink.
+The results might be updating while modifying the filters.</p>
+<div class="figure align-default" id="id12">
+<span id="figure-8"></span><a class="reference internal image-reference" href="_images/search_results.png"><img alt="_images/search_results.png" src="_images/search_results.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Figure 8. <em>Example Search Results</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p>If there are too many features (columns), we can hide or show them from the drop-down menu in the down left corner. We can select or deselect all of them together (<em>Select all</em>) or by clicking on them separately. We can also hide or get back the Searcher’s panels with <em>Toggle drawer</em> button. We can browse through Searcher’s results with the arrows in the bottom right. We can also choose how many items per page would we want to see.</p>
+<div class="figure align-default" id="id13">
+<span id="figure-9"></span><img alt="_images/search_results_toggle.png" src="_images/search_results_toggle.png" />
+<p class="caption"><span class="caption-text">Figure 9. <em>Select Fields for Search Results</em></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<p>After we have come up with a suitable search, we can save it for later use by clicking on the <strong>disk</strong> icon up-right in the Current Search panel. The <strong>eye</strong> icon next to the disk icon shows us the actual Elasticsearch query we built by choosing the Operators and words to search for.</p>
+</div>
+<div class="section" id="saved-searches">
+<span id="savedsearches"></span><h3>Saved Searches<a class="headerlink" href="#saved-searches" title="Permalink to this headline">¶</a></h3>
+<p>After saving a search, it becomes available for using in Toolkit’s applications.
+Now, whenever we check it, we can use it to browse data or apply in aggregations.
+We can also send our saved search to other users who have the permission to our project with a copied url.
+This opens the saved search under the Current Search for the other user.
+We can also open our saved search in the Current Search simply by clicking on it.</p>
+</div>
+<div class="section" id="aggregations-summarizing-the-data">
+<span id="aggregations"></span><h3>Aggregations: Summarizing the Data<a class="headerlink" href="#aggregations-summarizing-the-data" title="Permalink to this headline">¶</a></h3>
+<p>As fun as browsing through the data is, it is not always enough. Sometimes we want to get an overview of our data, such as topics over time or word distributions. Searcher allows to do all of that and more through the “Aggregations” panel.</p>
+<p>Aggregations have two components - data and features it aggregates over. It will aggregate over the dataset we have under the Current Search. We can also exclude current search (meaning that ‘Aggregate over all data except the one we have currently active’) and choose the aggregation size. By defining a feature, we can group by that feature and get category counts. For example, lets assume we are interested in seeing how are the top words distributed in our sample data defined by our “bribe” search. For that we simply click on our bribe search under Saved Searches to get it as the current search.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt><strong>How are the significance scores calculated?</strong></dt><dd><p>The numbers returned for scores are primarily intended for ranking different suggestions sensibly rather than something easily understood by end users. The scores are derived from the doc frequencies in foreground and background sets. In brief, a term is considered significant if there is a noticeable difference in the frequency in which a term appears in the subset and in the background. The way the terms are ranked can be configured, <a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-significanttext-aggregation.html">see “Parameters” section</a>.</p>
+</dd>
+</dl>
+</div>
+<p>One cool thing we can also do, is to visualize the frequency of texts with searched words in it on a timeline. We can do that if we have a proper date field (in Texta date format) in our data. Here we can visualize when were the words ‘bribe’, ‘bribery’ and ‘bribed’ used most frequently in our dataset.</p>
+<p>We can also aggregate over <a class="reference internal" href="concepts.html#texta-fact"><span class="std std-ref">texta_facts</span></a> field in order to see the top entities under some tag. If we click on the black diagram button, we can scroll through the results. We see as many entities as we chose for our aggregation size.</p>
+</div>
+</div>
+<div class="section" id="preprocessing-the-data">
+<span id="mlp"></span><h2>Preprocessing the Data<a class="headerlink" href="#preprocessing-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Preprocessing the data is a standard procedure in natural language processing which in TTK can be done via MLP (multilingual preprocessor) module.</p>
+<p>To use it, navigate to <strong>Tools -&gt; MLP</strong>. Click <strong>Create</strong> button to define a new MLP worker. Select indices and fields on which you want to apply MLP. Since preprocessing the data is quite time-consuming process, it is strongly recommended to select only fields on which applying MLP is actually useful. That is, the fields which you are going to use later to create lexicons or train models on. Lastly, select analyzers which you would like to apply.</p>
+<div class="figure align-default" id="id14">
+<span id="figure-10"></span><img alt="_images/create_MLP_worker.png" src="_images/create_MLP_worker.png" />
+<p class="caption"><span class="caption-text">Figure 10. <em>Creating a MLP worker</em></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>The worker adds new fields containing the results to the dataset. You can see the list of fields using Search.</p>
+<div class="figure align-default" id="id15">
+<span id="figure-11"></span><img alt="_images/MLP_fields.png" src="_images/MLP_fields.png" />
+<p class="caption"><span class="caption-text">Figure 11. <em>Newly added fields containing results of MLP</em></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="creating-topic-related-lexicons">
+<span id="lexicons"></span><h2>Creating Topic-related Lexicons<a class="headerlink" href="#creating-topic-related-lexicons" title="Permalink to this headline">¶</a></h2>
+<p>In order to build lexicons, we must have <a class="reference internal" href="concepts.html#embedding-concept"><span class="std std-ref">Embedding</span></a> model <a class="reference internal" href="#embedding"><span class="std std-ref">previously trained</span></a> . We can start creating topic-related lexicons.</p>
+<p>Let’s create a lexicon that contains verbs accompanied with “bribery”.</p>
+<p>After clicking on the newly created lexicon, we have to provide some seed words like ‘accuse’.</p>
+<p>The process of creating (or expanding) the lexicon is iterative. We keep asking for suggestions and from those we have to pick the ones that make sense to us. We keep asking for suggestions until we get no more meaningful responses. Words we didn’t choose appear under the lexicon as negative words. These are considered as the opposite of the meanings we are looking for. We can erase words from the negative words list simply by clicking on it.</p>
+<p>To add a suitable word to the lexicon, we simply have to click on it. If we want to delete something we already chose we can erase the verb from the list.</p>
+<p>When we’re ready, we can save the lexicon.</p>
+</div>
+<div class="section" id="statistical-language-modelling">
+<span id="models"></span><h2>Statistical Language Modelling<a class="headerlink" href="#statistical-language-modelling" title="Permalink to this headline">¶</a></h2>
+<p>Under the <em>Models</em> option on the upper panel we can use different taggers and create embeddings.</p>
+<div class="section" id="embedding">
+<span id="id1"></span><h3>Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="concepts.html#embedding-concept"><span class="std std-ref">Embeddings</span></a> are basically words converted into numerical data (into vectors) that are more understandable and usable for the machine than plain strings (words). With these vectors created, we can compare words and find similar ones. We need embeddings to create, for example, <a class="reference internal" href="#lexicons"><span class="std std-ref">lexicons</span></a>. Texta Toolkit uses word2vec embeddings with <a class="reference external" href="https://radimrehurek.com/gensim/models/phrases.html">collocation detection</a>. It means that the vectors are created on words and phrases. Phrases are chosen with collocation detection which finds often together occuring words and marks them as phrases.</p>
+<p>We can create a new embedding by clicking on the ‘+ CREATE’ button in the bottom-left. Then we must choose the name for the new embedding (<em>Description</em>). If we leave <em>Query</em> empty, it will take all data in the active project as a input. We can also use saved searches as our desired input. Then we must choose the fields the embedding learns from. Embedding needs textual data, so we have to choose fields with text or lemmatized text in it. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (<em>eaten</em>, <em>eats</em> and <em>ate</em> will change to it’s lemma <em>eat</em>).</p>
+<p>Then we have to choose the number of dimensions. That means the length of the vectors created. 100-200 dimensions is usually a good place to start with. The minimum frequency defines how many times a word or a phrase has to occur in the data in order to get it’s very own word/phrase vector. Rare words/phrases won’t have very informative and usable vectors. Minimum frequency of 5 can be left as default if we are not sure of what to use.</p>
+<p>Keep in mind that the bigger the data, the better results!</p>
+<p>After creating the new embedding we can view the learning process and results in the embeddings’ table. We can see which user created this embedding in this project, the name of the embedding model, field(s) it was trained on, the time it took to train, dimensions, minimum frequency and created vocabulary size. By clicking on the new model’s row we can see similar info again.</p>
+<p>Three dots under <em>Edit</em> gives us access to deleting the embedding model or using <em>Phrase</em>. <em>Phrase</em> is a feature that helps us to check which phrases occur in the embedding model as vectors on their own. It outputs the words and connects phrases with ‘_’. For example, we can create an embedding model with our saved search ‘bribery’ (figure 10). If we leave the query empty, the model will be trained on the whole dataset.</p>
+<div class="figure align-default" id="id16">
+<span id="figure-12"></span><img alt="_images/create_embedding.png" src="_images/create_embedding.png" />
+<p class="caption"><span class="caption-text">Figure 12. <em>Create embedding with saved search</em></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="tagging-the-data">
+<span id="texttaggers"></span><h2>Tagging the Data<a class="headerlink" href="#tagging-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Different Taggers in Texta Toolkit are classification models which can classify new data with the label/class the model is trained on. We can apply the tagger via API.</p>
+<p>We have two taggers:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><a class="reference internal" href="concepts.html#tagger-group-concept"><span class="std std-ref">Tagger Groups</span></a></p></li>
+<li><p><a class="reference internal" href="concepts.html#tagger-concept"><span class="std std-ref">Taggers</span></a></p></li>
+</ol>
+</div></blockquote>
+<p>Only <em>Tagger</em> can be trained with saved searches. Others learn their models on tags in the dataset. Below we will see how to train them.</p>
+<p id="taggers"><strong>Training Taggers</strong></p>
+<p><a class="reference internal" href="concepts.html#tagger-concept"><span class="std std-ref">Tagger</span></a> operates on saved searches and uses machine learning. We can create a new Tagger model by clicking on the ‘+CREATE’ button in the bottom-left. Then we must choose the name for the new Tagger (<em>Description</em>) and the fields the model learns from. If we choose two, the fields are just concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (<em>eaten</em>, <em>eats</em> and <em>ate</em> will change to it’s lemma <em>eat</em> and are dealt as one word).</p>
+<p>If we leave <em>Query</em> empty, it will take all data in the active project as a input. We can also use saved searches as our desired input. This input will be our positive examples - later on we want to tag data similar to this one.</p>
+<p>By setting these three, we can now train a classifier. However, we can also fine-tune the classifier by changing additional parameters such as
+Vectorizer (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them <a class="reference external" href="https://scikit-learn.org/stable/modules/feature_extraction.html">here</a>) and Classifier (<a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression">Logistic Regression</a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html">LinearSVC</a>). We might get an error with LinearSVC in case we don’t have enough data in the search.
+We can set negative multiplier to change ratio of negative examples. We can use maximum sample size per class in case we want to limit the size of data the model trains on.</p>
+<p>Then we can hit create and see the training process and result of the tagger.</p>
+<div class="figure align-default" id="id17">
+<span id="figure-13"></span><img alt="_images/create_tagger.png" src="_images/create_tagger.png" />
+<p class="caption"><span class="caption-text">Figure 13. <em>Creating Bribe_tag tagger</em></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>Whenever we create a new Tagger model, we can track it’s progress from the table under <em>Task</em>. If we click on the job, we can see all the training info, how long did it took, and check how successful it was. Let’s not forget that:</dt><dd><ol class="arabic simple">
+<li><p>Recall is the ratio of correctly labeled positives among all true positives.</p></li>
+<li><p>Precision is the ratio of correctly labeled positives among all instances that got a positive label.</p></li>
+<li><p>F1 score is the harmonic mean of these two and should be more informative expecially with unbalanced data.</p></li>
+</ol>
+</dd>
+</dl>
+<p>If we click on the three dots under <em>Edit</em>, we can see a list of extra actions to use.</p>
+<p><em>List features</em> lists the word-features and their coefficients that the model used. Works with models that used Count Vectorizer or Tfldf Vectorizer since their output is displayable.</p>
+<p><em>Retrain tagger</em> retrains the whole tagger model with all the chosen parameters. It’s useful in case our dataset changes or we have added some stop words.</p>
+<p><em>Stop words</em> is for adding stop words. Stop words are words that the model do not consider while looking for clues of similarities. It is wise to add most frequent words in the list like <em>am</em>, <em>on</em>, <em>in</em>, <em>are</em>. Separate the words with space (‘ ‘).</p>
+<p><em>Tag text</em> is to check how does the model work. If we click on that a window opens. We can paste there some text, choose to lemmatize it (necessary if our model was trained on a lemmatized text) and post it. We then recieve the result (True if this text gets the tag and False otherwise) and the probability. Probability shows how confident is our model in it’s prediction.</p>
+<p><em>Tag doc</em> is similar to <em>Tag text</em>, except the input is in the json format.</p>
+<p><em>Tag random doc</em> takes a random instance from our dataset, displays it and returns the result and the probability of this result being correct.</p>
+<p><em>Delete</em> is for deleting the model.</p>
+<p>In the table view we can also select several models and delete them all at once by clicking on the dustbin button next to the <em>+CREATE</em> button in the bottom-left. If we have several models, we can search for the right one by their description or task status. If we have models on several pages we can change pages in the bottom-right.</p>
+<div class="figure align-default" id="id18">
+<span id="figure-14"></span><a class="reference internal image-reference" href="_images/tagger_result.png"><img alt="_images/tagger_result.png" src="_images/tagger_result.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Figure 14. <em>Bribe_tag tagger</em></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p id="taggergroups"><strong>Training Tagger Groups</strong></p>
+<p>Tagger Group is for training multible classes at once and it also uses tags in the dataset given.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt><strong>How do Tagger and Tagger Groups differ?</strong></dt><dd><p>One model predicts whether a text is positive (True) or negative (False). That is, whether this text get’s the label or not. Tagger trains only one model and predicts whether a text is similar to the query/dataset it was trained on or not.
+Tagger Group trains several models at once. That means, it can predict several labels at once. Tagger Group trains on facts. We can have several values under a certain fact and for each value (if it has high enough frequency (<em>Minimum sample size</em>) a model is trained.</p>
+</dd>
+</dl>
+</div>
+<p>We can create a new Tagger Group model by clicking on the ‘+CREATE’ button in the bottom-left. Then we must choose the name for the new Tagger Group (<em>Description</em>), the facts the model starts to learn on and the minimum sample size.</p>
+<p>Our input will be the data under the project that is active (we can check it on the blue panel up-right). We have to select the fields the model learns from. If we choose two, the fields are just concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (<em>eaten</em>, <em>eats</em> and <em>ate</em> will change to it’s lemma <em>eat</em> and are dealt as one word).</p>
+<p>There’s also an option to include our existing <a class="reference internal" href="#embedding"><span class="std std-ref">embeddings</span></a> into the training.</p>
+<p>Then we need to fine-tune the Tagger Group’s classifiers by changing additional parameters such as
+Vectorizer (possible feature extractors are: Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them <a class="reference external" href="https://scikit-learn.org/stable/modules/feature_extraction.html">here</a>) and Classifier (<a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression">Logistic Regression</a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html">LinearSVC</a>). We might get an error with LinearSVC in case we don’t have enough data in the search.
+We can set negative multiplier to change ratio of negative examples in the training set. We can use maximum sample size per class in case we want to limit the size of data the model trains on.</p>
+<div class="figure align-default" id="id19">
+<span id="figure-15"></span><img alt="_images/create_tagger_group.png" src="_images/create_tagger_group.png" />
+<p class="caption"><span class="caption-text">Figure 15. <em>Creating a Tagger Group</em></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<p>Then we can hit create and see the training process and result of the tagger as seen in Figure 14.</p>
+<div class="figure align-default" id="id20">
+<span id="figure-16"></span><a class="reference internal image-reference" href="_images/created_tagger_group.png"><img alt="_images/created_tagger_group.png" src="_images/created_tagger_group.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Figure 16. <em>Created Tagger Group</em></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>Whenever we create new Tagger Group models, we can track it’s progress from the table under <em>Task</em>. If we click on the job, we can see all the training info, how long did it took, and check how successful it was. Let’s not forget that:</dt><dd><ol class="arabic simple">
+<li><p>Recall is the ratio of correctly labeled positives among all true positives. Avg.recall is the average of all the models’ recalls.</p></li>
+<li><p>Precision is the ratio of correctly labeled positives among all instances that got a positive label. Avg.precision is the average of all the models’ precisions.</p></li>
+<li><p>F1 score is the harmonic mean of these two and should be more informative expecially with unbalanced data. Avg.F1_score is the average of all the models’ F1 scores.</p></li>
+</ol>
+</dd>
+</dl>
+<p>If we click on the three dots under <em>Edit</em>, we can see a list of extra actions to use.</p>
+<p><em>Models retrain</em> retrains all of the Tagger Group models with all the chosen parameters. It’s useful in case our dataset changes or we have added some stop words.</p>
+<p><em>Models list</em> displays us the models the Tagger Group trained. We can inspect which kind of labels were trained.</p>
+<p><em>Tag text</em> is to check how does the model work. If we click on that, a window opens. We can paste there some text, choose to lemmatize it (necessary if our model was trained on a lemmatized text) and choose to use NER and post it. We then recieve the result (all the labels which model predicted True for this text) and the probability of this label being true. Probability shows how confident is this model in it’s prediction. <em>Number of similar documents</em> is the number of most similar documents to the document in question. Tags given to these documents are tested on the document to be tagged.</p>
+<p><em>Tag doc</em> is similar to <em>Tag text</em>, except the input is in the json format. <em>Number of similar documents</em> is the number of most similar documents to the document in question. Tags given to these documents are tested on the document to be tagged.</p>
+<p><em>Tag random doc</em> takes a random instance from our dataset, displays it and returns the positive results of our models and the probability of these results being correct.</p>
+<p><em>Delete</em> is for deleting the model.</p>
+<p>In the table view we can also select several Tagger Groups and delete them all at once by clicking on the dustbin button next to the <em>+CREATE</em> button in the bottom-left. If we have several Tagger Groups, we can search for the right one by their description or task status. If we have models on several pages we can change pages in the bottom-right.</p>
+</div>
+<div class="section" id="using-topic-analyzer">
+<span id="topic-analyzer"></span><h2>Using Topic Analyzer<a class="headerlink" href="#using-topic-analyzer" title="Permalink to this headline">¶</a></h2>
+<p>Topic Analyzer is a tool that helps us to find groups of similar documents from the data and transform these groups into labels.</p>
+<p><strong>Grouping the data</strong></p>
+<p>To create a new grouping (or clustering, as we name it) navigate to Models -&gt; Clustering and click “Create”. Similarly to Tagger Group object, you have to give it a name (<em>Description</em>) and select indices and fields based on which the grouping will be done. Additionally one can restrict the set of documents to be used in clustering by specifying the filter with a <em>Query</em> parameter.</p>
+<p>If desired, one can do some fine-tuning as well by choosing clustering algorithm and vectorizer and specifying the number of clusters (<em>Num clusters</em>) and the number of document vector dimensions (<em>Num dims</em>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>How to choose the number of clusters?</strong></p>
+<p>General advice would be to better have too many clusters than too few. Think about how many documents you are planning to cluster and choose the number so that the average cluster is small enough to inspect it manually with ease. For example, if you are going to cluster 1000 documents to 50 clusters then average cluster would contain 20 documents.</p>
+</div>
+<p>Instead of using document-term matrix for clustering, we can also use compressed approximation of this matrix (with parameter <em>Use LSI</em>) which is constructed before the clustering process begins. However, LSI also requires the number of topics (dimensions in low-rank matrix) to be specified (<em>Num topics</em>).</p>
+<p>In some cases we may already have some knowledge about the data that we are about to cluster. For example, we may be aware of some domain-specific stopwords which we would like to ignore. As name already suggests, these can be listed in the field <em>Stopwords</em>.</p>
+<div class="figure align-default" id="id21">
+<span id="figure-17"></span><img alt="_images/create_clustering.png" src="_images/create_clustering.png" />
+<p class="caption"><span class="caption-text">Figure 17. <em>Creating a Clustering</em></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Evaluating clusters</strong></p>
+<p>To see the clusters, click <em>View clusters</em> under Actions. This view gives us an overwiew about obtained clusters. For each cluster the document count and average cosine similarity between its documents is shown. Additionally, a list of significant words for each cluster is given - it is a list of words that, when compared to other documents, appear notably often in documents which belong to that cluster.</p>
+<div class="figure align-default" id="id22">
+<span id="figure-18"></span><a class="reference internal image-reference" href="_images/clusters_view.png"><img alt="_images/clusters_view.png" src="_images/clusters_view.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Figure 18. <em>Clusters view</em></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Interpreting document count</strong></p>
+<p>Cluster with significantly larger document count often indicates that the clustering algorithm has failed to separate these documents by the topic. It doesn’t necessarily mean that the clustering process in general has been unsuccessful as often it is impossible to cluster all documents perfectly. However, you still might want to take a closer look to such clusters as there may be other reasons for such results as well. For example, the documents in that cluster may contain similar noise or stopwords that makes them artifically similar to each other. Sometimes increasing the number of clusters might help as well.</p>
+<p><strong>Interpreting average similarity</strong></p>
+<p>Average similarity is an average cosine similarity between all the documents in the cluster. It ranges between 0 and 1 and higher score indicates that the documents in that cluster are more similar to each other. However, the score has some disadvantages. For example, when a cluster contains 9 documents that are very similar to each other and 10th document is very different from all others, then the score might appear low althought fixing that cluster would be very easy.</p>
+</div>
+<p>To see content of a cluster, simply click on a cluster that is in your interest, this opens you a Cluster Details view.</p>
+<p><strong>Operations with cluster</strong></p>
+<p>Cluster Details view allows us to inspect actual documents belonging to a cluster.</p>
+<p>If we are satisfied with what it contains, we can tag the content by clicking “Tag” button. This operation adds a texta_fact to each of the document in the cluster, with specified name and a string value. <strong>From now on, these documents will be ignored in further clustering processes</strong>.</p>
+<p>If not satisfied, we probably want to do some corrections in the cluster content manually, that is, remove some documents from it. This can be done by selecting the documents that we want to remove and clicking on trash bin icon. Note that these documents will not be ignored in further clustering process.</p>
+<p>We could also be interested in whether there is more documents in the index that are similar to the ones in given cluster. If indeed there is, we might want to add those documents to the cluster as well, so we could tag them all together.</p>
+<p>To query similar documents, click on a “More like this” button. In the opened view, select document which you would like to add to the cluster and click on a “+” button.</p>
+<div class="figure align-default" id="id23">
+<span id="figure-19"></span><a class="reference internal image-reference" href="_images/cluster_details_view.png"><img alt="_images/cluster_details_view.png" src="_images/cluster_details_view.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Figure 19. <em>Cluster details view</em></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="reindexing-the-data">
+<span id="reindexer"></span><span id="tools"></span><h2>Reindexing the Data<a class="headerlink" href="#reindexing-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Reindexer is a useful tool for reindexing Elasticsearch <a class="reference internal" href="concepts.html#index-concept"><span class="std std-ref">indices</span></a>. We can think of index as our dataset. With reindexer we can remove unwanted fields, change the type of the fields (if we have a field with text value type but actually contains dates, we can change the type to date and use it for our aggregation).</p>
+<p>We can create a new index by clicking on the ‘+CREATE’ button in the bottom-left.</p>
+<p><em>Description</em> is the description of new reindexing job.</p>
+<p><em>New index name</em> is the name for our new index.</p>
+<p><em>Indices</em> are all the indices that we want in our new index.</p>
+<p><em>Field types</em> are for changing the type and/or the name of our field(s).</p>
+<p>We can use <em>Query</em> for adding only certain search results to our new index.</p>
+<p><em>Random subset type</em> helps us to create an index which contains only certain amount of samples (rows). We can use this in case we want to play with a smaller subset before we apply our tools on a bigger one.</p>
+<div class="figure align-default" id="id24">
+<span id="figure-20"></span><img alt="_images/reindexer.png" src="_images/reindexer.png" />
+<p class="caption"><span class="caption-text">Figure 20. <em>Creating a new index</em></span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="uploading-the-data">
+<h2>Uploading the Data<a class="headerlink" href="#uploading-the-data" title="Permalink to this headline">¶</a></h2>
+<p>We can upload new data via Dataset Importer under Tools</p>
+<div class="figure align-default" id="id25">
+<span id="figure-21"></span><img alt="_images/dataset_importer.png" src="_images/dataset_importer.png" />
+<p class="caption"><span class="caption-text">Figure 21. <em>Importing a new dataset</em></span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TEXTA Toolkit</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Main Concepts of Toolkit</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial: Using Toolkit via GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#registration-login">Registration &amp; Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#health-of-toolkit">Health of Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-projects">Managing Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#search-exploring-the-data">Search: Exploring the Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preprocessing-the-data">Preprocessing the Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-topic-related-lexicons">Creating Topic-related Lexicons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#statistical-language-modelling">Statistical Language Modelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tagging-the-data">Tagging the Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-topic-analyzer">Using Topic Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reindexing-the-data">Reindexing the Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uploading-the-data">Uploading the Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Tutorial: Using Toolkit via API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html">Authenticating Toolkit through CloudFoundry UAA</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="concepts.html" title="previous chapter">Main Concepts of Toolkit</a></li>
+      <li>Next: <a href="api.html" title="next chapter">Tutorial: Using Toolkit via API</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020 TEXTA.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gui.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 14:42+0300\n"
+"POT-Creation-Date: 2020-09-22 12:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -157,7 +157,7 @@ msgid "To log in using UAA, click on the \"log in with CloudFoundry\" button on 
 msgstr ""
 
 #: ../../source/uaa.rst:86
-msgid "Figure 1. *Log In With CloudFoundry Screen on the Angular Front-end*"
+msgid "Figure 22. *Log In With CloudFoundry Screen on the Angular Front-end*"
 msgstr ""
 
 #: ../../source/uaa.rst:88

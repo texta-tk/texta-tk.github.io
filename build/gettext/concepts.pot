@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 14:37+0300\n"
+"POT-Creation-Date: 2020-09-22 12:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -240,58 +240,73 @@ msgstr ""
 msgid "Each document is a collection of fields. Field is a separated piece of information in that document. For example, we can have an article with fields containing the text, the date of publishing, headline, etc."
 msgstr ""
 
-#: ../../source/concepts.rst:103
-msgid "Embedding"
+#: ../../source/concepts.rst:102
+msgid "Anonymizer"
 msgstr ""
 
-#: ../../source/concepts.rst:105
-msgid "Embedding is a statistical model describing the distributional properties of words and phrases, which enables the computation of similarity between words and phrases. In TTK, embeddings are used for finding contextually similar keywords to extend search results and building lexicons. Furthermore, vectors from word embeddings can also be used in neural classification models in Texta Toolkit. TTK currently only supports Word2Vec embeddings, but work is being done to incorporate state of the art embedding models (e.g. BERT from Google Research). Furthermore, TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support multilingual text classification."
-msgstr ""
-
-#: ../../source/concepts.rst:114
-msgid "Tagger"
-msgstr ""
-
-#: ../../source/concepts.rst:116
-msgid "Taggers are monolingual binary text classifiers used to predict tags for documents, e.g. whether a tweet is toxic or talking about Brexit. Taggers are trained using a subset of documents defined by a TTK search or a raw Elasticsearch query (big ugly JSON object). The subset of documents defines the “positive” set of examples (the documents about the topic being tagged), whilst “negative” examples will be selected automatically (to be unlike the positive ones). TTK taggers are trained using scikit-learn pipelines and includes models like logistic regression and SVM. TTK automatically splits the training data into training and testing data (by default 80-20) and applies grid search combined with k-fold cross validation to identify best hyperparameters. SVM model is also used for feature selection to remove unimportant features from the model making it smaller. For features, both word-based and character-based n-grams are used."
-msgstr ""
-
-#: ../../source/concepts.rst:127
-msgid "Tagger Group"
-msgstr ""
-
-#: ../../source/concepts.rst:129
-msgid "Tagger Group is an extension to TTK’s binary taggers to support monolingual multi-label classification. As its name suggests, Tagger Groups incorporate multiple (binary) taggers, which are executed in parallel to produce a list of tags to the user. Tagger Group has been successfully tested with over 6000 binary models and prediction times are usually less than 1 second. To achieve this, TTK has employed a hybrid approach for multi-label tagging, which uses unsupervised machine learning (document vectors) to limit the number of binary models used for prediction. In such scenario input document is compared to training data to determine most probable models to produce valid tags."
-msgstr ""
-
-#: ../../source/concepts.rst:138
-msgid "Torch Tagger"
-msgstr ""
-
-#: ../../source/concepts.rst:140
-msgid "While Taggers and Tagger Groups use classical machine learning to produce binary classification models, Texta Toolkit also incorporates deep neural models for binary and multi-class text classification. As the models are all programmed using PyTorch, the TTK’s component is called Torch Tagger. It allows for the user to use several state-of-art text classification models, including fastText, TextRNN using bi-direction LSTM networks, RCNN using recurrent convolutional neural nets. Since all models have been developed using PyTorch, introducing new models is fairly straightforward. TorchTagger models also include the possibility to use pre-trained word vectors (e.g. Word2Vec trained in TTK) in the embedding layer of the models. To create data processing pipelines, Torch Tagger uses torchtext package. Torch Tagger has been validated on monolingual toxic comment detection, reaching accuracy and F1-score of 96%."
-msgstr ""
-
-#: ../../source/concepts.rst:149
-msgid "Multilingual Processor"
-msgstr ""
-
-#: ../../source/concepts.rst:151
+#: ../../source/concepts.rst:104
+#: ../../source/concepts.rst:135
+#: ../../source/concepts.rst:155
+#: ../../source/concepts.rst:174
 msgid "TODO"
 msgstr ""
 
-#: ../../source/concepts.rst:156
+#: ../../source/concepts.rst:109
+msgid "Embedding"
+msgstr ""
+
+#: ../../source/concepts.rst:111
+msgid "Embedding is a statistical model describing the distributional properties of words and phrases, which enables the computation of similarity between words and phrases. In TTK, embeddings are used for finding contextually similar keywords to extend search results and building lexicons. Furthermore, vectors from word embeddings can also be used in neural classification models in Texta Toolkit. TTK currently only supports Word2Vec embeddings, but work is being done to incorporate state of the art embedding models (e.g. BERT from Google Research). Furthermore, TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support multilingual text classification."
+msgstr ""
+
+#: ../../source/concepts.rst:120
+msgid "Tagger"
+msgstr ""
+
+#: ../../source/concepts.rst:122
+msgid "Taggers are monolingual binary text classifiers used to predict tags for documents, e.g. whether a tweet is toxic or talking about Brexit. Taggers are trained using a subset of documents defined by a TTK search or a raw Elasticsearch query (big ugly JSON object). The subset of documents defines the “positive” set of examples (the documents about the topic being tagged), whilst “negative” examples will be selected automatically (to be unlike the positive ones). TTK taggers are trained using scikit-learn pipelines and includes models like logistic regression and SVM. TTK automatically splits the training data into training and testing data (by default 80-20) and applies grid search combined with k-fold cross validation to identify best hyperparameters. SVM model is also used for feature selection to remove unimportant features from the model making it smaller. For features, both word-based and character-based n-grams are used."
+msgstr ""
+
+#: ../../source/concepts.rst:133
+msgid "Regex Tagger"
+msgstr ""
+
+#: ../../source/concepts.rst:141
+msgid "Tagger Group"
+msgstr ""
+
+#: ../../source/concepts.rst:143
+msgid "Tagger Group is an extension to TTK’s binary taggers to support monolingual multi-label classification. As its name suggests, Tagger Groups incorporate multiple (binary) taggers, which are executed in parallel to produce a list of tags to the user. Tagger Group has been successfully tested with over 6000 binary models and prediction times are usually less than 1 second. To achieve this, TTK has employed a hybrid approach for multi-label tagging, which uses unsupervised machine learning (document vectors) to limit the number of binary models used for prediction. In such scenario input document is compared to training data to determine most probable models to produce valid tags."
+msgstr ""
+
+#: ../../source/concepts.rst:153
+msgid "Regex Tagger Group"
+msgstr ""
+
+#: ../../source/concepts.rst:161
+msgid "Torch Tagger"
+msgstr ""
+
+#: ../../source/concepts.rst:163
+msgid "While Taggers and Tagger Groups use classical machine learning to produce binary classification models, Texta Toolkit also incorporates deep neural models for binary and multi-class text classification. As the models are all programmed using PyTorch, the TTK’s component is called Torch Tagger. It allows for the user to use several state-of-art text classification models, including fastText, TextRNN using bi-direction LSTM networks, RCNN using recurrent convolutional neural nets. Since all models have been developed using PyTorch, introducing new models is fairly straightforward. TorchTagger models also include the possibility to use pre-trained word vectors (e.g. Word2Vec trained in TTK) in the embedding layer of the models. To create data processing pipelines, Torch Tagger uses torchtext package. Torch Tagger has been validated on monolingual toxic comment detection, reaching accuracy and F1-score of 96%."
+msgstr ""
+
+#: ../../source/concepts.rst:172
+msgid "Multilingual Processor"
+msgstr ""
+
+#: ../../source/concepts.rst:179
 msgid "Topic Analyzer"
 msgstr ""
 
-#: ../../source/concepts.rst:158
+#: ../../source/concepts.rst:181
 msgid "Topic Analyzer is a tool that detects groups of similar documents in the data. It can be used for example to explore the structure of the unlabeled data in order to get the understanding about what it contains. However, the main purpose of the tool is to take it one step further and make actual use of one's exploration by transforming their discoveries into the labelling. It can then be used to build supervised machine learning models."
 msgstr ""
 
-#: ../../source/concepts.rst:160
+#: ../../source/concepts.rst:183
 msgid "Topic Analyzer puts to use the best parts of unsupervised clustering and manual labelling. While clustering is a fast and efficient method to create groups of rather similar texts, it still lacks preciseness required to use these clusters as a labelling of the data. For example, while some clusters may indeed contain similar documents, some other will completely fail in capturing the similarity and most of them will probably be so-and-so."
 msgstr ""
 
-#: ../../source/concepts.rst:162
+#: ../../source/concepts.rst:185
 msgid "Topic Analyzer allows user to look inside each cluster and make the decision about the quality manually. Users can also perform various actions on the cluster: remove documents, add more similar documents, and move documents to another more suitable cluster. Finally, user can choose to label the documents inside the cluster if it has reached a sufficient quality."
 msgstr ""

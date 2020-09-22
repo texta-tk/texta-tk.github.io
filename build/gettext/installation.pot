@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 14:37+0300\n"
+"POT-Creation-Date: 2020-09-22 12:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,15 +57,15 @@ msgid "Elasticsearch for storing the documents (one can also run it without Dock
 msgstr ""
 
 #: ../../source/installation.rst:40
-msgid "MySQL or Postgres for storing user and project data (can also be run without Docker)"
+msgid "Redis for managing message queues in TK (one can also run it without Docker)"
 msgstr ""
 
 #: ../../source/installation.rst:42
-msgid "TEXTA Toolkit RESTful API for backend: docker.texta.ee/texta/texta-rest:latest"
+msgid "MySQL or Postgres for storing user and project data (can also be run without Docker)"
 msgstr ""
 
 #: ../../source/installation.rst:44
-msgid "TEXTA Toolkit Angular frontend: docker.texta.ee/texta/texta-rest-front:latest"
+msgid "TEXTA Toolkit RESTful API for backend: docker.texta.ee/texta/texta-rest:latest"
 msgstr ""
 
 #: ../../source/installation.rst:46
@@ -119,7 +119,7 @@ msgid "When running, TEXTA Toolkit's GUI should be available at:"
 msgstr ""
 
 #: ../../source/installation.rst:87
-msgid "http://localhost:4200"
+msgid "http://localhost"
 msgstr ""
 
 #: ../../source/installation.rst:89
