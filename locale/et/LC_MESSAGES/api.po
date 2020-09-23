@@ -130,7 +130,6 @@ msgid "Anonymize text"
 msgstr "Anonüümi tekst"
 
 #: ../../source/api.rst:126
-#, fuzzy
 msgid "Endpoint **/projects/{project_pk}/anonymizers/{id}/anonymize_text/**"
 msgstr "Otspunkt: **/projects/{project_pk}/anonymizers/{id}/anonymize_text/**"
 
@@ -151,7 +150,6 @@ msgid "Apply MLP to texts"
 msgstr "MLP rakendamine tekstidel"
 
 #: ../../source/api.rst:184
-#, fuzzy
 msgid "Endpoint: **/mlp/texts/**"
 msgstr "Otspunkt: **/mlp/texts/**"
 

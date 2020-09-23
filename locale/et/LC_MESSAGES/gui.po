@@ -493,12 +493,10 @@ msgstr ""
 "näha soovitakse."
 
 #: ../../source/gui.rst:192
-#, fuzzy
 msgid "Preprocessing the Data"
-msgstr "**Andmestiku grupeerimine**"
+msgstr "Andmete eeltöötlemine"
 
 #: ../../source/gui.rst:194
-#, fuzzy
 msgid ""
 "Preprocessing the data is a standard procedure in machine learning which "
 "in TTK can be done via MLP (multilingual preprocessor) module."
@@ -525,19 +523,20 @@ msgstr ""
 "mida soovid andmetel rakendada."
 
 #: ../../source/gui.rst:202
-#, fuzzy
 msgid "Figure 10. *Creating a MLP worker*"
-msgstr "Joonis 15. *Klasterdaja loomine*"
+msgstr "Joonis 10. *MLP lõime loomine*"
 
 #: ../../source/gui.rst:204
 msgid ""
 "The worker adds new fields containing the results to the dataset. You can"
 " see the list of fields using Search."
 msgstr ""
+"MLP rakendamise tulemusena lisatakse andmestikule uued välja, mis sisaldavad"
+" analüsaatorite tulemusi. Neid saab näha näiteks Search-is."
 
 #: ../../source/gui.rst:210
 msgid "Figure 11. *Newly added fields containing results of MLP*"
-msgstr ""
+msgstr "Figure 11. *Ued, MLP tulemusi sisaldavad väljad.*"
 
 #: ../../source/gui.rst:215
 msgid "Creating Topic-related Lexicons"
@@ -719,9 +718,8 @@ msgstr ""
 " kogu andmestiku peal."
 
 #: ../../source/gui.rst:257
-#, fuzzy
 msgid "Figure 12. *Create embedding with saved search*"
-msgstr "Joonis 10. *Salvestatud otsinguga sõnavektorite mudeli loomine*"
+msgstr "Joonis 12. *Salvestatud otsinguga sõnavektorite mudeli loomine*"
 
 #: ../../source/gui.rst:262
 msgid "Tagging the Data"
@@ -836,9 +834,8 @@ msgstr ""
 "märgendaja treenimisprotsessi ja tulemusi."
 
 #: ../../source/gui.rst:292
-#, fuzzy
 msgid "Figure 13. *Creating Bribe_tag tagger*"
-msgstr "Joonis 11. *Bribe_tag märgendaja (Tagger) loomine*"
+msgstr "Joonis 13. *Bribe_tag märgendaja (Tagger) loomine*"
 
 #: ../../source/gui.rst:298
 msgid ""
@@ -962,9 +959,8 @@ msgstr ""
 "paremal."
 
 #: ../../source/gui.rst:324
-#, fuzzy
 msgid "Figure 14. *Bribe_tag tagger*"
-msgstr "Joonis 12. *Bribe_tag märgendaja*"
+msgstr "Joonis 14. *Bribe_tag märgendaja*"
 
 #: ../../source/gui.rst:329
 msgid "**Training Tagger Groups**"
@@ -1070,9 +1066,8 @@ msgstr ""
 "klassi kohta mudel treenides näeb."
 
 #: ../../source/gui.rst:354
-#, fuzzy
 msgid "Figure 15. *Creating a Tagger Group*"
-msgstr "Joonis 13. *Tagger Group-i loomine*"
+msgstr "Joonis 15. *Tagger Group-i loomine*"
 
 #: ../../source/gui.rst:356
 msgid ""
@@ -1083,9 +1078,8 @@ msgstr ""
 "märgendaja tulemusi joonisel 14 näidatud kujul."
 
 #: ../../source/gui.rst:363
-#, fuzzy
 msgid "Figure 16. *Created Tagger Group*"
-msgstr "Joonis 14. *Loodud Tagger Group*"
+msgstr "Joonis 16. *Loodud Tagger Group*"
 
 #: ../../source/gui.rst:368
 msgid ""
@@ -1291,9 +1285,8 @@ msgstr ""
 "väljas *Stopwords*."
 
 #: ../../source/gui.rst:413
-#, fuzzy
 msgid "Figure 17. *Creating a Clustering*"
-msgstr "Joonis 15. *Klasterdaja loomine*"
+msgstr "Joonis 17. *Klasterdaja loomine*"
 
 #: ../../source/gui.rst:416
 msgid "**Evaluating clusters**"
@@ -1316,8 +1309,7 @@ msgstr ""
 " nendes dokumentides, mis sellesse klastrisse kuuluvad."
 
 #: ../../source/gui.rst:425
-#, fuzzy
-msgid "Figure 18. *Clusters view*"
+msgid "Figure 16. *Clusters view*"
 msgstr "Joonis 16. *Klastri vaade (Clusters view)*"
 
 #: ../../source/gui.rst:429
@@ -1437,9 +1429,8 @@ msgstr ""
 "\"+\"-nupu abil."
 
 #: ../../source/gui.rst:456
-#, fuzzy
 msgid "Figure 19. *Cluster details view*"
-msgstr "Joonis 17. *Klastrite detailne vaade (Cluster details view)*"
+msgstr "Joonis 19. *Klastrite detailne vaade (Cluster details view)*"
 
 #: ../../source/gui.rst:464
 msgid "Reindexing the Data"
@@ -1500,9 +1491,8 @@ msgstr ""
 "rakendamist."
 
 #: ../../source/gui.rst:486
-#, fuzzy
 msgid "Figure 20. *Creating a new index*"
-msgstr "Joonis 18. *Uue indeksi loomine*"
+msgstr "Joonis 20. *Uue indeksi loomine*"
 
 #: ../../source/gui.rst:490
 msgid "Uploading the Data"
@@ -1515,9 +1505,8 @@ msgstr ""
 "laadida."
 
 #: ../../source/gui.rst:501
-#, fuzzy
 msgid "Figure 21. *Importing a new dataset*"
-msgstr "Joonis 19. *Uue andmestiku importimine*"
+msgstr "Joonis 21. *Uue andmestiku importimine*"
 
 #~ msgid ""
 #~ "`In English <https://docs.texta.ee/gui.html>`_ "
