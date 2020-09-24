@@ -15,17 +15,17 @@ Installation Using Docker (recommended)
 
 Install Docker
 ++++++++++++++
-    
+
 The easiest way to run TEXTA Toolkit is to use our prebuilt Docker images from our registries. For doing so, one needs to install *Docker* and *docker-compose*:
 
-.. code-block::
+.. code-block:: bash
 
     sudo apt-get update
     sudo apt-get install docker docker-compose -y
 
 To run Elasticsearch in Docker, we need to increase maximum map count parameter for virtual memory:
 
-.. code-block::
+.. code-block:: bash
 
     sudo sysctl -w vm.max_map_count=262144
 
@@ -56,30 +56,30 @@ Run TEXTA Toolkit
 
 .. note::
     Before running TEXTA Toolkit, we should have 2 files in our current working directory:
-    
+
     * docker-compose.yaml
-    
+
     * env
 
-With the **docker-compose.yaml** and **env** files present and accounted for, 
+With the **docker-compose.yaml** and **env** files present and accounted for,
 let's pull the images and start the services by executing the following commands in the same directory with **docker-compose.yaml** and **env**:
 
-.. code-block::
+.. code-block:: bash
 
     sudo docker-compose pull
     sudo docker-compose up
 
 For running in detached mode, use the *-d* flag:
 
-.. code-block::
+.. code-block:: bash
 
     sudo docker-compose up -d
 
 .. note::
     TEXTA Toolkit's dockerized version comes with a default superuser account:
-    
+
     **user:** admin
-    
+
     **password:** 1234
 
 When running, TEXTA Toolkit's GUI should be available at:
@@ -92,7 +92,7 @@ and API at:
 
 For stopping the services:
 
-.. code-block::
+.. code-block:: bash
 
     sudo docker-compose down
 

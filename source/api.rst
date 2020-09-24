@@ -1,8 +1,8 @@
 `EN <https://docs.texta.ee/api.html>`_
 `ET <https://docs.texta.ee/et/api.html>`_
 
-Tutorial: Using Toolkit via API
-===============================
+Tutorial: API
+===================
 
 The purpose of this tutorial is to get you started with using Toolkit API.
 The tutorial gives you an overview of the most fundamental API operations together with illustrating examples.
@@ -10,7 +10,7 @@ For more detailed documentations please see :ref:`API reference <api_reference>`
 
 
 Health of Toolkit
------------------
+------------------
 
 For checking the health of a running Toolkit instance, one can access the **/health** endpoint for operating statistics.
 The endpoint responds with information abouth the availability of services (e.g. Elasticsearch and TEXTA MLP) and system resources (e.g. disk, memory, GPU usage, etc.).
@@ -289,7 +289,8 @@ Response:
         }
 
 Regex Taggers
---------------
+---------------
+
 
 Create a new Regex Tagger
 +++++++++++++++++++++++++++
@@ -305,9 +306,9 @@ Example:
         -H "Content-Type: application/json" \
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
         -d '{
-                "description": "My regex tagger",
-                "lexicon": ["cat"],
-                "counter_lexicon": ["no", "not"],
+                "description": "monsters",
+                "lexicon": ["poltergeist", "vampire", "werewolf", "beast", "zombie", "ghost"],
+                "counter_lexicon": ["no", "not", "neither", "nor"],
                 "operator": "or",
                 "match_type": "prefix",
                 "required_words": 1.0,
@@ -319,6 +320,7 @@ Example:
                 "ignore_punctuation": false
 
             }'
+
 
 Tag doc
 ++++++++++++++++
@@ -334,30 +336,49 @@ Example:
         -H "Content-Type: application/json" \
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
         -d '{
-                "doc": {"text": "If you are allergic to a thing, it is best not to put that thing in your mouth, particularly if the thing is cats.", "id": 12},
-                "fields": ["text"]
+                "doc": {
+                    "title": "Horrendous werewolf attack in Yorkshire",
+                    "body": "An American tourist was attacked by a werewolf. The beast escaped.",
+                    "id": 12
+                },
+                "fields": ["title", "body"]
             }'
 
 Response:
 
 .. code-block:: json
 
-      {
+    {
         "tagger_id": 1,
-        "description": "My regex tagger",
+        "tag": "monsters",
         "result": true,
         "matches": [
             {
-                "str_val": "cats",
-                "spans": [
-                    109,
-                    113
+                "str_val": "werewolf",
+                "span": [
+                    11,
+                    19
                 ],
-                "description": "My regex tagger",
-                "tagger_id": 1
+                "field": "title"
+            },
+            {
+                "str_val": "werewolf",
+                "span": [
+                    38,
+                    46
+                ],
+                "field": "body"
+            },
+            {
+                "str_val": "beast",
+                "span": [
+                    52,
+                    57
+                ],
+                "field": "body"
             }
         ]
-      }
+    }
 
 Tag random doc
 ++++++++++++++++
@@ -373,8 +394,8 @@ Example:
         -H "Content-Type: application/json" \
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
         -d '{
-                "indices": [{"name": "kliinik_ee"}],
-                "fields": ["kysimus_ja_vastus"]
+                "indices": [{"name": "news_articles"}],
+                "fields": ["title", "body"]
             }'
 
 Response:
@@ -383,22 +404,31 @@ Response:
 
         {
             "tagger_id": 1,
-            "description": "My regex tagger",
+            "tag": "monsters",
             "result": true,
             "matches": [
                 {
-                    "str_val": "cats",
-                    "spans": [
-                        109,
-                        113
+                    "str_val": "zombie",
+                    "span": [
+                        25,
+                        30
                     ],
-                    "description": "My regex tagger",
-                    "tagger_id": 1
+                    "field": "title"
+                },
+                {
+                    "str_val": "zombie",
+                    "span": [
+                        46,
+                        51
+                    ],
+                    "field": "body"
                 }
             ],
-            "texts": [
-        	"If you are allergic to a thing, it is best not to put that thing in your mouth, particularly if the thing is cats."
-            ]
+            "document": {
+                "title": "Local boy infected by a zombie virus",
+                "body": "John Smith, 13, claims to have symptoms of a zombie virus.",
+                "id": 16
+            }
         }
 
 
@@ -416,22 +446,34 @@ Example:
         -H "Content-Type: application/json" \
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
         -d '{
-                "text": "If you are allergic to a thing, it is best not to put that thing in your mouth, particularly if the thing is cats.",
+                "text": "The old mansion was now a home for 217 ghosts and 10 vampires.",
             }'
 
 Response:
 
 .. code-block:: json
 
-      [
-          {
-              "str_val": "cat",
-              "spans": [
-                  109,
-                  113
-              ]
-          }
-      ]
+      {
+        "tagger_id": 1,
+        "tag": "monsters",
+        "result": true,
+        "matches": [
+            {
+                "str_val": "ghosts",
+                "span": [
+                    39,
+                    45
+                ]
+            },
+            {
+                "str_val": "vampires",
+                "span": [
+                    53,
+                    61
+                ]
+            }
+        ]
+      }
 
 Tag texts
 ++++++++++
@@ -447,7 +489,11 @@ Example:
         -H "Content-Type: application/json" \
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
         -d '{
-                "texts": ["Black cats and white rats.", "Dogs dogs dogs."]
+                "texts": [
+                  "Two poltergeist were seen at the end of the hallway.",
+                  "It was neither a ghost nor a human.",
+                  "A vampire was out for a walk."
+                ]
             }'
 
 Response:
@@ -455,16 +501,91 @@ Response:
 .. code-block:: json
 
         [
-            [
-                {
-                    "str_val": "cats",
-                    "spans": [
-                        6,
-                        10
-                    ]
-                }
-            ],
-            []
+            {
+                "tagger_id": 1,
+                "tag": "monsters",
+                "result": true,
+                "matches": [
+                    {
+                        "str_val": "poltergeist",
+                        "span": [
+                            4,
+                            15
+                        ]
+                    }
+                ]
+            },
+            {
+                "tagger_id": 1,
+                "tag": "monsters",
+                "result": false,
+                "matches": []
+            },
+            {
+                "tagger_id": 1,
+                "tag": "monsters",
+                "result": true,
+                "matches": [
+                    {
+                        "str_val": "vampire",
+                        "span": [
+                            2,
+                            9
+                        ]
+                    }
+                ]
+            }
+        ]
+
+Multitag text
+++++++++++++++++++++++++++++++++++++
+
+Endpoint **/projects/{project_pk}/regex_taggers/multitag_text/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/regex_taggers/multitag_text/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "text": "Michael Myers had an unfortunate encounter with a pack of werewolfs.",
+                "taggers": [1, 2]
+            }'
+
+Response:
+
+.. code-block:: json
+
+        [
+            {
+                "tagger_id": 1,
+                "tag": "monsters",
+                "matches": [
+                    {
+                        "str_val": "werewolfs",
+                        "span": [
+                            58,
+                            67
+                        ]
+                    }
+                ]
+            },
+            {
+                "tagger_id": 2,
+                "tag": "serial killers",
+                "matches": [
+                    {
+                        "str_val": "michael myers",
+                        "span": [
+                            0,
+                            13
+                        ]
+                    }
+                ]
+            }
         ]
 
 Tagger Groups
@@ -551,40 +672,35 @@ Example:
         -H "Content-Type: application/json" \
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
         -d '{
-                "regex_taggers": [92, 93, 94],
-                "description": "animals"
+              "regex_taggers": [1, 2],
+              "description": "horror"
             }'
 
 Response:
 
 .. code-block:: json
 
-    {
-        "id": 3,
-        "url": "https://rest-dev.texta.ee/api/v1/projects/2/regex_tagger_groups/1/",
-        "regex_taggers": [
-            92,
-            93,
-            94
-        ],
-        "author_username": "my_username",
-        "task": null,
-        "description": "animals",
-        "tagger_info": [
-            {
-                "tagger_id": 92,
-                "description": "cat"
-            },
-            {
-                "tagger_id": 93,
-                "description": "dog"
-            },
-            {
-                "tagger_id": 94,
-                "description": "horse"
-            }
-        ]
-    }
+        {
+            "id": 1,
+            "url": "http://localhost:8000/api/v1/projects/11/regex_tagger_groups/1/",
+            "regex_taggers": [
+                1,
+                2
+            ],
+            "author_username": "admin",
+            "task": null,
+            "description": "horror",
+            "tagger_info": [
+                {
+                    "tagger_id": 1,
+                    "description": "monsters"
+                },
+                {
+                    "tagger_id": 2,
+                    "description": "serial killers"
+                }
+            ]
+        }
 
 Apply regex tagger group
 +++++++++++++++++++++++++++++++++++++++++++
@@ -602,17 +718,18 @@ Example:
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
         -d '{
               "description": "Apply my regex tagger group",
-              "indices": [{"name": ""}],
-              "fields": [],
-              "query": null
-
+              "indices": [{"name": "news_articles"}],
+              "fields": ["title", "body"],
+              "query": {}
             }'
 
 Response:
 
 .. code-block:: json
 
-
+      {
+          "message": "Started process of applying RegexTaggerGroup with id: 1"
+      }
 
 Tag doc
 ++++++++++++++++++++
@@ -629,39 +746,61 @@ Example:
         -H "Content-Type: application/json" \
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
         -d '{
-                "doc": {"text": "Black cats and white dogs.", "id": 1},
-                "fields": ["text"]
+               "doc": {
+                  "title": "Michael Myers returns to Haddonfield",
+                  "body": "Michael Myers returns to Haddonfield to take back his family home from a couple of belligerent poltergeists.",
+                  "id": 3
+                },
+               "fields": ["title", "body"]
             }'
 
 Response:
 
 .. code-block:: json
 
-      {
-          "tagger_group_id": 1,
-          "description": "animals",
-          "result": true,
-          "matches": [
-              {
-                  "str_val": "cats",
-                  "spans": [
-                      6,
-                      10
-                  ],
-                  "description": "cat",
-                  "tagger_id": 92
-              },
-              {
-                  "str_val": "dogs",
-                  "spans": [
-                      21,
-                      25
-                  ],
-                  "description": "dog",
-                  "tagger_id": 93
-              }
-          ]
-      }
+    {
+        "tagger_group_id": 1,
+        "tagger_group_tag": "horror",
+        "result": true,
+        "tags": [
+            {
+                "tagger_id": 2,
+                "tag": "serial killers",
+                "matches": [
+                    {
+                        "str_val": "michael myers",
+                        "span": [
+                            0,
+                            13
+                        ],
+                        "field": "title"
+                    },
+                    {
+                        "str_val": "michael myers",
+                        "span": [
+                            0,
+                            13
+                        ],
+                        "field": "body"
+                    }
+                ]
+            },
+            {
+                "tagger_id": 1,
+                "tag": "monsters",
+                "matches": [
+                    {
+                        "str_val": "poltergeists",
+                        "span": [
+                            95,
+                            107
+                        ],
+                        "field": "body"
+                    }
+                ]
+            }
+        ]
+    }
 
 Tag random doc
 ++++++++++++++++++++++++++
@@ -678,13 +817,62 @@ Example:
         -H "Content-Type: application/json" \
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
         -d '{
-                "indices": [],
-                "fields": []
+                "indices": [{"name": "news_articles"}],
+                "fields": ["title", "body"]
             }'
 
 Response:
 
 .. code-block:: json
+
+      {
+          "tagger_group_id": 1,
+          "tagger_group_tag": "horror",
+          "result": true,
+          "tags": [
+              {
+                  "tagger_id": 2,
+                  "tag": "serial killers",
+                  "matches": [
+                      {
+                          "str_val": "michael myers",
+                          "span": [
+                              0,
+                              13
+                          ],
+                          "field": "title"
+                      },
+                      {
+                          "str_val": "michael myers",
+                          "span": [
+                              0,
+                              13
+                          ],
+                          "field": "body"
+                      }
+                  ]
+              },
+              {
+                  "tagger_id": 1,
+                  "tag": "monsters",
+                  "matches": [
+                      {
+                          "str_val": "poltergeists",
+                          "span": [
+                              95,
+                              107
+                          ],
+                          "field": "body"
+                      }
+                  ]
+              }
+          ],
+          "document": {
+             "title": "Michael Myers returns to Haddonfield",
+             "body": "Michael Myers returns to Haddonfield to take back his family home from a couple of belligerent poltergeists.",
+             "id": 3
+           },
+      }
 
 Tag text
 +++++++++++++++++++++
@@ -701,7 +889,7 @@ Example:
         -H "Content-Type: application/json" \
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
         -d '{
-                "text": "Black cats and white dogs."
+              "text": "Jason Voorhees was having a peaceful camping trip until his roads crossed with two rowdy vampires accompanied by Freddy Krueger."
             }'
 
 Response:
@@ -709,27 +897,42 @@ Response:
 .. code-block:: json
 
           {
-              "tagger_group_id": 1,
-              "description": "animals",
+              "tagger_group_id": 4,
+              "tagger_group_tag": "horror",
               "result": true,
-              "matches": [
+              "tags": [
                   {
-                      "str_val": "cats",
-                      "spans": [
-                          6,
-                          10
-                      ],
-                      "description": "cat",
-                      "tagger_id": 92
+                      "tag": "monsters",
+                      "tagger_id": 7,
+                      "matches": [
+                          {
+                              "str_val": "vampires",
+                              "span": [
+                                  89,
+                                  97
+                              ]
+                          }
+                      ]
                   },
                   {
-                      "str_val": "dogs",
-                      "spans": [
-                          21,
-                          25
-                      ],
-                      "description": "dog",
-                      "tagger_id": 93
+                      "tag": "serial killers",
+                      "tagger_id": 8,
+                      "matches": [
+                          {
+                              "str_val": "jason voorhees",
+                              "span": [
+                                  0,
+                                  14
+                              ]
+                          },
+                          {
+                              "str_val": "freddy krueger",
+                              "span": [
+                                  113,
+                                  127
+                              ]
+                          }
+                      ]
                   }
               ]
           }
@@ -749,14 +952,74 @@ Example:
         -H "Content-Type: application/json" \
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
         -d '{
-                "texts": ["Black cats and white dogs", "Plains and trains.", "Knights and horses." ]
+                "texts": [
+                    "Norman Bates went knife-shopping with Michael Myers.",
+                    "The weather was nice.",
+                    "Jason Voorhees was scared of the ghost living in his cupboard."
+                ]
             }'
 
 Response:
 
 .. code-block:: json
 
-
+    {
+        "tagger_group_id": 4,
+        "tagger_group_tag": "horror",
+        "tags": [
+            [
+                {
+                    "tag": "serial killers",
+                    "tagger_id": 8,
+                    "matches": [
+                        {
+                            "str_val": "norman bates",
+                            "span": [
+                                0,
+                                12
+                            ]
+                        },
+                        {
+                            "str_val": "michael myers",
+                            "span": [
+                                38,
+                                51
+                            ]
+                        }
+                    ]
+                }
+            ],
+            [],
+            [
+                {
+                    "tag": "monsters",
+                    "tagger_id": 7,
+                    "matches": [
+                        {
+                            "str_val": "ghost",
+                            "span": [
+                                33,
+                                38
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tag": "serial killers",
+                    "tagger_id": 8,
+                    "matches": [
+                        {
+                            "str_val": "jason voorhees",
+                            "span": [
+                                0,
+                                14
+                            ]
+                        }
+                    ]
+                }
+            ]
+        ]
+    }
 
 Torch Tagger
 -------------

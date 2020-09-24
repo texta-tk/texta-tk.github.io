@@ -1,7 +1,7 @@
 `EN <https://docs.texta.ee/concepts.html>`_
 `ET <https://docs.texta.ee/et/concepts.html>`_
 
-Concepts of Toolkit
+Main Concepts
 ========================
 
 Here are described the main concepts related to TEXTA Toolkit (TTK).
