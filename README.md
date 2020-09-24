@@ -12,6 +12,8 @@ If Sphinx not installed:
 
 How to translate or change things?
 
+**Everyone, who adds something to our docs are required to translate the changes as well.**
+
 Translating:
 - Under locale/et/LC_MESSAGES/ you'll find .po files to translate. These files have sentences from the English files. You just have to translate the sentences like so:
 '''
