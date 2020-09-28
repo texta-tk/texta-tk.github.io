@@ -1518,7 +1518,7 @@ msgstr ""
 "anda sellele nimi (*Dataset name*) ning valida, millist faili üles laaditakse (arvutist "
 "saab sobiva faili valida, kasutades kausta-kujulist nuppu). .csv formaadis"
 " faili üles laadides tuleb valida ka eraldaja (tavaliselt koma). Seejärel vajuta **Create**. "
-"Faili üleslaadimise protsessi ning metaandmestiku näeb sealsamas Dataset Importeri"
+"Faili üleslaadimise protsessi ning metaandmestiku näeb sealsamas Dataset Importeri "
 "all. Üles laaditud andmestiku saab kustutada Actions all oleva "
 "kolme täpikese abil."
 
@@ -1527,7 +1527,7 @@ msgid ""
 "Now you can add this data to your project and use it with the name you "
 "gave to it."
 msgstr ""
-"Nüüd on võimalik neid andmeid kasutada projektides andmetele antud"
+"Nüüd on võimalik neid andmeid kasutada projektides andmetele antud "
 "nimega."
 
 #: ../../source/gui.rst:503
