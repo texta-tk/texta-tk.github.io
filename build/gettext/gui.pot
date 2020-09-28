@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-22 19:08+0300\n"
+"POT-Creation-Date: 2020-09-28 16:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -671,9 +671,13 @@ msgid "Uploading the Data"
 msgstr ""
 
 #: ../../source/gui.rst:492
-msgid "We can upload new data via Dataset Importer under Tools"
+msgid "You can upload a new dataset from a file to Toolkit via Dataset Importer under Tools. For that click on the **CREATE** button which opens a table in Figure 21. There you can describe your dataset (*Task description*), give it a name (*Dataset name*) and choose the file to be uploaded (you can browse it when clicking on the folder button). When uploading an .csv file, you can add the separator (usually a comma). Then hit **Create**. You will see the uploading process and metadata of the dataset under the Dataset Importer. You can delete the uploaded dataset by clicking on the three dots under actions."
 msgstr ""
 
-#: ../../source/gui.rst:501
+#: ../../source/gui.rst:494
+msgid "Now you can add this data to your project and use it with the name you gave to it."
+msgstr ""
+
+#: ../../source/gui.rst:503
 msgid "Figure 21. *Importing a new dataset*"
 msgstr ""

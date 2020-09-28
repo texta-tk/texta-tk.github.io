@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-24 17:06+0300\n"
+"POT-Creation-Date: 2020-09-28 16:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../source/gui.rst:1
 msgid ""
@@ -1501,12 +1501,38 @@ msgid "Uploading the Data"
 msgstr "Andmestiku üleslaadimine"
 
 #: ../../source/gui.rst:492
-msgid "We can upload new data via Dataset Importer under Tools"
+#, fuzzy
+msgid ""
+"You can upload a new dataset from a file to Toolkit via Dataset Importer "
+"under Tools. For that click on the **CREATE** button which opens a table "
+"in Figure 21. There you can describe your dataset (*Task description*), "
+"give it a name (*Dataset name*) and choose the file to be uploaded (you "
+"can browse it when clicking on the folder button). When uploading an .csv"
+" file, you can add the separator (usually a comma). Then hit **Create**. "
+"You will see the uploading process and metadata of the dataset under the "
+"Dataset Importer. You can delete the uploaded dataset by clicking on the "
+"three dots under actions."
 msgstr ""
-"*Tools*-i all oleva *Dataset Importer*-i abil saab uut andmestikku üles "
-"laadida."
+"Uusi andmeid saab Toolkit-i üles laadida Tools-i all oleva Dataset Importer-iga. "
+"Selleks klõpsa nupul **CREATE**, mis avab joonisel 21 oleva"
+"vaate. Seal tuleb kirjeldada andmestikku (*Task description*), "
+"anda sellele nimi (*Dataset name*) ning valida, millist faili üles laaditakse (arvutist "
+"saab sobiva faili valida, kasutades kausta-kujulist nuppu). .csv formaadis"
+" faili üles laadides tuleb valida ka eraldaja (tavaliselt koma). Seejärel vajuta **Create**. "
+"Faili üleslaadimise protsessi ning metaandmestiku näeb sealsamas Dataset Importeri"
+"all. Üles laaditud andmestiku saab kustutada Actions all oleva "
+"kolme täpikese abil."
 
-#: ../../source/gui.rst:501
+#: ../../source/gui.rst:494
+#, fuzzy
+msgid ""
+"Now you can add this data to your project and use it with the name you "
+"gave to it."
+msgstr ""
+"Nüüd on võimalik neid andmeid kasutada projektides andmetele antud"
+"nimega."
+
+#: ../../source/gui.rst:503
 msgid "Figure 21. *Importing a new dataset*"
 msgstr "Joonis 21. *Uue andmestiku importimine*"
 
@@ -1517,4 +1543,9 @@ msgstr "Joonis 21. *Uue andmestiku importimine*"
 
 #~ msgid "Tutorial: Using Toolkit via GUI"
 #~ msgstr "Juhend: Toolkiti GUI kasutamine"
+
+#~ msgid "We can upload new data via Dataset Importer under Tools."
+#~ msgstr ""
+#~ "*Tools*-i all oleva *Dataset Importer*-i "
+#~ "abil saab uut andmestikku üles laadida."
 

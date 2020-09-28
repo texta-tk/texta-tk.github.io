@@ -489,7 +489,9 @@ We can use *Query* for adding only certain search results to our new index.
 Uploading the Data
 ------------------
 
-We can upload new data via Dataset Importer under Tools
+You can upload a new dataset from a file to Toolkit via Dataset Importer under Tools. For that click on the **CREATE** button which opens a table in Figure 21. There you can describe your dataset (*Task description*), give it a name (*Dataset name*) and choose the file to be uploaded (you can browse it when clicking on the folder button). When uploading an .csv file, you can add the separator (usually a comma). Then hit **Create**. You will see the uploading process and metadata of the dataset under the Dataset Importer. You can delete the uploaded dataset by clicking on the three dots under actions. 
+
+Now you can add this data to your project and use it with the name you gave to it. 
 
 .. 
     unless we want to do it via API-> viide.
@@ -499,8 +501,6 @@ We can upload new data via Dataset Importer under Tools
 .. figure:: images/dataset_importer.png
 
     Figure 21. *Importing a new dataset*
-    
-
 
 .. 
     _neurotaggers:
