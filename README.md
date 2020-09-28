@@ -16,11 +16,13 @@ How to translate or change things?
 
 Translating:
 - Under locale/et/LC_MESSAGES/ you'll find .po files to translate. These files have sentences from the English files. You just have to translate the sentences like so:
+
 '''
 #: ../../source/api.rst:4
 msgid "This is an amazing sentence in English :ref:`API reference <api_reference>`."
 msgstr "See on vägev lause eesti keeles :ref:`API reference <api_reference>`."
 '''
+("#, fuzzy" shows that this part was changed and needs to be retranslated)
 - save your changes.
 - push to git. Currently you can see your changes under 'https://docs.texta.ee/et/' addresses (e.g. +"index.html").
 

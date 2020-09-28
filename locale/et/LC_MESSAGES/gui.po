@@ -1501,7 +1501,6 @@ msgid "Uploading the Data"
 msgstr "Andmestiku üleslaadimine"
 
 #: ../../source/gui.rst:492
-#, fuzzy
 msgid ""
 "You can upload a new dataset from a file to Toolkit via Dataset Importer "
 "under Tools. For that click on the **CREATE** button which opens a table "
@@ -1524,7 +1523,6 @@ msgstr ""
 "kolme täpikese abil."
 
 #: ../../source/gui.rst:494
-#, fuzzy
 msgid ""
 "Now you can add this data to your project and use it with the name you "
 "gave to it."
