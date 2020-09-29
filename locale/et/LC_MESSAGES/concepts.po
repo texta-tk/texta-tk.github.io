@@ -26,7 +26,7 @@ msgstr ""
 
 #: ../../source/concepts.rst:5
 msgid "Main Concepts"
-msgstr ""
+msgstr "Põhimõisted"
 
 #: ../../source/concepts.rst:7
 msgid "Here are described the main concepts related to TEXTA Toolkit (TTK)."
@@ -542,4 +542,3 @@ msgstr ""
 
 #~ msgid "Concepts of Toolkit"
 #~ msgstr "Toolkiti põhimõisted"
-

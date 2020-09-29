@@ -26,7 +26,7 @@ msgstr ""
 
 #: ../../source/api.rst:5
 msgid "Tutorial: API"
-msgstr ""
+msgstr "Kasutusjuhend: API"
 
 #: ../../source/api.rst:7
 msgid ""
@@ -169,7 +169,7 @@ msgstr "Otspunkt: **/projects/{project_pk}/embeddings/**"
 
 #: ../../source/api.rst:239
 msgid "Taggers"
-msgstr "Märgendajad (Taggers)"
+msgstr "Märgendajad"
 
 #: ../../source/api.rst:242
 msgid "Train a new tagger"
@@ -190,7 +190,7 @@ msgstr "Otspunkt: **/projects/{project_pk}/taggers/{id}/tag_text/**"
 
 #: ../../source/api.rst:292
 msgid "Regex Taggers"
-msgstr "Mustripõhised märgendajad (Regex Taggers)"
+msgstr "Mustripõhised märgendajad"
 
 #: ../../source/api.rst:296
 msgid "Create a new Regex Tagger"
@@ -240,7 +240,7 @@ msgstr "Otspunkt: **/projects/{project_pk}/regex_taggers/multitag_text/**"
 
 #: ../../source/api.rst:588
 msgid "Tagger Groups"
-msgstr ""
+msgstr "Märgendajate Grupp"
 
 #: ../../source/api.rst:591
 msgid "Train a new tagger group"
@@ -256,7 +256,7 @@ msgstr "Otspunkt: **/projects/{project_pk}/tagger_groups/{id}/tag_text/**"
 
 #: ../../source/api.rst:655
 msgid "Regex Tagger Groups"
-msgstr "Mustripõhiste märgendajate grupid"
+msgstr "Mustripõhiste Märgendajate Grupp"
 
 #: ../../source/api.rst:658
 msgid "Create a new regex tagger group"
@@ -316,7 +316,7 @@ msgstr "Otspunkt: **/projects/{project_pk}/torchtaggers/{id}/tag_text/**"
 
 #: ../../source/api.rst:1071
 msgid "Dataset Importer"
-msgstr "Andmete Importija (Dataset Importer)"
+msgstr "Andmete Importija"
 
 #: ../../source/api.rst:1073
 msgid ""

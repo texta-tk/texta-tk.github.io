@@ -26,7 +26,7 @@ msgstr ""
 
 #: ../../source/uaa.rst:5
 msgid "Authenticating Toolkit through CloudFoundry UAA"
-msgstr ""
+msgstr "Autentimine UUA-ga"
 
 #: ../../source/uaa.rst:7
 msgid ""
@@ -307,4 +307,3 @@ msgstr ""
 
 #~ msgid "Figure 1. *Log In With CloudFoundry Screen on the Angular Front-end*"
 #~ msgstr ""
-

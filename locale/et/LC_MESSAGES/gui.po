@@ -4,19 +4,19 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-28 16:20+0300\n"
+"POT-Creation-Date: 2020-09-29 18:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.4.0\n"
 
 #: ../../source/gui.rst:1
 msgid ""
@@ -26,7 +26,7 @@ msgstr ""
 
 #: ../../source/gui.rst:5
 msgid "Tutorial: GUI"
-msgstr ""
+msgstr "Kasutusjuhend: GUI"
 
 #: ../../source/gui.rst:7
 msgid ""
@@ -37,10 +37,29 @@ msgstr ""
 "taustaprogrammiks on Texta Toolkiti RESTful API."
 
 #: ../../source/gui.rst:11
+msgid "Health of Toolkit"
+msgstr "Toolkiti seisund (health of Toolkit)"
+
+#: ../../source/gui.rst:13
+msgid ""
+"On the **Projects page** (also Toolkit's home page) we can see technical "
+"information about TEXTA Toolkit's server on the right. There are several "
+"labels that indicate the state of Toolkit and the host machine its "
+"working on (Figure 4):"
+msgstr ""
+"**Projects** all (Toolkiti avalehel) näeme tehnilist infot TEXTA Toolkiti"
+" serveri seisundi kohta. Seal on mitmeid mõõdikuid, mis kirjeldavad "
+"Toolkiti ja masina, milles see töötab, seisundit (Joonis 4):"
+
+#: ../../source/gui.rst:20
+msgid "Figure 4. *Toolkit Status*"
+msgstr "Joonis 4. *Toolkiti staatus*"
+
+#: ../../source/gui.rst:24
 msgid "Registration & Login"
 msgstr "Registreerimine ja sisse logimine"
 
-#: ../../source/gui.rst:13
+#: ../../source/gui.rst:26
 msgid ""
 "Since TEXTA Toolkit is a web application, we have to navigate to the "
 "corresponding address in our browser (e.g. `http://localhost/`). We are "
@@ -50,19 +69,19 @@ msgstr ""
 "aadressile oma brauseris (nt `http://localhost/`). Joonisel 1 on näha "
 "sisselogimislehte."
 
-#: ../../source/gui.rst:20
+#: ../../source/gui.rst:33
 msgid "Figure 1. *Login Screen at Startup*"
 msgstr "Joonis 1. *Sisselogimisleht*"
 
-#: ../../source/gui.rst:22
+#: ../../source/gui.rst:35
 msgid "One can also register new users using the registration screen:"
 msgstr "Registreerimislehel saab registreerida uusi kasutajaid:"
 
-#: ../../source/gui.rst:28
+#: ../../source/gui.rst:41
 msgid "Figure 2. *Registration Screen*"
 msgstr "Joonis 2. *Registreerimisleht* "
 
-#: ../../source/gui.rst:32
+#: ../../source/gui.rst:45
 msgid ""
 "When running for the first time, check the default superuser account "
 "**admin** created during installation."
@@ -70,7 +89,7 @@ msgstr ""
 "Toolkiti esimest korda jooksutamisel uuri vaikimisi installimise ajal "
 "loodud superkasutaja kontot **admin**."
 
-#: ../../source/gui.rst:34
+#: ../../source/gui.rst:47
 msgid ""
 "After login have several navigation options in the upper panel. We can "
 "see our projects (also projected as the home page) and we can work with "
@@ -82,38 +101,19 @@ msgstr ""
 "töötada erinevate tööriistadega: :ref:`Search <search>`, :ref:`Lexicons "
 "<lexicons>`, :ref:`Models <models>` ja :ref:`Tools <tools>`."
 
-#: ../../source/gui.rst:41
+#: ../../source/gui.rst:54
 msgid "Figure 3. *Top Panel for Navigation*"
 msgstr "Joonis 3. *Ülapaneel navigeerimiseks*"
 
-#: ../../source/gui.rst:44
-msgid "Health of Toolkit"
-msgstr "Toolkiti seisund (health of Toolkit)"
+#: ../../source/gui.rst:59
+msgid "Projects"
+msgstr "Projektid"
 
-#: ../../source/gui.rst:46
-msgid ""
-"On the **Projects page** (also Toolkit's home page) we can see technical "
-"information about TEXTA Toolkit's server on the right. There are several "
-"labels that indicate the state of Toolkit and the host machine its "
-"working on (Figure 4):"
-msgstr ""
-"**Projects** all (Toolkiti avalehel) näeme tehnilist infot TEXTA Toolkiti"
-" serveri seisundi kohta. Seal on mitmeid mõõdikuid, mis kirjeldavad "
-"Toolkiti ja masina, milles see töötab, seisundit (Joonis 4):"
-
-#: ../../source/gui.rst:53
-msgid "Figure 4. *Toolkit Status*"
-msgstr "Joonis 4. *Toolkiti staatus*"
-
-#: ../../source/gui.rst:57
-msgid "Managing Projects"
-msgstr "Projektide haldamine"
-
-#: ../../source/gui.rst:60
+#: ../../source/gui.rst:62
 msgid "Creating a Project"
 msgstr "Projekti loomine"
 
-#: ../../source/gui.rst:62
+#: ../../source/gui.rst:64
 msgid ""
 "In order to play with the data, we need to create a new project. We can "
 "create a project by clicking the **+ CREATE** button at the bottom of the"
@@ -127,7 +127,7 @@ msgstr ""
 "tähtsama - andmestiku, millel mängima hakata (Elasticsearchi "
 ":ref:`indeksites <index_concept>`)."
 
-#: ../../source/gui.rst:66
+#: ../../source/gui.rst:68
 msgid ""
 "After the project is created, we can see the new project in the list and "
 "can change its datasets and user access via the **Edit** button."
@@ -136,11 +136,11 @@ msgstr ""
 "**Edit** nupuga saab jooksvalt muuta projekti andmestikke ja kasutajate "
 "ligipääse."
 
-#: ../../source/gui.rst:69
+#: ../../source/gui.rst:71
 msgid "Using a Project"
 msgstr "Projekti kasutamine"
 
-#: ../../source/gui.rst:71
+#: ../../source/gui.rst:73
 msgid ""
 "In order to work with our project (search info, train taggers) we have to"
 " select it from the upper panel next to our username:"
@@ -149,31 +149,31 @@ msgstr ""
 "märgendajate (Taggers) treenimiseks) peame valima projektinime ülemisel "
 "ribal kasutajanime kõrval: "
 
-#: ../../source/gui.rst:77
+#: ../../source/gui.rst:79
 msgid "Figure 5. *Project Selection*"
 msgstr "Joonis 5. *Projekti valimine*"
 
-#: ../../source/gui.rst:80
+#: ../../source/gui.rst:82
 msgid "Only one project can be activated at a time."
 msgstr "Korraga saab aktiveeritud olla ainult üks projekt."
 
-#: ../../source/gui.rst:82
+#: ../../source/gui.rst:84
 msgid "Each project can have one or more datasets (Elasticsearch indices)."
 msgstr ""
 "Igal projektil võib olla üks või rohkem andmestikku (Elasticsearchi "
 "indeksit)."
 
-#: ../../source/gui.rst:84
+#: ../../source/gui.rst:86
 msgid "Project resources are shared among the users with access to the project."
 msgstr ""
 "Kasutajad, kellel on ligipääs antud projektile, jagavad projekti "
 "ressursse."
 
-#: ../../source/gui.rst:87
-msgid "Search: Exploring the Data"
-msgstr "Search: Andmestiku uurimine"
-
 #: ../../source/gui.rst:89
+msgid "Search"
+msgstr "Otsing"
+
+#: ../../source/gui.rst:91
 msgid ""
 "The Search application is responsible for both creating the searches "
 "defining subsets of documents for Toolkit's other applications and "
@@ -183,13 +183,13 @@ msgstr ""
 "luua andmete alamhulki, mida saab hiljem kasutada Toolkiti järgmistes "
 "rakendustes."
 
-#: ../../source/gui.rst:92
+#: ../../source/gui.rst:94
 msgid "In order to use **Search**, project must be selected in upper panel."
 msgstr ""
 "**Search**-i kasutamiseks peab olema projekt aktiveeritud (valitud) "
 "ülapaneelil."
 
-#: ../../source/gui.rst:94
+#: ../../source/gui.rst:96
 msgid ""
 "Search's graphical interface consists of serveral important panels, which"
 " are depicted in Figure 6. We can collapse or open the panels by clicking"
@@ -199,27 +199,27 @@ msgstr ""
 "Joonisel 6). Me saame neid avada või kokku panna, kui vajutame paneeli "
 "nurgas olevale noolekesele."
 
-#: ../../source/gui.rst:101
+#: ../../source/gui.rst:103
 msgid "Figure 6. *Search Panel*"
 msgstr "Joonis 6. *Otsingupaneel*"
 
-#: ../../source/gui.rst:103
+#: ../../source/gui.rst:105
 msgid ":ref:`Current Search <currentsearch>`"
 msgstr ""
 
-#: ../../source/gui.rst:104
+#: ../../source/gui.rst:106
 msgid ":ref:`Saved Searches <savedsearches>`"
 msgstr ""
 
-#: ../../source/gui.rst:105
+#: ../../source/gui.rst:107
 msgid ":ref:`Aggregations <aggregations>`"
 msgstr ""
 
-#: ../../source/gui.rst:110
-msgid "Current Search"
-msgstr ""
-
 #: ../../source/gui.rst:112
+msgid "Current Search"
+msgstr "Valitud otsing"
+
+#: ../../source/gui.rst:114
 msgid ""
 "Data browsing and summarization depend on searches. Search consists of a "
 "set of constraints on :ref:`field <field_concept>` values. We can define "
@@ -236,7 +236,7 @@ msgstr ""
 "**Search**-is, aga ei saa seda kasutada teistes vahendites. Salvestamine "
 "muudab selle teistele vahenditele kättesaadavaks."
 
-#: ../../source/gui.rst:116
+#: ../../source/gui.rst:118
 msgid ""
 "In order to add a constraint, we must first choose one or several fields."
 " After the field is selected, we can then specify which textual tokens "
@@ -248,7 +248,7 @@ msgstr ""
 "sõnaosad) peavad või võiksid esineda huvipakkuvate dokumentide "
 "alamhulgas."
 
-#: ../../source/gui.rst:118
+#: ../../source/gui.rst:120
 msgid ""
 "We must notice that the search will be done on the Project's dataset "
 "chosen in the upper panel."
@@ -256,7 +256,7 @@ msgstr ""
 "Piirangutega otsing tehakse sellel Projekti andmestikul, mis on valitud "
 "ülapaneelil."
 
-#: ../../source/gui.rst:120
+#: ../../source/gui.rst:122
 msgid ""
 "Suppose we are interested in finding all the documents which contains "
 "“bribery” and “official” from a text. Figure 7 shows how we have defined "
@@ -268,15 +268,15 @@ msgstr ""
 "väljastab ainult need dokumendid, mis sialdavad sõnu “bribery” ja "
 "“official” article_text_mlp.text väljas:"
 
-#: ../../source/gui.rst:127
+#: ../../source/gui.rst:129
 msgid "Figure 7. *Example Search Constraints*"
 msgstr "Joonis 7. *Näidis otsingu piirangutest*"
 
-#: ../../source/gui.rst:129
+#: ../../source/gui.rst:131
 msgid "Searches have several parameters to consider:"
 msgstr "Otsingule piiranguid seades võime arvestada erinevate parameetritega:"
 
-#: ../../source/gui.rst:131
+#: ../../source/gui.rst:133
 msgid ""
 "We can also choose ‘or’ or ‘not’ under the Operator. In this case we "
 "either get documents containing at least one of the words (‘or’) or "
@@ -286,7 +286,7 @@ msgstr ""
 "väljastab dokumendid, mis sisaldavad vähemalt ühte piirangusõnadest "
 "(‘or’) või kindlasti mitte ühtegi piirangusõnadest (‘not’)."
 
-#: ../../source/gui.rst:133
+#: ../../source/gui.rst:135
 msgid ""
 "We can choose from several match types. Type “word” means that we want to"
 " find exact matches of the word(s) written and “phrase” means that we "
@@ -311,7 +311,7 @@ msgstr ""
 "sõnu. Kui piirangsõnade nimekiri osutub pikaks, on võimalik pikendada "
 "väljaotsingu paneeli."
 
-#: ../../source/gui.rst:135
+#: ../../source/gui.rst:137
 msgid ""
 "We can also use Slop. Via Slop we can define up to how many words can be "
 "between the two words we wrote on one row in case the range is important "
@@ -321,7 +321,7 @@ msgstr ""
 "sõna võib olla kahe samale reale kirjutatud sõna vahel (juhul, kui antud "
 "vahemik on meile tähtis)."
 
-#: ../../source/gui.rst:137
+#: ../../source/gui.rst:139
 msgid ""
 "Should we be interested in more detailed searches, we can add more "
 "constraints like the previous ones via **Add Filter** button. For "
@@ -333,7 +333,7 @@ msgstr ""
 " teatud ajavahemikust juhul, kui meil on korralikult eeltöödeldud "
 "kuupäevaväli."
 
-#: ../../source/gui.rst:140
+#: ../../source/gui.rst:142
 msgid ""
 "If we click on “Search” button, we will see the matching data in a "
 "tabular form (see Figure 8), where layered features share feature name’s "
@@ -344,11 +344,11 @@ msgstr ""
 "(vt Joonist 8), kus piirangute vasted on roosaga esile tõstetud. "
 "Tulemused võivad end värskendada otsingupiirangute muutmise ajal."
 
-#: ../../source/gui.rst:148
+#: ../../source/gui.rst:150
 msgid "Figure 8. *Example Search Results*"
 msgstr "Joonus 8. *Otsingu tulemuste näidis*"
 
-#: ../../source/gui.rst:150
+#: ../../source/gui.rst:152
 msgid ""
 "If there are too many features (columns), we can hide or show them from "
 "the drop-down menu in the down left corner. We can select or deselect all"
@@ -365,11 +365,11 @@ msgstr ""
 "lehitseda all paremal oleva noolekese abil. Samuti on võimalik valida, "
 "mitut dokumenti ühel lehel soovitakse näha."
 
-#: ../../source/gui.rst:156
+#: ../../source/gui.rst:158
 msgid "Figure 9. *Select Fields for Search Results*"
 msgstr "Joonis 9. *Otsingu tulemuste väljade valimine*"
 
-#: ../../source/gui.rst:158
+#: ../../source/gui.rst:160
 msgid ""
 "After we have come up with a suitable search, we can save it for later "
 "use by clicking on the **disk** icon up-right in the Current Search "
@@ -382,11 +382,11 @@ msgstr ""
 " tegelikku Elasticsearch query-t, mida antud otsingupiirangute loomisel "
 "ehitati."
 
-#: ../../source/gui.rst:163
+#: ../../source/gui.rst:165
 msgid "Saved Searches"
 msgstr "Salvestatud otsingud"
 
-#: ../../source/gui.rst:165
+#: ../../source/gui.rst:167
 msgid ""
 "After saving a search, it becomes available for using in Toolkit's "
 "applications. Now, whenever we check it, we can use it to browse data or "
@@ -403,11 +403,11 @@ msgstr ""
 "teisele kasutajale. Salvestatud otsingule klõpsamine avab selle Current "
 "Search-i all."
 
-#: ../../source/gui.rst:174
+#: ../../source/gui.rst:176
 msgid "Aggregations: Summarizing the Data"
 msgstr "Agregatsioonid: Andmete kiiranalüüs"
 
-#: ../../source/gui.rst:176
+#: ../../source/gui.rst:178
 msgid ""
 "As fun as browsing through the data is, it is not always enough. "
 "Sometimes we want to get an overview of our data, such as topics over "
@@ -419,7 +419,7 @@ msgstr ""
 "teemade muutustest ajas või sõnade jaotustest. Searcheri all saab teha "
 "kõike seda ja enamgi veel “Aggregations” (Agregatsioonide) paneeli all."
 
-#: ../../source/gui.rst:178
+#: ../../source/gui.rst:180
 msgid ""
 "Aggregations have two components - data and features it aggregates over. "
 "It will aggregate over the dataset we have under the Current Search. We "
@@ -441,11 +441,11 @@ msgstr ""
 "alamhulgas. Selleks vajutame oma bribe otsingule Saved Searches-i all, et"
 " saada see Current Searchi alla."
 
-#: ../../source/gui.rst:182
+#: ../../source/gui.rst:184
 msgid "**How are the significance scores calculated?**"
 msgstr "**Kuidas on significance-skoorid arvutatud?**"
 
-#: ../../source/gui.rst:183
+#: ../../source/gui.rst:185
 msgid ""
 "The numbers returned for scores are primarily intended for ranking "
 "different suggestions sensibly rather than something easily understood by"
@@ -466,7 +466,7 @@ msgstr ""
 "<https://www.elastic.co/guide/en/elasticsearch/reference/current/search-"
 "aggregations-bucket-significanttext-aggregation.html>`_."
 
-#: ../../source/gui.rst:185
+#: ../../source/gui.rst:187
 msgid ""
 "One cool thing we can also do, is to visualize the frequency of texts "
 "with searched words in it on a timeline. We can do that if we have a "
@@ -480,7 +480,7 @@ msgstr ""
 " näiteks uurida, millal kasutati sõnu 'bribe', 'bribery' ja 'bribed' "
 "kõige rohkem meie andmestikus."
 
-#: ../../source/gui.rst:187
+#: ../../source/gui.rst:189
 msgid ""
 "We can also aggregate over :ref:`texta_facts <texta_fact>` field in order"
 " to see the top entities under some tag. If we click on the black diagram"
@@ -492,11 +492,11 @@ msgstr ""
 " leiab tulemused. Agregatsiooni suuruse alt saab valida, mitut olemit "
 "näha soovitakse."
 
-#: ../../source/gui.rst:192
-msgid "Preprocessing the Data"
-msgstr "Andmete eeltöötlemine"
-
 #: ../../source/gui.rst:194
+msgid "MLP"
+msgstr "MLP"
+
+#: ../../source/gui.rst:196
 msgid ""
 "Preprocessing the data is a standard procedure in machine learning which "
 "in TTK can be done via MLP (multilingual preprocessor) module."
@@ -504,7 +504,7 @@ msgstr ""
 "Andmete eeltõõtlemine on masinõppes standardprotseduur mida TTK-s "
 "võimaldab teha MLP (multilingual preprocessor) moodul."
 
-#: ../../source/gui.rst:196
+#: ../../source/gui.rst:198
 msgid ""
 "To use it, navigate to **Tools -> MLP**. Click **Create** button to "
 "define a new MLP worker. Select indices and fields on which you want to "
@@ -523,11 +523,11 @@ msgstr ""
 "mudelite treenimiseks. Viimaks vali analüsaatorid, mida soovid andmetel "
 "rakendada."
 
-#: ../../source/gui.rst:202
+#: ../../source/gui.rst:204
 msgid "Figure 10. *Creating a MLP worker*"
 msgstr "Joonis 10. *MLP lõime loomine*"
 
-#: ../../source/gui.rst:204
+#: ../../source/gui.rst:206
 msgid ""
 "The worker adds new fields containing the results to the dataset. You can"
 " see the list of fields using Search."
@@ -535,15 +535,15 @@ msgstr ""
 "MLP rakendamise tulemusena lisatakse andmestikule uued välja, mis "
 "sisaldavad analüsaatorite tulemusi. Neid saab näha näiteks Search-is."
 
-#: ../../source/gui.rst:210
+#: ../../source/gui.rst:212
 msgid "Figure 11. *Newly added fields containing results of MLP*"
 msgstr "Figure 11. *Ued, MLP tulemusi sisaldavad väljad.*"
 
-#: ../../source/gui.rst:215
-msgid "Creating Topic-related Lexicons"
-msgstr "Teemaleksikonide loomine"
-
 #: ../../source/gui.rst:217
+msgid "Lexicon Miner"
+msgstr "Lexicon Miner"
+
+#: ../../source/gui.rst:219
 msgid ""
 "In order to build lexicons, we must have :ref:`Embedding "
 "<embedding_concept>` model :ref:`previously trained <embedding>` . We can"
@@ -553,11 +553,11 @@ msgstr ""
 "<embedding>` :ref:`Embeddingu <embedding_concept>` mudel. Alles siis saab"
 " alustada teema leksikonide loomist."
 
-#: ../../source/gui.rst:219
+#: ../../source/gui.rst:221
 msgid "Let’s create a lexicon that contains verbs accompanied with “bribery”."
 msgstr "Loome leksikoni, mis sisaldab sõnaga “bribery” kaasas olevaid verbe."
 
-#: ../../source/gui.rst:221
+#: ../../source/gui.rst:223
 msgid ""
 "After clicking on the newly created lexicon, we have to provide some seed"
 " words like 'accuse'."
@@ -565,7 +565,7 @@ msgstr ""
 "Pärast vastloodud leksikoni peale vajutamist on tarvis lisada mõned "
 "seemnesõnad nagu 'accuse'."
 
-#: ../../source/gui.rst:223
+#: ../../source/gui.rst:225
 msgid ""
 "The process of creating (or expanding) the lexicon is iterative. We keep "
 "asking for suggestions and from those we have to pick the ones that make "
@@ -583,7 +583,7 @@ msgstr ""
 "tähenduste vastandtähendustena. Sõnu saab negatiivsete sõnade listist "
 "kustutada nende peale klõpsates."
 
-#: ../../source/gui.rst:225
+#: ../../source/gui.rst:227
 msgid ""
 "To add a suitable word to the lexicon, we simply have to click on it. If "
 "we want to delete something we already chose we can erase the verb from "
@@ -593,15 +593,15 @@ msgstr ""
 "valitud sõnad ei jää sinna kinni, juba valitud sõnu on võimalik "
 "leksikonist kustutada."
 
-#: ../../source/gui.rst:227
+#: ../../source/gui.rst:229
 msgid "When we’re ready, we can save the lexicon."
 msgstr "Kui leksikon on valmis, saab selle salvestada."
 
-#: ../../source/gui.rst:232
-msgid "Statistical Language Modelling"
-msgstr "Statistiline keelemudel"
+#: ../../source/gui.rst:236
+msgid "Embeddings"
+msgstr "Sõnavektorid"
 
-#: ../../source/gui.rst:234
+#: ../../source/gui.rst:238
 msgid ""
 "Under the *Models* option on the upper panel we can use different taggers"
 " and create embeddings."
@@ -609,11 +609,7 @@ msgstr ""
 "Ülapaneelil oleva *Models*-i all saame kasutada erinevaid märgendajaid ja"
 " luua sõnavektoreid."
 
-#: ../../source/gui.rst:239
-msgid "Embedding"
-msgstr "Sõnavektorid (embeddings)"
-
-#: ../../source/gui.rst:241
+#: ../../source/gui.rst:240
 msgid ""
 ":ref:`Embeddings <embedding_concept>` are basically words converted into "
 "numerical data (into vectors) that are more understandable and usable for"
@@ -637,7 +633,7 @@ msgstr ""
 " välja collocation detection (kollokatsioonide tuvasti), mis tuvastab "
 "tihti koos esinevaid sõnu ja märgib need fraasideks."
 
-#: ../../source/gui.rst:243
+#: ../../source/gui.rst:242
 msgid ""
 "We can create a new embedding by clicking on the '+ CREATE' button in the"
 " bottom-left. Then we must choose the name for the new embedding "
@@ -662,7 +658,7 @@ msgstr ""
 "suurendab mõne sõna sagedust (*söönud*, *sööb* ja *sõid* saavad oma "
 "lemmaks *sööma*)."
 
-#: ../../source/gui.rst:245
+#: ../../source/gui.rst:244
 msgid ""
 "Then we have to choose the number of dimensions. That means the length of"
 " the vectors created. 100-200 dimensions is usually a good place to start"
@@ -680,11 +676,11 @@ msgstr ""
 "ja kasutatavaid vektoreid. Kui Sa pole väga kindel, mida valida, on "
 "alustuseks vaikimisi määratud 5 sobiv."
 
-#: ../../source/gui.rst:247
+#: ../../source/gui.rst:246
 msgid "Keep in mind that the bigger the data, the better results!"
 msgstr "Pea meeles - mida suurem on andmestik, seda paremad on tulemused!"
 
-#: ../../source/gui.rst:249
+#: ../../source/gui.rst:248
 msgid ""
 "After creating the new embedding we can view the learning process and "
 "results in the embeddings' table. We can see which user created this "
@@ -701,7 +697,7 @@ msgstr ""
 "ja loodud sõnavara suurus. Uue mudeli reale klõpsates ilmub sarnane info "
 "uuesti nähtavale."
 
-#: ../../source/gui.rst:251
+#: ../../source/gui.rst:250
 msgid ""
 "Three dots under *Edit* gives us access to deleting the embedding model "
 "or using *Phrase*. *Phrase* is a feature that helps us to check which "
@@ -718,15 +714,15 @@ msgstr ""
 " peal (joonis 10). Kui me jätaksime *query*-osa tühjaks, treenitaks mudel"
 " kogu andmestiku peal."
 
-#: ../../source/gui.rst:257
+#: ../../source/gui.rst:256
 msgid "Figure 12. *Create embedding with saved search*"
 msgstr "Joonis 12. *Salvestatud otsinguga sõnavektorite mudeli loomine*"
 
-#: ../../source/gui.rst:262
-msgid "Tagging the Data"
-msgstr "Andmestiku märgendamine"
+#: ../../source/gui.rst:261
+msgid "Taggers"
+msgstr "Märgendajad"
 
-#: ../../source/gui.rst:264
+#: ../../source/gui.rst:263
 msgid ""
 "Different Taggers in Texta Toolkit are classification models which can "
 "classify new data with the label/class the model is trained on. We can "
@@ -737,19 +733,19 @@ msgstr ""
 "sildi/klassi, mille suhtes mudel treenitud on. Märgendajat saab saab "
 "kasutada ka üle API."
 
-#: ../../source/gui.rst:266
+#: ../../source/gui.rst:265
 msgid "We have two taggers:"
 msgstr "Toolkitis on kaks märgendajat:"
 
-#: ../../source/gui.rst:268
+#: ../../source/gui.rst:267
 msgid ":ref:`Tagger Groups <tagger_group_concept>`"
 msgstr ""
 
-#: ../../source/gui.rst:269
+#: ../../source/gui.rst:268
 msgid ":ref:`Taggers <tagger_concept>`"
 msgstr ""
 
-#: ../../source/gui.rst:271
+#: ../../source/gui.rst:270
 msgid ""
 "Only *Tagger* can be trained with saved searches. Others learn their "
 "models on tags in the dataset. Below we will see how to train them."
@@ -758,11 +754,11 @@ msgstr ""
 "ühe klassi kogum). Teised treenivad oma mudeleid kogu andmestiku "
 "märgendite peal. Järgnev on juhis nende märgendajate treenimiseks."
 
-#: ../../source/gui.rst:275
+#: ../../source/gui.rst:274
 msgid "**Training Taggers**"
-msgstr "**Märgendaja (Taggers) treenimine**"
+msgstr "**Märgendaja (Tagger) treenimine**"
 
-#: ../../source/gui.rst:278
+#: ../../source/gui.rst:277
 msgid ""
 ":ref:`Tagger <tagger_concept>` operates on saved searches and uses "
 "machine learning. We can create a new Tagger model by clicking on the "
@@ -784,7 +780,7 @@ msgstr ""
 " see tõstab mõnede sõnade esinemissagedust (*söödud*, *sööb* ja *sõin* "
 "muutuvad oma lemmaks *sööma* ja neid saab vaadelda ühe sõnana)."
 
-#: ../../source/gui.rst:280
+#: ../../source/gui.rst:279
 msgid ""
 "If we leave *Query* empty, it will take all data in the active project as"
 " a input. We can also use saved searches as our desired input. This input"
@@ -796,7 +792,7 @@ msgstr ""
 " on märgendajale positiivsete näidete kogum - hiljem märgendab mudel "
 "sellele otsingukogumile sarnaseid andmeid."
 
-#: ../../source/gui.rst:282
+#: ../../source/gui.rst:281
 msgid ""
 "By setting these three, we can now train a classifier. However, we can "
 "also fine-tune the classifier by changing additional parameters such as "
@@ -826,7 +822,7 @@ msgstr ""
 "negatiivsete näidete suhet treenimisandmestikus. *maximum sample size* "
 "määrab, mitut näidet ühe klassi kohta mudel treenides näeb."
 
-#: ../../source/gui.rst:286
+#: ../../source/gui.rst:285
 msgid ""
 "Then we can hit create and see the training process and result of the "
 "tagger."
@@ -834,11 +830,11 @@ msgstr ""
 "Lõpetuseks tuleb vajutada Create-nuppu. Seejärel on võimalik vaadata "
 "märgendaja treenimisprotsessi ja tulemusi."
 
-#: ../../source/gui.rst:292
+#: ../../source/gui.rst:291
 msgid "Figure 13. *Creating Bribe_tag tagger*"
 msgstr "Joonis 13. *Bribe_tag märgendaja (Tagger) loomine*"
 
-#: ../../source/gui.rst:298
+#: ../../source/gui.rst:297
 msgid ""
 "Whenever we create a new Tagger model, we can track it's progress from "
 "the table under *Task*. If we click on the job, we can see all the "
@@ -849,7 +845,7 @@ msgstr ""
 "all. Sellele reale vajutamine kuvab kogu treenimisinfo - kui kaua "
 "treenimine aega võttis, kui edukas mudel oli. Meeldetuletusena:"
 
-#: ../../source/gui.rst:296
+#: ../../source/gui.rst:295
 msgid ""
 "Recall is the ratio of correctly labeled positives among all true "
 "positives."
@@ -857,7 +853,7 @@ msgstr ""
 "Recall ehk saagis on õigesti positiivseks märgendatute ja kõigi "
 "positiivsete elementide suhe."
 
-#: ../../source/gui.rst:297
+#: ../../source/gui.rst:296
 msgid ""
 "Precision is the ratio of correctly labeled positives among all instances"
 " that got a positive label."
@@ -865,7 +861,7 @@ msgstr ""
 "Precision ehk täpsus on õigesti positiivseks märgendatud ja kõigi "
 "positiivseks märgendatud elementide suhe."
 
-#: ../../source/gui.rst:298
+#: ../../source/gui.rst:297
 msgid ""
 "F1 score is the harmonic mean of these two and should be more informative"
 " expecially with unbalanced data."
@@ -873,13 +869,13 @@ msgstr ""
 "F1-skoor on nende kahe harmooniline keskmine ning peaks olema "
 "informatiivsem, eriti just tasakaalust väljas oleva andmestiku puhul."
 
-#: ../../source/gui.rst:300 ../../source/gui.rst:370
+#: ../../source/gui.rst:299 ../../source/gui.rst:369
 msgid ""
 "If we click on the three dots under *Edit*, we can see a list of extra "
 "actions to use."
 msgstr "Kolm täpikest *Edit*-i all avab lisategevuste nimekirja."
 
-#: ../../source/gui.rst:302
+#: ../../source/gui.rst:301
 msgid ""
 "*List features* lists the word-features and their coefficients that the "
 "model used. Works with models that used Count Vectorizer or Tfldf "
@@ -889,7 +885,7 @@ msgstr ""
 " kasutas. Töötab mudelitega, mis kasutasid Count Vectorizer-it või Tfldf "
 "Vectorizer-it, kuna nende väljund on kuvatav."
 
-#: ../../source/gui.rst:304
+#: ../../source/gui.rst:303
 msgid ""
 "*Retrain tagger* retrains the whole tagger model with all the chosen "
 "parameters. It's useful in case our dataset changes or we have added some"
@@ -898,7 +894,7 @@ msgstr ""
 "*Retrain tagger* treenib kogu märgendaja uuesti samade parameetritega. "
 "See on kasulik, kui andmestik muutub või lisatakse uusi stopp-sõnu."
 
-#: ../../source/gui.rst:306
+#: ../../source/gui.rst:305
 msgid ""
 "*Stop words* is for adding stop words. Stop words are words that the "
 "model do not consider while looking for clues of similarities. It is wise"
@@ -910,7 +906,7 @@ msgstr ""
 "nimekirja kõige sagedasemad sõnad nagu *olema*, *mina*, *sees*, "
 "*kõrvalt*. Sõnad tuleb eraldada tühikuga (' ')."
 
-#: ../../source/gui.rst:308
+#: ../../source/gui.rst:307
 msgid ""
 "*Tag text* is to check how does the model work. If we click on that a "
 "window opens. We can paste there some text, choose to lemmatize it "
@@ -927,13 +923,13 @@ msgstr ""
 "täägi, ja False, kui ei saa) ja ennustuse tõenäosuse (probability). "
 "Tõenäosus näitab, kui kindel on antud mudel oma ennustuses."
 
-#: ../../source/gui.rst:310
+#: ../../source/gui.rst:309
 msgid ""
 "*Tag doc* is similar to *Tag text*, except the input is in the json "
 "format."
 msgstr "*Tag doc* on sarnane *Tag text*-ile, ainult et sisend on json-formaadis."
 
-#: ../../source/gui.rst:312
+#: ../../source/gui.rst:311
 msgid ""
 "*Tag random doc* takes a random instance from our dataset, displays it "
 "and returns the result and the probability of this result being correct."
@@ -941,11 +937,11 @@ msgstr ""
 "*Tag random doc* võtab suvalise dokumendi andmestikust, väljastab selle "
 "ja tagastab tulemuse ja vastavasse klassi kuulumise tõenäosuse."
 
-#: ../../source/gui.rst:314 ../../source/gui.rst:382
+#: ../../source/gui.rst:313 ../../source/gui.rst:381
 msgid "*Delete* is for deleting the model."
 msgstr "*Delete* kustutab mudeli."
 
-#: ../../source/gui.rst:316
+#: ../../source/gui.rst:315
 msgid ""
 "In the table view we can also select several models and delete them all "
 "at once by clicking on the dustbin button next to the *+CREATE* button in"
@@ -959,15 +955,15 @@ msgstr ""
 " kaudu. Kui mudeleid on palju, saame vahetada kuvamislehekülge all "
 "paremal."
 
-#: ../../source/gui.rst:324
+#: ../../source/gui.rst:323
 msgid "Figure 14. *Bribe_tag tagger*"
 msgstr "Joonis 14. *Bribe_tag märgendaja*"
 
-#: ../../source/gui.rst:329
+#: ../../source/gui.rst:328
 msgid "**Training Tagger Groups**"
 msgstr "**Tagger Groups-i treenimine**"
 
-#: ../../source/gui.rst:332
+#: ../../source/gui.rst:331
 msgid ""
 "Tagger Group is for training multible classes at once and it also uses "
 "tags in the dataset given."
@@ -975,11 +971,11 @@ msgstr ""
 "Tagger Group-iga saab treeniga mitme klassi klassifitseerimist korraga "
 "ning see kasutab andmestikus olevaid märgendeid."
 
-#: ../../source/gui.rst:337
+#: ../../source/gui.rst:336
 msgid "**How do Tagger and Tagger Groups differ?**"
 msgstr "**Kuidas erinevad Tagger ja Tagger Groups?**"
 
-#: ../../source/gui.rst:337
+#: ../../source/gui.rst:336
 msgid ""
 "One model predicts whether a text is positive (True) or negative (False)."
 " That is, whether this text get's the label or not. Tagger trains only "
@@ -1000,7 +996,7 @@ msgstr ""
 "piisavalt kõrge sagedus (*Minimum sample size*)) treenitakse eraldi "
 "mudel."
 
-#: ../../source/gui.rst:340
+#: ../../source/gui.rst:339
 msgid ""
 "We can create a new Tagger Group model by clicking on the '+CREATE' "
 "button in the bottom-left. Then we must choose the name for the new "
@@ -1011,7 +1007,7 @@ msgstr ""
 "Avanenud aknas tuleb valida uuele Tagger Group-ile nimi (*Description*); "
 "faktid, mida mudel õppima hakkab; ja minimaalse sageduse suuruse."
 
-#: ../../source/gui.rst:342
+#: ../../source/gui.rst:341
 msgid ""
 "Our input will be the data under the project that is active (we can check"
 " it on the blue panel up-right). We have to select the fields the model "
@@ -1029,7 +1025,7 @@ msgstr ""
 " tõstab mõnede sõnade sagedust (*söödud*, *sööb* ja *sõi* muutuvad oma "
 "lemmaks *sööma* ja neid käsitletakse ühe sõnana)."
 
-#: ../../source/gui.rst:344
+#: ../../source/gui.rst:343
 msgid ""
 "There's also an option to include our existing :ref:`embeddings "
 "<embedding>` into the training."
@@ -1037,7 +1033,7 @@ msgstr ""
 "Olemasolevaid :ref:`sõnavektoreid <embedding>` saab samuti treenimisse "
 "lisada."
 
-#: ../../source/gui.rst:346
+#: ../../source/gui.rst:345
 msgid ""
 "Then we need to fine-tune the Tagger Group's classifiers by changing "
 "additional parameters such as Vectorizer (possible feature extractors "
@@ -1066,11 +1062,11 @@ msgstr ""
 "treenimisandmestikus. *maximum sample size* määrab, mitut näidet ühe "
 "klassi kohta mudel treenides näeb."
 
-#: ../../source/gui.rst:354
+#: ../../source/gui.rst:353
 msgid "Figure 15. *Creating a Tagger Group*"
 msgstr "Joonis 15. *Tagger Group-i loomine*"
 
-#: ../../source/gui.rst:356
+#: ../../source/gui.rst:355
 msgid ""
 "Then we can hit create and see the training process and result of the "
 "tagger as seen in Figure 14."
@@ -1078,11 +1074,11 @@ msgstr ""
 "Pärast nende parameetrite sättimist saab vajutada 'Create' ja näha "
 "märgendaja tulemusi joonisel 14 näidatud kujul."
 
-#: ../../source/gui.rst:363
+#: ../../source/gui.rst:362
 msgid "Figure 16. *Created Tagger Group*"
 msgstr "Joonis 16. *Loodud Tagger Group*"
 
-#: ../../source/gui.rst:368
+#: ../../source/gui.rst:367
 msgid ""
 "Whenever we create new Tagger Group models, we can track it's progress "
 "from the table under *Task*. If we click on the job, we can see all the "
@@ -1093,7 +1089,7 @@ msgstr ""
 "*Task*-i all. Kui me vajutame mudelile, näeme kogu treenimisinfot - kui "
 "kaua treenimine aega võttis ja kui edukas mudel on. Meeldetuletusena:"
 
-#: ../../source/gui.rst:366
+#: ../../source/gui.rst:365
 msgid ""
 "Recall is the ratio of correctly labeled positives among all true "
 "positives. Avg.recall is the average of all the models' recalls."
@@ -1102,7 +1098,7 @@ msgstr ""
 "positiivsete elementide suhe. Avg.recall ehk saagise keskmine on kõigi "
 "mudeli saagiste keskmine."
 
-#: ../../source/gui.rst:367
+#: ../../source/gui.rst:366
 msgid ""
 "Precision is the ratio of correctly labeled positives among all instances"
 " that got a positive label. Avg.precision is the average of all the "
@@ -1112,7 +1108,7 @@ msgstr ""
 "positiivseks märgendatud elementide suhe. Avg.precision ehk täpsuse "
 "keskmine on kõigi mudeli täpsuste keskmine."
 
-#: ../../source/gui.rst:368
+#: ../../source/gui.rst:367
 msgid ""
 "F1 score is the harmonic mean of these two and should be more informative"
 " expecially with unbalanced data. Avg.F1_score is the average of all the "
@@ -1122,7 +1118,7 @@ msgstr ""
 "informatiivsem, eriti just tasakaalust väljas oleva andmestiku puhul. "
 "Avg.F1_score on kõigi mudeli F1-skooride keskmine."
 
-#: ../../source/gui.rst:372
+#: ../../source/gui.rst:371
 msgid ""
 "*Models retrain* retrains all of the Tagger Group models with all the "
 "chosen parameters. It's useful in case our dataset changes or we have "
@@ -1132,7 +1128,7 @@ msgstr ""
 "parameetritega. See on kasulik, kui andmestik muutub või lisatakse uusi "
 "stopp-sõnu."
 
-#: ../../source/gui.rst:374
+#: ../../source/gui.rst:373
 msgid ""
 "*Models list* displays us the models the Tagger Group trained. We can "
 "inspect which kind of labels were trained."
@@ -1140,7 +1136,7 @@ msgstr ""
 "*Models list* kuvab mudeleid, mille Tagger Group treenis. Sealt saab "
 "vaadata, milliseid sildid/märgendid treeniti."
 
-#: ../../source/gui.rst:376
+#: ../../source/gui.rst:375
 msgid ""
 "*Tag text* is to check how does the model work. If we click on that, a "
 "window opens. We can paste there some text, choose to lemmatize it "
@@ -1163,7 +1159,7 @@ msgstr ""
 "on antud dokumendiga sarnaste dokumentide arv. Nendele dokumentidele "
 "märgendatud märgendeid testitakse uue antud dokumendi peal."
 
-#: ../../source/gui.rst:378
+#: ../../source/gui.rst:377
 msgid ""
 "*Tag doc* is similar to *Tag text*, except the input is in the json "
 "format. *Number of similar documents* is the number of most similar "
@@ -1175,7 +1171,7 @@ msgstr ""
 "arv. Nendele dokumentidele märgendatud märgendeid testitakse uue antud "
 "dokumendi peal."
 
-#: ../../source/gui.rst:380
+#: ../../source/gui.rst:379
 msgid ""
 "*Tag random doc* takes a random instance from our dataset, displays it "
 "and returns the positive results of our models and the probability of "
@@ -1184,7 +1180,7 @@ msgstr ""
 "*Tag random doc* võtab suvalise dokumendi andmestikust, väljastab selle "
 "ja tagastab tulemused ja vastavatesse klassidesse kuulumise tõenäosuse."
 
-#: ../../source/gui.rst:384
+#: ../../source/gui.rst:383
 msgid ""
 "In the table view we can also select several Tagger Groups and delete "
 "them all at once by clicking on the dustbin button next to the *+CREATE* "
@@ -1198,11 +1194,11 @@ msgstr ""
 "*task status*-e kaudu. Kui mudeleid on palju, saame vahetada "
 "kuvamislehekülge all paremal."
 
-#: ../../source/gui.rst:389
-msgid "Using Topic Analyzer"
-msgstr "Topic Analyzer-i kasutamine"
+#: ../../source/gui.rst:388
+msgid "Topic Analyzer"
+msgstr "Teemaanalüsaator"
 
-#: ../../source/gui.rst:391
+#: ../../source/gui.rst:390
 msgid ""
 "Topic Analyzer is a tool that helps us to find groups of similar "
 "documents from the data and transform these groups into labels."
@@ -1211,11 +1207,11 @@ msgstr ""
 "leida sarnaste dokumentide gruppe ja muuta need grupid ühe sildi alla "
 "kuuluvateks klassideks."
 
-#: ../../source/gui.rst:393
+#: ../../source/gui.rst:392
 msgid "**Grouping the data**"
 msgstr "**Andmestiku grupeerimine**"
 
-#: ../../source/gui.rst:395
+#: ../../source/gui.rst:394
 msgid ""
 "To create a new grouping (or clustering, as we name it) navigate to "
 "Models -> Clustering and click \"Create\". Similarly to Tagger Group "
@@ -1231,7 +1227,7 @@ msgstr ""
 "klasterdamises kasutatavat andmestiku *Query* parameetri kaudu, valides "
 "andmestikuks selle alamhulga."
 
-#: ../../source/gui.rst:397
+#: ../../source/gui.rst:396
 msgid ""
 "If desired, one can do some fine-tuning as well by choosing clustering "
 "algorithm and vectorizer and specifying the number of clusters (*Num "
@@ -1241,11 +1237,11 @@ msgstr ""
 " *vectorizer*-it ning määrates klastrite arvu (*Num clusters*) ning "
 "dokumendivektori dimensioonide arvu (*Num dims*)."
 
-#: ../../source/gui.rst:401
+#: ../../source/gui.rst:400
 msgid "**How to choose the number of clusters?**"
 msgstr "**Kuidas valida klastrite arvu?**"
 
-#: ../../source/gui.rst:403
+#: ../../source/gui.rst:402
 msgid ""
 "General advice would be to better have too many clusters than too few. "
 "Think about how many documents you are planning to cluster and choose the"
@@ -1259,7 +1255,7 @@ msgstr ""
 "kontrollida. Näiteks, kui klasterdad 1000 dokumenti 50 klastrisse, "
 "sisaldab keskmine klaster 20 dokumenti."
 
-#: ../../source/gui.rst:405
+#: ../../source/gui.rst:404
 msgid ""
 "Instead of using document-term matrix for clustering, we can also use "
 "compressed approximation of this matrix (with parameter *Use LSI*) which "
@@ -1273,7 +1269,7 @@ msgstr ""
 "määrata teemade arv (dimensioonid 'low-rank' maatriksis) (*Num topics* "
 "all)."
 
-#: ../../source/gui.rst:407
+#: ../../source/gui.rst:406
 msgid ""
 "In some cases we may already have some knowledge about the data that we "
 "are about to cluster. For example, we may be aware of some domain-"
@@ -1285,15 +1281,15 @@ msgstr ""
 "spetsiifilised stopp-sõnad, mida võiks ignoreerida. Neid saame lisada "
 "väljas *Stopwords*."
 
-#: ../../source/gui.rst:413
+#: ../../source/gui.rst:412
 msgid "Figure 17. *Creating a Clustering*"
 msgstr "Joonis 17. *Klasterdaja loomine*"
 
-#: ../../source/gui.rst:416
+#: ../../source/gui.rst:415
 msgid "**Evaluating clusters**"
 msgstr "**Klastrite hindamine**"
 
-#: ../../source/gui.rst:418
+#: ../../source/gui.rst:417
 msgid ""
 "To see the clusters, click *View clusters* under Actions. This view gives"
 " us an overwiew about obtained clusters. For each cluster the document "
@@ -1309,16 +1305,15 @@ msgstr ""
 "sõnad, mis võrreldes teiste dokumentidega on märkimisväärselt sagedasemad"
 " nendes dokumentides, mis sellesse klastrisse kuuluvad."
 
-#: ../../source/gui.rst:425
-#, fuzzy
+#: ../../source/gui.rst:424
 msgid "Figure 18. *Clusters view*"
 msgstr "Joonis 16. *Klastri vaade (Clusters view)*"
 
-#: ../../source/gui.rst:429
+#: ../../source/gui.rst:428
 msgid "**Interpreting document count**"
 msgstr "**Dokumendi arvu tõlgendamine**"
 
-#: ../../source/gui.rst:431
+#: ../../source/gui.rst:430
 msgid ""
 "Cluster with significantly larger document count often indicates that the"
 " clustering algorithm has failed to separate these documents by the "
@@ -1340,11 +1335,11 @@ msgstr ""
 "sisaldada sarnast müra või stopp-sõnu, mis teevad neid tehislikult "
 "sarnasemaks. Mõnikord võib abiks olla klastrite arvu suurendamine."
 
-#: ../../source/gui.rst:433
+#: ../../source/gui.rst:432
 msgid "**Interpreting average similarity**"
 msgstr "**Average similarity (keskmise sarnasuse) tõlgendamine**"
 
-#: ../../source/gui.rst:435
+#: ../../source/gui.rst:434
 msgid ""
 "Average similarity is an average cosine similarity between all the "
 "documents in the cluster. It ranges between 0 and 1 and higher score "
@@ -1362,7 +1357,7 @@ msgstr ""
 "koosinussarnasuse skoor näida väga madalana, kuigi selle klastri "
 "parandamine oleks väga lihtne."
 
-#: ../../source/gui.rst:437
+#: ../../source/gui.rst:436
 msgid ""
 "To see content of a cluster, simply click on a cluster that is in your "
 "interest, this opens you a Cluster Details view."
@@ -1370,11 +1365,11 @@ msgstr ""
 "Klastri sisu nägemiseks tuleb lihtsalt vajutada huvipakkuvale klastrile. "
 "See avab detailse klastrivaate Cluster Details."
 
-#: ../../source/gui.rst:439
+#: ../../source/gui.rst:438
 msgid "**Operations with cluster**"
 msgstr "**Klastritega tegelemine**"
 
-#: ../../source/gui.rst:441
+#: ../../source/gui.rst:440
 msgid ""
 "Cluster Details view allows us to inspect actual documents belonging to a"
 " cluster."
@@ -1382,7 +1377,7 @@ msgstr ""
 "Cluster Details vaade laseb vaadata klastrisse kuuluvaid tegelikke "
 "dokumente."
 
-#: ../../source/gui.rst:443
+#: ../../source/gui.rst:442
 msgid ""
 "If we are satisfied with what it contains, we can tag the content by "
 "clicking \"Tag\" button. This operation adds a texta_fact to each of the "
@@ -1395,7 +1390,7 @@ msgstr ""
 "koos määratud fakti nime ja väärtusega. **Edaspidi ignoreeritakse neid "
 "dokumente järgnevates klasterdamise protsessides**."
 
-#: ../../source/gui.rst:445
+#: ../../source/gui.rst:444
 msgid ""
 "If not satisfied, we probably want to do some corrections in the cluster "
 "content manually, that is, remove some documents from it. This can be "
@@ -1408,7 +1403,7 @@ msgstr ""
 "ning vajutades prügikastiikoonile. Pane tähele, et neid dokumente ei "
 "ignoreerita järgnevates klasterdamise protsessides."
 
-#: ../../source/gui.rst:447
+#: ../../source/gui.rst:446
 msgid ""
 "We could also be interested in whether there is more documents in the "
 "index that are similar to the ones in given cluster. If indeed there is, "
@@ -1420,7 +1415,7 @@ msgstr ""
 " võib tekkida soov needki klastrisse lisada, et saaks kõik ühe korraga "
 "ära märgendada."
 
-#: ../../source/gui.rst:449
+#: ../../source/gui.rst:448
 msgid ""
 "To query similar documents, click on a \"More like this\" button. In the "
 "opened view, select document which you would like to add to the cluster "
@@ -1430,15 +1425,15 @@ msgstr ""
 "avab vaate, kus saab valida dokumente, mida soovitakse klastrisse lisada "
 "\"+\"-nupu abil."
 
-#: ../../source/gui.rst:456
+#: ../../source/gui.rst:455
 msgid "Figure 19. *Cluster details view*"
 msgstr "Joonis 19. *Klastrite detailne vaade (Cluster details view)*"
 
-#: ../../source/gui.rst:464
-msgid "Reindexing the Data"
-msgstr "Andmestiku reindekseerimine"
+#: ../../source/gui.rst:463
+msgid "Reindexer"
+msgstr "Reindekseerija"
 
-#: ../../source/gui.rst:466
+#: ../../source/gui.rst:465
 msgid ""
 "Reindexer is a useful tool for reindexing Elasticsearch :ref:`indices "
 "<index_concept>`. We can think of index as our dataset. With reindexer we"
@@ -1453,35 +1448,35 @@ msgstr ""
 "sisaldavad kuupäevi, muuta kuupäevaväljadeks, mida oma agregatsioonides "
 "kasutada)."
 
-#: ../../source/gui.rst:468
+#: ../../source/gui.rst:467
 msgid ""
 "We can create a new index by clicking on the '+CREATE' button in the "
 "bottom-left."
 msgstr "Uut indeksit saab luua '+CREATE' nupu abil all vasakul."
 
-#: ../../source/gui.rst:470
+#: ../../source/gui.rst:469
 msgid "*Description* is the description of new reindexing job."
 msgstr "*Description* on uue reindekseerimistöö kirjeldus."
 
-#: ../../source/gui.rst:472
+#: ../../source/gui.rst:471
 msgid "*New index name* is the name for our new index."
 msgstr "*New index name* on loodava indeksi nimi."
 
-#: ../../source/gui.rst:474
+#: ../../source/gui.rst:473
 msgid "*Indices* are all the indices that we want in our new index."
 msgstr "*Indices* on kõik indeksid, mida tahame oma uude indeksisse."
 
-#: ../../source/gui.rst:476
+#: ../../source/gui.rst:475
 msgid "*Field types* are for changing the type and/or the name of our field(s)."
 msgstr "*Field types* abil saab muuta välja(de) tüüpi ja/või nime."
 
-#: ../../source/gui.rst:478
+#: ../../source/gui.rst:477
 msgid ""
 "We can use *Query* for adding only certain search results to our new "
 "index."
 msgstr "*Query* abil saab lisada uute indeksisse kindlaid otsingutulemusi."
 
-#: ../../source/gui.rst:480
+#: ../../source/gui.rst:479
 msgid ""
 "*Random subset type* helps us to create an index which contains only "
 "certain amount of samples (rows). We can use this in case we want to play"
@@ -1492,15 +1487,15 @@ msgstr ""
 "soovitakse testida Toolkiti vahendeid enne nende kogu andmestikule "
 "rakendamist."
 
-#: ../../source/gui.rst:486
+#: ../../source/gui.rst:485
 msgid "Figure 20. *Creating a new index*"
 msgstr "Joonis 20. *Uue indeksi loomine*"
 
-#: ../../source/gui.rst:490
-msgid "Uploading the Data"
-msgstr "Andmestiku üleslaadimine"
+#: ../../source/gui.rst:488
+msgid "Dataset Importer"
+msgstr "Andmete Importija"
 
-#: ../../source/gui.rst:492
+#: ../../source/gui.rst:490
 msgid ""
 "You can upload a new dataset from a file to Toolkit via Dataset Importer "
 "under Tools. For that click on the **CREATE** button which opens a table "
@@ -1524,13 +1519,13 @@ msgstr ""
 "metaandmestiku näeb sealsamas Dataset Importeri all. Üles laaditud "
 "andmestiku saab kustutada Actions all oleva kolme täpikese abil."
 
-#: ../../source/gui.rst:494
+#: ../../source/gui.rst:492
 msgid ""
 "Now you can add this data to your project and use it with the name you "
 "gave to it."
 msgstr "Nüüd on võimalik neid andmeid kasutada projektides andmetele antud nimega."
 
-#: ../../source/gui.rst:503
+#: ../../source/gui.rst:501
 msgid "Figure 21. *Importing a new dataset*"
 msgstr "Joonis 21. *Uue andmestiku importimine*"
 
@@ -1547,3 +1542,26 @@ msgstr "Joonis 21. *Uue andmestiku importimine*"
 #~ "*Tools*-i all oleva *Dataset Importer*-i "
 #~ "abil saab uut andmestikku üles laadida."
 
+#~ msgid "Managing Projects"
+#~ msgstr "Projektide haldamine"
+
+#~ msgid "Search: Exploring the Data"
+#~ msgstr "Search: Andmestiku uurimine"
+
+#~ msgid "Preprocessing the Data"
+#~ msgstr "Andmete eeltöötlemine"
+
+#~ msgid "Creating Topic-related Lexicons"
+#~ msgstr "Teemaleksikonide loomine"
+
+#~ msgid "Statistical Language Modelling"
+#~ msgstr "Statistiline keelemudel"
+
+#~ msgid "Tagging the Data"
+#~ msgstr "Andmestiku märgendamine"
+
+#~ msgid "Reindexing the Data"
+#~ msgstr "Andmestiku reindekseerimine"
+
+#~ msgid "Uploading the Data"
+#~ msgstr "Andmestiku üleslaadimine"
