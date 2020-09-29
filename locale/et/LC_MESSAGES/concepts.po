@@ -329,7 +329,7 @@ msgstr ""
 
 #: ../../source/concepts.rst:102
 msgid "Anonymizer"
-msgstr "Anonüümija"
+msgstr "Anonüümija (Anonymizer)"
 
 #: ../../source/concepts.rst:104 ../../source/concepts.rst:135
 #: ../../source/concepts.rst:155 ../../source/concepts.rst:174
@@ -338,7 +338,7 @@ msgstr ""
 
 #: ../../source/concepts.rst:109
 msgid "Embedding"
-msgstr "Sõnavektor (embedding)"
+msgstr "Sõnavektor (Embedding)"
 
 #: ../../source/concepts.rst:111
 msgid ""
@@ -409,7 +409,7 @@ msgstr "Mustripõhine märgendaja (Regex Tagger)"
 
 #: ../../source/concepts.rst:141
 msgid "Tagger Group"
-msgstr ""
+msgstr "Märgendajate Grupp (Tagger Group)"
 
 #: ../../source/concepts.rst:143
 msgid ""
@@ -438,7 +438,7 @@ msgstr ""
 
 #: ../../source/concepts.rst:153
 msgid "Regex Tagger Group"
-msgstr "Mustripõhiste märgendajate grupp (Regex Tagger Group)"
+msgstr "Mustripõhiste Märgendajate Grupp (Regex Tagger Group)"
 
 #: ../../source/concepts.rst:161
 msgid "Torch Tagger"
@@ -477,7 +477,7 @@ msgstr ""
 "tuvastamise ülesannet, kus saavutati F1 skoor 96%."
 
 #: ../../source/concepts.rst:172
-msgid "Multilingual Processor"
+msgid "Multilingual Processor (MLP)"
 msgstr ""
 
 #: ../../source/concepts.rst:179

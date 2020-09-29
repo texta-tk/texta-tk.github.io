@@ -38,7 +38,7 @@ msgstr ""
 
 #: ../../source/gui.rst:11
 msgid "Health of Toolkit"
-msgstr "Toolkiti seisund (health of Toolkit)"
+msgstr "Toolkiti seisund"
 
 #: ../../source/gui.rst:13
 msgid ""
@@ -57,7 +57,7 @@ msgstr "Joonis 4. *Toolkiti staatus*"
 
 #: ../../source/gui.rst:24
 msgid "Registration & Login"
-msgstr "Registreerimine ja sisse logimine"
+msgstr "Registreerimine ja sisselogimine"
 
 #: ../../source/gui.rst:26
 msgid ""

@@ -97,7 +97,7 @@ msgstr ""
 
 #: ../../source/api.rst:49
 msgid "Logging in"
-msgstr "Sisse logimine"
+msgstr "Sisselogimine"
 
 #: ../../source/api.rst:51
 msgid "Endpoint: **/rest-auth/login/**"
@@ -190,7 +190,7 @@ msgstr "Otspunkt: **/projects/{project_pk}/taggers/{id}/tag_text/**"
 
 #: ../../source/api.rst:292
 msgid "Regex Taggers"
-msgstr "Mustripõhised märgendajad"
+msgstr "Mustripõhised Märgendajad"
 
 #: ../../source/api.rst:296
 msgid "Create a new Regex Tagger"
