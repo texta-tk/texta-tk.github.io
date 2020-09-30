@@ -1,0 +1,99 @@
+########
+Searcher
+########
+
+The Search application is responsible for both creating the searches defining subsets of documents for Toolkit's other applications and browsing-summarizing the data.
+
+.. note::
+	In order to use **Search**, project must be selected in upper panel.
+
+Search's graphical interface consists of serveral important panels, which are depicted in :numref:`search_panel`.
+We can collapse or open the panels by clicking on the arrow in the corner.
+
+.. _search_panel:
+.. figure:: images/search_panel.png
+
+	*Search Panel*
+    
+        1. :ref:`Current Search <currentsearch>`
+        2. :ref:`Saved Searches <savedsearches>`
+        3. :ref:`Aggregations <aggregations>`
+
+.. _currentsearch:
+
+Current Search
+***************
+
+Data browsing and summarization depend on searches. Search consists of a set of constraints on :ref:`field <field_concept>` values. We can define our constraints on the data using the *Current Search* panel.
+Without saving the constraints, we are in a “test mode”, which means that we can use the search in real time, but we cannot use the search in other tools.
+After saving the search, it is available also to other tools.
+
+In order to add a constraint, we must first choose one or several fields. After the field is selected, we can then specify which textual tokens (words or word parts) should or must occur in the interested document subset.
+
+We must notice that the search will be done on the Project's dataset chosen in the upper panel.
+
+Suppose we are interested in finding all the documents which contains “bribery” and “official” from a text.
+:numref:`search_constraints` shows how we have defined that we want to find all the documents which contain “bribery” and “official” in the article_text_mlp.text field:
+
+.. _search_constraints:
+.. figure:: images/search_constraints.png
+
+	*Example Search Constraints*
+
+Searches have several parameters to consider:
+
+* We can also choose ‘or’ or ‘not’ under the Operator. In this case we either get documents containing at least one of the words (‘or’) or definitely not containing the words listed (‘not’).
+
+* We can choose from several match types. Type “word” means that we want to find exact matches of the word(s) written and “phrase” means that we want to find exact matches of the phrases we are looking for, whereas “Phrase prefix” matches prefixes. This means suffixes may differ: for example searching for ‘bribe’ will find ‘bribetaking’, ‘bribers’, ‘bribery’ and other words starting with ‘bribe’. 'regex' takes the input as `a regular expression <https://www.rexegg.com/regex-quickstart.html>`_ and searches document accordingly. For example 'bribe.{0,2}' will find 'bribe' and 'bribery', but not longer words. If we have a big list of words we want to search for, we can extend the field searcher's panel.
+
+* We can also use Slop. Via Slop we can define up to how many words can be between the two words we wrote on one row in case the range is important for us.
+
+Should we be interested in more detailed searches, we can add more constraints like the previous ones via **Add Filter** button.
+For example, we can also search documents in a certain date range in case we have a proper preprocessed date field.
+
+If we click on “Search” button, we will see the matching data in a tabular form (see :numref:`search_results`), where layered features share feature name’s prefix, and matches are highlighted in pink.
+The results might be updating while modifying the filters.
+
+.. _search_results:
+.. figure:: images/search_results.png
+	:width: 100 %
+
+	*Example Search Results*
+
+If there are too many features (columns), we can hide or show them from the drop-down menu in the down left corner. We can select or deselect all of them together (*Select all*) or by clicking on them separately. We can also hide or get back the Searcher's panels with *Toggle drawer* button. We can browse through Searcher's results with the arrows in the bottom right. We can also choose how many items per page would we want to see.
+
+.. _search_rt:
+.. figure:: images/search_results_toggle.png
+
+	*Select Fields for Search Results*
+
+After we have come up with a suitable search, we can save it for later use by clicking on the **disk** icon up-right in the Current Search panel. The **eye** icon next to the disk icon shows us the actual Elasticsearch query we built by choosing the Operators and words to search for.
+
+.. _savedsearches:
+
+Saved Searches
+***************
+
+After saving a search, it becomes available for using in Toolkit's applications.
+Now, whenever we check it, we can use it to browse data or apply in aggregations.
+We can also send our saved search to other users who have the permission to our project with a copied url.
+This opens the saved search under the Current Search for the other user.
+We can also open our saved search in the Current Search simply by clicking on it.
+
+.. _aggregations:
+
+Aggregations: Summarizing the Data
+************************************
+
+As fun as browsing through the data is, it is not always enough. Sometimes we want to get an overview of our data, such as topics over time or word distributions. Searcher allows to do all of that and more through the “Aggregations” panel.
+
+Aggregations have two components - data and features it aggregates over. It will aggregate over the dataset we have under the Current Search. We can also exclude current search (meaning that 'Aggregate over all data except the one we have currently active') and choose the aggregation size. By defining a feature, we can group by that feature and get category counts. For example, lets assume we are interested in seeing how are the top words distributed in our sample data defined by our “bribe” search. For that we simply click on our bribe search under Saved Searches to get it as the current search.
+
+.. note::
+
+    **How are the significance scores calculated?**
+	The numbers returned for scores are primarily intended for ranking different suggestions sensibly rather than something easily understood by end users. The scores are derived from the doc frequencies in foreground and background sets. In brief, a term is considered significant if there is a noticeable difference in the frequency in which a term appears in the subset and in the background. The way the terms are ranked can be configured, `see "Parameters" section <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-significanttext-aggregation.html>`_.
+
+One cool thing we can also do, is to visualize the frequency of texts with searched words in it on a timeline. We can do that if we have a proper date field (in Texta date format) in our data. Here we can visualize when were the words 'bribe', 'bribery' and 'bribed' used most frequently in our dataset.
+
+We can also aggregate over :ref:`texta_facts <texta_fact>` field in order to see the top entities under some tag. If we click on the black diagram button, we can scroll through the results. We see as many entities as we chose for our aggregation size.

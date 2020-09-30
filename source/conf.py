@@ -147,6 +147,8 @@ man_pages = [
      [author], 1)
 ]
 
+numref= True
+numfig= True
 
 # -- Options for Texinfo output -------------------------------------------
 

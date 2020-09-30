@@ -172,3 +172,21 @@ And in another terminal run the Celery worker responsible for asynchronous tasks
 .. code-block:: bash
 
     celery -A toolkit.taskman worker -l info
+    
+Browsable API
+-------------
+
+* http://localhost:8000/api/v1/
+
+TODO
+
+.. _api_reference:
+
+API Reference
+-------------
+
+Reference for Toolkit API is available when running the Toolkit:
+
+* http://localhost:8000/api/v1/swagger/
+
+* http://localhost:8000/api/v1/redoc/
