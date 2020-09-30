@@ -20,7 +20,6 @@ The source code for Toolkit's Angular GUI is available at `git.texta.ee/texta/te
 
 .. toctree::
     :maxdepth: 2
-    :caption: Contents:
 
     installation
     uaa

@@ -24,70 +24,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
-
-          <div class="body" role="main">
-            
-  <div class="section" id="dataset-importer">
-<h1>Dataset Importer<a class="headerlink" href="#dataset-importer" title="Permalink to this headline">¶</a></h1>
-<p>Dataset Importer allows the user to insert <strong>jsonlines</strong>, <strong>csv</strong> and <strong>excel</strong> files into Elasticsearch
-to make them accessible by the Toolkit. Please note that this process reads the whole
-file into the memory and can thus create memory issues when trying to process bigger files. It is advisable to split such
-files up into smaller chunks and process each one separately.</p>
-<p>This whole process is asynchronous so the response to the call will be instantaneous and it since it takes a bit time
-to load the file into the memory, the first 10 seconds might not display any signs of the progress changing.</p>
-<div class="section" id="gui">
-<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
-<p>You can upload a new dataset from a file to Toolkit via Dataset Importer under Tools (see <a class="reference internal" href="#importing-loc"><span class="std std-numref">Fig. 2</span></a>).
-Click on the <strong>CREATE</strong> button which opens a table in <a class="reference internal" href="#importing"><span class="std std-numref">Fig. 3</span></a>. There you can describe your dataset (<em>Task description</em>), give it a name (<em>Dataset name</em>) and choose the file to be uploaded (you can browse it via the folder button). When uploading an .csv file, you can add the separator (usually a comma). Then hit <strong>Create</strong>. You will see the uploading process and metadata of the dataset under the Dataset Importer in the TTK. You can delete the uploaded dataset by clicking on the three dots under actions.</p>
-<p>Now you can add this data to your project and use it with the name you gave to it.</p>
-<div class="figure align-default" id="id1">
-<span id="importing-loc"></span><img alt="_images/dataset_importer_loc.png" src="_images/dataset_importer_loc.png" />
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text"><em>Importing a new dataset</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="id2">
-<span id="importing"></span><img alt="_images/dataset_importer.png" src="_images/dataset_importer.png" />
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text"><em>Importing a new dataset</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="api">
-<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="parameters">
-<h3>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>description - Normal description to separate any given task from the other ones.</p></li>
-<li><p>index - Name of the newly created index, please note that Elasticsearch index naming restrictions apply.</p></li>
-<li><p>separator - Only needed for .csv files, defaults to a coma (,). Allows to configure the separator for csv files.</p></li>
-</ul>
-</div>
-<div class="section" id="example">
-<h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<p>&#64; is special syntax for reading the binary of the given file name.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
--F <span class="s2">&quot;description=Articles&quot;</span> <span class="se">\</span>
--F <span class="s2">&quot;index=en_articles&quot;</span> <span class="se">\</span>
--F <span class="s2">&quot;file=@FILE_NAME.csv&quot;</span> <span class="se">\</span>
-http://localhost:8000/api/v1/projects/11/dataset_imports/
-</pre></div>
-</div>
-<p>TODO: how to delete uploaded file?</p>
-</div>
-</div>
-</div>
-
-
-          </div>
-          
-        </div>
-      </div>
+  <div class="document">
+    
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">TEXTA Toolkit</a></h1>
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
 
 
 
@@ -111,7 +57,7 @@ http://localhost:8000/api/v1/projects/11/dataset_imports/
 <li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
 <li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
@@ -153,8 +99,66 @@ http://localhost:8000/api/v1/projects/11/dataset_imports/
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="dataset-importer">
+<h1>Dataset Importer<a class="headerlink" href="#dataset-importer" title="Permalink to this headline">¶</a></h1>
+<p>Dataset Importer allows the user to insert <strong>jsonlines</strong>, <strong>csv</strong> and <strong>excel</strong> files into Elasticsearch
+to make them accessible by the Toolkit. Please note that this process reads the whole
+file into the memory and can thus create memory issues when trying to process bigger files. It is advisable to split such
+files up into smaller chunks and process each one separately.</p>
+<p>This whole process is asynchronous so the response to the call will be instantaneous and it since it takes a bit time
+to load the file into the memory, the first 10 seconds might not display any signs of the progress changing.</p>
+<div class="section" id="gui">
+<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
+<p>You can upload a new dataset from a file to Toolkit via Dataset Importer under Tools (see <code class="xref std std-numref docutils literal notranslate"><span class="pre">importing_loc</span></code>).
+Click on the <strong>CREATE</strong> button which opens a table in <a class="reference internal" href="#importing"><span class="std std-numref">Fig. 3</span></a>. There you can describe your dataset (<em>Task description</em>), give it a name (<em>Dataset name</em>) and choose the file to be uploaded (you can browse it via the folder button). When uploading an .csv file, you can add the separator (usually a comma). Then hit <strong>Create</strong>. You will see the uploading process and metadata of the dataset under the Dataset Importer in the TTK. You can delete the uploaded dataset by clicking on the three dots under actions.</p>
+<p>Now you can add this data to your project and use it with the name you gave to it.</p>
+<div class="figure align-default" id="id1">
+<span id="importing-loc"></span><img alt="_images/dataset_importer_loc.png" src="_images/dataset_importer_loc.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text"><em>Importing a new dataset</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<span id="importing"></span><img alt="_images/dataset_importer.png" src="_images/dataset_importer.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text"><em>Importing a new dataset</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="parameters">
+<h3>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>description - Normal description to separate any given task from the other ones.</p></li>
+<li><p>index - Name of the newly created index, please note that Elasticsearch index naming restrictions apply.</p></li>
+<li><p>separator - Only needed for .csv files, defaults to a coma (,). Allows to configure the separator for csv files.</p></li>
+</ul>
+</div>
+<div class="section" id="example">
+<h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>&#64; is special syntax for reading the binary of the given file name.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-F <span class="s2">&quot;description=Articles&quot;</span> <span class="se">\</span>
+-F <span class="s2">&quot;index=en_articles&quot;</span> <span class="se">\</span>
+-F <span class="s2">&quot;file=@FILE_NAME.csv&quot;</span> <span class="se">\</span>
+http://localhost:8000/api/v1/projects/11/dataset_imports/
+</pre></div>
+</div>
+<p>TODO: how to delete uploaded file?</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
     <div class="footer">
       &copy;2020 TEXTA.
       

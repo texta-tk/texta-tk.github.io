@@ -23,119 +23,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
-
-          <div class="body" role="main">
-            
-  <p><a class="reference external" href="https://docs.texta.ee/concepts.html">EN</a>
-<a class="reference external" href="https://docs.texta.ee/et/concepts.html">ET</a></p>
-<img alt="Texta" src="_images/toolkit_logo.png" />
-<p>TEXTA Toolkit is an open-source software for building RESTful text analytics applications.
-It is being developed by <a class="reference external" href="https://www.texta.ee">TEXTA Ltd</a>.
-This documentation contains information about installing and running <strong>TEXTA Toolkit 2.x</strong>.</p>
-<p>The source code for Toolkit’s Django REST API is available at <a class="reference external" href="https://git.texta.ee/texta/texta-rest">git.texta.ee/texta/texta-rest</a>.</p>
-<p>The source code for Toolkit’s Angular GUI is available at <a class="reference external" href="https://git.texta.ee/texta/texta-rest-front">git.texta.ee/texta/texta-rest-front</a>.</p>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-using-docker-recommended">Installation Using Docker (recommended)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-for-development">Installation for Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#browsable-api">Browsable API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#api-reference">API Reference</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="uaa.html#configuring-the-uaa-server-locally">Configuring the UAA server locally</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="importer.html#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="importer.html#api">API</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="mlp.html#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mlp.html#api">API</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reindexer.html#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reindexer.html#api">API</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
-<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="searcher.html#current-search">Current Search</a></li>
-<li class="toctree-l2"><a class="reference internal" href="searcher.html#saved-searches">Saved Searches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="searcher.html#aggregations-summarizing-the-data">Aggregations: Summarizing the Data</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tagger.html#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tagger.html#api">API</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#creation-tase-2">Creation, tase 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#useage">Useage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#application">Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#fine-tuning">Fine-Tuning</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#creation-tase-2">Creation, tase 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#useage">Useage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#application">Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#fine-tuning">Fine-Tuning</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#project">Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#task">Task</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#search">Search</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#multilingual-preprocessor">Multilingual Preprocessor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#fact">Fact</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#index">Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#field">Field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#anonymizer">Anonymizer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#embedding">Embedding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#tagger">Tagger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#regex-tagger">Regex Tagger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#tagger-group">Tagger Group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#regex-tagger-group">Regex Tagger Group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#torch-tagger">Torch Tagger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminology.html#topic-analyzer">Topic Analyzer</a></li>
-</ul>
-</li>
-</ul>
-</div>
-
-
-          </div>
-          
-        </div>
-      </div>
+  <div class="document">
+    
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="#">TEXTA Toolkit</a></h1>
+<p class="logo">
+  <a href="#">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
 
 
 
@@ -145,7 +42,6 @@ This documentation contains information about installing and running <strong>TEX
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
@@ -196,8 +92,153 @@ This documentation contains information about installing and running <strong>TEX
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <p><a class="reference external" href="https://docs.texta.ee/concepts.html">EN</a>
+<a class="reference external" href="https://docs.texta.ee/et/concepts.html">ET</a></p>
+<img alt="Texta" src="_images/toolkit_logo.png" />
+<p>TEXTA Toolkit is an open-source software for building RESTful text analytics applications.
+It is being developed by <a class="reference external" href="https://www.texta.ee">TEXTA Ltd</a>.
+This documentation contains information about installing and running <strong>TEXTA Toolkit 2.x</strong>.</p>
+<p>The source code for Toolkit’s Django REST API is available at <a class="reference external" href="https://git.texta.ee/texta/texta-rest">git.texta.ee/texta/texta-rest</a>.</p>
+<p>The source code for Toolkit’s Angular GUI is available at <a class="reference external" href="https://git.texta.ee/texta/texta-rest-front">git.texta.ee/texta/texta-rest-front</a>.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-using-docker-recommended">Installation Using Docker (recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-for-development">Installation for Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#browsable-api">Browsable API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="uaa.html#configuring-the-uaa-server-locally">Configuring the UAA server locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="importer.html#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importer.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mlp.html#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlp.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reindexer.html#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reindexer.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="registration.html#id1">Registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="registration.html#logging-in">Logging in</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="health.html">Health</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="health.html#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#creating-a-project">Creating a Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#using-a-project">Using a Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="searcher.html#current-search">Current Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searcher.html#saved-searches">Saved Searches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searcher.html#aggregations-summarizing-the-data">Aggregations: Summarizing the Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="topic_analyzer.html#grouping-the-data">Grouping the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topic_analyzer.html#evaluating-clusters">Evaluating clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topic_analyzer.html#operations-with-cluster">Operations with cluster</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tagger.html#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tagger.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tagger_group.html#creation">Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tagger_group.html#useage">Useage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tagger_group.html#application">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tagger_group.html#fine-tuning">Fine-Tuning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#creation-tase-2">Creation, tase 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#useage">Useage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#application">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#fine-tuning">Fine-Tuning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#creation-tase-2">Creation, tase 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#useage">Useage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#application">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#fine-tuning">Fine-Tuning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#creation">Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#useage">Useage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#application">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#fine-tuning">Fine-Tuning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bert_tagger.html#creation">Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bert_tagger.html#useage">Useage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bert_tagger.html#application">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bert_tagger.html#fine-tuning">Fine-Tuning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#anonymizer">Anonymizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#embedding">Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#fact">Fact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#field">Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#index">Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#multilingual-preprocessor">Multilingual Preprocessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#regex-tagger">Regex Tagger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#regex-tagger-group">Regex Tagger Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#search">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#tagger-group">Tagger Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#tagger">Tagger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#task">Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#topic-analyzer">Topic Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#torch-tagger">Torch Tagger</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
     <div class="footer">
       &copy;2020 TEXTA.
       

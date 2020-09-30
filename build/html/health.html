@@ -24,27 +24,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
-
-          <div class="body" role="main">
-            
-  <div class="section" id="health">
-<h1>Health<a class="headerlink" href="#health" title="Permalink to this headline">¶</a></h1>
-</div>
-
-
-          </div>
-          
-        </div>
-      </div>
+  <div class="document">
+    
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">TEXTA Toolkit</a></h1>
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
 
 
 
@@ -62,9 +51,13 @@
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Health</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Health</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
 <li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
@@ -106,8 +99,97 @@
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="health">
+<h1>Health<a class="headerlink" href="#health" title="Permalink to this headline">¶</a></h1>
+<p>One can check the health of a running Toolkit instance - information about the availability of services (e.g. Elasticsearch) and system resources (e.g. disk, memory, GPU usage, etc.)</p>
+<div class="section" id="gui">
+<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
+<p>On the <strong>Projects page</strong> (also Toolkit’s home page) we can see technical information about TEXTA Toolkit’s server on the right (<a class="reference internal" href="#server-status"><span class="std std-numref">Fig. 10</span></a>).</p>
+<div class="figure align-default" id="id1">
+<span id="server-status"></span><img alt="_images/server_status.png" src="_images/server_status.png" />
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text"><em>Toolkit Status</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>/health</strong> endpoint is for operating statistics.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;elastic&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://elasticsearch:9200&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;alive&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;elastic-dev&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cluster_name&quot;</span><span class="p">:</span> <span class="s2">&quot;TEXTA-elastic&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cluster_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;hyho3XLIS4qj9HijALguUA&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="s2">&quot;6.8.6&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;build_flavor&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;build_type&quot;</span><span class="p">:</span> <span class="s2">&quot;deb&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;build_hash&quot;</span><span class="p">:</span> <span class="s2">&quot;3d9f765&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;build_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-12-13T17:11:52.013738Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;build_snapshot&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                <span class="s2">&quot;lucene_version&quot;</span><span class="p">:</span> <span class="s2">&quot;7.7.2&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;minimum_wire_compatibility_version&quot;</span><span class="p">:</span> <span class="s2">&quot;5.6.0&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;minimum_index_compatibility_version&quot;</span><span class="p">:</span> <span class="s2">&quot;5.0.0&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;tagline&quot;</span><span class="p">:</span> <span class="s2">&quot;You Know, for Search&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;mlp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://texta-mlp:5000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;alive&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;loaded entities&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;/opt/texta-mlp/entity_mapper/data/addresses.json&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;/opt/texta-mlp/entity_mapper/data/atc.json&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;/opt/texta-mlp/entity_mapper/data/companies.json&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;/opt/texta-mlp/entity_mapper/data/substances.json&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;/opt/texta-mlp/entity_mapper/data/drugs.json&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;TEXTA MLP&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;2.2.1&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;2.3.10&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;disk&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;free&quot;</span><span class="p">:</span> <span class="mf">316.9075050354004</span><span class="p">,</span>
+        <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mf">1599.4990272521973</span><span class="p">,</span>
+        <span class="s2">&quot;used&quot;</span><span class="p">:</span> <span class="mf">1282.5915222167969</span><span class="p">,</span>
+        <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;GB&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;memory&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;free&quot;</span><span class="p">:</span> <span class="mf">22.222003936767578</span><span class="p">,</span>
+        <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mf">31.4151611328125</span><span class="p">,</span>
+        <span class="s2">&quot;used&quot;</span><span class="p">:</span> <span class="mf">8.80206298828125</span><span class="p">,</span>
+        <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;GB&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;cpu&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;percent&quot;</span><span class="p">:</span> <span class="mf">0.8</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;gpu&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;devices&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;active_tasks&quot;</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
     <div class="footer">
       &copy;2020 TEXTA.
       

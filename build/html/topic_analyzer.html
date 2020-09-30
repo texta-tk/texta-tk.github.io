@@ -24,27 +24,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
-
-          <div class="body" role="main">
-            
-  <div class="section" id="topic-analyzer">
-<h1>Topic Analyzer<a class="headerlink" href="#topic-analyzer" title="Permalink to this headline">¶</a></h1>
-</div>
-
-
-          </div>
-          
-        </div>
-      </div>
+  <div class="document">
+    
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">TEXTA Toolkit</a></h1>
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
 
 
 
@@ -54,7 +43,6 @@
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
@@ -64,10 +52,15 @@
 <li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
 <li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Topic Analyzer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Topic Analyzer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#grouping-the-data">Grouping the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#evaluating-clusters">Evaluating clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operations-with-cluster">Operations with cluster</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
@@ -106,8 +99,69 @@
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="topic-analyzer">
+<h1>Topic Analyzer<a class="headerlink" href="#topic-analyzer" title="Permalink to this headline">¶</a></h1>
+<p id="id1">Topic Analyzer is a tool that helps us to find groups of similar documents from the data and transform these groups into labels.</p>
+<div class="section" id="grouping-the-data">
+<h2>Grouping the data<a class="headerlink" href="#grouping-the-data" title="Permalink to this headline">¶</a></h2>
+<p>To create a new grouping (or clustering, as we name it) navigate to Models -&gt; Clustering and click “Create”. Similarly to Tagger Group object, you have to give it a name (<em>Description</em>) and select indices and fields based on which the grouping will be done. Additionally one can restrict the set of documents to be used in clustering by specifying the filter with a <em>Query</em> parameter.</p>
+<p>If desired, one can do some fine-tuning as well by choosing clustering algorithm and vectorizer and specifying the number of clusters (<em>Num clusters</em>) and the number of document vector dimensions (<em>Num dims</em>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>How to choose the number of clusters?</strong></p>
+<p>General advice would be to better have too many clusters than too few. Think about how many documents you are planning to cluster and choose the number so that the average cluster is small enough to inspect it manually with ease. For example, if you are going to cluster 1000 documents to 50 clusters then average cluster would contain 20 documents.</p>
+</div>
+<p>Instead of using document-term matrix for clustering, we can also use compressed approximation of this matrix (with parameter <em>Use LSI</em>) which is constructed before the clustering process begins. However, LSI also requires the number of topics (dimensions in low-rank matrix) to be specified (<em>Num topics</em>).</p>
+<p>In some cases we may already have some knowledge about the data that we are about to cluster. For example, we may be aware of some domain-specific stopwords which we would like to ignore. As name already suggests, these can be listed in the field <em>Stopwords</em>.</p>
+<div class="figure align-default" id="id2">
+<span id="figure-17"></span><img alt="_images/create_clustering.png" src="_images/create_clustering.png" />
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Figure 17. <em>Creating a Clustering</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="evaluating-clusters">
+<h2>Evaluating clusters<a class="headerlink" href="#evaluating-clusters" title="Permalink to this headline">¶</a></h2>
+<p>To see the clusters, click <em>View clusters</em> under Actions. This view gives us an overwiew about obtained clusters. For each cluster the document count and average cosine similarity between its documents is shown. Additionally, a list of significant words for each cluster is given - it is a list of words that, when compared to other documents, appear notably often in documents which belong to that cluster.</p>
+<div class="figure align-default" id="id3">
+<span id="figure-18"></span><a class="reference internal image-reference" href="_images/clusters_view.png"><img alt="_images/clusters_view.png" src="_images/clusters_view.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Figure 18. <em>Clusters view</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Interpreting document count</strong></p>
+<p>Cluster with significantly larger document count often indicates that the clustering algorithm has failed to separate these documents by the topic. It doesn’t necessarily mean that the clustering process in general has been unsuccessful as often it is impossible to cluster all documents perfectly. However, you still might want to take a closer look to such clusters as there may be other reasons for such results as well. For example, the documents in that cluster may contain similar noise or stopwords that makes them artifically similar to each other. Sometimes increasing the number of clusters might help as well.</p>
+<p><strong>Interpreting average similarity</strong></p>
+<p>Average similarity is an average cosine similarity between all the documents in the cluster. It ranges between 0 and 1 and higher score indicates that the documents in that cluster are more similar to each other. However, the score has some disadvantages. For example, when a cluster contains 9 documents that are very similar to each other and 10th document is very different from all others, then the score might appear low althought fixing that cluster would be very easy.</p>
+</div>
+<p>To see content of a cluster, simply click on a cluster that is in your interest, this opens you a Cluster Details view.</p>
+</div>
+<div class="section" id="operations-with-cluster">
+<h2>Operations with cluster<a class="headerlink" href="#operations-with-cluster" title="Permalink to this headline">¶</a></h2>
+<p>Cluster Details view allows us to inspect actual documents belonging to a cluster.</p>
+<p>If we are satisfied with what it contains, we can tag the content by clicking “Tag” button. This operation adds a texta_fact to each of the document in the cluster, with specified name and a string value. <strong>From now on, these documents will be ignored in further clustering processes</strong>.</p>
+<p>If not satisfied, we probably want to do some corrections in the cluster content manually, that is, remove some documents from it. This can be done by selecting the documents that we want to remove and clicking on trash bin icon. Note that these documents will not be ignored in further clustering process.</p>
+<p>We could also be interested in whether there is more documents in the index that are similar to the ones in given cluster. If indeed there is, we might want to add those documents to the cluster as well, so we could tag them all together.</p>
+<p>To query similar documents, click on a “More like this” button. In the opened view, select document which you would like to add to the cluster and click on a “+” button.</p>
+<div class="figure align-default" id="id4">
+<span id="figure-19"></span><a class="reference internal image-reference" href="_images/cluster_details_view.png"><img alt="_images/cluster_details_view.png" src="_images/cluster_details_view.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Figure 19. <em>Cluster details view</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>There is an API for topic analyzer, but the magic of the analyzer dissappears when using API.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
     <div class="footer">
       &copy;2020 TEXTA.
       

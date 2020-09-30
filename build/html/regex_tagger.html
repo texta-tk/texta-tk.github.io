@@ -15,7 +15,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Creation, tase 2" href="regex_tagger_group.html" />
+    <link rel="next" title="Regex Tagger Group" href="regex_tagger_group.html" />
     <link rel="prev" title="Tagger Group" href="tagger_group.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -24,9 +24,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
-  
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
 
-    <div class="document">
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Regex Tagger</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creation-tase-2">Creation, tase 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#useage">Useage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#application">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fine-tuning">Fine-Tuning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="tagger_group.html" title="previous chapter">Tagger Group</a></li>
+      <li>Next: <a href="regex_tagger_group.html" title="next chapter">Regex Tagger Group</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
           
@@ -50,10 +123,10 @@
 </div>
 <div class="section" id="api-tase-3">
 <h3>API, tase 3<a class="headerlink" href="#api-tase-3" title="Permalink to this headline">¶</a></h3>
-<p>Siin viidatakse joonisele <a class="reference internal" href="regex_tagger_group.html#importing-loc"><span class="std std-numref">Fig. 14</span></a>.</p>
+<p>Siin viidatakse joonisele <code class="xref std std-numref docutils literal notranslate"><span class="pre">importing_loc</span></code>.</p>
 <div class="figure align-default" id="id5">
 <span id="importing-loc"></span><img alt="_images/dataset_importer_loc.png" src="_images/dataset_importer_loc.png" />
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text"><em>See on joonis</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text"><em>See on joonis</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -92,81 +165,8 @@
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">TEXTA Toolkit</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
-<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Regex Tagger</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creation-tase-2">Creation, tase 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#useage">Useage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#application">Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fine-tuning">Fine-Tuning</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation, tase 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#useage">Useage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#application">Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#fine-tuning">Fine-Tuning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="tagger_group.html" title="previous chapter">Tagger Group</a></li>
-      <li>Next: <a href="regex_tagger_group.html" title="next chapter">Creation, tase 2</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
+    <div class="clearer"></div>
+  </div>
     <div class="footer">
       &copy;2020 TEXTA.
       

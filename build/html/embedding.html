@@ -24,27 +24,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
-
-          <div class="body" role="main">
-            
-  <div class="section" id="embedding">
-<h1>Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h1>
-</div>
-
-
-          </div>
-          
-        </div>
-      </div>
+  <div class="document">
+    
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">TEXTA Toolkit</a></h1>
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
 
 
 
@@ -64,9 +53,13 @@
 <li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Embedding</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Embedding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
@@ -106,8 +99,55 @@
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="embedding">
+<h1>Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="terminology.html#embedding-concept"><span class="std std-ref">Embeddings</span></a> are basically words converted into numerical data (into vectors) that are more understandable and usable for the machine than plain strings (words). With these vectors created, we can compare words and find similar ones. We need embeddings to create, for example, <span class="xref std std-ref">lexicons</span>. Texta Toolkit uses word2vec embeddings with <a class="reference external" href="https://radimrehurek.com/gensim/models/phrases.html">collocation detection</a>. It means that the vectors are created on words and phrases. Phrases are chosen with collocation detection which finds often together occuring words and marks them as phrases.</p>
+<div class="section" id="gui">
+<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
+<p>We can create a new embedding by clicking on the ‘+ CREATE’ button in the bottom-left. Then we must choose the name for the new embedding (<em>Description</em>). If we leave <em>Query</em> empty, it will take all data in the active project as a input. We can also use saved searches as our desired input. Then we must choose the fields the embedding learns from. Embedding needs textual data, so we have to choose fields with text or lemmatized text in it. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (<em>eaten</em>, <em>eats</em> and <em>ate</em> will change to it’s lemma <em>eat</em>).</p>
+<p>Then we have to choose the number of dimensions. That means the length of the vectors created. 100-200 dimensions is usually a good place to start with. The minimum frequency defines how many times a word or a phrase has to occur in the data in order to get it’s very own word/phrase vector. Rare words/phrases won’t have very informative and usable vectors. Minimum frequency of 5 can be left as default if we are not sure of what to use.</p>
+<p>Keep in mind that the bigger the data, the better results!</p>
+<p>After creating the new embedding we can view the learning process and results in the embeddings’ table. We can see which user created this embedding in this project, the name of the embedding model, field(s) it was trained on, the time it took to train, dimensions, minimum frequency and created vocabulary size. By clicking on the new model’s row we can see similar info again.</p>
+<p>Three dots under <em>Edit</em> gives us access to deleting the embedding model or using <em>Phrase</em>. <em>Phrase</em> is a feature that helps us to check which phrases occur in the embedding model as vectors on their own. It outputs the words and connects phrases with ‘_’. For example, we can create an embedding model with our saved search ‘bribery’ (figure 10). If we leave the query empty, the model will be trained on the whole dataset.</p>
+<div class="figure align-default" id="id1">
+<span id="figure-12"></span><img alt="_images/create_embedding.png" src="_images/create_embedding.png" />
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Figure 12. <em>Create embedding with saved search</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>Endpoint: <strong>/projects/{project_pk}/embeddings/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/embeddings/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;description&quot;: &quot;My embedding&quot;,</span>
+<span class="s1">        &quot;indices&quot;: [{&quot;name&quot;: &quot;texta_test_index&quot;}],</span>
+<span class="s1">        &quot;fields&quot;: [&quot;comment_content_lemmas&quot;],</span>
+<span class="s1">        &quot;num_dimensions&quot;: 100,</span>
+<span class="s1">        &quot;max_documents&quot;: 10000,</span>
+<span class="s1">        &quot;min_freq&quot;: 5</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
     <div class="footer">
       &copy;2020 TEXTA.
       

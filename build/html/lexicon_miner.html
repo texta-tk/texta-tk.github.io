@@ -16,7 +16,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Embedding" href="embedding.html" />
-    <link rel="prev" title="Search" href="search.html" />
+    <link rel="prev" title="Search" href="searcher.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -24,27 +24,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
-
-          <div class="body" role="main">
-            
-  <div class="section" id="lexicon-miner">
-<h1>Lexicon Miner<a class="headerlink" href="#lexicon-miner" title="Permalink to this headline">¶</a></h1>
-</div>
-
-
-          </div>
-          
-        </div>
-      </div>
+  <div class="document">
+    
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">TEXTA Toolkit</a></h1>
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
 
 
 
@@ -64,7 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Lexicon Miner</a></li>
 <li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
@@ -81,7 +70,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="search.html" title="previous chapter">Search</a></li>
+      <li>Previous: <a href="searcher.html" title="previous chapter">Search</a></li>
       <li>Next: <a href="embedding.html" title="next chapter">Embedding</a></li>
   </ul></li>
 </ul>
@@ -106,8 +95,29 @@
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="lexicon-miner">
+<h1>Lexicon Miner<a class="headerlink" href="#lexicon-miner" title="Permalink to this headline">¶</a></h1>
+<p>Texta Toolkit enables the creation of topic-related <span class="xref std std-ref">lexicons</span>. In order to build lexicons, we must have <a class="reference internal" href="terminology.html#embedding-concept"><span class="std std-ref">Embedding</span></a> model <span class="xref std std-ref">previously trained</span> .</p>
+<p>Let’s create a lexicon that contains verbs accompanied with “bribery”.</p>
+<p>After clicking on the newly created lexicon, we have to provide some seed words like ‘accuse’.</p>
+<p>The process of creating (or expanding) the lexicon is iterative. We keep asking for suggestions and from those we have to pick the ones that make sense to us. We keep asking for suggestions until we get no more meaningful responses. Words we didn’t choose appear under the lexicon as negative words. These are considered as the opposite of the meanings we are looking for. We can erase words from the negative words list simply by clicking on it.</p>
+<p>To add a suitable word to the lexicon, we simply have to click on it. If we want to delete something we already chose we can erase the verb from the list.</p>
+<p>When we’re ready, we can save the lexicon.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
     <div class="footer">
       &copy;2020 TEXTA.
       

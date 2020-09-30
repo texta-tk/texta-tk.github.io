@@ -23,9 +23,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
-  
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
 
-    <div class="document">
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Terminology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#anonymizer">Anonymizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#embedding">Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fact">Fact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#field">Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#index">Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multilingual-preprocessor">Multilingual Preprocessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regex-tagger">Regex Tagger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regex-tagger-group">Regex Tagger Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#search">Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tagger-group">Tagger Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tagger">Tagger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task">Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#topic-analyzer">Topic Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#torch-tagger">Torch Tagger</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="bert_tagger.html" title="previous chapter">Bert Tagger</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
           
@@ -34,22 +117,19 @@
             
   <div class="section" id="terminology">
 <h1>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h1>
-<p>Here are described the main concepts related to TEXTA Toolkit (TTK).</p>
-<div class="section" id="project">
-<h2>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
-<p>Project is the main unit of access and management for datasets and resources (embeddings, text classifiers, etc.). A project is defined by its description, list of Elasticsearch indices related to the project (this is where the data is!), and a list of users who can access the project and it’s resources. All resources in TTK belong to some project and by adding or removing users, one can manage their access to the project.</p>
-</div>
-<div class="section" id="task">
-<h2>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
-<p>TEXTA Toolkit allows to build several different statistical models to process the text. The training process is initiated via TTK API or GUI, which results in creating of the object in TTK data model and starting the asynchronous training task. Tasks are data objects for keeping track of training progress of trainable statistical models.</p>
-</div>
-<div class="section" id="search">
-<span id="search-concept"></span><h2>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h2>
-<p>One of the most central component in TTK is Search, which is used to define subsets of data for training text classification models and performing various aggregations. Search is managed via GUI and can contain one or more constraints on feature values (e.g. strings and dates). Documents matching the search criteria can be used in various actions/functionalities in TTK, e.g. extraction of relevant keywords, data summarisation and exploration, and training text classifiers.</p>
-</div>
-<div class="section" id="multilingual-preprocessor">
-<span id="mlp"></span><h2>Multilingual Preprocessor<a class="headerlink" href="#multilingual-preprocessor" title="Permalink to this headline">¶</a></h2>
+<p>Here are described the main concepts related to TEXTA Toolkit (TTK).
+.. _anonymizer_concept:</p>
+<div class="section" id="anonymizer">
+<h2>Anonymizer<a class="headerlink" href="#anonymizer" title="Permalink to this headline">¶</a></h2>
 <p>TODO</p>
+</div>
+<div class="section" id="embedding">
+<span id="embedding-concept"></span><h2>Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h2>
+<p>Embedding is a statistical model describing the distributional properties of words and phrases, which enables the computation of similarity between words and phrases.
+In TTK, embeddings are used for finding contextually similar keywords to extend search results and building lexicons.
+Furthermore, vectors from word embeddings can also be used in neural classification models in Texta Toolkit.
+TTK currently only supports Word2Vec embeddings, but work is being done to incorporate state of the art embedding models (e.g. BERT from Google Research).
+Furthermore, TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support multilingual text classification.</p>
 </div>
 <div class="section" id="fact">
 <span id="texta-fact"></span><h2>Fact<a class="headerlink" href="#fact" title="Permalink to this headline">¶</a></h2>
@@ -131,25 +211,41 @@
 <p>It is important to notice that COMPANY and ADDR identify only companies and addresses registered in Estonian Open Data.
 It won’t tag any foreign company nor address while ORG and LOC identifies all of them.</p>
 </div>
-<div class="section" id="index">
-<span id="index-concept"></span><h2>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h2>
-<p>Index is a collection of documents in Elasticsearch. In Search output the table consists of all the suitable documents filtered out from that index and one row indicates a document.</p>
-</div>
 <div class="section" id="field">
 <span id="field-concept"></span><h2>Field<a class="headerlink" href="#field" title="Permalink to this headline">¶</a></h2>
 <p>Each document is a collection of fields. Field is a separated piece of information in that document. For example, we can have an article with fields containing the text, the date of publishing, headline, etc.</p>
 </div>
-<div class="section" id="anonymizer">
-<span id="anonymizer-concept"></span><h2>Anonymizer<a class="headerlink" href="#anonymizer" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="index">
+<span id="index-concept"></span><h2>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h2>
+<p>Index is a collection of documents in Elasticsearch. In Search output the table consists of all the suitable documents filtered out from that index and one row indicates a document.</p>
+</div>
+<div class="section" id="multilingual-preprocessor">
+<span id="mlp"></span><h2>Multilingual Preprocessor<a class="headerlink" href="#multilingual-preprocessor" title="Permalink to this headline">¶</a></h2>
 <p>TODO</p>
 </div>
-<div class="section" id="embedding">
-<span id="embedding-concept"></span><h2>Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h2>
-<p>Embedding is a statistical model describing the distributional properties of words and phrases, which enables the computation of similarity between words and phrases.
-In TTK, embeddings are used for finding contextually similar keywords to extend search results and building lexicons.
-Furthermore, vectors from word embeddings can also be used in neural classification models in Texta Toolkit.
-TTK currently only supports Word2Vec embeddings, but work is being done to incorporate state of the art embedding models (e.g. BERT from Google Research).
-Furthermore, TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support multilingual text classification.</p>
+<div class="section" id="project">
+<h2>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
+<p>Project is the main unit of access and management for datasets and resources (embeddings, text classifiers, etc.). A project is defined by its description, list of Elasticsearch indices related to the project (this is where the data is!), and a list of users who can access the project and it’s resources. All resources in TTK belong to some project and by adding or removing users, one can manage their access to the project.</p>
+</div>
+<div class="section" id="regex-tagger">
+<span id="regex-tagger-concept"></span><h2>Regex Tagger<a class="headerlink" href="#regex-tagger" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+<div class="section" id="regex-tagger-group">
+<span id="regex-tagger-group-concept"></span><h2>Regex Tagger Group<a class="headerlink" href="#regex-tagger-group" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+<div class="section" id="search">
+<span id="search-concept"></span><h2>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h2>
+<p>One of the most central component in TTK is Search, which is used to define subsets of data for training text classification models and performing various aggregations. Search is managed via GUI and can contain one or more constraints on feature values (e.g. strings and dates). Documents matching the search criteria can be used in various actions/functionalities in TTK, e.g. extraction of relevant keywords, data summarisation and exploration, and training text classifiers.</p>
+</div>
+<div class="section" id="tagger-group">
+<span id="tagger-group-concept"></span><h2>Tagger Group<a class="headerlink" href="#tagger-group" title="Permalink to this headline">¶</a></h2>
+<p>Tagger Group is an extension to TTK’s binary taggers to support monolingual multi-label classification.
+As its name suggests, Tagger Groups incorporate multiple (binary) taggers, which are executed in parallel to produce a list of tags to the user.
+Tagger Group has been successfully tested with over 6000 binary models and prediction times are usually less than 1 second.
+To achieve this, TTK has employed a hybrid approach for multi-label tagging, which uses unsupervised machine learning (document vectors) to limit the number of binary models used for prediction.
+In such scenario input document is compared to training data to determine most probable models to produce valid tags.</p>
 </div>
 <div class="section" id="tagger">
 <span id="tagger-concept"></span><h2>Tagger<a class="headerlink" href="#tagger" title="Permalink to this headline">¶</a></h2>
@@ -161,21 +257,15 @@ TTK automatically splits the training data into training and testing data (by de
 SVM model is also used for feature selection to remove unimportant features from the model making it smaller.
 For features, both word-based and character-based n-grams are used.</p>
 </div>
-<div class="section" id="regex-tagger">
-<span id="regex-tagger-concept"></span><h2>Regex Tagger<a class="headerlink" href="#regex-tagger" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<div class="section" id="task">
+<h2>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
+<p>TEXTA Toolkit allows to build several different statistical models to process the text. The training process is initiated via TTK API or GUI, which results in creating of the object in TTK data model and starting the asynchronous training task. Tasks are data objects for keeping track of training progress of trainable statistical models.</p>
 </div>
-<div class="section" id="tagger-group">
-<span id="tagger-group-concept"></span><h2>Tagger Group<a class="headerlink" href="#tagger-group" title="Permalink to this headline">¶</a></h2>
-<p>Tagger Group is an extension to TTK’s binary taggers to support monolingual multi-label classification.
-As its name suggests, Tagger Groups incorporate multiple (binary) taggers, which are executed in parallel to produce a list of tags to the user.
-Tagger Group has been successfully tested with over 6000 binary models and prediction times are usually less than 1 second.
-To achieve this, TTK has employed a hybrid approach for multi-label tagging, which uses unsupervised machine learning (document vectors) to limit the number of binary models used for prediction.
-In such scenario input document is compared to training data to determine most probable models to produce valid tags.</p>
-</div>
-<div class="section" id="regex-tagger-group">
-<span id="regex-tagger-group-concept"></span><h2>Regex Tagger Group<a class="headerlink" href="#regex-tagger-group" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<div class="section" id="topic-analyzer">
+<span id="topic-analyzer-concept"></span><h2>Topic Analyzer<a class="headerlink" href="#topic-analyzer" title="Permalink to this headline">¶</a></h2>
+<p>Topic Analyzer is a tool that detects groups of similar documents in the data. It can be used for example to explore the structure of the unlabeled data in order to get the understanding about what it contains. However, the main purpose of the tool is to take it one step further and make actual use of one’s exploration by transforming their discoveries into the labelling. It can then be used to build supervised machine learning models.</p>
+<p>Topic Analyzer puts to use the best parts of unsupervised clustering and manual labelling. While clustering is a fast and efficient method to create groups of rather similar texts, it still lacks preciseness required to use these clusters as a labelling of the data. For example, while some clusters may indeed contain similar documents, some other will completely fail in capturing the similarity and most of them will probably be so-and-so.</p>
+<p>Topic Analyzer allows user to look inside each cluster and make the decision about the quality manually. Users can also perform various actions on the cluster: remove documents, add more similar documents, and move documents to another more suitable cluster. Finally, user can choose to label the documents inside the cluster if it has reached a sufficient quality.</p>
 </div>
 <div class="section" id="torch-tagger">
 <span id="torch-tagger-concept"></span><h2>Torch Tagger<a class="headerlink" href="#torch-tagger" title="Permalink to this headline">¶</a></h2>
@@ -187,12 +277,6 @@ TorchTagger models also include the possibility to use pre-trained word vectors 
 To create data processing pipelines, Torch Tagger uses torchtext package.
 Torch Tagger has been validated on monolingual toxic comment detection, reaching accuracy and F1-score of 96%.</p>
 </div>
-<div class="section" id="topic-analyzer">
-<span id="topic-analyzer-concept"></span><h2>Topic Analyzer<a class="headerlink" href="#topic-analyzer" title="Permalink to this headline">¶</a></h2>
-<p>Topic Analyzer is a tool that detects groups of similar documents in the data. It can be used for example to explore the structure of the unlabeled data in order to get the understanding about what it contains. However, the main purpose of the tool is to take it one step further and make actual use of one’s exploration by transforming their discoveries into the labelling. It can then be used to build supervised machine learning models.</p>
-<p>Topic Analyzer puts to use the best parts of unsupervised clustering and manual labelling. While clustering is a fast and efficient method to create groups of rather similar texts, it still lacks preciseness required to use these clusters as a labelling of the data. For example, while some clusters may indeed contain similar documents, some other will completely fail in capturing the similarity and most of them will probably be so-and-so.</p>
-<p>Topic Analyzer allows user to look inside each cluster and make the decision about the quality manually. Users can also perform various actions on the cluster: remove documents, add more similar documents, and move documents to another more suitable cluster. Finally, user can choose to label the documents inside the cluster if it has reached a sufficient quality.</p>
-</div>
 </div>
 
 
@@ -200,88 +284,8 @@ Torch Tagger has been validated on monolingual toxic comment detection, reaching
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">TEXTA Toolkit</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
-<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Terminology</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#project">Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#task">Task</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#search">Search</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#multilingual-preprocessor">Multilingual Preprocessor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fact">Fact</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#index">Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#field">Field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#anonymizer">Anonymizer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#embedding">Embedding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tagger">Tagger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#regex-tagger">Regex Tagger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tagger-group">Tagger Group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#regex-tagger-group">Regex Tagger Group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#torch-tagger">Torch Tagger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#topic-analyzer">Topic Analyzer</a></li>
-</ul>
-</li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="bert_tagger.html" title="previous chapter">Bert Tagger</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
+    <div class="clearer"></div>
+  </div>
     <div class="footer">
       &copy;2020 TEXTA.
       

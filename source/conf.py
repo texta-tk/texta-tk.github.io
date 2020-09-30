@@ -90,6 +90,7 @@ todo_include_todos = True
 # a list of builtin themes.
 #
 html_theme = 'alabaster'
+html_theme_options = {'body_max_width': '90%','page_width': '90%', 'fixed_sidebar': True, 'body_text_align': 'justify', 'logo': 'toolkit_logo.png'} #, 'sidebar_width': '20%'}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the

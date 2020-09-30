@@ -24,27 +24,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
-
-          <div class="body" role="main">
-            
-  <div class="section" id="torch-tagger">
-<h1>Torch Tagger<a class="headerlink" href="#torch-tagger" title="Permalink to this headline">¶</a></h1>
-</div>
-
-
-          </div>
-          
-        </div>
-      </div>
+  <div class="document">
+    
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">TEXTA Toolkit</a></h1>
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
 
 
 
@@ -54,7 +43,6 @@
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
@@ -64,7 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
 <li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
@@ -72,7 +60,13 @@
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Torch Tagger</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Torch Tagger</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#useage">Useage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#application">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fine-tuning">Fine-Tuning</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
 </ul>
@@ -106,8 +100,99 @@
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="torch-tagger">
+<h1>Torch Tagger<a class="headerlink" href="#torch-tagger" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="creation">
+<h2>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="gui">
+<h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="api">
+<h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/projects/{project_pk}/torchtaggers/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/torchtaggers/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;description&quot;: &quot;My Torch Tagger&quot;,</span>
+<span class="s1">        &quot;fields&quot;: [&quot;comment_content_clean.text&quot;],</span>
+<span class="s1">        &quot;model_architecture&quot;: &quot;TextRNN&quot;,</span>
+<span class="s1">        &quot;embedding&quot;: 2,</span>
+<span class="s1">        &quot;num_epochs&quot;: 5,</span>
+<span class="s1">        &quot;fact_name&quot;: &quot;TEEMA&quot;,</span>
+<span class="s1">        &quot;indices&quot;: [{&quot;name&quot;: &quot;texta_test_index&quot;}]</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="useage">
+<h2>Useage<a class="headerlink" href="#useage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>GUI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id2">
+<h3>API<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="application">
+<h2>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>GUI<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id4">
+<h3>API<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="tag-text">
+<h4>Tag text<a class="headerlink" href="#tag-text" title="Permalink to this headline">¶</a></h4>
+<p>Endpoint: <strong>/projects/{project_pk}/torchtaggers/{id}/tag_text/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/torchtaggers/1/tag_text/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;text&quot;: &quot;AINUS ettepanek - alla põhihariduse isikutele sõidulubasid mitte anda - sai kriitika osaliseks.&quot;,</span>
+<span class="s1">        &quot;lemmatize&quot;: false</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;probability&quot;</span><span class="p">:</span> <span class="mf">0.36259710788726807</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fine-tuning">
+<h2>Fine-Tuning<a class="headerlink" href="#fine-tuning" title="Permalink to this headline">¶</a></h2>
+<p>Siia tulevad parameetrid.</p>
+<div class="section" id="id5">
+<h3>GUI<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id6">
+<h3>API<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
     <div class="footer">
       &copy;2020 TEXTA.
       
