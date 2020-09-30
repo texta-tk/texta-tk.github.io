@@ -23,9 +23,9 @@ API, tase 3
 ==============
 
 
-Siin viidatakse joonisele :numref:`importing_loc`.
+Siin viidatakse joonisele :numref:`importing_loc2`.
 
-.. _importing_loc:
+.. _importing_loc2:
 .. figure:: images/dataset_importer_loc.png
 	
 	*See on joonis*
