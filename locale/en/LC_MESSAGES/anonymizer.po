@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-01 22:21+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/anonymizer.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/v2/anonyymizer.html>`_ `ET "
+"<https://docs.texta.ee/v2/et/anonymizer.html>`_"
+msgstr ""
+
+#: ../../source/anonymizer.rst:6
+msgid "Anonymizer"
+msgstr ""
+
+#: ../../source/anonymizer.rst:8
+msgid ""
+":ref:`Anonymizer <anonymizer_concept>` is a tool for anonymizing names in"
+" text based on given list."
+msgstr ""
+
+#: ../../source/anonymizer.rst:12
+msgid "Creation"
+msgstr ""
+
+#: ../../source/anonymizer.rst:15
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/anonymizer.rst:19
+msgid "**description**:"
+msgstr ""
+
+#: ../../source/anonymizer.rst:19
+msgid "Name of the Anonymizer model."
+msgstr ""
+
+#: ../../source/anonymizer.rst:22
+msgid "**misspelling_threshold**:"
+msgstr ""
+
+#: ../../source/anonymizer.rst:22
+msgid ""
+"Minimum required Jaro-Winkler similarity of text matches and true names "
+"for anonymizing the matches. Used only if `replace_misspelled_names` is "
+"activated."
+msgstr ""
+
+#: ../../source/anonymizer.rst:25
+msgid "**replace_misspelled_names**:"
+msgstr ""
+
+#: ../../source/anonymizer.rst:25
+msgid ""
+"Replace incorrectly spelled names. NB! Might sometimes lead to falsely "
+"anonymizing irrelevant entity."
+msgstr ""
+
+#: ../../source/anonymizer.rst:28
+msgid "**replace_single_last_names**:"
+msgstr ""
+
+#: ../../source/anonymizer.rst:28
+msgid "Replace last names if they occur without first name."
+msgstr ""
+
+#: ../../source/anonymizer.rst:31
+msgid "**replace_single_first_names**:"
+msgstr ""
+
+#: ../../source/anonymizer.rst:31
+msgid "Replace first names if they occur without last name."
+msgstr ""
+
+#: ../../source/anonymizer.rst:34
+msgid "**auto_adjust_threshold**:"
+msgstr ""
+
+#: ../../source/anonymizer.rst:34
+msgid ""
+"Automatically adjust misspelling threshold if any two names in the given "
+"list to anonymize are more similar than configured "
+"`misspelling_threshold` to avoid collision errors."
+msgstr ""
+
+#: ../../source/anonymizer.rst:37 ../../source/anonymizer.rst:68
+msgid "GUI"
+msgstr ""
+
+#: ../../source/anonymizer.rst:41 ../../source/anonymizer.rst:72
+msgid "API"
+msgstr ""
+
+#: ../../source/anonymizer.rst:43
+msgid "Endpoint: **/projects/{project_pk}/anonymizers/**"
+msgstr ""
+
+#: ../../source/anonymizer.rst:45 ../../source/anonymizer.rst:79
+#: ../../source/anonymizer.rst:103
+msgid "Example:"
+msgstr ""
+
+#: ../../source/anonymizer.rst:65
+msgid "Usage"
+msgstr ""
+
+#: ../../source/anonymizer.rst:75
+msgid "Anonymize text"
+msgstr ""
+
+#: ../../source/anonymizer.rst:77
+msgid "Endpoint **/projects/{project_pk}/anonymizers/{id}/anonymize_text/**"
+msgstr ""
+
+#: ../../source/anonymizer.rst:92 ../../source/anonymizer.rst:120
+msgid "Response:"
+msgstr ""
+
+#: ../../source/anonymizer.rst:99
+msgid "Anonymize texts"
+msgstr ""
+
+#: ../../source/anonymizer.rst:101
+msgid "Endpoint **/projects/{project_pk}/anonymizers/{id}/anonymize_texts/**"
+msgstr ""
+
+#: ../../source/anonymizer.rst:131
+msgid "Fine-Tuning"
+msgstr ""
+

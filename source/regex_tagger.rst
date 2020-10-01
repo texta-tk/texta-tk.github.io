@@ -30,26 +30,14 @@ Parameters
 **description**:
 	Name of the Regex Tagger, which is also used as name of the tag while tagging the documents
 
-	Required:
-		True
-
 **lexicon**:
 	List of lexicon entries to match (as comma-separated strings in API and newline-separated strings in GUI)
-
-	Required:
-		True
 
 **counter_lexicon**:
 	List of nullifying lexicon entries.
 
-	Required:
-		False
-
 **operator**:
 	Logical operator for matching words in the lexicon.
-
-	Required:
-	 	False
 
 	Supported options:
 		or:
@@ -60,14 +48,8 @@ Parameters
 **required_words**:
 	Required minimum ratio of detected lexicon entries to all the lexicon entries for a positive result.
 
-	Required:
-		False
-
 **match_type**:
 	How the lexicon entries should be matched.
-
-	Required:
-		False
 
 	Supported options:
 		prefix:
@@ -81,20 +63,11 @@ Parameters
 **phrase_slop**:
 	Number of non-lexicon words allowed between lexicon entry words.
 
-	Required:
-		False
-
 **counter_slop**:
 	Number of non-lexicon words allowed between main lexion entries and counter lexicon entries.
 
-	Required:
-		False
-
 **return_fuzzy_match**:
 	If set true, return the whole string sequence matched instead of the original lexicon entry.
-
-	Required:
-		False
 
 **n_allowed_edits**:
 	Number of allowed character changes between lexicon entry and matched string sequence. One edit is considered as one of the following:
@@ -102,14 +75,9 @@ Parameters
 		- adding a character ("cat" -> "catt")
 		- substituting a character ("cat" -> "kat")
 
-	Required:
-		False
-
 **ignore_case**:
 	If set true, ignore case while detecting matches.
 
-	Required:
-		False
 
 **ignore punctuation**:
 	If set true, ignore end-of-sentence characters between lexicon entry words and/or counter lexicon entries and lexicon entries. Otherwise

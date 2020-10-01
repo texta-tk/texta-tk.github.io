@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 20:56+0300\n"
+"POT-Creation-Date: 2020-10-01 22:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,7 +44,9 @@ msgstr "**Terminoloogia**"
 msgid ""
 "To avoid misinterpretation, let's first define the meanings of \"word\" "
 "and \"lexicon entry\" in the scope of Regex Tagger."
-msgstr "Defineermine esmalt terminite \"sõna\" ja \"leksikonikanne\" tähenduse Regex Taggeri skoobis."
+msgstr ""
+"Defineermine esmalt terminite \"sõna\" ja \"leksikonikanne\" tähenduse "
+"Regex Taggeri skoobis."
 
 #: ../../source/regex_tagger.rst:16
 msgid "Termin"
@@ -54,9 +56,9 @@ msgstr ""
 msgid "Definition"
 msgstr "Definitsioon"
 
-#: ../../source/regex_tagger.rst:16 ../../source/regex_tagger.rst:236
-#: ../../source/regex_tagger.rst:278 ../../source/regex_tagger.rst:329
-#: ../../source/regex_tagger.rst:384 ../../source/regex_tagger.rst:429
+#: ../../source/regex_tagger.rst:16 ../../source/regex_tagger.rst:204
+#: ../../source/regex_tagger.rst:246 ../../source/regex_tagger.rst:297
+#: ../../source/regex_tagger.rst:352 ../../source/regex_tagger.rst:397
 msgid "Examples"
 msgstr "Näited"
 
@@ -82,7 +84,9 @@ msgstr "**leksikonikanne*"
 msgid ""
 "One entry in a lexicon. Lexicon entry can either be a single word, "
 "multiple words separated by whitespaces, or a regex pattern."
-msgstr "Üks leksikoni sissekanne. Leksikonikanne võib olla nii sõna, fraas kui ka regulaaravaldis. "
+msgstr ""
+"Üks leksikoni sissekanne. Leksikonikanne võib olla nii sõna, fraas kui ka"
+" regulaaravaldis. "
 
 #: ../../source/regex_tagger.rst:19
 msgid "\"cat\", \"dogs cats hats\", \"\\\\d\\\\s*cat\\\\w*\""
@@ -96,7 +100,7 @@ msgstr "Loomine"
 msgid "Parameters"
 msgstr "Parameetrid"
 
-#: ../../source/regex_tagger.rst:34
+#: ../../source/regex_tagger.rst:31
 msgid "**description**:"
 msgstr ""
 
@@ -106,73 +110,52 @@ msgid ""
 "tagging the documents"
 msgstr "Regex Taggeri nimi, mida kasutatakse ühtlasi ka märgendina."
 
-#: ../../source/regex_tagger.rst:34 ../../source/regex_tagger.rst:40
-#: ../../source/regex_tagger.rst:46 ../../source/regex_tagger.rst:52
-#: ../../source/regex_tagger.rst:64 ../../source/regex_tagger.rst:70
-#: ../../source/regex_tagger.rst:85 ../../source/regex_tagger.rst:91
-#: ../../source/regex_tagger.rst:97 ../../source/regex_tagger.rst:106
-#: ../../source/regex_tagger.rst:112
-msgid "Required:"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:34 ../../source/regex_tagger.rst:40
-msgid "True"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:40
+#: ../../source/regex_tagger.rst:34
 msgid "**lexicon**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:37
+#: ../../source/regex_tagger.rst:34
 msgid ""
 "List of lexicon entries to match (as comma-separated strings in API and "
 "newline-separated strings in GUI)"
 msgstr "Nimekiri leksikonikannetest, mida tekstist otsida."
 
-#: ../../source/regex_tagger.rst:46
+#: ../../source/regex_tagger.rst:37
 msgid "**counter_lexicon**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:43
+#: ../../source/regex_tagger.rst:37
 msgid "List of nullifying lexicon entries."
 msgstr "Nimekiri põhileksikonikannete vasteid annuleerivatest sõnadest."
 
-#: ../../source/regex_tagger.rst:46 ../../source/regex_tagger.rst:52
-#: ../../source/regex_tagger.rst:64 ../../source/regex_tagger.rst:70
-#: ../../source/regex_tagger.rst:85 ../../source/regex_tagger.rst:91
-#: ../../source/regex_tagger.rst:97 ../../source/regex_tagger.rst:106
-#: ../../source/regex_tagger.rst:112
-msgid "False"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:58
+#: ../../source/regex_tagger.rst:46
 msgid "**operator**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:49
+#: ../../source/regex_tagger.rst:40
 #, fuzzy
 msgid "Logical operator for matching words in the lexicon."
 msgstr "Loogiline operatsioon leksikonikannete sidumiseks."
 
-#: ../../source/regex_tagger.rst:58 ../../source/regex_tagger.rst:79
+#: ../../source/regex_tagger.rst:46 ../../source/regex_tagger.rst:61
 msgid "Supported options:"
 msgstr "Toetatud valikud:"
 
-#: ../../source/regex_tagger.rst:55
+#: ../../source/regex_tagger.rst:43
 msgid "or:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:56
+#: ../../source/regex_tagger.rst:44
 msgid "return positive result if at least one lexicon entry is found"
 msgstr ""
 "positiivse tulemuse tagastamiseks peab tekstis leiduma vähemalt üks "
 "leksikonikannetest."
 
-#: ../../source/regex_tagger.rst:58
+#: ../../source/regex_tagger.rst:46
 msgid "and:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:58
+#: ../../source/regex_tagger.rst:46
 msgid ""
 "return positive result only if all lexicon entries are found (PS! pay "
 "attention to *required_words* parameter!)"
@@ -180,11 +163,11 @@ msgstr ""
 "positiivne tulemust tagastatakse üksnes siis, kui tekstis esinevad kõik "
 "leksikonikanded."
 
-#: ../../source/regex_tagger.rst:64
+#: ../../source/regex_tagger.rst:49
 msgid "**required_words**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:61
+#: ../../source/regex_tagger.rst:49
 msgid ""
 "Required minimum ratio of detected lexicon entries to all the lexicon "
 "entries for a positive result."
@@ -192,19 +175,19 @@ msgstr ""
 "Nõutud minimaalne tekstist tuvastatud leksikonikannete ja kõikide "
 "leksikonikannete suhe."
 
-#: ../../source/regex_tagger.rst:79
+#: ../../source/regex_tagger.rst:61
 msgid "**match_type**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:67
+#: ../../source/regex_tagger.rst:52
 msgid "How the lexicon entries should be matched."
 msgstr "Leksikonikannete teksti sõnadele/fragmentidele sobitamise viis."
 
-#: ../../source/regex_tagger.rst:74
+#: ../../source/regex_tagger.rst:56
 msgid "prefix:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:74
+#: ../../source/regex_tagger.rst:56
 msgid ""
 "matches all strings starting with lexicon entities (to the first "
 "whitespace)"
@@ -212,39 +195,39 @@ msgstr ""
 "Positiivsete vastetena tagastatakse kõik sõnad/fragmendid, mille alguses "
 "antud leksikonikanne esindatud on."
 
-#: ../../source/regex_tagger.rst:76
+#: ../../source/regex_tagger.rst:58
 msgid "exact:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:77
+#: ../../source/regex_tagger.rst:59
 msgid "detects only exact matches to the lexicon entities"
 msgstr "Positiivsete vastetena tagastatakse üksnes leksikonikannete täpsed vasted."
 
-#: ../../source/regex_tagger.rst:79
+#: ../../source/regex_tagger.rst:61
 msgid "subword:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:79
+#: ../../source/regex_tagger.rst:61
 msgid "matches all entities containing lexicon entities as subentities"
 msgstr ""
 "Positiivsete väärtustena tagastatakse kõik tekstis leiduvad "
 "sõnad/fragmendid, milles vastav leksikonikanne sisaldub."
 
-#: ../../source/regex_tagger.rst:85
+#: ../../source/regex_tagger.rst:64
 msgid "**phrase_slop**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:82
+#: ../../source/regex_tagger.rst:64
 msgid "Number of non-lexicon words allowed between lexicon entry words."
 msgstr ""
 "Lubatud maksimaalne leksikoniväliste sõnade arv iga leksikonikande sõnade"
 " vahel"
 
-#: ../../source/regex_tagger.rst:91
+#: ../../source/regex_tagger.rst:67
 msgid "**counter_slop**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:88
+#: ../../source/regex_tagger.rst:67
 msgid ""
 "Number of non-lexicon words allowed between main lexion entries and "
 "counter lexicon entries."
@@ -252,21 +235,21 @@ msgstr ""
 "Lubatud maksimaalne sõnade arv põhileksikonikannete ja annuleerivate "
 "leksikonikannete vahel, et annuleerival leksikonikandel mõju oleks."
 
-#: ../../source/regex_tagger.rst:97
+#: ../../source/regex_tagger.rst:70
 msgid "**return_fuzzy_match**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:94
+#: ../../source/regex_tagger.rst:70
 msgid ""
 "If set true, return the whole string sequence matched instead of the "
 "original lexicon entry."
 msgstr "Tagastatakse terve sõna/fragment, kust leksikonikanne tuvastati."
 
-#: ../../source/regex_tagger.rst:106
+#: ../../source/regex_tagger.rst:76
 msgid "**n_allowed_edits**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:103
+#: ../../source/regex_tagger.rst:76
 msgid ""
 "Number of allowed character changes between lexicon entry and matched "
 "string sequence. One edit is considered as one of the following:"
@@ -274,31 +257,31 @@ msgstr ""
 "Lubatud maksimaalne tähemuudatuste arv tekstis leiduva sõna/fragmendi "
 "ning leksikonikande vahel. Tähemuudatuseks loetakse ühte järgnevatest:"
 
-#: ../../source/regex_tagger.rst:101
+#: ../../source/regex_tagger.rst:74
 msgid "missing a character (\"cat\" -> \"ct\")"
 msgstr "tähe puudumine (\"kass\" -> \"kas\")"
 
-#: ../../source/regex_tagger.rst:102
+#: ../../source/regex_tagger.rst:75
 msgid "adding a character (\"cat\" -> \"catt\")"
 msgstr "tähe lisamine (\"kass\" -> \"klass\")"
 
-#: ../../source/regex_tagger.rst:103
+#: ../../source/regex_tagger.rst:76
 msgid "substituting a character (\"cat\" -> \"kat\")"
 msgstr "tähe asendamine (\"kass\" -> \"gass\")"
 
-#: ../../source/regex_tagger.rst:112
+#: ../../source/regex_tagger.rst:80
 msgid "**ignore_case**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:109
+#: ../../source/regex_tagger.rst:79
 msgid "If set true, ignore case while detecting matches."
 msgstr "Tõusutundlikkuse ignoreerimine"
 
-#: ../../source/regex_tagger.rst:115
+#: ../../source/regex_tagger.rst:83
 msgid "**ignore punctuation**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:115
+#: ../../source/regex_tagger.rst:83
 msgid ""
 "If set true, ignore end-of-sentence characters between lexicon entry "
 "words and/or counter lexicon entries and lexicon entries. Otherwise"
@@ -308,11 +291,11 @@ msgstr ""
 "tähemärkide esinemisel põhileeksikonikande ning annuleeriva "
 "leksikonikande vahel, muudab annuleeriva leksikonikande mõju kehtetuks."
 
-#: ../../source/regex_tagger.rst:118 ../../source/regex_tagger.rst:171
+#: ../../source/regex_tagger.rst:86 ../../source/regex_tagger.rst:139
 msgid "GUI"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:120
+#: ../../source/regex_tagger.rst:88
 msgid ""
 "For creating a new Regex Tagger model, navigate to `\"Models\" -> \"Regex"
 " Taggers\"` as seen in :numref:`regex_tagger_navigation`."
@@ -321,11 +304,11 @@ msgstr ""
 "\"Regex Taggers\"` nagu kujutatud joonisel in "
 ":numref:`regex_tagger_navigation`."
 
-#: ../../source/regex_tagger.rst:126
+#: ../../source/regex_tagger.rst:94
 msgid "*Regex Taggers navigation*"
 msgstr "*Navigatsioon Regex Taggerini*"
 
-#: ../../source/regex_tagger.rst:128
+#: ../../source/regex_tagger.rst:96
 msgid ""
 "If the navigation is successful, you should see a panel similar to "
 ":numref:`regex_tagger_create_button` with `\"Create\"` button in the top "
@@ -335,11 +318,11 @@ msgstr ""
 ":numref:`regex_tagger_create_button` sarnast paneeli, mille ülemises "
 "vasakus nurgas asub nupp nimega `\"Create\"`"
 
-#: ../../source/regex_tagger.rst:134
+#: ../../source/regex_tagger.rst:102
 msgid "*Regex Tagger creation button*"
 msgstr "*Regex Taggeri loomisnupp*"
 
-#: ../../source/regex_tagger.rst:136
+#: ../../source/regex_tagger.rst:104
 msgid ""
 "Clicking on the `\"Create\"` button opens a modal window with text `\"New"
 " Regex Tagger\"` as depicted in :numref:`regex_tagger_new_regex_tagger`."
@@ -347,11 +330,11 @@ msgstr ""
 "`\"Create\"` nupu vajutamise järel avaneb hüpikaken tekstiga  `\"New "
 "Regex Tagger\"` (vt. :numref:`regex_tagger_new_regex_tagger`)."
 
-#: ../../source/regex_tagger.rst:142
+#: ../../source/regex_tagger.rst:110
 msgid "*Empty Regex Tagger creation view*"
 msgstr "*Regex Taggeri loomisaken enne väljade täitmist*"
 
-#: ../../source/regex_tagger.rst:144
+#: ../../source/regex_tagger.rst:112
 msgid ""
 "Fill the required fields as instructed in TODO and click on the "
 "`\"Create\"` button in the bottom right corner of the window "
@@ -361,11 +344,11 @@ msgstr ""
 "siis \"`\"Create\"` nupule all paremas nurgas (vt. "
 ":numref:`regex_tagger_create_view`)."
 
-#: ../../source/regex_tagger.rst:150
+#: ../../source/regex_tagger.rst:118
 msgid "*Filled Regex Tagger creation view*"
 msgstr "*Regex Taggeri loomisaken pärast väljade täitmist*"
 
-#: ../../source/regex_tagger.rst:152
+#: ../../source/regex_tagger.rst:120
 msgid ""
 "The created Regex Tagger can now be seen as the first (or only, if no "
 "previous Regex Taggers exist under the project) row in the table of Regex"
@@ -374,25 +357,25 @@ msgstr ""
 "Loodud Regex Tagger kuvatakse nüüd Regex Taggerite tabeli esimesel (või "
 "ainsal) real."
 
-#: ../../source/regex_tagger.rst:158
+#: ../../source/regex_tagger.rst:126
 msgid "*List of Regex Taggers.*"
 msgstr "*Saadaolevate Regex Taggerite nimekiri*"
 
-#: ../../source/regex_tagger.rst:161 ../../source/regex_tagger.rst:189
+#: ../../source/regex_tagger.rst:129 ../../source/regex_tagger.rst:157
 msgid "API"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:163 ../../source/regex_tagger.rst:214
-#: ../../source/regex_tagger.rst:528 ../../source/regex_tagger.rst:534
-#: ../../source/regex_tagger.rst:539 ../../source/regex_tagger.rst:544
+#: ../../source/regex_tagger.rst:131 ../../source/regex_tagger.rst:182
+#: ../../source/regex_tagger.rst:496 ../../source/regex_tagger.rst:502
+#: ../../source/regex_tagger.rst:507 ../../source/regex_tagger.rst:512
 msgid "# TODO"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:166
+#: ../../source/regex_tagger.rst:134
 msgid "Usage"
 msgstr "Kasutamine"
 
-#: ../../source/regex_tagger.rst:168
+#: ../../source/regex_tagger.rst:136
 msgid ""
 "The following section covers all functions supported by Regex Tagger. PS!"
 " Some of the functions can only be applied through API as they have no "
@@ -401,31 +384,31 @@ msgstr ""
 "Järgnevas sektsioonid kaetakse kõik Regex Taggeri funktsioonid. PS! "
 "Teatud funktsioone on võimalik rakendada üksnes läbi API."
 
-#: ../../source/regex_tagger.rst:174 ../../source/regex_tagger.rst:193
+#: ../../source/regex_tagger.rst:142 ../../source/regex_tagger.rst:161
 msgid "Tag Text"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:178 ../../source/regex_tagger.rst:201
+#: ../../source/regex_tagger.rst:146 ../../source/regex_tagger.rst:169
 msgid "Tag Random Doc"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:181 ../../source/regex_tagger.rst:205
+#: ../../source/regex_tagger.rst:149 ../../source/regex_tagger.rst:173
 msgid "Delete"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:185 ../../source/regex_tagger.rst:209
+#: ../../source/regex_tagger.rst:153 ../../source/regex_tagger.rst:177
 msgid "Edit"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:197
+#: ../../source/regex_tagger.rst:165
 msgid "Tag Docs"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:218
+#: ../../source/regex_tagger.rst:186
 msgid "Fine-Tuning"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:220
+#: ../../source/regex_tagger.rst:188
 msgid ""
 "Let's inspect how different parameter configurations can affect the "
 "result for gaining a better understanding of their functions."
@@ -433,57 +416,57 @@ msgstr ""
 "Järgnevas peatükis antakse ülevaade parameetrite seadistuse mõjust "
 "märgendamise tulemustele."
 
-#: ../../source/regex_tagger.rst:227
+#: ../../source/regex_tagger.rst:195
 msgid "Counter Lexicon"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:243 ../../source/regex_tagger.rst:254
+#: ../../source/regex_tagger.rst:211 ../../source/regex_tagger.rst:222
 msgid "**Result**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:264
+#: ../../source/regex_tagger.rst:232
 msgid "Phrase Slop"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:284 ../../source/regex_tagger.rst:296
-#: ../../source/regex_tagger.rst:307 ../../source/regex_tagger.rst:336
-#: ../../source/regex_tagger.rst:350 ../../source/regex_tagger.rst:362
-#: ../../source/regex_tagger.rst:391 ../../source/regex_tagger.rst:405
-#: ../../source/regex_tagger.rst:435 ../../source/regex_tagger.rst:449
-#: ../../source/regex_tagger.rst:480 ../../source/regex_tagger.rst:497
-#: ../../source/regex_tagger.rst:514
+#: ../../source/regex_tagger.rst:252 ../../source/regex_tagger.rst:264
+#: ../../source/regex_tagger.rst:275 ../../source/regex_tagger.rst:304
+#: ../../source/regex_tagger.rst:318 ../../source/regex_tagger.rst:330
+#: ../../source/regex_tagger.rst:359 ../../source/regex_tagger.rst:373
+#: ../../source/regex_tagger.rst:403 ../../source/regex_tagger.rst:417
+#: ../../source/regex_tagger.rst:448 ../../source/regex_tagger.rst:465
+#: ../../source/regex_tagger.rst:482
 msgid "**Results:**"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:316
+#: ../../source/regex_tagger.rst:284
 msgid "Match Type"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:371
+#: ../../source/regex_tagger.rst:339
 msgid "Operator"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:415
+#: ../../source/regex_tagger.rst:383
 msgid "Required Words"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:459
+#: ../../source/regex_tagger.rst:427
 msgid "N Allowed Edits"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:526
+#: ../../source/regex_tagger.rst:494
 msgid "Return Fuzzy Match"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:532
+#: ../../source/regex_tagger.rst:500
 msgid "Ignore Case"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:537
+#: ../../source/regex_tagger.rst:505
 msgid "Ignore Punctuation"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:542
+#: ../../source/regex_tagger.rst:510
 msgid "Counter Slop"
 msgstr ""
 
@@ -510,3 +493,13 @@ msgstr ""
 
 #~ msgid "lexicon entry"
 #~ msgstr ""
+
+#~ msgid "Required:"
+#~ msgstr ""
+
+#~ msgid "True"
+#~ msgstr ""
+
+#~ msgid "False"
+#~ msgstr ""
+
