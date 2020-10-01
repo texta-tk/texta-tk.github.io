@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/tagger.rst:3
+msgid "Tagger"
+msgstr ""
+
+#: ../../source/tagger.rst:5
+msgid ""
+":ref:`Tagger <tagger_concept>` operates on saved searches and uses "
+"machine learning."
+msgstr ""
+
+#: ../../source/tagger.rst:8
+msgid "GUI"
+msgstr ""
+
+#: ../../source/tagger.rst:10
+msgid ""
+"We can create a new Tagger model by clicking on the '+CREATE' button in "
+"the bottom-left. Then we must choose the name for the new Tagger "
+"(*Description*) and the fields the model learns from. If we choose two, "
+"the fields are just concatenated together before the learning process. "
+"One field is also enough. Usually lemmatized texts are preferred, "
+"especially with morphologically complex languages, because it increases "
+"the frequency of some words (*eaten*, *eats* and *ate* will change to "
+"it's lemma *eat* and are dealt as one word)."
+msgstr ""
+
+#: ../../source/tagger.rst:12
+msgid ""
+"If we leave *Query* empty, it will take all data in the active project as"
+" a input. We can also use saved searches as our desired input. This input"
+" will be our positive examples - later on we want to tag data similar to "
+"this one."
+msgstr ""
+
+#: ../../source/tagger.rst:14
+msgid ""
+"By setting these three, we can now train a classifier. However, we can "
+"also fine-tune the classifier by changing additional parameters such as "
+"Vectorizer (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read"
+" more about them `here <https://scikit-"
+"learn.org/stable/modules/feature_extraction.html>`_) and Classifier "
+"(`Logistic Regression <https://scikit-"
+"learn.org/stable/modules/linear_model.html#logistic-regression>`_, "
+"`LinearSVC <https://scikit-"
+"learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). We "
+"might get an error with LinearSVC in case we don't have enough data in "
+"the search. We can set negative multiplier to change ratio of negative "
+"examples. We can use maximum sample size per class in case we want to "
+"limit the size of data the model trains on."
+msgstr ""
+
+#: ../../source/tagger.rst:18
+msgid ""
+"Then we can hit create and see the training process and result of the "
+"tagger."
+msgstr ""
+
+#: ../../source/tagger.rst:24
+msgid "Figure 13. *Creating Bribe_tag tagger*"
+msgstr ""
+
+#: ../../source/tagger.rst:30
+msgid ""
+"Whenever we create a new Tagger model, we can track it's progress from "
+"the table under *Task*. If we click on the job, we can see all the "
+"training info, how long did it took, and check how successful it was. "
+"Let's not forget that:"
+msgstr ""
+
+#: ../../source/tagger.rst:28
+msgid ""
+"Recall is the ratio of correctly labeled positives among all true "
+"positives."
+msgstr ""
+
+#: ../../source/tagger.rst:29
+msgid ""
+"Precision is the ratio of correctly labeled positives among all instances"
+" that got a positive label."
+msgstr ""
+
+#: ../../source/tagger.rst:30
+msgid ""
+"F1 score is the harmonic mean of these two and should be more informative"
+" expecially with unbalanced data."
+msgstr ""
+
+#: ../../source/tagger.rst:32
+msgid ""
+"If we click on the three dots under *Edit*, we can see a list of extra "
+"actions to use."
+msgstr ""
+
+#: ../../source/tagger.rst:34
+msgid ""
+"*List features* lists the word-features and their coefficients that the "
+"model used. Works with models that used Count Vectorizer or Tfldf "
+"Vectorizer since their output is displayable."
+msgstr ""
+
+#: ../../source/tagger.rst:36
+msgid ""
+"*Retrain tagger* retrains the whole tagger model with all the chosen "
+"parameters. It's useful in case our dataset changes or we have added some"
+" stop words."
+msgstr ""
+
+#: ../../source/tagger.rst:38
+msgid ""
+"*Stop words* is for adding stop words. Stop words are words that the "
+"model do not consider while looking for clues of similarities. It is wise"
+" to add most frequent words in the list like *am*, *on*, *in*, *are*. "
+"Separate the words with space (' ')."
+msgstr ""
+
+#: ../../source/tagger.rst:40
+msgid ""
+"*Tag text* is to check how does the model work. If we click on that a "
+"window opens. We can paste there some text, choose to lemmatize it "
+"(necessary if our model was trained on a lemmatized text) and post it. We"
+" then recieve the result (True if this text gets the tag and False "
+"otherwise) and the probability. Probability shows how confident is our "
+"model in it's prediction."
+msgstr ""
+
+#: ../../source/tagger.rst:42
+msgid ""
+"*Tag doc* is similar to *Tag text*, except the input is in the json "
+"format."
+msgstr ""
+
+#: ../../source/tagger.rst:44
+msgid ""
+"*Tag random doc* takes a random instance from our dataset, displays it "
+"and returns the result and the probability of this result being correct."
+msgstr ""
+
+#: ../../source/tagger.rst:46
+msgid "*Delete* is for deleting the model."
+msgstr ""
+
+#: ../../source/tagger.rst:48
+msgid ""
+"In the table view we can also select several models and delete them all "
+"at once by clicking on the dustbin button next to the *+CREATE* button in"
+" the bottom-left. If we have several models, we can search for the right "
+"one by their description or task status. If we have models on several "
+"pages we can change pages in the bottom-right."
+msgstr ""
+
+#: ../../source/tagger.rst:56
+msgid "Figure 14. *Bribe_tag tagger*"
+msgstr ""
+
+#: ../../source/tagger.rst:60
+msgid "API"
+msgstr ""
+
+#: ../../source/tagger.rst:63
+msgid "Train a new tagger"
+msgstr ""
+
+#: ../../source/tagger.rst:65
+msgid "Endpoint: **/projects/{project_pk}/taggers/**"
+msgstr ""
+
+#: ../../source/tagger.rst:67 ../../source/tagger.rst:88
+msgid "Example:"
+msgstr ""
+
+#: ../../source/tagger.rst:84
+msgid "Tag text"
+msgstr ""
+
+#: ../../source/tagger.rst:86
+msgid "Endpoint **/projects/{project_pk}/taggers/{id}/tag_text/**"
+msgstr ""
+
+#: ../../source/tagger.rst:101
+msgid "Response:"
+msgstr ""
+

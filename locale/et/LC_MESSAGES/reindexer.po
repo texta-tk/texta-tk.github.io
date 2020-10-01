@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/reindexer.rst:3
+msgid "Reindexer"
+msgstr ""
+
+#: ../../source/reindexer.rst:5
+msgid ""
+"Reindexer is a useful tool for reindexing Elasticsearch :ref:`indices "
+"<index_concept>`. We can think of index as our dataset. With reindexer we"
+" can remove unwanted fields, change the type of the fields (if we have a "
+"field with text value type but actually contains dates, we can change the"
+" type to date and use it for our aggregation)."
+msgstr ""
+
+#: ../../source/reindexer.rst:8
+msgid "GUI"
+msgstr ""
+
+#: ../../source/reindexer.rst:10
+msgid ""
+"We can create a new index by clicking on the **+CREATE** button in the "
+"bottom-left."
+msgstr ""
+
+#: ../../source/reindexer.rst:12
+msgid "*Description* is the description of new reindexing job."
+msgstr ""
+
+#: ../../source/reindexer.rst:14
+msgid "*New index name* is the name for our new index."
+msgstr ""
+
+#: ../../source/reindexer.rst:16
+msgid "*Indices* are all the indices that we want in our new index."
+msgstr ""
+
+#: ../../source/reindexer.rst:18
+msgid "*Field types* are for changing the type and/or the name of our field(s)."
+msgstr ""
+
+#: ../../source/reindexer.rst:20
+msgid ""
+"We can use *Query* for adding only certain search results to our new "
+"index."
+msgstr ""
+
+#: ../../source/reindexer.rst:22
+msgid ""
+"*Random subset type* helps us to create an index which contains only "
+"certain amount of samples (rows). We can use this in case we want to play"
+" with a smaller subset before we apply our tools on a bigger one."
+msgstr ""
+
+#: ../../source/reindexer.rst:27
+msgid "*Creating a new index*"
+msgstr ""
+
+#: ../../source/reindexer.rst:31
+msgid "API"
+msgstr ""
+
+#: ../../source/reindexer.rst:32
+msgid "TODO"
+msgstr ""
+

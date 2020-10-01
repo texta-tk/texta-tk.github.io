@@ -1,0 +1,430 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/terminology.rst:3
+msgid "Terminology"
+msgstr ""
+
+#: ../../source/terminology.rst:5
+msgid ""
+"Here are described the main concepts related to TEXTA Toolkit (TTK). .. "
+"_anonymizer_concept:"
+msgstr ""
+
+#: ../../source/terminology.rst:9
+msgid "Anonymizer"
+msgstr ""
+
+#: ../../source/terminology.rst:11 ../../source/terminology.rst:102
+msgid "TODO"
+msgstr ""
+
+#: ../../source/terminology.rst:16
+msgid "Embedding"
+msgstr ""
+
+#: ../../source/terminology.rst:18
+msgid ""
+"Embedding is a statistical model describing the distributional properties"
+" of words and phrases, which enables the computation of similarity "
+"between words and phrases. In TTK, embeddings are used for finding "
+"contextually similar keywords to extend search results and building "
+"lexicons. Furthermore, vectors from word embeddings can also be used in "
+"neural classification models in Texta Toolkit. TTK currently only "
+"supports Word2Vec embeddings, but work is being done to incorporate state"
+" of the art embedding models (e.g. BERT from Google Research). "
+"Furthermore, TTK will also employ cross-lingual embeddings developed by "
+"EMBEDDIA to support multilingual text classification."
+msgstr ""
+
+#: ../../source/terminology.rst:27
+msgid "Fact"
+msgstr ""
+
+#: ../../source/terminology.rst:29
+msgid "In TTK text annotations are regarded as facts:"
+msgstr ""
+
+#: ../../source/terminology.rst:40
+msgid "Facts are objects with following properties:"
+msgstr ""
+
+#: ../../source/terminology.rst:42
+msgid "fact - name for the annotation (e.g. PER, LOC, or any arbitrary string)"
+msgstr ""
+
+#: ../../source/terminology.rst:44
+msgid ""
+"str_val - string value for the annotation (e.g. \"Donald Trump\" for "
+"PER). Values don't need to match annotated text segmements."
+msgstr ""
+
+#: ../../source/terminology.rst:46
+msgid ""
+"doc_path - path to the field containing the annotated string (e.g. "
+"\"text\", \"text.author\", \"comment.text.author\", etc.)"
+msgstr ""
+
+#: ../../source/terminology.rst:48
+msgid ""
+"spans - JSON string containing the start and end positions in the "
+"annotated string"
+msgstr ""
+
+#: ../../source/terminology.rst:50
+msgid ""
+"Toolkit comes with several predefined fact names that are used by our "
+"Multilingual Processor:"
+msgstr ""
+
+#: ../../source/terminology.rst:55
+msgid "Label"
+msgstr ""
+
+#: ../../source/terminology.rst:55
+msgid "Meaning"
+msgstr ""
+
+#: ../../source/terminology.rst:55
+msgid "Comment"
+msgstr ""
+
+#: ../../source/terminology.rst:57
+msgid "PER"
+msgstr ""
+
+#: ../../source/terminology.rst:57
+msgid "Persona"
+msgstr ""
+
+#: ../../source/terminology.rst:57
+msgid "Name of a person."
+msgstr ""
+
+#: ../../source/terminology.rst:59
+msgid "ORG"
+msgstr ""
+
+#: ../../source/terminology.rst:59
+msgid "Organisation"
+msgstr ""
+
+#: ../../source/terminology.rst:59
+msgid "Name of an organisation, gotten statistically."
+msgstr ""
+
+#: ../../source/terminology.rst:61
+msgid "LOC"
+msgstr ""
+
+#: ../../source/terminology.rst:61
+msgid "Location"
+msgstr ""
+
+#: ../../source/terminology.rst:61
+msgid "Name of a location, gotten statistically."
+msgstr ""
+
+#: ../../source/terminology.rst:63
+msgid "COMPANY"
+msgstr ""
+
+#: ../../source/terminology.rst:63
+msgid "Company"
+msgstr ""
+
+#: ../../source/terminology.rst:63
+msgid ""
+"Names of company registered in Estonia, gotten from `Estonian Open Data "
+"<https://opendata.riik.ee/datasets/ariregister/>`_."
+msgstr ""
+
+#: ../../source/terminology.rst:65
+msgid "ADDR"
+msgstr ""
+
+#: ../../source/terminology.rst:65
+msgid "Address"
+msgstr ""
+
+#: ../../source/terminology.rst:65
+msgid ""
+"Estonian address, gotten from `Estonian Open Data "
+"<https://opendata.riik.ee/datasets/aadressiandmed/>`_."
+msgstr ""
+
+#: ../../source/terminology.rst:67
+msgid "DRUG"
+msgstr ""
+
+#: ../../source/terminology.rst:67
+msgid "Drug"
+msgstr ""
+
+#: ../../source/terminology.rst:67
+msgid "Name of a medicine."
+msgstr ""
+
+#: ../../source/terminology.rst:69
+msgid "SUBSTANCE"
+msgstr ""
+
+#: ../../source/terminology.rst:69
+msgid "Substance"
+msgstr ""
+
+#: ../../source/terminology.rst:69
+msgid "Ingredient of a drug."
+msgstr ""
+
+#: ../../source/terminology.rst:71
+msgid "EML"
+msgstr ""
+
+#: ../../source/terminology.rst:71
+msgid "E-mail"
+msgstr ""
+
+#: ../../source/terminology.rst:71
+msgid "E-mail address."
+msgstr ""
+
+#: ../../source/terminology.rst:73
+msgid "PHO"
+msgstr ""
+
+#: ../../source/terminology.rst:73
+msgid "Phone"
+msgstr ""
+
+#: ../../source/terminology.rst:73
+msgid "Phone number."
+msgstr ""
+
+#: ../../source/terminology.rst:75
+msgid "TEXTA_TAG"
+msgstr ""
+
+#: ../../source/terminology.rst:75
+msgid "Own tag"
+msgstr ""
+
+#: ../../source/terminology.rst:75
+msgid "Tags we have trained in :ref:`the Taggers under Models <texttaggers>`"
+msgstr ""
+
+#: ../../source/terminology.rst:78
+msgid "Table 1. *Predefined Fact Names used by Multilingual Processor*"
+msgstr ""
+
+#: ../../source/terminology.rst:80
+msgid ""
+"It is important to notice that COMPANY and ADDR identify only companies "
+"and addresses registered in Estonian Open Data. It won't tag any foreign "
+"company nor address while ORG and LOC identifies all of them."
+msgstr ""
+
+#: ../../source/terminology.rst:86
+msgid "Field"
+msgstr ""
+
+#: ../../source/terminology.rst:88
+msgid ""
+"Each document is a collection of fields. Field is a separated piece of "
+"information in that document. For example, we can have an article with "
+"fields containing the text, the date of publishing, headline, etc."
+msgstr ""
+
+#: ../../source/terminology.rst:93
+msgid "Index"
+msgstr ""
+
+#: ../../source/terminology.rst:95
+msgid ""
+"Index is a collection of documents in Elasticsearch. In Search output the"
+" table consists of all the suitable documents filtered out from that "
+"index and one row indicates a document."
+msgstr ""
+
+#: ../../source/terminology.rst:101
+msgid "Multilingual Preprocessor"
+msgstr ""
+
+#: ../../source/terminology.rst:106
+msgid "Project"
+msgstr ""
+
+#: ../../source/terminology.rst:108
+msgid ""
+"Project is the main unit of access and management for datasets and "
+"resources (embeddings, text classifiers, etc.). A project is defined by "
+"its description, list of Elasticsearch indices related to the project "
+"(this is where the data is!), and a list of users who can access the "
+"project and it’s resources. All resources in TTK belong to some project "
+"and by adding or removing users, one can manage their access to the "
+"project."
+msgstr ""
+
+#: ../../source/terminology.rst:113
+msgid "Regex Tagger"
+msgstr ""
+
+#: ../../source/terminology.rst:115
+msgid ""
+"Regex Tagger is a tool for tagging texts based on pattern matches. The "
+"user can define patterns (words/phrases/regexes) to search from the text "
+"and fine tune a variation of parameters to extract specific information "
+"and tag the text based on the information retrieved."
+msgstr ""
+
+#: ../../source/terminology.rst:120
+msgid "Regex Tagger Group"
+msgstr ""
+
+#: ../../source/terminology.rst:122
+msgid "Regex Tagger Group allows combining different Regex Taggers."
+msgstr ""
+
+#: ../../source/terminology.rst:127
+msgid "Search"
+msgstr ""
+
+#: ../../source/terminology.rst:129
+msgid ""
+"One of the most central component in TTK is Search, which is used to "
+"define subsets of data for training text classification models and "
+"performing various aggregations. Search is managed via GUI and can "
+"contain one or more constraints on feature values (e.g. strings and "
+"dates). Documents matching the search criteria can be used in various "
+"actions/functionalities in TTK, e.g. extraction of relevant keywords, "
+"data summarisation and exploration, and training text classifiers."
+msgstr ""
+
+#: ../../source/terminology.rst:134
+msgid "Tagger Group"
+msgstr ""
+
+#: ../../source/terminology.rst:136
+msgid ""
+"Tagger Group is an extension to TTK’s binary taggers to support "
+"monolingual multi-label classification. As its name suggests, Tagger "
+"Groups incorporate multiple (binary) taggers, which are executed in "
+"parallel to produce a list of tags to the user. Tagger Group has been "
+"successfully tested with over 6000 binary models and prediction times are"
+" usually less than 1 second. To achieve this, TTK has employed a hybrid "
+"approach for multi-label tagging, which uses unsupervised machine "
+"learning (document vectors) to limit the number of binary models used for"
+" prediction. In such scenario input document is compared to training data"
+" to determine most probable models to produce valid tags."
+msgstr ""
+
+#: ../../source/terminology.rst:145
+msgid "Tagger"
+msgstr ""
+
+#: ../../source/terminology.rst:147
+msgid ""
+"Taggers are monolingual binary text classifiers used to predict tags for "
+"documents, e.g. whether a tweet is toxic or talking about Brexit. Taggers"
+" are trained using a subset of documents defined by a TTK search or a raw"
+" Elasticsearch query (big ugly JSON object). The subset of documents "
+"defines the “positive” set of examples (the documents about the topic "
+"being tagged), whilst “negative” examples will be selected automatically "
+"(to be unlike the positive ones). TTK taggers are trained using scikit-"
+"learn pipelines and includes models like logistic regression and SVM. TTK"
+" automatically splits the training data into training and testing data "
+"(by default 80-20) and applies grid search combined with k-fold cross "
+"validation to identify best hyperparameters. SVM model is also used for "
+"feature selection to remove unimportant features from the model making it"
+" smaller. For features, both word-based and character-based n-grams are "
+"used."
+msgstr ""
+
+#: ../../source/terminology.rst:156
+msgid "Task"
+msgstr ""
+
+#: ../../source/terminology.rst:158
+msgid ""
+"TEXTA Toolkit allows to build several different statistical models to "
+"process the text. The training process is initiated via TTK API or GUI, "
+"which results in creating of the object in TTK data model and starting "
+"the asynchronous training task. Tasks are data objects for keeping track "
+"of training progress of trainable statistical models."
+msgstr ""
+
+#: ../../source/terminology.rst:163
+msgid "Topic Analyzer"
+msgstr ""
+
+#: ../../source/terminology.rst:165
+msgid ""
+"Topic Analyzer is a tool that detects groups of similar documents in the "
+"data. It can be used for example to explore the structure of the "
+"unlabeled data in order to get the understanding about what it contains. "
+"However, the main purpose of the tool is to take it one step further and "
+"make actual use of one's exploration by transforming their discoveries "
+"into the labelling. It can then be used to build supervised machine "
+"learning models."
+msgstr ""
+
+#: ../../source/terminology.rst:167
+msgid ""
+"Topic Analyzer puts to use the best parts of unsupervised clustering and "
+"manual labelling. While clustering is a fast and efficient method to "
+"create groups of rather similar texts, it still lacks preciseness "
+"required to use these clusters as a labelling of the data. For example, "
+"while some clusters may indeed contain similar documents, some other will"
+" completely fail in capturing the similarity and most of them will "
+"probably be so-and-so."
+msgstr ""
+
+#: ../../source/terminology.rst:169
+msgid ""
+"Topic Analyzer allows user to look inside each cluster and make the "
+"decision about the quality manually. Users can also perform various "
+"actions on the cluster: remove documents, add more similar documents, and"
+" move documents to another more suitable cluster. Finally, user can "
+"choose to label the documents inside the cluster if it has reached a "
+"sufficient quality."
+msgstr ""
+
+#: ../../source/terminology.rst:174
+msgid "Torch Tagger"
+msgstr ""
+
+#: ../../source/terminology.rst:176
+msgid ""
+"While Taggers and Tagger Groups use classical machine learning to produce"
+" binary classification models, Texta Toolkit also incorporates deep "
+"neural models for binary and multi-class text classification. As the "
+"models are all programmed using PyTorch, the TTK’s component is called "
+"Torch Tagger. It allows for the user to use several state-of-art text "
+"classification models, including fastText, TextRNN using bi-direction "
+"LSTM networks, RCNN using recurrent convolutional neural nets. Since all "
+"models have been developed using PyTorch, introducing new models is "
+"fairly straightforward. TorchTagger models also include the possibility "
+"to use pre-trained word vectors (e.g. Word2Vec trained in TTK) in the "
+"embedding layer of the models. To create data processing pipelines, Torch"
+" Tagger uses torchtext package. Torch Tagger has been validated on "
+"monolingual toxic comment detection, reaching accuracy and F1-score of "
+"96%."
+msgstr ""
+

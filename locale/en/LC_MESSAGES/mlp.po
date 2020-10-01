@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/mlp.rst:3
+msgid "MLP"
+msgstr ""
+
+#: ../../source/mlp.rst:5
+msgid ""
+"Preprocessing the data is a standard procedure in machine learning which "
+"in TTK can be done via MLP (:ref:`MultiLingual Preprocessor <mlp>`) "
+"module."
+msgstr ""
+
+#: ../../source/mlp.rst:8
+msgid "GUI"
+msgstr ""
+
+#: ../../source/mlp.rst:9
+msgid ""
+"Navigate to **Tools -> MLP**. Click **Create** button to define a new MLP"
+" worker. Select indices and fields on which you want to apply MLP. Since "
+"preprocessing the data is quite time-consuming process, it is strongly "
+"recommended to select only fields on which applying MLP is actually "
+"useful. That is, the fields which you are going to use later to create "
+"lexicons or train models on. Lastly, select analyzers which you would "
+"like to apply."
+msgstr ""
+
+#: ../../source/mlp.rst:14
+msgid "*Creating a MLP worker*"
+msgstr ""
+
+#: ../../source/mlp.rst:16
+msgid ""
+"The worker adds new fields containing the results to the dataset. You can"
+" see the list of fields using Search."
+msgstr ""
+
+#: ../../source/mlp.rst:21
+msgid "*Newly added fields containing results of MLP*"
+msgstr ""
+
+#: ../../source/mlp.rst:26
+msgid "API"
+msgstr ""
+
+#: ../../source/mlp.rst:28
+msgid "Endpoint: **/mlp/texts/**"
+msgstr ""
+
+#: ../../source/mlp.rst:30
+msgid "Example:"
+msgstr ""
+
+#: ../../source/mlp.rst:42
+msgid "Response:"
+msgstr ""
+

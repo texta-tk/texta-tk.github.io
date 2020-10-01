@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/importer.rst:3
+msgid "Dataset Importer"
+msgstr ""
+
+#: ../../source/importer.rst:5
+msgid ""
+"Dataset Importer allows the user to insert **jsonlines**, **csv** and "
+"**excel** files into Elasticsearch to make them accessible by the "
+"Toolkit. Please note that this process reads the whole file into the "
+"memory and can thus create memory issues when trying to process bigger "
+"files. It is advisable to split such files up into smaller chunks and "
+"process each one separately."
+msgstr ""
+
+#: ../../source/importer.rst:10
+msgid ""
+"This whole process is asynchronous so the response to the call will be "
+"instantaneous and it since it takes a bit time to load the file into the "
+"memory, the first 10 seconds might not display any signs of the progress "
+"changing."
+msgstr ""
+
+#: ../../source/importer.rst:14
+msgid "GUI"
+msgstr ""
+
+#: ../../source/importer.rst:16
+msgid ""
+"You can upload a new dataset from a file to Toolkit via Dataset Importer "
+"under Tools (see :numref:`importing_loc`). Click on the **CREATE** button"
+" which opens a table in :numref:`importing`. There you can describe your "
+"dataset (*Task description*), give it a name (*Dataset name*) and choose "
+"the file to be uploaded (you can browse it via the folder button). When "
+"uploading an .csv file, you can add the separator (usually a comma). Then"
+" hit **Create**. You will see the uploading process and metadata of the "
+"dataset under the Dataset Importer in the TTK. You can delete the "
+"uploaded dataset by clicking on the three dots under actions."
+msgstr ""
+
+#: ../../source/importer.rst:19
+msgid ""
+"Now you can add this data to your project and use it with the name you "
+"gave to it."
+msgstr ""
+
+#: ../../source/importer.rst:24 ../../source/importer.rst:29
+msgid "*Importing a new dataset*"
+msgstr ""
+
+#: ../../source/importer.rst:32
+msgid "API"
+msgstr ""
+
+#: ../../source/importer.rst:35
+msgid "Parameters:"
+msgstr ""
+
+#: ../../source/importer.rst:37
+msgid ""
+"description - Normal description to separate any given task from the "
+"other ones."
+msgstr ""
+
+#: ../../source/importer.rst:38
+msgid ""
+"index - Name of the newly created index, please note that Elasticsearch "
+"index naming restrictions apply."
+msgstr ""
+
+#: ../../source/importer.rst:39
+msgid ""
+"separator - Only needed for .csv files, defaults to a coma (,). Allows to"
+" configure the separator for csv files."
+msgstr ""
+
+#: ../../source/importer.rst:43
+msgid "Example:"
+msgstr ""
+
+#: ../../source/importer.rst:45
+msgid "@ is special syntax for reading the binary of the given file name."
+msgstr ""
+
+#: ../../source/importer.rst:55
+msgid "TODO: how to delete uploaded file?"
+msgstr ""
+

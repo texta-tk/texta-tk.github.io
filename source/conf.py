@@ -17,6 +17,9 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
+from pygments.lexer import RegexLexer
+from pygments import token
+from sphinx.highlighting import lexers
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -70,7 +73,7 @@ release = u'2'
 # Usually you set "language" from the command line for these cases.
 language = None
 locale_dirs = [ '../locale/']
-gettext_compact = False     
+gettext_compact = False
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -84,13 +87,22 @@ pygments_style = 'sphinx'
 todo_include_todos = True
 
 
+
 # -- Options for HTML output ----------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
+##
 html_theme = 'alabaster'
-html_theme_options = {'body_max_width': '90%','page_width': '90%', 'fixed_sidebar': True, 'body_text_align': 'justify', 'logo': 'toolkit_logo.png'} #, 'sidebar_width': '20%'}
+#html_theme = "classic"
+html_theme_options = {
+    'body_max_width': '75%',
+    'page_width': '75%',
+    'fixed_sidebar': True,
+    'body_text_align': 'justify',
+    'logo': 'toolkit_logo.png'
+    # 'sidebar_width': '20%'
+}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -161,3 +173,36 @@ texinfo_documents = [
      author, 'TEXTA', 'One line description of project.',
      'Miscellaneous'),
 ]
+
+
+class BCLLexer(RegexLexer):
+    name = 'regex-tagger'
+
+    tokens = {
+        'root': [
+            (r'(?<=s)cat(?=\w*\W?)', token.Keyword),
+            (r'cat(?=\w*\W?)', token.Keyword),
+            (r'with\w*', token.Keyword),
+            (r'dog(?=\w*\W?)', token.Keyword),
+            (r'horse(?=\w*\W?)', token.Keyword),
+            (r'squirrel(?=\w*\W?)', token.Keyword),
+            (r'donkey(?=\w*\W?)', token.Keyword),
+            (r'rhinoceros(?=\w*\W?)', token.Keyword),
+            (r'rinoceros(?=\w*\W?)', token.Keyword),
+            (r'rhino(?=\w*\W?)', token.Keyword),
+            (r'(?<=rhinos)eros(?=\w*\W?)', token.Keyword),
+            (r'(?<=rihnoc)eros(?=\w*\W?)', token.Keyword),
+            (r'(?<=rinnos)eros(?=\w*\W?)', token.Keyword),
+            (r'r(?=inoceros)', token.Keyword),
+            (r'(?<=ri)noceros', token.Keyword),
+            (r'(?<=rhin)noceros', token.Keyword),
+            (r'(?<=rin)no(?=seros)', token.Keyword),
+            (r'rhi(?=nnoceros)', token.Keyword),
+            (r'ri(?=nnoseros)', token.Keyword),
+            (r'[a-zA-Z\W\d]', token.Name),
+            (r'\s', token.Text)
+        ]
+
+    }
+
+lexers['regex-tagger'] = BCLLexer(startinline=True)

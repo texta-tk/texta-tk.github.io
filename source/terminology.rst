@@ -112,15 +112,14 @@ Project is the main unit of access and management for datasets and resources (em
 Regex Tagger
 *************
 
-TODO
-
+Regex Tagger is a tool for tagging texts based on pattern matches. The user can define patterns (words/phrases/regexes) to search from the text and fine tune a variation of parameters to extract specific information and tag the text based on the information retrieved.
 
 .. _regex_tagger_group_concept:
 
 Regex Tagger Group
 ************************
 
-TODO
+Regex Tagger Group allows combining different Regex Taggers.
 
 .. _search_concept:
 

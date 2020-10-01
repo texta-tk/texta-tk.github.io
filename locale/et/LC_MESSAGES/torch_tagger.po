@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/torch_tagger.rst:3
+msgid "Torch Tagger"
+msgstr ""
+
+#: ../../source/torch_tagger.rst:6
+msgid "Creation"
+msgstr ""
+
+#: ../../source/torch_tagger.rst:9 ../../source/torch_tagger.rst:38
+#: ../../source/torch_tagger.rst:47 ../../source/torch_tagger.rst:84
+msgid "GUI"
+msgstr ""
+
+#: ../../source/torch_tagger.rst:12 ../../source/torch_tagger.rst:41
+#: ../../source/torch_tagger.rst:50 ../../source/torch_tagger.rst:87
+msgid "API"
+msgstr ""
+
+#: ../../source/torch_tagger.rst:13
+msgid "Endpoint: **/projects/{project_pk}/torchtaggers/**"
+msgstr ""
+
+#: ../../source/torch_tagger.rst:15 ../../source/torch_tagger.rst:57
+msgid "Example:"
+msgstr ""
+
+#: ../../source/torch_tagger.rst:35
+msgid "Useage"
+msgstr ""
+
+#: ../../source/torch_tagger.rst:44
+msgid "Application"
+msgstr ""
+
+#: ../../source/torch_tagger.rst:53
+msgid "Tag text"
+msgstr ""
+
+#: ../../source/torch_tagger.rst:55
+msgid "Endpoint: **/projects/{project_pk}/torchtaggers/{id}/tag_text/**"
+msgstr ""
+
+#: ../../source/torch_tagger.rst:70
+msgid "Response:"
+msgstr ""
+
+#: ../../source/torch_tagger.rst:79
+msgid "Fine-Tuning"
+msgstr ""
+
+#: ../../source/torch_tagger.rst:81
+msgid "Siia tulevad parameetrid."
+msgstr ""
+
