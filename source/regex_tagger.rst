@@ -16,8 +16,10 @@ To avoid misinterpretation, let's first define the meanings of "word" and "lexic
 Termin                          Definition                                                                                                                                 Examples
 =======================  =========================================================================================================================================  ===========================================
 **word**                  String consisting of non-whitespace characters. NB! regex whitespace wildcards are in this case included as non-whitepace characters!      "cats", "house", "\\d\\s*cat\\w*"
-**lexicon entry**         One entry in a lexicon. Lexicon entry can either be a single word, multiple words separated by whitespaces, or a regex pattern.            "cat", "dogs cats hats", "\\d\\s*cat\\w*"
+**lexicon entry**         One entry in a lexicon. Lexicon entry can either be a single word, multiple words separated by whitespaces, or a regex pattern\*.          "cat", "dogs cats hats", "\\d\\s*cat\\w*"
 =======================  =========================================================================================================================================  ===========================================
+
+\* supports Python Regex syntax.
 
 
 Creation
