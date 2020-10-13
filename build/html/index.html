@@ -45,6 +45,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
@@ -100,10 +101,9 @@
             
   <p><a class="reference external" href="https://docs.texta.ee/concepts.html">EN</a>
 <a class="reference external" href="https://docs.texta.ee/et/concepts.html">ET</a></p>
-<img alt="Texta" src="_images/toolkit_logo.png" />
 <p>TEXTA Toolkit is an open-source software for building RESTful text analytics applications.
 It is being developed by <a class="reference external" href="https://www.texta.ee">TEXTA Ltd</a>.
-This documentation contains information about installing and running <strong>TEXTA Toolkit 2.x</strong>.</p>
+This documentation contains information about installing and running <a href="#id1"><span class="problematic" id="id2">**</span></a>TEXTA Toolkit 2.10.</p>
 <p>The source code for Toolkit’s Django REST API is available at <a class="reference external" href="https://git.texta.ee/texta/texta-rest">git.texta.ee/texta/texta-rest</a>.</p>
 <p>The source code for Toolkit’s Angular GUI is available at <a class="reference external" href="https://git.texta.ee/texta/texta-rest-front">git.texta.ee/texta/texta-rest-front</a>.</p>
 <div class="toctree-wrapper compound">
@@ -121,6 +121,12 @@ This documentation contains information about installing and running <strong>TEX
 <li class="toctree-l2"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="anonymizer.html#creation">Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anonymizer.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anonymizer.html#fine-tuning">Fine-Tuning</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a><ul>
@@ -156,7 +162,7 @@ This documentation contains information about installing and running <strong>TEX
 <li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="searcher.html#current-search">Current Search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searcher.html#saved-searches">Saved Searches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="searcher.html#aggregations-summarizing-the-data">Aggregations: Summarizing the Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searcher.html#aggregations">Aggregations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
@@ -184,16 +190,14 @@ This documentation contains information about installing and running <strong>TEX
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#creation-tase-2">Creation, tase 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#useage">Useage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#application">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#creation">Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#fine-tuning">Fine-Tuning</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#creation-tase-2">Creation, tase 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#creation">Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#useage">Useage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#application">Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#fine-tuning">Fine-Tuning</a></li>
 </ul>
 </li>
@@ -213,6 +217,7 @@ This documentation contains information about installing and running <strong>TEX
 </li>
 <li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="terminology.html#anonymizer">Anonymizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#id1">Elasticsearch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="terminology.html#embedding">Embedding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="terminology.html#fact">Fact</a></li>
 <li class="toctree-l2"><a class="reference internal" href="terminology.html#field">Field</a></li>

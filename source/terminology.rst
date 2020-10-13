@@ -10,6 +10,13 @@ Anonymizer
 
 TODO
 
+.. _elasticsearch:
+Elasticsearch
+**************
+
+TODO
+
+
 .. _embedding_concept:
 
 Embedding

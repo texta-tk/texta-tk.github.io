@@ -28,31 +28,146 @@ Data browsing and summarization depend on searches. Search consists of a set of 
 Without saving the constraints, we are in a “test mode”, which means that we can use the search in real time, but we cannot use the search in other tools.
 After saving the search, it is available also to other tools.
 
-In order to add a constraint, we must first choose one or several fields. After the field is selected, we can then specify which textual tokens (words or word parts) should or must occur in the interested document subset.
 
-We must notice that the search will be done on the Project's dataset chosen in the upper panel.
+.. note::
+	The search will be done on the Project's dataset(s) chosen in the upper panel.
+	
+.. _current_search:
+.. figure:: images/current_search.png
 
-Suppose we are interested in finding all the documents which contains “bribery” and “official” from a text.
-:numref:`search_constraints` shows how we have defined that we want to find all the documents which contain “bribery” and “official” in the article_text_mlp.text field:
+	*Current search*
+	
+	From left to right in the red box:
+    
+        a. view query constructed with Current Search in a more suitable format for :ref:`Elasticsearch <elasticsearch>`,
+        b. save the constructed search,
+        c. collapse Current Search panel.
 
-.. _search_constraints:
-.. figure:: images/search_constraints.png
+Current Searh divides into Simple Search and Advanced Search (look below).
 
-	*Example Search Constraints*
+.. note::
+	Current match doesn't differentiate lower and upper case (except regex constraint). This means that searching for "President" also matches "president". If the case is important in the search, use regex constraint (see below).
 
-Searches have several parameters to consider:
+Simple Search
+=============
 
-* We can also choose ‘or’ or ‘not’ under the Operator. In this case we either get documents containing at least one of the words (‘or’) or definitely not containing the words listed (‘not’).
+Simple search searches for a word on all fields in the chosen dataset. Words separated with space (' ') are considered as a space-separated list - each word must occur in at least one field in the document.
 
-* We can choose from several match types. Type “word” means that we want to find exact matches of the word(s) written and “phrase” means that we want to find exact matches of the phrases we are looking for, whereas “Phrase prefix” matches prefixes. This means suffixes may differ: for example searching for ‘bribe’ will find ‘bribetaking’, ‘bribers’, ‘bribery’ and other words starting with ‘bribe’. 'regex' takes the input as `a regular expression <https://www.rexegg.com/regex-quickstart.html>`_ and searches document accordingly. For example 'bribe.{0,2}' will find 'bribe' and 'bribery', but not longer words. If we have a big list of words we want to search for, we can extend the field searcher's panel.
+.. _simple_search:
+.. figure:: images/simple_search.png
 
-* We can also use Slop. Via Slop we can define up to how many words can be between the two words we wrote on one row in case the range is important for us.
+	*Simple search*. 'word1', 'word2', 'word3' are searched from all the fields in the document. Only those which have all of them matched at least once, are returned.
 
-Should we be interested in more detailed searches, we can add more constraints like the previous ones via **Add Filter** button.
-For example, we can also search documents in a certain date range in case we have a proper preprocessed date field.
+Advanced Search
+===============
 
-If we click on “Search” button, we will see the matching data in a tabular form (see :numref:`search_results`), where layered features share feature name’s prefix, and matches are highlighted in pink.
-The results might be updating while modifying the filters.
+Advanced search searches for a constraint in a certain field in the chosen dataset. Constraints can be added on different fields in one search. Constrainst can be removed via the 'X'-sign in upper right. The constraints can be divided into three: string constraint, date constraint and texta_tag constraint (look below). When the constraints are chosen the Search output can be seen via "Search"-button.
+
+String constraint
+-------------------
+One line equals one search item. This constraint has several operators. Look below for their functions. 
+
+.. list-table:: Operators
+   :widths: 10 25
+   :header-rows: 1
+
+   * - Operator
+     - Meaning
+   * - and
+     - all of the items (lines) are matched in the document 
+   * - or
+     - at least one of the items (lines) is matched in the document
+   * - not
+     - definetly none of the items are matched in the document
+   * - phrase prefix
+     - matches the beginning of the words (endings can differ, e.g. searching for 'bribe' gives us 'bribe', 'bribery', 'bribetaking', etc)
+   * - word
+     - finds exact word written (similar to simple search)
+   * - phrase 
+     - finds exact match for a phrase (more than one word in one line)
+   * - regex
+     - takes the input as `a regular expression <https://www.rexegg.com/regex-quickstart.html>`_ and searches document accordingly. Nb! This is :ref:`Elasticsearch <elasticsearch>` syntax.
+   * - slop
+     - defines how many words can be between the phrase words defined
+     
+.. _string_search:
+.. figure:: images/string_search.png
+
+	*String constraint*. This string constraint is on field named "text". It looks for documents that have either phrase "president Obama" or "president Trump" in it (or both). Since the Slop is 2, it also matches the phrase if it has 0-2 words between the words (e.g "president Barack Obama"). The "X" in the red square is for deleting this constraint.
+	
+The string constraint has an option to add :ref:`a saved lexicon's <lexiconminer>` terms into the search (via button "Add lexicon"). 
+
+Date constraint
+-------------------
+Date constraint works only on a proper datefield. This outputs only those documents which datefield are within the chosen time range (starting day included and ending day excluded). The time range can be chosen by clicking on the little calendar in the right.
+
+.. _date_constraint:
+.. figure:: images/date_constraint.png
+
+	*Date constraint*
+
+Texta_tag constraint
+------------------------
+Texta_tag constraint helps to find certain :ref:`tag <texta_fact>` or :ref:`tags <texta_fact>` with certain values. You can find several different values at once with the little '+'-sign which adds one more value-line. Look in the table above for the operators' meanings. 
+
+.. _tag_constraint1:
+.. figure:: images/tag_constraint1.png
+
+	*Texta_tag tag constraints*. Search for documents that have at least one ORG tag in it and definetly no PER tags. 
+	
+.. _tag_constraint3:
+.. figure:: images/tag_constraint3.png
+
+	*Texta_tag tag value constraint with or*. Texta_tag tag constraint enables choosing multible tags at once. For example this constraint outputs all documents that has at least one of the tags (COMPANY, EML, ADDR) in it.
+	
+.. _tag_constraint2:
+.. figure:: images/tag_constraint2.png
+
+	*Texta_tag tag value constraint*. Search for documents that have an ORG tag with either value "NATO" or value "European Union" in it (or both).
+
+Search Options
+==============
+
+Look at the table below for the meanings of search options. 
+
+.. list-table:: Search options
+   :widths: 25 25
+   :header-rows: 1
+
+   * - Option
+     - Meaning
+   * - Highlight facts
+     - highlights all the facts in the text
+   * - Only highlight matching facts
+     - highlights only the facts that were looked for
+   * - Highlight searcher matches
+     - highlights string constraints' matches
+   * - Show short version
+     - shows certain amount of words before and after the match
+
+.. _search_options:
+.. figure:: images/search_options.png
+
+	*Search Options*. Only texta_tag constraints will be highlighted in the results with these selected Search Options. 
+	
+Examples
+========
+
+.. _search_example1:
+.. figure:: images/search_example1.png
+
+	*Regex String Constraint*. Search for documents that have either "payoff" or "bribe[a-z]{0,2}" in it. Last of which means word 'bribe' with 0-2 extra letters (e.g "bribe", "bribed", "bribery").
+	
+.. _search_combination:
+.. figure:: images/search_combination.png
+
+	*Combination of constraints*. Search for documents published in 2014, contain LOC tags with values "Russia" and "Ukraine" and the word "invasion".
+
+
+Browsing Search results
+========================
+
+If we click on “Search” button, we will see the matching documents in a tabular form (see :numref:`search_results`). The results might be updating while modifying the constraints.
 
 .. _search_results:
 .. figure:: images/search_results.png
@@ -60,14 +175,12 @@ The results might be updating while modifying the filters.
 
 	*Example Search Results*
 
-If there are too many features (columns), we can hide or show them from the drop-down menu in the down left corner. We can select or deselect all of them together (*Select all*) or by clicking on them separately. We can also hide or get back the Searcher's panels with *Toggle drawer* button. We can browse through Searcher's results with the arrows in the bottom right. We can also choose how many items per page would we want to see.
+If there are too many features (columns), we can hide or show them from the drop-down menu in the up left corner. We can select or deselect all of them together (*Select all*) or by clicking on them separately. We can also hide or get back the Searcher's panels with *Toggle drawer* button. We can browse through Searcher's results with the arrows in the upper right. We can also choose how many items per page would we want to see in the upper right.
 
 .. _search_rt:
 .. figure:: images/search_results_toggle.png
 
 	*Select Fields for Search Results*
-
-After we have come up with a suitable search, we can save it for later use by clicking on the **disk** icon up-right in the Current Search panel. The **eye** icon next to the disk icon shows us the actual Elasticsearch query we built by choosing the Operators and words to search for.
 
 .. note::
 	API for scrolling can be found `here <https://rest-dev.texta.ee/api/v1/projects/1/scroll/>`_.
@@ -77,19 +190,19 @@ After we have come up with a suitable search, we can save it for later use by cl
 Saved Searches
 ***************
 
-After saving a search, it becomes available for using in Toolkit's applications.
-Now, whenever we check it, we can use it to browse data or apply in aggregations.
-We can also send our saved search to other users who have the permission to our project with a copied url.
+After having comed up with a suitable search, it can be saved for later use by clicking on the **disk** icon up-right in the Current Search panel. The **eye** icon next to the disk icon shows us the actual :ref:`Elasticsearch <elasticsearch>` query built by choosing the Operators and words to search for.
+
+After saving a search, it becomes available for using in Toolkit's applications. For example, they can be used in browsing the search later again or applying in aggregations. The saved search can be sent to other users who have the permission to the project with a copied url.
 This opens the saved search under the Current Search for the other user.
-We can also open our saved search in the Current Search simply by clicking on it.
+Saved searches can be opened in the Current Search simply by clicking on it.
 
 .. note::
 	API support for saving searches can be found `here <https://rest-dev.texta.ee/api/v1/projects/1/searches/>`_.
 
 .. _aggregations:
 
-Aggregations: Summarizing the Data
-************************************
+Aggregations
+*************
 
 As fun as browsing through the data is, it is not always enough. Sometimes we want to get an overview of our data, such as topics over time or word distributions. Searcher allows to do all of that and more through the “Aggregations” panel.
 

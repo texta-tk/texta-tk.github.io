@@ -2,33 +2,21 @@
 Regex Tagger Group
 ##################
 
-:ref:`Regex Tagger Group <regex_tagger_group_concept>` is a Tagger for Regexer, read more under the terminology. "Üleliigsed seletused välja, kuna need tulevad terminoloogia alla".
-
-Iga tagger all on: Creation, Useage, Application, Fine-tuning
+:ref:`Regex Tagger Group <regex_tagger_group_concept>` allows combining multiple :ref:`Regex Tagger <regex_tagger_concept>` models. For example, we can combine Regex Tagger models "cat", "dog", "squirrel" under a single Regex Tagger Group with unified name "animals".
 
 
-Creation, tase 2
+Creation
 ******************
 
-GUI, tase 3
-==============
-
-Esimese alapealkirja alapealkiri, tase 4
------------------------------------------
-
-No kui veel on vaja alapealkirjatada, siis see on tase 5
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-API, tase 3
+GUI
 ==============
 
 
-Siin viidatakse joonisele :numref:`importing_loc2`.
 
-.. _importing_loc2:
-.. figure:: images/dataset_importer_loc.png
-	
-	*See on joonis*
+API
+==============
+
+
 
 Useage
 ********
@@ -36,25 +24,35 @@ Useage
 GUI
 ====
 
+Tag Text
+----------------
+
+Tag Random Doc
+----------------
+
+
+Edit
+----------------
+
+
+Delete
+----------------
+
+Bulk Delete
+----------------
+
+Apply Tagger Group
+--------------------
+
+
+Multitag Text
+--------------------
+
+
+
 API
-===
+==============
 
-Application
-************
-
-GUI
-====
-
-API
-===
 
 Fine-Tuning
 ***********
-
-Siia tulevad parameetrid.
-
-GUI
-====
-
-API
-===
