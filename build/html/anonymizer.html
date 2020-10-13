@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anonymizer &#8212; TEXTA Toolkit 2 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Dataset Importer" href="importer.html" />
+    <link rel="prev" title="Third-Party Authentication" href="uaa.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Anonymizer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fine-tuning">Fine-Tuning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="uaa.html" title="previous chapter">Third-Party Authentication</a></li>
+      <li>Next: <a href="importer.html" title="next chapter">Dataset Importer</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <p><a class="reference external" href="https://docs.texta.ee/v2/anonyymizer.html">EN</a>
+<a class="reference external" href="https://docs.texta.ee/v2/et/anonymizer.html">ET</a></p>
+<div class="section" id="anonymizer">
+<h1>Anonymizer<a class="headerlink" href="#anonymizer" title="Permalink to this headline">¶</a></h1>
+<p><span class="xref std std-ref">Anonymizer</span> is a tool for anonymizing names in text based on given list.</p>
+<div class="section" id="creation">
+<h2>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt><strong>description</strong>:</dt><dd><p>Name of the Anonymizer model.</p>
+</dd>
+<dt><strong>misspelling_threshold</strong>:</dt><dd><p>Minimum required Jaro-Winkler similarity of text matches and true names for anonymizing the matches. Used only if <cite>replace_misspelled_names</cite> is activated.</p>
+</dd>
+<dt><strong>replace_misspelled_names</strong>:</dt><dd><p>Replace incorrectly spelled names. NB! Might sometimes lead to falsely anonymizing irrelevant entity.</p>
+</dd>
+<dt><strong>replace_single_last_names</strong>:</dt><dd><p>Replace last names if they occur without first name.</p>
+</dd>
+<dt><strong>replace_single_first_names</strong>:</dt><dd><p>Replace first names if they occur without last name.</p>
+</dd>
+<dt><strong>auto_adjust_threshold</strong>:</dt><dd><p>Automatically adjust misspelling threshold if any two names in the given list to anonymize are more similar than configured <cite>misspelling_threshold</cite> to avoid collision errors.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="gui">
+<h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
+<p>For creating a new Anonymizer, navigate to <cite>“Tools” -&gt; “Anonymizer”</cite> as seen in <a class="reference internal" href="#anonymizer-nav"><span class="std std-numref">Fig. 2</span></a>.</p>
+<div class="figure align-default" id="id4">
+<span id="anonymizer-nav"></span><a class="reference internal image-reference" href="_images/anonymizer_nav.png"><img alt="_images/anonymizer_nav.png" src="_images/anonymizer_nav.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text"><em>Anonymizer navigation</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>If the navigation is successful, you should see a panel similar to <a class="reference internal" href="#anonymizer-create-button"><span class="std std-numref">Fig. 3</span></a> with <cite>“Create”</cite> button in the top left corner of the page.</p>
+<div class="figure align-default" id="id5">
+<span id="anonymizer-create-button"></span><a class="reference internal image-reference" href="_images/anonymizer_create_button.png"><img alt="_images/anonymizer_create_button.png" src="_images/anonymizer_create_button.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text"><em>Anonymizer creation button</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>Clicking on the <cite>“Create”</cite> button opens a modal window with text <cite>“New Anonymizer”</cite> as depicted in <a class="reference internal" href="#anonymizer-new-anonymizer"><span class="std std-numref">Fig. 4</span></a>.</p>
+<div class="figure align-default" id="id6">
+<span id="anonymizer-new-anonymizer"></span><a class="reference internal image-reference" href="_images/new_anonymizer_mw.png"><img alt="_images/new_anonymizer_mw.png" src="_images/new_anonymizer_mw.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text"><em>Empty Anonymizer creation view</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Fill the required fields as instructed in TODO and click on the <cite>“Create”</cite> button in the bottom right corner of the window (<a class="reference internal" href="#anonymizer-create-view"><span class="std std-numref">Fig. 5</span></a>).</p>
+<div class="figure align-default" id="id7">
+<span id="anonymizer-create-view"></span><a class="reference internal image-reference" href="_images/default_anonymizer.png"><img alt="_images/default_anonymizer.png" src="_images/default_anonymizer.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text"><em>Filled Anonymizer creation view</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>The created Anonymizer can now be seen as the first (or only, if no previous Anonymizers exist under the project) row in the table of Anonymizers (<a class="reference internal" href="#anonymizer-list"><span class="std std-numref">Fig. 6</span></a>).</p>
+<div class="figure align-default" id="id8">
+<span id="anonymizer-list"></span><a class="reference internal image-reference" href="_images/anonymizer_list.png"><img alt="_images/anonymizer_list.png" src="_images/anonymizer_list.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text"><em>List of Anonymizers.</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="api">
+<h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/projects/{project_pk}/anonymizers/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/anonymizers/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;description&quot;: &quot;My anonymizer&quot;,</span>
+<span class="s1">        &quot;replace_misspelled_names&quot;: true,</span>
+<span class="s1">        &quot;replace_single_last_names&quot;: true,</span>
+<span class="s1">        &quot;replace_single_first_names&quot;: true,</span>
+<span class="s1">        &quot;misspelling_threshold&quot;: 0.9,</span>
+<span class="s1">        &quot;mimic_casing&quot;: true,</span>
+<span class="s1">        &quot;auto_adjust_threshold&quot;: true</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>GUI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="anonymize-text">
+<h4>Anonymize Text<a class="headerlink" href="#anonymize-text" title="Permalink to this headline">¶</a></h4>
+<p>For using an existing Anonymizer to anonymize text, navigate to <cite>“Tools” -&gt; “Anonymizer”</cite> as seen in <a class="reference internal" href="#anonymizer-nav"><span class="std std-numref">Fig. 2</span></a>. After successful navigation, you should see a list of existing Anonymizers. Select the Anonymizer you wish to use for anonymization and navigate to options panel as seen in <a class="reference internal" href="#anonymizer-actions-0"><span class="std std-numref">Fig. 7</span></a>.</p>
+<div class="figure align-default" id="id9">
+<span id="anonymizer-actions-0"></span><a class="reference internal image-reference" href="_images/anonymizer_actions_0.png"><img alt="_images/anonymizer_actions_0.png" src="_images/anonymizer_actions_0.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text"><em>Anonymizer options panel location.</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>After clicking on the three vertical dots denoting <cite>“Options”</cite>, a small selection menu opens as seen in <a class="reference internal" href="#anonymizer-actions-1"><span class="std std-numref">Fig. 8</span></a>. Select option <cite>“Anonymize text”</cite>.</p>
+<div class="figure align-default" id="id10">
+<span id="anonymizer-actions-1"></span><img alt="_images/anonymizer_actions_1.png" src="_images/anonymizer_actions_1.png" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text"><em>Anonymizer -&gt; Anonymize Text</em></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>Clicking on the option opens a modal window with title <cite>“Anonymize text”</cite> with two input fields: <cite>“text”</cite> and <cite>“names”</cite> (<a class="reference internal" href="#anonymize-text-empty"><span class="std std-numref">Fig. 9</span></a>).</p>
+<div class="figure align-default" id="id11">
+<span id="anonymize-text-empty"></span><a class="reference internal image-reference" href="_images/anonymize_text_empty.png"><img alt="_images/anonymize_text_empty.png" src="_images/anonymize_text_empty.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text"><em>Empty “Anonymize text” window.</em></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>Write or copy a text containing names to anonymize in the field <cite>“text”</cite> and write or copy a list of newline-separated anonymizable names in format <cite>“last_name, first_name”</cite> in the field below (<a class="reference internal" href="#anonymize-text-pre"><span class="std std-numref">Fig. 10</span></a>).</p>
+<div class="figure align-default" id="id12">
+<span id="anonymize-text-pre"></span><a class="reference internal image-reference" href="_images/anonymize_text_pre.png"><img alt="_images/anonymize_text_pre.png" src="_images/anonymize_text_pre.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text"><em>Filled “Anonymize text” window.</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p>Click on <cite>“Submit”</cite> button in the bottom right corner. The resulting text with anonymized names should appear instantly below the same panel (<a class="reference internal" href="#anonymize-text-post"><span class="std std-numref">Fig. 11</span></a>).</p>
+<div class="figure align-default" id="id13">
+<span id="anonymize-text-post"></span><a class="reference internal image-reference" href="_images/anonymize_text_post.png"><img alt="_images/anonymize_text_post.png" src="_images/anonymize_text_post.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text"><em>“Anonymize text” result.</em></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="edit">
+<h4>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h4>
+<p>TODO  (<a class="reference internal" href="#anonymizer-actions-2"><span class="std std-numref">Fig. 12</span></a>).</p>
+<div class="figure align-default" id="id14">
+<span id="anonymizer-actions-2"></span><img alt="_images/anonymizer_actions_2.png" src="_images/anonymizer_actions_2.png" />
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text"><em>Anonymizer -&gt; Edit</em></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>API<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h4>Anonymize Text<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>Endpoint <strong>/projects/{project_pk}/anonymizers/{id}/anonymize_text/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/anonymizers/1/anonymize_text/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;text&quot;: &quot;Bonnie Parker and Clyde Barrow are believed to have murdered at least nine police officers.&quot;,</span>
+<span class="s1">        &quot;names&quot;: [&quot;Parker, Bonnie Elizabeth&quot;, &quot;Barrow, Clyde Chestnut&quot;]</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;N.Q and X.R are believed to have murdered at least nine police officers.&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="anonymize-texts">
+<h4>Anonymize texts<a class="headerlink" href="#anonymize-texts" title="Permalink to this headline">¶</a></h4>
+<p>Endpoint <strong>/projects/{project_pk}/anonymizers/{id}/anonymize_texts/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/anonymizers/1/anonymize_texts/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">       &quot;texts&quot;: [</span>
+<span class="s1">            &quot;Bonnie Parker and Clyde Barrow are believed to have murdered at least nine police officers.&quot;,</span>
+<span class="s1">            &quot;Bonnie and Clyde were killed in May 1934.&quot;</span>
+<span class="s1">        ],</span>
+<span class="s1">       &quot;names&quot;: [&quot;Parker, Bonnie Elizabeth&quot;, &quot;Barrow, Clyde Chestnut&quot;],</span>
+<span class="s1">       &quot;consistent_replacement&quot;: true</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="s2">&quot;F.Q and T.T are believed to have murdered at least nine police officers.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;F.Q and T.T were killed in May 1934.&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fine-tuning">
+<h2>Fine-Tuning<a class="headerlink" href="#fine-tuning" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020 TEXTA.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/anonymizer.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

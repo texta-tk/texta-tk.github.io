@@ -46,6 +46,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
@@ -60,9 +61,8 @@
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Regex Tagger Group</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creation-tase-2">Creation, tase 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#useage">Useage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#application">Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fine-tuning">Fine-Tuning</a></li>
 </ul>
 </li>
@@ -108,30 +108,9 @@
             
   <div class="section" id="regex-tagger-group">
 <h1>Regex Tagger Group<a class="headerlink" href="#regex-tagger-group" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="terminology.html#regex-tagger-group-concept"><span class="std std-ref">Regex Tagger Group</span></a> is a Tagger for Regexer, read more under the terminology. “Üleliigsed seletused välja, kuna need tulevad terminoloogia alla”.</p>
-<p>Iga tagger all on: Creation, Useage, Application, Fine-tuning</p>
-<div class="section" id="creation-tase-2">
-<h2>Creation, tase 2<a class="headerlink" href="#creation-tase-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="gui-tase-3">
-<h3>GUI, tase 3<a class="headerlink" href="#gui-tase-3" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="esimese-alapealkirja-alapealkiri-tase-4">
-<h4>Esimese alapealkirja alapealkiri, tase 4<a class="headerlink" href="#esimese-alapealkirja-alapealkiri-tase-4" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="no-kui-veel-on-vaja-alapealkirjatada-siis-see-on-tase-5">
-<h5>No kui veel on vaja alapealkirjatada, siis see on tase 5<a class="headerlink" href="#no-kui-veel-on-vaja-alapealkirjatada-siis-see-on-tase-5" title="Permalink to this headline">¶</a></h5>
-</div>
-</div>
-</div>
-<div class="section" id="api-tase-3">
-<h3>API, tase 3<a class="headerlink" href="#api-tase-3" title="Permalink to this headline">¶</a></h3>
-<p>Siin viidatakse joonisele <a class="reference internal" href="#importing-loc2"><span class="std std-numref">Fig. 25</span></a>.</p>
-<div class="figure align-default" id="id5">
-<span id="importing-loc2"></span><img alt="_images/dataset_importer_loc.png" src="_images/dataset_importer_loc.png" />
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text"><em>See on joonis</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-</div>
-<div class="section" id="useage">
-<h2>Useage<a class="headerlink" href="#useage" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="terminology.html#regex-tagger-group-concept"><span class="std std-ref">Regex Tagger Group</span></a> allows combining multiple <a class="reference internal" href="terminology.html#regex-tagger-concept"><span class="std std-ref">Regex Tagger</span></a> models. For example, we can combine Regex Tagger models “cat”, “dog”, “squirrel” under a single Regex Tagger Group with unified name “animals”.</p>
+<div class="section" id="creation">
+<h2>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="gui">
 <h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
 </div>
@@ -139,10 +118,31 @@
 <h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
-<div class="section" id="application">
-<h2>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="useage">
+<h2>Useage<a class="headerlink" href="#useage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>GUI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="tag-text">
+<h4>Tag Text<a class="headerlink" href="#tag-text" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="tag-random-doc">
+<h4>Tag Random Doc<a class="headerlink" href="#tag-random-doc" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="edit">
+<h4>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="delete">
+<h4>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="bulk-delete">
+<h4>Bulk Delete<a class="headerlink" href="#bulk-delete" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="apply-tagger-group">
+<h4>Apply Tagger Group<a class="headerlink" href="#apply-tagger-group" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="multitag-text">
+<h4>Multitag Text<a class="headerlink" href="#multitag-text" title="Permalink to this headline">¶</a></h4>
+</div>
 </div>
 <div class="section" id="id2">
 <h3>API<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -150,13 +150,6 @@
 </div>
 <div class="section" id="fine-tuning">
 <h2>Fine-Tuning<a class="headerlink" href="#fine-tuning" title="Permalink to this headline">¶</a></h2>
-<p>Siia tulevad parameetrid.</p>
-<div class="section" id="id3">
-<h3>GUI<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="id4">
-<h3>API<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-</div>
 </div>
 </div>
 
