@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-`EN <https://docs.texta.ee/index.html>`_
-`ET <https://docs.texta.ee/et/index.html>`_
+`EN <https://docs.texta.ee/v2/index.html>`_
+`ET <https://docs.texta.ee/v2/et/index.html>`_
 
 Texta Toolkit
 ===============
