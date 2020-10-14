@@ -60,9 +60,30 @@
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Regex Tagger</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fine-tuning">Fine-Tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#fine-tuning">Fine-Tuning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#counter-lexicon">Counter Lexicon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phrase-slop">Phrase Slop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#match-type">Match Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operator">Operator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-words">Required Words</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#n-allowed-edits">N Allowed Edits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#return-fuzzy-match">Return Fuzzy Match</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ignore-case">Ignore Case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ignore-punctuation">Ignore Punctuation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#counter-slop">Counter Slop</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
@@ -197,30 +218,30 @@
 </div>
 <div class="section" id="gui">
 <h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
-<p>For creating a new Regex Tagger model, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 44</span></a>.</p>
+<p>For creating a new Regex Tagger model, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 46</span></a>.</p>
 <div class="figure align-default" id="id11">
 <span id="regex-tagger-navigation"></span><a class="reference internal image-reference" href="_images/regex_taggers_nav.png"><img alt="_images/regex_taggers_nav.png" src="_images/regex_taggers_nav.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text"><em>Regex Taggers navigation</em></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text"><em>Regex Taggers navigation</em></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
-<p>If the navigation is successful, you should see a panel similar to <a class="reference internal" href="#regex-tagger-create-button"><span class="std std-numref">Fig. 45</span></a> with <cite>“Create”</cite> button in the top left corner of the page.</p>
+<p>If the navigation is successful, you should see a panel similar to <a class="reference internal" href="#regex-tagger-create-button"><span class="std std-numref">Fig. 47</span></a> with <cite>“Create”</cite> button in the top left corner of the page.</p>
 <div class="figure align-default" id="id12">
 <span id="regex-tagger-create-button"></span><a class="reference internal image-reference" href="_images/regex_taggers_create_1.png"><img alt="_images/regex_taggers_create_1.png" src="_images/regex_taggers_create_1.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text"><em>Regex Tagger creation button</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text"><em>Regex Tagger creation button</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
-<p>Clicking on the <cite>“Create”</cite> button opens a modal window with text <cite>“New Regex Tagger”</cite> as depicted in <a class="reference internal" href="#regex-tagger-new-regex-tagger"><span class="std std-numref">Fig. 46</span></a>.</p>
+<p>Clicking on the <cite>“Create”</cite> button opens a modal window with text <cite>“New Regex Tagger”</cite> as depicted in <a class="reference internal" href="#regex-tagger-new-regex-tagger"><span class="std std-numref">Fig. 48</span></a>.</p>
 <div class="figure align-default" id="id13">
 <span id="regex-tagger-new-regex-tagger"></span><a class="reference internal image-reference" href="_images/regex_taggers_new_regex_tagger_mw.png"><img alt="_images/regex_taggers_new_regex_tagger_mw.png" src="_images/regex_taggers_new_regex_tagger_mw.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text"><em>Empty Regex Tagger creation view</em></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text"><em>Empty Regex Tagger creation view</em></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
-<p>Fill the required fields as instructed in TODO and click on the <cite>“Create”</cite> button in the bottom right corner of the window (<a class="reference internal" href="#regex-tagger-create-view"><span class="std std-numref">Fig. 47</span></a>).</p>
+<p>Fill the required fields as instructed in TODO and click on the <cite>“Create”</cite> button in the bottom right corner of the window (<a class="reference internal" href="#regex-tagger-create-view"><span class="std std-numref">Fig. 49</span></a>).</p>
 <div class="figure align-default" id="id14">
 <span id="regex-tagger-create-view"></span><a class="reference internal image-reference" href="_images/regex_taggers_create_2.png"><img alt="_images/regex_taggers_create_2.png" src="_images/regex_taggers_create_2.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text"><em>Filled Regex Tagger creation view</em></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text"><em>Filled Regex Tagger creation view</em></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
-<p>The created Regex Tagger can now be seen as the first (or only, if no previous Regex Taggers exist under the project) row in the table of Regex Tagger models (<a class="reference internal" href="#regex-taggers-list"><span class="std std-numref">Fig. 48</span></a>).</p>
+<p>The created Regex Tagger can now be seen as the first (or only, if no previous Regex Taggers exist under the project) row in the table of Regex Tagger models (<a class="reference internal" href="#regex-taggers-list"><span class="std std-numref">Fig. 50</span></a>).</p>
 <div class="figure align-default" id="id15">
 <span id="regex-taggers-list"></span><a class="reference internal image-reference" href="_images/regex_taggers_list.png"><img alt="_images/regex_taggers_list.png" src="_images/regex_taggers_list.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text"><em>List of Regex Taggers.</em></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text"><em>List of Regex Taggers.</em></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="api">

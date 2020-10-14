@@ -59,8 +59,16 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tagger Group</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#useage">Useage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#useage">Useage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">API</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#application">Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fine-tuning">Fine-Tuning</a></li>
 </ul>
@@ -130,12 +138,12 @@ Vectorizer (possible feature extractors are: Hashing Vectorizer, Count Vectorize
 We can set negative multiplier to change ratio of negative examples in the training set. We can use maximum sample size per class in case we want to limit the size of data the model trains on.</p>
 <div class="figure align-default" id="id3">
 <span id="figure-15"></span><img alt="_images/create_tagger_group.png" src="_images/create_tagger_group.png" />
-<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">Figure 15. <em>Creating a Tagger Group</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Figure 15. <em>Creating a Tagger Group</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Then we can hit create and see the training process and result of the tagger as seen in Figure 14.</p>
 <div class="figure align-default" id="id4">
 <span id="figure-16"></span><a class="reference internal image-reference" href="_images/created_tagger_group.png"><img alt="_images/created_tagger_group.png" src="_images/created_tagger_group.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">Figure 16. <em>Created Tagger Group</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Figure 16. <em>Created Tagger Group</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="simple">
 <dt>Whenever we create new Tagger Group models, we can track it’s progress from the table under <em>Task</em>. If we click on the job, we can see all the training info, how long did it took, and check how successful it was. Let’s not forget that:</dt><dd><ol class="arabic simple">
