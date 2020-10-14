@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-14 21:24+0300\n"
+"POT-Creation-Date: 2020-10-14 23:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,25 +24,33 @@ msgid ""
 "<https://docs.texta.ee/et/concepts.html>`_"
 msgstr ""
 
-#: ../../source/index.rst:9
+#: ../../source/index.rst:10
+msgid "Texta Toolkit"
+msgstr ""
+
+#: ../../source/index.rst:12
 msgid ""
 "TEXTA Toolkit is an open-source software for building RESTful text "
 "analytics applications. It is being developed by `TEXTA Ltd "
 "<https://www.texta.ee>`_. This documentation contains information about "
-"installing and running **TEXTA Toolkit 2.10."
+"installing and running **TEXTA Toolkit 2.10.x**"
 msgstr ""
 
-#: ../../source/index.rst:13
+#: ../../source/index.rst:16
 msgid ""
 "The source code for Toolkit's Django REST API is available at "
 "`git.texta.ee/texta/texta-rest <https://git.texta.ee/texta/texta-rest>`_."
 msgstr ""
 
-#: ../../source/index.rst:15
+#: ../../source/index.rst:18
 msgid ""
 "The source code for Toolkit's Angular GUI is available at "
 "`git.texta.ee/texta/texta-rest-front <https://git.texta.ee/texta/texta-"
 "rest-front>`_."
+msgstr ""
+
+#: ../../source/index.rst:23
+msgid "Contents:"
 msgstr ""
 
 #~ msgid ""
@@ -53,5 +61,15 @@ msgstr ""
 #~ "<https://www.texta.ee>`_. This documentation "
 #~ "contains information about installing and "
 #~ "running **TEXTA Toolkit 2.x**."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TEXTA Toolkit is an open-source "
+#~ "software for building RESTful text "
+#~ "analytics applications. It is being "
+#~ "developed by `TEXTA Ltd "
+#~ "<https://www.texta.ee>`_. This documentation "
+#~ "contains information about installing and "
+#~ "running **TEXTA Toolkit 2.10."
 #~ msgstr ""
 
