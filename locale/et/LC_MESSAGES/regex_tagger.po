@@ -60,9 +60,9 @@ msgid ""
 ":ref:`API <creation_api>`."
 msgstr ""
 "Järgnev sektsioon katab kõik Regex Taggerite loomisega seonduva."
-"Peatükis :ref:`Parameetrid <creation_parameters>` antakse ülevaade sisendparamteetritest;"
+"Peatükis :ref:`Parameetrid <creation_parameters>` antakse ülevaade sisendparamteetritest; "
 "peatükis :ref:`GUI "
-"<creation_gui>` antakse ülevaade Regex Taggerite loomisest graafilise kasutajaliidese kaudu;"
+"<creation_gui>` antakse ülevaade Regex Taggerite loomisest graafilise kasutajaliidese kaudu; "
 "Peatükis :ref:`API <creation_api>` antakse ülevaade Regex Taggerite loomisest API kaudu."
 
 #: ../../source/regex_tagger.rst:26
@@ -98,8 +98,8 @@ msgid ""
 "Lexicon entries can either be regular words (e.g. \"cat\"), phrases (e.g."
 " \"black cat\"), or regular expressions containing regex wildcard "
 "characters(e.g. \"\\d{2}-\\d{2}-\\d{4}\")."
-msgstr "Leksikonikanded võivad olla nii tavalised sõna (nt. "kass"), fraasid (nt. "must kass"),
-või regulaaravaldised (nt. "\\d{2}-\\d{2}-\\d{4}\")."
+msgstr "Leksikonikanded võivad olla tavalised sõna (nt. "kass"), fraasid (nt. "must kass"), "
+"või regulaaravaldised (nt. "\\d{2}-\\d{2}-\\d{4}\")."
 
 #: ../../source/regex_tagger.rst:47
 msgid "**counter_lexicon**:"
@@ -404,7 +404,7 @@ msgstr "Otspunkt **/projects/{project_pk}/regex_taggers/**"
 #: ../../source/regex_tagger.rst:455 ../../source/regex_tagger.rst:596
 #, fuzzy
 msgid "Example:"
-msgstr "Näited"
+msgstr "Näide"
 
 #: ../../source/regex_tagger.rst:213 ../../source/regex_tagger.rst:351
 #: ../../source/regex_tagger.rst:408 ../../source/regex_tagger.rst:610
