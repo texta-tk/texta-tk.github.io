@@ -54,7 +54,14 @@
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Search</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#current-search">Current Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#current-search">Current Search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simple-search">Simple Search</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-search">Advanced Search</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#search-options">Search Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#browsing-search-results">Browsing Search results</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#saved-searches">Saved Searches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#aggregations">Aggregations</a></li>
 </ul>
@@ -113,11 +120,11 @@
 <p class="admonition-title">Note</p>
 <p>In order to use <strong>Search</strong>, project must be selected in upper panel.</p>
 </div>
-<p>Search’s graphical interface consists of serveral important panels, which are depicted in <a class="reference internal" href="#search-panel"><span class="std std-numref">Fig. 23</span></a>.
+<p>Search’s graphical interface consists of serveral important panels, which are depicted in <a class="reference internal" href="#search-panel"><span class="std std-numref">Fig. 25</span></a>.
 We can collapse or open the panels by clicking on the arrow in the corner.</p>
 <div class="figure align-default" id="id7">
 <span id="search-panel"></span><img alt="_images/search_panel.png" src="_images/search_panel.png" />
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text"><em>Search Panel</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text"><em>Search Panel</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 <div class="legend">
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="#currentsearch"><span class="std std-ref">Current Search</span></a></p></li>
@@ -137,7 +144,7 @@ After saving the search, it is available also to other tools.</p>
 </div>
 <div class="figure align-default" id="id8">
 <span id="id1"></span><img alt="_images/current_search.png" src="_images/current_search.png" />
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text"><em>Current search</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text"><em>Current search</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 <div class="legend">
 <p>From left to right in the red box:</p>
 <ol class="loweralpha simple">
@@ -157,7 +164,7 @@ After saving the search, it is available also to other tools.</p>
 <p>Simple search searches for a word on all fields in the chosen dataset. Words separated with space (‘ ‘) are considered as a space-separated list - each word must occur in at least one field in the document.</p>
 <div class="figure align-default" id="id9">
 <span id="id2"></span><img alt="_images/simple_search.png" src="_images/simple_search.png" />
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text"><em>Simple search</em>. ‘word1’, ‘word2’, ‘word3’ are searched from all the fields in the document. Only those which have all of them matched at least once, are returned.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text"><em>Simple search</em>. ‘word1’, ‘word2’, ‘word3’ are searched from all the fields in the document. Only those which have all of them matched at least once, are returned.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="advanced-search">
@@ -206,33 +213,34 @@ After saving the search, it is available also to other tools.</p>
 </table>
 <div class="figure align-default" id="id11">
 <span id="string-search"></span><img alt="_images/string_search.png" src="_images/string_search.png" />
-<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text"><em>String constraint</em>. This string constraint is on field named “text”. It looks for documents that have either phrase “president Obama” or “president Trump” in it (or both). Since the Slop is 2, it also matches the phrase if it has 0-2 words between the words (e.g “president Barack Obama”). The “X” in the red square is for deleting this constraint.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text"><em>String constraint</em>. This string constraint is on field named “text”. It looks for documents that have either phrase “president Obama” or “president Trump” in it (or both). Since the Slop is 2, it also matches the phrase if it has 0-2 words between the words (e.g “president Barack Obama”). The “X” in the red square is for deleting this constraint.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
-<p>The string constraint has an option to add <a class="reference internal" href="lexicon_miner.html#lexiconminer"><span class="std std-ref">a saved lexicon’s</span></a> terms into the search (via button “Add lexicon”).</p>
+<p>The string constraint has an option to add <a class="reference internal" href="lexicon_miner.html#lexiconminer"><span class="std std-ref">a saved lexicon’s</span></a> terms into the search (via button “Add lexicon”). This works only when there is at least one lexicon in the project.</p>
 </div>
 <div class="section" id="date-constraint">
 <h4>Date constraint<a class="headerlink" href="#date-constraint" title="Permalink to this headline">¶</a></h4>
 <p>Date constraint works only on a proper datefield. This outputs only those documents which datefield are within the chosen time range (starting day included and ending day excluded). The time range can be chosen by clicking on the little calendar in the right.</p>
 <div class="figure align-default" id="id12">
 <span id="id3"></span><img alt="_images/date_constraint.png" src="_images/date_constraint.png" />
-<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text"><em>Date constraint</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text"><em>Date constraint</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="texta-tag-constraint">
-<h4>Texta_tag constraint<a class="headerlink" href="#texta-tag-constraint" title="Permalink to this headline">¶</a></h4>
-<p>Texta_tag constraint helps to find certain <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">tag</span></a> or <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">tags</span></a> with certain values. You can find several different values at once with the little ‘+’-sign which adds one more value-line. Look in the table above for the operators’ meanings.</p>
+<div class="section" id="texta-fact-constraint">
+<h4>Texta_fact constraint<a class="headerlink" href="#texta-fact-constraint" title="Permalink to this headline">¶</a></h4>
+<p>Texta_fact constraint helps to find certain <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">fact</span></a> or <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">facts</span></a> with certain values. You can find several different values at once with the little ‘+’-sign which adds one more value-line. Look in the table above for the operators’ meanings.</p>
 <div class="figure align-default" id="id13">
 <span id="tag-constraint1"></span><img alt="_images/tag_constraint1.png" src="_images/tag_constraint1.png" />
-<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text"><em>Texta_tag tag constraints</em>. Search for documents that have at least one ORG tag in it and definetly no PER tags.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text"><em>Texta_fact fact constraints</em>. Search for documents that have at least one ORG fact in it and definetly no PER fact.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id14">
 <span id="tag-constraint3"></span><img alt="_images/tag_constraint3.png" src="_images/tag_constraint3.png" />
-<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text"><em>Texta_tag tag value constraint with or</em>. Texta_tag tag constraint enables choosing multible tags at once. For example this constraint outputs all documents that has at least one of the tags (COMPANY, EML, ADDR) in it.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text"><em>Texta_fact fact value constraint with or</em>. Texta_fact fact constraint enables choosing multible facts at once. For example this constraint outputs all documents that has at least one of the facts (COMPANY, EML, ADDR) in it.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id15">
 <span id="tag-constraint2"></span><img alt="_images/tag_constraint2.png" src="_images/tag_constraint2.png" />
-<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text"><em>Texta_tag tag value constraint</em>. Search for documents that have an ORG tag with either value “NATO” or value “European Union” in it (or both).</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text"><em>Texta_fact fact value constraint</em>. Search for documents that have an ORG fact with either value “NATO” or value “European Union” in it (or both).</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
+<p>The same texta_fact constraints can be constructed automatically, when clicking on the texta_fact labels or values in the dataset texta_facts field.</p>
 </div>
 </div>
 <div class="section" id="search-options">
@@ -266,31 +274,31 @@ After saving the search, it is available also to other tools.</p>
 </table>
 <div class="figure align-default" id="id17">
 <span id="id4"></span><img alt="_images/search_options.png" src="_images/search_options.png" />
-<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text"><em>Search Options</em>. Only texta_tag constraints will be highlighted in the results with these selected Search Options.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text"><em>Search Options</em>. Only texta_fact constraints will be highlighted in the results with these selected Search Options.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-default" id="id18">
 <span id="search-example1"></span><img alt="_images/search_example1.png" src="_images/search_example1.png" />
-<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text"><em>Regex String Constraint</em>. Search for documents that have either “payoff” or “bribe[a-z]{0,2}” in it. Last of which means word ‘bribe’ with 0-2 extra letters (e.g “bribe”, “bribed”, “bribery”).</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text"><em>Regex String Constraint</em>. Search for documents that have either “payoff” or “bribe[a-z]{0,2}” in it. Last of which means word ‘bribe’ with 0-2 extra letters (e.g “bribe”, “bribed”, “bribery”).</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id19">
 <span id="search-combination"></span><img alt="_images/search_combination.png" src="_images/search_combination.png" />
-<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text"><em>Combination of constraints</em>. Search for documents published in 2014, contain LOC tags with values “Russia” and “Ukraine” and the word “invasion”.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text"><em>Combination of constraints</em>. Search for documents published in 2014, contain LOC facts with values “Russia” and “Ukraine” and the word “invasion”.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="browsing-search-results">
 <h3>Browsing Search results<a class="headerlink" href="#browsing-search-results" title="Permalink to this headline">¶</a></h3>
-<p>If we click on “Search” button, we will see the matching documents in a tabular form (see <a class="reference internal" href="#search-results"><span class="std std-numref">Fig. 34</span></a>). The results might be updating while modifying the constraints.</p>
+<p>If we click on “Search” button, we will see the matching documents in a tabular form (see <a class="reference internal" href="#search-results"><span class="std std-numref">Fig. 36</span></a>). The results might be updating while modifying the constraints.</p>
 <div class="figure align-default" id="id20">
 <span id="search-results"></span><a class="reference internal image-reference" href="_images/search_results.png"><img alt="_images/search_results.png" src="_images/search_results.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text"><em>Example Search Results</em></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text"><em>Example Search Results</em></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>If there are too many features (columns), we can hide or show them from the drop-down menu in the up left corner. We can select or deselect all of them together (<em>Select all</em>) or by clicking on them separately. We can also hide or get back the Searcher’s panels with <em>Toggle drawer</em> button. We can browse through Searcher’s results with the arrows in the upper right. We can also choose how many items per page would we want to see in the upper right.</p>
 <div class="figure align-default" id="id21">
 <span id="search-rt"></span><img alt="_images/search_results_toggle.png" src="_images/search_results_toggle.png" />
-<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text"><em>Select Fields for Search Results</em></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text"><em>Select Fields for Search Results</em></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -321,7 +329,7 @@ Saved searches can be opened in the Current Search simply by clicking on it.</p>
 </dl>
 </div>
 <p>One cool thing we can also do, is to visualize the frequency of texts with searched words in it on a timeline. We can do that if we have a proper date field (in Texta date format) in our data. Here we can visualize when were the words ‘bribe’, ‘bribery’ and ‘bribed’ used most frequently in our dataset.</p>
-<p>We can also aggregate over <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">texta_facts</span></a> field in order to see the top entities under some tag. If we click on the black diagram button, we can scroll through the results. We see as many entities as we chose for our aggregation size.</p>
+<p>We can also aggregate over <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">texta_facts</span></a> field in order to see the top entities under some fact. If we click on the black diagram button, we can scroll through the results. We see as many entities as we chose for our aggregation size.</p>
 </div>
 </div>
 

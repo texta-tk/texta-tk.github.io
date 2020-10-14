@@ -95,7 +95,7 @@ One line equals one search item. This constraint has several operators. Look bel
 
 	*String constraint*. This string constraint is on field named "text". It looks for documents that have either phrase "president Obama" or "president Trump" in it (or both). Since the Slop is 2, it also matches the phrase if it has 0-2 words between the words (e.g "president Barack Obama"). The "X" in the red square is for deleting this constraint.
 	
-The string constraint has an option to add :ref:`a saved lexicon's <lexiconminer>` terms into the search (via button "Add lexicon"). 
+The string constraint has an option to add :ref:`a saved lexicon's <lexiconminer>` terms into the search (via button "Add lexicon"). This works only when there is at least one lexicon in the project. 
 
 Date constraint
 -------------------
@@ -106,24 +106,26 @@ Date constraint works only on a proper datefield. This outputs only those docume
 
 	*Date constraint*
 
-Texta_tag constraint
+Texta_fact constraint
 ------------------------
-Texta_tag constraint helps to find certain :ref:`tag <texta_fact>` or :ref:`tags <texta_fact>` with certain values. You can find several different values at once with the little '+'-sign which adds one more value-line. Look in the table above for the operators' meanings. 
+Texta_fact constraint helps to find certain :ref:`fact <texta_fact>` or :ref:`facts <texta_fact>` with certain values. You can find several different values at once with the little '+'-sign which adds one more value-line. Look in the table above for the operators' meanings. 
 
 .. _tag_constraint1:
 .. figure:: images/tag_constraint1.png
 
-	*Texta_tag tag constraints*. Search for documents that have at least one ORG tag in it and definetly no PER tags. 
+	*Texta_fact fact constraints*. Search for documents that have at least one ORG fact in it and definetly no PER fact. 
 	
 .. _tag_constraint3:
 .. figure:: images/tag_constraint3.png
 
-	*Texta_tag tag value constraint with or*. Texta_tag tag constraint enables choosing multible tags at once. For example this constraint outputs all documents that has at least one of the tags (COMPANY, EML, ADDR) in it.
+	*Texta_fact fact value constraint with or*. Texta_fact fact constraint enables choosing multible facts at once. For example this constraint outputs all documents that has at least one of the facts (COMPANY, EML, ADDR) in it.
 	
 .. _tag_constraint2:
 .. figure:: images/tag_constraint2.png
 
-	*Texta_tag tag value constraint*. Search for documents that have an ORG tag with either value "NATO" or value "European Union" in it (or both).
+	*Texta_fact fact value constraint*. Search for documents that have an ORG fact with either value "NATO" or value "European Union" in it (or both).
+	
+The same texta_fact constraints can be constructed automatically, when clicking on the texta_fact labels or values in the dataset texta_facts field.
 
 Search Options
 ==============
@@ -148,7 +150,7 @@ Look at the table below for the meanings of search options.
 .. _search_options:
 .. figure:: images/search_options.png
 
-	*Search Options*. Only texta_tag constraints will be highlighted in the results with these selected Search Options. 
+	*Search Options*. Only texta_fact constraints will be highlighted in the results with these selected Search Options. 
 	
 Examples
 ========
@@ -161,7 +163,7 @@ Examples
 .. _search_combination:
 .. figure:: images/search_combination.png
 
-	*Combination of constraints*. Search for documents published in 2014, contain LOC tags with values "Russia" and "Ukraine" and the word "invasion".
+	*Combination of constraints*. Search for documents published in 2014, contain LOC facts with values "Russia" and "Ukraine" and the word "invasion".
 
 
 Browsing Search results
@@ -215,5 +217,5 @@ Aggregations have two components - data and features it aggregates over. It will
 
 One cool thing we can also do, is to visualize the frequency of texts with searched words in it on a timeline. We can do that if we have a proper date field (in Texta date format) in our data. Here we can visualize when were the words 'bribe', 'bribery' and 'bribed' used most frequently in our dataset.
 
-We can also aggregate over :ref:`texta_facts <texta_fact>` field in order to see the top entities under some tag. If we click on the black diagram button, we can scroll through the results. We see as many entities as we chose for our aggregation size.
+We can also aggregate over :ref:`texta_facts <texta_fact>` field in order to see the top entities under some fact. If we click on the black diagram button, we can scroll through the results. We see as many entities as we chose for our aggregation size.
 

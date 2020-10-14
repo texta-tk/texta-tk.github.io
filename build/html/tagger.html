@@ -59,7 +59,11 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tagger</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#train-a-new-tagger">Train a new tagger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-text">Tag text</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
@@ -120,7 +124,7 @@ We can set negative multiplier to change ratio of negative examples. We can use 
 <p>Then we can hit create and see the training process and result of the tagger.</p>
 <div class="figure align-default" id="id1">
 <span id="figure-13"></span><img alt="_images/create_tagger.png" src="_images/create_tagger.png" />
-<p class="caption"><span class="caption-number">Fig. 40 </span><span class="caption-text">Figure 13. <em>Creating Bribe_tag tagger</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">Figure 13. <em>Creating Bribe_tag tagger</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="simple">
 <dt>Whenever we create a new Tagger model, we can track it’s progress from the table under <em>Task</em>. If we click on the job, we can see all the training info, how long did it took, and check how successful it was. Let’s not forget that:</dt><dd><ol class="arabic simple">
@@ -141,7 +145,7 @@ We can set negative multiplier to change ratio of negative examples. We can use 
 <p>In the table view we can also select several models and delete them all at once by clicking on the dustbin button next to the <em>+CREATE</em> button in the bottom-left. If we have several models, we can search for the right one by their description or task status. If we have models on several pages we can change pages in the bottom-right.</p>
 <div class="figure align-default" id="id2">
 <span id="figure-14"></span><a class="reference internal image-reference" href="_images/tagger_result.png"><img alt="_images/tagger_result.png" src="_images/tagger_result.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">Figure 14. <em>Bribe_tag tagger</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">Figure 14. <em>Bribe_tag tagger</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="api">

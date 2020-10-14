@@ -53,8 +53,18 @@
 <li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Projects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creating-a-project">Creating a Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-a-project">Using a Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-project">Create a Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-a-project">Delete a Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-a-project">Edit a Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#navigate-between-projects">Navigate between Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#permissions">Permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Create a Project</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
@@ -107,17 +117,57 @@
             
   <div class="section" id="projects">
 <h1>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="creating-a-project">
-<h2>Creating a Project<a class="headerlink" href="#creating-a-project" title="Permalink to this headline">¶</a></h2>
-<p>In order to play with the data, we need to create a <span class="xref std std-ref">new project</span>.</p>
 <div class="section" id="gui">
-<h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
-<p>We can create a project by clicking the <strong>+ CREATE</strong> button at the bottom of the page.
-We can then give it a title, select users who can work on the project and, of course, select datasets (Elasticsearch <a class="reference internal" href="terminology.html#index-concept"><span class="std std-ref">indices</span></a>) for the project.</p>
-<p>After the project is created, we can see the new project in the list and can change its datasets and user access via the <strong>Edit</strong> button.</p>
+<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-a-project">
+<h3>Create a Project<a class="headerlink" href="#create-a-project" title="Permalink to this headline">¶</a></h3>
+<p>Before we can start working with the data, we need to create a project.</p>
+<p>Click on the <strong>CREATE</strong> button on the top-left of the front page.
+Fill in the title field - this will be the name of your project; select users who should have access to the project and finally choose indices that you are going to work with in the project.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can select more than one index.</p>
+</div>
+<p>We can see the newly created project in the list on the front page (<a class="reference internal" href="#project-list"><span class="std std-numref">Fig. 22</span></a>).</p>
+<div class="figure align-default" id="id2">
+<span id="project-list"></span><img alt="_images/project_list.png" src="_images/project_list.png" />
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text"><em>Projects list</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="delete-a-project">
+<h3>Delete a Project<a class="headerlink" href="#delete-a-project" title="Permalink to this headline">¶</a></h3>
+<p>On the front page, click on three dots under <strong>Action</strong> column (<a class="reference internal" href="#project-actions"><span class="std std-numref">Fig. 23</span></a>) and choose <strong>Delete</strong>.</p>
+<div class="figure align-default" id="id3">
+<span id="project-actions"></span><img alt="_images/project_actions.png" src="_images/project_actions.png" />
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text"><em>Project actions</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="edit-a-project">
+<h3>Edit a Project<a class="headerlink" href="#edit-a-project" title="Permalink to this headline">¶</a></h3>
+<p>On the front page, click on three dots under <strong>Action</strong> column (<a class="reference internal" href="#project-actions"><span class="std std-numref">Fig. 23</span></a>) and choose <strong>Edit</strong>.</p>
+</div>
+<div class="section" id="navigate-between-projects">
+<h3>Navigate between Projects<a class="headerlink" href="#navigate-between-projects" title="Permalink to this headline">¶</a></h3>
+<p>To start working on the project, we need to activate it - click on three dots under <strong>Action</strong> column (<a class="reference internal" href="#project-actions"><span class="std std-numref">Fig. 23</span></a>) and choose <strong>Use</strong>.
+Another way to select a project is from the list on the top-right corner (<a class="reference internal" href="#user-projects"><span class="std std-numref">Fig. 24</span></a>). The list will show you all the projects that you are a memember of.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only one project can be activated at a time.</p>
+</div>
+<div class="figure align-default" id="id4">
+<span id="user-projects"></span><img alt="_images/user_projects.png" src="_images/user_projects.png" />
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text"><em>User projects</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="permissions">
+<h3>Permissions<a class="headerlink" href="#permissions" title="Permalink to this headline">¶</a></h3>
+<p>Project resources (including indices) are shared among the users with access to the project.</p>
+</div>
 </div>
 <div class="section" id="api">
-<h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Create a Project<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Endpoint: <strong>/projects/</strong></p>
 <p>Example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/&quot;</span> <span class="se">\</span>
@@ -131,27 +181,6 @@ We can then give it a title, select users who can work on the project and, of co
 <span class="s1">    }&#39;</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="using-a-project">
-<h2>Using a Project<a class="headerlink" href="#using-a-project" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Only one project can be activated at a time.</p>
-<p>Each project can have one or more datasets (Elasticsearch indices).</p>
-<p>Project resources are shared among the users with access to the project.</p>
-</div>
-<div class="section" id="id1">
-<h3>GUI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>In order to work with our project (search info, train taggers) we have to select it from the upper panel next to our username:</p>
-<div class="figure align-default" id="id3">
-<span id="figure-5"></span><img alt="_images/select_project.png" src="_images/select_project.png" />
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Figure 5. <em>Project Selection</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="id2">
-<h3>API<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>TODO</p>
 </div>
 </div>
 </div>
