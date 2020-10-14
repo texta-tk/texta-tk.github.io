@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 22:21+0300\n"
+"POT-Creation-Date: 2020-10-14 21:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,399 +31,602 @@ msgstr ""
 #: ../../source/regex_tagger.rst:8
 msgid ""
 ":ref:`Regex Tagger <regex_tagger_concept>` is a tool for tagging texts "
-"based on pattern matches."
+"based on predefined `regular expressions "
+"<https://en.wikipedia.org/wiki/Regular_expression>`_ , i.e. regexes."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:11
-msgid "**Terminology**"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:13
+#: ../../source/regex_tagger.rst:12
 msgid ""
-"To avoid misinterpretation, let's first define the meanings of \"word\" "
-"and \"lexicon entry\" in the scope of Regex Tagger."
+"Regex Tagger is built on `Python's regex module "
+"<https://docs.python.org/3/library/re.html>`_ and thus it's important to "
+"use the same syntax while constructing your patterns."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:16
-msgid "Termin"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:16
-msgid "Definition"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:16 ../../source/regex_tagger.rst:204
-#: ../../source/regex_tagger.rst:246 ../../source/regex_tagger.rst:297
-#: ../../source/regex_tagger.rst:352 ../../source/regex_tagger.rst:397
-msgid "Examples"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:18
-msgid "**word**"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:18
-msgid ""
-"String consisting of non-whitespace characters. NB! regex whitespace "
-"wildcards are in this case included as non-whitepace characters!"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:18
-msgid "\"cats\", \"house\", \"\\\\d\\\\s*cat\\\\w*\""
-msgstr ""
-
-#: ../../source/regex_tagger.rst:19
-msgid "**lexicon entry**"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:19
-msgid ""
-"One entry in a lexicon. Lexicon entry can either be a single word, "
-"multiple words separated by whitespaces, or a regex pattern."
-msgstr ""
-
-#: ../../source/regex_tagger.rst:19
-msgid "\"cat\", \"dogs cats hats\", \"\\\\d\\\\s*cat\\\\w*\""
-msgstr ""
-
-#: ../../source/regex_tagger.rst:24
+#: ../../source/regex_tagger.rst:17
 msgid "Creation"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:28
+#: ../../source/regex_tagger.rst:19
+msgid ""
+"The following section covers everything we need to know about creating "
+"Regex Taggers. For getting an overview of the input parameters, see "
+"subsection :ref:`Parameters <creation_parameters>`; for creating a Regex "
+"Tagger via graphical user interface, see subsection :ref:`GUI "
+"<creation_gui>`; for creating a Regex Tagger via API, see subsection "
+":ref:`API <creation_api>`."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:26
 msgid "Parameters"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:31
+#: ../../source/regex_tagger.rst:28
+msgid "The following section gives an overview of Regex Tagger input parameters."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:33
 msgid "**description**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:31
+#: ../../source/regex_tagger.rst:33
 msgid ""
-"Name of the Regex Tagger, which is also used as name of the tag while "
-"tagging the documents"
+"Name of the Regex Tagger model, which is also used as name of the tag "
+"while tagging the documents."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:34
+#: ../../source/regex_tagger.rst:42
 msgid "**lexicon**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:34
+#: ../../source/regex_tagger.rst:38
 msgid ""
-"List of lexicon entries to match (as comma-separated strings in API and "
-"newline-separated strings in GUI)"
+"List of lexicon entries to match (as comma-separated strings in API or "
+"newline-separated strings in GUI)."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:37
+#: ../../source/regex_tagger.rst:42
+msgid ""
+"Lexicon entries can either be regular words (e.g. \"cat\"), phrases (e.g."
+" \"black cat\"), or regular expressions containing regex wildcard "
+"characters(e.g. \"\\d{2}-\\d{2}-\\d{4}\")."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:47
 msgid "**counter_lexicon**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:37
-msgid "List of nullifying lexicon entries."
-msgstr ""
-
-#: ../../source/regex_tagger.rst:46
-msgid "**operator**:"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:40
-msgid "Logical operator for matching words in the lexicon."
-msgstr ""
-
-#: ../../source/regex_tagger.rst:46 ../../source/regex_tagger.rst:61
-msgid "Supported options:"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:43
-msgid "or:"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:44
-msgid "return positive result if at least one lexicon entry is found"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:46
-msgid "and:"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:46
+#: ../../source/regex_tagger.rst:47
 msgid ""
-"return positive result only if all lexicon entries are found (PS! pay "
-"attention to *required_words* parameter!)"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:49
-msgid "**required_words**:"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:49
-msgid ""
-"Required minimum ratio of detected lexicon entries to all the lexicon "
-"entries for a positive result."
-msgstr ""
-
-#: ../../source/regex_tagger.rst:61
-msgid "**match_type**:"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:52
-msgid "How the lexicon entries should be matched."
-msgstr ""
-
-#: ../../source/regex_tagger.rst:56
-msgid "prefix:"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:56
-msgid ""
-"matches all strings starting with lexicon entities (to the first "
-"whitespace)"
+"List of annulling lexicon entries, which cancel out nearby (see parameter"
+" :ref:`counter_slop <param_counter_slop>`) main lexicon matches. "
+"Annulling lexicon entries can similarly to main lexicon entries be "
+"regular words, phrases, or regular expressions."
 msgstr ""
 
 #: ../../source/regex_tagger.rst:58
-msgid "exact:"
+msgid "**operator**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:59
-msgid "detects only exact matches to the lexicon entities"
+#: ../../source/regex_tagger.rst:52
+msgid "Logical operation for matching words in the lexicon."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:61
-msgid "subword:"
+#: ../../source/regex_tagger.rst:58 ../../source/regex_tagger.rst:83
+msgid "Supported options:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:61
-msgid "matches all entities containing lexicon entities as subentities"
+#: ../../source/regex_tagger.rst:55
+msgid "or:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:64
-msgid "**phrase_slop**:"
+#: ../../source/regex_tagger.rst:56
+msgid "Return positive result if at least one lexicon entry is found."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:64
-msgid "Number of non-lexicon words allowed between lexicon entry words."
+#: ../../source/regex_tagger.rst:58
+msgid "and:"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:58
+msgid ""
+"Return positive result only if all lexicon entries are found (NB! pay "
+"attention to :ref:`required_words <param_required_words>` parameter!)"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:68
+msgid "**required_words**:"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:63
+msgid ""
+"Required minimum ratio of detected lexicon entries to all the lexicon "
+"entries for a positive result. E.g. if we have a lexicon consisting of 4 "
+"entries and \"required_words\" = 1.0, all 4 of these entries must appear "
+"in the text for positive outcome; if \"required_words\" = 0.5, only half "
+"of the lexicon entries must appear in the text etc."
 msgstr ""
 
 #: ../../source/regex_tagger.rst:67
-msgid "**counter_slop**:"
+msgid "Has effect only if \"operator\" = \"and\"."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:67
+#: ../../source/regex_tagger.rst:83
+msgid "**match_type**:"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:73
+msgid "Specifies how the lexicon entries are matched."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:77
+msgid "prefix:"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:77
 msgid ""
-"Number of non-lexicon words allowed between main lexion entries and "
-"counter lexicon entries."
-msgstr ""
-
-#: ../../source/regex_tagger.rst:70
-msgid "**return_fuzzy_match**:"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:70
-msgid ""
-"If set true, return the whole string sequence matched instead of the "
-"original lexicon entry."
-msgstr ""
-
-#: ../../source/regex_tagger.rst:76
-msgid "**n_allowed_edits**:"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:76
-msgid ""
-"Number of allowed character changes between lexicon entry and matched "
-"string sequence. One edit is considered as one of the following:"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:74
-msgid "missing a character (\"cat\" -> \"ct\")"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:75
-msgid "adding a character (\"cat\" -> \"catt\")"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:76
-msgid "substituting a character (\"cat\" -> \"kat\")"
+"Lexicon entry should appear at the beginning of the word/phrase in the "
+"text. Subsequent alphanumeric characters are allowed. E.g. Lexicon entry "
+"\"cat\" matches the words \"cat\" and \"caterpillar\", but would not "
+"match the word \"scattered\"."
 msgstr ""
 
 #: ../../source/regex_tagger.rst:80
-msgid "**ignore_case**:"
+msgid "exact:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:79
-msgid "If set true, ignore case while detecting matches."
+#: ../../source/regex_tagger.rst:80
+msgid ""
+"Lexicon entry should match the word/phrase in the text exactly. No "
+"preceeding or subsequent characters are allowed. E.g. Lexicon entry "
+"\"cat\" matches the word \"cat\", but would not match the words "
+"\"caterpillar\", and \"scattered\"."
 msgstr ""
 
 #: ../../source/regex_tagger.rst:83
-msgid "**ignore punctuation**:"
+msgid "subword:"
 msgstr ""
 
 #: ../../source/regex_tagger.rst:83
 msgid ""
-"If set true, ignore end-of-sentence characters between lexicon entry "
-"words and/or counter lexicon entries and lexicon entries. Otherwise"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:86 ../../source/regex_tagger.rst:139
-msgid "GUI"
+"Lexicon entry should match a part of the word/phrase in the text. "
+"Preceeding and subsequent characters are allowed. E.g. Lexicon entry "
+"\"cat\" matches the words \"cat\", \"caterpillar\", and \"scattered\"."
 msgstr ""
 
 #: ../../source/regex_tagger.rst:88
+msgid "**phrase_slop**:"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:88
+msgid "Number of non-lexicon words allowed between lexicon entry words."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:93
+msgid "**counter_slop**:"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:93
+msgid ""
+"Number of non-lexicon words allowed between main lexion entries and "
+"counter lexicon entries for the latter to have annulling effect."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:98
+msgid "**return_fuzzy_match**:"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:98
+msgid ""
+"If enabled, return the whole alphanumeric string sequence matched, "
+"otherwise only the (sub)section exactly matching the original lexicon "
+"entry."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:113
+msgid "**n_allowed_edits**:"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:103
+msgid ""
+"Number of allowed character changes between lexicon entry and matched "
+"string sequence, i.e. `Levenshtein distance "
+"<https://en.wikipedia.org/wiki/Levenshtein_distance>`_."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:107
+msgid "One edit is considered as one of the following:"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:109
+msgid "missing a character, e.g. \"cat\" -> \"ct\""
+msgstr ""
+
+#: ../../source/regex_tagger.rst:111
+msgid "adding a character, e.g. \"cat\" -> \"catt\""
+msgstr ""
+
+#: ../../source/regex_tagger.rst:113
+msgid "substituting a character, e.g. \"cat\" -> \"kat\""
+msgstr ""
+
+#: ../../source/regex_tagger.rst:118
+msgid "**ignore_case**:"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:118
+msgid "If set true, ignore case while detecting matches."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:131
+msgid "**ignore punctuation**:"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:123
+msgid ""
+"If enabled, ignore end-of-sentence characters between lexicon entry words"
+" and/or counter lexicon entries and lexicon entries."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:127
+msgid "Ignored end-of-sentence characters are: [\".\", \"!\", \"?\"]"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:131
+msgid ""
+"Be careful with using the parameter as end-of-sentence characters are "
+"detected naively based on list. This means that the parameter restriction"
+" applies even if the detected end-of-sentence character doesn't actually "
+"denote the end of a sentence, e.g. each \".\" is detected as end-of-"
+"sentence character in the sentence \"George R.R. Martin and J.R.R. "
+"Tolkien went fishing\"."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:136 ../../source/regex_tagger.rst:256
+#: ../../source/regex_tagger.rst:313 ../../source/regex_tagger.rst:367
+#: ../../source/regex_tagger.rst:447 ../../source/regex_tagger.rst:532
+msgid "GUI"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:138
 msgid ""
 "For creating a new Regex Tagger model, navigate to `\"Models\" -> \"Regex"
 " Taggers\"` as seen in :numref:`regex_tagger_navigation`."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:94
+#: ../../source/regex_tagger.rst:145
 msgid "*Regex Taggers navigation*"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:96
+#: ../../source/regex_tagger.rst:147
 msgid ""
 "If the navigation is successful, you should see a panel similar to "
 ":numref:`regex_tagger_create_button` with `\"Create\"` button in the top "
 "left corner of the page."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:102
+#: ../../source/regex_tagger.rst:154
 msgid "*Regex Tagger creation button*"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:104
+#: ../../source/regex_tagger.rst:156
 msgid ""
 "Clicking on the `\"Create\"` button opens a modal window with text `\"New"
 " Regex Tagger\"` as depicted in :numref:`regex_tagger_new_regex_tagger`."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:110
+#: ../../source/regex_tagger.rst:163
 msgid "*Empty Regex Tagger creation view*"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:112
+#: ../../source/regex_tagger.rst:165
 msgid ""
 "Fill the required fields as instructed in TODO and click on the "
 "`\"Create\"` button in the bottom right corner of the window "
 "(:numref:`regex_tagger_create_view`)."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:118
+#: ../../source/regex_tagger.rst:172
 msgid "*Filled Regex Tagger creation view*"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:120
+#: ../../source/regex_tagger.rst:174
 msgid ""
 "The created Regex Tagger can now be seen as the first (or only, if no "
 "previous Regex Taggers exist under the project) row in the table of Regex"
 " Tagger models (:numref:`regex_taggers_list`)."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:126
+#: ../../source/regex_tagger.rst:181
 msgid "*List of Regex Taggers.*"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:129 ../../source/regex_tagger.rst:157
+#: ../../source/regex_tagger.rst:186 ../../source/regex_tagger.rst:294
+#: ../../source/regex_tagger.rst:337 ../../source/regex_tagger.rst:390
+#: ../../source/regex_tagger.rst:450 ../../source/regex_tagger.rst:592
 msgid "API"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:131 ../../source/regex_tagger.rst:182
-#: ../../source/regex_tagger.rst:496 ../../source/regex_tagger.rst:502
-#: ../../source/regex_tagger.rst:507 ../../source/regex_tagger.rst:512
-msgid "# TODO"
+#: ../../source/regex_tagger.rst:188
+msgid "Endpoint **/projects/{project_pk}/regex_taggers/**"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:134
+#: ../../source/regex_tagger.rst:190 ../../source/regex_tagger.rst:298
+#: ../../source/regex_tagger.rst:341 ../../source/regex_tagger.rst:395
+#: ../../source/regex_tagger.rst:455 ../../source/regex_tagger.rst:596
+msgid "Example:"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:213 ../../source/regex_tagger.rst:351
+#: ../../source/regex_tagger.rst:408 ../../source/regex_tagger.rst:610
+msgid "Response:"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:246
 msgid "Usage"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:136
+#: ../../source/regex_tagger.rst:248
 msgid ""
 "The following section covers all functions supported by Regex Tagger. PS!"
 " Some of the functions can only be applied through API as they have no "
 "meaningful usage scenarios in GUI."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:142 ../../source/regex_tagger.rst:161
-msgid "Tag Text"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:146 ../../source/regex_tagger.rst:169
-msgid "Tag Random Doc"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:149 ../../source/regex_tagger.rst:173
+#: ../../source/regex_tagger.rst:251
 msgid "Delete"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:153 ../../source/regex_tagger.rst:177
-msgid "Edit"
+#: ../../source/regex_tagger.rst:253
+msgid "Function `\"Delete\"` allows deleting existing Regex Tagger models."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:165
-msgid "Tag Docs"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:186
-msgid "Fine-Tuning"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:188
+#: ../../source/regex_tagger.rst:258
 msgid ""
-"Let's inspect how different parameter configurations can affect the "
-"result for gaining a better understanding of their functions."
+"For deleting a Regex Tagger model through GUI, navigate to `\"Models\" ->"
+" \"Regex Taggers\"` as seen in :numref:`regex_tagger_navigation`. There "
+"are two options for deleting a Regex Tagger model:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:195
-msgid "Counter Lexicon"
+#: ../../source/regex_tagger.rst:260
+msgid "**Option 1**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:211 ../../source/regex_tagger.rst:222
-msgid "**Result**:"
+#: ../../source/regex_tagger.rst:262
+msgid ""
+"Select the model you wish to delete by navigating to the options panel "
+"denoted with three vertical dots as seen in "
+":numref:`regex_tagger_list_v2` and select option `\"Delete\"` from the "
+"selection menu as seen in :numref:`regex_tagger_delete`."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:232
-msgid "Phrase Slop"
+#: ../../source/regex_tagger.rst:269
+msgid "*Delete a single Regex Tagger*"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:252 ../../source/regex_tagger.rst:264
-#: ../../source/regex_tagger.rst:275 ../../source/regex_tagger.rst:304
-#: ../../source/regex_tagger.rst:318 ../../source/regex_tagger.rst:330
-#: ../../source/regex_tagger.rst:359 ../../source/regex_tagger.rst:373
-#: ../../source/regex_tagger.rst:403 ../../source/regex_tagger.rst:417
-#: ../../source/regex_tagger.rst:448 ../../source/regex_tagger.rst:465
-#: ../../source/regex_tagger.rst:482
-msgid "**Results:**"
+#: ../../source/regex_tagger.rst:271
+msgid "**Option 2**:"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:284
-msgid "Match Type"
+#: ../../source/regex_tagger.rst:273
+msgid ""
+"Select the model(s) you wish to delete by clicking on the selection boxes"
+" in front of Regex Tagger model(s) (:numref:`regex_tagger_bulk_delete`). "
+"If all the models you wish to delete are selected, click on the red "
+"recycle bin icon beside `\"Create\"` button in the top left corner of the"
+" page."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:280
+msgid "*Bulk delete Regex Tagger(s)*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:287
+msgid "*Delete Regex Tagger(s) confirmation*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:289
+msgid ""
+"After following all the previously described steps (for either of the two"
+" options), the interface should now ask your confirmation for finishing "
+"the process (:numref:`regex_tagger_delete_confirmation`). Agree by "
+"clicking on the button `\"Delete\"`."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:296 ../../source/regex_tagger.rst:393
+msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/**"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:308
+msgid "Duplicate"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:310
+msgid ""
+"Function `Duplicate` allows making a copy of an existing Regex Tagger. It"
+" is especially useful if you are fine-tuning a specific model but aren't "
+"sure that the modifications will actually improve it - just make a copy "
+"before you start editing."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:315
+msgid ""
+"For duplicating a Regex Tagger model, navigate to `\"Models\" -> \"Regex "
+"Taggers\"` as seen in :numref:`regex_tagger_navigation`. Select the model"
+" you wish to duplicate and navigate to options panel denoted with three "
+"vertical dots as seen in :numref:`regex_tagger_list_v2`."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:322
+msgid "*Duplicate Regex Tagger*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:324
+msgid ""
+"Select option \"Duplicate\" from the selection menu as seen in "
+":numref:`regex_tagger_duplicate`."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:331
+msgid "*Duplicated Regex Tagger*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:333
+msgid ""
+"Selecting the option instantly triggers the duplication process and the "
+"duplicated Regex Tagger model appears in the list of Regex Tagger models "
+"with name `\"<source_tagger_name>_copy\"` "
+"(:numref:`regex_tagger_duplicate_list`)."
 msgstr ""
 
 #: ../../source/regex_tagger.rst:339
-msgid "Operator"
+msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/duplicate/**"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:383
-msgid "Required Words"
+#: ../../source/regex_tagger.rst:362
+msgid "Edit"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:427
-msgid "N Allowed Edits"
+#: ../../source/regex_tagger.rst:364
+msgid "Function `\"Edit\"` allows editing existing Regex Tagger models."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:494
-msgid "Return Fuzzy Match"
+#: ../../source/regex_tagger.rst:369
+msgid ""
+"For editing a Regex Tagger model, navigate to `\"Models\" -> \"Regex "
+"Taggers\"` as seen in :numref:`regex_tagger_navigation`. Select the model"
+" you wish to edit and navigate to options panel denoted with three "
+"vertical dots as seen in :numref:`regex_tagger_list_v2`."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:500
-msgid "Ignore Case"
+#: ../../source/regex_tagger.rst:376
+msgid "*Edit Regex Tagger*"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:505
-msgid "Ignore Punctuation"
+#: ../../source/regex_tagger.rst:378
+msgid ""
+"Select option \"Edit\" from the selection menu as seen in "
+":numref:`regex_tagger_edit`."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:510
-msgid "Counter Slop"
+#: ../../source/regex_tagger.rst:385
+msgid "*Edit Regex Tagger modal window*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:387
+msgid ""
+"Selecting the option opens a new modal window `\"Edit Regex Tagger\"`. "
+"Make your modifications and click on `\"Submit\"` button in the bottom "
+"right corner of the panel (:numref:`regex_tagger_edit_modal`)."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:442
+msgid "Tag Random Doc"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:444
+msgid ""
+"`\"Tag Random Doc\"` is a helpful function for testing Regex Tagger "
+"models on random documents."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:453
+msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_random_doc/**"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:468
+msgid "Response (positive):"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:507
+msgid "Response (negative):"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:527
+msgid "Tag Text"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:529
+msgid ""
+"Function `\"Tag Text\"` enables tagging a single text with a selected "
+"Regex Tagger model."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:534
+msgid ""
+"For tagging a text with an existing Regex Tagger model, navigate to "
+"`\"Models\" -> \"Regex Taggers\"` as seen in "
+":numref:`regex_tagger_navigation`."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:541
+msgid "*List of existing Regex Tagger models*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:543
+msgid ""
+"Select the model you wish to use and navigate to options panel denoted "
+"with three vertical dots as seen in :numref:`regex_tagger_list_v2`."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:550
+msgid "*Tag Text option in selection menu*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:552
+msgid ""
+"Select option \"Tag Text\" from the selection menu as seen in "
+":numref:`regex_tagger_tag_text`."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:560
+msgid "*Tag Text modal window*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:562
+msgid ""
+"Selecting the option opens a new modal window `\"Tag Text\"`. Insert the "
+"text you wish to tag and click on the button `\"Tag\"` in the bottom "
+"right corner of the panel (:numref:`regex_tagger_tag_text_modal`)."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:570
+msgid "*Tag Text positive output*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:579
+msgid "*Tag Text negative output*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:581
+msgid ""
+"The results are displayed in the same modal window as seen in "
+":numref:`regex_tagger_tag_text_pos_output` if any matches where detected."
+" If no matches where found, the text `\"No matches found\"` is displayed "
+"as seen in in :numref:`regex_tagger_tag_text_neg_output`."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:583
+msgid "**Model identifier** in format <tag_name>:<tag_id>"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:584
+msgid ""
+"**Tags** - name of the Regex Tagger model(s) which resulted in positive "
+"match (NB! number of tags is always one in this scenario!)"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:585
+msgid ""
+"**Matches** - unique words/phrases matching the selected Regex Tagger "
+"lexicon entries."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:586
+msgid "**Text** - All detected matches highlighted in the source text."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:594
+msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_text/**"
 msgstr ""
 
 #~ msgid ""
@@ -457,5 +660,191 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "False"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":ref:`Regex Tagger <regex_tagger_concept>` is "
+#~ "a tool for tagging texts based on"
+#~ " pattern matches."
+#~ msgstr ""
+
+#~ msgid "**Terminology**"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To avoid misinterpretation, let's first "
+#~ "define the meanings of \"word\" and "
+#~ "\"lexicon entry\" in the scope of "
+#~ "Regex Tagger."
+#~ msgstr ""
+
+#~ msgid "Termin"
+#~ msgstr ""
+
+#~ msgid "Definition"
+#~ msgstr ""
+
+#~ msgid "Examples"
+#~ msgstr ""
+
+#~ msgid "**word**"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "String consisting of non-whitespace "
+#~ "characters. NB! regex whitespace wildcards "
+#~ "are in this case included as "
+#~ "non-whitepace characters!"
+#~ msgstr ""
+
+#~ msgid "\"cats\", \"house\", \"\\\\d\\\\s*cat\\\\w*\""
+#~ msgstr ""
+
+#~ msgid "**lexicon entry**"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "One entry in a lexicon. Lexicon "
+#~ "entry can either be a single word,"
+#~ " multiple words separated by whitespaces,"
+#~ " or a regex pattern."
+#~ msgstr ""
+
+#~ msgid "\"cat\", \"dogs cats hats\", \"\\\\d\\\\s*cat\\\\w*\""
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Name of the Regex Tagger, which is"
+#~ " also used as name of the tag"
+#~ " while tagging the documents"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "List of lexicon entries to match "
+#~ "(as comma-separated strings in API "
+#~ "and newline-separated strings in GUI)"
+#~ msgstr ""
+
+#~ msgid "List of nullifying lexicon entries."
+#~ msgstr ""
+
+#~ msgid "Logical operator for matching words in the lexicon."
+#~ msgstr ""
+
+#~ msgid "return positive result if at least one lexicon entry is found"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "return positive result only if all "
+#~ "lexicon entries are found (PS! pay "
+#~ "attention to *required_words* parameter!)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Required minimum ratio of detected "
+#~ "lexicon entries to all the lexicon "
+#~ "entries for a positive result."
+#~ msgstr ""
+
+#~ msgid "How the lexicon entries should be matched."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "matches all strings starting with "
+#~ "lexicon entities (to the first "
+#~ "whitespace)"
+#~ msgstr ""
+
+#~ msgid "detects only exact matches to the lexicon entities"
+#~ msgstr ""
+
+#~ msgid "matches all entities containing lexicon entities as subentities"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Number of non-lexicon words allowed "
+#~ "between main lexion entries and counter"
+#~ " lexicon entries."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If set true, return the whole "
+#~ "string sequence matched instead of the"
+#~ " original lexicon entry."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Number of allowed character changes "
+#~ "between lexicon entry and matched string"
+#~ " sequence. One edit is considered as"
+#~ " one of the following:"
+#~ msgstr ""
+
+#~ msgid "missing a character (\"cat\" -> \"ct\")"
+#~ msgstr ""
+
+#~ msgid "adding a character (\"cat\" -> \"catt\")"
+#~ msgstr ""
+
+#~ msgid "substituting a character (\"cat\" -> \"kat\")"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If set true, ignore end-of-"
+#~ "sentence characters between lexicon entry "
+#~ "words and/or counter lexicon entries and"
+#~ " lexicon entries. Otherwise"
+#~ msgstr ""
+
+#~ msgid "# TODO"
+#~ msgstr ""
+
+#~ msgid "Tag Docs"
+#~ msgstr ""
+
+#~ msgid "Fine-Tuning"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Let's inspect how different parameter "
+#~ "configurations can affect the result for"
+#~ " gaining a better understanding of "
+#~ "their functions."
+#~ msgstr ""
+
+#~ msgid "Counter Lexicon"
+#~ msgstr ""
+
+#~ msgid "**Result**:"
+#~ msgstr ""
+
+#~ msgid "Phrase Slop"
+#~ msgstr ""
+
+#~ msgid "**Results:**"
+#~ msgstr ""
+
+#~ msgid "Match Type"
+#~ msgstr ""
+
+#~ msgid "Operator"
+#~ msgstr ""
+
+#~ msgid "Required Words"
+#~ msgstr ""
+
+#~ msgid "N Allowed Edits"
+#~ msgstr ""
+
+#~ msgid "Return Fuzzy Match"
+#~ msgstr ""
+
+#~ msgid "Ignore Case"
+#~ msgstr ""
+
+#~ msgid "Ignore Punctuation"
+#~ msgstr ""
+
+#~ msgid "Counter Slop"
 #~ msgstr ""
 

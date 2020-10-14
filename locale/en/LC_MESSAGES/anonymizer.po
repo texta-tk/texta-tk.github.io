@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 22:21+0300\n"
+"POT-Creation-Date: 2020-10-14 21:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,48 +98,174 @@ msgid ""
 "`misspelling_threshold` to avoid collision errors."
 msgstr ""
 
-#: ../../source/anonymizer.rst:37 ../../source/anonymizer.rst:68
+#: ../../source/anonymizer.rst:37 ../../source/anonymizer.rst:108
 msgid "GUI"
 msgstr ""
 
-#: ../../source/anonymizer.rst:41 ../../source/anonymizer.rst:72
+#: ../../source/anonymizer.rst:40
+msgid ""
+"For creating a new Anonymizer, navigate to `\"Tools\" -> \"Anonymizer\"` "
+"as seen in :numref:`anonymizer_nav`."
+msgstr ""
+
+#: ../../source/anonymizer.rst:46
+msgid "*Anonymizer navigation*"
+msgstr ""
+
+#: ../../source/anonymizer.rst:48
+msgid ""
+"If the navigation is successful, you should see a panel similar to "
+":numref:`anonymizer_create_button` with `\"Create\"` button in the top "
+"left corner of the page."
+msgstr ""
+
+#: ../../source/anonymizer.rst:54
+msgid "*Anonymizer creation button*"
+msgstr ""
+
+#: ../../source/anonymizer.rst:56
+msgid ""
+"Clicking on the `\"Create\"` button opens a modal window with text `\"New"
+" Anonymizer\"` as depicted in :numref:`anonymizer_new_anonymizer`."
+msgstr ""
+
+#: ../../source/anonymizer.rst:62
+msgid "*Empty Anonymizer creation view*"
+msgstr ""
+
+#: ../../source/anonymizer.rst:64
+msgid ""
+"Fill the required fields as instructed in TODO and click on the "
+"`\"Create\"` button in the bottom right corner of the window "
+"(:numref:`anonymizer_create_view`)."
+msgstr ""
+
+#: ../../source/anonymizer.rst:70
+msgid "*Filled Anonymizer creation view*"
+msgstr ""
+
+#: ../../source/anonymizer.rst:72
+msgid ""
+"The created Anonymizer can now be seen as the first (or only, if no "
+"previous Anonymizers exist under the project) row in the table of "
+"Anonymizers (:numref:`anonymizer_list`)."
+msgstr ""
+
+#: ../../source/anonymizer.rst:78
+msgid "*List of Anonymizers.*"
+msgstr ""
+
+#: ../../source/anonymizer.rst:81 ../../source/anonymizer.rst:165
 msgid "API"
 msgstr ""
 
-#: ../../source/anonymizer.rst:43
+#: ../../source/anonymizer.rst:83
 msgid "Endpoint: **/projects/{project_pk}/anonymizers/**"
 msgstr ""
 
-#: ../../source/anonymizer.rst:45 ../../source/anonymizer.rst:79
-#: ../../source/anonymizer.rst:103
+#: ../../source/anonymizer.rst:85 ../../source/anonymizer.rst:172
+#: ../../source/anonymizer.rst:196
 msgid "Example:"
 msgstr ""
 
-#: ../../source/anonymizer.rst:65
+#: ../../source/anonymizer.rst:105
 msgid "Usage"
 msgstr ""
 
-#: ../../source/anonymizer.rst:75
-msgid "Anonymize text"
+#: ../../source/anonymizer.rst:111 ../../source/anonymizer.rst:168
+msgid "Anonymize Text"
 msgstr ""
 
-#: ../../source/anonymizer.rst:77
+#: ../../source/anonymizer.rst:113
+msgid ""
+"For using an existing Anonymizer to anonymize text, navigate to "
+"`\"Tools\" -> \"Anonymizer\"` as seen in :numref:`anonymizer_nav`. After "
+"successful navigation, you should see a list of existing Anonymizers. "
+"Select the Anonymizer you wish to use for anonymization and navigate to "
+"options panel as seen in :numref:`anonymizer_actions_0`."
+msgstr ""
+
+#: ../../source/anonymizer.rst:119
+msgid "*Anonymizer options panel location.*"
+msgstr ""
+
+#: ../../source/anonymizer.rst:121
+msgid ""
+"After clicking on the three vertical dots denoting `\"Options\"`, a small"
+" selection menu opens as seen in :numref:`anonymizer_actions_1`. Select "
+"option `\"Anonymize text\"`."
+msgstr ""
+
+#: ../../source/anonymizer.rst:126
+msgid "*Anonymizer -> Anonymize Text*"
+msgstr ""
+
+#: ../../source/anonymizer.rst:128
+msgid ""
+"Clicking on the option opens a modal window with title `\"Anonymize "
+"text\"` with two input fields: `\"text\"` and `\"names\"` "
+"(:numref:`anonymize_text_empty`)."
+msgstr ""
+
+#: ../../source/anonymizer.rst:134
+msgid "*Empty \"Anonymize text\" window.*"
+msgstr ""
+
+#: ../../source/anonymizer.rst:136
+msgid ""
+"Write or copy a text containing names to anonymize in the field "
+"`\"text\"` and write or copy a list of newline-separated anonymizable "
+"names in format `\"last_name, first_name\"` in the field below "
+"(:numref:`anonymize_text_pre`)."
+msgstr ""
+
+#: ../../source/anonymizer.rst:142
+msgid "*Filled \"Anonymize text\" window.*"
+msgstr ""
+
+#: ../../source/anonymizer.rst:144
+msgid ""
+"Click on `\"Submit\"` button in the bottom right corner. The resulting "
+"text with anonymized names should appear instantly below the same panel "
+"(:numref:`anonymize_text_post`)."
+msgstr ""
+
+#: ../../source/anonymizer.rst:150
+msgid "*\"Anonymize text\" result.*"
+msgstr ""
+
+#: ../../source/anonymizer.rst:155
+msgid "Edit"
+msgstr ""
+
+#: ../../source/anonymizer.rst:157
+msgid "TODO  (:numref:`anonymizer_actions_2`)."
+msgstr ""
+
+#: ../../source/anonymizer.rst:162
+msgid "*Anonymizer -> Edit*"
+msgstr ""
+
+#: ../../source/anonymizer.rst:170
 msgid "Endpoint **/projects/{project_pk}/anonymizers/{id}/anonymize_text/**"
 msgstr ""
 
-#: ../../source/anonymizer.rst:92 ../../source/anonymizer.rst:120
+#: ../../source/anonymizer.rst:185 ../../source/anonymizer.rst:213
 msgid "Response:"
 msgstr ""
 
-#: ../../source/anonymizer.rst:99
+#: ../../source/anonymizer.rst:192
 msgid "Anonymize texts"
 msgstr ""
 
-#: ../../source/anonymizer.rst:101
+#: ../../source/anonymizer.rst:194
 msgid "Endpoint **/projects/{project_pk}/anonymizers/{id}/anonymize_texts/**"
 msgstr ""
 
-#: ../../source/anonymizer.rst:131
+#: ../../source/anonymizer.rst:224
 msgid "Fine-Tuning"
 msgstr ""
+
+#~ msgid "Anonymize text"
+#~ msgstr ""
 

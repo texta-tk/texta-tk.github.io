@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"POT-Creation-Date: 2020-10-14 21:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,68 +24,102 @@ msgstr ""
 
 #: ../../source/regex_tagger_group.rst:5
 msgid ""
-":ref:`Regex Tagger Group <regex_tagger_group_concept>` is a Tagger for "
-"Regexer, read more under the terminology. \"Üleliigsed seletused välja, "
-"kuna need tulevad terminoloogia alla\"."
+":ref:`Regex Tagger Group <regex_tagger_group_concept>` allows combining "
+"multiple :ref:`Regex Tagger <regex_tagger_concept>` models. For example, "
+"we can combine Regex Tagger models \"cat\", \"dog\", \"squirrel\" under a"
+" single Regex Tagger Group with unified name \"animals\"."
 msgstr ""
 
-#: ../../source/regex_tagger_group.rst:7
-msgid "Iga tagger all on: Creation, Useage, Application, Fine-tuning"
+#: ../../source/regex_tagger_group.rst:9
+msgid "Creation"
 msgstr ""
 
-#: ../../source/regex_tagger_group.rst:11
-msgid "Creation, tase 2"
-msgstr ""
-
-#: ../../source/regex_tagger_group.rst:14
-msgid "GUI, tase 3"
-msgstr ""
-
-#: ../../source/regex_tagger_group.rst:17
-msgid "Esimese alapealkirja alapealkiri, tase 4"
-msgstr ""
-
-#: ../../source/regex_tagger_group.rst:20
-msgid "No kui veel on vaja alapealkirjatada, siis see on tase 5"
-msgstr ""
-
-#: ../../source/regex_tagger_group.rst:23
-msgid "API, tase 3"
-msgstr ""
-
-#: ../../source/regex_tagger_group.rst:26
-msgid "Siin viidatakse joonisele :numref:`importing_loc2`."
-msgstr ""
-
-#: ../../source/regex_tagger_group.rst:31
-msgid "*See on joonis*"
-msgstr ""
-
-#: ../../source/regex_tagger_group.rst:34
-msgid "Useage"
-msgstr ""
-
-#: ../../source/regex_tagger_group.rst:37
-#: ../../source/regex_tagger_group.rst:46
-#: ../../source/regex_tagger_group.rst:57
+#: ../../source/regex_tagger_group.rst:12
+#: ../../source/regex_tagger_group.rst:29
+#: ../../source/regex_tagger_group.rst:39
+#: ../../source/regex_tagger_group.rst:49
+#: ../../source/regex_tagger_group.rst:59
+#: ../../source/regex_tagger_group.rst:69
 msgid "GUI"
 msgstr ""
 
-#: ../../source/regex_tagger_group.rst:40
-#: ../../source/regex_tagger_group.rst:49
-#: ../../source/regex_tagger_group.rst:60
+#: ../../source/regex_tagger_group.rst:17
+#: ../../source/regex_tagger_group.rst:33
+#: ../../source/regex_tagger_group.rst:43
+#: ../../source/regex_tagger_group.rst:53
+#: ../../source/regex_tagger_group.rst:63
+#: ../../source/regex_tagger_group.rst:73
+#: ../../source/regex_tagger_group.rst:80
 msgid "API"
 msgstr ""
 
-#: ../../source/regex_tagger_group.rst:43
-msgid "Application"
+#: ../../source/regex_tagger_group.rst:22
+msgid "Useage"
 msgstr ""
 
-#: ../../source/regex_tagger_group.rst:52
+#: ../../source/regex_tagger_group.rst:26
+msgid "Tag Text"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:36
+msgid "Tag Random Doc"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:46
+msgid "Edit"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:56
+msgid "Delete"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:66
+msgid "Apply Tagger Group"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:76
+msgid "Multitag Docs"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:84
 msgid "Fine-Tuning"
 msgstr ""
 
-#: ../../source/regex_tagger_group.rst:54
-msgid "Siia tulevad parameetrid."
-msgstr ""
+#~ msgid ""
+#~ ":ref:`Regex Tagger Group "
+#~ "<regex_tagger_group_concept>` is a Tagger for"
+#~ " Regexer, read more under the "
+#~ "terminology. \"Üleliigsed seletused välja, "
+#~ "kuna need tulevad terminoloogia alla\"."
+#~ msgstr ""
+
+#~ msgid "Iga tagger all on: Creation, Useage, Application, Fine-tuning"
+#~ msgstr ""
+
+#~ msgid "Creation, tase 2"
+#~ msgstr ""
+
+#~ msgid "GUI, tase 3"
+#~ msgstr ""
+
+#~ msgid "Esimese alapealkirja alapealkiri, tase 4"
+#~ msgstr ""
+
+#~ msgid "No kui veel on vaja alapealkirjatada, siis see on tase 5"
+#~ msgstr ""
+
+#~ msgid "API, tase 3"
+#~ msgstr ""
+
+#~ msgid "Siin viidatakse joonisele :numref:`importing_loc2`."
+#~ msgstr ""
+
+#~ msgid "*See on joonis*"
+#~ msgstr ""
+
+#~ msgid "Application"
+#~ msgstr ""
+
+#~ msgid "Siia tulevad parameetrid."
+#~ msgstr ""
 

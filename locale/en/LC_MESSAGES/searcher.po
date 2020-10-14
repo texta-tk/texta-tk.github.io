@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"POT-Creation-Date: 2020-10-14 21:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,139 +70,375 @@ msgid ""
 " After saving the search, it is available also to other tools."
 msgstr ""
 
-#: ../../source/searcher.rst:31
-msgid ""
-"In order to add a constraint, we must first choose one or several fields."
-" After the field is selected, we can then specify which textual tokens "
-"(words or word parts) should or must occur in the interested document "
-"subset."
-msgstr ""
-
 #: ../../source/searcher.rst:33
 msgid ""
-"We must notice that the search will be done on the Project's dataset "
-"chosen in the upper panel."
+"The search will be done on the Project's dataset(s) chosen in the upper "
+"panel."
 msgstr ""
 
-#: ../../source/searcher.rst:35
+#: ../../source/searcher.rst:38
+msgid "*Current search*"
+msgstr ""
+
+#: ../../source/searcher.rst:40
+msgid "From left to right in the red box:"
+msgstr ""
+
+#: ../../source/searcher.rst:42
 msgid ""
-"Suppose we are interested in finding all the documents which contains "
-"“bribery” and “official” from a text. :numref:`search_constraints` shows "
-"how we have defined that we want to find all the documents which contain "
-"“bribery” and “official” in the article_text_mlp.text field:"
-msgstr ""
-
-#: ../../source/searcher.rst:41
-msgid "*Example Search Constraints*"
+"view query constructed with Current Search in a more suitable format for "
+":ref:`Elasticsearch <elasticsearch>`,"
 msgstr ""
 
 #: ../../source/searcher.rst:43
-msgid "Searches have several parameters to consider:"
+msgid "save the constructed search,"
 msgstr ""
 
-#: ../../source/searcher.rst:45
-msgid ""
-"We can also choose ‘or’ or ‘not’ under the Operator. In this case we "
-"either get documents containing at least one of the words (‘or’) or "
-"definitely not containing the words listed (‘not’)."
+#: ../../source/searcher.rst:44
+msgid "collapse Current Search panel."
 msgstr ""
 
-#: ../../source/searcher.rst:47
-msgid ""
-"We can choose from several match types. Type “word” means that we want to"
-" find exact matches of the word(s) written and “phrase” means that we "
-"want to find exact matches of the phrases we are looking for, whereas "
-"“Phrase prefix” matches prefixes. This means suffixes may differ: for "
-"example searching for ‘bribe’ will find ‘bribetaking’, ‘bribers’, "
-"‘bribery’ and other words starting with ‘bribe’. 'regex' takes the input "
-"as `a regular expression <https://www.rexegg.com/regex-quickstart.html>`_"
-" and searches document accordingly. For example 'bribe.{0,2}' will find "
-"'bribe' and 'bribery', but not longer words. If we have a big list of "
-"words we want to search for, we can extend the field searcher's panel."
+#: ../../source/searcher.rst:46
+msgid "Current Searh divides into Simple Search and Advanced Search (look below)."
 msgstr ""
 
 #: ../../source/searcher.rst:49
 msgid ""
-"We can also use Slop. Via Slop we can define up to how many words can be "
-"between the two words we wrote on one row in case the range is important "
-"for us."
+"Current match doesn't differentiate lower and upper case (except regex "
+"constraint). This means that searching for \"President\" also matches "
+"\"president\". If the case is important in the search, use regex "
+"constraint (see below)."
 msgstr ""
 
-#: ../../source/searcher.rst:51
-msgid ""
-"Should we be interested in more detailed searches, we can add more "
-"constraints like the previous ones via **Add Filter** button. For "
-"example, we can also search documents in a certain date range in case we "
-"have a proper preprocessed date field."
+#: ../../source/searcher.rst:52
+msgid "Simple Search"
 msgstr ""
 
 #: ../../source/searcher.rst:54
 msgid ""
-"If we click on “Search” button, we will see the matching data in a "
-"tabular form (see :numref:`search_results`), where layered features share"
-" feature name’s prefix, and matches are highlighted in pink. The results "
-"might be updating while modifying the filters."
+"Simple search searches for a word on all fields in the chosen dataset. "
+"Words separated with space (' ') are considered as a space-separated list"
+" - each word must occur in at least one field in the document."
 msgstr ""
 
-#: ../../source/searcher.rst:61
-msgid "*Example Search Results*"
-msgstr ""
-
-#: ../../source/searcher.rst:63
+#: ../../source/searcher.rst:59
 msgid ""
-"If there are too many features (columns), we can hide or show them from "
-"the drop-down menu in the down left corner. We can select or deselect all"
-" of them together (*Select all*) or by clicking on them separately. We "
-"can also hide or get back the Searcher's panels with *Toggle drawer* "
-"button. We can browse through Searcher's results with the arrows in the "
-"bottom right. We can also choose how many items per page would we want to"
-" see."
+"*Simple search*. 'word1', 'word2', 'word3' are searched from all the "
+"fields in the document. Only those which have all of them matched at "
+"least once, are returned."
+msgstr ""
+
+#: ../../source/searcher.rst:62
+msgid "Advanced Search"
+msgstr ""
+
+#: ../../source/searcher.rst:64
+msgid ""
+"Advanced search searches for a constraint in a certain field in the "
+"chosen dataset. Constraints can be added on different fields in one "
+"search. Constrainst can be removed via the 'X'-sign in upper right. The "
+"constraints can be divided into three: string constraint, date constraint"
+" and texta_tag constraint (look below). When the constraints are chosen "
+"the Search output can be seen via \"Search\"-button."
+msgstr ""
+
+#: ../../source/searcher.rst:67
+msgid "String constraint"
 msgstr ""
 
 #: ../../source/searcher.rst:68
-msgid "*Select Fields for Search Results*"
+msgid ""
+"One line equals one search item. This constraint has several operators. "
+"Look below for their functions."
 msgstr ""
 
 #: ../../source/searcher.rst:70
-msgid ""
-"After we have come up with a suitable search, we can save it for later "
-"use by clicking on the **disk** icon up-right in the Current Search "
-"panel. The **eye** icon next to the disk icon shows us the actual "
-"Elasticsearch query we built by choosing the Operators and words to "
-"search for."
+msgid "Operators"
 msgstr ""
 
-#: ../../source/searcher.rst:73
+#: ../../source/searcher.rst:74
+msgid "Operator"
+msgstr ""
+
+#: ../../source/searcher.rst:75 ../../source/searcher.rst:138
+msgid "Meaning"
+msgstr ""
+
+#: ../../source/searcher.rst:76
+msgid "and"
+msgstr ""
+
+#: ../../source/searcher.rst:77
+msgid "all of the items (lines) are matched in the document"
+msgstr ""
+
+#: ../../source/searcher.rst:78
+msgid "or"
+msgstr ""
+
+#: ../../source/searcher.rst:79
+msgid "at least one of the items (lines) is matched in the document"
+msgstr ""
+
+#: ../../source/searcher.rst:80
+msgid "not"
+msgstr ""
+
+#: ../../source/searcher.rst:81
+msgid "definetly none of the items are matched in the document"
+msgstr ""
+
+#: ../../source/searcher.rst:82
+msgid "phrase prefix"
+msgstr ""
+
+#: ../../source/searcher.rst:83
+msgid ""
+"matches the beginning of the words (endings can differ, e.g. searching "
+"for 'bribe' gives us 'bribe', 'bribery', 'bribetaking', etc)"
+msgstr ""
+
+#: ../../source/searcher.rst:84
+msgid "word"
+msgstr ""
+
+#: ../../source/searcher.rst:85
+msgid "finds exact word written (similar to simple search)"
+msgstr ""
+
+#: ../../source/searcher.rst:86
+msgid "phrase"
+msgstr ""
+
+#: ../../source/searcher.rst:87
+msgid "finds exact match for a phrase (more than one word in one line)"
+msgstr ""
+
+#: ../../source/searcher.rst:88
+msgid "regex"
+msgstr ""
+
+#: ../../source/searcher.rst:89
+msgid ""
+"takes the input as `a regular expression <https://www.rexegg.com/regex-"
+"quickstart.html>`_ and searches document accordingly. Nb! This is "
+":ref:`Elasticsearch <elasticsearch>` syntax."
+msgstr ""
+
+#: ../../source/searcher.rst:90
+msgid "slop"
+msgstr ""
+
+#: ../../source/searcher.rst:91
+msgid "defines how many words can be between the phrase words defined"
+msgstr ""
+
+#: ../../source/searcher.rst:96
+msgid ""
+"*String constraint*. This string constraint is on field named \"text\". "
+"It looks for documents that have either phrase \"president Obama\" or "
+"\"president Trump\" in it (or both). Since the Slop is 2, it also matches"
+" the phrase if it has 0-2 words between the words (e.g \"president Barack"
+" Obama\"). The \"X\" in the red square is for deleting this constraint."
+msgstr ""
+
+#: ../../source/searcher.rst:98
+msgid ""
+"The string constraint has an option to add :ref:`a saved lexicon's "
+"<lexiconminer>` terms into the search (via button \"Add lexicon\")."
+msgstr ""
+
+#: ../../source/searcher.rst:101
+msgid "Date constraint"
+msgstr ""
+
+#: ../../source/searcher.rst:102
+msgid ""
+"Date constraint works only on a proper datefield. This outputs only those"
+" documents which datefield are within the chosen time range (starting day"
+" included and ending day excluded). The time range can be chosen by "
+"clicking on the little calendar in the right."
+msgstr ""
+
+#: ../../source/searcher.rst:107
+msgid "*Date constraint*"
+msgstr ""
+
+#: ../../source/searcher.rst:110
+msgid "Texta_tag constraint"
+msgstr ""
+
+#: ../../source/searcher.rst:111
+msgid ""
+"Texta_tag constraint helps to find certain :ref:`tag <texta_fact>` or "
+":ref:`tags <texta_fact>` with certain values. You can find several "
+"different values at once with the little '+'-sign which adds one more "
+"value-line. Look in the table above for the operators' meanings."
+msgstr ""
+
+#: ../../source/searcher.rst:116
+msgid ""
+"*Texta_tag tag constraints*. Search for documents that have at least one "
+"ORG tag in it and definetly no PER tags."
+msgstr ""
+
+#: ../../source/searcher.rst:121
+msgid ""
+"*Texta_tag tag value constraint with or*. Texta_tag tag constraint "
+"enables choosing multible tags at once. For example this constraint "
+"outputs all documents that has at least one of the tags (COMPANY, EML, "
+"ADDR) in it."
+msgstr ""
+
+#: ../../source/searcher.rst:126
+msgid ""
+"*Texta_tag tag value constraint*. Search for documents that have an ORG "
+"tag with either value \"NATO\" or value \"European Union\" in it (or "
+"both)."
+msgstr ""
+
+#: ../../source/searcher.rst:129
+msgid "Search Options"
+msgstr ""
+
+#: ../../source/searcher.rst:131
+msgid "Look at the table below for the meanings of search options."
+msgstr ""
+
+#: ../../source/searcher.rst:133
+msgid "Search options"
+msgstr ""
+
+#: ../../source/searcher.rst:137
+msgid "Option"
+msgstr ""
+
+#: ../../source/searcher.rst:139
+msgid "Highlight facts"
+msgstr ""
+
+#: ../../source/searcher.rst:140
+msgid "highlights all the facts in the text"
+msgstr ""
+
+#: ../../source/searcher.rst:141
+msgid "Only highlight matching facts"
+msgstr ""
+
+#: ../../source/searcher.rst:142
+msgid "highlights only the facts that were looked for"
+msgstr ""
+
+#: ../../source/searcher.rst:143
+msgid "Highlight searcher matches"
+msgstr ""
+
+#: ../../source/searcher.rst:144
+msgid "highlights string constraints' matches"
+msgstr ""
+
+#: ../../source/searcher.rst:145
+msgid "Show short version"
+msgstr ""
+
+#: ../../source/searcher.rst:146
+msgid "shows certain amount of words before and after the match"
+msgstr ""
+
+#: ../../source/searcher.rst:151
+msgid ""
+"*Search Options*. Only texta_tag constraints will be highlighted in the "
+"results with these selected Search Options."
+msgstr ""
+
+#: ../../source/searcher.rst:154
+msgid "Examples"
+msgstr ""
+
+#: ../../source/searcher.rst:159
+msgid ""
+"*Regex String Constraint*. Search for documents that have either "
+"\"payoff\" or \"bribe[a-z]{0,2}\" in it. Last of which means word 'bribe'"
+" with 0-2 extra letters (e.g \"bribe\", \"bribed\", \"bribery\")."
+msgstr ""
+
+#: ../../source/searcher.rst:164
+msgid ""
+"*Combination of constraints*. Search for documents published in 2014, "
+"contain LOC tags with values \"Russia\" and \"Ukraine\" and the word "
+"\"invasion\"."
+msgstr ""
+
+#: ../../source/searcher.rst:168
+msgid "Browsing Search results"
+msgstr ""
+
+#: ../../source/searcher.rst:170
+msgid ""
+"If we click on “Search” button, we will see the matching documents in a "
+"tabular form (see :numref:`search_results`). The results might be "
+"updating while modifying the constraints."
+msgstr ""
+
+#: ../../source/searcher.rst:176
+msgid "*Example Search Results*"
+msgstr ""
+
+#: ../../source/searcher.rst:178
+msgid ""
+"If there are too many features (columns), we can hide or show them from "
+"the drop-down menu in the up left corner. We can select or deselect all "
+"of them together (*Select all*) or by clicking on them separately. We can"
+" also hide or get back the Searcher's panels with *Toggle drawer* button."
+" We can browse through Searcher's results with the arrows in the upper "
+"right. We can also choose how many items per page would we want to see in"
+" the upper right."
+msgstr ""
+
+#: ../../source/searcher.rst:183
+msgid "*Select Fields for Search Results*"
+msgstr ""
+
+#: ../../source/searcher.rst:186
 msgid ""
 "API for scrolling can be found `here <https://rest-"
 "dev.texta.ee/api/v1/projects/1/scroll/>`_."
 msgstr ""
 
-#: ../../source/searcher.rst:78
+#: ../../source/searcher.rst:191
 msgid "Saved Searches"
 msgstr ""
 
-#: ../../source/searcher.rst:80
+#: ../../source/searcher.rst:193
 msgid ""
-"After saving a search, it becomes available for using in Toolkit's "
-"applications. Now, whenever we check it, we can use it to browse data or "
-"apply in aggregations. We can also send our saved search to other users "
-"who have the permission to our project with a copied url. This opens the "
-"saved search under the Current Search for the other user. We can also "
-"open our saved search in the Current Search simply by clicking on it."
+"After having comed up with a suitable search, it can be saved for later "
+"use by clicking on the **disk** icon up-right in the Current Search "
+"panel. The **eye** icon next to the disk icon shows us the actual "
+":ref:`Elasticsearch <elasticsearch>` query built by choosing the "
+"Operators and words to search for."
 msgstr ""
 
-#: ../../source/searcher.rst:87
+#: ../../source/searcher.rst:195
+msgid ""
+"After saving a search, it becomes available for using in Toolkit's "
+"applications. For example, they can be used in browsing the search later "
+"again or applying in aggregations. The saved search can be sent to other "
+"users who have the permission to the project with a copied url. This "
+"opens the saved search under the Current Search for the other user. Saved"
+" searches can be opened in the Current Search simply by clicking on it."
+msgstr ""
+
+#: ../../source/searcher.rst:200
 msgid ""
 "API support for saving searches can be found `here <https://rest-"
 "dev.texta.ee/api/v1/projects/1/searches/>`_."
 msgstr ""
 
-#: ../../source/searcher.rst:92
-msgid "Aggregations: Summarizing the Data"
+#: ../../source/searcher.rst:205
+msgid "Aggregations"
 msgstr ""
 
-#: ../../source/searcher.rst:94
+#: ../../source/searcher.rst:207
 msgid ""
 "As fun as browsing through the data is, it is not always enough. "
 "Sometimes we want to get an overview of our data, such as topics over "
@@ -210,7 +446,7 @@ msgid ""
 "through the “Aggregations” panel."
 msgstr ""
 
-#: ../../source/searcher.rst:96
+#: ../../source/searcher.rst:209
 msgid ""
 "Aggregations have two components - data and features it aggregates over. "
 "It will aggregate over the dataset we have under the Current Search. We "
@@ -223,11 +459,11 @@ msgid ""
 " to get it as the current search."
 msgstr ""
 
-#: ../../source/searcher.rst:100
+#: ../../source/searcher.rst:213
 msgid "**How are the significance scores calculated?**"
 msgstr ""
 
-#: ../../source/searcher.rst:101
+#: ../../source/searcher.rst:214
 msgid ""
 "The numbers returned for scores are primarily intended for ranking "
 "different suggestions sensibly rather than something easily understood by"
@@ -240,7 +476,7 @@ msgid ""
 "aggregations-bucket-significanttext-aggregation.html>`_."
 msgstr ""
 
-#: ../../source/searcher.rst:103
+#: ../../source/searcher.rst:216
 msgid ""
 "One cool thing we can also do, is to visualize the frequency of texts "
 "with searched words in it on a timeline. We can do that if we have a "
@@ -249,11 +485,153 @@ msgid ""
 "frequently in our dataset."
 msgstr ""
 
-#: ../../source/searcher.rst:105
+#: ../../source/searcher.rst:218
 msgid ""
 "We can also aggregate over :ref:`texta_facts <texta_fact>` field in order"
 " to see the top entities under some tag. If we click on the black diagram"
 " button, we can scroll through the results. We see as many entities as we"
 " chose for our aggregation size."
 msgstr ""
+
+#~ msgid ""
+#~ "In order to add a constraint, we"
+#~ " must first choose one or several "
+#~ "fields. After the field is selected, "
+#~ "we can then specify which textual "
+#~ "tokens (words or word parts) should "
+#~ "or must occur in the interested "
+#~ "document subset."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We must notice that the search "
+#~ "will be done on the Project's "
+#~ "dataset chosen in the upper panel."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Suppose we are interested in finding "
+#~ "all the documents which contains "
+#~ "“bribery” and “official” from a text."
+#~ " :numref:`search_constraints` shows how we "
+#~ "have defined that we want to find"
+#~ " all the documents which contain "
+#~ "“bribery” and “official” in the "
+#~ "article_text_mlp.text field:"
+#~ msgstr ""
+
+#~ msgid "*Example Search Constraints*"
+#~ msgstr ""
+
+#~ msgid "Searches have several parameters to consider:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We can also choose ‘or’ or ‘not’"
+#~ " under the Operator. In this case "
+#~ "we either get documents containing at"
+#~ " least one of the words (‘or’) "
+#~ "or definitely not containing the words"
+#~ " listed (‘not’)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We can choose from several match "
+#~ "types. Type “word” means that we "
+#~ "want to find exact matches of the"
+#~ " word(s) written and “phrase” means "
+#~ "that we want to find exact matches"
+#~ " of the phrases we are looking "
+#~ "for, whereas “Phrase prefix” matches "
+#~ "prefixes. This means suffixes may "
+#~ "differ: for example searching for "
+#~ "‘bribe’ will find ‘bribetaking’, ‘bribers’,"
+#~ " ‘bribery’ and other words starting "
+#~ "with ‘bribe’. 'regex' takes the input"
+#~ " as `a regular expression "
+#~ "<https://www.rexegg.com/regex-quickstart.html>`_ and "
+#~ "searches document accordingly. For example "
+#~ "'bribe.{0,2}' will find 'bribe' and "
+#~ "'bribery', but not longer words. If "
+#~ "we have a big list of words "
+#~ "we want to search for, we can "
+#~ "extend the field searcher's panel."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We can also use Slop. Via Slop "
+#~ "we can define up to how many "
+#~ "words can be between the two words"
+#~ " we wrote on one row in case"
+#~ " the range is important for us."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Should we be interested in more "
+#~ "detailed searches, we can add more "
+#~ "constraints like the previous ones via"
+#~ " **Add Filter** button. For example, "
+#~ "we can also search documents in a"
+#~ " certain date range in case we "
+#~ "have a proper preprocessed date field."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If we click on “Search” button, we"
+#~ " will see the matching data in "
+#~ "a tabular form (see :numref:`search_results`),"
+#~ " where layered features share feature "
+#~ "name’s prefix, and matches are "
+#~ "highlighted in pink. The results might"
+#~ " be updating while modifying the "
+#~ "filters."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If there are too many features "
+#~ "(columns), we can hide or show "
+#~ "them from the drop-down menu in"
+#~ " the down left corner. We can "
+#~ "select or deselect all of them "
+#~ "together (*Select all*) or by clicking"
+#~ " on them separately. We can also "
+#~ "hide or get back the Searcher's "
+#~ "panels with *Toggle drawer* button. We"
+#~ " can browse through Searcher's results "
+#~ "with the arrows in the bottom "
+#~ "right. We can also choose how many"
+#~ " items per page would we want "
+#~ "to see."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After we have come up with a "
+#~ "suitable search, we can save it "
+#~ "for later use by clicking on the"
+#~ " **disk** icon up-right in the "
+#~ "Current Search panel. The **eye** icon"
+#~ " next to the disk icon shows us"
+#~ " the actual Elasticsearch query we "
+#~ "built by choosing the Operators and "
+#~ "words to search for."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After saving a search, it becomes "
+#~ "available for using in Toolkit's "
+#~ "applications. Now, whenever we check it,"
+#~ " we can use it to browse data"
+#~ " or apply in aggregations. We can "
+#~ "also send our saved search to "
+#~ "other users who have the permission "
+#~ "to our project with a copied url."
+#~ " This opens the saved search under"
+#~ " the Current Search for the other "
+#~ "user. We can also open our saved"
+#~ " search in the Current Search simply"
+#~ " by clicking on it."
+#~ msgstr ""
+
+#~ msgid "Aggregations: Summarizing the Data"
+#~ msgstr ""
 

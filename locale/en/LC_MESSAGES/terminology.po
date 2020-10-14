@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"POT-Creation-Date: 2020-10-14 21:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,15 +32,20 @@ msgstr ""
 msgid "Anonymizer"
 msgstr ""
 
-#: ../../source/terminology.rst:11 ../../source/terminology.rst:102
+#: ../../source/terminology.rst:11 ../../source/terminology.rst:17
+#: ../../source/terminology.rst:109
 msgid "TODO"
 msgstr ""
 
-#: ../../source/terminology.rst:16
+#: ../../source/terminology.rst:15
+msgid "Elasticsearch"
+msgstr ""
+
+#: ../../source/terminology.rst:23
 msgid "Embedding"
 msgstr ""
 
-#: ../../source/terminology.rst:18
+#: ../../source/terminology.rst:25
 msgid ""
 "Embedding is a statistical model describing the distributional properties"
 " of words and phrases, which enables the computation of similarity "
@@ -54,224 +59,224 @@ msgid ""
 "EMBEDDIA to support multilingual text classification."
 msgstr ""
 
-#: ../../source/terminology.rst:27
+#: ../../source/terminology.rst:34
 msgid "Fact"
 msgstr ""
 
-#: ../../source/terminology.rst:29
+#: ../../source/terminology.rst:36
 msgid "In TTK text annotations are regarded as facts:"
 msgstr ""
 
-#: ../../source/terminology.rst:40
+#: ../../source/terminology.rst:47
 msgid "Facts are objects with following properties:"
 msgstr ""
 
-#: ../../source/terminology.rst:42
+#: ../../source/terminology.rst:49
 msgid "fact - name for the annotation (e.g. PER, LOC, or any arbitrary string)"
 msgstr ""
 
-#: ../../source/terminology.rst:44
+#: ../../source/terminology.rst:51
 msgid ""
 "str_val - string value for the annotation (e.g. \"Donald Trump\" for "
 "PER). Values don't need to match annotated text segmements."
 msgstr ""
 
-#: ../../source/terminology.rst:46
+#: ../../source/terminology.rst:53
 msgid ""
 "doc_path - path to the field containing the annotated string (e.g. "
 "\"text\", \"text.author\", \"comment.text.author\", etc.)"
 msgstr ""
 
-#: ../../source/terminology.rst:48
+#: ../../source/terminology.rst:55
 msgid ""
 "spans - JSON string containing the start and end positions in the "
 "annotated string"
 msgstr ""
 
-#: ../../source/terminology.rst:50
+#: ../../source/terminology.rst:57
 msgid ""
 "Toolkit comes with several predefined fact names that are used by our "
 "Multilingual Processor:"
 msgstr ""
 
-#: ../../source/terminology.rst:55
+#: ../../source/terminology.rst:62
 msgid "Label"
 msgstr ""
 
-#: ../../source/terminology.rst:55
+#: ../../source/terminology.rst:62
 msgid "Meaning"
 msgstr ""
 
-#: ../../source/terminology.rst:55
+#: ../../source/terminology.rst:62
 msgid "Comment"
 msgstr ""
 
-#: ../../source/terminology.rst:57
+#: ../../source/terminology.rst:64
 msgid "PER"
 msgstr ""
 
-#: ../../source/terminology.rst:57
+#: ../../source/terminology.rst:64
 msgid "Persona"
 msgstr ""
 
-#: ../../source/terminology.rst:57
+#: ../../source/terminology.rst:64
 msgid "Name of a person."
 msgstr ""
 
-#: ../../source/terminology.rst:59
+#: ../../source/terminology.rst:66
 msgid "ORG"
 msgstr ""
 
-#: ../../source/terminology.rst:59
+#: ../../source/terminology.rst:66
 msgid "Organisation"
 msgstr ""
 
-#: ../../source/terminology.rst:59
+#: ../../source/terminology.rst:66
 msgid "Name of an organisation, gotten statistically."
 msgstr ""
 
-#: ../../source/terminology.rst:61
+#: ../../source/terminology.rst:68
 msgid "LOC"
 msgstr ""
 
-#: ../../source/terminology.rst:61
+#: ../../source/terminology.rst:68
 msgid "Location"
 msgstr ""
 
-#: ../../source/terminology.rst:61
+#: ../../source/terminology.rst:68
 msgid "Name of a location, gotten statistically."
 msgstr ""
 
-#: ../../source/terminology.rst:63
+#: ../../source/terminology.rst:70
 msgid "COMPANY"
 msgstr ""
 
-#: ../../source/terminology.rst:63
+#: ../../source/terminology.rst:70
 msgid "Company"
 msgstr ""
 
-#: ../../source/terminology.rst:63
+#: ../../source/terminology.rst:70
 msgid ""
 "Names of company registered in Estonia, gotten from `Estonian Open Data "
 "<https://opendata.riik.ee/datasets/ariregister/>`_."
 msgstr ""
 
-#: ../../source/terminology.rst:65
+#: ../../source/terminology.rst:72
 msgid "ADDR"
 msgstr ""
 
-#: ../../source/terminology.rst:65
+#: ../../source/terminology.rst:72
 msgid "Address"
 msgstr ""
 
-#: ../../source/terminology.rst:65
+#: ../../source/terminology.rst:72
 msgid ""
 "Estonian address, gotten from `Estonian Open Data "
 "<https://opendata.riik.ee/datasets/aadressiandmed/>`_."
 msgstr ""
 
-#: ../../source/terminology.rst:67
+#: ../../source/terminology.rst:74
 msgid "DRUG"
 msgstr ""
 
-#: ../../source/terminology.rst:67
+#: ../../source/terminology.rst:74
 msgid "Drug"
 msgstr ""
 
-#: ../../source/terminology.rst:67
+#: ../../source/terminology.rst:74
 msgid "Name of a medicine."
 msgstr ""
 
-#: ../../source/terminology.rst:69
+#: ../../source/terminology.rst:76
 msgid "SUBSTANCE"
 msgstr ""
 
-#: ../../source/terminology.rst:69
+#: ../../source/terminology.rst:76
 msgid "Substance"
 msgstr ""
 
-#: ../../source/terminology.rst:69
+#: ../../source/terminology.rst:76
 msgid "Ingredient of a drug."
 msgstr ""
 
-#: ../../source/terminology.rst:71
+#: ../../source/terminology.rst:78
 msgid "EML"
 msgstr ""
 
-#: ../../source/terminology.rst:71
+#: ../../source/terminology.rst:78
 msgid "E-mail"
 msgstr ""
 
-#: ../../source/terminology.rst:71
+#: ../../source/terminology.rst:78
 msgid "E-mail address."
 msgstr ""
 
-#: ../../source/terminology.rst:73
+#: ../../source/terminology.rst:80
 msgid "PHO"
 msgstr ""
 
-#: ../../source/terminology.rst:73
+#: ../../source/terminology.rst:80
 msgid "Phone"
 msgstr ""
 
-#: ../../source/terminology.rst:73
+#: ../../source/terminology.rst:80
 msgid "Phone number."
 msgstr ""
 
-#: ../../source/terminology.rst:75
+#: ../../source/terminology.rst:82
 msgid "TEXTA_TAG"
 msgstr ""
 
-#: ../../source/terminology.rst:75
+#: ../../source/terminology.rst:82
 msgid "Own tag"
 msgstr ""
 
-#: ../../source/terminology.rst:75
+#: ../../source/terminology.rst:82
 msgid "Tags we have trained in :ref:`the Taggers under Models <texttaggers>`"
 msgstr ""
 
-#: ../../source/terminology.rst:78
+#: ../../source/terminology.rst:85
 msgid "Table 1. *Predefined Fact Names used by Multilingual Processor*"
 msgstr ""
 
-#: ../../source/terminology.rst:80
+#: ../../source/terminology.rst:87
 msgid ""
 "It is important to notice that COMPANY and ADDR identify only companies "
 "and addresses registered in Estonian Open Data. It won't tag any foreign "
 "company nor address while ORG and LOC identifies all of them."
 msgstr ""
 
-#: ../../source/terminology.rst:86
+#: ../../source/terminology.rst:93
 msgid "Field"
 msgstr ""
 
-#: ../../source/terminology.rst:88
+#: ../../source/terminology.rst:95
 msgid ""
 "Each document is a collection of fields. Field is a separated piece of "
 "information in that document. For example, we can have an article with "
 "fields containing the text, the date of publishing, headline, etc."
 msgstr ""
 
-#: ../../source/terminology.rst:93
+#: ../../source/terminology.rst:100
 msgid "Index"
 msgstr ""
 
-#: ../../source/terminology.rst:95
+#: ../../source/terminology.rst:102
 msgid ""
 "Index is a collection of documents in Elasticsearch. In Search output the"
 " table consists of all the suitable documents filtered out from that "
 "index and one row indicates a document."
 msgstr ""
 
-#: ../../source/terminology.rst:101
+#: ../../source/terminology.rst:108
 msgid "Multilingual Preprocessor"
 msgstr ""
 
-#: ../../source/terminology.rst:106
+#: ../../source/terminology.rst:113
 msgid "Project"
 msgstr ""
 
-#: ../../source/terminology.rst:108
+#: ../../source/terminology.rst:115
 msgid ""
 "Project is the main unit of access and management for datasets and "
 "resources (embeddings, text classifiers, etc.). A project is defined by "
@@ -282,11 +287,11 @@ msgid ""
 "project."
 msgstr ""
 
-#: ../../source/terminology.rst:113
+#: ../../source/terminology.rst:120
 msgid "Regex Tagger"
 msgstr ""
 
-#: ../../source/terminology.rst:115
+#: ../../source/terminology.rst:122
 msgid ""
 "Regex Tagger is a tool for tagging texts based on pattern matches. The "
 "user can define patterns (words/phrases/regexes) to search from the text "
@@ -294,19 +299,19 @@ msgid ""
 "and tag the text based on the information retrieved."
 msgstr ""
 
-#: ../../source/terminology.rst:120
+#: ../../source/terminology.rst:127
 msgid "Regex Tagger Group"
 msgstr ""
 
-#: ../../source/terminology.rst:122
+#: ../../source/terminology.rst:129
 msgid "Regex Tagger Group allows combining different Regex Taggers."
 msgstr ""
 
-#: ../../source/terminology.rst:127
+#: ../../source/terminology.rst:134
 msgid "Search"
 msgstr ""
 
-#: ../../source/terminology.rst:129
+#: ../../source/terminology.rst:136
 msgid ""
 "One of the most central component in TTK is Search, which is used to "
 "define subsets of data for training text classification models and "
@@ -317,11 +322,11 @@ msgid ""
 "data summarisation and exploration, and training text classifiers."
 msgstr ""
 
-#: ../../source/terminology.rst:134
+#: ../../source/terminology.rst:141
 msgid "Tagger Group"
 msgstr ""
 
-#: ../../source/terminology.rst:136
+#: ../../source/terminology.rst:143
 msgid ""
 "Tagger Group is an extension to TTK’s binary taggers to support "
 "monolingual multi-label classification. As its name suggests, Tagger "
@@ -335,11 +340,11 @@ msgid ""
 " to determine most probable models to produce valid tags."
 msgstr ""
 
-#: ../../source/terminology.rst:145
+#: ../../source/terminology.rst:152
 msgid "Tagger"
 msgstr ""
 
-#: ../../source/terminology.rst:147
+#: ../../source/terminology.rst:154
 msgid ""
 "Taggers are monolingual binary text classifiers used to predict tags for "
 "documents, e.g. whether a tweet is toxic or talking about Brexit. Taggers"
@@ -357,11 +362,11 @@ msgid ""
 "used."
 msgstr ""
 
-#: ../../source/terminology.rst:156
+#: ../../source/terminology.rst:163
 msgid "Task"
 msgstr ""
 
-#: ../../source/terminology.rst:158
+#: ../../source/terminology.rst:165
 msgid ""
 "TEXTA Toolkit allows to build several different statistical models to "
 "process the text. The training process is initiated via TTK API or GUI, "
@@ -370,11 +375,11 @@ msgid ""
 "of training progress of trainable statistical models."
 msgstr ""
 
-#: ../../source/terminology.rst:163
+#: ../../source/terminology.rst:170
 msgid "Topic Analyzer"
 msgstr ""
 
-#: ../../source/terminology.rst:165
+#: ../../source/terminology.rst:172
 msgid ""
 "Topic Analyzer is a tool that detects groups of similar documents in the "
 "data. It can be used for example to explore the structure of the "
@@ -385,7 +390,7 @@ msgid ""
 "learning models."
 msgstr ""
 
-#: ../../source/terminology.rst:167
+#: ../../source/terminology.rst:174
 msgid ""
 "Topic Analyzer puts to use the best parts of unsupervised clustering and "
 "manual labelling. While clustering is a fast and efficient method to "
@@ -396,7 +401,7 @@ msgid ""
 "probably be so-and-so."
 msgstr ""
 
-#: ../../source/terminology.rst:169
+#: ../../source/terminology.rst:176
 msgid ""
 "Topic Analyzer allows user to look inside each cluster and make the "
 "decision about the quality manually. Users can also perform various "
@@ -406,11 +411,11 @@ msgid ""
 "sufficient quality."
 msgstr ""
 
-#: ../../source/terminology.rst:174
+#: ../../source/terminology.rst:181
 msgid "Torch Tagger"
 msgstr ""
 
-#: ../../source/terminology.rst:176
+#: ../../source/terminology.rst:183
 msgid ""
 "While Taggers and Tagger Groups use classical machine learning to produce"
 " binary classification models, Texta Toolkit also incorporates deep "

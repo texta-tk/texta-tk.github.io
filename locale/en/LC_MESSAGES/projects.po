@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"POT-Creation-Date: 2020-10-14 21:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,72 +23,155 @@ msgid "Projects"
 msgstr ""
 
 #: ../../source/projects.rst:6
-msgid "Creating a Project"
-msgstr ""
-
-#: ../../source/projects.rst:8
-msgid ""
-"In order to play with the data, we need to create a :ref:`new project "
-"<project_concept>`."
-msgstr ""
-
-#: ../../source/projects.rst:11 ../../source/projects.rst:48
 msgid "GUI"
+msgstr ""
+
+#: ../../source/projects.rst:9 ../../source/projects.rst:62
+msgid "Create a Project"
+msgstr ""
+
+#: ../../source/projects.rst:10
+msgid "Before we can start working with the data, we need to create a project."
 msgstr ""
 
 #: ../../source/projects.rst:12
 msgid ""
-"We can create a project by clicking the **+ CREATE** button at the bottom"
-" of the page. We can then give it a title, select users who can work on "
-"the project and, of course, select datasets (Elasticsearch :ref:`indices "
-"<index_concept>`) for the project."
+"Click on the **CREATE** button on the top-left of the front page. Fill in"
+" the title field - this will be the name of your project; select users "
+"who should have access to the project and finally choose indices that you"
+" are going to work with in the project."
 msgstr ""
 
-#: ../../source/projects.rst:15
+#: ../../source/projects.rst:16
+msgid "You can select more than one index."
+msgstr ""
+
+#: ../../source/projects.rst:18
 msgid ""
-"After the project is created, we can see the new project in the list and "
-"can change its datasets and user access via the **Edit** button."
-msgstr ""
-
-#: ../../source/projects.rst:19 ../../source/projects.rst:59
-msgid "API"
-msgstr ""
-
-#: ../../source/projects.rst:21
-msgid "Endpoint: **/projects/**"
+"We can see the newly created project in the list on the front page "
+"(:numref:`project_list`)."
 msgstr ""
 
 #: ../../source/projects.rst:23
-msgid "Example:"
+msgid "*Projects list*"
+msgstr ""
+
+#: ../../source/projects.rst:28
+msgid "Delete a Project"
+msgstr ""
+
+#: ../../source/projects.rst:29
+msgid ""
+"On the front page, click on three dots under **Action** column "
+"(:numref:`project_actions`) and choose **Delete**."
+msgstr ""
+
+#: ../../source/projects.rst:34
+msgid "*Project actions*"
+msgstr ""
+
+#: ../../source/projects.rst:37
+msgid "Edit a Project"
 msgstr ""
 
 #: ../../source/projects.rst:38
-msgid "Using a Project"
+msgid ""
+"On the front page, click on three dots under **Action** column "
+"(:numref:`project_actions`) and choose **Edit**."
 msgstr ""
 
 #: ../../source/projects.rst:41
+msgid "Navigate between Projects"
+msgstr ""
+
+#: ../../source/projects.rst:42
+msgid ""
+"To start working on the project, we need to activate it - click on three "
+"dots under **Action** column (:numref:`project_actions`) and choose "
+"**Use**. Another way to select a project is from the list on the top-"
+"right corner (:numref:`user_projects`). The list will show you all the "
+"projects that you are a memember of."
+msgstr ""
+
+#: ../../source/projects.rst:46
 msgid "Only one project can be activated at a time."
 msgstr ""
 
-#: ../../source/projects.rst:43
-msgid "Each project can have one or more datasets (Elasticsearch indices)."
+#: ../../source/projects.rst:51
+msgid "*User projects*"
 msgstr ""
 
-#: ../../source/projects.rst:45
-msgid "Project resources are shared among the users with access to the project."
-msgstr ""
-
-#: ../../source/projects.rst:50
-msgid ""
-"In order to work with our project (search info, train taggers) we have to"
-" select it from the upper panel next to our username:"
+#: ../../source/projects.rst:54
+msgid "Permissions"
 msgstr ""
 
 #: ../../source/projects.rst:56
-msgid "Figure 5. *Project Selection*"
+msgid ""
+"Project resources (including indices) are shared among the users with "
+"access to the project."
 msgstr ""
 
-#: ../../source/projects.rst:60
-msgid "TODO"
+#: ../../source/projects.rst:59
+msgid "API"
 msgstr ""
+
+#: ../../source/projects.rst:64
+msgid "Endpoint: **/projects/**"
+msgstr ""
+
+#: ../../source/projects.rst:66
+msgid "Example:"
+msgstr ""
+
+#~ msgid "Creating a Project"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In order to play with the data,"
+#~ " we need to create a :ref:`new "
+#~ "project <project_concept>`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We can create a project by "
+#~ "clicking the **+ CREATE** button at "
+#~ "the bottom of the page. We can "
+#~ "then give it a title, select users"
+#~ " who can work on the project "
+#~ "and, of course, select datasets "
+#~ "(Elasticsearch :ref:`indices <index_concept>`) for"
+#~ " the project."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After the project is created, we "
+#~ "can see the new project in the "
+#~ "list and can change its datasets "
+#~ "and user access via the **Edit** "
+#~ "button."
+#~ msgstr ""
+
+#~ msgid "Using a Project"
+#~ msgstr ""
+
+#~ msgid "Each project can have one or more datasets (Elasticsearch indices)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Project resources are shared among the"
+#~ " users with access to the project."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In order to work with our project"
+#~ " (search info, train taggers) we have"
+#~ " to select it from the upper "
+#~ "panel next to our username:"
+#~ msgstr ""
+
+#~ msgid "Figure 5. *Project Selection*"
+#~ msgstr ""
+
+#~ msgid "TODO"
+#~ msgstr ""
 
