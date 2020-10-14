@@ -43,8 +43,8 @@ msgid ""
 "<https://docs.python.org/3/library/re.html>`_ and thus it's important to "
 "use the same syntax while constructing your patterns."
 msgstr ""
-"Regex Tagger baseerub `Pythoni regexi moodulil"
-"<https://docs.python.org/3/library/re.html>`_, mistõttu tuleks mustrite loomisel kasutada samuti Pythoni regulaaravaldiste süntaksit."
+"Regex Tagger baseerub `Pythoni regexi moodulil <https://docs.python.org/3/library/re.html>`_, "
+"mistõttu tuleks mustrite loomisel kasutada samuti Pythoni regulaaravaldiste süntaksit."
 
 #: ../../source/regex_tagger.rst:17
 msgid "Creation"
