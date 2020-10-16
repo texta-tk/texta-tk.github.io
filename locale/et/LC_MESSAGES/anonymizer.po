@@ -95,8 +95,7 @@ msgid ""
 "two names can be for the model to presume they are meant to represent the"
 " same name."
 msgstr ""
-"Minimaalne tekstist leitud nime ning nimekirja kaasatud nime `Jaro-Winkleri sarnasus"
-"<https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance>`_ "
+"Minimaalne tekstist leitud nime ning nimekirja kaasatud nime `Jaro-Winkleri sarnasus <https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance>`_ "
 "ehk kui sarnane peab olema kahe nime kirjapilt, et mudel need samaks tunnistaks."
 
 #: ../../source/anonymizer.rst:46
