@@ -2,11 +2,12 @@
 Projects
 #########
 
-GUI
-===
+API endpoint: **/projects/**
 
-Create a Project
-*******************
+API reference: http://localhost:8000/api/v1/redoc/#tag/projects
+
+Create
+*******
 Before we can start working with the data, we need to create a project.
 
 Click on the **CREATE** button on the top-left of the front page.
@@ -23,9 +24,41 @@ We can see the newly created project in the list on the front page (:numref:`pro
     *Projects list*
 
 
+**API example** (`reference <http://localhost:8000/api/v1/redoc/#operation/projects_create>`_)
 
-Delete a Project
-*******************
+
+.. code-block:: bash
+
+    curl -X POST "http://localhost:8000/api/v1/projects/" \
+    -H "accept: application/json" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+    -d '{
+            "title": "My project",
+            "users": ["http://localhost:8000/api/v1/users/1/"],
+            "indices": ["texta_test_index"]
+        }'
+
+Edit
+****
+
+On the front page, click on three dots under **Action** column (:numref:`project_actions`) and choose **Edit**.
+
+.. note::
+    Only superusers can edit the project.
+    
+**API example** (`reference <http://localhost:8000/api/v1/redoc/#operation/projects_partial_update>`_)
+
+.. code-block:: bash
+
+    curl -X PATCH "http://localhost:8000/api/v1/projects/10/" \
+    -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+    -d '{
+            "title": "Changed title"
+        }'
+
+Delete
+*******
 On the front page, click on three dots under **Action** column (:numref:`project_actions`) and choose **Delete**.
 
 .. _project_actions:
@@ -33,9 +66,12 @@ On the front page, click on three dots under **Action** column (:numref:`project
 
     *Project actions*
 
-Edit a Project
-*******************
-On the front page, click on three dots under **Action** column (:numref:`project_actions`) and choose **Edit**.
+**API example** (`reference <http://localhost:8000/api/v1/redoc/#operation/projects_delete>`_)
+
+.. code-block:: bash
+
+    curl -X DELETE "http://localhost:8000/api/v1/projects/10/" \
+    -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049"
 
 Navigate between Projects
 **************************
@@ -53,28 +89,4 @@ Another way to select a project is from the list on the top-right corner (:numre
 Permissions
 ***********
     
-Project resources (including indices) are shared among the users with access to the project.
-
-API
-====
-
-Create a Project
-*******************
-
-Endpoint: **/projects/**
-
-Example:
-
-.. code-block:: bash
-
-    curl -X POST "http://localhost:8000/api/v1/projects/" \
-    -H "accept: application/json" \
-    -H "Content-Type: application/json" \
-    -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
-    -d '{
-            "title": "My project",
-            "users": ["http://localhost:8000/api/v1/users/1/"],
-            "indices": ["texta_test_index"]
-        }'
-    
-
+Project resources (including indices) are shared among the users with access to the project. **Only superusers can edit projects.**
