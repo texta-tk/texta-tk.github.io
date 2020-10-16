@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-14 21:24+0300\n"
+"POT-Creation-Date: 2020-10-16 19:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
 
-#: ../../source/projects.rst:3
-msgid "Projects"
+#: ../../source/projects.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/v2/regex_tagger.html>`_ `ET "
+"<https://docs.texta.ee/v2/et/regex_tagger.html>`_"
 msgstr ""
 
 #: ../../source/projects.rst:6
+msgid "Projects"
+msgstr ""
+
+#: ../../source/projects.rst:8
+msgid "API reference: http://localhost:8000/api/v1/redoc/#tag/projects"
+msgstr ""
+
+#: ../../source/projects.rst:11
+msgid "Create"
+msgstr ""
+
+#: ../../source/projects.rst:14 ../../source/projects.rst:53
+#: ../../source/projects.rst:77
 msgid "GUI"
 msgstr ""
 
-#: ../../source/projects.rst:9 ../../source/projects.rst:62
-msgid "Create a Project"
-msgstr ""
-
-#: ../../source/projects.rst:10
+#: ../../source/projects.rst:16
 msgid "Before we can start working with the data, we need to create a project."
 msgstr ""
 
-#: ../../source/projects.rst:12
+#: ../../source/projects.rst:18
 msgid ""
 "Click on the **CREATE** button on the top-left of the front page. Fill in"
 " the title field - this will be the name of your project; select users "
@@ -42,85 +53,90 @@ msgid ""
 " are going to work with in the project."
 msgstr ""
 
-#: ../../source/projects.rst:16
+#: ../../source/projects.rst:22
 msgid "You can select more than one index."
 msgstr ""
 
-#: ../../source/projects.rst:18
+#: ../../source/projects.rst:24
 msgid ""
 "We can see the newly created project in the list on the front page "
 "(:numref:`project_list`)."
 msgstr ""
 
-#: ../../source/projects.rst:23
+#: ../../source/projects.rst:29
 msgid "*Projects list*"
 msgstr ""
 
-#: ../../source/projects.rst:28
-msgid "Delete a Project"
+#: ../../source/projects.rst:33 ../../source/projects.rst:61
+#: ../../source/projects.rst:87
+msgid "API"
 msgstr ""
 
-#: ../../source/projects.rst:29
-msgid ""
-"On the front page, click on three dots under **Action** column "
-"(:numref:`project_actions`) and choose **Delete**."
+#: ../../source/projects.rst:35
+msgid "API endpoint: **/projects/**"
 msgstr ""
 
-#: ../../source/projects.rst:34
-msgid "*Project actions*"
+#: ../../source/projects.rst:50
+msgid "Edit"
 msgstr ""
 
-#: ../../source/projects.rst:37
-msgid "Edit a Project"
-msgstr ""
-
-#: ../../source/projects.rst:38
+#: ../../source/projects.rst:55
 msgid ""
 "On the front page, click on three dots under **Action** column "
 "(:numref:`project_actions`) and choose **Edit**."
 msgstr ""
 
-#: ../../source/projects.rst:41
+#: ../../source/projects.rst:58
+msgid "Only superusers can edit the project."
+msgstr ""
+
+#: ../../source/projects.rst:63 ../../source/projects.rst:89
+msgid "API endpoint: **/projects/{project_pk}/**"
+msgstr ""
+
+#: ../../source/projects.rst:74
+msgid "Delete"
+msgstr ""
+
+#: ../../source/projects.rst:79
+msgid ""
+"On the front page, click on three dots under **Action** column "
+"(:numref:`project_actions`) and choose **Delete**."
+msgstr ""
+
+#: ../../source/projects.rst:84
+msgid "*Project actions*"
+msgstr ""
+
+#: ../../source/projects.rst:97
 msgid "Navigate between Projects"
 msgstr ""
 
-#: ../../source/projects.rst:42
+#: ../../source/projects.rst:98
 msgid ""
 "To start working on the project, we need to activate it - click on three "
 "dots under **Action** column (:numref:`project_actions`) and choose "
 "**Use**. Another way to select a project is from the list on the top-"
 "right corner (:numref:`user_projects`). The list will show you all the "
-"projects that you are a memember of."
+"projects that you are a member of."
 msgstr ""
 
-#: ../../source/projects.rst:46
+#: ../../source/projects.rst:102
 msgid "Only one project can be activated at a time."
 msgstr ""
 
-#: ../../source/projects.rst:51
+#: ../../source/projects.rst:107
 msgid "*User projects*"
 msgstr ""
 
-#: ../../source/projects.rst:54
+#: ../../source/projects.rst:110
 msgid "Permissions"
 msgstr ""
 
-#: ../../source/projects.rst:56
+#: ../../source/projects.rst:112
 msgid ""
 "Project resources (including indices) are shared among the users with "
-"access to the project."
-msgstr ""
-
-#: ../../source/projects.rst:59
-msgid "API"
-msgstr ""
-
-#: ../../source/projects.rst:64
-msgid "Endpoint: **/projects/**"
-msgstr ""
-
-#: ../../source/projects.rst:66
-msgid "Example:"
+"access to the project. **Only superusers can edit projects.**"
 msgstr ""
 
 #~ msgid "Creating a Project"
@@ -173,5 +189,39 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "TODO"
+#~ msgstr ""
+
+#~ msgid "Create a Project"
+#~ msgstr ""
+
+#~ msgid "Delete a Project"
+#~ msgstr ""
+
+#~ msgid "Edit a Project"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To start working on the project, "
+#~ "we need to activate it - click "
+#~ "on three dots under **Action** column"
+#~ " (:numref:`project_actions`) and choose **Use**."
+#~ " Another way to select a project "
+#~ "is from the list on the top-"
+#~ "right corner (:numref:`user_projects`). The "
+#~ "list will show you all the "
+#~ "projects that you are a memember "
+#~ "of."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Project resources (including indices) are "
+#~ "shared among the users with access "
+#~ "to the project."
+#~ msgstr ""
+
+#~ msgid "Endpoint: **/projects/**"
+#~ msgstr ""
+
+#~ msgid "Example:"
 #~ msgstr ""
 

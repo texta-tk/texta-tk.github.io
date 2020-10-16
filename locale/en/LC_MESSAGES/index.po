@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-14 23:04+0300\n"
+"POT-Creation-Date: 2020-10-16 19:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,8 @@ msgstr ""
 
 #: ../../source/index.rst:6
 msgid ""
-"`EN <https://docs.texta.ee/concepts.html>`_ `ET "
-"<https://docs.texta.ee/et/concepts.html>`_"
+"`EN <https://docs.texta.ee/v2/index.html>`_ `ET "
+"<https://docs.texta.ee/v2/et/index.html>`_"
 msgstr ""
 
 #: ../../source/index.rst:10
@@ -71,5 +71,10 @@ msgstr ""
 #~ "<https://www.texta.ee>`_. This documentation "
 #~ "contains information about installing and "
 #~ "running **TEXTA Toolkit 2.10."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`EN <https://docs.texta.ee/concepts.html>`_ `ET "
+#~ "<https://docs.texta.ee/et/concepts.html>`_"
 #~ msgstr ""
 

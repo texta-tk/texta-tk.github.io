@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-14 21:24+0300\n"
+"POT-Creation-Date: 2020-10-14 23:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,7 +160,7 @@ msgstr ""
 msgid "Operator"
 msgstr ""
 
-#: ../../source/searcher.rst:75 ../../source/searcher.rst:138
+#: ../../source/searcher.rst:75 ../../source/searcher.rst:140
 msgid "Meaning"
 msgstr ""
 
@@ -245,7 +245,8 @@ msgstr ""
 #: ../../source/searcher.rst:98
 msgid ""
 "The string constraint has an option to add :ref:`a saved lexicon's "
-"<lexiconminer>` terms into the search (via button \"Add lexicon\")."
+"<lexiconminer>` terms into the search (via button \"Add lexicon\"). This "
+"works only when there is at least one lexicon in the project."
 msgstr ""
 
 #: ../../source/searcher.rst:101
@@ -265,126 +266,133 @@ msgid "*Date constraint*"
 msgstr ""
 
 #: ../../source/searcher.rst:110
-msgid "Texta_tag constraint"
+msgid "Texta_fact constraint"
 msgstr ""
 
 #: ../../source/searcher.rst:111
 msgid ""
-"Texta_tag constraint helps to find certain :ref:`tag <texta_fact>` or "
-":ref:`tags <texta_fact>` with certain values. You can find several "
+"Texta_fact constraint helps to find certain :ref:`fact <texta_fact>` or "
+":ref:`facts <texta_fact>` with certain values. You can find several "
 "different values at once with the little '+'-sign which adds one more "
 "value-line. Look in the table above for the operators' meanings."
 msgstr ""
 
 #: ../../source/searcher.rst:116
 msgid ""
-"*Texta_tag tag constraints*. Search for documents that have at least one "
-"ORG tag in it and definetly no PER tags."
+"*Texta_fact fact constraints*. Search for documents that have at least "
+"one ORG fact in it and definetly no PER fact."
 msgstr ""
 
 #: ../../source/searcher.rst:121
 msgid ""
-"*Texta_tag tag value constraint with or*. Texta_tag tag constraint "
-"enables choosing multible tags at once. For example this constraint "
-"outputs all documents that has at least one of the tags (COMPANY, EML, "
+"*Texta_fact fact value constraint with or*. Texta_fact fact constraint "
+"enables choosing multible facts at once. For example this constraint "
+"outputs all documents that has at least one of the facts (COMPANY, EML, "
 "ADDR) in it."
 msgstr ""
 
 #: ../../source/searcher.rst:126
 msgid ""
-"*Texta_tag tag value constraint*. Search for documents that have an ORG "
-"tag with either value \"NATO\" or value \"European Union\" in it (or "
+"*Texta_fact fact value constraint*. Search for documents that have an ORG"
+" fact with either value \"NATO\" or value \"European Union\" in it (or "
 "both)."
 msgstr ""
 
-#: ../../source/searcher.rst:129
-msgid "Search Options"
+#: ../../source/searcher.rst:128
+msgid ""
+"The same texta_fact constraints can be constructed automatically by "
+"clicking on the texta_fact labels or values in the dataset texta_facts "
+"field."
 msgstr ""
 
 #: ../../source/searcher.rst:131
-msgid "Look at the table below for the meanings of search options."
+msgid "Search Options"
 msgstr ""
 
 #: ../../source/searcher.rst:133
+msgid "Look at the table below for the meanings of search options."
+msgstr ""
+
+#: ../../source/searcher.rst:135
 msgid "Search options"
 msgstr ""
 
-#: ../../source/searcher.rst:137
+#: ../../source/searcher.rst:139
 msgid "Option"
 msgstr ""
 
-#: ../../source/searcher.rst:139
+#: ../../source/searcher.rst:141
 msgid "Highlight facts"
 msgstr ""
 
-#: ../../source/searcher.rst:140
+#: ../../source/searcher.rst:142
 msgid "highlights all the facts in the text"
 msgstr ""
 
-#: ../../source/searcher.rst:141
+#: ../../source/searcher.rst:143
 msgid "Only highlight matching facts"
 msgstr ""
 
-#: ../../source/searcher.rst:142
+#: ../../source/searcher.rst:144
 msgid "highlights only the facts that were looked for"
 msgstr ""
 
-#: ../../source/searcher.rst:143
+#: ../../source/searcher.rst:145
 msgid "Highlight searcher matches"
 msgstr ""
 
-#: ../../source/searcher.rst:144
+#: ../../source/searcher.rst:146
 msgid "highlights string constraints' matches"
 msgstr ""
 
-#: ../../source/searcher.rst:145
+#: ../../source/searcher.rst:147
 msgid "Show short version"
 msgstr ""
 
-#: ../../source/searcher.rst:146
+#: ../../source/searcher.rst:148
 msgid "shows certain amount of words before and after the match"
 msgstr ""
 
-#: ../../source/searcher.rst:151
+#: ../../source/searcher.rst:153
 msgid ""
-"*Search Options*. Only texta_tag constraints will be highlighted in the "
+"*Search Options*. Only texta_fact constraints will be highlighted in the "
 "results with these selected Search Options."
 msgstr ""
 
-#: ../../source/searcher.rst:154
+#: ../../source/searcher.rst:156
 msgid "Examples"
 msgstr ""
 
-#: ../../source/searcher.rst:159
+#: ../../source/searcher.rst:161
 msgid ""
 "*Regex String Constraint*. Search for documents that have either "
 "\"payoff\" or \"bribe[a-z]{0,2}\" in it. Last of which means word 'bribe'"
 " with 0-2 extra letters (e.g \"bribe\", \"bribed\", \"bribery\")."
 msgstr ""
 
-#: ../../source/searcher.rst:164
+#: ../../source/searcher.rst:166
 msgid ""
 "*Combination of constraints*. Search for documents published in 2014, "
-"contain LOC tags with values \"Russia\" and \"Ukraine\" and the word "
+"contain LOC facts with values \"Russia\" and \"Ukraine\" and the word "
 "\"invasion\"."
 msgstr ""
 
-#: ../../source/searcher.rst:168
+#: ../../source/searcher.rst:170
 msgid "Browsing Search results"
 msgstr ""
 
-#: ../../source/searcher.rst:170
+#: ../../source/searcher.rst:172
 msgid ""
 "If we click on “Search” button, we will see the matching documents in a "
 "tabular form (see :numref:`search_results`). The results might be "
 "updating while modifying the constraints."
 msgstr ""
 
-#: ../../source/searcher.rst:176
+#: ../../source/searcher.rst:178
 msgid "*Example Search Results*"
 msgstr ""
 
-#: ../../source/searcher.rst:178
+#: ../../source/searcher.rst:180
 msgid ""
 "If there are too many features (columns), we can hide or show them from "
 "the drop-down menu in the up left corner. We can select or deselect all "
@@ -395,21 +403,21 @@ msgid ""
 " the upper right."
 msgstr ""
 
-#: ../../source/searcher.rst:183
+#: ../../source/searcher.rst:185
 msgid "*Select Fields for Search Results*"
 msgstr ""
 
-#: ../../source/searcher.rst:186
+#: ../../source/searcher.rst:188
 msgid ""
 "API for scrolling can be found `here <https://rest-"
 "dev.texta.ee/api/v1/projects/1/scroll/>`_."
 msgstr ""
 
-#: ../../source/searcher.rst:191
+#: ../../source/searcher.rst:193
 msgid "Saved Searches"
 msgstr ""
 
-#: ../../source/searcher.rst:193
+#: ../../source/searcher.rst:195
 msgid ""
 "After having comed up with a suitable search, it can be saved for later "
 "use by clicking on the **disk** icon up-right in the Current Search "
@@ -418,7 +426,7 @@ msgid ""
 "Operators and words to search for."
 msgstr ""
 
-#: ../../source/searcher.rst:195
+#: ../../source/searcher.rst:197
 msgid ""
 "After saving a search, it becomes available for using in Toolkit's "
 "applications. For example, they can be used in browsing the search later "
@@ -428,17 +436,17 @@ msgid ""
 " searches can be opened in the Current Search simply by clicking on it."
 msgstr ""
 
-#: ../../source/searcher.rst:200
+#: ../../source/searcher.rst:202
 msgid ""
 "API support for saving searches can be found `here <https://rest-"
 "dev.texta.ee/api/v1/projects/1/searches/>`_."
 msgstr ""
 
-#: ../../source/searcher.rst:205
+#: ../../source/searcher.rst:207
 msgid "Aggregations"
 msgstr ""
 
-#: ../../source/searcher.rst:207
+#: ../../source/searcher.rst:209
 msgid ""
 "As fun as browsing through the data is, it is not always enough. "
 "Sometimes we want to get an overview of our data, such as topics over "
@@ -446,7 +454,7 @@ msgid ""
 "through the “Aggregations” panel."
 msgstr ""
 
-#: ../../source/searcher.rst:209
+#: ../../source/searcher.rst:211
 msgid ""
 "Aggregations have two components - data and features it aggregates over. "
 "It will aggregate over the dataset we have under the Current Search. We "
@@ -459,11 +467,11 @@ msgid ""
 " to get it as the current search."
 msgstr ""
 
-#: ../../source/searcher.rst:213
+#: ../../source/searcher.rst:215
 msgid "**How are the significance scores calculated?**"
 msgstr ""
 
-#: ../../source/searcher.rst:214
+#: ../../source/searcher.rst:216
 msgid ""
 "The numbers returned for scores are primarily intended for ranking "
 "different suggestions sensibly rather than something easily understood by"
@@ -476,7 +484,7 @@ msgid ""
 "aggregations-bucket-significanttext-aggregation.html>`_."
 msgstr ""
 
-#: ../../source/searcher.rst:216
+#: ../../source/searcher.rst:218
 msgid ""
 "One cool thing we can also do, is to visualize the frequency of texts "
 "with searched words in it on a timeline. We can do that if we have a "
@@ -485,12 +493,12 @@ msgid ""
 "frequently in our dataset."
 msgstr ""
 
-#: ../../source/searcher.rst:218
+#: ../../source/searcher.rst:220
 msgid ""
 "We can also aggregate over :ref:`texta_facts <texta_fact>` field in order"
-" to see the top entities under some tag. If we click on the black diagram"
-" button, we can scroll through the results. We see as many entities as we"
-" chose for our aggregation size."
+" to see the top entities under some fact. If we click on the black "
+"diagram button, we can scroll through the results. We see as many "
+"entities as we chose for our aggregation size."
 msgstr ""
 
 #~ msgid ""
@@ -633,5 +641,74 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Aggregations: Summarizing the Data"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The string constraint has an option "
+#~ "to add :ref:`a saved lexicon's "
+#~ "<lexiconminer>` terms into the search "
+#~ "(via button \"Add lexicon\")."
+#~ msgstr ""
+
+#~ msgid "Texta_tag constraint"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Texta_tag constraint helps to find "
+#~ "certain :ref:`tag <texta_fact>` or :ref:`tags"
+#~ " <texta_fact>` with certain values. You "
+#~ "can find several different values at "
+#~ "once with the little '+'-sign which "
+#~ "adds one more value-line. Look in"
+#~ " the table above for the operators'"
+#~ " meanings."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "*Texta_tag tag constraints*. Search for "
+#~ "documents that have at least one "
+#~ "ORG tag in it and definetly no "
+#~ "PER tags."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "*Texta_tag tag value constraint with "
+#~ "or*. Texta_tag tag constraint enables "
+#~ "choosing multible tags at once. For "
+#~ "example this constraint outputs all "
+#~ "documents that has at least one of"
+#~ " the tags (COMPANY, EML, ADDR) in "
+#~ "it."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "*Texta_tag tag value constraint*. Search "
+#~ "for documents that have an ORG tag"
+#~ " with either value \"NATO\" or value"
+#~ " \"European Union\" in it (or both)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "*Search Options*. Only texta_tag constraints"
+#~ " will be highlighted in the results"
+#~ " with these selected Search Options."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "*Combination of constraints*. Search for "
+#~ "documents published in 2014, contain LOC"
+#~ " tags with values \"Russia\" and "
+#~ "\"Ukraine\" and the word \"invasion\"."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We can also aggregate over "
+#~ ":ref:`texta_facts <texta_fact>` field in order"
+#~ " to see the top entities under "
+#~ "some tag. If we click on the "
+#~ "black diagram button, we can scroll "
+#~ "through the results. We see as "
+#~ "many entities as we chose for our"
+#~ " aggregation size."
 #~ msgstr ""
 
