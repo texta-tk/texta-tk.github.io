@@ -56,13 +56,15 @@ msgstr ""
 
 #: ../../source/anonymizer.rst:19
 msgid "**Example**:"
-msgstr **Näide**:""
+msgstr "**Näide**:"
 
 #: ../../source/anonymizer.rst:27
 msgid ""
 "**API reference**: `<http://localhost:8000/api/v1/redoc/#tag/projects-"
 "greater-anonymizers>`_"
 msgstr ""
+"**API viide**: `<http://localhost:8000/api/v1/redoc/#tag/projects-"
+"greater-anonymizers>`_"
 
 #: ../../source/anonymizer.rst:30
 msgid "Creation"
@@ -79,7 +81,7 @@ msgstr ""
 
 #: ../../source/anonymizer.rst:39
 msgid "Name of the Anonymizer model."
-msgstr "Anonymizeri mudeli nimi."
+msgstr "Anonüümija mudeli nimi."
 
 #: ../../source/anonymizer.rst:46
 msgid "**misspelling_threshold**:"
@@ -88,8 +90,7 @@ msgstr ""
 #: ../../source/anonymizer.rst:42
 #, python-format
 msgid ""
-"Minimum required `Jaro-Winkler similarity "
-"<https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance>`_ between "
+"Minimum required `Jaro-Winkler similarity <https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance>`_ between "
 "names present in the text and names to anonymize, i.e. how different any "
 "two names can be for the model to presume they are meant to represent the"
 " same name."
@@ -160,7 +161,7 @@ msgstr ""
 msgid ""
 "For creating a new Anonymizer, navigate to `\"Tools\" -> \"Anonymizer\"` "
 "as seen in :numref:`anonymizer_nav`."
-msgstr "Uue anonüümimismudeli loomiseks navigeeri ülemisel menüüribal `\"Tools\" -> \"Anonymizer\"` nagu kujutatud :numref:`anonymizer_nav`."
+msgstr "Uue anonüümimismudeli loomiseks navigeeri ülemisel menüüribal `\"Tools\" -> \"Anonymizer\"` nagu kujutatud joonisel :numref:`anonymizer_nav`."
 
 #: ../../source/anonymizer.rst:75
 msgid "*Anonymizer navigation*"
@@ -172,7 +173,7 @@ msgid ""
 ":numref:`anonymizer_create_button` with `\"Create\"` button in the top "
 "left corner of the page."
 msgstr ""
-"Eduka navigatsiooni korral avaneb "
+"Eduka navigatsiooni korral avaneb joonisel "
 ":numref:`anonymizer_create_button` kujutatud lehekülg, mille ülemises vasakus nurgas asub nupp nimega `\"Create\"`."
 
 #: ../../source/anonymizer.rst:84
@@ -197,7 +198,7 @@ msgid ""
 "defaulted parameters. Click on the `\"Create\"` button in the bottom "
 "right corner of the window (:numref:`anonymizer_create_view`)."
 msgstr ""
-"Täida väli `Description` muuda soovi korral vaikeparameetrite väärtusi. "
+"Täida väli `Description` ja muuda soovi korral vaikeparameetrite väärtusi. "
 "Vajuta nupule `\"Create\"` akna alumises vasakus nurgas "
 "(:numref:`anonymizer_create_view`)."
 
@@ -278,8 +279,8 @@ msgid ""
 "to options panel as seen in :numref:`anonymizer_actions_0`."
 msgstr ""
 "Teksti anonüümimiseks navigeeri menüüribal kõigepealt anonüümimismudelite lehele: "
-"`\"Tools\" -> \"Anonymizer\"` nagu kujutatud :numref:`anonymizer_nav`. Eduka navigatsiooni tagajärjel avaneb vaade anonüümimismudelite nimekirjast. "
-"Vali mudel, mida anonüümimiseks kasutada ning ava seejärel valikmenüü klikkides kolmele vertikaalsele punktile vastava anonüümimismudeli rea lõpus."
+"`\"Tools\" -> \"Anonymizer\"` nagu kujutatud joonisel :numref:`anonymizer_nav`. Eduka navigatsiooni tagajärjel avaneb vaade anonüümimismudelite nimekirjast. "
+"Vali mudel, mida soovid anonüümimiseks kasutada ning ava seejärel valikmenüü klikkides kolmele vertikaalsele punktile vastava anonüümimismudeli rea lõpus "
 "(:numref:`anonymizer_actions_0`)."
 
 #: ../../source/anonymizer.rst:170
@@ -305,7 +306,7 @@ msgid ""
 "(:numref:`anonymize_text_empty`)."
 msgstr ""
 "Klikkimise tagajärjel avaneb uus aken pealkirjaga "
-"`\"Anonymize text\"`, mis sisaldab kahte sisendväljaga: `\"text\"` (teskst) ja `\"names\"` (nimed) "
+"`\"Anonymize Text\"`, mis sisaldab kahte sisendväljaga: `\"text\"` (tekst) ja `\"names\"` (nimed) "
 "(:numref:`anonymize_text_empty`)."
 
 #: ../../source/anonymizer.rst:187
@@ -319,8 +320,7 @@ msgid ""
 "first_name\"` in the field below (:numref:`anonymize_text_pre`)."
 msgstr ""
 "Sisesta tekst, mida soovid anonüümida, väljale `\"text\"` ning selle all asetsevale väljale reavahetusega "
-"eraldatud nimekiri anonüümitavatest nimedest formaadis `\"perenimi, "
-"eesnimi\"`(:numref:`anonymize_text_pre`)."
+"eraldatud nimekiri anonüümitavatest nimedest formaadis `\"perenimi, eesnimi\"` (:numref:`anonymize_text_pre`)."
 
 #: ../../source/anonymizer.rst:196
 msgid "*Filled \"Anonymize text\" window.*"
@@ -333,7 +333,7 @@ msgid ""
 "same panel (:numref:`anonymize_text_post`)."
 msgstr ""
 "Vajuta nupule `\"Submit\"` akna alumises paremas nurgas. "
-"Anonüümitud tekst ilmub samasse aknasse (:numref:`anonymize_text_post`)."
+"Anonüümitud tekst ilmub sama akna alumisse äärde (:numref:`anonymize_text_post`)."
 
 #: ../../source/anonymizer.rst:205
 msgid "*\"Anonymize Text\" result.*"
@@ -424,7 +424,7 @@ msgid ""
 msgstr ""
 
 "Vali avanenud menüüst `\"Edit\"` (:numref:`anonymizer_actions_2`). Tee soovitud muudatused "
-"ja vajuta nende salvestamiseks nupule `Submit` akna alumises paremas nurgas."
+"ja vajuta nende salvestamiseks nupule `\"Submit\"` akna alumises paremas nurgas."
 
 #: ../../source/anonymizer.rst:307
 msgid ""
@@ -465,7 +465,7 @@ msgid ""
 "finalize the process."
 msgstr ""
 "Enne mudeli lõplikku kustutamist, küsib rakendus töö lõpetamiseks kinnitust (:numref:`anonymizer_delete_confirm`). Vajuta kinnitamiseks kinnitusaknas nupule "
-"`Delete`."
+"\"`Delete`\"."
 
 #: ../../source/anonymizer.rst:361
 msgid "*Delete Anonymizer confirmation*"
