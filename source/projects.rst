@@ -76,7 +76,7 @@ On the front page, click on three dots under **Action** column (:numref:`project
 Navigate between Projects
 **************************
 To start working on the project, we need to activate it - click on three dots under **Action** column (:numref:`project_actions`) and choose **Use**.
-Another way to select a project is from the list on the top-right corner (:numref:`user_projects`). The list will show you all the projects that you are a memember of.
+Another way to select a project is from the list on the top-right corner (:numref:`user_projects`). The list will show you all the projects that you are a member of.
 
 .. note::
     Only one project can be activated at a time.
