@@ -1,13 +1,18 @@
+`EN <https://docs.texta.ee/v2/regex_tagger.html>`_
+`ET <https://docs.texta.ee/v2/et/regex_tagger.html>`_
+
 #########
 Projects
 #########
-
-API endpoint: **/projects/**
 
 API reference: http://localhost:8000/api/v1/redoc/#tag/projects
 
 Create
 *******
+
+GUI
+====
+
 Before we can start working with the data, we need to create a project.
 
 Click on the **CREATE** button on the top-left of the front page.
@@ -24,8 +29,10 @@ We can see the newly created project in the list on the front page (:numref:`pro
     *Projects list*
 
 
-**API example** (`reference <http://localhost:8000/api/v1/redoc/#operation/projects_create>`_)
+API
+====
 
+API endpoint: **/projects/**
 
 .. code-block:: bash
 
@@ -42,12 +49,18 @@ We can see the newly created project in the list on the front page (:numref:`pro
 Edit
 ****
 
+GUI
+====
+
 On the front page, click on three dots under **Action** column (:numref:`project_actions`) and choose **Edit**.
 
 .. note::
     Only superusers can edit the project.
     
-**API example** (`reference <http://localhost:8000/api/v1/redoc/#operation/projects_partial_update>`_)
+API
+====
+
+API endpoint: **/projects/{project_pk}/**
 
 .. code-block:: bash
 
@@ -59,6 +72,10 @@ On the front page, click on three dots under **Action** column (:numref:`project
 
 Delete
 *******
+
+GUI
+====
+
 On the front page, click on three dots under **Action** column (:numref:`project_actions`) and choose **Delete**.
 
 .. _project_actions:
@@ -66,7 +83,10 @@ On the front page, click on three dots under **Action** column (:numref:`project
 
     *Project actions*
 
-**API example** (`reference <http://localhost:8000/api/v1/redoc/#operation/projects_delete>`_)
+API
+====
+
+API endpoint: **/projects/{project_pk}/**
 
 .. code-block:: bash
 

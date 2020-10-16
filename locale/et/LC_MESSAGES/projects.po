@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-16 12:16+0300\n"
+"POT-Creation-Date: 2020-10-16 13:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,43 +18,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
 
-#: ../../source/projects.rst:3
+#: ../../source/projects.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/v2/regex_tagger.html>`_ `ET "
+"<https://docs.texta.ee/v2/et/regex_tagger.html>`_"
+msgstr ""
+
+#: ../../source/projects.rst:6
 msgid "Projects"
 msgstr "Projektid"
 
-#: ../../source/projects.rst:5
-msgid "API endpoint: **/projects/**"
-msgstr "API otspunkt: **/projects/**"
-
-#: ../../source/projects.rst:7
+#: ../../source/projects.rst:8
 msgid "API reference: http://localhost:8000/api/v1/redoc/#tag/projects"
 msgstr "API viide: http://localhost:8000/api/v1/redoc/#tag/projects"
 
-#: ../../source/projects.rst:10
+#: ../../source/projects.rst:11
 msgid "Create"
 msgstr "Loomine"
 
-#: ../../source/projects.rst:11
+#: ../../source/projects.rst:14 ../../source/projects.rst:53
+#: ../../source/projects.rst:77
+msgid "GUI"
+msgstr ""
+
+#: ../../source/projects.rst:16
 msgid "Before we can start working with the data, we need to create a project."
 msgstr "Enne andmetega tööle asumist tuleb luua projekt."
 
-#: ../../source/projects.rst:13
+#: ../../source/projects.rst:18
 msgid ""
 "Click on the **CREATE** button on the top-left of the front page. Fill in"
 " the title field - this will be the name of your project; select users "
 "who should have access to the project and finally choose indices that you"
 " are going to work with in the project."
 msgstr ""
-"Vajuta **CREATE** nupule avalehe üleval vasakus ääres. Täida avanenud lahtrid:"
-" *title* - see on sinu loodava projekti nimi; väljal *users* vali kasutajad, kes "
-"peaksid saama ligipääsuõiguse projektile ning väljal *indices* vali indeksid, millega"
-" sa projektis tööle hakkad."
+"Vajuta **CREATE** nupule avalehe üleval vasakus ääres. Täida avanenud "
+"lahtrid: *title* - see on sinu loodava projekti nimi; väljal *users* vali"
+" kasutajad, kes peaksid saama ligipääsuõiguse projektile ning väljal "
+"*indices* vali indeksid, millega sa projektis tööle hakkad."
 
-#: ../../source/projects.rst:17
+#: ../../source/projects.rst:22
 msgid "You can select more than one index."
 msgstr "Projekti saab valida rohkem kui ühe indeksi."
 
-#: ../../source/projects.rst:19
+#: ../../source/projects.rst:24
 msgid ""
 "We can see the newly created project in the list on the front page "
 "(:numref:`project_list`)."
@@ -62,23 +69,24 @@ msgstr ""
 "Vastloodud projekt ilmub nähtavale avalehel projektide nimekirjas "
 "(:numref:`project_list`)."
 
-#: ../../source/projects.rst:24
+#: ../../source/projects.rst:29
 msgid "*Projects list*"
 msgstr "*Projektide nimekiri*"
 
-#: ../../source/projects.rst:27
-msgid ""
-"**API example** (`reference "
-"<http://localhost:8000/api/v1/redoc/#operation/projects_create>`_)"
+#: ../../source/projects.rst:33 ../../source/projects.rst:61
+#: ../../source/projects.rst:87
+msgid "API"
 msgstr ""
-"**API näide** (`viide "
-"<http://localhost:8000/api/v1/redoc/#operation/projects_create>`_)"
 
-#: ../../source/projects.rst:43
+#: ../../source/projects.rst:35
+msgid "API endpoint: **/projects/**"
+msgstr "API otspunkt: **/projects/**"
+
+#: ../../source/projects.rst:50
 msgid "Edit"
 msgstr "Muutmine"
 
-#: ../../source/projects.rst:45
+#: ../../source/projects.rst:55
 msgid ""
 "On the front page, click on three dots under **Action** column "
 "(:numref:`project_actions`) and choose **Edit**."
@@ -86,23 +94,19 @@ msgstr ""
 "Vajuta avalehel kolmele punktile **Action** veerus "
 "(:numref:`project_actions`) ja vali **Edit**."
 
-#: ../../source/projects.rst:48
+#: ../../source/projects.rst:58
 msgid "Only superusers can edit the project."
 msgstr "Ainult administraatori õigustega kasutajad saavad projekti muuta."
 
-#: ../../source/projects.rst:50
-msgid ""
-"**API example** (`reference "
-"<http://localhost:8000/api/v1/redoc/#operation/projects_partial_update>`_)"
-msgstr ""
-"**API näide** (`viide "
-"<http://localhost:8000/api/v1/redoc/#operation/projects_partial_update>`_)"
+#: ../../source/projects.rst:63 ../../source/projects.rst:89
+msgid "API endpoint: **/projects/{project_pk}/**"
+msgstr "API otspunkt: **/projects/{project_pk}/**"
 
-#: ../../source/projects.rst:61
+#: ../../source/projects.rst:74
 msgid "Delete"
 msgstr "Kustutamine"
 
-#: ../../source/projects.rst:62
+#: ../../source/projects.rst:79
 msgid ""
 "On the front page, click on three dots under **Action** column "
 "(:numref:`project_actions`) and choose **Delete**."
@@ -110,23 +114,15 @@ msgstr ""
 "Vajuta avalehel kolmele punktile **Action** veerus "
 "(:numref:`project_actions`) ja vali **Delete**."
 
-#: ../../source/projects.rst:67
+#: ../../source/projects.rst:84
 msgid "*Project actions*"
 msgstr "*Projekti toimingud*"
 
-#: ../../source/projects.rst:69
-msgid ""
-"**API example** (`reference "
-"<http://localhost:8000/api/v1/redoc/#operation/projects_delete>`_)"
-msgstr ""
-"**API näide** (`viide "
-"<http://localhost:8000/api/v1/redoc/#operation/projects_delete>`_)"
-
-#: ../../source/projects.rst:77
+#: ../../source/projects.rst:97
 msgid "Navigate between Projects"
 msgstr "Projektide vahel navigeerimine"
 
-#: ../../source/projects.rst:78
+#: ../../source/projects.rst:98
 msgid ""
 "To start working on the project, we need to activate it - click on three "
 "dots under **Action** column (:numref:`project_actions`) and choose "
@@ -135,27 +131,53 @@ msgid ""
 "projects that you are a member of."
 msgstr ""
 "Et projekti kallal tööle asuda, tuleb see aktiveerida. Selleks kliki "
-"avalehel kolmele punktile **Action** veerus (:numref:`project_actions`) ja vali "
-"**Use**. Teine võimalus on valida see projekt nimekirjast avalehe ülemisest "
-"paremast nurgast (:numref:`user_projects`). Sealses nimekirjas on näha kõik "
-"projektid, mille liige sa oled."
+"avalehel kolmele punktile **Action** veerus (:numref:`project_actions`) "
+"ja vali **Use**. Teine võimalus on valida see projekt nimekirjast avalehe"
+" ülemisest paremast nurgast (:numref:`user_projects`). Sealses nimekirjas"
+" on näha kõik projektid, mille liige sa oled."
 
-#: ../../source/projects.rst:82
+#: ../../source/projects.rst:102
 msgid "Only one project can be activated at a time."
 msgstr "Korraga saab aktiveerida ainult ühe projekti."
 
-#: ../../source/projects.rst:87
+#: ../../source/projects.rst:107
 msgid "*User projects*"
 msgstr "*Kasutaja projektid*"
 
-#: ../../source/projects.rst:90
+#: ../../source/projects.rst:110
 msgid "Permissions"
 msgstr "Õigused"
 
-#: ../../source/projects.rst:92
+#: ../../source/projects.rst:112
 msgid ""
 "Project resources (including indices) are shared among the users with "
 "access to the project. **Only superusers can edit projects.**"
 msgstr ""
-"Projekti ressursidele (sealhulgas indeksitele) on ligipääs kõigil projekti "
-"liikmetel. **Ainult administraatoritel on õigus projekti muuta.**"
+"Projekti ressursidele (sealhulgas indeksitele) on ligipääs kõigil "
+"projekti liikmetel. **Ainult administraatoritel on õigus projekti "
+"muuta.**"
+
+#~ msgid ""
+#~ "**API example** (`reference "
+#~ "<http://localhost:8000/api/v1/redoc/#operation/projects_create>`_)"
+#~ msgstr ""
+#~ "**API näide** (`viide "
+#~ "<http://localhost:8000/api/v1/redoc/#operation/projects_create>`_)"
+
+#~ msgid ""
+#~ "**API example** (`reference "
+#~ "<http://localhost:8000/api/v1/redoc/#operation/projects_partial_update>`_)"
+#~ msgstr ""
+#~ "**API näide** (`viide "
+#~ "<http://localhost:8000/api/v1/redoc/#operation/projects_partial_update>`_)"
+
+#~ msgid ""
+#~ "**API example** (`reference "
+#~ "<http://localhost:8000/api/v1/redoc/#operation/projects_delete>`_)"
+#~ msgstr ""
+#~ "**API näide** (`viide "
+#~ "<http://localhost:8000/api/v1/redoc/#operation/projects_delete>`_)"
+
+#~ msgid "API example"
+#~ msgstr ""
+
