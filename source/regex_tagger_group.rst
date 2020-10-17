@@ -34,7 +34,7 @@ Input
     texta_facts.fact
 
   GUI:
-  
+
   .. code-block:: bash
 
     texta_facts.fact_name
@@ -309,7 +309,7 @@ For applying one or multiple Regex Tagger Group(s) to a dataset indexed in Elast
 
 	*"Apply Regex Tagger Group" button*
 
-Clicking on the button opens a new modal window with the title `"Apply Regex Tagger Group to indices"`. Fill the required fields (see also: application parameters `<rtg_apply_parameters>`). PS! Leave the field `"Query"` empty if you wish to apply the models to all of the documents in the selected dataset(s). If finished, click on the button `"Apply"` in the bottom right corner of the panel (:numref:`rtg_apply_window`).
+Clicking on the button opens a new modal window with the title `"Apply Regex Tagger Group to indices"`. Fill the required fields (see also: application parameters :ref:`<rtg_apply_parameters>`). PS! Leave the field `"Query"` empty if you wish to apply the models to all of the documents in the selected dataset(s). If finished, click on the button `"Apply"` in the bottom right corner of the panel (:numref:`rtg_apply_window`).
 
 .. _rtg_apply_window:
 .. figure:: images/regex_tagger_group/apply_rtg_window.png
