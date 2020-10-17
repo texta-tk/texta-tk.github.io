@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-14 21:24+0300\n"
+"POT-Creation-Date: 2020-10-17 21:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -283,7 +283,7 @@ msgstr ""
 
 #: ../../source/regex_tagger.rst:136 ../../source/regex_tagger.rst:256
 #: ../../source/regex_tagger.rst:313 ../../source/regex_tagger.rst:367
-#: ../../source/regex_tagger.rst:447 ../../source/regex_tagger.rst:532
+#: ../../source/regex_tagger.rst:447 ../../source/regex_tagger.rst:576
 msgid "GUI"
 msgstr ""
 
@@ -342,7 +342,7 @@ msgstr ""
 
 #: ../../source/regex_tagger.rst:186 ../../source/regex_tagger.rst:294
 #: ../../source/regex_tagger.rst:337 ../../source/regex_tagger.rst:390
-#: ../../source/regex_tagger.rst:450 ../../source/regex_tagger.rst:592
+#: ../../source/regex_tagger.rst:494 ../../source/regex_tagger.rst:629
 msgid "API"
 msgstr ""
 
@@ -352,12 +352,12 @@ msgstr ""
 
 #: ../../source/regex_tagger.rst:190 ../../source/regex_tagger.rst:298
 #: ../../source/regex_tagger.rst:341 ../../source/regex_tagger.rst:395
-#: ../../source/regex_tagger.rst:455 ../../source/regex_tagger.rst:596
+#: ../../source/regex_tagger.rst:499 ../../source/regex_tagger.rst:633
 msgid "Example:"
 msgstr ""
 
 #: ../../source/regex_tagger.rst:213 ../../source/regex_tagger.rst:351
-#: ../../source/regex_tagger.rst:408 ../../source/regex_tagger.rst:610
+#: ../../source/regex_tagger.rst:408 ../../source/regex_tagger.rst:647
 msgid "Response:"
 msgstr ""
 
@@ -529,75 +529,132 @@ msgid ""
 "models on random documents."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:453
-msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_random_doc/**"
+#: ../../source/regex_tagger.rst:449
+msgid ""
+"For tagging a random document with an existing Regex Tagger model, "
+"navigate to `\"Models\" -> \"Regex Taggers\"` as seen in "
+":numref:`regex_tagger_navigation`. Select the model you wish to use and "
+"navigate to the options panel denoted with three vertical dots. Select "
+"the option \"Tag Random Doc\" from the selection menu as seen in "
+":numref:`regex_tagger_tag_random_doc`."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:456
+msgid "*\"Tag Random Doc\" option in the selection menu*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:459
+msgid ""
+"Selecting the option opens a new modal window with the title `\"Tag "
+"Random Doc\"`. Select the index or indices you wish to use from the "
+"`\"Indices\"` selection menu displayed in the window after clicking on "
+"the corresponding section and select the field(s) you wish to use from "
+"the `\"Select Fields\"` selection menu below. If finished, click on the "
+"button `\"Tag\"` in the bottom right corner of the panel "
+"(:numref:`regex_tagger_tag_random_doc_mw`)."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:466
+msgid "*Regex Tagger \"Tag Random Doc\" window.*"
 msgstr ""
 
 #: ../../source/regex_tagger.rst:468
+msgid ""
+"The results are displayed in the same modal window as seen in "
+":numref:`regex_tagger_tag_random_pos` if any matches were detected. If no"
+" matches where found, the text `\"No matches found\"` is displayed as "
+"seen in :numref:`regex_tagger_tag_random_neg`."
+msgstr ""
+
+#: ../../source/regex_tagger.rst:475
+msgid "*\"Tag Random Doc\" positive output*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:482
+msgid "*\"Tag Random Doc\" negative output*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:484
+msgid ""
+"PS! The fields in the document not selected by the user and/or not "
+"containing any matches are by default collapsed, but you can view their "
+"content by clicking on the arrow icon at the end of each field "
+"(:numref:`rt_tag_random_doc_other_fields`.)"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:491
+msgid "*\"Tag Random Doc\" collapsing/uncollapsing fields.*"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:497
+msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_random_doc/**"
+msgstr ""
+
+#: ../../source/regex_tagger.rst:512
 msgid "Response (positive):"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:507
+#: ../../source/regex_tagger.rst:551
 msgid "Response (negative):"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:527
+#: ../../source/regex_tagger.rst:571
 msgid "Tag Text"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:529
+#: ../../source/regex_tagger.rst:573
 msgid ""
 "Function `\"Tag Text\"` enables tagging a single text with a selected "
 "Regex Tagger model."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:534
+#: ../../source/regex_tagger.rst:578
 msgid ""
 "For tagging a text with an existing Regex Tagger model, navigate to "
 "`\"Models\" -> \"Regex Taggers\"` as seen in "
 ":numref:`regex_tagger_navigation`."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:541
+#: ../../source/regex_tagger.rst:585
 msgid "*List of existing Regex Tagger models*"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:543
+#: ../../source/regex_tagger.rst:587
 msgid ""
 "Select the model you wish to use and navigate to options panel denoted "
 "with three vertical dots as seen in :numref:`regex_tagger_list_v2`."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:550
+#: ../../source/regex_tagger.rst:594
 msgid "*Tag Text option in selection menu*"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:552
+#: ../../source/regex_tagger.rst:596
 msgid ""
 "Select option \"Tag Text\" from the selection menu as seen in "
 ":numref:`regex_tagger_tag_text`."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:560
+#: ../../source/regex_tagger.rst:604
 msgid "*Tag Text modal window*"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:562
+#: ../../source/regex_tagger.rst:606
 msgid ""
 "Selecting the option opens a new modal window `\"Tag Text\"`. Insert the "
 "text you wish to tag and click on the button `\"Tag\"` in the bottom "
 "right corner of the panel (:numref:`regex_tagger_tag_text_modal`)."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:570
+#: ../../source/regex_tagger.rst:614
 msgid "*Tag Text positive output*"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:579
+#: ../../source/regex_tagger.rst:622
 msgid "*Tag Text negative output*"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:581
+#: ../../source/regex_tagger.rst:624
 msgid ""
 "The results are displayed in the same modal window as seen in "
 ":numref:`regex_tagger_tag_text_pos_output` if any matches where detected."
@@ -605,27 +662,7 @@ msgid ""
 "as seen in in :numref:`regex_tagger_tag_text_neg_output`."
 msgstr ""
 
-#: ../../source/regex_tagger.rst:583
-msgid "**Model identifier** in format <tag_name>:<tag_id>"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:584
-msgid ""
-"**Tags** - name of the Regex Tagger model(s) which resulted in positive "
-"match (NB! number of tags is always one in this scenario!)"
-msgstr ""
-
-#: ../../source/regex_tagger.rst:585
-msgid ""
-"**Matches** - unique words/phrases matching the selected Regex Tagger "
-"lexicon entries."
-msgstr ""
-
-#: ../../source/regex_tagger.rst:586
-msgid "**Text** - All detected matches highlighted in the source text."
-msgstr ""
-
-#: ../../source/regex_tagger.rst:594
+#: ../../source/regex_tagger.rst:631
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_text/**"
 msgstr ""
 
@@ -846,5 +883,24 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Counter Slop"
+#~ msgstr ""
+
+#~ msgid "**Model identifier** in format <tag_name>:<tag_id>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Tags** - name of the Regex "
+#~ "Tagger model(s) which resulted in "
+#~ "positive match (NB! number of tags "
+#~ "is always one in this scenario!)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Matches** - unique words/phrases matching"
+#~ " the selected Regex Tagger lexicon "
+#~ "entries."
+#~ msgstr ""
+
+#~ msgid "**Text** - All detected matches highlighted in the source text."
 #~ msgstr ""
 

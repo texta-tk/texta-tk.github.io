@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-17 17:59+0300\n"
+"POT-Creation-Date: 2020-10-17 21:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -384,19 +384,23 @@ msgid "*\"Apply Regex Tagger Group\" button*"
 msgstr "*Nupp \"Apply Regex Tagger Group\"*"
 
 #: ../../source/regex_tagger_group.rst:312
+#, fuzzy
 msgid ""
 "Clicking on the button opens a new modal window with the title `\"Apply "
 "Regex Tagger Group to indices\"`. Fill the required fields (see also: "
-"application parameters `<rtg_apply_parameters>`). PS! Leave the field "
-"`\"Query\"` empty if you wish to apply the models to all of the documents"
-" in the selected dataset(s). If finished, click on the button `\"Apply\"`"
-" in the bottom right corner of the panel (:numref:`rtg_apply_window`)."
+":ref:`application parameters <rtg_apply_parameters>`). PS! Leave the "
+"field `\"Query\"` empty if you wish to apply the models to all of the "
+"documents in the selected dataset(s). If finished, click on the button "
+"`\"Apply\"` in the bottom right corner of the panel "
+"(:numref:`rtg_apply_window`)."
 msgstr ""
 "Nupule vajutamise tagajärjel avaneb uus modaalaken pealkirjaga `\"Apply "
-"Regex Tagger Group to indices\"`. Täida nõutud väljas (vt. ka: :ref:`parameetrid `<rtg_apply_parameters>`). PS! Jäta väli `\"Query\"` tühjaks, "
-"kui soovid mudeleid rakendada kõikidele andmestikus olevatele dokumentidele. "
-"Pärast nõutud väljade täitmist, vajuta akna alumises paremas "
-"nurgas asetsevale nupule `\"Apply\"` (:numref:`rtg_apply_window`)."
+"Regex Tagger Group to indices\"`. Täida nõutud väljas (vt. ka: "
+":ref:`parameetrid <rtg_apply_parameters>`). PS! Jäta väli `\"Query\"` "
+"tühjaks, kui soovid mudeleid rakendada kõikidele andmestikus olevatele "
+"dokumentidele. Pärast nõutud väljade täitmist, vajuta akna alumises "
+"paremas nurgas asetsevale nupule `\"Apply\"` "
+"(:numref:`rtg_apply_window`)."
 
 #: ../../source/regex_tagger_group.rst:319
 msgid "*\"Apply Regex Tagger Group\" window*"
@@ -594,9 +598,10 @@ msgid ""
 "multiple Regex Tagger Group models at once. Results are added to the "
 "field **\"texta_facts\"** accordingly:"
 msgstr ""
-"Funktsioon `\"Multitag Docs\"` võimaldab mitme Regex Taggeri Groupi üheaegset rakendamist etteantud dokumentidele. Iga dokumendi märgendid kajastuvad "
-"vastavale dokumendile lisatud väljas **\"texta_facts\"** järgneva "
-"loogika alusel:"
+"Funktsioon `\"Multitag Docs\"` võimaldab mitme Regex Taggeri Groupi "
+"üheaegset rakendamist etteantud dokumentidele. Iga dokumendi märgendid "
+"kajastuvad vastavale dokumendile lisatud väljas **\"texta_facts\"** "
+"järgneva loogika alusel:"
 
 #: ../../source/regex_tagger_group.rst:507
 msgid "**docs**:"
@@ -798,11 +803,12 @@ msgid "*Regex Tagger Group \"Tag Random Doc\" window.*"
 msgstr "*\"Tag Random Doc\" aken enne märgendamist.*"
 
 #: ../../source/regex_tagger_group.rst:721
+#, fuzzy
 msgid ""
 "The results are displayed in the same modal window as seen in "
-":numref:`rtg_tag_random_output` if any matches where detected. If no "
+":numref:`rtg_tag_random_output` if any matches were detected. If no "
 "matches where found, the text `\"No matches found\"` is displayed as seen"
-" in in :numref:`rtg_tag_random_neg_output`."
+" in :numref:`rtg_tag_random_neg_output`."
 msgstr ""
 "Märgendamise tulemused kuvatakse samas aknas. Joonis "
 ":numref:`rtg_tag_random_output` kujutab positiivset märgendamise tulemust"
@@ -935,14 +941,12 @@ msgstr ""
 "ei leitud)."
 
 #: ../../source/regex_tagger_group.rst:898
-#, fuzzy
 msgid "*\"Tag Text\" positive output*"
-msgstr "*\"Tag Random Doc\" positiivne tulemus*"
+msgstr "*\"Tag Text\" positiivne tulemus*"
 
 #: ../../source/regex_tagger_group.rst:905
-#, fuzzy
 msgid "*\"Tag Text\" negative output*"
-msgstr "*\"Tag Random Doc\" negatiivne tulemus*"
+msgstr "*\"Tag Text\" negatiivne tulemus*"
 
 #: ../../source/regex_tagger_group.rst:911
 msgid ""
