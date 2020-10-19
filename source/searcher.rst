@@ -2,70 +2,70 @@
 Search
 ########
 
-The Search application is responsible for both creating the searches defining subsets of documents for Toolkit's other applications and browsing-summarizing the data.
+The Search application allows user to perform searches and aggregations over the data. Search results can be used as an input to machine learning models. 
 
 .. note::
-	In order to use **Search**, project must be selected in upper panel.
+	In order to use **Search**, project and indices must be selected from the upper right panel.
 
-Search's graphical interface consists of serveral important panels, which are depicted in :numref:`search_panel`.
-We can collapse or open the panels by clicking on the arrow in the corner.
+Search's graphical interface (:numref:`search_panel`) consists three panels.
+These are :ref:`Current Search <currentsearch>`, :ref:`Saved Searches <savedsearches>` and :ref:`Aggregations <aggregations>`. 
+By default the panel of Current Search open. Clicking on the name of the panel collapses or opens that panel.
 
 .. _search_panel:
-.. figure:: images/search_panel.png
+.. figure:: images/searcher/search_panel.png
 
-	*Search Panel*
-    
-        1. :ref:`Current Search <currentsearch>`
-        2. :ref:`Saved Searches <savedsearches>`
-        3. :ref:`Aggregations <aggregations>`
+	*Search panels*
+
+.. note::
+	The Searcher will only look into the datasets that are selected on the top-right panel.
 
 .. _currentsearch:
-
 Current Search
 ***************
 
-Data browsing and summarization depend on searches. Search consists of a set of constraints on :ref:`field <field_concept>` values. We can define our constraints on the data using the *Current Search* panel.
-Without saving the constraints, we are in a “test mode”, which means that we can use the search in real time, but we cannot use the search in other tools.
-After saving the search, it is available also to other tools.
-
-
-.. note::
-	The search will be done on the Project's dataset(s) chosen in the upper panel.
-	
-.. _current_search:
-.. figure:: images/current_search.png
-
-	*Current search*
-	
-	From left to right in the red box:
-    
-        a. view query constructed with Current Search in a more suitable format for :ref:`Elasticsearch <elasticsearch>`,
-        b. save the constructed search,
-        c. collapse Current Search panel.
-
-Current Searh divides into Simple Search and Advanced Search (look below).
+Current Search is a tool for simple data browsing. It also allows us to create filters to only search for documents in our interest.
+For the latter purpose we can create a set of constraints on :ref:`field <field_concept>` values. This can be done using either Simple Search 
+or Advanced Search. 
 
 .. note::
 	Current match doesn't differentiate lower and upper case (except regex constraint). This means that searching for "President" also matches "president". If the case is important in the search, use regex constraint (see below).
 
+
 Simple Search
 =============
 
-Simple search searches for a word on all fields in the chosen dataset. Words separated with space (' ') are considered as a space-separated list - each word must occur in at least one field in the document.
+Simple search searches for a word or words on all fields in the chosen dataset(s). 
+Multiple words must be separated with space (" "). 
+The search returns documents where each word occurs at least in one of the fields.
+
+
+To use Simple Search, select it on the Current Search panel and type in the words you want to search for (:ref:`field <simple_search>` values).
 
 .. _simple_search:
-.. figure:: images/simple_search.png
+.. figure:: images/searcher/simple_search.png
 
-	*Simple search*. 'word1', 'word2', 'word3' are searched from all the fields in the document. Only those which have all of them matched at least once, are returned.
+  *Simple search*
 
 Advanced Search
 ===============
 
-Advanced search searches for a constraint in a certain field in the chosen dataset. Constraints can be added on different fields in one search. Constrainst can be removed via the 'X'-sign in upper right. The constraints can be divided into three: string constraint, date constraint and texta_tag constraint (look below). When the constraints are chosen the Search output can be seen via "Search"-button.
+Advanced search allows to create different contraints for different fields.
+There are three types of contraints we can use: string contraints, date constraints and texta_facts constraints.
+
+To use Advanced Search, select it on the Current Search panel. After that select fields which you want to use in your constraint. 
+Click anywhere in the toolkit to close fields selection. You should see a box where you can create your constraint (:ref:`field <string_search>`).
+You can remove the contraint by clicking on the 'X'-sign on upper right corner of the box.
+
+.. _string_search:
+.. figure:: images/searcher/string_search.png
+
+  *Advanced search*
+
 
 String constraint
 -------------------
-One line equals one search item. This constraint has several operators. Look below for their functions. 
+Different search strings must be written to different lines. 
+The search strings must be tied with one of the **Operator** from the table below:
 
 .. list-table:: Operators
    :widths: 10 25
@@ -74,11 +74,20 @@ One line equals one search item. This constraint has several operators. Look bel
    * - Operator
      - Meaning
    * - and
-     - all of the items (lines) are matched in the document 
+     - all of the search strings (lines) are matched in the document 
    * - or
-     - at least one of the items (lines) is matched in the document
+     - at least one of the search string (lines) is matched in the document
    * - not
-     - definetly none of the items are matched in the document
+     - the document must not match any of the given search string
+
+
+You must also choose a **Match** rule. These are given in the table below:
+
+.. list-table:: Match
+   :widths: 10 25
+   :header-rows: 1
+   * - Match rule
+     - Meaning
    * - phrase prefix
      - matches the beginning of the words (endings can differ, e.g. searching for 'bribe' gives us 'bribe', 'bribery', 'bribetaking', etc)
    * - word
@@ -87,45 +96,55 @@ One line equals one search item. This constraint has several operators. Look bel
      - finds exact match for a phrase (more than one word in one line)
    * - regex
      - takes the input as `a regular expression <https://www.rexegg.com/regex-quickstart.html>`_ and searches document accordingly. Nb! This is :ref:`Elasticsearch <elasticsearch>` syntax.
-   * - slop
-     - defines how many words can be between the phrase words defined
+
+Finally, there is a value called **Slop**. If any of your search strings contains multiple words, then
+this defines how many words can be between that search string words.
      
-.. _string_search:
-.. figure:: images/string_search.png
+In figure :ref:`field <string_search>` the string constraint is on the field named "text". 
+The search will return document that have either phrase "president Obama" or "president Trump" in it (or both). 
+Since the Slop is 2, it also matches the phrase if it has 0-2 words between the words (e.g "president Barack Obama").
 
-	*String constraint*. This string constraint is on field named "text". It looks for documents that have either phrase "president Obama" or "president Trump" in it (or both). Since the Slop is 2, it also matches the phrase if it has 0-2 words between the words (e.g "president Barack Obama"). The "X" in the red square is for deleting this constraint.
+.. note::
+	You can use an existing :ref:`lexicon <lexiconminer>` to create constraints. This can be done via button **Add lexicon** (visible only if there exists any lexicons in the project."
 	
-The string constraint has an option to add :ref:`a saved lexicon's <lexiconminer>` terms into the search (via button "Add lexicon"). This works only when there is at least one lexicon in the project. 
-
 Date constraint
 -------------------
-Date constraint works only on a proper datefield. This outputs only those documents which datefield are within the chosen time range (starting day included and ending day excluded). The time range can be chosen by clicking on the little calendar in the right.
+Date constraint is for fields with type date. This outputs only documents where the field value is within the chosen time range (starting day included and ending day excluded). 
+You can choose the time range by clicking on the little calendar in the right.
 
 .. _date_constraint:
 .. figure:: images/date_constraint.png
 
 	*Date constraint*
 
-Texta_fact constraint
+Texta_facts constraint
 ------------------------
-Texta_fact constraint helps to find certain :ref:`fact <texta_fact>` or :ref:`facts <texta_fact>` with certain values. You can find several different values at once with the little '+'-sign which adds one more value-line. Look in the table above for the operators' meanings. 
+Texta_facts constraint allows to find documents with certain :ref:`fact <texta_fact>` names or fact values. 
+
+**Creating a constraint over fact names**
+
+.. _tag_constraint3:
+.. figure:: images/tag_constraint3.png
+
+	*Fact name constraint with or*. Outputs all documents that contain at least one of the given fact name.
+
+
+**Using different constraints for different fact names**
+
+In order to use diffrent constraints for different fact names, you need to select **texta_facts[fact_name]** field multiple times.
 
 .. _tag_constraint1:
 .. figure:: images/tag_constraint1.png
 
-	*Texta_fact fact constraints*. Search for documents that have at least one ORG fact in it and definetly no PER fact. 
-	
-.. _tag_constraint3:
-.. figure:: images/tag_constraint3.png
+	*Fact name constraint*. Outputs documents that contain an ORG fact and definetly not PER fact. 
 
-	*Texta_fact fact value constraint with or*. Texta_fact fact constraint enables choosing multible facts at once. For example this constraint outputs all documents that has at least one of the facts (COMPANY, EML, ADDR) in it.
+**Creating a constraint over fact values**
 	
 .. _tag_constraint2:
 .. figure:: images/tag_constraint2.png
 
-	*Texta_fact fact value constraint*. Search for documents that have an ORG fact with either value "NATO" or value "European Union" in it (or both).
+	*Fact value constraint*. Outputs documents that have an ORG fact with either value "NATO" or value "European Union" in it (or both).
 	
-The same texta_fact constraints can be constructed automatically by clicking on the texta_fact labels or values in the dataset texta_facts field.
 
 Search Options
 ==============
@@ -150,10 +169,10 @@ Look at the table below for the meanings of search options.
 .. _search_options:
 .. figure:: images/search_options.png
 
-	*Search Options*. Only texta_fact constraints will be highlighted in the results with these selected Search Options. 
+	*Search Options*
 	
-Examples
-========
+Advanced Search examples
+=========================
 
 .. _search_example1:
 .. figure:: images/search_example1.png
@@ -169,15 +188,20 @@ Examples
 Browsing Search results
 ========================
 
-If we click on “Search” button, we will see the matching documents in a tabular form (see :numref:`search_results`). The results might be updating while modifying the constraints.
+After clicking the “Search” button, the matching documents are shown. (see :numref:`search_results`). 
 
 .. _search_results:
 .. figure:: images/search_results.png
 	:width: 100 %
 
-	*Example Search Results*
+	*Example search results*
 
-If there are too many features (columns), we can hide or show them from the drop-down menu in the up left corner. We can select or deselect all of them together (*Select all*) or by clicking on them separately. We can also hide or get back the Searcher's panels with *Toggle drawer* button. We can browse through Searcher's results with the arrows in the upper right. We can also choose how many items per page would we want to see in the upper right.
+You can choose the columns that we would like to see from the drop-down menu right above the results.
+You can select or deselect all of them together (*Select all*) or by clicking on them separately. 
+
+It is possible to hide the constraint panels with *Toggle drawer* button. 
+
+Use arrows in the upper right to navigate between pages. You can aksi choose how many items per page you would like to see (also in the upper right corner).
 
 .. _search_rt:
 .. figure:: images/search_results_toggle.png
@@ -192,11 +216,11 @@ If there are too many features (columns), we can hide or show them from the drop
 Saved Searches
 ***************
 
-After having comed up with a suitable search, it can be saved for later use by clicking on the **disk** icon up-right in the Current Search panel. The **eye** icon next to the disk icon shows us the actual :ref:`Elasticsearch <elasticsearch>` query built by choosing the Operators and words to search for.
+To save a search, click on the **disk** icon in the upper right corner of the Current Search panel. Saved searches can be used in other applications available in Texta Toolkit.
+For example, you can use a search as a set of positive samples when training a tagger or as a set of documents to be analyzed with topic analyzer.
+Or you might just want to save a search for browsing it later: to open it in the Current Search, simply click on the name of it.
 
-After saving a search, it becomes available for using in Toolkit's applications. For example, they can be used in browsing the search later again or applying in aggregations. The saved search can be sent to other users who have the permission to the project with a copied url.
-This opens the saved search under the Current Search for the other user.
-Saved searches can be opened in the Current Search simply by clicking on it.
+If you are curious, you can see the actual :ref:`Elasticsearch <elasticsearch>` query behind the search by clicking on the **eye** icon next to the disk icon.
 
 .. note::
 	API support for saving searches can be found `here <https://rest-dev.texta.ee/api/v1/projects/1/searches/>`_.
@@ -206,16 +230,51 @@ Saved searches can be opened in the Current Search simply by clicking on it.
 Aggregations
 *************
 
-As fun as browsing through the data is, it is not always enough. Sometimes we want to get an overview of our data, such as topics over time or word distributions. Searcher allows to do all of that and more through the “Aggregations” panel.
+Aggregations tool allows to aggregate over the data. 
+For example, we can use it to perform simple aggregations - retrieve item and word distributions.
 
-Aggregations have two components - data and features it aggregates over. It will aggregate over the dataset we have under the Current Search. We can also exclude current search (meaning that 'Aggregate over all data except the one we have currently active') and choose the aggregation size. By defining a feature, we can group by that feature and get category counts. For example, lets assume we are interested in seeing how are the top words distributed in our sample data defined by our “bribe” search. For that we simply click on our bribe search under Saved Searches to get it as the current search.
+For instance, let's assume we have a dataset containing posts from Estonian Reddit. We can use an aggregation over field *post_title* to find the most popular threads (see :numref:`significant_items`).
+
+.. _significant_items:
+.. figure:: images/searcher/reddit_title.png
+
+	*Significant items*
+
+Now, knowing that the most popular thread is *Coronavirus megathread*, we might want to know what are the words that characterize the dataset when compared to other threads. 
+In Texta Toolkit such words are called **significant words** and can be found with aggregations tool (see :numref:`significant_words`).
+
+.. _significant_words:
+.. figure:: images/searcher/significant_words.png
+
+	*Significant words*
 
 .. note::
-
     **How are the significance scores calculated?**
-	The numbers returned for scores are primarily intended for ranking different suggestions sensibly rather than something easily understood by end users. The scores are derived from the doc frequencies in foreground and background sets. In brief, a term is considered significant if there is a noticeable difference in the frequency in which a term appears in the subset and in the background. The way the terms are ranked can be configured, `see "Parameters" section <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-significanttext-aggregation.html>`_.
+	In brief, a term is considered significant if there is a noticeable difference in the frequency in which a term appears in the subset and in the background.
 
-One cool thing we can also do, is to visualize the frequency of texts with searched words in it on a timeline. We can do that if we have a proper date field (in Texta date format) in our data. Here we can visualize when were the words 'bribe', 'bribery' and 'bribed' used most frequently in our dataset.
 
-We can also aggregate over :ref:`texta_facts <texta_fact>` field in order to see the top entities under some fact. If we click on the black diagram button, we can scroll through the results. We see as many entities as we chose for our aggregation size.
+Besides these simple words and items aggregations shown above, there is still so much more that you can do with the tool.
 
+For example, you can examine distribution of the data over time (see :numref:`simple_time_aggregation`). Note that to produce such graphs, you must have a proper date field (in Texta date format) in the data.
+
+.. _simple_time_aggregation:
+.. figure:: images/searcher/time_aggregations.png
+
+	*Time aggregation*
+
+If you have texta_facts added to your data, you can visualize the frequencies of the values of one or more facts (see :numref:`facts_aggre`).
+Note that on top of the plot in figure :numref:`facts_aggre`, there is a list with three visualization options. You can click on them to change how the results are displayed - 
+whether hierarchically, as a table or as a plot.
+
+.. _facts_aggre:
+.. figure:: images/searcher/facts_aggre.png
+
+	  *Facts aggregation*
+
+By creating a set of saved searches, we can visualize the time distribution of multiple subsets at once. For example, if we have a news articles datasets, we might 
+want to know often different politicans are mentioned in the news in different time periods (see :numref:`saved_searches_aggre`).
+
+.. _saved_searches_aggre:
+.. figure:: images/searcher/saved_searches_aggre.png
+
+	  *Saved searches aggregation*
