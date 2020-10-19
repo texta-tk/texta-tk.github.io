@@ -446,6 +446,50 @@ Tag Random Doc
 GUI
 ------------
 
+For tagging a random document with an existing Regex Tagger model, navigate to `"Models" -> "Regex Taggers"` as seen in :numref:`regex_tagger_navigation`. Select the model you wish to use and navigate to the options panel denoted with three vertical dots. Select the option "Tag Random Doc" from the selection menu as seen in :numref:`regex_tagger_tag_random_doc`.
+
+.. _regex_tagger_tag_random_doc:
+.. figure:: images/regex_tagger/regex_taggers_tag_random_doc.png
+	:width: 180pt
+	:align: center
+
+	*"Tag Random Doc" option in the selection menu*
+
+
+Selecting the option opens a new modal window with the title `"Tag Random Doc"`. Select the index or indices you wish to use from the `"Indices"` selection menu displayed in the window after clicking on the corresponding section and select the field(s) you wish to use from the `"Select Fields"` selection menu below. If finished, click on the button `"Tag"` in the bottom right corner of the panel (:numref:`regex_tagger_tag_random_doc_mw`).
+
+.. _regex_tagger_tag_random_doc_mw:
+.. figure:: images/regex_tagger/regex_tagger_tag_random_doc_mw.png
+	:width: 500pt
+	:align: center
+
+	*Regex Tagger "Tag Random Doc" window.*
+
+The results are displayed in the same modal window as seen in :numref:`regex_tagger_tag_random_pos` if any matches were detected. If no matches where found, the text `"No matches found"` is displayed as seen in :numref:`regex_tagger_tag_random_neg`.
+
+.. _regex_tagger_tag_random_pos:
+.. figure:: images/regex_tagger/regex_tagger_tag_random_pos.png
+	:width: 500pt
+	:align: center
+
+	*"Tag Random Doc" positive output*
+
+.. _regex_tagger_tag_random_neg:
+.. figure:: images/regex_tagger/regex_tagger_tag_random_neg.png
+	:width: 500pt
+	:align: center
+
+	*"Tag Random Doc" negative output*
+
+PS! The fields in the document not selected by the user and/or not containing any matches are by default collapsed, but you can view their content by clicking on the arrow icon at the end of each field (:numref:`rt_tag_random_doc_other_fields`.)
+
+.. _rt_tag_random_doc_other_fields:
+.. figure:: images/regex_tagger_group/tag_random_doc_other_fields.png
+	:width: 500pt
+	:align: center
+
+	*"Tag Random Doc" collapsing/uncollapsing fields.*
+
 API
 ------------
 
@@ -570,7 +614,6 @@ Selecting the option opens a new modal window `"Tag Text"`. Insert the text you 
 	*Tag Text positive output*
 
 
-
 .. _regex_tagger_tag_text_neg_output:
 .. figure:: images/regex_tagger/regex_taggers_tag_text_neg_output.png
 	:width: 500pt
@@ -579,12 +622,6 @@ Selecting the option opens a new modal window `"Tag Text"`. Insert the text you 
 	*Tag Text negative output*
 
 The results are displayed in the same modal window as seen in :numref:`regex_tagger_tag_text_pos_output` if any matches where detected. If no matches where found, the text `"No matches found"` is displayed as seen in in :numref:`regex_tagger_tag_text_neg_output`.
-
-1. **Model identifier** in format <tag_name>:<tag_id>
-2. **Tags** - name of the Regex Tagger model(s) which resulted in positive match (NB! number of tags is always one in this scenario!)
-3. **Matches** - unique words/phrases matching the selected Regex Tagger lexicon entries.
-4. **Text** - All detected matches highlighted in the source text.
-
 
 
 

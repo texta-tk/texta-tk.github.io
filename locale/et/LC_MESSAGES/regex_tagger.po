@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-14 21:24+0300\n"
+"POT-Creation-Date: 2020-10-17 21:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,8 @@ msgid ""
 "based on predefined `regular expressions "
 "<https://en.wikipedia.org/wiki/Regular_expression>`_ , i.e. regexes."
 msgstr ""
-":ref:`Regex Tagger <regex_tagger_concept>` on tööriist tekstide mustripõhiseks märgendamiseks `regulaaravaldiste "
+":ref:`Regex Tagger <regex_tagger_concept>` on tööriist tekstide "
+"mustripõhiseks märgendamiseks `regulaaravaldiste "
 "<https://en.wikipedia.org/wiki/Regular_expression>`_ abil."
 
 #: ../../source/regex_tagger.rst:12
@@ -43,8 +44,9 @@ msgid ""
 "<https://docs.python.org/3/library/re.html>`_ and thus it's important to "
 "use the same syntax while constructing your patterns."
 msgstr ""
-"Regex Tagger baseerub `Pythoni regexi moodulil <https://docs.python.org/3/library/re.html>`_, "
-"mistõttu tuleks mustrite loomisel kasutada samuti Pythoni regulaaravaldiste süntaksit."
+"Regex Tagger baseerub `Pythoni regexi moodulil "
+"<https://docs.python.org/3/library/re.html>`_, mistõttu tuleks mustrite "
+"loomisel kasutada samuti Pythoni regulaaravaldiste süntaksit."
 
 #: ../../source/regex_tagger.rst:17
 msgid "Creation"
@@ -59,11 +61,12 @@ msgid ""
 "<creation_gui>`; for creating a Regex Tagger via API, see subsection "
 ":ref:`API <creation_api>`."
 msgstr ""
-"Järgnev sektsioon katab kõik Regex Taggerite loomisega seonduva."
-"Peatükis :ref:`Parameetrid <creation_parameters>` antakse ülevaade sisendparamteetritest; "
-"peatükis :ref:`GUI "
-"<creation_gui>` antakse ülevaade Regex Taggerite loomisest graafilise kasutajaliidese kaudu; "
-"Peatükis :ref:`API <creation_api>` antakse ülevaade Regex Taggerite loomisest API kaudu."
+"Järgnev sektsioon katab kõik Regex Taggerite loomisega seonduva.Peatükis "
+":ref:`Parameetrid <creation_parameters>` antakse ülevaade "
+"sisendparamteetritest; peatükis :ref:`GUI <creation_gui>` antakse "
+"ülevaade Regex Taggerite loomisest graafilise kasutajaliidese kaudu; "
+"Peatükis :ref:`API <creation_api>` antakse ülevaade Regex Taggerite "
+"loomisest API kaudu."
 
 #: ../../source/regex_tagger.rst:26
 msgid "Parameters"
@@ -98,8 +101,9 @@ msgid ""
 "Lexicon entries can either be regular words (e.g. \"cat\"), phrases (e.g."
 " \"black cat\"), or regular expressions containing regex wildcard "
 "characters(e.g. \"\\d{2}-\\d{2}-\\d{4}\")."
-msgstr "Leksikonikanded võivad olla tavalised sõna (nt. "kass"), fraasid (nt. "must kass"), "
-"või regulaaravaldised (nt. "\\d{2}-\\d{2}-\\d{4}\")."
+msgstr ""
+"Leksikonikanded võivad olla tavalised sõna (nt. \"kass\"), fraasid (nt. "
+"\"must kass\"), või regulaaravaldised (nt. \"\\d{2}-\\d{2}-\\d{4}\")."
 
 #: ../../source/regex_tagger.rst:47
 msgid "**counter_lexicon**:"
@@ -111,7 +115,9 @@ msgid ""
 " :ref:`counter_slop <param_counter_slop>`) main lexicon matches. "
 "Annulling lexicon entries can similarly to main lexicon entries be "
 "regular words, phrases, or regular expressions."
-msgstr "Nimekiri põhileksikonikandeid annulleerivatest sõnadest/fraasidest/regulaaravaldistest."
+msgstr ""
+"Nimekiri põhileksikonikandeid annulleerivatest "
+"sõnadest/fraasidest/regulaaravaldistest."
 
 #: ../../source/regex_tagger.rst:58
 msgid "**operator**:"
@@ -145,7 +151,8 @@ msgid ""
 "attention to :ref:`required_words <param_required_words>` parameter!)"
 msgstr ""
 "positiivne tulemust tagastatakse üksnes siis, kui tekstis esinevad kõik "
-"leksikonikanded. (NB! vaata ka parameetrit to :ref:`required_words <param_required_words>`!)"
+"leksikonikanded. (NB! vaata ka parameetrit to :ref:`required_words "
+"<param_required_words>`!)"
 
 #: ../../source/regex_tagger.rst:68
 msgid "**required_words**:"
@@ -159,14 +166,16 @@ msgid ""
 "in the text for positive outcome; if \"required_words\" = 0.5, only half "
 "of the lexicon entries must appear in the text etc."
 msgstr ""
-"Nõutud minimaalne leksikonikannete osakaal tekstis. Näiteks, kui meil on"
-"neljast sõnast koosnev leksikon ja parameeter "required_words" = 1.0, siis tagastatakse positiivne tulemus"
-"üksnes juhul, kui kõik leksikonis leiduvat 4 sõna esinevad ka tekstis; kui aga parameeter "required_words" = 0.5,"
-" piisab positiivse tulemuse jaoks üksnes poolte sõnade tekstis esinemisest."
+"Nõutud minimaalne leksikonikannete osakaal tekstis. Näiteks, kui meil "
+"onneljast sõnast koosnev leksikon ja parameeter \"required_words\" = 1.0,"
+" siis tagastatakse positiivne tulemusüksnes juhul, kui kõik leksikonis "
+"leiduvat 4 sõna esinevad ka tekstis; kui aga parameeter "
+"\"required_words\" = 0.5, piisab positiivse tulemuse jaoks üksnes poolte "
+"sõnade tekstis esinemisest."
 
 #: ../../source/regex_tagger.rst:67
 msgid "Has effect only if \"operator\" = \"and\"."
-msgstr "Parameetril on mõju üksnes juhul kui "operator" = "and""
+msgstr "Parameetril on mõju üksnes juhul kui \"operator\" = \"and\""
 
 #: ../../source/regex_tagger.rst:83
 msgid "**match_type**:"
@@ -186,8 +195,11 @@ msgid ""
 "text. Subsequent alphanumeric characters are allowed. E.g. Lexicon entry "
 "\"cat\" matches the words \"cat\" and \"caterpillar\", but would not "
 "match the word \"scattered\"."
-msgstr "Leksikonikanne peab esinema tekstis leiduva sõna/fraasi alguses, kuid sellele võib järgneda ka muid alfabeetilisi tähemärke. "
-"Näiteks tuvastatakse leksikonikanne "kass" nii sõnadest "kass" kui ka "kassid", kuid mitte sõnast "karkass"."
+msgstr ""
+"Leksikonikanne peab esinema tekstis leiduva sõna/fraasi alguses, kuid "
+"sellele võib järgneda ka muid alfabeetilisi tähemärke. Näiteks "
+"tuvastatakse leksikonikanne \"kass\" nii sõnadest \"kass\" kui ka "
+"\"kassid\", kuid mitte sõnast \"karkass\"."
 
 #: ../../source/regex_tagger.rst:80
 msgid "exact:"
@@ -200,8 +212,9 @@ msgid ""
 "\"cat\" matches the word \"cat\", but would not match the words "
 "\"caterpillar\", and \"scattered\"."
 msgstr ""
-"Leksikonikanne peab täielikult ühtima tekstis leiduva sõna/fraasiga. Näiteks tuvastatakse leksikonikanne "
-""kass" sõnast "kass", kuid mitte sõnadest "kassid" ega "karkass".
+"Leksikonikanne peab täielikult ühtima tekstis leiduva sõna/fraasiga. "
+"Näiteks tuvastatakse leksikonikanne \"kass\" sõnast \"kass\", kuid mitte "
+"sõnadest \"kassid\" ega \"karkass\""
 
 #: ../../source/regex_tagger.rst:83
 msgid "subword:"
@@ -212,8 +225,11 @@ msgid ""
 "Lexicon entry should match a part of the word/phrase in the text. "
 "Preceeding and subsequent characters are allowed. E.g. Lexicon entry "
 "\"cat\" matches the words \"cat\", \"caterpillar\", and \"scattered\"."
-msgstr "Leksikonikanne peab esinema tekstis leiduvas sõna/fraasis, kuid nii selle ees kui ka järel võib olla ka teisi alfabeetilisi tähemärke."
-"Näiteks tuvastatakse leksikonikanne "kass" nii sõnadest "kass", "kassid" kui ka "karkass"."
+msgstr ""
+"Leksikonikanne peab esinema tekstis leiduvas sõna/fraasis, kuid nii selle"
+" ees kui ka järel võib olla ka teisi alfabeetilisi tähemärke.Näiteks "
+"tuvastatakse leksikonikanne \"kass\" nii sõnadest \"kass\", \"kassid\" "
+"kui ka \"karkass\"."
 
 #: ../../source/regex_tagger.rst:88
 msgid "**phrase_slop**:"
@@ -246,7 +262,9 @@ msgid ""
 "If enabled, return the whole alphanumeric string sequence matched, "
 "otherwise only the (sub)section exactly matching the original lexicon "
 "entry."
-msgstr "Aktiveerituna tagastatakse terve sõna/fragment, kust leksikonikanne tuvastati."
+msgstr ""
+"Aktiveerituna tagastatakse terve sõna/fragment, kust leksikonikanne "
+"tuvastati."
 
 #: ../../source/regex_tagger.rst:113
 msgid "**n_allowed_edits**:"
@@ -260,7 +278,7 @@ msgid ""
 msgstr ""
 "Lubatud maksimaalne tähemuudatuste arv tekstis leiduva sõna/fragmendi "
 "ning leksikonikande vahel (`Levenshteini kaugus "
-"<https://en.wikipedia.org/wiki/Levenshtein_distance>`_.")."
+"<https://en.wikipedia.org/wiki/Levenshtein_distance>`_.\")."
 
 #: ../../source/regex_tagger.rst:107
 msgid "One edit is considered as one of the following:"
@@ -295,10 +313,10 @@ msgid ""
 "If enabled, ignore end-of-sentence characters between lexicon entry words"
 " and/or counter lexicon entries and lexicon entries."
 msgstr ""
-"Lause lõppu tähistavate tähemärkide esinemine leksikonikande sõnade "
-"vahel muudab tuvastatud kande kehtetuks; lause lõppu tähistavate "
-"tähemärkide esinemine põhileeksikonikande ning annuleeriva "
-"leksikonikande vahel, muudab annuleeriva leksikonikande mõju kehtetuks."
+"Lause lõppu tähistavate tähemärkide esinemine leksikonikande sõnade vahel"
+" muudab tuvastatud kande kehtetuks; lause lõppu tähistavate tähemärkide "
+"esinemine põhileeksikonikande ning annuleeriva leksikonikande vahel, "
+"muudab annuleeriva leksikonikande mõju kehtetuks."
 
 #: ../../source/regex_tagger.rst:127
 msgid "Ignored end-of-sentence characters are: [\".\", \"!\", \"?\"]"
@@ -312,14 +330,18 @@ msgid ""
 "denote the end of a sentence, e.g. each \".\" is detected as end-of-"
 "sentence character in the sentence \"George R.R. Martin and J.R.R. "
 "Tolkien went fishing\"."
-msgstr "Ole antud parameetri kasutamisel ettevaatlik, kuna lauselõpumärgid"
-" tuvastatakse "naiivselt" nimekirja alusel. See aga tähendab, et parameetri seatud piirang"
-" kehtib ka juhul kui tekstist tuvastatud nimekirja kuuluv märk vastavas kontekstis tegelikult lause lõppu ei tähista. "
-"Näiteks lauses "George R.R. Martin ja J.R.R. Tolkien läksid kalale", loetakse lauselõpumärkide hulka kõik punktid, olgugi et nad seda tegelikult ei ole."
+msgstr ""
+"Ole antud parameetri kasutamisel ettevaatlik, kuna lauselõpumärgid "
+"tuvastatakse \"naiivselt\" nimekirja alusel. See aga tähendab, et "
+"parameetri seatud piirang kehtib ka juhul kui tekstist tuvastatud "
+"nimekirja kuuluv märk vastavas kontekstis tegelikult lause lõppu ei "
+"tähista. Näiteks lauses \"George R.R. Martin ja J.R.R. Tolkien läksid "
+"kalale\", loetakse lauselõpumärkide hulka kõik punktid, olgugi et nad "
+"seda tegelikult ei ole."
 
 #: ../../source/regex_tagger.rst:136 ../../source/regex_tagger.rst:256
 #: ../../source/regex_tagger.rst:313 ../../source/regex_tagger.rst:367
-#: ../../source/regex_tagger.rst:447 ../../source/regex_tagger.rst:532
+#: ../../source/regex_tagger.rst:447 ../../source/regex_tagger.rst:576
 msgid "GUI"
 msgstr ""
 
@@ -391,7 +413,7 @@ msgstr "*Saadaolevate Regex Taggerite nimekiri*"
 
 #: ../../source/regex_tagger.rst:186 ../../source/regex_tagger.rst:294
 #: ../../source/regex_tagger.rst:337 ../../source/regex_tagger.rst:390
-#: ../../source/regex_tagger.rst:450 ../../source/regex_tagger.rst:592
+#: ../../source/regex_tagger.rst:494 ../../source/regex_tagger.rst:629
 msgid "API"
 msgstr ""
 
@@ -401,13 +423,13 @@ msgstr "Otspunkt **/projects/{project_pk}/regex_taggers/**"
 
 #: ../../source/regex_tagger.rst:190 ../../source/regex_tagger.rst:298
 #: ../../source/regex_tagger.rst:341 ../../source/regex_tagger.rst:395
-#: ../../source/regex_tagger.rst:455 ../../source/regex_tagger.rst:596
+#: ../../source/regex_tagger.rst:499 ../../source/regex_tagger.rst:633
 #, fuzzy
 msgid "Example:"
 msgstr "Näide"
 
 #: ../../source/regex_tagger.rst:213 ../../source/regex_tagger.rst:351
-#: ../../source/regex_tagger.rst:408 ../../source/regex_tagger.rst:610
+#: ../../source/regex_tagger.rst:408 ../../source/regex_tagger.rst:647
 msgid "Response:"
 msgstr ""
 
@@ -433,15 +455,15 @@ msgid "Function `\"Delete\"` allows deleting existing Regex Tagger models."
 msgstr "Funktsioon `\"Delete\"` võimaldab Regex Taggeri mudeleid kustutada."
 
 #: ../../source/regex_tagger.rst:258
-
 msgid ""
 "For deleting a Regex Tagger model through GUI, navigate to `\"Models\" ->"
 " \"Regex Taggers\"` as seen in :numref:`regex_tagger_navigation`. There "
 "are two options for deleting a Regex Tagger model:"
 msgstr ""
 "Regex Taggeri mudeli kustutamiseks, navigeeri menüüribal `\"Models\" -> "
-"\"Regex Taggers\"` nagu kujutatud joonisel"
-":numref:`regex_tagger_navigation`. Regex Taggeri kustutamiseks on kaks varianti:"
+"\"Regex Taggers\"` nagu kujutatud "
+"joonisel:numref:`regex_tagger_navigation`. Regex Taggeri kustutamiseks on"
+" kaks varianti:"
 
 #: ../../source/regex_tagger.rst:260
 msgid "**Option 1**:"
@@ -453,8 +475,10 @@ msgid ""
 "denoted with three vertical dots as seen in "
 ":numref:`regex_tagger_list_v2` and select option `\"Delete\"` from the "
 "selection menu as seen in :numref:`regex_tagger_delete`."
-msgstr "Vali mudel, mida soovid kustutada ning navigeeri kolme vertikaalse punktiga tähistatud valikute paneelile "
-"(:numref:`regex_tagger_list_v2`) ning vali avanenud menüüst `\"Delete\"` (:numref:`regex_tagger_delete`).
+msgstr ""
+"Vali mudel, mida soovid kustutada ning navigeeri kolme vertikaalse "
+"punktiga tähistatud valikute paneelile (:numref:`regex_tagger_list_v2`) "
+"ning vali avanenud menüüst `\"Delete\"` (:numref:`regex_tagger_delete`)"
 
 #: ../../source/regex_tagger.rst:269
 msgid "*Delete a single Regex Tagger*"
@@ -472,9 +496,10 @@ msgid ""
 "recycle bin icon beside `\"Create\"` button in the top left corner of the"
 " page."
 msgstr ""
-"Selekteeri kõik mudelid, mida soovid kustutada klikkides kastidele iga Regex Taggeri mudeli ees."
-" (:numref:`regex_tagger_bulk_delete`). "
-"Seejärel vajuta punasele prügikasti ikoonile `\"Create\"` nupu kõrval lehekülje ülemises vasakus nurgas."
+"Selekteeri kõik mudelid, mida soovid kustutada klikkides kastidele iga "
+"Regex Taggeri mudeli ees. (:numref:`regex_tagger_bulk_delete`). Seejärel "
+"vajuta punasele prügikasti ikoonile `\"Create\"` nupu kõrval lehekülje "
+"ülemises vasakus nurgas."
 
 #: ../../source/regex_tagger.rst:280
 msgid "*Bulk delete Regex Tagger(s)*"
@@ -490,8 +515,10 @@ msgid ""
 " options), the interface should now ask your confirmation for finishing "
 "the process (:numref:`regex_tagger_delete_confirmation`). Agree by "
 "clicking on the button `\"Delete\"`."
-msgstr "Pärast emma-kumma variandi kõikide eelkirjeldatud sammude läbimist, kuvab kasutajaliides enne mudeli(te) "
-"lõplikku kustutamist kinnitusakent. Kustutamise protsessi lõpule viimiseks vajuta nupule `\"Delete\"`."
+msgstr ""
+"Pärast emma-kumma variandi kõikide eelkirjeldatud sammude läbimist, kuvab"
+" kasutajaliides enne mudeli(te) lõplikku kustutamist kinnitusakent. "
+"Kustutamise protsessi lõpule viimiseks vajuta nupule `\"Delete\"`."
 
 #: ../../source/regex_tagger.rst:296 ../../source/regex_tagger.rst:393
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/**"
@@ -507,7 +534,9 @@ msgid ""
 " is especially useful if you are fine-tuning a specific model but aren't "
 "sure that the modifications will actually improve it - just make a copy "
 "before you start editing."
-msgstr "Funktsioon `Duplicate` võimaldab eksisteerivast Regex Taggeri mudelist koopia tegemist."
+msgstr ""
+"Funktsioon `Duplicate` võimaldab eksisteerivast Regex Taggeri mudelist "
+"koopia tegemist."
 
 #: ../../source/regex_tagger.rst:315
 msgid ""
@@ -515,9 +544,11 @@ msgid ""
 "Taggers\"` as seen in :numref:`regex_tagger_navigation`. Select the model"
 " you wish to duplicate and navigate to options panel denoted with three "
 "vertical dots as seen in :numref:`regex_tagger_list_v2`."
-msgstr "Regex Taggeri mudelist koopia tegemiseks, navigeeri `\"Models\" -> \"Regex "
-"Taggers\"` (:numref:`regex_tagger_navigation`). Vali mudel, millest soovid koopia teha ning "
-"ava valikute paneel liikudes kolmele vertikaalsele punktile mudelirea lõpus (:numref:`regex_tagger_list_v2`)."
+msgstr ""
+"Regex Taggeri mudelist koopia tegemiseks, navigeeri `\"Models\" -> "
+"\"Regex Taggers\"` (:numref:`regex_tagger_navigation`). Vali mudel, "
+"millest soovid koopia teha ning ava valikute paneel liikudes kolmele "
+"vertikaalsele punktile mudelirea lõpus (:numref:`regex_tagger_list_v2`)."
 
 #: ../../source/regex_tagger.rst:322
 #, fuzzy
@@ -528,10 +559,7 @@ msgstr "*Regex Taggeri mudeli duplikaadi tegemine.*"
 msgid ""
 "Select option \"Duplicate\" from the selection menu as seen in "
 ":numref:`regex_tagger_duplicate`."
-msgstr ""
-
-"Vali avanenud menüüst \"Duplicate\" "
-"(:numref:`regex_tagger_duplicate`)."
+msgstr "Vali avanenud menüüst \"Duplicate\" (:numref:`regex_tagger_duplicate`)."
 
 #: ../../source/regex_tagger.rst:331
 msgid "*Duplicated Regex Tagger*"
@@ -544,10 +572,9 @@ msgid ""
 "with name `\"<source_tagger_name>_copy\"` "
 "(:numref:`regex_tagger_duplicate_list`)."
 msgstr ""
-"Nupule vajutamise tagajärjel luuakse valitud Regex Taggeri duplikaat, "
-"mis ilmub koheselt ka Regex Taggeri mudelite nimekirja "
-"nimega `\"<lähtemudeli_nimi>_copy\"` "
-"(:numref:`regex_tagger_duplicate_list`)."
+"Nupule vajutamise tagajärjel luuakse valitud Regex Taggeri duplikaat, mis"
+" ilmub koheselt ka Regex Taggeri mudelite nimekirja nimega "
+"`\"<lähtemudeli_nimi>_copy\"` (:numref:`regex_tagger_duplicate_list`)."
 
 #: ../../source/regex_tagger.rst:339
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/duplicate/**"
@@ -559,7 +586,9 @@ msgstr ""
 
 #: ../../source/regex_tagger.rst:364
 msgid "Function `\"Edit\"` allows editing existing Regex Tagger models."
-msgstr "Funktsioon `\"Edit\"` võimaldab Regex Taggeri mudeleid pärast loomist muuta."
+msgstr ""
+"Funktsioon `\"Edit\"` võimaldab Regex Taggeri mudeleid pärast loomist "
+"muuta."
 
 #: ../../source/regex_tagger.rst:369
 msgid ""
@@ -569,8 +598,9 @@ msgid ""
 "vertical dots as seen in :numref:`regex_tagger_list_v2`."
 msgstr ""
 "Regex Taggeri mudeli muutmiseks, navigeeri `\"Models\" -> \"Regex "
-"Taggers\"` (:numref:`regex_tagger_navigation`). Vali mudel, mida muuta soovid ning ava valikute menüü klikkides "
-"kolmele vertikaalsele punktile valitud mudeli rea lõpus (:numref:`regex_tagger_list_v2`)."
+"Taggers\"` (:numref:`regex_tagger_navigation`). Vali mudel, mida muuta "
+"soovid ning ava valikute menüü klikkides kolmele vertikaalsele punktile "
+"valitud mudeli rea lõpus (:numref:`regex_tagger_list_v2`)."
 
 #: ../../source/regex_tagger.rst:376
 msgid "*Edit Regex Tagger*"
@@ -580,9 +610,7 @@ msgstr "*Muuda Regex Taggerit*"
 msgid ""
 "Select option \"Edit\" from the selection menu as seen in "
 ":numref:`regex_tagger_edit`."
-msgstr ""
-"Vali avanenud menüüst \"Edit\" "
-"(:numref:`regex_tagger_edit`)."
+msgstr "Vali avanenud menüüst \"Edit\" (:numref:`regex_tagger_edit`)."
 
 #: ../../source/regex_tagger.rst:385
 msgid "*Edit Regex Tagger modal window*"
@@ -594,9 +622,9 @@ msgid ""
 "Make your modifications and click on `\"Submit\"` button in the bottom "
 "right corner of the panel (:numref:`regex_tagger_edit_modal`)."
 msgstr ""
-"Valitud nupule klikkimise tagajärjel avaneb aken kirjaga `\"Edit Regex Tagger\"`. "
-"Tee soovitud muudatused ning vajuta akna alumises paremas nurgas asuvale nupule `\"Submit\"`"
-" (:numref:`regex_tagger_edit_modal`)."
+"Valitud nupule klikkimise tagajärjel avaneb aken kirjaga `\"Edit Regex "
+"Tagger\"`. Tee soovitud muudatused ning vajuta akna alumises paremas "
+"nurgas asuvale nupule `\"Submit\"` (:numref:`regex_tagger_edit_modal`)."
 
 #: ../../source/regex_tagger.rst:442
 msgid "Tag Random Doc"
@@ -606,87 +634,170 @@ msgstr ""
 msgid ""
 "`\"Tag Random Doc\"` is a helpful function for testing Regex Tagger "
 "models on random documents."
-msgstr "Funktsioon "`\"Tag Random Doc\"` võimaldab märgendada juhusliku dokumendi valitud andmestikust."
+msgstr ""
+"Funktsioon \"`\"Tag Random Doc\"` võimaldab märgendada juhusliku "
+"dokumendi valitud andmestikust."
 
-#: ../../source/regex_tagger.rst:453
+#: ../../source/regex_tagger.rst:449
+msgid ""
+"For tagging a random document with an existing Regex Tagger model, "
+"navigate to `\"Models\" -> \"Regex Taggers\"` as seen in "
+":numref:`regex_tagger_navigation`. Select the model you wish to use and "
+"navigate to the options panel denoted with three vertical dots. Select "
+"the option \"Tag Random Doc\" from the selection menu as seen in "
+":numref:`regex_tagger_tag_random_doc`."
+msgstr ""
+"Juhusliku dokumendi märgendamiseks Regex Taggeri mudeliga, navigeeri "
+"`\"Models\" -> \"Regex Taggers\"` nagu kujutatud joonisel "
+":numref:`regex_tagger_navigation`. Vali mudel, mida märgendamiseks kasutada ning ava "
+"vastava mudeli valikmenüü vajutades mudeli rea lõpus olevale kolmele "
+"vertikaalsele punktile. Vali avanenud menüüst \"Tag Random Doc\" nagu "
+"kujutatud joonisel :numref:`regex_tagger_tag_random_doc`."
+
+#: ../../source/regex_tagger.rst:456
+msgid "*\"Tag Random Doc\" option in the selection menu*"
+msgstr "*\"Tag Random Doc\" valikmenüüs*"
+
+#: ../../source/regex_tagger.rst:459
+msgid ""
+"Selecting the option opens a new modal window with the title `\"Tag "
+"Random Doc\"`. Select the index or indices you wish to use from the "
+"`\"Indices\"` selection menu displayed in the window after clicking on "
+"the corresponding section and select the field(s) you wish to use from "
+"the `\"Select Fields\"` selection menu below. If finished, click on the "
+"button `\"Tag\"` in the bottom right corner of the panel "
+"(:numref:`regex_tagger_tag_random_doc_mw`)."
+msgstr ""
+"Nupule vajutamise tagajärjel avaneb uus aken pealkirjaga `\"Tag Random "
+"Doc\"`. Vali menüüst pealkirjaga `\"Indices\"` andmestik(ud), mille seast"
+" juhuslik dokument valida  ning menüüst pealkirjaga `\"Select Fields\"` "
+"dokumendi väljad, mida märgendamiseks kasutada. Seejärel vajuta akna "
+"alumises paremas nurgas asuvale nupule `\"Tag\"` "
+"(:numref:`regex_tagger_tag_random_doc_mw`)."
+
+#: ../../source/regex_tagger.rst:466
+msgid "*Regex Tagger \"Tag Random Doc\" window.*"
+msgstr "*\"Tag Random Doc\" aken enne märgendamist.*"
+
+#: ../../source/regex_tagger.rst:468
+msgid ""
+"The results are displayed in the same modal window as seen in "
+":numref:`regex_tagger_tag_random_pos` if any matches were detected. If no"
+" matches where found, the text `\"No matches found\"` is displayed as "
+"seen in :numref:`regex_tagger_tag_random_neg`."
+msgstr ""
+"Märgendamise tulemused kuvatakse samas aknas. Joonis "
+":numref:`regex_tagger_tag_random_pos` kujutab positiivset märgendamise tulemust"
+" (juhuslikult valitud dokumendist leiti valitud mudeliga märgendid). "
+"Joonis :numref:`regex_tagger_tag_random_neg` kujutab negatiivset "
+"märgendamise tulemust (juhuslikult valitud dokumendist valitud mudeliga "
+"märgendeid ei tuvastatud)."
+
+#: ../../source/regex_tagger.rst:475
+msgid "*\"Tag Random Doc\" positive output*"
+msgstr "*\"Tag Random Doc\" positiivne tulemus*"
+
+#: ../../source/regex_tagger.rst:482
+#, fuzzy
+msgid "*\"Tag Random Doc\" negative output*"
+msgstr "*\"Tag Random Doc\" negatiivne tulemus*"
+
+#: ../../source/regex_tagger.rst:484
+msgid ""
+"PS! The fields in the document not selected by the user and/or not "
+"containing any matches are by default collapsed, but you can view their "
+"content by clicking on the arrow icon at the end of each field "
+"(:numref:`rt_tag_random_doc_other_fields`.)"
+msgstr ""
+"PS! Dokumendi väljad, mida kasutaja märgendamiseks ei valinud või kust "
+"märgendeid ei leitud, on vaikimisi suletud. Soovi korral on neid võimalik"
+" aga avada klikkides nooleikoonil vastava välja sektsiooni lõpus "
+"(:numref:`rt_tag_random_doc_other_fields`)."
+
+#: ../../source/regex_tagger.rst:491
+msgid "*\"Tag Random Doc\" collapsing/uncollapsing fields.*"
+msgstr  "*\"Tag Random Doc\" väljade avamine ja sulgemine.*"
+
+#: ../../source/regex_tagger.rst:497
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_random_doc/**"
 msgstr "Otspunkt **/projects/{project_pk}/regex_taggers/{id}/tag_random_doc/**"
 
-#: ../../source/regex_tagger.rst:468
+#: ../../source/regex_tagger.rst:512
 msgid "Response (positive):"
 msgstr "Vastus (positiivse tulemuse korral)"
 
-#: ../../source/regex_tagger.rst:507
+#: ../../source/regex_tagger.rst:551
 msgid "Response (negative):"
 msgstr "Vastus (negatiivse tulemuse korral)"
 
-#: ../../source/regex_tagger.rst:527
+#: ../../source/regex_tagger.rst:571
 msgid "Tag Text"
 msgstr ""
 
-#: ../../source/regex_tagger.rst:529
+#: ../../source/regex_tagger.rst:573
 msgid ""
 "Function `\"Tag Text\"` enables tagging a single text with a selected "
 "Regex Tagger model."
 msgstr ""
-"Funktsioon `\"Tag Text\"` võimaldab Regex Taggeri mudeliga teksti märgendamist."
+"Funktsioon `\"Tag Text\"` võimaldab Regex Taggeri mudeliga teksti "
+"märgendamist."
 
-#: ../../source/regex_tagger.rst:534
+#: ../../source/regex_tagger.rst:578
 msgid ""
 "For tagging a text with an existing Regex Tagger model, navigate to "
 "`\"Models\" -> \"Regex Taggers\"` as seen in "
 ":numref:`regex_tagger_navigation`."
 msgstr ""
-"Teksti märgendamiseks navigeeri menüüribal `\"Models\" -> "
-"\"Regex Taggers\"` nagu kujutatud joonisel "
-":numref:`regex_tagger_navigation`."
+"Teksti märgendamiseks navigeeri menüüribal `\"Models\" -> \"Regex "
+"Taggers\"` nagu kujutatud joonisel :numref:`regex_tagger_navigation`."
 
-#: ../../source/regex_tagger.rst:541
+#: ../../source/regex_tagger.rst:585
 msgid "*List of existing Regex Tagger models*"
 msgstr "*Saadaolevate Regex Taggerite nimekiri*"
 
-#: ../../source/regex_tagger.rst:543
+#: ../../source/regex_tagger.rst:587
 msgid ""
 "Select the model you wish to use and navigate to options panel denoted "
 "with three vertical dots as seen in :numref:`regex_tagger_list_v2`."
 msgstr ""
-"Vali mudel, mida märgendamiseks kasutada soovid ning ava valikmenüü klikkides kolmele vertikaalsele"
-" punktile rea lõpus (:numref:`regex_tagger_list_v2`)."
+"Vali mudel, mida märgendamiseks kasutada soovid ning ava valikmenüü "
+"klikkides kolmele vertikaalsele punktile rea lõpus "
+"(:numref:`regex_tagger_list_v2`)."
 
-#: ../../source/regex_tagger.rst:550
+#: ../../source/regex_tagger.rst:594
 msgid "*Tag Text option in selection menu*"
 msgstr "*Teksti märgendamine valikmenüüs*"
 
-#: ../../source/regex_tagger.rst:552
+#: ../../source/regex_tagger.rst:596
 msgid ""
 "Select option \"Tag Text\" from the selection menu as seen in "
 ":numref:`regex_tagger_tag_text`."
-msgstr ""
-"Vali avanenud menüüst \"Tag Text\" (:numref:`regex_tagger_tag_text`)."
+msgstr "Vali avanenud menüüst \"Tag Text\" (:numref:`regex_tagger_tag_text`)."
 
-#: ../../source/regex_tagger.rst:560
+#: ../../source/regex_tagger.rst:604
 msgid "*Tag Text modal window*"
 msgstr "*Teksti märgendamise aken*"
 
-#: ../../source/regex_tagger.rst:562
+#: ../../source/regex_tagger.rst:606
 msgid ""
 "Selecting the option opens a new modal window `\"Tag Text\"`. Insert the "
 "text you wish to tag and click on the button `\"Tag\"` in the bottom "
 "right corner of the panel (:numref:`regex_tagger_tag_text_modal`)."
 msgstr ""
-"Valitud nupule klikkimise tagajärjel avaneb uus aken kirjaga `\"Tag Text\"`. Sisesta "
-"tekst, mida soovid märgendada ning vajuta akna alumises paremas nurgas asuvale nupule `\"Tag\"`"
-" (:numref:`regex_tagger_tag_text_modal`)."
+"Valitud nupule klikkimise tagajärjel avaneb uus aken kirjaga `\"Tag "
+"Text\"`. Sisesta tekst, mida soovid märgendada ning vajuta akna alumises "
+"paremas nurgas asuvale nupule `\"Tag\"` "
+"(:numref:`regex_tagger_tag_text_modal`)."
 
-#: ../../source/regex_tagger.rst:570
+#: ../../source/regex_tagger.rst:614
 msgid "*Tag Text positive output*"
 msgstr "*Tekstist tuvastatud märgendid*"
 
-#: ../../source/regex_tagger.rst:579
+#: ../../source/regex_tagger.rst:622
 msgid "*Tag Text negative output*"
 msgstr "*Tekstist ei tuvastatud ühtegi märgendit*"
 
-#: ../../source/regex_tagger.rst:581
+#: ../../source/regex_tagger.rst:624
 msgid ""
 "The results are displayed in the same modal window as seen in "
 ":numref:`regex_tagger_tag_text_pos_output` if any matches where detected."
@@ -694,33 +805,10 @@ msgid ""
 "as seen in in :numref:`regex_tagger_tag_text_neg_output`."
 msgstr ""
 "Märgendamise tulemused kuvatakse samas aknas "
-"(:numref:`regex_tagger_tag_text_pos_output`)."
-" Juhul kui tekstist valitud mudeliga märgendeid ei leita, kuvatakse aknas kiri `\"No matches found\"` "
-"(:numref:`regex_tagger_tag_text_neg_output`)."
+"(:numref:`regex_tagger_tag_text_pos_output`). Juhul kui tekstist valitud "
+"mudeliga märgendeid ei leita, kuvatakse aknas kiri `\"No matches found\"`"
+" (:numref:`regex_tagger_tag_text_neg_output`)."
 
-#: ../../source/regex_tagger.rst:583
-msgid "**Model identifier** in format <tag_name>:<tag_id>"
-msgstr "**Mudeli identifikaator** kujul <mudeli_nimi>:<mudeli_id>"
-
-#: ../../source/regex_tagger.rst:584
-msgid ""
-"**Tags** - name of the Regex Tagger model(s) which resulted in positive "
-"match (NB! number of tags is always one in this scenario!)"
-msgstr ""
-"**Tags** - Märgendi(te) nimi (nimed), mis ühtivad positiivse tulemuse andnud Regex Taggerite mudeli(te) nime(de)ga. "
-"(NB! Antud juhul (üksiku Regex Taggeri mudeliga märgendamisel) on vastavas sektsioonis alati täpselt üks nimi.)"
-
-#: ../../source/regex_tagger.rst:585
-msgid ""
-"**Matches** - unique words/phrases matching the selected Regex Tagger "
-"lexicon entries."
-msgstr ""
-"**Matches** - Regex Taggeri tekstist leitud unikaalsed vasted."
-
-#: ../../source/regex_tagger.rst:586
-msgid "**Text** - All detected matches highlighted in the source text."
-msgstr "**Text** - Sisendtekst esiletoodud vastetega."
-
-#: ../../source/regex_tagger.rst:594
+#: ../../source/regex_tagger.rst:631
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_text/**"
 msgstr "Otspunkt **/projects/{project_pk}/regex_taggers/{id}/tag_text/**"
