@@ -24,6 +24,9 @@ By default the panel of Current Search open. Clicking on the name of the panel c
 Current Search
 ***************
 
+GUI
+====
+
 Current Search is a tool for simple data browsing. It also allows us to create filters to only search for documents in our interest.
 For the latter purpose, we can create a set of constraints on :ref:`field <field_concept>` values. This can be done using either Simple Search 
 or Advanced Search. 
@@ -33,7 +36,7 @@ or Advanced Search.
 
 
 Simple Search
-=============
+-------------
 
 Simple search searches for a word or words on all fields in the chosen dataset(s). 
 Multiple words must be separated with space (" "). 
@@ -48,7 +51,7 @@ To use Simple Search, select it on the Current Search panel and type in the word
   *Simple search*
 
 Advanced Search
-===============
+---------------
 
 Advanced search allows us to create different constraints for different fields. 
 There are three types of constraints we can use: string constraints, date constraints, and texta_facts constraints.
@@ -64,7 +67,8 @@ You can remove the constraint by clicking on the ‘X’-sign on the upper right
 
 
 String constraint
--------------------
+^^^^^^^^^^^^^^^^^
+
 Different search strings must be written to different lines. 
 The search strings must be tied with one of the **Operator** from the table below:
 
@@ -110,7 +114,8 @@ Since the Slop is 2, it also matches the phrase if it has 0-2 words between the 
 	You can use an existing :ref:`lexicon <lexiconminer>` to create constraints. This can be done via button **Add lexicon** (visible only if there exist any lexicons in the project."
 	
 Date constraint
--------------------
+^^^^^^^^^^^^^^^
+
 Date constraint is for fields with type date. This outputs only documents where the field value is within the chosen time range (starting day included and ending day excluded). 
 You can choose the time range by clicking on the little calendar on the right.
 
@@ -120,7 +125,8 @@ You can choose the time range by clicking on the little calendar on the right.
 	*Date constraint*
 
 Texta_facts constraint
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
+
 Texta_facts constraint allows us to find documents with certain :ref:`fact <texta_fact>` names or fact values. 
 
 **Creating a constraint over fact names**
@@ -149,7 +155,7 @@ In order to use different constraints for different fact names, you need to sele
 	
 
 Search Options
-==============
+^^^^^^^^^^^^^^
 
 Look at the table below for the meanings of search options. 
 
@@ -174,7 +180,7 @@ Look at the table below for the meanings of search options.
 	*Search Options*
 	
 Advanced Search examples
-=========================
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. _search_example1:
 .. figure:: images/search_example1.png
@@ -188,7 +194,7 @@ Advanced Search examples
 
 
 Browsing Search results
-========================
+^^^^^^^^^^^^^^^^^^^^^^^
 
 After clicking the “Search” button, the matching documents are shown. (see :numref:`search_results`). 
 
@@ -210,13 +216,18 @@ Use arrows in the upper right to navigate between pages. You can also choose how
 
 	*Select Fields for Search Results*
 
-.. note::
-	API for scrolling can be found `here <https://rest-dev.texta.ee/api/v1/projects/1/scroll/>`_.
+API
+===
+
+API for scrolling can be found `here <https://rest-dev.texta.ee/api/v1/projects/1/scroll/>`_.
 
 .. _savedsearches:
 
 Saved Searches
 ***************
+
+GUI
+===
 
 To save a search, click on the **disk** icon in the upper right corner of the Current Search panel. Saved searches can be used in other applications available in Texta Toolkit.
 For example, you can use a search as a set of positive samples when training a tagger or as a set of documents to be analyzed with Topic Analyzer.
@@ -224,13 +235,18 @@ Or you might just want to save a search for browsing it later: to open it in the
 
 If you are curious, you can see the actual :ref:`Elasticsearch <elasticsearch>` query behind the search by clicking on the **eye** icon next to the disk icon.
 
-.. note::
-	API support for saving searches can be found `here <https://rest-dev.texta.ee/api/v1/projects/1/searches/>`_.
+API
+===
+
+API support for saving searches can be found `here <https://rest-dev.texta.ee/api/v1/projects/1/searches/>`_.
 
 .. _aggregations:
 
 Aggregations
 *************
+
+GUI
+===
 
 Aggregations tool allows us to aggregate the data. 
 For example, we can use it to perform simple aggregations - retrieve item and word distributions.
