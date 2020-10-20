@@ -3,8 +3,9 @@ Search
 ########
 
 The Search application allows users to perform searches and aggregations over the data. Search results can be used as input to machine learning models.
+
 .. note::
-	To use the Search project and indices must be selected from the upper right panel.
+	To use the **Search** project and indices must be selected from the upper right panel.
 
 The Search's graphical interface (:numref:`search_panel`) consists of three panels.
 These are :ref:`Current Search <currentsearch>`, :ref:`Saved Searches <savedsearches>`, and :ref:`Aggregations <aggregations>`. 
@@ -19,6 +20,7 @@ By default the panel of Current Search open. Clicking on the name of the panel c
 	The Searcher will only look into the datasets that are selected on the top-right panel.
 
 .. _currentsearch:
+
 Current Search
 ***************
 
@@ -85,6 +87,7 @@ You must also choose a **Match** rule. These are given in the table below:
 .. list-table:: Match
    :widths: 10 25
    :header-rows: 1
+   
    * - Match rule
      - Meaning
    * - phrase prefix
