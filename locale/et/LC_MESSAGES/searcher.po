@@ -55,8 +55,8 @@ msgid ""
 msgstr ""
 "Otsingu graafiline kasutajaliides (:numref:`search_panel`) koosneb "
 "kolmest paneelist. Nendeks on praegune otsing (:ref:`Current Search "
-"<currentsearch>`), salvestatud otsingud (\":ref:`Saved Searches "
-"<savedsearches>`) ja agregatsioonid :ref:`Aggregations <aggregations>`). "
+"<currentsearch>`), salvestatud otsingud (:ref:`Saved Searches "
+"<savedsearches>`) ja agregatsioonid (:ref:`Aggregations <aggregations>`). "
 "Vaikimisi on avatud praegune otsing. Alamosa avamiseks ja sulgemiseks "
 "kliki vastava osa nimele."
 
@@ -92,7 +92,7 @@ msgstr ""
 "Praegune otsing on mõeldud andmete sirvimiseks. Otsingutulemusi saab ka "
 "piirata ainult meile huvipakkuvatele dokumentidele. Selleks on vaja luua "
 "filtrid ehk kitsendused. Iga filtri puhul tuleb valida, mis väljale või "
-"väljadele seda rakendatakse. Filreid saab luua nii lihtsas otsingus "
+"väljadele seda rakendatakse. Filtreid saab luua nii lihtsas otsingus "
 "(Simple Search) kui ka detailses otsingus (Advanced Search)."
 
 #: ../../source/searcher.rst:38
@@ -104,12 +104,12 @@ msgid ""
 msgstr ""
 "Praegune otsing ei erista väikest ja suurt tähte (välja arvatud "
 "regulaaravaldisfiltrite puhul). See tähendab, et näiteks kui otsida sõna "
-"\"President\" siis kuvatakse on tõstutundlik, tuleb kasutada "
-"regulaaravaldisfiltreid (vt. allpool)."
+"\"President\" siis kuvatakse ka dokumendid, kus leidub sõna "\"president\". "
+"Kui sinu otsing on siiski tõstutundlik, tuleb kasutada regulaaravaldisfiltreid (vt. allpool)."
 
 #: ../../source/searcher.rst:42
 msgid "Simple Search"
-msgstr "Lihtne Otsing (Simple Search)"
+msgstr "Lihtne otsing (Simple Search)"
 
 #: ../../source/searcher.rst:44
 msgid ""
@@ -120,7 +120,7 @@ msgid ""
 msgstr ""
 "Lihtsa otsingu puhul otsitakse sisestatud sõnu kõigilt andmestikus või "
 "andmestikes olevatelt väljadelt. Sõnad peavad olema eraldatud tühikuga "
-"(\" \"). Otsing kuvab kõik dokumendid, kus iga etteantud sõna esineb "
+"(\" \"). Otsing kuvab kõik dokumendid, kus iga etteantud sõna leidub "
 "vähemalt ühel väljadest."
 
 #: ../../source/searcher.rst:49
@@ -129,8 +129,7 @@ msgid ""
 "the words you want to search for (:ref:`field <simple_search>` values)."
 msgstr ""
 "Lihtsa ostingu kasutamiseks vali see praeguse otsingu paneelilt ja "
-"sisesta lahtrisse sõnad, mida sa soovid :ref:`väjadelt <simple_search>` "
-"otsida."
+"sisesta lahtrisse sõnad, mida sa soovid väljadelt otsida."
 
 #: ../../source/searcher.rst:54
 msgid "*Simple search*"
@@ -147,8 +146,8 @@ msgid ""
 "constraints, date constraints, and texta_facts constraints."
 msgstr ""
 "Detailse otsinguga saab igale väljale luua erinevad filtrid. Filtrite "
-"tüüpe on seal kokku kolm: tekstifiltrid, kuupäevafiltrid ja texta_facts "
-"väljal põhinevad filtrid."
+"tüüpe on kokku kolm: tekstifiltrid, kuupäevafiltrid ja texta_facts "
+"väljale rakendatavad filtrid."
 
 #: ../../source/searcher.rst:62
 msgid ""
@@ -162,7 +161,7 @@ msgstr ""
 "Detailse otsingu kasutamiseks vali see praeguse otsingu paneelilt. "
 "Seejärel vali väljad, millel sa tahad filtrit rakendada. Rippenüü "
 "sulgemiseks kliki väljaspool seda menüüd. Avaneb kast, mille sees saad "
-"luua soovitud fitri (:ref:`field <string_search>`). Filtri kustutamiseks "
+"luua soovitud fitri (:numref:`string_search`). Filtri kustutamiseks "
 "kliki kasti üleval paremas nurgas oleval 'X'-märgil."
 
 #: ../../source/searcher.rst:69
@@ -200,7 +199,7 @@ msgstr "ja (and)"
 
 #: ../../source/searcher.rst:85
 msgid "all of the search strings (lines) are matched in the document"
-msgstr "kõik eri ridadel olevad otsisõnad või -fraasid peavad dokumendis esinema"
+msgstr "kõik (eri ridadel) olevad otsisõnad või -fraasid peavad dokumendis esinema"
 
 #: ../../source/searcher.rst:86
 msgid "or"
@@ -209,7 +208,7 @@ msgstr "või (or)"
 #: ../../source/searcher.rst:87
 msgid "at least one of the search string (lines) is matched in the document"
 msgstr ""
-"vähemalt üks eri ridadel olevatest otsisõnadest või -fraasidest peab "
+"vähemalt üks (eri ridadel) olevatest otsisõnadest või -fraasidest peab "
 "dokumendis esinema"
 
 #: ../../source/searcher.rst:88
@@ -243,8 +242,8 @@ msgid ""
 "matches the beginning of the words (endings can differ, e.g. searching "
 "for 'bribe' gives us 'bribe', 'bribery', 'bribetaking', etc)"
 msgstr ""
-"sobivad kõik sõnad või fraasid, mille algus vastab otsisõnale. Näiteks "
-"otsisõna 'jook' tagastaks ka dokumendid, kus sisaldub sõna 'jooksma', "
+"sobivad kõik sõnad või fraasid, mille algus vastab otsisõnele. Näiteks "
+"otsisõne 'jook' korral tagastaks ka dokumendid, kus sisaldub sõna 'jooksma', "
 "'jooksin' jne"
 
 #: ../../source/searcher.rst:102
@@ -254,7 +253,7 @@ msgstr "sõna (word)"
 #: ../../source/searcher.rst:103
 msgid "finds exact word written (similar to simple search)"
 msgstr ""
-"dokumendis peab leiduma otsisõna täpselt etteantud kujul (sarnaselt "
+"dokumendis peab leiduma otsisõne täpselt etteantud kujul (sarnaselt "
 "lihtsale otsingule)"
 
 #: ../../source/searcher.rst:104
@@ -288,7 +287,7 @@ msgid ""
 "that search string words."
 msgstr ""
 "Viimaks on sul võimalus määrata väärtus parameetrile **Slop**. Juhul, kui"
-" mõni sinu otsisõna on tegelikult fraas ja koosneb rohkem kui ühest "
+" mõni sinu otsisõne on tegelikult fraas ja koosneb rohkem kui ühest "
 "sõnast, siis **Slop** määrab, kui mitu muud sõna tohib sinu määratud "
 "otsisõnade vahel olla."
 
@@ -300,8 +299,8 @@ msgid ""
 "the Slop is 2, it also matches the phrase if it has 0-2 words between the"
 " words (e.g \"president Barack Obama\")."
 msgstr ""
-"Joonisel :numref:`<string_search>` on tekstifilter loodud väljale "
-"\"text\\. Otsing kuvab dokumendid, kus leidub kas fraas \"president "
+"Joonisel :numref:`string_search` on tekstifilter loodud väljale "
+"*text*. Otsing kuvab dokumendid, kus leidub kas fraas \"president "
 "Obama\" või \"president Trump\" või mõlemad. Kuna parameetri **Slop** "
 "väärtus on 2, võib fraasi sõnade vahel olla 0-2 muud sõna. Seega tagastab"
 " otsing ka näiteks dokumendi, kus leidub fraas \"president Barack "
@@ -313,10 +312,9 @@ msgid ""
 "constraints. This can be done via button **Add lexicon** (visible only if"
 " there exist any lexicons in the project.\""
 msgstr ""
-"Otsisõnadena võib ka kasutada juba olemasolevat :ref:`leksikoni "
-"<lexiconminer>. Seda saab teha, klikkides otsingupaneelil nupule **Add "
-"lexicon** (nähtav ainultsiis, kui oled mõne leksikoni juba projekti "
-"lisanud."
+"Otsisõnadena võib ka kasutada juba olemasolevat :ref:`leksikoni <lexiconminer>`. "
+"Seda saab teha, klikkides otsingupaneelil nupule **Add "
+"lexicon** (nähtav ainultsiis, kui oled mõne leksikoni juba projekti lisanud."
 
 #: ../../source/searcher.rst:120
 msgid "Date constraint"
@@ -340,14 +338,14 @@ msgstr "*Kuupäevafilter*"
 
 #: ../../source/searcher.rst:131
 msgid "Texta_facts constraint"
-msgstr "Välja texta_facts filter"
+msgstr "Välja *texta_facts* filter"
 
 #: ../../source/searcher.rst:133
 msgid ""
 "Texta_facts constraint allows us to find documents with certain "
 ":ref:`fact <texta_fact>` names or fact values."
 msgstr ""
-"Välja texta_facts filter võimaldab dokumente filtreerida :ref:`faktide "
+"Välja *texta_facts* filter võimaldab dokumente filtreerida :ref:`faktide "
 "<texta_fact>` nimede ja väärtuste järgi."
 
 #: ../../source/searcher.rst:135
@@ -460,7 +458,7 @@ msgid ""
 msgstr ""
 "*Regulaaravaldisfilter*. Kuvab kõik dokumendid, kus leidub sõna "
 "\"payoff\" või regulaaravaldisele \"bribe[a-z]{0,2}\" vastav sõne. Antud "
-"regulaaravaldis ütleb et sõna ‘bribe’ lõpus võib esineda 0-2 lisatähte "
+"regulaaravaldis ütleb et sõna “bribe“ lõpus võib esineda 0-2 lisatähte "
 "(näiteks sobiksid sõnad “bribe”, “bribed” ja “bribery”)."
 
 #: ../../source/searcher.rst:196
@@ -470,7 +468,7 @@ msgid ""
 "\"invasion\"."
 msgstr ""
 "*Filtrite kombinatsioon*. Kuvab kõik 2014. aastal avaldatud dokumendid, "
-"milles leidub fakt nimega LOC väärtusega \"Russia\" või \"Ukraine\" ja "
+"milles leidub fakt nimega LOC väärtustega \"Russia\" ja \"Ukraine\" ja "
 "sõna \"invasion\"."
 
 #: ../../source/searcher.rst:200
@@ -482,7 +480,7 @@ msgid ""
 "After clicking the “Search” button, the matching documents are shown. "
 "(see :numref:`search_results`)."
 msgstr ""
-"Klikkides nupule “Search” kuvatakse otsingufiltritele vastavad "
+"Klikkides nupule **Search** kuvatakse otsingufiltritele vastavad "
 "dokumendid. (vt :numref:`search_results`)."
 
 #: ../../source/searcher.rst:208
@@ -497,13 +495,13 @@ msgid ""
 msgstr ""
 "Otsingutulemuste kohal olevast rippmenüüst on võimalik valida väljad, "
 "mida tulemustes kuvatakse. Neid saab lisada ja eemaldada nii ühekaupa kui"
-" ka korraga valiku *Select all* abil."
+" ka korraga valiku *Select all* abil (vt :numref:`search_rt`)."
 
 #: ../../source/searcher.rst:213
 msgid ""
 "It is possible to hide the constraint panels with the *Toggle drawer* "
 "button."
-msgstr "Nupp *Toggle drawer* peidab otsingupaneeli."
+msgstr "Nupp *Toggle drawer* peidab otsingupaneeli (vt :numref:`search_rt`)."
 
 #: ../../source/searcher.rst:215
 msgid ""
@@ -528,7 +526,7 @@ msgid ""
 "API for scrolling can be found `here <https://rest-"
 "dev.texta.ee/api/v1/projects/1/scroll/>`_."
 msgstr ""
-"API tulemuste lehtsemiseks on leitav`siit <https://rest-"
+"API tugi tulemuste lehtsemiseks on leitav `siit <https://rest-"
 "dev.texta.ee/api/v1/projects/1/scroll/>`_."
 
 #: ../../source/searcher.rst:230
@@ -546,7 +544,7 @@ msgid ""
 "simply click on the name of it."
 msgstr ""
 "Otsingu salvestamiseks kliki salvestusikoonile otsingupaneeli ülemises "
-"paremasnurgas. Salvestatud otsingute eeliseks on, et neid on võimalik "
+"paremas nurgas. Salvestatud otsingute eeliseks on, et neid on võimalik "
 "kasutada Texta Toolkiti teistest rakendustest. Näiteks saad sa kasutada "
 "otsingut selleks, et koostada positiivsete näidete hulk taggeri "
 "treenimiseks või dokumendite kogu, mida teemaanalüsaatoriga analüüsida. "
@@ -592,10 +590,10 @@ msgid ""
 "Estonian Reddit. We can use an aggregation over field *post_title* to "
 "find the most popular threads (see :numref:`significant_items`)."
 msgstr ""
-"Eeldame illustreerimise eesmärgil, et meil Toolkitis andmestik mingist "
-"ajaperioodist pärit eestikeelse Redditi postitustega. Me saame "
+"Eeldame illustreerimise eesmärgil, et meil on Toolkitis andmestik mingist "
+"ajaperioodist pärit eestikeelsete Redditi postitustega. Me saame "
 "agregeerida selle andmestiku välja *post_title*, et leida antud "
-"ajapeperioodi poplaarseim lõim."
+"ajapeperioodi poplaarseim lõim (vt. :numref:`significant_items`)."
 
 #: ../../source/searcher.rst:262
 msgid "*Significant items*"
@@ -631,14 +629,14 @@ msgid ""
 msgstr ""
 "Lühidalt öeldes on sõna või väärtus iseloomulik siis, kui seda esineb "
 "otsingule vastavates dokumentides märgatavalt rohkem kui ülejäänud "
-"dokumentides\""
+"dokumentides."
 
 #: ../../source/searcher.rst:277
 msgid ""
 "Besides these simple words and items aggregations shown above, there is "
 "still so much more that you can do with the tool."
 msgstr ""
-"Senimaani oleme vaadanud lihtsamat sorti sõnade ja väärtuste "
+"Senimaani oleme vaadelnud lihtsamat sorti sõnade ja väärtuste "
 "agregeerimist. Tegelikult aga võimaldab agregatsioonide tööriist teha "
 "väga palju rohkemat."
 
@@ -649,7 +647,7 @@ msgid ""
 " must have a proper date field (in Texta date format) in the data."
 msgstr ""
 "Näiteks saab sellega uurida andmete jaotust üle huvipakkuva ajaperioodi. "
-"(vt. :numref:`simple_time_aggregation`). Selliseid graafikute tegemiseks "
+"(vt. :numref:`simple_time_aggregation`). NB! Selliste graafikute tegemiseks "
 "peab kuupäeva sisaldav väli olema korrektselt kuupäevaformaadis."
 
 #: ../../source/searcher.rst:284
@@ -666,8 +664,8 @@ msgid ""
 "hierarchically, as a table, or as a plot."
 msgstr ""
 "Kui sul on dokumentidel küljes ka faktid, saad nende väärtuste "
-"esinemissagedust samuti visualiseerida (vt. \":numref:`facts_aggre`). "
-"Joonisel :numref:`facts_aggre` on üleval ääres näha kolm ikooni. Neil "
+"esinemissagedust samuti visualiseerida (vt. :numref:`facts_aggre`). "
+"Joonisel :numref:`facts_aggre` on üleval keskel näha kolm ikooni. Neil "
 "klikkides saad muuta tulemuste visualiseerimise viisi - kas "
 "hierarhiliselt, tabelina või graafikuna."
 
