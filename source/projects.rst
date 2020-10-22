@@ -1,5 +1,5 @@
-`EN <https://docs.texta.ee/v2/regex_tagger.html>`_
-`ET <https://docs.texta.ee/v2/et/regex_tagger.html>`_
+`EN <https://docs.texta.ee/v2/projects.html>`_
+`ET <https://docs.texta.ee/v2/et/projects.html>`_
 
 #########
 Projects

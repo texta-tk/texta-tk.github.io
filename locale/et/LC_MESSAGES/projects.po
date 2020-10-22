@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-16 13:29+0300\n"
+"POT-Creation-Date: 2020-10-22 11:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,8 @@ msgstr ""
 
 #: ../../source/projects.rst:1
 msgid ""
-"`EN <https://docs.texta.ee/v2/regex_tagger.html>`_ `ET "
-"<https://docs.texta.ee/v2/et/regex_tagger.html>`_"
+"`EN <https://docs.texta.ee/v2/projects.html>`_ `ET "
+"<https://docs.texta.ee/v2/et/projects.html>`_"
 msgstr ""
 
 #: ../../source/projects.rst:6
@@ -179,5 +179,10 @@ msgstr ""
 #~ "<http://localhost:8000/api/v1/redoc/#operation/projects_delete>`_)"
 
 #~ msgid "API example"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`EN <https://docs.texta.ee/v2/regex_tagger.html>`_ `ET "
+#~ "<https://docs.texta.ee/v2/et/regex_tagger.html>`_"
 #~ msgstr ""
 
