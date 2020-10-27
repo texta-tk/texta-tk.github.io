@@ -162,7 +162,7 @@ Clicking on the `"Create"` button opens a modal window with text `"New Regex Tag
 
 	*Empty Regex Tagger creation view*
 
-Fill the required fields as instructed in TODO and click on the `"Create"` button in the bottom right corner of the window (:numref:`regex_tagger_create_view`).
+Fill the required fields and click on the `"Create"` button in the bottom right corner of the window (:numref:`regex_tagger_create_view`).
 
 .. _regex_tagger_create_view:
 .. figure:: images/regex_tagger/regex_taggers_create_2.png
