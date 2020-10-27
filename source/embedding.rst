@@ -2,29 +2,31 @@
 Embedding
 #########
 
-:ref:`Embeddings <embedding_concept>` are basically words converted into numerical data (into vectors) that are more understandable and usable for the machine than plain strings (words). With these vectors created, we can compare words and find similar ones. We need embeddings to create, for example, :ref:`lexicons <lexicons>`. Texta Toolkit uses word2vec embeddings with `collocation detection <https://radimrehurek.com/gensim/models/phrases.html>`_. It means that the vectors are created on words and phrases. Phrases are chosen with collocation detection which finds often together occuring words and marks them as phrases. 
+Create
+*******
 
 GUI
-***
+=====
 
-We can create a new embedding by clicking on the '+ CREATE' button in the bottom-left. Then we must choose the name for the new embedding (*Description*). If we leave *Query* empty, it will take all data in the active project as a input. We can also use saved searches as our desired input. Then we must choose the fields the embedding learns from. Embedding needs textual data, so we have to choose fields with text or lemmatized text in it. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (*eaten*, *eats* and *ate* will change to it's lemma *eat*).
+Navigate to **Models -> Embeddings** and click on the **CREATE** button on top-left. Choose the name for you embedding (*Description*).
+Define the query and select indices on which the query will be executed. If you leave *Query* empty, it will take all documents from the selected indices.
+If you have any searches defined in your project, they will appear in a dropdown menu if you click on the field *Query* - you can use existing searches as queries.
 
-Then we have to choose the number of dimensions. That means the length of the vectors created. 100-200 dimensions is usually a good place to start with. The minimum frequency defines how many times a word or a phrase has to occur in the data in order to get it's very own word/phrase vector. Rare words/phrases won't have very informative and usable vectors. Minimum frequency of 5 can be left as default if we are not sure of what to use.
+Choose *fields* on which the embedding will be trained. The selected fields should contain textual data.
 
-Keep in mind that the bigger the data, the better results!
+.. note::
+	It is recommended to use lemmatized or tokenized data. Lemmatization is especially useful with morphologically complex languages. You can tokenize and lemmatize the data with MLP.
 
-After creating the new embedding we can view the learning process and results in the embeddings' table. We can see which user created this embedding in this project, the name of the embedding model, field(s) it was trained on, the time it took to train, dimensions, minimum frequency and created vocabulary size. By clicking on the new model's row we can see similar info again. 
+Field *Number of dimensions* defines the length of the word vectors. 
+100-200 dimensions is usually a good place to start with. 
+Field *Minimum frequency* sets how many times a word must occur in the data in minimum in order to 
+get included into the embedding. Again, you can leave it with the default value *5* if you are unsure which value to pick. 
 
-Three dots under *Edit* gives us access to deleting the embedding model or using *Phrase*. *Phrase* is a feature that helps us to check which phrases occur in the embedding model as vectors on their own. It outputs the words and connects phrases with '_'. For example, we can create an embedding model with our saved search 'bribery' (figure 10). If we leave the query empty, the model will be trained on the whole dataset.
+.. note::
+    The quality of the embedding depends on the size of the dataset. The larger the better.
 
-.. _figure-12:
-
-.. figure:: images/create_embedding.png
-
-    Figure 12. *Create embedding with saved search*
-    
 API
-***
+===
 
 Endpoint: **/projects/{project_pk}/embeddings/**
 
@@ -45,3 +47,112 @@ Example:
                 "min_freq": 5
             }'
 
+
+View
+*******
+
+GUI
+=====
+
+Navigate to **Models -> Embeddings** to view existing embeddings. 
+If any of your embeddings is still training, the view will show you the progress of the training (:numref:`embedding_view`).
+Besides than that, the view shows you general information about your embeddings.
+
+
+.. _embedding_view:
+.. figure:: images/embedding/embedding_view.png
+
+	*Embedding view*
+
+API
+===
+
+Endpoint: **/projects/{project_pk}/embeddings/**
+
+Example:
+
+.. code-block:: bash
+
+    curl -X GET "http://localhost:8000/api/v1/projects/9/embeddings/" \
+         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049"
+
+
+Delete
+*******
+
+GUI
+=====
+
+Navigate to **Models -> Embeddings** and click on the three dots under **Actions** column and choose **Delete** (:numref:`embedding_actions`).
+
+
+.. _embedding_actions:
+.. figure:: images/embedding/embedding_actions.png
+
+	*Embedding actions*
+
+API
+===
+
+Endpoint: **/projects/{project_pk}/embeddings/{embedding_id}**
+
+Example:
+
+.. code-block:: bash
+
+    curl -X DELETE "http://localhost:8000/api/v1/projects/9/embeddings/9/" \
+         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049"
+
+Edit
+*******
+
+GUI
+=====
+
+Navigate to **Models -> Embeddings** and click on the three dots under **Actions** column and choose **Edit** (:numref:`embedding_actions`).
+
+
+API
+===
+
+Endpoint: **/projects/{project_pk}/embeddings/{embedding_id}**
+
+.. code-block:: bash
+
+    curl -X PATCH "http://localhost:8000/api/v1/projects/9/embeddings/8/" \
+         -H "accept: application/json" \
+         -H "Content-Type: application/json" \
+         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+         -d '{"description":"changed"}'
+
+
+Apply phraser
+*************
+
+GUI
+=====
+
+Navigate to **Models -> Embeddings** and click on the three dots under **Actions** and choose **Phrase** (:numref:`embedding_actions`).
+Insert text that you want to phrase and click **Post**. You should see phrased version of the text (:numref:`apply_phraser`).
+
+.. _apply_phraser:
+.. figure:: images/embedding/phraser_gui.png
+
+	*Apply phraser*
+
+API
+===
+
+Endpoint: **/projects/{project_pk}/embeddings/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/9/embeddings/8/phrase_text/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "text": "Venus is the second planet from the Sun."
+            }'
