@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Reindexer on tööriist Elasticsearchi "
 ":ref:`indeksitest <index_concept>` koopiate või alamhulkade loomiseks. Reindexeri on võimalik kasutada järgnevate ülesannete teostamiseks: "
-":"
+
 
 #: ../../source/reindexer.rst:10
 msgid "Making a copy of an index;"
@@ -60,7 +60,7 @@ msgstr "Väljade ümbernimetamiseks;"
 
 #: ../../source/reindexer.rst:15
 msgid "Updating Elasticsearch field types."
-msgstr "Väljade Elasticsearchi andmetüübi muutmiseks;"
+msgstr "Väljade Elasticsearchi andmetüübi muutmiseks."
 
 #: ../../source/reindexer.rst:18
 msgid "Creation"
