@@ -26,7 +26,7 @@ msgid ""
 ":ref:`Tagger Group <tagger_group_concept>`  is for training multiple "
 "classes at once and it also uses tags in the dataset given."
 msgstr ""
-":ref:`Tagger Group-iga <tagger_group_concept>`saab treeniga mitme klassi klassifitseerimist korraga "
+":ref:`Tagger Group-iga <tagger_group_concept>` saab treeniga mitme klassi klassifitseerimist korraga "
 "ning see kasutab andmestikus olevaid märgendeid."
 
 #: ../../source/tagger_group.rst:10
@@ -50,8 +50,8 @@ msgstr ""
 "salvestatud otsingule, millel see treeniti. Tagger Group treenib mitu "
 "mudelit korraga. St, see võib ennustada mitut märgendit korraga. Tagger "
 "Group treenib end faktide põhjal. Meil võib olla mitu erinevat väärtust "
-"ühe kindla fakti all ning iga väärtuse kohta (kui sellel väärtusel on "
-"piisavalt kõrge sagedus (*Minimum sample size*)) treenitakse eraldi mudel."
+"ühe kindla fakti all ning iga väärtuse kohta (kui sellel väärtusel on"
+" piisavalt kõrge sagedus (*Minimum sample size*)) treenitakse eraldi mudel."
 
 #: ../../source/tagger_group.rst:14
 msgid "Creation"

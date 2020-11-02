@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/tagger.rst:3
 msgid "Tagger"
-msgstr "Tagger (märgendaja)"
+msgstr "Tagger"
 
 #: ../../source/tagger.rst:5
 msgid ""
