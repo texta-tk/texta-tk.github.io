@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-17 21:01+0300\n"
+"POT-Creation-Date: 2020-11-02 10:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../source/regex_tagger.rst:1
 msgid ""
@@ -385,10 +385,10 @@ msgid "*Empty Regex Tagger creation view*"
 msgstr "*Regex Taggeri loomisaken enne väljade täitmist*"
 
 #: ../../source/regex_tagger.rst:165
+#, fuzzy
 msgid ""
-"Fill the required fields as instructed in TODO and click on the "
-"`\"Create\"` button in the bottom right corner of the window "
-"(:numref:`regex_tagger_create_view`)."
+"Fill the required fields and click on the `\"Create\"` button in the "
+"bottom right corner of the window (:numref:`regex_tagger_create_view`)."
 msgstr ""
 "Täida nõutud väljad, muuda soovi korral vaikeparameetreid ning vajuta "
 "siis \"`\"Create\"` nupule all paremas nurgas (vt. "
@@ -649,10 +649,11 @@ msgid ""
 msgstr ""
 "Juhusliku dokumendi märgendamiseks Regex Taggeri mudeliga, navigeeri "
 "`\"Models\" -> \"Regex Taggers\"` nagu kujutatud joonisel "
-":numref:`regex_tagger_navigation`. Vali mudel, mida märgendamiseks kasutada ning ava "
-"vastava mudeli valikmenüü vajutades mudeli rea lõpus olevale kolmele "
-"vertikaalsele punktile. Vali avanenud menüüst \"Tag Random Doc\" nagu "
-"kujutatud joonisel :numref:`regex_tagger_tag_random_doc`."
+":numref:`regex_tagger_navigation`. Vali mudel, mida märgendamiseks "
+"kasutada ning ava vastava mudeli valikmenüü vajutades mudeli rea lõpus "
+"olevale kolmele vertikaalsele punktile. Vali avanenud menüüst \"Tag "
+"Random Doc\" nagu kujutatud joonisel "
+":numref:`regex_tagger_tag_random_doc`."
 
 #: ../../source/regex_tagger.rst:456
 msgid "*\"Tag Random Doc\" option in the selection menu*"
@@ -687,11 +688,11 @@ msgid ""
 "seen in :numref:`regex_tagger_tag_random_neg`."
 msgstr ""
 "Märgendamise tulemused kuvatakse samas aknas. Joonis "
-":numref:`regex_tagger_tag_random_pos` kujutab positiivset märgendamise tulemust"
-" (juhuslikult valitud dokumendist leiti valitud mudeliga märgendid). "
-"Joonis :numref:`regex_tagger_tag_random_neg` kujutab negatiivset "
-"märgendamise tulemust (juhuslikult valitud dokumendist valitud mudeliga "
-"märgendeid ei tuvastatud)."
+":numref:`regex_tagger_tag_random_pos` kujutab positiivset märgendamise "
+"tulemust (juhuslikult valitud dokumendist leiti valitud mudeliga "
+"märgendid). Joonis :numref:`regex_tagger_tag_random_neg` kujutab "
+"negatiivset märgendamise tulemust (juhuslikult valitud dokumendist "
+"valitud mudeliga märgendeid ei tuvastatud)."
 
 #: ../../source/regex_tagger.rst:475
 msgid "*\"Tag Random Doc\" positive output*"
@@ -716,7 +717,7 @@ msgstr ""
 
 #: ../../source/regex_tagger.rst:491
 msgid "*\"Tag Random Doc\" collapsing/uncollapsing fields.*"
-msgstr  "*\"Tag Random Doc\" väljade avamine ja sulgemine.*"
+msgstr "*\"Tag Random Doc\" väljade avamine ja sulgemine.*"
 
 #: ../../source/regex_tagger.rst:497
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_random_doc/**"
@@ -812,3 +813,4 @@ msgstr ""
 #: ../../source/regex_tagger.rst:631
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_text/**"
 msgstr "Otspunkt **/projects/{project_pk}/regex_taggers/{id}/tag_text/**"
+

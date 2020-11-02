@@ -56,8 +56,31 @@
 <li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Embedding</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create">Create</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#view">View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#delete">Delete</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#edit">Edit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#apply-phraser">Apply phraser</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">API</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
@@ -107,21 +130,29 @@
             
   <div class="section" id="embedding">
 <h1>Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="terminology.html#embedding-concept"><span class="std std-ref">Embeddings</span></a> are basically words converted into numerical data (into vectors) that are more understandable and usable for the machine than plain strings (words). With these vectors created, we can compare words and find similar ones. We need embeddings to create, for example, <span class="xref std std-ref">lexicons</span>. Texta Toolkit uses word2vec embeddings with <a class="reference external" href="https://radimrehurek.com/gensim/models/phrases.html">collocation detection</a>. It means that the vectors are created on words and phrases. Phrases are chosen with collocation detection which finds often together occuring words and marks them as phrases.</p>
+<div class="section" id="create">
+<h2>Create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="gui">
-<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
-<p>We can create a new embedding by clicking on the ‘+ CREATE’ button in the bottom-left. Then we must choose the name for the new embedding (<em>Description</em>). If we leave <em>Query</em> empty, it will take all data in the active project as a input. We can also use saved searches as our desired input. Then we must choose the fields the embedding learns from. Embedding needs textual data, so we have to choose fields with text or lemmatized text in it. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (<em>eaten</em>, <em>eats</em> and <em>ate</em> will change to it’s lemma <em>eat</em>).</p>
-<p>Then we have to choose the number of dimensions. That means the length of the vectors created. 100-200 dimensions is usually a good place to start with. The minimum frequency defines how many times a word or a phrase has to occur in the data in order to get it’s very own word/phrase vector. Rare words/phrases won’t have very informative and usable vectors. Minimum frequency of 5 can be left as default if we are not sure of what to use.</p>
-<p>Keep in mind that the bigger the data, the better results!</p>
-<p>After creating the new embedding we can view the learning process and results in the embeddings’ table. We can see which user created this embedding in this project, the name of the embedding model, field(s) it was trained on, the time it took to train, dimensions, minimum frequency and created vocabulary size. By clicking on the new model’s row we can see similar info again.</p>
-<p>Three dots under <em>Edit</em> gives us access to deleting the embedding model or using <em>Phrase</em>. <em>Phrase</em> is a feature that helps us to check which phrases occur in the embedding model as vectors on their own. It outputs the words and connects phrases with ‘_’. For example, we can create an embedding model with our saved search ‘bribery’ (figure 10). If we leave the query empty, the model will be trained on the whole dataset.</p>
-<div class="figure align-default" id="id1">
-<span id="figure-12"></span><img alt="_images/create_embedding.png" src="_images/create_embedding.png" />
-<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">Figure 12. <em>Create embedding with saved search</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to <strong>Models -&gt; Embeddings</strong> and click on the <strong>CREATE</strong> button on top-left. Choose the name for you embedding (<em>Description</em>).
+Define the query and select indices on which the query will be executed. If you leave <em>Query</em> empty, it will take all documents from the selected indices.
+If you have any searches defined in your project, they will appear in a dropdown menu if you click on the field <em>Query</em> - you can use existing searches as queries.</p>
+<p>Choose <em>fields</em> on which the embedding will be trained. The selected fields should contain textual data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to use lemmatized or tokenized data. Lemmatization is especially useful with morphologically complex languages. You can tokenize and lemmatize the data with MLP.</p>
+</div>
+<p>Field <em>Number of dimensions</em> defines the length of the word vectors.
+100-200 dimensions is usually a good place to start with.
+Field <em>Minimum frequency</em> sets how many times a word must occur in the data in minimum in order to
+get included into the embedding. Again, you can leave it with the default value <em>5</em> if you are unsure which value to pick.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The quality of the embedding depends on the size of the dataset. The larger the better.</p>
 </div>
 </div>
 <div class="section" id="api">
-<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
 <p>Endpoint: <strong>/projects/{project_pk}/embeddings/</strong></p>
 <p>Example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/embeddings/&quot;</span> <span class="se">\</span>
@@ -137,6 +168,93 @@
 <span class="s1">        &quot;min_freq&quot;: 5</span>
 <span class="s1">    }&#39;</span>
 </pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="view">
+<h2>View<a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>GUI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to <strong>Models -&gt; Embeddings</strong> to view existing embeddings.
+If any of your embeddings is still training, the view will show you the progress of the training (<a class="reference internal" href="#embedding-view"><span class="std std-numref">Fig. 48</span></a>).
+Besides than that, the view shows you general information about your embeddings.</p>
+<div class="figure align-default" id="id10">
+<span id="embedding-view"></span><img alt="_images/embedding_view.png" src="_images/embedding_view.png" />
+<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text"><em>Embedding view</em></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>API<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/projects/{project_pk}/embeddings/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="s2">&quot;http://localhost:8000/api/v1/projects/9/embeddings/&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="delete">
+<h2>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>GUI<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to <strong>Models -&gt; Embeddings</strong> and click on the three dots under <strong>Actions</strong> column and choose <strong>Delete</strong> (<a class="reference internal" href="#embedding-actions"><span class="std std-numref">Fig. 49</span></a>).</p>
+<div class="figure align-default" id="id11">
+<span id="embedding-actions"></span><img alt="_images/embedding_actions.png" src="_images/embedding_actions.png" />
+<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text"><em>Embedding actions</em></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>API<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/projects/{project_pk}/embeddings/{embedding_id}</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X DELETE <span class="s2">&quot;http://localhost:8000/api/v1/projects/9/embeddings/9/&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="edit">
+<h2>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>GUI<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to <strong>Models -&gt; Embeddings</strong> and click on the three dots under <strong>Actions</strong> column and choose <strong>Edit</strong> (<a class="reference internal" href="#embedding-actions"><span class="std std-numref">Fig. 49</span></a>).</p>
+</div>
+<div class="section" id="id6">
+<h3>API<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/projects/{project_pk}/embeddings/{embedding_id}</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X PATCH <span class="s2">&quot;http://localhost:8000/api/v1/projects/9/embeddings/8/&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+     -d <span class="s1">&#39;{&quot;description&quot;:&quot;changed&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="apply-phraser">
+<h2>Apply phraser<a class="headerlink" href="#apply-phraser" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>GUI<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to <strong>Models -&gt; Embeddings</strong> and click on the three dots under <strong>Actions</strong> and choose <strong>Phrase</strong> (<a class="reference internal" href="#embedding-actions"><span class="std std-numref">Fig. 49</span></a>).
+Insert text that you want to phrase and click <strong>Post</strong>. You should see phrased version of the text (<a class="reference internal" href="#id8"><span class="std std-numref">Fig. 50</span></a>).</p>
+<div class="figure align-default" id="id12">
+<span id="id8"></span><img alt="_images/phraser_gui.png" src="_images/phraser_gui.png" />
+<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text"><em>Apply phraser</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>API<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/projects/{project_pk}/embeddings/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/9/embeddings/8/phrase_text/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;text&quot;: &quot;Venus is the second planet from the Sun.&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

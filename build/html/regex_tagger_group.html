@@ -61,9 +61,21 @@
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Regex Tagger Group</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#useage">Useage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fine-tuning">Fine-Tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#apply-tagger-group">Apply Tagger Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete">Delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit">Edit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multitag-docs">Multitag Docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-random-doc">Tag Random Doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-text">Tag Text</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
@@ -106,50 +118,781 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="regex-tagger-group">
+  <p><a class="reference external" href="https://docs.texta.ee/v2/regex_tagger_group.html">EN</a>
+<a class="reference external" href="https://docs.texta.ee/v2/et/regex_tagger_group.html">ET</a></p>
+<div class="section" id="regex-tagger-group">
 <h1>Regex Tagger Group<a class="headerlink" href="#regex-tagger-group" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="terminology.html#regex-tagger-group-concept"><span class="std std-ref">Regex Tagger Group</span></a> allows combining multiple <a class="reference internal" href="terminology.html#regex-tagger-concept"><span class="std std-ref">Regex Tagger</span></a> models. For example, we can combine Regex Tagger models “cat”, “dog”, “squirrel” under a single Regex Tagger Group with unified name “animals”.</p>
+<p>Regex Tagger Group allows combining multiple <a class="reference external" href="https://docs.texta.ee/v2/regex_tagger.html">Regex Tagger</a> models into a group which can then be used for tagging documents. The resulting tags are formatted as <a class="reference external" href="https://docs.texta.ee/v2/terminology.html#fact">Texta Facts</a>.</p>
+<p><strong>API Reference</strong>: <a class="reference external" href="http://localhost:8000/api/v1/redoc/#tag/projects-greater-regex_tagger_groups">http://localhost:8000/api/v1/redoc/#tag/projects-greater-regex_tagger_groups</a></p>
 <div class="section" id="creation">
 <h2>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Regex Tagger Group can be created only if at least one <a class="reference external" href="https://docs.texta.ee/v2/regex_tagger.html">Regex Tagger</a> model exists.</p>
+</div>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="input">
+<h4>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
+<dl>
+<dt><strong>regex_taggers</strong>:</dt><dd><p>Regex Tagger models to be added to the group.</p>
+</dd>
+<dt><strong>description</strong>:</dt><dd><p>Name of the Regex Tagger Group, which will also be used as the name of the tag while tagging the documents. The name can be found in the following field after tagging:</p>
+<p>API:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>texta_facts.fact
+</pre></div>
+</div>
+<p>GUI:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>texta_facts.fact_name
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="output">
+<h4>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h4>
+<dl class="simple">
+<dt><strong>id</strong>:</dt><dd><p>ID of the created Regex Tagger Group</p>
+</dd>
+<dt><strong>url</strong>:</dt><dd><p>URL of the created Regex Tagger Group</p>
+</dd>
+<dt><strong>regex_taggers</strong>:</dt><dd><p>IDs of Regex Taggers present in the group.</p>
+</dd>
+<dt><strong>author_username</strong>:</dt><dd><p>Creator of the Regex Tagger Group.</p>
+</dd>
+<dt><strong>task</strong>:</dt><dd><p>Celery task connected with the group.</p>
+</dd>
+<dt><strong>description</strong>:</dt><dd><p>Name of the Regex Tagger Group.</p>
+</dd>
+<dt><strong>tagger_info</strong>:</dt><dd><p>Parameters of each Regex Tagger present in the group.</p>
+</dd>
+</dl>
+</div>
+</div>
 <div class="section" id="gui">
 <h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
+<p>For creating a new Regex Tagger Group, navigate to <cite>“Models” -&gt; “Regex Tagger Groups”</cite> as seen in <a class="reference internal" href="#rtg-nav"><span class="std std-numref">Fig. 80</span></a>.</p>
+<div class="figure align-center" id="id22">
+<span id="rtg-nav"></span><a class="reference internal image-reference" href="_images/rtg_nav.png"><img alt="_images/rtg_nav.png" src="_images/rtg_nav.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 80 </span><span class="caption-text"><em>“Regex Tagger Group” navigation</em></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p>If the navigation is successful, you should see a panel similar to <a class="reference internal" href="#rtg-create-button"><span class="std std-numref">Fig. 81</span></a> with the <cite>“Create”</cite> button in the top left corner of the page.</p>
+<div class="figure align-center" id="id23">
+<span id="rtg-create-button"></span><a class="reference internal image-reference" href="_images/rtg_create_button.png"><img alt="_images/rtg_create_button.png" src="_images/rtg_create_button.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 81 </span><span class="caption-text"><em>“Regex Tagger Group” creation button</em></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<p>Clicking on the <cite>“Create”</cite> button opens a modal window with text <cite>“New Regex Tagger Group”</cite> as depicted in <a class="reference internal" href="#new-rtg"><span class="std std-numref">Fig. 82</span></a>.</p>
+<div class="figure align-center" id="id24">
+<span id="new-rtg"></span><a class="reference internal image-reference" href="_images/new_rtg.png"><img alt="_images/new_rtg.png" src="_images/new_rtg.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 82 </span><span class="caption-text"><em>Empty “Regex Tagger Group” creation view</em></span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<p>Name the new Regex Tagger Group by filling in the field <cite>“Description”</cite> and select Regex Tagger models to add to the group from the Regex Taggers’ selection menu below. If finished, click on the <cite>“Create”</cite> button in the bottom right corner of the window (<a class="reference internal" href="#new-rtg-create"><span class="std std-numref">Fig. 83</span></a>).</p>
+<div class="figure align-center" id="id25">
+<span id="new-rtg-create"></span><a class="reference internal image-reference" href="_images/new_rtg_create.png"><img alt="_images/new_rtg_create.png" src="_images/new_rtg_create.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 83 </span><span class="caption-text"><em>Filled “Regex Tagger Group” creation view</em></span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+<p>The created Regex Tagger Group can now be seen as the first (or only, if no previous Regex Tagger Groups exist under the project) row in the table of Regex Tagger Groups (<a class="reference internal" href="#rtg-list"><span class="std std-numref">Fig. 84</span></a>).</p>
+<div class="figure align-center" id="id26">
+<span id="rtg-list"></span><a class="reference internal image-reference" href="_images/rtg_list.png"><img alt="_images/rtg_list.png" src="_images/rtg_list.png" style="width: 600pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 84 </span><span class="caption-text"><em>List of Regex Tagger Groups.</em></span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="api">
 <h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<p>Reference:  <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_create">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_create</a></p>
+<p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/regex_tagger_groups/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">      &quot;regex_taggers&quot;: [293, 294, 295],</span>
+<span class="s1">      &quot;description&quot;: &quot;RATING&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
+  <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://rest-dev.texta.ee/api/v1/projects/251/regex_tagger_groups/42/&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;regex_taggers&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="mi">293</span><span class="p">,</span>
+      <span class="mi">294</span><span class="p">,</span>
+      <span class="mi">295</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;author_username&quot;</span><span class="p">:</span> <span class="s2">&quot;masula&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;task&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;RATING&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;tagger_info&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">293</span><span class="p">,</span>
+          <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://rest-dev.texta.ee/api/v1/projects/251/regex_tagger_groups/293/&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;author_username&quot;</span><span class="p">:</span> <span class="s2">&quot;masula&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;bad&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;lexicon&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="s2">&quot;\\W*[1-4]/10\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*[1-4] out of 10\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*[1-2]/5\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*[1-2] out of 5\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*[1-4]/10\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*[1-4] stars&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;counter_lexicon&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="s2">&quot;who gave it&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;or&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;match_type&quot;</span><span class="p">:</span> <span class="s2">&quot;exact&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;required_words&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+          <span class="nt">&quot;phrase_slop&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="nt">&quot;counter_slop&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="nt">&quot;n_allowed_edits&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="nt">&quot;return_fuzzy_match&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;ignore_case&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;ignore_punctuation&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;tagger_groups&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="nt">&quot;tagger_group_id&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+                  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;RATING&quot;</span>
+              <span class="p">}</span>
+          <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">294</span><span class="p">,</span>
+          <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://rest-dev.texta.ee/api/v1/projects/251/regex_tagger_groups/294/&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;author_username&quot;</span><span class="p">:</span> <span class="s2">&quot;masula&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;average&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;lexicon&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="s2">&quot;\\W*[5-6]/10\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*[5-6] out of 10\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*[3]/5\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*[3] out of 5\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*[5-6]/10\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*[5-6] stars&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;counter_lexicon&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="s2">&quot;who gave it&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;or&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;match_type&quot;</span><span class="p">:</span> <span class="s2">&quot;exact&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;required_words&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+          <span class="nt">&quot;phrase_slop&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="nt">&quot;counter_slop&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="nt">&quot;n_allowed_edits&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="nt">&quot;return_fuzzy_match&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;ignore_case&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;ignore_punctuation&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;tagger_groups&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="nt">&quot;tagger_group_id&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+                  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;RATING&quot;</span>
+              <span class="p">}</span>
+          <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">295</span><span class="p">,</span>
+          <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://rest-dev.texta.ee/api/v1/projects/251/regex_tagger_groups/295/&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;author_username&quot;</span><span class="p">:</span> <span class="s2">&quot;masula&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;good&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;lexicon&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="s2">&quot;\\W*([7-9]|10)/10\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*([7-9]|10) out of 10\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*[4-5]/5\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*[4-5] out of 5\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*([7-9]|10)/10\\W*&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;\\W*([7-9]|10) stars&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;counter_lexicon&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="s2">&quot;who gave it&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;or&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;match_type&quot;</span><span class="p">:</span> <span class="s2">&quot;exact&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;required_words&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+          <span class="nt">&quot;phrase_slop&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="nt">&quot;counter_slop&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="nt">&quot;n_allowed_edits&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="nt">&quot;return_fuzzy_match&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;ignore_case&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;ignore_punctuation&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;tagger_groups&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="nt">&quot;tagger_group_id&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+                  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;RATING&quot;</span>
+              <span class="p">}</span>
+          <span class="p">]</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="useage">
-<h2>Useage<a class="headerlink" href="#useage" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>GUI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="tag-text">
-<h4>Tag Text<a class="headerlink" href="#tag-text" title="Permalink to this headline">¶</a></h4>
 </div>
-<div class="section" id="tag-random-doc">
-<h4>Tag Random Doc<a class="headerlink" href="#tag-random-doc" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="apply-tagger-group">
+<h3>Apply Tagger Group<a class="headerlink" href="#apply-tagger-group" title="Permalink to this headline">¶</a></h3>
+<p>Function <cite>“Apply Tagger Group”</cite> enables applying Regex Tagger Group to one or many datasets indexed in Elasticsearch. Results are added to the field <strong>“texta_facts”</strong> accordingly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>RegexTaggerGroup.description -&gt; texta_fact.fact <span class="o">(</span>API<span class="o">)</span> / texta_fact.fact_name <span class="o">(</span>GUI<span class="o">)</span>
+RegexTagger.description -&gt; texta_fact.str_val / texta_fact.fact_value <span class="o">(</span>GUI<span class="o">)</span>
+</pre></div>
 </div>
-<div class="section" id="edit">
-<h4>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="rtg-apply-parameters">
+<span id="id2"></span><h4>Parameters<a class="headerlink" href="#rtg-apply-parameters" title="Permalink to this headline">¶</a></h4>
+<dl>
+<dt><strong>description</strong>:</dt><dd><p>Name of the application task.</p>
+</dd>
+<dt><strong>indices</strong>:</dt><dd><p>List of Elasticsearch indices (datasets) onto which the selected models are applied. NB! Indices should be formatted as dicts, where key = “name” and value = &lt;index_name&gt;, e.g:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my_dataset&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>fields</strong>:</dt><dd><p>List of fields onto which the selected models are applied.</p>
+</dd>
+<dt><strong>query</strong>:</dt><dd><p>Specified Elasticsearch Search query.</p>
+</dd>
+<dt><strong>bulk_size</strong>:</dt><dd><p>Number of documents processed in one batch.</p>
+</dd>
+<dt><strong>max_chunk_bytes</strong>:</dt><dd><p>TODO</p>
+</dd>
+<dt><strong>regex_tagger_groups</strong>:</dt><dd><p>Regex Tagger Groups to apply.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only supported in GUI.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h4>GUI<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>For applying one or multiple Regex Tagger Group(s) to a dataset indexed in Elasticsearch, navigate to <cite>“Models” -&gt; “Regex Tagger Groups”</cite> as seen in <a class="reference internal" href="#rtg-nav"><span class="std std-numref">Fig. 80</span></a>. Click on the button <cite>“Apply Regex Tagger Group”</cite> as seen in <a class="reference internal" href="#rtg-apply"><span class="std std-numref">Fig. 85</span></a>.</p>
+<div class="figure align-center" id="id27">
+<span id="rtg-apply"></span><a class="reference internal image-reference" href="_images/apply_rtg.png"><img alt="_images/apply_rtg.png" src="_images/apply_rtg.png" style="width: 400pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 85 </span><span class="caption-text"><em>“Apply Regex Tagger Group” button</em></span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<p>Clicking on the button opens a new modal window with the title <cite>“Apply Regex Tagger Group to indices”</cite>. Fill the required fields (see also: <a class="reference internal" href="#rtg-apply-parameters"><span class="std std-ref">application parameters</span></a>). PS! Leave the field <cite>“Query”</cite> empty if you wish to apply the models to all of the documents in the selected dataset(s). If finished, click on the button <cite>“Apply”</cite> in the bottom right corner of the panel (<a class="reference internal" href="#rtg-apply-window"><span class="std std-numref">Fig. 86</span></a>).</p>
+<div class="figure align-center" id="id28">
+<span id="rtg-apply-window"></span><a class="reference internal image-reference" href="_images/apply_rtg_window.png"><img alt="_images/apply_rtg_window.png" src="_images/apply_rtg_window.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 86 </span><span class="caption-text"><em>“Apply Regex Tagger Group” window</em></span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
+<p>If the application task creation was successful, the Task status of the selected Regex Tagger Group models should now be <cite>“created”</cite> or <cite>“running”</cite> as seen in <a class="reference internal" href="#rtg-apply-running"><span class="std std-numref">Fig. 87</span></a>.</p>
+<div class="figure align-center" id="id29">
+<span id="rtg-apply-running"></span><a class="reference internal image-reference" href="_images/running.png"><img alt="_images/running.png" src="_images/running.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 87 </span><span class="caption-text"><em>“Apply Regex Tagger Group” task has started</em></span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</div>
+<p>If the application process is finished, you can now browse the results in Search (<a class="reference internal" href="#rtg-apply-searcher"><span class="std std-numref">Fig. 88</span></a>). The created tags can be found from the field <cite>“texta_facts”</cite>.</p>
+<div class="figure align-center" id="id30">
+<span id="rtg-apply-searcher"></span><a class="reference internal image-reference" href="_images/apply_rtg_output_searcher.png"><img alt="_images/apply_rtg_output_searcher.png" src="_images/apply_rtg_output_searcher.png" style="width: 600pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 88 </span><span class="caption-text"><em>“Apply Regex Tagger Group” output in Search.</em></span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>API<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>Reference:  <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_apply_tagger_group">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_apply_tagger_group</a></p>
+<p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/{id}/apply_tagger_group/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/regex_tagger_groups/40/apply_tagger_group/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">      &quot;description&quot;: &quot;apply my regex tagger group&quot;,</span>
+<span class="s1">      &quot;indices&quot;: [{&quot;name&quot;: &quot;imdb_reviews&quot;}],</span>
+<span class="s1">      &quot;fields&quot;: [&quot;review_text&quot;],</span>
+<span class="s1">      &quot;bulk_size&quot;: 100</span>
+<span class="s1">   }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Started process of applying RegexTaggerGroup with id: 40&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="delete">
-<h4>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h4>
+<h3>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+<p>Function <cite>“Delete”</cite> allows deleting existing Regex Tagger Groups.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deleting a Regex Tagger Group <strong>does NOT</strong> delete Regex Tagger models belonging to the group.</p>
 </div>
-<div class="section" id="bulk-delete">
-<h4>Bulk Delete<a class="headerlink" href="#bulk-delete" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h4>GUI<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>For deleting a Regex Tagger Group through GUI, navigate to <cite>“Models” -&gt; “Regex Tagger Groups”</cite> as seen in <a class="reference internal" href="#rtg-nav"><span class="std std-numref">Fig. 80</span></a>. There are two options for deleting a Regex Tagger Group:</p>
+<p><strong>Option 1</strong>:</p>
+<p>Select the Regex Tagger Group you wish to delete by navigating to the options panel denoted with three vertical dots and select the option <cite>“Delete”</cite> from the selection menu as seen in <a class="reference internal" href="#rtg-delete"><span class="std std-numref">Fig. 89</span></a>.</p>
+<div class="figure align-center" id="id31">
+<span id="rtg-delete"></span><a class="reference internal image-reference" href="_images/rtg_delete.png"><img alt="_images/rtg_delete.png" src="_images/rtg_delete.png" style="width: 150pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 89 </span><span class="caption-text"><em>Delete a single Regex Tagger Group</em></span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="apply-tagger-group">
-<h4>Apply Tagger Group<a class="headerlink" href="#apply-tagger-group" title="Permalink to this headline">¶</a></h4>
+<p><strong>Option 2</strong>:</p>
+<p>Select the model(s) you wish to delete by clicking on the selection boxes in front of the Regex Tagger Groups(s). If all the models you wish to delete are selected, click on the red recycle bin icon beside the <cite>“Create”</cite> button in the top left corner of the page. (<a class="reference internal" href="#rtg-bulk-delete"><span class="std std-numref">Fig. 90</span></a>).</p>
+<div class="figure align-center" id="id32">
+<span id="rtg-bulk-delete"></span><a class="reference internal image-reference" href="_images/rtg_bulk_delete.png"><img alt="_images/rtg_bulk_delete.png" src="_images/rtg_bulk_delete.png" style="width: 350pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 90 </span><span class="caption-text"><em>Bulk delete Regex Tagger Group(s)</em></span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="multitag-text">
-<h4>Multitag Text<a class="headerlink" href="#multitag-text" title="Permalink to this headline">¶</a></h4>
+<p>After following all the previously described steps (for either of the two options), the interface should now ask your confirmation for finishing the process (<a class="reference internal" href="#rtg-delete-confirm"><span class="std std-numref">Fig. 91</span></a>). Agree by clicking on the button <cite>“Delete”</cite>.</p>
+<div class="figure align-center" id="id33">
+<span id="rtg-delete-confirm"></span><a class="reference internal image-reference" href="_images/rtg_delete_confirm.png"><img alt="_images/rtg_delete_confirm.png" src="_images/rtg_delete_confirm.png" style="width: 200pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 91 </span><span class="caption-text"><em>Delete Regex Tagger Group(s) confirmation</em></span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>API<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h4>API<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>Reference: <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_delete">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_delete</a></p>
+<p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/{id}/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X DELETE <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/regex_tagger_groups/40/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="fine-tuning">
-<h2>Fine-Tuning<a class="headerlink" href="#fine-tuning" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="edit">
+<h3>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h4>GUI<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>For editing an existing Regex Tagger Group, select the Regex Tagger Group you wish to edit and navigate to the options panel by clicking on the three vertical dots at the end of the Regex Tagger Group row.
+Select the option <cite>“Edit”</cite> as seen in <a class="reference internal" href="#rtg-edit"><span class="std std-numref">Fig. 92</span></a>.</p>
+<div class="figure align-center" id="id34">
+<span id="rtg-edit"></span><a class="reference internal image-reference" href="_images/rtg_edit.png"><img alt="_images/rtg_edit.png" src="_images/rtg_edit.png" style="width: 150pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 92 </span><span class="caption-text"><em>Regex Tagger Group -&gt; Edit</em></span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+</div>
+<p>Clicking on the option opens a new modal window with text <cite>“Edit Regex Tagger Group”</cite>. Make your modifications and click  on the <cite>“Apply”</cite> button in the bottom right corner of the modal window for finishing the process (<a class="reference internal" href="#rtg-edit-window"><span class="std std-numref">Fig. 93</span></a>.)</p>
+<div class="figure align-center" id="id35">
+<span id="rtg-edit-window"></span><a class="reference internal image-reference" href="_images/rtg_edit_window.png"><img alt="_images/rtg_edit_window.png" src="_images/rtg_edit_window.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 93 </span><span class="caption-text"><em>“Edit Regex Tagger Group” window</em></span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id8">
+<h4>API<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>Reference:  <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_update">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_update</a></p>
+<p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/{id}/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X PATCH <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/regex_tagger_groups/40/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">          &quot;description&quot;: &quot;UPDATED_REGEX_TAGGER_MODEL_NAME&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="multitag-docs">
+<h3>Multitag Docs<a class="headerlink" href="#multitag-docs" title="Permalink to this headline">¶</a></h3>
+<p>Function <cite>“Multitag Docs”</cite> enables tagging one or many documents with multiple Regex Tagger Group models at once. Results are added to the field <strong>“texta_facts”</strong> accordingly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>RegexTaggerGroup.description -&gt; texta_fact.fact <span class="o">(</span>API<span class="o">)</span> / texta_fact.fact_name <span class="o">(</span>GUI<span class="o">)</span>
+RegexTagger.description -&gt; texta_fact.str_val <span class="o">(</span>API<span class="o">)</span> / texta_fact.fact_value <span class="o">(</span>GUI<span class="o">)</span>
+RegexTagger.match.spans -&gt; texta_fact.spans
+field -&gt; texta_fact.doc_path
+</pre></div>
+</div>
+<div class="section" id="id9">
+<h4>Parameters<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id10">
+<h5>Input<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
+<dl>
+<dt><strong>docs</strong>:</dt><dd><p>Documents to tag as a list of JSON dicts, e.g:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;doc_id&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;some title&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;foo bar&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;doc_id&quot;</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
+    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;some other title&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;bar foo&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>fields</strong>:</dt><dd><p>List of fields onto which the selected models are applied.</p>
+</dd>
+<dt><strong>tagger_groups</strong>:</dt><dd><p>List of the Regex Tagger Group ID-s to use for tagging.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="id11">
+<h4>API<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<p>Reference:  <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_multitag_docs">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_multitag_docs</a></p>
+<p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/multitag_docs/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/regex_tagger_groups/multitag_docs/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">      &quot;docs&quot;: [</span>
+<span class="s1">        {</span>
+<span class="s1">         &quot;review_text&quot;: &quot;The acting was terrible and cinematography absolutely horrendous! Although the soundtrack was beautifully composed, this is still one of the worst films of 2015. I will give it 2 out of 10.&quot;,</span>
+<span class="s1">         &quot;id&quot;: &quot;27252&quot;,</span>
+<span class="s1">         &quot;author&quot;: &quot;jster976&quot;</span>
+<span class="s1">         },</span>
+<span class="s1">       {</span>
+<span class="s1">        &quot;review_text&quot;: &quot;Absolute garbage! Would not even recommend to my worst enemy. 1/10.&quot;,</span>
+<span class="s1">        &quot;id&quot;: &quot;38272&quot;,</span>
+<span class="s1">        &quot;author&quot;: &quot;dolan87&quot;</span>
+<span class="s1">        }</span>
+<span class="s1">      ],</span>
+<span class="s1">     &quot;fields&quot;: [&quot;review_text&quot;],</span>
+<span class="s1">     &quot;tagger_groups&quot;: [38, 40, 41]</span>
+<span class="s1">   }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;jster976&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;27252&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;review_text&quot;</span><span class="p">:</span> <span class="s2">&quot;The acting was terrible and cinematography absolutely horrendous! Although the soundtrack was beautifully composed, this is still one of the worst films of 2015. I will give it 2 out of 10.&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;texta_facts&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 291}&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[54, 64]]&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 292}&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[94, 105]]&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 291}&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[141, 146]]&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;YEAR&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 38, \&quot;regextagger_id\&quot;: 289}&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[156, 161]]&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;2010s&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;RATING&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 40, \&quot;regextagger_id\&quot;: 293}&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[177, 189]]&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;bad&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 291}&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[15, 23]]&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;dolan87&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;38272&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;review_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Absolute garbage! Would not even recommend to my worst enemy. 1/10.&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;texta_facts&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;RATING&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 40, \&quot;regextagger_id\&quot;: 293}&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[62, 67]]&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;bad&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 291}&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[9, 16]]&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 291}&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[18, 42]]&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 291}&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[49, 54]]&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tag-random-doc">
+<h3>Tag Random Doc<a class="headerlink" href="#tag-random-doc" title="Permalink to this headline">¶</a></h3>
+<p>Function <cite>“Tag Random Doc”</cite> provides support for testing a Regex Tagger Group on a randomly selected document from a certain predefined dataset.</p>
+<div class="section" id="id12">
+<h4>Parameters<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id13">
+<h5>Input<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h5>
+<dl>
+<dt><strong>indices</strong>:</dt><dd><p>List of Elasticsearch indices (dataset) onto which the selected models are applied. NB! Indices should be formatted as dicts, where key = “name” and value = &lt;index_name&gt;, e.g:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my_dataset&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>fields</strong>:</dt><dd><p>List of fields onto which the selected models are applied.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id14">
+<h5>Output<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
+<dl>
+<dt><strong>tagger_group_id</strong>:</dt><dd><p>ID of the Regex Tagger Group used for tagging.</p>
+</dd>
+<dt><strong>tagger_group_tag</strong>:</dt><dd><p>Name of the Regex Tagger Group used for tagging, i.e. Regex Tagger Group description.</p>
+</dd>
+<dt><strong>result</strong>:</dt><dd><p>Boolean value indicating if any matches were detected.</p>
+</dd>
+<dt><strong>document</strong>:</dt><dd><p>The randomly selected document.</p>
+</dd>
+<dt><strong>matches</strong>:</dt><dd><p>Detected matches in the “texta_facts” format.</p>
+<dl class="simple">
+<dt><strong>fact</strong>:</dt><dd><p>Name of the Regex Tagger Group (same as corresponding tagger_group_tag).</p>
+</dd>
+<dt><strong>str_val</strong>:</dt><dd><p>Name of the Regex Tagger model.</p>
+</dd>
+<dt><strong>doc_path</strong>:</dt><dd><p>Name of the field from where the match was detected.</p>
+</dd>
+<dt><strong>spans</strong>:</dt><dd><p>Position of the detected match in the input field.</p>
+</dd>
+<dt><strong>source</strong>:</dt><dd><p>Dict given as JSON string containing corresponding Regex Tagger Group ID and Regex Tagger ID.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="id15">
+<h4>GUI<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<p>For tagging a random document with an existing Regex Tagger Group model, navigate to <cite>“Models” -&gt; “Regex Tagger Groups”</cite> as seen in <a class="reference internal" href="#rtg-nav"><span class="std std-numref">Fig. 80</span></a>. Select the model you wish to use and navigate to the options panel denoted with three vertical dots. Select the option “Tag Random Doc” from the selection menu as seen in <a class="reference internal" href="#rtg-random-doc"><span class="std std-numref">Fig. 94</span></a>.</p>
+<div class="figure align-center" id="id36">
+<span id="rtg-random-doc"></span><a class="reference internal image-reference" href="_images/rtg_random_doc.png"><img alt="_images/rtg_random_doc.png" src="_images/rtg_random_doc.png" style="width: 150pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 94 </span><span class="caption-text"><em>“Tag Random Doc” option in the selection menu</em></span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+</div>
+<p>Selecting the option opens a new modal window with the title <cite>“Tag Random Doc”</cite>. Select the index or indices you wish to use from the <cite>“Indices”</cite> selection menu displayed in the window after clicking on the corresponding section and select the field(s) you wish to use from the <cite>“Select Fields”</cite> selection menu below. If finished, click on the button <cite>“Tag”</cite> in the bottom right corner of the panel (<a class="reference internal" href="#rtg-tag-random-doc-tag"><span class="std std-numref">Fig. 95</span></a>).</p>
+<div class="figure align-center" id="id37">
+<span id="rtg-tag-random-doc-tag"></span><a class="reference internal image-reference" href="_images/tag_random_doc_tag.png"><img alt="_images/tag_random_doc_tag.png" src="_images/tag_random_doc_tag.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 95 </span><span class="caption-text"><em>Regex Tagger Group “Tag Random Doc” window.</em></span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
+</div>
+<p>The results are displayed in the same modal window as seen in <a class="reference internal" href="#rtg-tag-random-output"><span class="std std-numref">Fig. 96</span></a> if any matches were detected. If no matches where found, the text <cite>“No matches found”</cite> is displayed as seen in <a class="reference internal" href="#rtg-tag-random-neg-output"><span class="std std-numref">Fig. 97</span></a>.</p>
+<div class="figure align-center" id="id38">
+<span id="rtg-tag-random-output"></span><a class="reference internal image-reference" href="_images/rtg_tag_random_doc_output_pos1.png"><img alt="_images/rtg_tag_random_doc_output_pos1.png" src="_images/rtg_tag_random_doc_output_pos1.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 96 </span><span class="caption-text"><em>“Tag Random Doc” positive output</em></span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id39">
+<span id="rtg-tag-random-neg-output"></span><a class="reference internal image-reference" href="_images/tag_random_no_matches.png"><img alt="_images/tag_random_no_matches.png" src="_images/tag_random_no_matches.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 97 </span><span class="caption-text"><em>“Tag Random Doc” negative output</em></span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
+</div>
+<p>PS! The fields in the document not selected by the user and/or not containing any matches are by default collapsed, but you can view their content by clicking on the arrow icon at the end of each field (<a class="reference internal" href="#rtg-tag-random-doc-other-fields"><span class="std std-numref">Fig. 98</span></a>.)</p>
+<div class="figure align-center" id="id40">
+<span id="rtg-tag-random-doc-other-fields"></span><a class="reference internal image-reference" href="_images/tag_random_doc_other_fields.png"><img alt="_images/tag_random_doc_other_fields.png" src="_images/tag_random_doc_other_fields.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 98 </span><span class="caption-text"><em>“Tag Random Doc” collapsing/uncollapsing fields.</em></span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id16">
+<h4>API<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<p>Reference:  <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_random_doc">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_random_doc</a></p>
+<p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/{id}/tag_random_doc/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/regex_tagger_groups/41/tag_random_doc/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">      &quot;indices&quot;: [{&quot;name&quot;: &quot;imdb_reviews&quot;}],</span>
+<span class="s1">      &quot;fields&quot;: [&quot;review_text&quot;]</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;tagger_group_id&quot;</span><span class="p">:</span> <span class="mi">41</span><span class="p">,</span>
+  <span class="nt">&quot;tagger_group_tag&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;matches&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[999, 1010]]&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 291}&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[1119, 1130]]&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 291}&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[433, 437]]&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 292}&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[736, 743]]&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 292}&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[1874, 1879]]&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 292}&quot;</span>
+      <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;document&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;review_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Murder in Mesopotamia, I have always considered one of the better Poirot books, as it is very creepy and has an ingenious ending. There is no doubt that the TV adaptation is visually striking, with some lovely photography and a very haunting music score. As always David Suchet is impeccable as Hercule Poirot, the comedic highlight of the episode being Poirot&#39;s battle with a mosquito in the middle of the night, and Hugh Fraser is good as the rather naive Captain Hastings. The remainder of the cast turn in decent performances, but are careful not to overshadow the two leads, a danger in some Christie adaptations. Some of the episode was quite creepy, a juxtaposition of an episode as tragic as Five Little Pigs, an episode that I enjoyed a lot more than this one. What made it creepy in particular, putting aside the music was when Louise Leidner sees the ghostly face through the window. About the adaptation, it was fairly faithful to the book, but I will say that there were three things I didn&#39;t like. The main problem was the pacing, it is rather slow, and there are some scenes where very little happens. I didn&#39;t like the fact also that they made Joseph Mercado a murderer. In the book, I see him as a rather nervous character, but the intervention of the idea of making him a murderer, and under-developing that, made him a less appealing character, though I am glad they didn&#39;t miss his drug addiction. (I also noticed that the writers left out the fact that Mrs Mercado in the book falls into hysteria when she believes she is the murderer&#39;s next victim.) The other thing that wasn&#39;t so impressive was that I felt that it may have been more effective if the adaptation had been in the viewpoint of Amy Leatheran, like it was in the book, Amy somehow seemed less sensitive in the adaptation. On the whole, despite some misjudgements on the writers&#39; behalf, I liked Murder in Mesopotamia. 7/10 Bethany Cox.&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;train&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;doc_id&quot;</span><span class="p">:</span> <span class="s2">&quot;73ff0a897bb84570ac5a0426a7f69b92&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tag-text">
+<h3>Tag Text<a class="headerlink" href="#tag-text" title="Permalink to this headline">¶</a></h3>
+<p>Function <cite>“Tag Text”</cite> enables tagging a single text with a selected Regex Tagger Group by applying all the models belonging in the group to the selected text.</p>
+<div class="section" id="id17">
+<h4>Parameters<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id18">
+<h5>Input<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h5>
+<dl class="simple">
+<dt><strong>text</strong>:</dt><dd><p>Text to tag.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id19">
+<h5>Output<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h5>
+<dl>
+<dt><strong>tagger_group_id</strong>:</dt><dd><p>ID of the Regex Tagger Group used for tagging.</p>
+</dd>
+<dt><strong>tagger_group_tag</strong>:</dt><dd><p>Name of the Regex Tagger Group used for tagging, i.e. Regex Tagger Group description.</p>
+</dd>
+<dt><strong>result</strong>:</dt><dd><p>Boolean value indicating if any matches were detected.</p>
+</dd>
+<dt><strong>text</strong>:</dt><dd><p>Input text.</p>
+</dd>
+<dt><strong>matches</strong>:</dt><dd><p>Detected matches in the “texta_facts” format.</p>
+<dl class="simple">
+<dt><strong>fact</strong>:</dt><dd><p>Name of the Regex Tagger Group (same as corresponding tagger_group_tag).</p>
+</dd>
+<dt><strong>str_val</strong>:</dt><dd><p>Name of the Regex Tagger model.</p>
+</dd>
+<dt><strong>doc_path</strong>:</dt><dd><p>Name of the field from where the match was detected. Always “text” in the current endpoint.</p>
+</dd>
+<dt><strong>spans</strong>:</dt><dd><p>Position of the detected match in the text.</p>
+</dd>
+<dt><strong>source</strong>:</dt><dd><p>Dict given as JSON string containing corresponding Regex Tagger Group ID and Regex Tagger ID.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="id20">
+<h4>GUI<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<p>For tagging a text with an existing Regex Tagger Group model, navigate to <cite>“Models” -&gt; “Regex Tagger Groups”</cite> as seen in <a class="reference internal" href="#rtg-nav"><span class="std std-numref">Fig. 80</span></a>. Select the model you wish to use and navigate to the options panel denoted with three vertical dots. Select option “Tag Text” from the selection menu as seen in <a class="reference internal" href="#rtg-tag-text"><span class="std std-numref">Fig. 99</span></a>.</p>
+<div class="figure align-center" id="id41">
+<span id="rtg-tag-text"></span><a class="reference internal image-reference" href="_images/rtg_tag_text.png"><img alt="_images/rtg_tag_text.png" src="_images/rtg_tag_text.png" style="width: 150pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 99 </span><span class="caption-text"><em>“Tag Text” option in the selection menu</em></span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
+</div>
+<p>Selecting the option opens a new modal window with the title <cite>“Tag Text”</cite>. Insert the text you wish to tag and click on the button <cite>“Tag”</cite> in the bottom right corner of the panel (<a class="reference internal" href="#rtg-tag-text-filled"><span class="std std-numref">Fig. 100</span></a>).</p>
+<div class="figure align-center" id="id42">
+<span id="rtg-tag-text-filled"></span><a class="reference internal image-reference" href="_images/rtg_tag_text_filled.png"><img alt="_images/rtg_tag_text_filled.png" src="_images/rtg_tag_text_filled.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 100 </span><span class="caption-text"><em>Regex Tagger Group “Tag Text” window.</em></span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
+</div>
+<p>The results are displayed in the same modal window as seen in <a class="reference internal" href="#rtg-tag-text-output"><span class="std std-numref">Fig. 101</span></a>, if any matches where detected. If no matches where found, the text <cite>“No matches found”</cite> is displayed as seen in <a class="reference internal" href="#rtg-tag-text-neg-output"><span class="std std-numref">Fig. 102</span></a>.</p>
+<div class="figure align-center" id="id43">
+<span id="rtg-tag-text-output"></span><a class="reference internal image-reference" href="_images/rtg_tag_text_output.png"><img alt="_images/rtg_tag_text_output.png" src="_images/rtg_tag_text_output.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 101 </span><span class="caption-text"><em>“Tag Text” positive output</em></span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id44">
+<span id="rtg-tag-text-neg-output"></span><a class="reference internal image-reference" href="_images/rtg_tag_text_neg.png"><img alt="_images/rtg_tag_text_neg.png" src="_images/rtg_tag_text_neg.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 102 </span><span class="caption-text"><em>“Tag Text” negative output</em></span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id21">
+<h4>API<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<p>Reference:  <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_text">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_text</a></p>
+<p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/{id}/tag_text/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/regex_tagger_groups/1/tag_text/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">      &quot;text&quot;: &quot;The acting was terrible and cinematography absolutely horrendous! Although the soundtrack was beautifully composed, this is still one of the worst films I have ever seen.&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;tagger_group_id&quot;</span><span class="p">:</span> <span class="mi">41</span><span class="p">,</span>
+  <span class="nt">&quot;tagger_group_tag&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;The acting was terrible and cinematography absolutely horrendous! Although the soundtrack was beautifully composed, this is still one of the worst films I have ever seen.&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;matches&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[15, 23]]&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 291}&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[54, 64]]&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 291}&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[141, 146]]&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 291}&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;SENTIMENT&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[94, 105]]&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextaggergroup_id\&quot;: 41, \&quot;regextagger_id\&quot;: 292}&quot;</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 

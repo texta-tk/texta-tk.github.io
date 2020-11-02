@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; TEXTA Toolkit 2 documentation</title>
+    <title>Texta Toolkit &#8212; TEXTA Toolkit 2 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -99,13 +99,17 @@
 
           <div class="body" role="main">
             
-  <p><a class="reference external" href="https://docs.texta.ee/concepts.html">EN</a>
-<a class="reference external" href="https://docs.texta.ee/et/concepts.html">ET</a></p>
+  <p><a class="reference external" href="https://docs.texta.ee/v2/index.html">EN</a>
+<a class="reference external" href="https://docs.texta.ee/v2/et/index.html">ET</a></p>
+<div class="section" id="texta-toolkit">
+<h1>Texta Toolkit<a class="headerlink" href="#texta-toolkit" title="Permalink to this headline">¶</a></h1>
 <p>TEXTA Toolkit is an open-source software for building RESTful text analytics applications.
 It is being developed by <a class="reference external" href="https://www.texta.ee">TEXTA Ltd</a>.
-This documentation contains information about installing and running <a href="#id1"><span class="problematic" id="id2">**</span></a>TEXTA Toolkit 2.10.</p>
+This documentation contains information about installing and running <strong>TEXTA Toolkit 2.10.x</strong></p>
 <p>The source code for Toolkit’s Django REST API is available at <a class="reference external" href="https://git.texta.ee/texta/texta-rest">git.texta.ee/texta/texta-rest</a>.</p>
 <p>The source code for Toolkit’s Angular GUI is available at <a class="reference external" href="https://git.texta.ee/texta/texta-rest-front">git.texta.ee/texta/texta-rest-front</a>.</p>
+<img alt="Texta" src="_images/toolkit_logo.png" />
+<p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
@@ -142,11 +146,12 @@ This documentation contains information about installing and running <a href="#i
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="anonymizer.html#usage">Usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="anonymizer.html#id1">GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="anonymizer.html#id2">API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="anonymizer.html#anonymize-text">Anonymize Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="anonymizer.html#anonymize-texts">Anonymize Texts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="anonymizer.html#edit">Edit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="anonymizer.html#delete">Delete</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="anonymizer.html#fine-tuning">Fine-Tuning</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a><ul>
@@ -164,8 +169,12 @@ This documentation contains information about installing and running <a href="#i
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reindexer.html#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reindexer.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reindexer.html#creation">Creation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reindexer.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reindexer.html#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reindexer.html#api">API</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a><ul>
@@ -187,37 +196,69 @@ This documentation contains information about installing and running <a href="#i
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="projects.html#gui">GUI</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="projects.html#create-a-project">Create a Project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="projects.html#delete-a-project">Delete a Project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="projects.html#edit-a-project">Edit a Project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="projects.html#navigate-between-projects">Navigate between Projects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="projects.html#permissions">Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#create">Create</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#api">API</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="projects.html#api">API</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="projects.html#id1">Create a Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#edit">Edit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#id1">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#id2">API</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#delete">Delete</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#id3">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#id4">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#navigate-between-projects">Navigate between Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html#permissions">Permissions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="searcher.html#current-search">Current Search</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="searcher.html#simple-search">Simple Search</a></li>
-<li class="toctree-l3"><a class="reference internal" href="searcher.html#advanced-search">Advanced Search</a></li>
-<li class="toctree-l3"><a class="reference internal" href="searcher.html#search-options">Search Options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="searcher.html#examples">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="searcher.html#browsing-search-results">Browsing Search results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="searcher.html#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="searcher.html#api">API</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="searcher.html#saved-searches">Saved Searches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="searcher.html#aggregations">Aggregations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searcher.html#saved-searches">Saved Searches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="searcher.html#id4">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="searcher.html#id5">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="searcher.html#aggregations">Aggregations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="searcher.html#id8">GUI</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
 <li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="embedding.html#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="embedding.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#create">Create</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="embedding.html#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="embedding.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#view">View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="embedding.html#id1">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="embedding.html#id2">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#delete">Delete</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="embedding.html#id3">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="embedding.html#id4">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#edit">Edit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="embedding.html#id5">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="embedding.html#id6">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#apply-phraser">Apply phraser</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="embedding.html#id7">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="embedding.html#id9">API</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a><ul>
@@ -227,10 +268,14 @@ This documentation contains information about installing and running <a href="#i
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tagger.html#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tagger.html#api">API</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tagger.html#train-a-new-tagger">Train a new tagger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tagger.html#tag-text">Tag text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tagger.html#creation">Creation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tagger.html#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tagger.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tagger.html#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tagger.html#id1">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tagger.html#id2">API</a></li>
 </ul>
 </li>
 </ul>
@@ -241,13 +286,11 @@ This documentation contains information about installing and running <a href="#i
 <li class="toctree-l3"><a class="reference internal" href="tagger_group.html#api">API</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tagger_group.html#useage">Useage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tagger_group.html#usage">Usage</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tagger_group.html#id1">GUI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tagger_group.html#id2">API</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tagger_group.html#application">Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tagger_group.html#fine-tuning">Fine-Tuning</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a><ul>
@@ -258,37 +301,31 @@ This documentation contains information about installing and running <a href="#i
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#usage">Usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#id1">GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#id2">API</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger.html#fine-tuning">Fine-Tuning</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#counter-lexicon">Counter Lexicon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#phrase-slop">Phrase Slop</a></li>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#match-type">Match Type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#operator">Operator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#required-words">Required Words</a></li>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#n-allowed-edits">N Allowed Edits</a></li>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#return-fuzzy-match">Return Fuzzy Match</a></li>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#ignore-case">Ignore Case</a></li>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#ignore-punctuation">Ignore Punctuation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#counter-slop">Counter Slop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#delete">Delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#duplicate">Duplicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#edit">Edit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#tag-random-doc">Tag Random Doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="regex_tagger.html#tag-text">Tag Text</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#creation">Creation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="regex_tagger_group.html#parameters">Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="regex_tagger_group.html#gui">GUI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="regex_tagger_group.html#api">API</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#useage">Useage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger_group.html#id1">GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="regex_tagger_group.html#id2">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="regex_tagger_group.html#apply-tagger-group">Apply Tagger Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="regex_tagger_group.html#delete">Delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="regex_tagger_group.html#edit">Edit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="regex_tagger_group.html#multitag-docs">Multitag Docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="regex_tagger_group.html#tag-random-doc">Tag Random Doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="regex_tagger_group.html#tag-text">Tag Text</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="regex_tagger_group.html#fine-tuning">Fine-Tuning</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a><ul>
@@ -357,6 +394,7 @@ This documentation contains information about installing and running <a href="#i
 </ul>
 </li>
 </ul>
+</div>
 </div>
 
 

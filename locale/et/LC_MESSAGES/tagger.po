@@ -4,199 +4,287 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"POT-Creation-Date: 2020-11-02 10:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../source/tagger.rst:3
 msgid "Tagger"
-msgstr ""
+msgstr "Tagger (märgendaja)"
 
 #: ../../source/tagger.rst:5
 msgid ""
 ":ref:`Tagger <tagger_concept>` operates on saved searches and uses "
 "machine learning."
 msgstr ""
+":ref:`Tagger <tagger_concept>` kasutab masinõpet ning "
+"salvestatud otsinguid."
 
-#: ../../source/tagger.rst:8
-msgid "GUI"
-msgstr ""
+#: ../../source/tagger.rst:10
+msgid "**How do Tagger and Tagger Groups differ?**"
+msgstr "**Kuidas erinevad Tagger ja Tagger Groups?**"
 
 #: ../../source/tagger.rst:10
 msgid ""
-"We can create a new Tagger model by clicking on the '+CREATE' button in "
-"the bottom-left. Then we must choose the name for the new Tagger "
-"(*Description*) and the fields the model learns from. If we choose two, "
-"the fields are just concatenated together before the learning process. "
-"One field is also enough. Usually lemmatized texts are preferred, "
-"especially with morphologically complex languages, because it increases "
-"the frequency of some words (*eaten*, *eats* and *ate* will change to "
-"it's lemma *eat* and are dealt as one word)."
+"One model predicts whether a text is positive (True) or negative (False)."
+" That is, whether this text gets the label or not. Tagger trains only one"
+" model and predicts whether a text is similar to the query/dataset it was"
+" trained on or not. Tagger Group trains several models at once. That "
+"means, it can predict several labels at once. Tagger Group trains on "
+"facts. You can have several values under a certain fact and for each "
+"value (if it has high enough frequency (*Minimum sample size*) a model is"
+" trained."
 msgstr ""
-
-#: ../../source/tagger.rst:12
-msgid ""
-"If we leave *Query* empty, it will take all data in the active project as"
-" a input. We can also use saved searches as our desired input. This input"
-" will be our positive examples - later on we want to tag data similar to "
-"this one."
-msgstr ""
+"Üks mudel ennustab, kas tekst on positiivne (True) või negatiivne "
+"(False). St, kas tekst saab märgendi või mitte. Tagger treenib vaid ühe "
+"mudeli ning ennustab, kas tekst on sarnane sellele andmestikule / "
+"salvestatud otsingule, millel see treeniti. Tagger Group treenib mitu "
+"mudelit korraga. St, see võib ennustada mitu märgendit korraga. Tagger "
+"Group treenib end faktide põhjal. Meil võib olla mitu erinevat väärtust "
+"ühe kindla fakti all ning iga väärtuse kohta (kui sellel väärtusel on "
+"piisavalt kõrge sagedus (*Minimum sample size*)) treenitakse eraldi mudel."
 
 #: ../../source/tagger.rst:14
+msgid "Creation"
+msgstr "Loomine"
+
+#: ../../source/tagger.rst:17 ../../source/tagger.rst:65
+msgid "GUI"
+msgstr ""
+
+#: ../../source/tagger.rst:19
 msgid ""
-"By setting these three, we can now train a classifier. However, we can "
+"Create a new Tagger model by clicking on the 'CREATE' button in the top-"
+"left. Then choose the name for the new Tagger (*Description*), the "
+"indices and the fields the model learns from. If you choose two fields, "
+"the fields are concatenated together before the learning process. One "
+"field is also enough. Usually lemmatized texts are preferred, especially "
+"with morphologically complex languages, because it increases the "
+"frequency of some words (*eaten*, *eats* and *ate* will change to its "
+"lemma *eat* and are dealt as one word)."
+msgstr ""
+"Uut Tagger mudelit saab luua vajutades üleval "
+"vasakul olevat 'CREATE' nuppu. Seejärel tuleb välja mõelda märgendaja "
+"nimi (*Description*) ja mudeli sisendiks saavad väljad ning indeksid. Kui valitakse "
+"kaks välja, siis kleebitakse nende väljade sisu kokku enne "
+"treenimist. Ka ühest väljast piisab. Üldjuhul eelistatakse "
+"lemmatiseeritud teksti, eriti morfoloogiliselt rikaste keelte puhul, kuna"
+" see tõstab mõnede sõnade esinemissagedust (*söödud*, *sööb* ja *sõin* "
+"muutuvad oma lemmaks *sööma* ja neid saab vaadelda ühe sõnana)."
+
+#: ../../source/tagger.rst:21
+msgid ""
+"If *Query* is left empty, it will take all data in the active project as "
+"an input. You can also use saved searches as your desired input. This "
+"input will be the positive examples - later on, the Tagger tags data "
+"similar to this one."
+msgstr ""
+"Tühi *Query* võtab sisendiks kogu andmestiku aktiivses projektis. "
+"Soovitud sisendiks võib valida ka salvestatud otsingu. Salvestatud otsing"
+" on märgendajale positiivsete näidete kogum - hiljem märgendab mudel "
+"sellele otsingukogumile sarnaseid andmeid."
+
+#: ../../source/tagger.rst:23
+msgid ""
+"By setting these three, you can now train a classifier. However, you can "
 "also fine-tune the classifier by changing additional parameters such as "
-"Vectorizer (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read"
-" more about them `here <https://scikit-"
+"your previously trained :ref:`embedding <tembedding_concept>`, Vectorizer"
+" (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more "
+"about them `here <https://scikit-"
 "learn.org/stable/modules/feature_extraction.html>`_) and Classifier "
 "(`Logistic Regression <https://scikit-"
 "learn.org/stable/modules/linear_model.html#logistic-regression>`_, "
 "`LinearSVC <https://scikit-"
-"learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). We "
-"might get an error with LinearSVC in case we don't have enough data in "
-"the search. We can set negative multiplier to change ratio of negative "
-"examples. We can use maximum sample size per class in case we want to "
-"limit the size of data the model trains on."
+"learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). You "
+"can set the negative multiplier to change the ratio of negative examples."
+" You can use the maximum sample size per class in case you want to limit "
+"the size of data the model trains on. After that, all that's left is "
+"hitting the \"Create\"-button (scroll down a bit), seeing the training "
+"process and the result of the tagger."
 msgstr ""
+"Kui need kolm parameetrit on valitud, saab alustada klassifitseerija "
+"treenimist. Soovi korral on võimalik muuta ka lisaparameetreid, näiteks "
+"Vectorizer (Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - loe "
+"nende kohta rohkem `siit <https://scikit-"
+"learn.org/stable/modules/feature_extraction.html>`_) ja Classifier "
+"(`Logistic Regression <https://scikit-"
+"learn.org/stable/modules/linear_model.html#logistic-regression>`_, "
+"`LinearSVC <https://scikit-"
+"learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). "
+"Võimalik on määrata ka *negative multiplier*-it, mis muudab "
+"negatiivsete näidete suhet treenimisandmestikus. *maximum sample size* "
+"määrab, mitut näidet ühe klassi kohta mudel treenides näeb."
 
-#: ../../source/tagger.rst:18
+#: ../../source/tagger.rst:26
 msgid ""
-"Then we can hit create and see the training process and result of the "
-"tagger."
+"LinearSVC might give an error in case there's not enough data in the "
+"search."
+msgstr ""
+"LinearSVC võib anda errorit, kui salvestatud otsingus on liiga vähe andmeid."
+
+#: ../../source/tagger.rst:31
+msgid "*Creating Bribe_tag tagger*"
+msgstr "*Bribe_tag tagger-i loomine*"
+
+#: ../../source/tagger.rst:35 ../../source/tagger.rst:101
+msgid "API"
 msgstr ""
 
-#: ../../source/tagger.rst:24
-msgid "Figure 13. *Creating Bribe_tag tagger*"
-msgstr ""
+#: ../../source/tagger.rst:37
+msgid "Endpoint: **/projects/{project_pk}/taggers/**"
+msgstr "Otspunkt (endpoint): **/projects/{project_pk}/taggers/**"
 
-#: ../../source/tagger.rst:30
+#: ../../source/tagger.rst:39 ../../source/tagger.rst:105
+msgid "Example:"
+msgstr "Näidis:"
+
+#: ../../source/tagger.rst:62
+msgid "Usage"
+msgstr "Kasutus"
+
+#: ../../source/tagger.rst:67
 msgid ""
-"Whenever we create a new Tagger model, we can track it's progress from "
-"the table under *Task*. If we click on the job, we can see all the "
+"Whenever a new Tagger model is created, you can track its progress from "
+"the table under *Task*. If you click on the job, you can see all the "
 "training info, how long did it took, and check how successful it was. "
 "Let's not forget that:"
 msgstr ""
+"Iga uue Tagger mudeli progressi saab jälgida tabelis, mis on *Task*-i "
+"all. Sellele reale vajutamine kuvab kogu treenimisinfo - kui kaua "
+"treenimine aega võttis, kui edukas mudel oli. Meeldetuletusena:"
 
-#: ../../source/tagger.rst:28
+#: ../../source/tagger.rst:69
 msgid ""
 "Recall is the ratio of correctly labeled positives among all true "
 "positives."
 msgstr ""
+"Recall ehk saagis on õigesti positiivseks märgendatute ja kõigi "
+"positiivsete elementide suhe."
 
-#: ../../source/tagger.rst:29
+#: ../../source/tagger.rst:70
 msgid ""
 "Precision is the ratio of correctly labeled positives among all instances"
 " that got a positive label."
 msgstr ""
+"Precision is the ratio of correctly labeled positives among all instances"
+" that got a positive label."
 
-#: ../../source/tagger.rst:30
+#: ../../source/tagger.rst:71
 msgid ""
 "F1 score is the harmonic mean of these two and should be more informative"
-" expecially with unbalanced data."
+" especially with unbalanced data."
 msgstr ""
+"F1-skoor on nende kahe harmooniline keskmine ning peaks olema "
+"informatiivsem, eriti just tasakaalust väljas oleva andmestiku puhul."
 
-#: ../../source/tagger.rst:32
-msgid ""
-"If we click on the three dots under *Edit*, we can see a list of extra "
-"actions to use."
-msgstr ""
+#: ../../source/tagger.rst:73
+msgid "The three dots under *Actions* gives you a list of extra actions to use."
+msgstr "Kolm täpikest *Actions*-i all avab lisategevuste nimekirja."
 
-#: ../../source/tagger.rst:34
+#: ../../source/tagger.rst:75
 msgid ""
 "*List features* lists the word-features and their coefficients that the "
 "model used. Works with models that used Count Vectorizer or Tfldf "
 "Vectorizer since their output is displayable."
 msgstr ""
+"*List features* väljastab sõnatunnused ja nende koefitsiendid, mida mudel"
+" kasutas. Töötab mudelitega, mis kasutasid Count Vectorizer-it või Tfldf "
+"Vectorizer-it, kuna nende väljund on kuvatav."
 
-#: ../../source/tagger.rst:36
-msgid ""
-"*Retrain tagger* retrains the whole tagger model with all the chosen "
-"parameters. It's useful in case our dataset changes or we have added some"
-" stop words."
-msgstr ""
-
-#: ../../source/tagger.rst:38
+#: ../../source/tagger.rst:77
 msgid ""
 "*Stop words* is for adding stop words. Stop words are words that the "
-"model do not consider while looking for clues of similarities. It is wise"
-" to add most frequent words in the list like *am*, *on*, *in*, *are*. "
-"Separate the words with space (' ')."
+"model does not consider while looking for clues of similarities. It is "
+"wise to add the most frequent words in the list like *am*, *on*, *in*, "
+"*are*. Separate the words with space (' ')."
 msgstr ""
+"*Stop words* on stopp-sõnade lisamiseks. Stopp-sõnad on sõnad, mida mudel"
+" ei arvesta, kui ta otsib vihjeid sarnasuste kohta. Arukas on lisada "
+"nimekirja kõige sagedasemad sõnad nagu *olema*, *mina*, *sees*, "
+"*kõrvalt*. Sõnad tuleb eraldada tühikuga (' ')."
 
-#: ../../source/tagger.rst:40
+#: ../../source/tagger.rst:79
 msgid ""
-"*Tag text* is to check how does the model work. If we click on that a "
-"window opens. We can paste there some text, choose to lemmatize it "
-"(necessary if our model was trained on a lemmatized text) and post it. We"
-" then recieve the result (True if this text gets the tag and False "
-"otherwise) and the probability. Probability shows how confident is our "
-"model in it's prediction."
+"*Tag text* is to check how does the model work. If you click on that a "
+"window opens. You can paste there some text, choose to lemmatize it "
+"(necessary if your model was trained on a lemmatized text), and post it. "
+"You then receive the result (True if this text gets the tag and False "
+"otherwise) and the probability. Probability shows how confident is your "
+"model in its prediction."
 msgstr ""
+"*Tag text* aitab hõlpsasti kontrollida, kuidas mudel töötab. Sellele "
+"vajutades avaneb aken. Aknasse saab kleepida/kirjutada teksti, valida "
+"selle lemmatiseerimine (vajalik, kui mudel on treenitud lemmatiseeritud "
+"tekstil) ning seejärel see 'postitada' (vajuta *Post*-nuppu). "
+"'Postitamine' väljastab tulemuse (True, kui antud tekst saab vastava "
+"täägi, ja False, kui ei saa) ja ennustuse tõenäosuse (probability). "
+"Tõenäosus näitab, kui kindel on antud mudel oma ennustuses."
 
-#: ../../source/tagger.rst:42
+
+#: ../../source/tagger.rst:81
 msgid ""
-"*Tag doc* is similar to *Tag text*, except the input is in the json "
+"*Tag doc* is similar to *Tag text*, except the input is in the JSON "
 "format."
 msgstr ""
+"*Tag doc* on sarnane *Tag text*-ile, ainult et sisend on JSON-formaadis."
 
-#: ../../source/tagger.rst:44
+#: ../../source/tagger.rst:83
 msgid ""
-"*Tag random doc* takes a random instance from our dataset, displays it "
+"*Tag random doc* takes a random instance from your dataset, displays it, "
 "and returns the result and the probability of this result being correct."
 msgstr ""
+"*Tag random doc* võtab suvalise dokumendi andmestikust, väljastab selle "
+"ja tagastab tulemuse ja vastavasse klassi kuulumise tõenäosuse."
 
-#: ../../source/tagger.rst:46
-msgid "*Delete* is for deleting the model."
-msgstr ""
+#: ../../source/tagger.rst:85
+msgid "*Edit* is for changing the description."
+msgstr "*Edit* on kirjelduse (description) muutmiseks."
 
-#: ../../source/tagger.rst:48
+#: ../../source/tagger.rst:87
 msgid ""
-"In the table view we can also select several models and delete them all "
-"at once by clicking on the dustbin button next to the *+CREATE* button in"
-" the bottom-left. If we have several models, we can search for the right "
-"one by their description or task status. If we have models on several "
-"pages we can change pages in the bottom-right."
+"*Retrain tagger* retrains the whole tagger model with all the chosen "
+"parameters. It's useful in case your dataset changes or you have added "
+"some stop words."
+msgstr ""
+"*Retrain tagger* treenib kogu Tagger mudeli samade parameetritega uuesti."
+"See on kasulik, kui andmestik muutub või juurde on tulnud uusi stopp-sõnu."
+
+#: ../../source/tagger.rst:89
+msgid "*Delete* is for deleting the model."
+msgstr "*Delete* kustutab mudeli."
+
+#: ../../source/tagger.rst:91
+msgid ""
+"In the table view, you can also select several models and delete them all"
+" at once by clicking on the dustbin button next to the *CREATE* button in"
+" the top-left. If you have several models, you can search for the right "
+"one by their description or task status. If you have models on several "
+"pages you can change pages in the top-right."
+msgstr ""
+"Tabeli vaates saame valida mitut mudelit korraga ja kustutada need, "
+"kasutades prügikasti nupukest *+CREATE* nupukese kõrval all vasakul. "
+"Mitme mudeli seast saab õiget otsida nende kirjelduse või *task status*-e"
+" kaudu. Kui mudeleid on palju, saad vahetada kuvamislehekülge all "
+"paremal."
+
+#: ../../source/tagger.rst:98
+msgid "*Bribe_tag tagger*"
 msgstr ""
 
-#: ../../source/tagger.rst:56
-msgid "Figure 14. *Bribe_tag tagger*"
-msgstr ""
-
-#: ../../source/tagger.rst:60
-msgid "API"
-msgstr ""
-
-#: ../../source/tagger.rst:63
-msgid "Train a new tagger"
-msgstr ""
-
-#: ../../source/tagger.rst:65
-msgid "Endpoint: **/projects/{project_pk}/taggers/**"
-msgstr ""
-
-#: ../../source/tagger.rst:67 ../../source/tagger.rst:88
-msgid "Example:"
-msgstr ""
-
-#: ../../source/tagger.rst:84
-msgid "Tag text"
-msgstr ""
-
-#: ../../source/tagger.rst:86
+#: ../../source/tagger.rst:103
 msgid "Endpoint **/projects/{project_pk}/taggers/{id}/tag_text/**"
-msgstr ""
+msgstr "Otspunkt (endpoint): **/projects/{project_pk}/taggers/{id}/tag_text/**"
 
-#: ../../source/tagger.rst:101
+#: ../../source/tagger.rst:118
 msgid "Response:"
-msgstr ""
-
+msgstr "Vastus:"

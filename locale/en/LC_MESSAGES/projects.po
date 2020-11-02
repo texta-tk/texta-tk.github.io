@@ -9,19 +9,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-16 19:51+0300\n"
+"POT-Creation-Date: 2020-11-02 10:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../source/projects.rst:1
 msgid ""
-"`EN <https://docs.texta.ee/v2/regex_tagger.html>`_ `ET "
-"<https://docs.texta.ee/v2/et/regex_tagger.html>`_"
+"`EN <https://docs.texta.ee/v2/projects.html>`_ `ET "
+"<https://docs.texta.ee/v2/et/projects.html>`_"
 msgstr ""
 
 #: ../../source/projects.rst:6
@@ -223,5 +223,10 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Example:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`EN <https://docs.texta.ee/v2/regex_tagger.html>`_ `ET "
+#~ "<https://docs.texta.ee/v2/et/regex_tagger.html>`_"
 #~ msgstr ""
 

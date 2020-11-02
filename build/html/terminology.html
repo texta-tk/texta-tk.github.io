@@ -123,17 +123,17 @@
 .. _anonymizer_concept:</p>
 <div class="section" id="anonymizer">
 <h2>Anonymizer<a class="headerlink" href="#anonymizer" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<p>Anonymizer is a tool for anonymizing names in a text based on a predefined list of names. Each name detected from the text will be substituted with randomly generated pair of initials. You can read more about it <a class="reference internal" href="anonymizer.html#anonymizer"><span class="std std-ref">here</span></a>.</p>
 </div>
 <div class="section" id="id1">
 <h2>Elasticsearch<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<p>Elasticsearch is a distributed, open source search and analytics engine and database for all types of data. You can read more about it <a href="#id2"><span class="problematic" id="id3">:ref:`here &lt;https://www.elastic.co/what-is/elasticsearch&gt;`_</span></a>.</p>
 </div>
 <div class="section" id="embedding">
 <span id="embedding-concept"></span><h2>Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h2>
 <p>Embedding is a statistical model describing the distributional properties of words and phrases, which enables the computation of similarity between words and phrases.
-In TTK, embeddings are used for finding contextually similar keywords to extend search results and building lexicons.
-Furthermore, vectors from word embeddings can also be used in neural classification models in Texta Toolkit.
+In TTK, embeddings are used for finding contextually similar keywords to extend search results (by building lexicons).
+Furthermore, vectors from word embeddings can also be used in neural classification models (<a class="reference internal" href="#tagger-concept"><span class="std std-ref">Taggers</span></a>, <a class="reference internal" href="#tagger-group-concept"><span class="std std-ref">Tagger Groups</span></a>, :ref:` Torch Tagger &lt;torch_tagger_concept&gt;`) in Texta Toolkit.
 TTK currently only supports Word2Vec embeddings, but work is being done to incorporate state of the art embedding models (e.g. BERT from Google Research).
 Furthermore, TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support multilingual text classification.</p>
 </div>

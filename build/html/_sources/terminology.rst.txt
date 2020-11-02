@@ -7,15 +7,13 @@ Here are described the main concepts related to TEXTA Toolkit (TTK).
 
 Anonymizer
 ************
-
-TODO
+Anonymizer is a tool for anonymizing names in a text based on a predefined list of names. Each name detected from the text will be substituted with randomly generated pair of initials. You can read more about it :ref:`here <anonymizer>`.
 
 .. _elasticsearch:
 Elasticsearch
 **************
 
-TODO
-
+Elasticsearch is a distributed, open source search and analytics engine and database for all types of data. You can read more about it :ref:`here <https://www.elastic.co/what-is/elasticsearch>`_.
 
 .. _embedding_concept:
 
@@ -23,8 +21,8 @@ Embedding
 **********
 
 Embedding is a statistical model describing the distributional properties of words and phrases, which enables the computation of similarity between words and phrases.
-In TTK, embeddings are used for finding contextually similar keywords to extend search results and building lexicons.
-Furthermore, vectors from word embeddings can also be used in neural classification models in Texta Toolkit.
+In TTK, embeddings are used for finding contextually similar keywords to extend search results (by building lexicons).
+Furthermore, vectors from word embeddings can also be used in neural classification models (:ref:`Taggers <tagger_concept>`, :ref:`Tagger Groups <tagger_group_concept>`, :ref:` Torch Tagger <torch_tagger_concept>`) in Texta Toolkit.
 TTK currently only supports Word2Vec embeddings, but work is being done to incorporate state of the art embedding models (e.g. BERT from Google Research).
 Furthermore, TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support multilingual text classification.
 

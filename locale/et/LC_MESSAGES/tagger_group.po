@@ -4,19 +4,18 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"POT-Creation-Date: 2020-11-02 10:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../source/tagger_group.rst:3
 msgid "Tagger Group"
@@ -24,211 +23,277 @@ msgstr ""
 
 #: ../../source/tagger_group.rst:5
 msgid ""
-"Tagger Group is for training multible classes at once and it also uses "
-"tags in the dataset given."
+":ref:`Tagger Group <tagger_group_concept>`  is for training multiple "
+"classes at once and it also uses tags in the dataset given."
 msgstr ""
+":ref:`Tagger Group-iga <tagger_group_concept>`saab treeniga mitme klassi klassifitseerimist korraga "
+"ning see kasutab andmestikus olevaid märgendeid."
 
 #: ../../source/tagger_group.rst:10
 msgid "**How do Tagger and Tagger Groups differ?**"
-msgstr ""
+msgstr "**Kuidas erinevad Tagger ja Tagger Groups?**"
 
 #: ../../source/tagger_group.rst:10
 msgid ""
 "One model predicts whether a text is positive (True) or negative (False)."
-" That is, whether this text get's the label or not. Tagger trains only "
-"one model and predicts whether a text is similar to the query/dataset it "
-"was trained on or not. Tagger Group trains several models at once. That "
+" That is, whether this text gets the label or not. Tagger trains only one"
+" model and predicts whether a text is similar to the query/dataset it was"
+" trained on or not. Tagger Group trains several models at once. That "
 "means, it can predict several labels at once. Tagger Group trains on "
-"facts. We can have several values under a certain fact and for each value"
-" (if it has high enough frequency (*Minimum sample size*) a model is "
-"trained."
+"facts. You can have several values under a certain fact and for each "
+"value (if it has high enough frequency (*Minimum sample size*) a model is"
+" trained."
 msgstr ""
+"Üks mudel ennustab, kas tekst on positiivne (True) või negatiivne "
+"(False). St, kas tekst saab märgendi või mitte. Tagger treenib vaid ühe "
+"mudeli ning ennustab, kas tekst on sarnane sellele andmestikule / "
+"salvestatud otsingule, millel see treeniti. Tagger Group treenib mitu "
+"mudelit korraga. St, see võib ennustada mitut märgendit korraga. Tagger "
+"Group treenib end faktide põhjal. Meil võib olla mitu erinevat väärtust "
+"ühe kindla fakti all ning iga väärtuse kohta (kui sellel väärtusel on "
+"piisavalt kõrge sagedus (*Minimum sample size*)) treenitakse eraldi mudel."
 
 #: ../../source/tagger_group.rst:14
 msgid "Creation"
-msgstr ""
+msgstr "Loomine"
 
-#: ../../source/tagger_group.rst:17 ../../source/tagger_group.rst:78
+#: ../../source/tagger_group.rst:17 ../../source/tagger_group.rst:79
 msgid "GUI"
 msgstr ""
 
 #: ../../source/tagger_group.rst:19
 msgid ""
-"We can create a new Tagger Group model by clicking on the '+CREATE' "
-"button in the bottom-left. Then we must choose the name for the new "
-"Tagger Group (*Description*), the facts the model starts to learn on and "
-"the minimum sample size."
+"Create a new Tagger Group model by clicking on the 'CREATE' button in the"
+" top-left. Then choose the name for the new Tagger Group (*Description*),"
+" the facts the model starts to learn on, and the minimum sample size."
 msgstr ""
+"Tagger Group mudelit saab luua üleval vasakul oleva 'CREATE' nupu abil. "
+"Avanenud aknas tuleb valida uuele Tagger Group-ile nimi (*Description*); "
+"faktid, mida mudel õppima hakkab; ja minimaalse sageduse suuruse."
 
 #: ../../source/tagger_group.rst:21
 msgid ""
-"Our input will be the data under the project that is active (we can check"
-" it on the blue panel up-right). We have to select the fields the model "
-"learns from. If we choose two, the fields are just concatenated together "
+"Input will be by default the indices under the active project. If needed,"
+" you can exclude some indices. Next, select the fields the model learns "
+"from. If you choose more than one, the fields are concatenated together "
 "before the learning process. One field is also enough. Usually lemmatized"
 " texts are preferred, especially with morphologically complex languages, "
 "because it increases the frequency of some words (*eaten*, *eats* and "
-"*ate* will change to it's lemma *eat* and are dealt as one word)."
+"*ate* will change to its lemma *eat* and are dealt as one word)."
 msgstr ""
+"Mudeli sisend on projekti all olev aktiivne andmestik. Soovi korral "
+"saab valitud indeksid välja jätta. Andmestikus peab valima väljad,"
+" millel mudel õpib. Kui valitakse kaks välja, kleebitakse need "
+"kokku enne treenimist. Ka ühest väljast piisab. Üldjuhul eelistatakse "
+"lemmatiseeritud teksti, eriti morfoloogiliselt rikaste keeltega, kuna see"
+" tõstab mõnede sõnade sagedust (*söödud*, *sööb* ja *sõi* muutuvad oma "
+"lemmaks *sööma* ja neid käsitletakse ühe sõnana)."
 
 #: ../../source/tagger_group.rst:23
 msgid ""
-"There's also an option to include our existing :ref:`embeddings "
-"<embedding>` into the training."
+"There's an option to include our existing :ref:`embeddings "
+"<embedding_concept>` into the training."
 msgstr ""
+"Olemasolevaid :ref:`sõnavektoreid <embedding>` saab samuti treenimisse "
+"lisada."
 
 #: ../../source/tagger_group.rst:25
 msgid ""
-"Then we need to fine-tune the Tagger Group's classifiers by changing "
-"additional parameters such as Vectorizer (possible feature extractors "
-"are: Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more "
-"about them `here <https://scikit-"
+"You also need to fine-tune the Tagger Group's classifiers by changing "
+"additional parameters such as your previously trained :ref:`embedding "
+"<tembedding_concept>`, Vectorizer (possible feature extractors are: "
+"Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about "
+"them `here <https://scikit-"
 "learn.org/stable/modules/feature_extraction.html>`_) and Classifier "
 "(`Logistic Regression <https://scikit-"
 "learn.org/stable/modules/linear_model.html#logistic-regression>`_, "
 "`LinearSVC <https://scikit-"
-"learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). We "
-"might get an error with LinearSVC in case we don't have enough data in "
-"the search. We can set negative multiplier to change ratio of negative "
-"examples in the training set. We can use maximum sample size per class in"
-" case we want to limit the size of data the model trains on."
+"learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_).  You "
+"can set the negative multiplier to change the ratio of negative examples."
+" You can use the maximum sample size per class in case you want to limit "
+"the size of data the model trains on. After that, all that's left is "
+"hitting the \"Create\"-button (scroll down a bit), seeing the training "
+"process and the result of the tagger."
 msgstr ""
+"Tagger Group-i klassifikaatoreid saab veel sättida lisaparameetritega "
+"nagu Vectorizer (võimalikud tunnuste eraldajad on: Hashing Vectorizer, "
+"Count Vectorizer, Tfldf Vectorizer - loe rohkem nende kohta `siit <https"
+"://scikit-learn.org/stable/modules/feature_extraction.html>`_) ja "
+"Classifier (`Logistic Regression <https://scikit-"
+"learn.org/stable/modules/linear_model.html#logistic-regression>`_, "
+"`LinearSVC <https://scikit-"
+"learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_). "
+"*negative multiplier*-i abiga saab muuta negatiivsete näidete osakaalu "
+"treenimisandmestikus. *maximum sample size* määrab, mitut näidet ühe "
+"klassi kohta mudel treenides näeb."
+"Pärast nende parameetrite sättimist saab vajutada 'Create' ja näha "
+"märgendaja treenimisprotsessi ja tulemusi."
+
+#: ../../source/tagger_group.rst:28
+msgid ""
+"LinearSVC might give an error in case there's not enough data in the "
+"search."
+msgstr ""
+"LinearSVC võib anda errorit, kui otsingus ei ole piisavalt andmeid. "
 
 #: ../../source/tagger_group.rst:33
-msgid "Figure 15. *Creating a Tagger Group*"
-msgstr ""
+msgid "*Creating a Tagger Group*"
+msgstr "Tagger Group-i loomine"
 
-#: ../../source/tagger_group.rst:35
+#: ../../source/tagger_group.rst:38
 msgid ""
-"Then we can hit create and see the training process and result of the "
-"tagger as seen in Figure 14."
-msgstr ""
-
-#: ../../source/tagger_group.rst:42
-msgid "Figure 16. *Created Tagger Group*"
-msgstr ""
-
-#: ../../source/tagger_group.rst:47
-msgid ""
-"Whenever we create new Tagger Group models, we can track it's progress "
+"Whenever we create new Tagger Group models, we can track its progress "
 "from the table under *Task*. If we click on the job, we can see all the "
 "training info, how long did it took, and check how successful it was. "
 "Let's not forget that:"
 msgstr ""
+"Uue Tagger Group mudeli progressi saab jälgida tabelist, mis ilmub "
+"*Task*-i all. Kui me vajutame mudelile, näeme kogu treenimisinfot - kui "
+"kaua treenimine aega võttis ja kui edukas mudel on. Meeldetuletusena:"
 
-#: ../../source/tagger_group.rst:45
+#: ../../source/tagger_group.rst:36
 msgid ""
 "Recall is the ratio of correctly labeled positives among all true "
 "positives. Avg.recall is the average of all the models' recalls."
 msgstr ""
+"Recall ehk saagis on õigesti positiivseks märgendatute ja kõigi "
+"positiivsete elementide suhe. Avg.recall ehk saagise keskmine on kõigi "
+"mudeli saagiste keskmine."
 
-#: ../../source/tagger_group.rst:46
+#: ../../source/tagger_group.rst:37
 msgid ""
 "Precision is the ratio of correctly labeled positives among all instances"
 " that got a positive label. Avg.precision is the average of all the "
 "models' precisions."
 msgstr ""
+"Precision ehk täpsus on õigesti positiivseks märgendatud ja kõigi "
+"positiivseks märgendatud elementide suhe. Avg.precision ehk täpsuse "
+"keskmine on kõigi mudeli täpsuste keskmine."
 
-#: ../../source/tagger_group.rst:47
+#: ../../source/tagger_group.rst:38
 msgid ""
 "F1 score is the harmonic mean of these two and should be more informative"
-" expecially with unbalanced data. Avg.F1_score is the average of all the "
+" especially with unbalanced data. Avg.F1_score is the average of all the "
 "models' F1 scores."
 msgstr ""
+"F1-skoor on nende kahe harmooniline keskmine ning peaks olema "
+"informatiivsem, eriti just tasakaalust väljas oleva andmestiku puhul. "
+"Avg.F1_score on kõigi mudeli F1-skooride keskmine."
 
-#: ../../source/tagger_group.rst:50 ../../source/tagger_group.rst:96
+#: ../../source/tagger_group.rst:44
+msgid "*Created Tagger Group*"
+msgstr "Loodud Tagger Group"
+
+#: ../../source/tagger_group.rst:47 ../../source/tagger_group.rst:99
 msgid "API"
 msgstr ""
 
-#: ../../source/tagger_group.rst:51
+#: ../../source/tagger_group.rst:48
 msgid "Endpoint: **/projects/{project_pk}/tagger_groups/**"
-msgstr ""
+msgstr "Otspunkt (endpoint): **/projects/{project_pk}/tagger_groups/**"
 
-#: ../../source/tagger_group.rst:53 ../../source/tagger_group.rst:103
+#: ../../source/tagger_group.rst:50 ../../source/tagger_group.rst:103
 msgid "Example:"
-msgstr ""
+msgstr "Näidis:"
 
-#: ../../source/tagger_group.rst:75
-msgid "Useage"
-msgstr ""
+#: ../../source/tagger_group.rst:76
+msgid "Usage"
+msgstr "Kasutus"
 
-#: ../../source/tagger_group.rst:79
+#: ../../source/tagger_group.rst:80
 msgid ""
-"If we click on the three dots under *Edit*, we can see a list of extra "
-"actions to use."
+"If you click on the three dots under *Actions*, you can see a list of "
+"extra actions to use."
 msgstr ""
+"Kolm täpikest *Actions*-i all avab lisategevuste nimekirja."
 
-#: ../../source/tagger_group.rst:81
+#: ../../source/tagger_group.rst:82
 msgid ""
 "*Models retrain* retrains all of the Tagger Group models with all the "
-"chosen parameters. It's useful in case our dataset changes or we have "
+"chosen parameters. It's useful in case your dataset changes or you have "
 "added some stop words."
 msgstr ""
+"*Models tagger* treenib kõik Tagger Group-i mudelid samade parameetritega uuesti."
+"See on kasulik, kui andmestik muutub või juurde on tulnud uusi stopp-sõnu."
 
-#: ../../source/tagger_group.rst:83
+#: ../../source/tagger_group.rst:84
 msgid ""
-"*Models list* displays us the models the Tagger Group trained. We can "
+"*Models list* displays the models the Tagger Group trained. You can "
 "inspect which kind of labels were trained."
 msgstr ""
+"*Models list* kuvab mudeleid, mille Tagger Group treenis. Sealt saab "
+"vaadata, milliseid sildid/märgendid treeniti."
 
-#: ../../source/tagger_group.rst:85
+#: ../../source/tagger_group.rst:86
 msgid ""
-"*Tag text* is to check how does the model work. If we click on that, a "
-"window opens. We can paste there some text, choose to lemmatize it "
-"(necessary if our model was trained on a lemmatized text) and choose to "
-"use NER and post it. We then recieve the result (all the labels which "
-"model predicted True for this text) and the probability of this label "
-"being true. Probability shows how confident is this model in it's "
-"prediction. *Number of similar documents* is the number of most similar "
-"documents to the document in question. Tags given to these documents are "
-"tested on the document to be tagged."
+"*Tag text* is to check how does the model work. If you click on that, a "
+"window opens. You can paste there some text, choose to lemmatize it "
+"(necessary if our model was trained on a lemmatized text), and choose to "
+"use NER and post it. You then receive the result (all the labels which "
+"model predicted True for this text) and the probability of this label is "
+"true. Probability shows how confident is this model in its prediction. "
+"*Number of similar documents* is the number of most similar documents to "
+"the document in question. Tags given to these documents are tested on the"
+" document to be tagged."
 msgstr ""
+"*Tag text* aitab hõlpsasti kontrollida, kuidas mudel töötab. Sellele "
+"vajutades avaneb aken. Aknasse saab kleepida/kirjutada teksti, valida "
+"selle lemmatiseerimine (vajalik, kui mudel on treenitud lemmatiseeritud "
+"tekstil) ning seejärel see 'postitada' (vajuta *Post*-nuppu). "
+"'Postitamine' väljastab tulemuse (kõik märgendid, mille kohta mudel "
+"ennustas sellele tekstile True) ja iga täägi kohta tõenäosuse "
+"(probability), et see märgend käib selle teksti kohta. Tõenäosus näitab, "
+"kui kindel on antud mudel oma ennustuses. *Number of similar documents* "
+"on antud dokumendiga sarnaste dokumentide arv. Nendele dokumentidele "
+"märgendatud märgendeid testitakse uue antud dokumendi peal."
 
-#: ../../source/tagger_group.rst:87
+#: ../../source/tagger_group.rst:88
 msgid ""
-"*Tag doc* is similar to *Tag text*, except the input is in the json "
+"*Tag doc* is similar to *Tag text*, except the input is in the JSON "
 "format. *Number of similar documents* is the number of most similar "
 "documents to the document in question. Tags given to these documents are "
 "tested on the document to be tagged."
 msgstr ""
+"*Tag doc* on sarnane *Tag text*-ile, ainult et sisend on JSON-formaadis. "
+"*Number of similar documents* on antud dokumendiga sarnaste dokumentide "
+"arv. Nendele dokumentidele märgendatud märgendeid testitakse uue antud "
+"dokumendi peal."
 
-#: ../../source/tagger_group.rst:89
+#: ../../source/tagger_group.rst:90
 msgid ""
-"*Tag random doc* takes a random instance from our dataset, displays it "
-"and returns the positive results of our models and the probability of "
+"*Tag random doc* takes a random instance from your dataset, displays it, "
+"and returns the positive results of your models and the probability of "
 "these results being correct."
 msgstr ""
+"*Tag random doc* võtab suvalise dokumendi andmestikust, väljastab selle "
+"ja tagastab tulemused ja vastavatesse klassidesse kuulumise tõenäosuse."
 
-#: ../../source/tagger_group.rst:91
+#: ../../source/tagger_group.rst:92
+msgid "*Edit* is for changing the description."
+msgstr "*Edit* on kirjelduse (description) muutmiseks."
+
+#: ../../source/tagger_group.rst:94
 msgid "*Delete* is for deleting the model."
-msgstr ""
+msgstr "*Delete* kustutab mudeli."
 
-#: ../../source/tagger_group.rst:93
+#: ../../source/tagger_group.rst:96
 msgid ""
-"In the table view we can also select several Tagger Groups and delete "
-"them all at once by clicking on the dustbin button next to the *+CREATE* "
-"button in the bottom-left. If we have several Tagger Groups, we can "
-"search for the right one by their description or task status. If we have "
-"models on several pages we can change pages in the bottom-right."
+"In the table view, you can also select several Tagger Groups and delete "
+"them all at once by clicking on the dustbin button next to the *CREATE* "
+"button in the top-left. If you have several Tagger Groups, you can search"
+" for the right one by their description or task status. If you have "
+"models on several pages you can change pages in the top-right."
 msgstr ""
-
-#: ../../source/tagger_group.rst:99
-msgid "Tag text"
-msgstr ""
+"Tabeli vaates saame valida mitu mudelit korraga ja kustutada need, "
+"kasutades prügikasti nupukest *CREATE* nupukese kõrval üleval vasakul. "
+"Mitme Tagger Groups mudeli seast saab õiget otsida nende kirjelduse või "
+"*task status*-e kaudu. Kui mudeleid on palju, saad vahetada "
+"kuvamislehekülge üleval paremal."
 
 #: ../../source/tagger_group.rst:101
 msgid "Endpoint: **/projects/{project_pk}/tagger_groups/{id}/tag_text/**"
-msgstr ""
+msgstr "Otspunkt (endpoint): **/projects/{project_pk}/tagger_groups/{id}/tag_text/**"
 
-#: ../../source/tagger_group.rst:118
+#: ../../source/tagger_group.rst:120
 msgid "Response:"
-msgstr ""
-
-#: ../../source/tagger_group.rst:137
-msgid "Application"
-msgstr ""
-
-#: ../../source/tagger_group.rst:140
-msgid "Fine-Tuning"
-msgstr ""
-
+msgstr "Vastus:"
