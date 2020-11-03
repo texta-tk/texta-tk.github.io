@@ -9,6 +9,7 @@
 Texta Toolkit
 =============
 
+
 TEXTA Toolkit is an open-source software for building RESTful text analytics applications.
 It is being developed by `TEXTA Ltd <https://www.texta.ee>`_.
 This documentation contains information about installing and running **TEXTA Toolkit 2.x**.
