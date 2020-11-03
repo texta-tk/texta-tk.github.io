@@ -1,3 +1,4 @@
+.. _reindexer:
 `EN <https://docs.texta.ee/v2/reindexer.html>`_
 `ET <https://docs.texta.ee/v2/et/reindexer.html>`_
 

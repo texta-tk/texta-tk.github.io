@@ -3,10 +3,11 @@ Terminology
 ############
 
 Here are described the main concepts related to TEXTA Toolkit (TTK).
-.. _anonymizer_concept:
 
+.. _anonymizer_concept:
 Anonymizer
 ************
+
 Anonymizer is a tool for anonymizing names in a text based on a predefined list of names. Each name detected from the text will be substituted with randomly generated pair of initials. You can read more about it :ref:`here <anonymizer>`.
 
 .. _elasticsearch:
@@ -16,7 +17,6 @@ Elasticsearch
 Elasticsearch is a distributed, open source search and analytics engine and database for all types of data. You can read more about it :ref:`here <https://www.elastic.co/what-is/elasticsearch>`_.
 
 .. _embedding_concept:
-
 Embedding
 **********
 
@@ -27,7 +27,6 @@ TTK currently only supports Word2Vec embeddings, but work is being done to incor
 Furthermore, TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support multilingual text classification.
 
 .. _texta_fact:
-
 Fact
 ********
 
@@ -92,6 +91,12 @@ Field
 
 Each document is a collection of fields. Field is a separated piece of information in that document. For example, we can have an article with fields containing the text, the date of publishing, headline, etc.
 
+
+.. _health_concept:
+Health
+******
+Server health is a comprehensive overview of the status and performance of individual servers. It includes hardware parameters and, in our case, the TTK version numbers and the state of needed services. See :ref:`here <mlp_p>` how to check TTK's health.
+
 .. _index_concept:
 
 Index
@@ -99,12 +104,18 @@ Index
 
 Index is a collection of documents in Elasticsearch. In Search output the table consists of all the suitable documents filtered out from that index and one row indicates a document.
 
+.. _lexicon_miner_concept:
+Lexicon miner
+*************
+TODO
+
 
 .. _mlp:
 
-Multilingual Preprocessor
-*************************
-TODO
+Multilingual Preprocessor (MLP)
+*******************************
+
+MLP offers different analyzing options that give more features (information) for machine learning applications in TTK and helps to parse the information out of textual data user is interested in. Read more about the usage :ref:`here <mlp_p>`.
 
 
 Project
@@ -125,6 +136,22 @@ Regex Tagger Group
 ************************
 
 Regex Tagger Group allows combining different Regex Taggers.
+
+.. _reindexer_concept:
+Reindexer
+*********
+
+Reindexer is a tool for making copies or subsets of Elasticsearch :ref:`indices <index_concept>`. Reindexer can be used for various data management tasks:
+
+- Making a copy of an index;
+- Merging multiple indices into one;
+- Making a random subset of an index;
+- Making a subset based on predefined query;
+- Renaming fields;
+- Updating Elasticsearch field types.
+
+Read more about it :ref:`here <reindexer>`.
+
 
 .. _search_concept:
 
@@ -157,6 +184,7 @@ TTK automatically splits the training data into training and testing data (by de
 SVM model is also used for feature selection to remove unimportant features from the model making it smaller.
 For features, both word-based and character-based n-grams are used.
 
+.. _task:
 Task
 ********
 
@@ -185,3 +213,8 @@ Since all models have been developed using PyTorch, introducing new models is fa
 TorchTagger models also include the possibility to use pre-trained word vectors (e.g. Word2Vec trained in TTK) in the embedding layer of the models.
 To create data processing pipelines, Torch Tagger uses torchtext package.
 Torch Tagger has been validated on monolingual toxic comment detection, reaching accuracy and F1-score of 96%.
+
+.. _uaa:
+
+UUA server
+**********
