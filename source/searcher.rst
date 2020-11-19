@@ -1,6 +1,8 @@
 `EN <https://docs.texta.ee/v2/searcher.html>`_
 `ET <https://docs.texta.ee/v2/et/searcher.html>`_
 
+.. _searcher:
+
 ########
 Search
 ########

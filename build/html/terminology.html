@@ -15,7 +15,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Bert Tagger" href="bert_tagger.html" />
+    <link rel="prev" title="Use Cases" href="use_cases.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -62,23 +62,28 @@
 <li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Terminology</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#anonymizer">Anonymizer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Elasticsearch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#embedding">Embedding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fact">Fact</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#field">Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#health">Health</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#index">Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#multilingual-preprocessor">Multilingual Preprocessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lexicon-miner">Lexicon miner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multilingual-preprocessor-mlp">Multilingual Preprocessor (MLP)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#project">Project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#regex-tagger">Regex Tagger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#regex-tagger-group">Regex Tagger Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reindexer">Reindexer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#search">Search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tagger-group">Tagger Group</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tagger">Tagger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#task">Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Task</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#topic-analyzer">Topic Analyzer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#torch-tagger">Torch Tagger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uua-server">UUA server</a></li>
 </ul>
 </li>
 </ul>
@@ -87,7 +92,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="bert_tagger.html" title="previous chapter">Bert Tagger</a></li>
+      <li>Previous: <a href="use_cases.html" title="previous chapter">Use Cases</a></li>
   </ul></li>
 </ul>
 </div>
@@ -119,8 +124,7 @@
             
   <div class="section" id="terminology">
 <h1>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h1>
-<p>Here are described the main concepts related to TEXTA Toolkit (TTK).
-.. _anonymizer_concept:</p>
+<p>Here are described the main concepts related to TEXTA Toolkit (TTK).</p>
 <div class="section" id="anonymizer">
 <h2>Anonymizer<a class="headerlink" href="#anonymizer" title="Permalink to this headline">¶</a></h2>
 <p>Anonymizer is a tool for anonymizing names in a text based on a predefined list of names. Each name detected from the text will be substituted with randomly generated pair of initials. You can read more about it <a class="reference internal" href="anonymizer.html#anonymizer"><span class="std std-ref">here</span></a>.</p>
@@ -130,7 +134,7 @@
 <p>Elasticsearch is a distributed, open source search and analytics engine and database for all types of data. You can read more about it <a href="#id2"><span class="problematic" id="id3">:ref:`here &lt;https://www.elastic.co/what-is/elasticsearch&gt;`_</span></a>.</p>
 </div>
 <div class="section" id="embedding">
-<span id="embedding-concept"></span><h2>Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h2>
+<h2>Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h2>
 <p>Embedding is a statistical model describing the distributional properties of words and phrases, which enables the computation of similarity between words and phrases.
 In TTK, embeddings are used for finding contextually similar keywords to extend search results (by building lexicons).
 Furthermore, vectors from word embeddings can also be used in neural classification models (<a class="reference internal" href="#tagger-concept"><span class="std std-ref">Taggers</span></a>, <a class="reference internal" href="#tagger-group-concept"><span class="std std-ref">Tagger Groups</span></a>, :ref:` Torch Tagger &lt;torch_tagger_concept&gt;`) in Texta Toolkit.
@@ -138,7 +142,7 @@ TTK currently only supports Word2Vec embeddings, but work is being done to incor
 Furthermore, TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support multilingual text classification.</p>
 </div>
 <div class="section" id="fact">
-<span id="texta-fact"></span><h2>Fact<a class="headerlink" href="#fact" title="Permalink to this headline">¶</a></h2>
+<h2>Fact<a class="headerlink" href="#fact" title="Permalink to this headline">¶</a></h2>
 <p>In TTK text annotations are regarded as facts:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
     <span class="s2">&quot;doc_path&quot;</span>: <span class="s2">&quot;content.text&quot;</span>,
@@ -221,13 +225,21 @@ It won’t tag any foreign company nor address while ORG and LOC identifies all 
 <span id="field-concept"></span><h2>Field<a class="headerlink" href="#field" title="Permalink to this headline">¶</a></h2>
 <p>Each document is a collection of fields. Field is a separated piece of information in that document. For example, we can have an article with fields containing the text, the date of publishing, headline, etc.</p>
 </div>
+<div class="section" id="health">
+<h2>Health<a class="headerlink" href="#health" title="Permalink to this headline">¶</a></h2>
+<p>Server health is a comprehensive overview of the status and performance of individual servers. It includes hardware parameters and, in our case, the TTK version numbers and the state of needed services. See <a class="reference internal" href="mlp.html#mlp-p"><span class="std std-ref">here</span></a> how to check TTK’s health.</p>
+</div>
 <div class="section" id="index">
 <span id="index-concept"></span><h2>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h2>
 <p>Index is a collection of documents in Elasticsearch. In Search output the table consists of all the suitable documents filtered out from that index and one row indicates a document.</p>
 </div>
-<div class="section" id="multilingual-preprocessor">
-<span id="mlp"></span><h2>Multilingual Preprocessor<a class="headerlink" href="#multilingual-preprocessor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lexicon-miner">
+<h2>Lexicon miner<a class="headerlink" href="#lexicon-miner" title="Permalink to this headline">¶</a></h2>
 <p>TODO</p>
+</div>
+<div class="section" id="multilingual-preprocessor-mlp">
+<span id="mlp"></span><h2>Multilingual Preprocessor (MLP)<a class="headerlink" href="#multilingual-preprocessor-mlp" title="Permalink to this headline">¶</a></h2>
+<p>MLP offers different analyzing options that give more features (information) for machine learning applications in TTK and helps to parse the information out of textual data user is interested in. Read more about the usage <a class="reference internal" href="mlp.html#mlp-p"><span class="std std-ref">here</span></a>.</p>
 </div>
 <div class="section" id="project">
 <h2>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
@@ -240,6 +252,19 @@ It won’t tag any foreign company nor address while ORG and LOC identifies all 
 <div class="section" id="regex-tagger-group">
 <span id="regex-tagger-group-concept"></span><h2>Regex Tagger Group<a class="headerlink" href="#regex-tagger-group" title="Permalink to this headline">¶</a></h2>
 <p>Regex Tagger Group allows combining different Regex Taggers.</p>
+</div>
+<div class="section" id="reindexer">
+<h2>Reindexer<a class="headerlink" href="#reindexer" title="Permalink to this headline">¶</a></h2>
+<p>Reindexer is a tool for making copies or subsets of Elasticsearch <a class="reference internal" href="#index-concept"><span class="std std-ref">indices</span></a>. Reindexer can be used for various data management tasks:</p>
+<ul class="simple">
+<li><p>Making a copy of an index;</p></li>
+<li><p>Merging multiple indices into one;</p></li>
+<li><p>Making a random subset of an index;</p></li>
+<li><p>Making a subset based on predefined query;</p></li>
+<li><p>Renaming fields;</p></li>
+<li><p>Updating Elasticsearch field types.</p></li>
+</ul>
+<p>Read more about it <a class="reference internal" href="reindexer.html#reindexer"><span class="std std-ref">here</span></a>.</p>
 </div>
 <div class="section" id="search">
 <span id="search-concept"></span><h2>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h2>
@@ -263,8 +288,8 @@ TTK automatically splits the training data into training and testing data (by de
 SVM model is also used for feature selection to remove unimportant features from the model making it smaller.
 For features, both word-based and character-based n-grams are used.</p>
 </div>
-<div class="section" id="task">
-<h2>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>Task<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>TEXTA Toolkit allows to build several different statistical models to process the text. The training process is initiated via TTK API or GUI, which results in creating of the object in TTK data model and starting the asynchronous training task. Tasks are data objects for keeping track of training progress of trainable statistical models.</p>
 </div>
 <div class="section" id="topic-analyzer">
@@ -282,6 +307,9 @@ Since all models have been developed using PyTorch, introducing new models is fa
 TorchTagger models also include the possibility to use pre-trained word vectors (e.g. Word2Vec trained in TTK) in the embedding layer of the models.
 To create data processing pipelines, Torch Tagger uses torchtext package.
 Torch Tagger has been validated on monolingual toxic comment detection, reaching accuracy and F1-score of 96%.</p>
+</div>
+<div class="section" id="uua-server">
+<span id="uaa"></span><h2>UUA server<a class="headerlink" href="#uua-server" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

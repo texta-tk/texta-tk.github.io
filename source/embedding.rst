@@ -2,6 +2,8 @@
 Embedding
 #########
 
+.. _create_embedding:
+
 Create
 *******
 

@@ -1,6 +1,9 @@
 `EN <https://docs.texta.ee/v2/projects.html>`_
 `ET <https://docs.texta.ee/v2/et/projects.html>`_
 
+
+.. _project:
+
 #########
 Projects
 #########
