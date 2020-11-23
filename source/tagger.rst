@@ -1,3 +1,4 @@
+.. _tagger:
 #######
 Tagger
 #######
@@ -57,6 +58,7 @@ Example:
             }'
 
 
+.. _tagger_usage:
 
 Usage
 *******

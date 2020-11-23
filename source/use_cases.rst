@@ -15,7 +15,6 @@ Pre-requirements:
 
 * A project with the sputnik newspaper articles dataset is :ref:`created <project>`.
 * This project is active (chosen on the upper panel in the right).
-* :ref:`Searcher <searcher>` is open.
 
 Train an embedding
 ====================
@@ -114,5 +113,61 @@ The aggregation outputs a line chart with the results. The X-axis is the raw fre
 See more aggregating examples under :ref:`Search <aggregations>`.
 
 
-Train a classifier
-*******************
+Does my new document belong to this subset?
+*******************************************
+
+Goal: *To train a classifier that detects whether a certain document belongs to the chosen subset of documents or not*
+
+
+Pre-requirements:
+
+* A project with the sputnik newspaper articles dataset is :ref:`created <project>`.
+* This project is active (chosen on the upper panel in the right).
+
+Create a subset of positive documents
+=======================================
+
+When the user already has the dataset tagged in some way (dataset contains a certain Tag field with the tag, for example), they can use the Searcher to filter the tagged documents out as the positive examples and save it.
+
+When the dataset does not already contain the tagged documents, the user can train an embedding and use the Lexicon Miner and/or the Searcher for creating some theme-related subset. There is an example of that in the first use case above.
+
+This use case follows the first scenario and saves a subset of documents with "Middle East" in its rubric field (see :numref:`search_middleeast`). These will be positive examples similar to which the trained tagger later on tags also as positive. The user saves the search via floppy disk icon near the Current Search panel.
+
+.. _search_middleeast:
+.. figure:: images/use_cases/search_middleeast.png
+
+	*Search constraint for finding articles with "Middle East" in the rubric field*
+
+Train the classifier
+=====================
+
+Under Models > :ref:`Taggers <tagger>` a classifier (tagger) can be trained. User clicks on the "CREATE" button in the top left and chooses suitable parameters in the pop-up window. The saved search is chosen as the query. Fields "article_text_mlp.text" and "title" will be just concatenated together. User can test different vectorizers and classifiers and their parameters by training different classifiers with the same positive dataset or leave them default. 
+
+.. _tagger_middleeast:
+.. figure:: images/use_cases/tagger_middleeast.png
+
+	*Creating a classifier for tagging Middle East-related articles*
+	
+After hitting the "Create"-button (scroll down a bit if necessary) all left to do is to wait a bit until the classifier finishes training.
+
+Test the classifier
+====================
+
+The easiest way to quickly test the new classifier is to use "tag random doc" under the three dots under Actions. This takes a random document from the dataset and outputs the tagger's result and probability of that result being correct. 
+
+.. _tag_random:
+.. figure:: images/use_cases/tag_random.png
+
+	*Tag random doc*
+	
+.. _correct_false:
+.. figure:: images/use_cases/correct_false.png
+
+	*Random doc is not Middle East themed and tagger outputs correctly False*
+
+.. _correct_true:
+.. figure:: images/use_cases/correct_true.png
+
+	*Random doc is Middle East themed and tagger outputs correctly True*	
+	
+User can also paste their text into "tag text" box for classification or use the new tagger via API. Read more about these options :ref:`here <tagger_usage>`.
