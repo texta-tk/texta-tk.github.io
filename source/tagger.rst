@@ -44,6 +44,7 @@ Parameters
 	
 **negative multiplier**:
 	*The negative multiplier* is for changing the ratio of negative examples.
+
 GUI
 ====
 
