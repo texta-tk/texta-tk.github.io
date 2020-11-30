@@ -1,6 +1,8 @@
 `EN <https://docs.texta.ee/v2/regex_tagger.html>`_
 `ET <https://docs.texta.ee/v2/et/regex_tagger.html>`_
+
 .. _regex_tagger:
+
 ################
 Regex Tagger
 ################

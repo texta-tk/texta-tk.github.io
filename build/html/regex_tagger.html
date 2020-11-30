@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Creation &#8212; TEXTA Toolkit 2 documentation</title>
+    <title>Regex Tagger &#8212; TEXTA Toolkit 2 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,7 +15,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Creation" href="regex_tagger_group.html" />
+    <link rel="next" title="Regex Tagger Group" href="regex_tagger_group.html" />
     <link rel="prev" title="Tagger Group" href="tagger_group.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -45,11 +45,7 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
@@ -63,42 +59,24 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Creation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Regex Tagger</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api">API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#usage">Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#delete">Delete</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">API</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#duplicate">Duplicate</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">API</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#edit">Edit</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id5">GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">API</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#tag-random-doc">Tag Random Doc</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id7">GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">API</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#tag-text">Tag Text</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id9">GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#delete">Delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#duplicate">Duplicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit">Edit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-random-doc">Tag Random Doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-text">Tag Text</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
@@ -110,7 +88,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="tagger_group.html" title="previous chapter">Tagger Group</a></li>
-      <li>Next: <a href="regex_tagger_group.html" title="next chapter">Creation</a></li>
+      <li>Next: <a href="regex_tagger_group.html" title="next chapter">Regex Tagger Group</a></li>
   </ul></li>
 </ul>
 </div>
@@ -141,21 +119,19 @@
           <div class="body" role="main">
             
   <p><a class="reference external" href="https://docs.texta.ee/v2/regex_tagger.html">EN</a>
-<a class="reference external" href="https://docs.texta.ee/v2/et/regex_tagger.html">ET</a>
-.. _regex_tagger:
-################
-Regex Tagger
-################</p>
+<a class="reference external" href="https://docs.texta.ee/v2/et/regex_tagger.html">ET</a></p>
+<div class="section" id="regex-tagger">
+<span id="id1"></span><h1>Regex Tagger<a class="headerlink" href="#regex-tagger" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference internal" href="terminology.html#regex-tagger-concept"><span class="std std-ref">Regex Tagger</span></a> is a tool for tagging texts based on predefined <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> , i.e. regexes.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Regex Tagger is built on <a class="reference external" href="https://docs.python.org/3/library/re.html">Python’s regex module</a> and thus it’s important to use the same syntax while constructing your patterns.</p>
 </div>
 <div class="section" id="creation">
-<h1>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">¶</a></h1>
+<h2>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">¶</a></h2>
 <p>The following section covers everything we need to know about creating Regex Taggers. For getting an overview of the input parameters, see subsection <a class="reference internal" href="#creation-parameters"><span class="std std-ref">Parameters</span></a>; for creating a Regex Tagger via graphical user interface, see subsection <a class="reference internal" href="#creation-gui"><span class="std std-ref">GUI</span></a>; for creating a Regex Tagger via API, see subsection <a class="reference internal" href="#creation-api"><span class="std std-ref">API</span></a>.</p>
 <div class="section" id="parameters">
-<span id="creation-parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<span id="creation-parameters"></span><h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
 <p>The following section gives an overview of Regex Tagger input parameters.</p>
 <dl class="simple" id="param-description">
 <dt><strong>description</strong>:</dt><dd><p>Name of the Regex Tagger model, which is also used as name of the tag while tagging the documents.</p>
@@ -252,35 +228,35 @@ Regex Tagger
 </dl>
 </div>
 <div class="section" id="gui">
-<span id="creation-gui"></span><h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
+<span id="creation-gui"></span><h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
 <p>For creating a new Regex Tagger model, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 61</span></a>.</p>
-<div class="figure align-center" id="id11">
+<div class="figure align-center" id="id12">
 <span id="regex-tagger-navigation"></span><a class="reference internal image-reference" href="_images/regex_taggers_nav.png"><img alt="_images/regex_taggers_nav.png" src="_images/regex_taggers_nav.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 61 </span><span class="caption-text"><em>Regex Taggers navigation</em></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 61 </span><span class="caption-text"><em>Regex Taggers navigation</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>If the navigation is successful, you should see a panel similar to <a class="reference internal" href="#regex-tagger-create-button"><span class="std std-numref">Fig. 62</span></a> with <cite>“Create”</cite> button in the top left corner of the page.</p>
-<div class="figure align-center" id="id12">
+<div class="figure align-center" id="id13">
 <span id="regex-tagger-create-button"></span><a class="reference internal image-reference" href="_images/regex_taggers_create_1.png"><img alt="_images/regex_taggers_create_1.png" src="_images/regex_taggers_create_1.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text"><em>Regex Tagger creation button</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text"><em>Regex Tagger creation button</em></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>Clicking on the <cite>“Create”</cite> button opens a modal window with text <cite>“New Regex Tagger”</cite> as depicted in <a class="reference internal" href="#regex-tagger-new-regex-tagger"><span class="std std-numref">Fig. 63</span></a>.</p>
-<div class="figure align-center" id="id13">
+<div class="figure align-center" id="id14">
 <span id="regex-tagger-new-regex-tagger"></span><a class="reference internal image-reference" href="_images/regex_taggers_new_regex_tagger_mw.png"><img alt="_images/regex_taggers_new_regex_tagger_mw.png" src="_images/regex_taggers_new_regex_tagger_mw.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 63 </span><span class="caption-text"><em>Empty Regex Tagger creation view</em></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 63 </span><span class="caption-text"><em>Empty Regex Tagger creation view</em></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>Fill the required <a class="reference internal" href="terminology.html#field-concept"><span class="std std-ref">fields</span></a> and click on the <cite>“Create”</cite> button in the bottom right corner of the window (<a class="reference internal" href="#regex-tagger-create-view"><span class="std std-numref">Fig. 64</span></a>).</p>
-<div class="figure align-center" id="id14">
+<div class="figure align-center" id="id15">
 <span id="regex-tagger-create-view"></span><a class="reference internal image-reference" href="_images/regex_taggers_create_2.png"><img alt="_images/regex_taggers_create_2.png" src="_images/regex_taggers_create_2.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 64 </span><span class="caption-text"><em>Filled Regex Tagger creation view</em></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 64 </span><span class="caption-text"><em>Filled Regex Tagger creation view</em></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>The created Regex Tagger can now be seen as the first (or only, if no previous Regex Taggers exist under the project) row in the table of Regex Tagger models (<a class="reference internal" href="#regex-taggers-list"><span class="std std-numref">Fig. 65</span></a>).</p>
-<div class="figure align-center" id="id15">
+<div class="figure align-center" id="id16">
 <span id="regex-taggers-list"></span><a class="reference internal image-reference" href="_images/regex_taggers_list.png"><img alt="_images/regex_taggers_list.png" src="_images/regex_taggers_list.png" style="width: 600pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 65 </span><span class="caption-text"><em>List of Regex Taggers.</em></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 65 </span><span class="caption-text"><em>List of Regex Taggers.</em></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="api">
-<span id="creation-api"></span><h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<span id="creation-api"></span><h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
 <p>Endpoint <strong>/projects/{project_pk}/regex_taggers/</strong></p>
 <p>Example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/1/regex_taggers/&quot;</span> <span class="se">\</span>
@@ -336,34 +312,34 @@ Regex Tagger
 </div>
 </div>
 <div class="section" id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <p>The following section covers all functions supported by Regex Tagger. PS! Some of the functions can only be applied through API as they have no meaningful usage scenarios in GUI.</p>
 <div class="section" id="delete">
-<h2>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
+<h3>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
 <p>Function <cite>“Delete”</cite> allows deleting existing Regex Tagger models.</p>
-<div class="section" id="id1">
-<h3>GUI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h4>GUI<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>For deleting a Regex Tagger model through GUI, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 61</span></a>. There are two options for deleting a Regex Tagger model:</p>
 <p><strong>Option 1</strong>:</p>
 <p>Select the model you wish to delete by navigating to the options panel denoted with three vertical dots as seen in <a class="reference internal" href="#regex-tagger-list-v2"><span class="std std-numref">Fig. 78</span></a> and select option <cite>“Delete”</cite> from the selection menu as seen in <a class="reference internal" href="#regex-tagger-delete"><span class="std std-numref">Fig. 66</span></a>.</p>
-<div class="figure align-center" id="id16">
+<div class="figure align-center" id="id17">
 <span id="regex-tagger-delete"></span><a class="reference internal image-reference" href="_images/regex_taggers_delete.png"><img alt="_images/regex_taggers_delete.png" src="_images/regex_taggers_delete.png" style="width: 180pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 66 </span><span class="caption-text"><em>Delete a single Regex Tagger</em></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 66 </span><span class="caption-text"><em>Delete a single Regex Tagger</em></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Option 2</strong>:</p>
 <p>Select the model(s) you wish to delete by clicking on the selection boxes in front of Regex Tagger model(s) (<a class="reference internal" href="#regex-tagger-bulk-delete"><span class="std std-numref">Fig. 67</span></a>). If all the models you wish to delete are selected, click on the red recycle bin icon beside <cite>“Create”</cite> button in the top left corner of the page.</p>
-<div class="figure align-center" id="id17">
-<span id="regex-tagger-bulk-delete"></span><a class="reference internal image-reference" href="_images/regex_tagger_bulk_delete.png"><img alt="_images/regex_tagger_bulk_delete.png" src="_images/regex_tagger_bulk_delete.png" style="width: 350pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 67 </span><span class="caption-text"><em>Bulk delete Regex Tagger(s)</em></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
-</div>
 <div class="figure align-center" id="id18">
+<span id="regex-tagger-bulk-delete"></span><a class="reference internal image-reference" href="_images/regex_tagger_bulk_delete.png"><img alt="_images/regex_tagger_bulk_delete.png" src="_images/regex_tagger_bulk_delete.png" style="width: 350pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 67 </span><span class="caption-text"><em>Bulk delete Regex Tagger(s)</em></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id19">
 <span id="regex-tagger-delete-confirmation"></span><a class="reference internal image-reference" href="_images/regex_tagger_delete_ask.png"><img alt="_images/regex_tagger_delete_ask.png" src="_images/regex_tagger_delete_ask.png" style="width: 200pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 68 </span><span class="caption-text"><em>Delete Regex Tagger(s) confirmation</em></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 68 </span><span class="caption-text"><em>Delete Regex Tagger(s) confirmation</em></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p>After following all the previously described steps (for either of the two options), the interface should now ask your confirmation for finishing the process (<a class="reference internal" href="#regex-tagger-delete-confirmation"><span class="std std-numref">Fig. 68</span></a>). Agree by clicking on the button <cite>“Delete”</cite>.</p>
 </div>
-<div class="section" id="id2">
-<h3>API<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h4>API<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p>Endpoint <strong>/projects/{project_pk}/regex_taggers/{id}/</strong></p>
 <p>Example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X DELETE <span class="s2">&quot;http://localhost:8000/api/v1/projects/1/regex_taggers/131/&quot;</span> <span class="se">\</span>
@@ -373,24 +349,24 @@ Regex Tagger
 </div>
 </div>
 <div class="section" id="duplicate">
-<h2>Duplicate<a class="headerlink" href="#duplicate" title="Permalink to this headline">¶</a></h2>
+<h3>Duplicate<a class="headerlink" href="#duplicate" title="Permalink to this headline">¶</a></h3>
 <p>Function <cite>Duplicate</cite> allows making a copy of an existing Regex Tagger. It is especially useful if you are fine-tuning a specific model but aren’t sure that the modifications will actually improve it - just make a copy before you start editing.</p>
-<div class="section" id="id3">
-<h3>GUI<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h4>GUI<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>For duplicating a Regex Tagger model, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 61</span></a>. Select the model you wish to duplicate and navigate to options panel denoted with three vertical dots as seen in <a class="reference internal" href="#regex-tagger-list-v2"><span class="std std-numref">Fig. 78</span></a>.</p>
-<div class="figure align-center" id="id19">
+<div class="figure align-center" id="id20">
 <span id="regex-tagger-duplicate"></span><a class="reference internal image-reference" href="_images/regex_taggers_duplicate.png"><img alt="_images/regex_taggers_duplicate.png" src="_images/regex_taggers_duplicate.png" style="width: 180pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 69 </span><span class="caption-text"><em>Duplicate Regex Tagger</em></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 69 </span><span class="caption-text"><em>Duplicate Regex Tagger</em></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>Select option “Duplicate” from the selection menu as seen in <a class="reference internal" href="#regex-tagger-duplicate"><span class="std std-numref">Fig. 69</span></a>.</p>
-<div class="figure align-center" id="id20">
+<div class="figure align-center" id="id21">
 <span id="regex-tagger-duplicate-list"></span><a class="reference internal image-reference" href="_images/duplicate_list.png"><img alt="_images/duplicate_list.png" src="_images/duplicate_list.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 70 </span><span class="caption-text"><em>Duplicated Regex Tagger</em></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 70 </span><span class="caption-text"><em>Duplicated Regex Tagger</em></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p>Selecting the option instantly triggers the duplication process and the duplicated Regex Tagger model appears in the list of Regex Tagger models with name <cite>“&lt;source_tagger_name&gt;_copy”</cite> (<a class="reference internal" href="#regex-tagger-duplicate-list"><span class="std std-numref">Fig. 70</span></a>).</p>
 </div>
-<div class="section" id="id4">
-<h3>API<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4>API<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p>Endpoint <strong>/projects/{project_pk}/regex_taggers/{id}/duplicate/</strong></p>
 <p>Example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/1/regex_taggers/131/duplicate/&quot;</span> <span class="se">\</span>
@@ -410,24 +386,24 @@ Regex Tagger
 </div>
 </div>
 <div class="section" id="edit">
-<h2>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h2>
+<h3>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h3>
 <p>Function <cite>“Edit”</cite> allows editing existing Regex Tagger models.</p>
-<div class="section" id="id5">
-<h3>GUI<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h4>GUI<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p>For editing a Regex Tagger model, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 61</span></a>. Select the model you wish to edit and navigate to options panel denoted with three vertical dots as seen in <a class="reference internal" href="#regex-tagger-list-v2"><span class="std std-numref">Fig. 78</span></a>.</p>
-<div class="figure align-center" id="id21">
+<div class="figure align-center" id="id22">
 <span id="regex-tagger-edit"></span><a class="reference internal image-reference" href="_images/regex_taggers_edit.png"><img alt="_images/regex_taggers_edit.png" src="_images/regex_taggers_edit.png" style="width: 180pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text"><em>Edit Regex Tagger</em></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text"><em>Edit Regex Tagger</em></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>Select option “Edit” from the selection menu as seen in <a class="reference internal" href="#regex-tagger-edit"><span class="std std-numref">Fig. 71</span></a>.</p>
-<div class="figure align-center" id="id22">
+<div class="figure align-center" id="id23">
 <span id="regex-tagger-edit-modal"></span><a class="reference internal image-reference" href="_images/regex_taggers_edit_modal.png"><img alt="_images/regex_taggers_edit_modal.png" src="_images/regex_taggers_edit_modal.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 72 </span><span class="caption-text"><em>Edit Regex Tagger modal window</em></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 72 </span><span class="caption-text"><em>Edit Regex Tagger modal window</em></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <p>Selecting the option opens a new modal window <cite>“Edit Regex Tagger”</cite>. Make your modifications and click on <cite>“Submit”</cite> button in the bottom right corner of the panel (<a class="reference internal" href="#regex-tagger-edit-modal"><span class="std std-numref">Fig. 72</span></a>).</p>
 </div>
-<div class="section" id="id6">
-<h3>API<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h4>API<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <p>Endpoint <strong>/projects/{project_pk}/regex_taggers/{id}/</strong></p>
 <p>Example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X PATCH <span class="s2">&quot;http://localhost:8000/api/v1/projects/1/regex_taggers/131/&quot;</span> <span class="se">\</span>
@@ -472,37 +448,37 @@ Regex Tagger
 </div>
 </div>
 <div class="section" id="tag-random-doc">
-<h2>Tag Random Doc<a class="headerlink" href="#tag-random-doc" title="Permalink to this headline">¶</a></h2>
+<h3>Tag Random Doc<a class="headerlink" href="#tag-random-doc" title="Permalink to this headline">¶</a></h3>
 <p><cite>“Tag Random Doc”</cite> is a helpful function for testing Regex Tagger models on random documents.</p>
-<div class="section" id="id7">
-<h3>GUI<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4>GUI<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <p>For tagging a random document with an existing Regex Tagger model, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 61</span></a>. Select the model you wish to use and navigate to the options panel denoted with three vertical dots. Select the option “Tag Random Doc” from the selection menu as seen in <a class="reference internal" href="#regex-tagger-tag-random-doc"><span class="std std-numref">Fig. 73</span></a>.</p>
-<div class="figure align-center" id="id23">
+<div class="figure align-center" id="id24">
 <span id="regex-tagger-tag-random-doc"></span><a class="reference internal image-reference" href="_images/regex_taggers_tag_random_doc.png"><img alt="_images/regex_taggers_tag_random_doc.png" src="_images/regex_taggers_tag_random_doc.png" style="width: 180pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 73 </span><span class="caption-text"><em>“Tag Random Doc” option in the selection menu</em></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 73 </span><span class="caption-text"><em>“Tag Random Doc” option in the selection menu</em></span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <p>Selecting the option opens a new modal window with the title <cite>“Tag Random Doc”</cite>. Select the index or indices you wish to use from the <cite>“Indices”</cite> selection menu displayed in the window after clicking on the corresponding section and select the <a class="reference internal" href="terminology.html#field-concept"><span class="std std-ref">field(s)</span></a> you wish to use from the <cite>“Select Fields”</cite> selection menu below. If finished, click on the button <cite>“Tag”</cite> in the bottom right corner of the panel (<a class="reference internal" href="#regex-tagger-tag-random-doc-mw"><span class="std std-numref">Fig. 74</span></a>).</p>
-<div class="figure align-center" id="id24">
+<div class="figure align-center" id="id25">
 <span id="regex-tagger-tag-random-doc-mw"></span><a class="reference internal image-reference" href="_images/regex_tagger_tag_random_doc_mw.png"><img alt="_images/regex_tagger_tag_random_doc_mw.png" src="_images/regex_tagger_tag_random_doc_mw.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 74 </span><span class="caption-text"><em>Regex Tagger “Tag Random Doc” window.</em></span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 74 </span><span class="caption-text"><em>Regex Tagger “Tag Random Doc” window.</em></span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <p>The results are displayed in the same modal window as seen in <a class="reference internal" href="#regex-tagger-tag-random-pos"><span class="std std-numref">Fig. 75</span></a> if any matches were detected. If no matches where found, the text <cite>“No matches found”</cite> is displayed as seen in <a class="reference internal" href="#regex-tagger-tag-random-neg"><span class="std std-numref">Fig. 76</span></a>.</p>
-<div class="figure align-center" id="id25">
-<span id="regex-tagger-tag-random-pos"></span><a class="reference internal image-reference" href="_images/regex_tagger_tag_random_pos.png"><img alt="_images/regex_tagger_tag_random_pos.png" src="_images/regex_tagger_tag_random_pos.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 75 </span><span class="caption-text"><em>“Tag Random Doc” positive output</em></span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
-</div>
 <div class="figure align-center" id="id26">
+<span id="regex-tagger-tag-random-pos"></span><a class="reference internal image-reference" href="_images/regex_tagger_tag_random_pos.png"><img alt="_images/regex_tagger_tag_random_pos.png" src="_images/regex_tagger_tag_random_pos.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 75 </span><span class="caption-text"><em>“Tag Random Doc” positive output</em></span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id27">
 <span id="regex-tagger-tag-random-neg"></span><a class="reference internal image-reference" href="_images/regex_tagger_tag_random_neg.png"><img alt="_images/regex_tagger_tag_random_neg.png" src="_images/regex_tagger_tag_random_neg.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text"><em>“Tag Random Doc” negative output</em></span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text"><em>“Tag Random Doc” negative output</em></span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p>PS! The <a class="reference internal" href="terminology.html#field-concept"><span class="std std-ref">fields</span></a> in the document not selected by the user and/or not containing any matches are by default collapsed, but you can view their content by clicking on the arrow icon at the end of each field (<a class="reference internal" href="#rt-tag-random-doc-other-fields"><span class="std std-numref">Fig. 77</span></a>.)</p>
-<div class="figure align-center" id="id27">
+<div class="figure align-center" id="id28">
 <span id="rt-tag-random-doc-other-fields"></span><a class="reference internal image-reference" href="_images/tag_random_doc_other_fields.png"><img alt="_images/tag_random_doc_other_fields.png" src="_images/tag_random_doc_other_fields.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 77 </span><span class="caption-text"><em>“Tag Random Doc” collapsing/uncollapsing fields.</em></span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 77 </span><span class="caption-text"><em>“Tag Random Doc” collapsing/uncollapsing fields.</em></span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="id8">
-<h3>API<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h4>API<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <p>Endpoint <strong>/projects/{project_pk}/regex_taggers/{id}/tag_random_doc/</strong></p>
 <p>Example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/1/regex_taggers/138/tag_random_doc/&quot;</span> <span class="se">\</span>
@@ -570,38 +546,38 @@ Regex Tagger
 </div>
 </div>
 <div class="section" id="tag-text">
-<h2>Tag Text<a class="headerlink" href="#tag-text" title="Permalink to this headline">¶</a></h2>
+<h3>Tag Text<a class="headerlink" href="#tag-text" title="Permalink to this headline">¶</a></h3>
 <p>Function <cite>“Tag Text”</cite> enables tagging a single text with a selected Regex Tagger model.</p>
-<div class="section" id="id9">
-<h3>GUI<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h4>GUI<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <p>For tagging a text with an existing Regex Tagger model, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 61</span></a>.</p>
-<div class="figure align-center" id="id28">
+<div class="figure align-center" id="id29">
 <span id="regex-tagger-list-v2"></span><a class="reference internal image-reference" href="_images/regex_taggers_list_v2.png"><img alt="_images/regex_taggers_list_v2.png" src="_images/regex_taggers_list_v2.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 78 </span><span class="caption-text"><em>List of existing Regex Tagger models</em></span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 78 </span><span class="caption-text"><em>List of existing Regex Tagger models</em></span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <p>Select the model you wish to use and navigate to options panel denoted with three vertical dots as seen in <a class="reference internal" href="#regex-tagger-list-v2"><span class="std std-numref">Fig. 78</span></a>.</p>
-<div class="figure align-center" id="id29">
+<div class="figure align-center" id="id30">
 <span id="regex-tagger-tag-text"></span><a class="reference internal image-reference" href="_images/regex_taggers_tag_text.png"><img alt="_images/regex_taggers_tag_text.png" src="_images/regex_taggers_tag_text.png" style="width: 180pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 79 </span><span class="caption-text"><em>Tag Text option in selection menu</em></span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 79 </span><span class="caption-text"><em>Tag Text option in selection menu</em></span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <p>Select option “Tag Text” from the selection menu as seen in <a class="reference internal" href="#regex-tagger-tag-text"><span class="std std-numref">Fig. 79</span></a>.</p>
-<div class="figure align-center" id="id30">
+<div class="figure align-center" id="id31">
 <span id="regex-tagger-tag-text-modal"></span><a class="reference internal image-reference" href="_images/regex_tagger_tag_text_modal.png"><img alt="_images/regex_tagger_tag_text_modal.png" src="_images/regex_tagger_tag_text_modal.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 80 </span><span class="caption-text"><em>Tag Text modal window</em></span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 80 </span><span class="caption-text"><em>Tag Text modal window</em></span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <p>Selecting the option opens a new modal window <cite>“Tag Text”</cite>. Insert the text you wish to tag and click on the button <cite>“Tag”</cite> in the bottom right corner of the panel (<a class="reference internal" href="#regex-tagger-tag-text-modal"><span class="std std-numref">Fig. 80</span></a>).</p>
-<div class="figure align-center" id="id31">
-<span id="regex-tagger-tag-text-pos-output"></span><a class="reference internal image-reference" href="_images/regex_taggers_tag_text_pos_output.png"><img alt="_images/regex_taggers_tag_text_pos_output.png" src="_images/regex_taggers_tag_text_pos_output.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 81 </span><span class="caption-text"><em>Tag Text positive output</em></span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
-</div>
 <div class="figure align-center" id="id32">
+<span id="regex-tagger-tag-text-pos-output"></span><a class="reference internal image-reference" href="_images/regex_taggers_tag_text_pos_output.png"><img alt="_images/regex_taggers_tag_text_pos_output.png" src="_images/regex_taggers_tag_text_pos_output.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 81 </span><span class="caption-text"><em>Tag Text positive output</em></span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id33">
 <span id="regex-tagger-tag-text-neg-output"></span><a class="reference internal image-reference" href="_images/regex_taggers_tag_text_neg_output.png"><img alt="_images/regex_taggers_tag_text_neg_output.png" src="_images/regex_taggers_tag_text_neg_output.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 82 </span><span class="caption-text"><em>Tag Text negative output</em></span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 82 </span><span class="caption-text"><em>Tag Text negative output</em></span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
 </div>
 <p>The results are displayed in the same modal window as seen in <a class="reference internal" href="#regex-tagger-tag-text-pos-output"><span class="std std-numref">Fig. 81</span></a> if any matches where detected. If no matches where found, the text <cite>“No matches found”</cite> is displayed as seen in in <a class="reference internal" href="#regex-tagger-tag-text-neg-output"><span class="std std-numref">Fig. 82</span></a>.</p>
 </div>
-<div class="section" id="id10">
-<h3>API<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h4>API<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
 <p>Endpoint <strong>/projects/{project_pk}/regex_taggers/{id}/tag_text/</strong></p>
 <p>Example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/1/regex_taggers/131/tag_text/&quot;</span> <span class="se">\</span>
@@ -637,6 +613,7 @@ Regex Tagger
     <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

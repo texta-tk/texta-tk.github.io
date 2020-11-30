@@ -1,6 +1,8 @@
 `EN <https://docs.texta.ee/uua.html>`_
 `ET <https://docs.texta.ee/et/uua.html>`_
+
 .. _uua:
+
 Third-Party Authentication
 ==============================
 

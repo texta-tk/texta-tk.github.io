@@ -16,7 +16,7 @@ Anonymizer is a tool for anonymizing names in a text based on a predefined list 
 Bert Tagger
 ************
 
-Bert Tagger uses Google's state-of-the-art `Bidirectional Encoder Representations from Transformer <https://arxiv.org/abs/1810.04805>` for word embeddings. Read more about its Toolkit implementation :ref:`here <bert_tagger>`.
+Bert Tagger uses Google's state-of-the-art `Bidirectional Encoder Representations from Transformer <https://arxiv.org/abs/1810.04805>`_ for word embeddings. Read more about its Toolkit implementation :ref:`here <bert_tagger>`.
 
 .. _dataset_importer_concept:
 
@@ -157,14 +157,14 @@ Query
 Regex Tagger
 *************
 
-Regex Tagger is a tool for tagging texts based on pattern matches. The user can define patterns (words/phrases/regexes) to search from the text and fine tune a variation of parameters to extract specific information and tag the text based on the information retrieved. Read more about its usage :ref:`here <regex_tagger>`.
+Regex Tagger is a tool for tagging texts based on pattern matches. The user can define patterns (words/phrases/regexes) to search from the text and fine tune a variation of parameters to extract specific information and tag the text based on the information retrieved. Read more about its usage :ref:`here<regex_tagger>`.
 
 .. _regex_tagger_group_concept:
 
 Regex Tagger Group
 ************************
 
-Regex Tagger Group allows combining different Regex Taggers. Read more about its usage :ref:`here <regex_tagger_group>`.
+Regex Tagger Group allows combining different Regex Taggers. Read more about its usage :ref:`here<regex_tagger_group>`.
 
 .. _reindexer_concept:
 
@@ -255,4 +255,4 @@ Read more about its usage :ref:`here <torch_tagger>`.
 
 UUA server
 **********
-User Account and Authentication is an identity management service for making sure that only selected users have access to certain datasets. Read more about it :ref:`here <uua>`.
+User Account and Authentication is an identity management service for making sure that only selected users have access to certain datasets. Read more about it :ref:`here<uua>`.
