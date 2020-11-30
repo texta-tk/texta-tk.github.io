@@ -1,12 +1,11 @@
 `EN <https://docs.texta.ee/uua.html>`_
 `ET <https://docs.texta.ee/et/uua.html>`_
-
+.. _uua:
 Third-Party Authentication
 ==============================
 
-Toolkit can also be authenticated using UAA provided by `CloudFoundry <https://docs.cloudfoundry.org/concepts/architecture/uaa.html>`_.
+Toolkit can also be authenticated using :ref:`UAA <uaa_concept>` provided by `CloudFoundry <https://docs.cloudfoundry.org/concepts/architecture/uaa.html>`_.
 This requires some configuration, both on the UAA server and in Toolkit.
-
 
 Configuring the UAA server locally
 ----------------------------------

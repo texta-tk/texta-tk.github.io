@@ -1,6 +1,6 @@
 `EN <https://docs.texta.ee/v2/regex_tagger_group.html>`_
 `ET <https://docs.texta.ee/v2/et/regex_tagger_group.html>`_
-
+.. _regex_tagger_group:
 ####################
 Regex Tagger Group
 ####################
@@ -256,7 +256,7 @@ Usage
 Apply Tagger Group
 =======================
 
-Function `"Apply Tagger Group"` enables applying Regex Tagger Group to one or many datasets indexed in Elasticsearch. Results are added to the field **"texta_facts"** accordingly:
+Function `"Apply Tagger Group"` enables applying Regex Tagger Group to one or many datasets indexed in :ref:`Elasticsearch <elasticsearch>`. Results are added to the field **"texta_facts"** accordingly:
 
 .. code-block:: bash
 
@@ -273,7 +273,7 @@ Parameters
   Name of the application task.
 
 **indices**:
-  List of Elasticsearch indices (datasets) onto which the selected models are applied. NB! Indices should be formatted as dicts, where key = "name" and value = <index_name>, e.g:
+  List of Elasticsearch :ref:`indices <index_concept>` (datasets) onto which the selected models are applied. NB! Indices should be formatted as dicts, where key = "name" and value = <index_name>, e.g:
 
   .. code-block:: json
 
@@ -283,7 +283,7 @@ Parameters
   List of fields onto which the selected models are applied.
 
 **query**:
-  Specified Elasticsearch Search query.
+  Specified Elasticsearch Search :ref:`query <query_concept>`.
 
 **bulk_size**:
   Number of documents processed in one batch.
@@ -300,7 +300,7 @@ Parameters
 GUI
 ---------------
 
-For applying one or multiple Regex Tagger Group(s) to a dataset indexed in Elasticsearch, navigate to `"Models" -> "Regex Tagger Groups"` as seen in :numref:`rtg_nav`. Click on the button `"Apply Regex Tagger Group"` as seen in :numref:`rtg_apply`.
+For applying one or multiple Regex Tagger Group(s) to a dataset indexed in :ref:`Elasticsearch <elasticsearch>`, navigate to `"Models" -> "Regex Tagger Groups"` as seen in :numref:`rtg_nav`. Click on the button `"Apply Regex Tagger Group"` as seen in :numref:`rtg_apply`.
 
 .. _rtg_apply:
 .. figure:: images/regex_tagger_group/apply_rtg.png

@@ -1,8 +1,11 @@
+.. _bert_tagger:
 ############
 Bert Tagger
 ############
 
 TODO
+
+:ref:`Bert Tagger <bert_tagger_concept>` is fun.
 
 Creation
 ********

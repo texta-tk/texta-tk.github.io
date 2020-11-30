@@ -23,7 +23,7 @@ The easiest way to run TEXTA Toolkit is to use our prebuilt Docker images from o
     sudo apt-get update
     sudo apt-get install docker docker-compose -y
 
-To run Elasticsearch in Docker, we need to increase maximum map count parameter for virtual memory:
+To run :ref:`Elasticsearch <elasticsearch>` in Docker, we need to increase maximum map count parameter for virtual memory:
 
 .. code-block:: bash
 
@@ -35,11 +35,11 @@ Configure docker-compose
 We are using *docker-compose* to build an ecosystem of services to support our needs. This is all defined in a file called **docker-compose.yaml**.
 To successfully run TEXTA Toolkit we need to define following services:
 
-* Elasticsearch for storing the documents (one can also run it without Docker)
+* :ref:`Elasticsearch <elasticsearch>` for storing the documents (one can also run it without Docker)
 
 * Redis for managing message queues in TK (one can also run it without Docker)
 
-* MySQL or Postgres for storing user and project data (can also be run without Docker)
+* MySQL or Postgres for storing user and :ref:`project <project_concept>` data (can also be run without Docker)
 
 * TEXTA Toolkit RESTful API for backend: docker.texta.ee/texta/texta-rest:latest
 

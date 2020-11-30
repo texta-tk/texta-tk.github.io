@@ -13,20 +13,20 @@ Research question: *What is the frequency of sport-related documents through tim
 
 Pre-requirements:
 
-* A project with the sputnik newspaper articles dataset is :ref:`created <project>`.
+* A :ref:`project <project_concept>` with the sputnik newspaper articles dataset is :ref:`created <project>`.
 * This project is active (chosen on the upper panel in the right).
 
 Train an embedding
 ====================
 
-Go to Models > Embeddings. Click on "CREATE" in the top-left. Create an Embedding (:numref:`embedding_pic`). Read more about the creating parameters :ref:`here <create_embedding>`.
+Go to Models > Embeddings. Click on "CREATE" in the top-left. Create an :ref:`Embedding <embedding_concept>` (:numref:`embedding_pic`). Read more about the creating parameters :ref:`here <create_embedding>`.
 
 .. _embedding_pic:
 .. figure:: images/use_cases/embedding.png
 	
 	*Creating an embedding for sputnik*
 	
-This step might take a while. After the embedding model is trained, the Lexicon Miner can be used.
+This step might take a while. After the :ref:`embedding <embedding_concept>` model is trained, the Lexicon Miner can be used.
 
 Use Lexicon Miner
 ==================
@@ -43,7 +43,7 @@ Provide some seedwords (example in :numref:`miner`), hit "New Suggestions", clic
 Search
 =======
 
-Go to the Search page. As this example embedding was trained on lemmas field, choose the same field in the Advanced Search. Click on "Add lexicon" button and choose the saved lexicon.
+Go to the Search page. As this example :ref:`embedding <embedding_concept>` was trained on lemmas :ref:`field <field_concept>`, choose the same field in the Advanced Search. Click on "Add lexicon" button and choose the saved lexicon.
 
 .. _add_lexicon:
 .. figure:: images/use_cases/add_lexicon.png
@@ -59,7 +59,7 @@ Bonus: aggregate over time
 
 Research question: *When are sport-related articles published?*
 
-In order to aggregate the documents over time, open the Aggregations panel and choose the date field (in Texta date format). Configure other options as shown in :numref:`aggregate_sport` or leave them as default. Click on "Aggregate".
+In order to aggregate the documents over time, open the Aggregations panel and choose the date :ref:`field <field_concept>` (in Texta date format). Configure other options as shown in :numref:`aggregate_sport` or leave them as default. Click on "Aggregate".
 
 .. _aggregate_sport:
 .. figure:: images/use_cases/aggregate_sport.png
@@ -82,14 +82,14 @@ Research question: *How frequent are the terms "communism" and "communists" in S
 
 Pre-requirements:
 
-* A project with the sputnik newspaper articles dataset is :ref:`created <project>`.
+* A :ref:`project <project_concept>` with the sputnik newspaper articles dataset is :ref:`created <project>`.
 * This project is active (chosen on the upper panel in the right).
 * :ref:`Searcher <searcher>` is open.
 
 Search term(s)
 ==============
 
-Click on "Advanced search" and choose the field with the content in it ("article_text"). :numref:`search_communism` describes the search constraint for finding documents with words that start with "communis" (e.g "communism", "communist", "communists") - operator is "and" or "or", match is "Phrase prefix" and there is no slop. Click on "Search".
+Click on "Advanced search" and choose the :ref:`field <field_concept>` with the content in it ("article_text"). :numref:`search_communism` describes the search constraint for finding documents with words that start with "communis" (e.g "communism", "communist", "communists") - operator is "and" or "or", match is "Phrase prefix" and there is no slop. Click on "Search".
 
 .. _search_communism:
 .. figure:: images/use_cases/search_communism.png
@@ -101,7 +101,7 @@ Now the table displays all the documents that the searcher with this constraint 
 Aggregate over time
 ====================
 
-To aggregate the documents over time, open the Aggregations panel and choose the date field (in Texta date format). Other options can be left as they are. Click on "Aggregate".
+To aggregate the documents over time, open the Aggregations panel and choose the date :ref:`field <field_concept>` (in Texta date format). Other options can be left as they are. Click on "Aggregate".
 
 .. _aggregate_communism:
 .. figure:: images/use_cases/aggregate_communism.png
@@ -121,7 +121,7 @@ Goal: *To train a classifier that detects whether a certain document belongs to 
 
 Pre-requirements:
 
-* A project with the sputnik newspaper articles dataset is :ref:`created <project>`.
+* A :ref:`project <project_concept>` with the sputnik newspaper articles dataset is :ref:`created <project>`.
 * This project is active (chosen on the upper panel in the right).
 
 Create a subset of positive documents
@@ -129,7 +129,7 @@ Create a subset of positive documents
 
 When the user already has the dataset tagged in some way (dataset contains a certain Tag field with the tag, for example), they can use the Searcher to filter the tagged documents out as the positive examples and save it.
 
-When the dataset does not already contain the tagged documents, the user can train an embedding and use the Lexicon Miner and/or the Searcher for creating some theme-related subset. There is an example of that in the first use case above.
+When the dataset does not already contain the tagged documents, the user can train an :ref:`embedding <embedding_concept>` and use the Lexicon Miner and/or the Searcher for creating some theme-related subset. There is an example of that in the first use case above.
 
 This use case follows the first scenario and saves a subset of documents with "Middle East" in its rubric field (see :numref:`search_middleeast`). These will be positive examples similar to which the trained tagger later on tags also as positive. The user saves the search via floppy disk icon near the Current Search panel.
 
@@ -141,7 +141,7 @@ This use case follows the first scenario and saves a subset of documents with "M
 Train the classifier
 =====================
 
-Under Models > :ref:`Taggers <tagger>` a classifier (tagger) can be trained. User clicks on the "CREATE" button in the top left and chooses suitable parameters in the pop-up window. The saved search is chosen as the query. Fields "article_text_mlp.text" and "title" will be just concatenated together. User can test different vectorizers and classifiers and their parameters by training different classifiers with the same positive dataset or leave them default. 
+Under Models > :ref:`Taggers <tagger>` a classifier (tagger) can be trained. User clicks on the "CREATE" button in the top left and chooses suitable parameters in the pop-up window. The saved search is chosen as the :ref:`query <query_concept>`. Fields "article_text_mlp.text" and "title" will be just concatenated together. User can test different vectorizers and classifiers and their parameters by training different classifiers with the same positive dataset or leave them default. 
 
 .. _tagger_middleeast:
 .. figure:: images/use_cases/tagger_middleeast.png

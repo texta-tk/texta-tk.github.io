@@ -16,7 +16,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Dataset Importer" href="importer.html" />
-    <link rel="prev" title="Third-Party Authentication" href="uaa.html" />
+    <link rel="prev" title="Configuring the UAA server locally" href="uaa.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -45,7 +45,11 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Anonymizer</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a></li>
@@ -74,10 +78,13 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
 </ul>
 
@@ -85,7 +92,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="uaa.html" title="previous chapter">Third-Party Authentication</a></li>
+      <li>Previous: <a href="uaa.html" title="previous chapter">Configuring the UAA server locally</a></li>
       <li>Next: <a href="importer.html" title="next chapter">Dataset Importer</a></li>
   </ul></li>
 </ul>
@@ -187,7 +194,7 @@
 <span id="anonymizer-create-view"></span><a class="reference internal image-reference" href="_images/default_anonymizer.png"><img alt="_images/default_anonymizer.png" src="_images/default_anonymizer.png" style="width: 300pt;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text"><em>Filled Anonymizer creation view</em></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
-<p>The created Anonymizer can now be seen as the first (or only, if no previous Anonymizers exist under the project) row in the table of Anonymizers (<a class="reference internal" href="#anonymizer-list"><span class="std std-numref">Fig. 6</span></a>).</p>
+<p>The created Anonymizer can now be seen as the first (or only, if no previous Anonymizers exist under the <a class="reference internal" href="terminology.html#project-concept"><span class="std std-ref">project</span></a>) row in the table of Anonymizers (<a class="reference internal" href="#anonymizer-list"><span class="std std-numref">Fig. 6</span></a>).</p>
 <div class="figure align-center" id="id15">
 <span id="anonymizer-list"></span><a class="reference internal image-reference" href="_images/anonymizer_list.png"><img alt="_images/anonymizer_list.png" src="_images/anonymizer_list.png" style="width: 500pt;" /></a>
 <p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text"><em>List of Anonymizers.</em></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>

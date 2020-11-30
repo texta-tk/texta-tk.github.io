@@ -45,7 +45,11 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
@@ -64,10 +68,13 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
 </ul>
 
@@ -106,9 +113,9 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="topic-analyzer">
-<h1>Topic Analyzer<a class="headerlink" href="#topic-analyzer" title="Permalink to this headline">¶</a></h1>
-<p id="id1">Topic Analyzer is a tool that helps us to find groups of similar documents from the data and transform these groups into labels.</p>
+  <div class="section" id="id1">
+<h1>Topic Analyzer<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Topic Analyzer is a tool that helps us to find groups of similar documents from the data and transform these groups into labels.</p>
 <div class="section" id="grouping-the-data">
 <h2>Grouping the data<a class="headerlink" href="#grouping-the-data" title="Permalink to this headline">¶</a></h2>
 <p>To create a new grouping (or clustering, as we name it) navigate to Models -&gt; Clustering and click “Create”. Similarly to Tagger Group object, you have to give it a name (<em>Description</em>) and select indices and fields based on which the grouping will be done. Additionally one can restrict the set of documents to be used in clustering by specifying the filter with a <em>Query</em> parameter.</p>

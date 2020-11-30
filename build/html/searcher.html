@@ -45,7 +45,11 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
@@ -75,8 +79,10 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
@@ -125,7 +131,7 @@
 <p>The Search application allows users to perform searches and aggregations over the data. Search results can be used as input to machine learning models.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To use the <strong>Search</strong> project and indices must be selected from the upper right panel.</p>
+<p>To use the <strong>Search</strong> <a class="reference internal" href="terminology.html#project-concept"><span class="std std-ref">project</span></a> and <a class="reference internal" href="terminology.html#index-concept"><span class="std std-ref">indices</span></a> must be selected from the upper right panel.</p>
 </div>
 <p>The Search’s graphical interface (<a class="reference internal" href="#search-panel"><span class="std std-numref">Fig. 31</span></a>) consists of three panels.
 These are <a class="reference internal" href="#currentsearch"><span class="std std-ref">Current Search</span></a>, <a class="reference internal" href="#savedsearches"><span class="std std-ref">Saved Searches</span></a>, and <a class="reference internal" href="#aggregations"><span class="std std-ref">Aggregations</span></a>.
@@ -232,7 +238,7 @@ The search will return documents that have either phrase “president Obama” o
 Since the Slop is 2, it also matches the phrase if it has 0-2 words between the words (e.g “president Barack Obama”).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can use an existing <a class="reference internal" href="lexicon_miner.html#lexiconminer"><span class="std std-ref">lexicon</span></a> to create constraints. This can be done via button <strong>Add lexicon</strong> (visible only if there exist any lexicons in the project.”</p>
+<p>You can use an existing <a class="reference internal" href="lexicon_miner.html#lexiconminer"><span class="std std-ref">lexicon</span></a> to create constraints. This can be done via button <strong>Add lexicon</strong> (visible only if there exist any lexicons in the <a class="reference internal" href="terminology.html#project-concept"><span class="std std-ref">project</span></a>.</p>
 </div>
 </div>
 <div class="section" id="date-constraint">
@@ -339,7 +345,7 @@ You can select or deselect all of them together (<em>Select all</em>) or by clic
 <p>To save a search, click on the <strong>disk</strong> icon in the upper right corner of the Current Search panel. Saved searches can be used in other applications available in Texta Toolkit.
 For example, you can use a search as a set of positive samples when training a tagger or as a set of documents to be analyzed with Topic Analyzer.
 Or you might just want to save a search for browsing it later: to open it in the Current Search, simply click on the name of it.</p>
-<p>If you are curious, you can see the actual <a class="reference internal" href="terminology.html#elasticsearch"><span class="std std-ref">Elasticsearch</span></a> query behind the search by clicking on the <strong>eye</strong> icon next to the disk icon.</p>
+<p>If you are curious, you can see the actual <a class="reference internal" href="terminology.html#elasticsearch"><span class="std std-ref">Elasticsearch</span></a> <a class="reference internal" href="terminology.html#query-concept"><span class="std std-ref">query</span></a> behind the search by clicking on the <strong>eye</strong> icon next to the disk icon.</p>
 </div>
 <div class="section" id="id5">
 <h3>API<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
@@ -376,7 +382,7 @@ In Texta Toolkit such words are called <strong>significant words</strong> and ca
 <span id="simple-time-aggregation"></span><img alt="_images/time_aggregations.png" src="_images/time_aggregations.png" />
 <p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text"><em>Time aggregation</em></span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
-<p>If you have texta_facts added to your data, you can visualize the frequencies of the values of one or more facts (see <a class="reference internal" href="#facts-aggre"><span class="std std-numref">Fig. 46</span></a>).
+<p>If you have <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">texta_facts</span></a> added to your data, you can visualize the frequencies of the values of one or more <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">facts</span></a> (see <a class="reference internal" href="#facts-aggre"><span class="std std-numref">Fig. 46</span></a>).
 Note that on top of the plot in figure <a class="reference internal" href="#facts-aggre"><span class="std std-numref">Fig. 46</span></a>, there is a list with three visualization options. You can click on them to change how the results are displayed -
 whether hierarchically, as a table, or as a plot.</p>
 <div class="figure align-default" id="id27">

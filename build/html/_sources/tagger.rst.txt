@@ -8,8 +8,8 @@ Tagger
 .. note::
 
     **How do Tagger and Tagger Groups differ?**
-	One model predicts whether a text is positive (True) or negative (False). That is, whether this text gets the label or not. Tagger trains only one model and predicts whether a text is similar to the query/dataset it was trained on or not.
-	Tagger Group trains several models at once. That means, it can predict several labels at once. Tagger Group trains on facts. You can have several values under a certain fact and for each value (if it has high enough frequency (*Minimum sample size*) a model is trained.
+	One model predicts whether a text is positive (True) or negative (False). That is, whether this text gets the label or not. Tagger trains only one model and predicts whether a text is similar to the dataset it was trained on or not.
+	Tagger Group trains several models at once. That means, it can predict several labels at once. Tagger Group trains on :ref:`facts <texta_fact>`. You can have several values under a certain fact and for each value (if it has high enough frequency (*Minimum sample size*) a model is trained.
 
 Creation
 **********
@@ -25,13 +25,13 @@ Parameters
 	The indices the model learns from.
 	
 **fields**:
-	The fields the model learns from. If more than one fields is chosen, the fields are concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (*eaten*, *eats* and *ate* will change to its lemma *eat* and are dealt as one word).
+	The :ref:`fields <field_concept>` the model learns from. If more than one fields is chosen, the fields are concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (*eaten*, *eats* and *ate* will change to its lemma *eat* and are dealt as one word).
 	
 **query**:
-	Searcher's query for the dataset to be trained on. If *Query* is left empty, it will take all data in the active project as an input. You can also use saved searches as your desired input. This input will be the positive examples - later on, the Tagger tags data similar to this one.
+	Searcher's :ref:`query <query_concept>` for the dataset to be trained on. If *Query* is left empty, it will take all data in the active :ref:`project <project_concept>` as an input. You can also use saved searches as your desired input. This input will be the positive examples - later on, the Tagger tags data similar to this one.
 	
 **embedding**:
-	Embedding previously trained on the same dataset.
+	:ref:`embedding <embedding_concept>` previously trained on the same dataset.
 	
 **vectorizer**:
 	Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_.
@@ -44,6 +44,7 @@ Parameters
 	
 **negative multiplier**:
 	*The negative multiplier* is for changing the ratio of negative examples.
+
 GUI
 ====
 

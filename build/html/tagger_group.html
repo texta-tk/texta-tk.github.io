@@ -15,7 +15,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Regex Tagger" href="regex_tagger.html" />
+    <link rel="next" title="Creation" href="regex_tagger.html" />
     <link rel="prev" title="Tagger" href="tagger.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -45,7 +45,11 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
@@ -77,8 +81,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
@@ -90,7 +96,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="tagger.html" title="previous chapter">Tagger</a></li>
-      <li>Next: <a href="regex_tagger.html" title="next chapter">Regex Tagger</a></li>
+      <li>Next: <a href="regex_tagger.html" title="next chapter">Creation</a></li>
   </ul></li>
 </ul>
 </div>
@@ -126,8 +132,8 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <dl class="simple">
-<dt><strong>How do Tagger and Tagger Groups differ?</strong></dt><dd><p>One model predicts whether a text is positive (True) or negative (False). That is, whether this text gets the label or not. Tagger trains only one model and predicts whether a text is similar to the query/dataset it was trained on or not.
-Tagger Group trains several models at once. That means, it can predict several labels at once. Tagger Group trains on facts. You can have several values under a certain fact and for each value (if it has high enough frequency (<em>Minimum sample size</em>) a model is trained.</p>
+<dt><strong>How do Tagger and Tagger Groups differ?</strong></dt><dd><p>One model predicts whether a text is positive (True) or negative (False). That is, whether this text gets the label or not. Tagger trains only one model and predicts whether a text is similar to the dataset it was trained on or not.
+Tagger Group trains several models at once. That means, it can predict several labels at once. Tagger Group trains on <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">facts</span></a>. You can have several values under a certain <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">fact</span></a> and for each value (if it has high enough frequency (<em>Minimum sample size</em>) a model is trained.</p>
 </dd>
 </dl>
 </div>
@@ -140,9 +146,9 @@ Tagger Group trains several models at once. That means, it can predict several l
 </dd>
 <dt><strong>indices</strong>:</dt><dd><p>The indices the model learns from.</p>
 </dd>
-<dt><strong>fields</strong>:</dt><dd><p>The fields the model learns from. If more than one fields is chosen, the fields are concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (<em>eaten</em>, <em>eats</em> and <em>ate</em> will change to its lemma <em>eat</em> and are dealt as one word).</p>
+<dt><strong>fields</strong>:</dt><dd><p>The <a class="reference internal" href="terminology.html#field-concept"><span class="std std-ref">fields</span></a> the model learns from. If more than one fields is chosen, the fields are concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (<em>eaten</em>, <em>eats</em> and <em>ate</em> will change to its lemma <em>eat</em> and are dealt as one word).</p>
 </dd>
-<dt><strong>query</strong>:</dt><dd><p>Searcher’s query for the dataset to be trained on. If <em>Query</em> is left empty, it will take all data in the active project as an input. You can also use saved searches as your desired input. This input will be the positive examples - later on, the Tagger tags data similar to this one.</p>
+<dt><strong>query</strong>:</dt><dd><p>Searcher’s <a class="reference internal" href="terminology.html#query-concept"><span class="std std-ref">query</span></a> for the dataset to be trained on. If <em>Query</em> is left empty, it will take all data in the active <a class="reference internal" href="terminology.html#project-concept"><span class="std std-ref">project</span></a> as an input. You can also use saved searches as your desired input. This input will be the positive examples - later on, the Tagger tags data similar to this one.</p>
 </dd>
 <dt><strong>embedding</strong>:</dt><dd><p><a class="reference internal" href="terminology.html#embedding-concept"><span class="std std-ref">Embedding</span></a> previously trained on the same dataset.</p>
 </dd>

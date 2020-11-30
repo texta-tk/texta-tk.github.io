@@ -1,9 +1,7 @@
+.. _topic_analyzer:
 ##############
 Topic Analyzer
 ##############
-
-
-.. _topic_analyzer:
 
 Topic Analyzer is a tool that helps us to find groups of similar documents from the data and transform these groups into labels.
 

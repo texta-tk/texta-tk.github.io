@@ -10,7 +10,7 @@ Search
 The Search application allows users to perform searches and aggregations over the data. Search results can be used as input to machine learning models.
 
 .. note::
-	To use the **Search** project and indices must be selected from the upper right panel.
+	To use the **Search** :ref:`project <project_concept>` and :ref:`indices <index_concept>` must be selected from the upper right panel.
 
 The Search's graphical interface (:numref:`search_panel`) consists of three panels.
 These are :ref:`Current Search <currentsearch>`, :ref:`Saved Searches <savedsearches>`, and :ref:`Aggregations <aggregations>`. 
@@ -116,7 +116,7 @@ The search will return documents that have either phrase "president Obama" or "p
 Since the Slop is 2, it also matches the phrase if it has 0-2 words between the words (e.g "president Barack Obama").
 
 .. note::
-	You can use an existing :ref:`lexicon <lexiconminer>` to create constraints. This can be done via button **Add lexicon** (visible only if there exist any lexicons in the project."
+	You can use an existing :ref:`lexicon <lexiconminer>` to create constraints. This can be done via button **Add lexicon** (visible only if there exist any lexicons in the :ref:`project <project_concept>`.
 	
 Date constraint
 ^^^^^^^^^^^^^^^
@@ -238,7 +238,7 @@ To save a search, click on the **disk** icon in the upper right corner of the Cu
 For example, you can use a search as a set of positive samples when training a tagger or as a set of documents to be analyzed with Topic Analyzer.
 Or you might just want to save a search for browsing it later: to open it in the Current Search, simply click on the name of it.
 
-If you are curious, you can see the actual :ref:`Elasticsearch <elasticsearch>` query behind the search by clicking on the **eye** icon next to the disk icon.
+If you are curious, you can see the actual :ref:`Elasticsearch <elasticsearch>` :ref:`query <query_concept>` behind the search by clicking on the **eye** icon next to the disk icon.
 
 API
 ===
@@ -285,7 +285,7 @@ For example, you can examine the distribution of the data over time (see :numref
 
 	*Time aggregation*
 
-If you have texta_facts added to your data, you can visualize the frequencies of the values of one or more facts (see :numref:`facts_aggre`).
+If you have :ref:`texta_facts <texta_fact>` added to your data, you can visualize the frequencies of the values of one or more :ref:`facts <texta_fact>` (see :numref:`facts_aggre`).
 Note that on top of the plot in figure :numref:`facts_aggre`, there is a list with three visualization options. You can click on them to change how the results are displayed - 
 whether hierarchically, as a table, or as a plot.
 

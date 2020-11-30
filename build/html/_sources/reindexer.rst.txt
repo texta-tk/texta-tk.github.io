@@ -11,9 +11,9 @@ Reindexer is a tool for making copies or subsets of Elasticsearch :ref:`indices 
 - Making a copy of an index;
 - Merging multiple indices into one;
 - Making a random subset of an index;
-- Making a subset based on predefined query;
+- Making a subset based on predefined :ref:`query <query_concept>`;
 - Renaming fields;
-- Updating Elasticsearch field types.
+- Updating Elasticsearch :ref:`field <field_concept>` types.
 
 Creation
 ***********
@@ -27,22 +27,22 @@ Parameters
   Name of the Reindexing task.
 
 **indices**:
-  List of Elasticsearch indices (datasets) to reindex.
+  List of Elasticsearch :ref:`indices <index_concept>` (datasets) to reindex.
 
 **fields**:
   List of fields to reindex, i.e. transfer to the new index. By default, all the fields in the source index are selected.
 
 **query**:
-  Specified Elasticsearch Search query. If left empty (and `random_size` is not defined), all documents from the source index are transferred to the new one.
+  Specified Elasticsearch Search :ref:`query <query_concept>`. If left empty (and `random_size` is not defined), all documents from the source index are transferred to the new one.
 
 **new_index**:
   Name of the target index.
 
 **random_size**:
-  Random subset size. If defined, new index is constructed of given number of random documents. If left empty, all the documents in the source index (or in accordance with restricted search query) are reindexed.
+  Random subset size. If defined, new index is constructed of given number of random documents. If left empty, all the documents in the source index (or in accordance with restricted search :ref:`query <query_concept>`) are reindexed.
 
 **field_type**:
-  List of new Elasticsearch field types in the following format:
+  List of new Elasticsearch :ref:`field <field>` types in the following format:
 
   .. code-block:: json
 
@@ -89,7 +89,7 @@ Fill the required fields and click on the `"Create"` button in the bottom right 
 
 	*Filled Reindexer creation view*
 
-The created Reindexer can now be seen as the first (or only, if no previous Reindexers exist under the project) row in the table of Reindex tasks (:numref:`reindexer_task_list`).
+The created Reindexer can now be seen as the first (or only, if no previous Reindexers exist under the :ref:`project <project_concept>`) row in the table of Reindex tasks (:numref:`reindexer_task_list`).
 
 .. _reindexer_task_list:
 .. figure:: images/reindexer/reindexer_task_list.png

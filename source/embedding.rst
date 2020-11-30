@@ -10,19 +10,19 @@ Create
 GUI
 =====
 
-Navigate to **Models -> Embeddings** and click on the **CREATE** button on top-left. Choose the name for you embedding (*Description*).
-Define the query and select indices on which the query will be executed. If you leave *Query* empty, it will take all documents from the selected indices.
-If you have any searches defined in your project, they will appear in a dropdown menu if you click on the field *Query* - you can use existing searches as queries.
+Navigate to **Models -> Embeddings** and click on the **CREATE** button on top-left. Choose the name for you :ref:`embedding <embedding_concept>` (*Description*).
+Define the :ref:`query <query_concept>` and select indices on which the :ref:`query <query_concept>` will be executed. If you leave *Query* empty, it will take all documents from the selected indices.
+If you have any searches defined in your :ref:`project <project_concept>`, they will appear in a dropdown menu if you click on the field *Query* - you can use existing searches as queries.
 
-Choose *fields* on which the embedding will be trained. The selected fields should contain textual data.
+Choose *fields* on which the :ref:`embedding <embedding_concept>` will be trained. The selected fields should contain textual data.
 
 .. note::
-	It is recommended to use lemmatized or tokenized data. Lemmatization is especially useful with morphologically complex languages. You can tokenize and lemmatize the data with MLP.
+	It is recommended to use lemmatized or tokenized data. Lemmatization is especially useful with morphologically complex languages. You can tokenize and lemmatize the data with :ref:`MLP <mlp>`.
 
 Field *Number of dimensions* defines the length of the word vectors. 
 100-200 dimensions is usually a good place to start with. 
 Field *Minimum frequency* sets how many times a word must occur in the data in minimum in order to 
-get included into the embedding. Again, you can leave it with the default value *5* if you are unsure which value to pick. 
+get included into the :ref:`embedding <embedding_concept>`. Again, you can leave it with the default value *5* if you are unsure which value to pick. 
 
 .. note::
     The quality of the embedding depends on the size of the dataset. The larger the better.
@@ -56,7 +56,7 @@ View
 GUI
 =====
 
-Navigate to **Models -> Embeddings** to view existing embeddings. 
+Navigate to **Models -> Embeddings** to view existing :ref:`embedding <embedding_concept>`. 
 If any of your embeddings is still training, the view will show you the progress of the training (:numref:`embedding_view`).
 Besides than that, the view shows you general information about your embeddings.
 

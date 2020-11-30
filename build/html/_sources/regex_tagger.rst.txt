@@ -1,6 +1,6 @@
 `EN <https://docs.texta.ee/v2/regex_tagger.html>`_
 `ET <https://docs.texta.ee/v2/et/regex_tagger.html>`_
-
+.. _regex_tagger:
 ################
 Regex Tagger
 ################
@@ -162,7 +162,7 @@ Clicking on the `"Create"` button opens a modal window with text `"New Regex Tag
 
 	*Empty Regex Tagger creation view*
 
-Fill the required fields and click on the `"Create"` button in the bottom right corner of the window (:numref:`regex_tagger_create_view`).
+Fill the required :ref:`fields <field_concept>` and click on the `"Create"` button in the bottom right corner of the window (:numref:`regex_tagger_create_view`).
 
 .. _regex_tagger_create_view:
 .. figure:: images/regex_tagger/regex_taggers_create_2.png
@@ -456,7 +456,7 @@ For tagging a random document with an existing Regex Tagger model, navigate to `
 	*"Tag Random Doc" option in the selection menu*
 
 
-Selecting the option opens a new modal window with the title `"Tag Random Doc"`. Select the index or indices you wish to use from the `"Indices"` selection menu displayed in the window after clicking on the corresponding section and select the field(s) you wish to use from the `"Select Fields"` selection menu below. If finished, click on the button `"Tag"` in the bottom right corner of the panel (:numref:`regex_tagger_tag_random_doc_mw`).
+Selecting the option opens a new modal window with the title `"Tag Random Doc"`. Select the index or indices you wish to use from the `"Indices"` selection menu displayed in the window after clicking on the corresponding section and select the :ref:`field(s) <field_concept>` you wish to use from the `"Select Fields"` selection menu below. If finished, click on the button `"Tag"` in the bottom right corner of the panel (:numref:`regex_tagger_tag_random_doc_mw`).
 
 .. _regex_tagger_tag_random_doc_mw:
 .. figure:: images/regex_tagger/regex_tagger_tag_random_doc_mw.png
@@ -481,7 +481,7 @@ The results are displayed in the same modal window as seen in :numref:`regex_tag
 
 	*"Tag Random Doc" negative output*
 
-PS! The fields in the document not selected by the user and/or not containing any matches are by default collapsed, but you can view their content by clicking on the arrow icon at the end of each field (:numref:`rt_tag_random_doc_other_fields`.)
+PS! The :ref:`fields <field_concept>` in the document not selected by the user and/or not containing any matches are by default collapsed, but you can view their content by clicking on the arrow icon at the end of each field (:numref:`rt_tag_random_doc_other_fields`.)
 
 .. _rt_tag_random_doc_other_fields:
 .. figure:: images/regex_tagger_group/tag_random_doc_other_fields.png

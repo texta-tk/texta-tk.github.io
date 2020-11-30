@@ -1,3 +1,4 @@
+.. _torch_tagger:
 #############
 Torch Tagger
 #############

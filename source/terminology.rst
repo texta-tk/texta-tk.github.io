@@ -5,28 +5,45 @@ Terminology
 Here are described the main concepts related to TEXTA Toolkit (TTK).
 
 .. _anonymizer_concept:
+
 Anonymizer
-************
+**********
 
 Anonymizer is a tool for anonymizing names in a text based on a predefined list of names. Each name detected from the text will be substituted with randomly generated pair of initials. You can read more about it :ref:`here <anonymizer>`.
 
+.. _bert_tagger_concept:
+
+Bert Tagger
+************
+
+Bert Tagger uses Google's state-of-the-art `Bidirectional Encoder Representations from Transformer <https://arxiv.org/abs/1810.04805>` for word embeddings. Read more about its Toolkit implementation :ref:`here <bert_tagger>`.
+
+.. _dataset_importer_concept:
+
+Dataset Importer
+*****************
+
+Dataset Importer is a tool for conveniently uploading files into Elasticsearch to make them accessible for the Toolkit. Read more about the usage :ref:`here <dataset_importer>`.
+
 .. _elasticsearch:
+
 Elasticsearch
 **************
 
-Elasticsearch is a distributed, open source search and analytics engine and database for all types of data. You can read more about it :ref:`here <https://www.elastic.co/what-is/elasticsearch>`_.
+Elasticsearch is a distributed, open source search and analytics engine and database for all types of data. You can read more about it `here <https://www.elastic.co/what-is/elasticsearch>`_.
 
 .. _embedding_concept:
+
 Embedding
 **********
 
-Embedding is a statistical model describing the distributional properties of words and phrases, which enables the computation of similarity between words and phrases.
+`Embedding <https://en.wikipedia.org/wiki/Word_embedding>`_ is a statistical model describing the distributional properties of words and phrases, which enables the computation of similarity between words and phrases.
 In TTK, embeddings are used for finding contextually similar keywords to extend search results (by building lexicons).
-Furthermore, vectors from word embeddings can also be used in neural classification models (:ref:`Taggers <tagger_concept>`, :ref:`Tagger Groups <tagger_group_concept>`, :ref:` Torch Tagger <torch_tagger_concept>`) in Texta Toolkit.
-TTK currently only supports Word2Vec embeddings, but work is being done to incorporate state of the art embedding models (e.g. BERT from Google Research).
-Furthermore, TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support multilingual text classification.
+Furthermore, vectors from word embeddings can also be used in neural classification models (:ref:`Taggers <tagger_concept>`, :ref:`Tagger Groups <tagger_group_concept>`, :ref:` Torch Tagger <torch_tagger_concept>`, :ref:`Taggers <bert_tagger_concept>`) in Texta Toolkit.
+TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support multilingual text classification.
 
 .. _texta_fact:
+
 Fact
 ********
 
@@ -76,7 +93,7 @@ Toolkit comes with several predefined fact names that are used by our Multilingu
 +----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
 | PHO      | Phone       | Phone number.                                                                                                                |
 +----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
-| TEXTA_TAG| Own tag     | Tags we have trained in :ref:`the Taggers under Models <texttaggers>`                                                        |
+| TEXTA_TAG| Own tag     | Tags we have trained in the Taggers under Models                                                                             |
 +----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
 
 	Table 1. *Predefined Fact Names used by Multilingual Processor*
@@ -93,21 +110,23 @@ Each document is a collection of fields. Field is a separated piece of informati
 
 
 .. _health_concept:
+
 Health
 ******
-Server health is a comprehensive overview of the status and performance of individual servers. It includes hardware parameters and, in our case, the TTK version numbers and the state of needed services. See :ref:`here <mlp_p>` how to check TTK's health.
+Server health is a comprehensive overview of the status and performance of individual servers. It includes hardware parameters and, in our case, the TTK version numbers and the state of needed services. See :ref:`here <health>` how to check TTK's health.
 
 .. _index_concept:
 
 Index
 ********
 
-Index is a collection of documents in Elasticsearch. In Search output the table consists of all the suitable documents filtered out from that index and one row indicates a document.
+`Elasticsearch's index <https://www.elastic.co/blog/what-is-an-elasticsearch-index>`_ is a collection of documents in Elasticsearch. In Search output the table consists of all the suitable documents filtered out from that index and one row indicates a document.
 
 .. _lexicon_miner_concept:
+
 Lexicon miner
 *************
-TODO
+Lexicon Miner is a tool for creating topic-related lexicon. It uses :ref:'embeddings <embedding_concept>' for finding words used in similar context. Read more about its usage :ref:`here <lexiconminer>`.
 
 
 .. _mlp:
@@ -117,27 +136,38 @@ Multilingual Preprocessor (MLP)
 
 MLP offers different analyzing options that give more features (information) for machine learning applications in TTK and helps to parse the information out of textual data user is interested in. Read more about the usage :ref:`here <mlp_p>`.
 
+.. _project_concept:
 
 Project
 ********
 
 Project is the main unit of access and management for datasets and resources (embeddings, text classifiers, etc.). A project is defined by its description, list of Elasticsearch indices related to the project (this is where the data is!), and a list of users who can access the project and it’s resources. All resources in TTK belong to some project and by adding or removing users, one can manage their access to the project.
 
+Project is active when it is chosen in the upper panel on the right. Read more about projects :ref:`here <project>`.
+
+.. _query_concept:
+
+Query
+******
+
+`Elasticsearch's query <https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html>`_ is basically a little json command that retrieves objects with given attributes from Elasticsearch. It can be thought of as subset of the dataset the query is performed on. Queries can be used in various Toolkit's tools and it can be saved under the :ref:`Searcher <search_concept>` as saved search for using it later or in other tools.
+
 .. _regex_tagger_concept:
 
 Regex Tagger
 *************
 
-Regex Tagger is a tool for tagging texts based on pattern matches. The user can define patterns (words/phrases/regexes) to search from the text and fine tune a variation of parameters to extract specific information and tag the text based on the information retrieved.
+Regex Tagger is a tool for tagging texts based on pattern matches. The user can define patterns (words/phrases/regexes) to search from the text and fine tune a variation of parameters to extract specific information and tag the text based on the information retrieved. Read more about its usage :ref:`here <regex_tagger>`.
 
 .. _regex_tagger_group_concept:
 
 Regex Tagger Group
 ************************
 
-Regex Tagger Group allows combining different Regex Taggers.
+Regex Tagger Group allows combining different Regex Taggers. Read more about its usage :ref:`here <regex_tagger_group>`.
 
 .. _reindexer_concept:
+
 Reindexer
 *********
 
@@ -158,7 +188,7 @@ Read more about it :ref:`here <reindexer>`.
 Search
 ********
 
-One of the most central component in TTK is Search, which is used to define subsets of data for training text classification models and performing various aggregations. Search is managed via GUI and can contain one or more constraints on feature values (e.g. strings and dates). Documents matching the search criteria can be used in various actions/functionalities in TTK, e.g. extraction of relevant keywords, data summarisation and exploration, and training text classifiers.
+One of the most central component in TTK is Search, which is used to define subsets of data for training text classification models and performing various aggregations. Search is managed via GUI and can contain one or more constraints on feature values (e.g. strings and dates). Documents matching the search criteria can be used in various actions/functionalities in TTK, e.g. extraction of relevant keywords, data summarisation and exploration, and training text classifiers. Read more about it :ref:`here <searcher>`.
 
 .. _tagger_group_concept:
 
@@ -169,7 +199,8 @@ Tagger Group is an extension to TTK’s binary taggers to support monolingual mu
 As its name suggests, Tagger Groups incorporate multiple (binary) taggers, which are executed in parallel to produce a list of tags to the user.
 Tagger Group has been successfully tested with over 6000 binary models and prediction times are usually less than 1 second.
 To achieve this, TTK has employed a hybrid approach for multi-label tagging, which uses unsupervised machine learning (document vectors) to limit the number of binary models used for prediction.
-In such scenario input document is compared to training data to determine most probable models to produce valid tags.
+In such scenario input document is compared to training data to determine most probable models to produce valid tags. 
+Read more about it :ref:`here <tagger>`.
 
 .. _tagger_concept:
 
@@ -183,8 +214,10 @@ TTK taggers are trained using scikit-learn pipelines and includes models like lo
 TTK automatically splits the training data into training and testing data (by default 80-20) and applies grid search combined with k-fold cross validation to identify best hyperparameters.
 SVM model is also used for feature selection to remove unimportant features from the model making it smaller.
 For features, both word-based and character-based n-grams are used.
+Read more about it :ref:`here <tagger_group>`.
 
 .. _task:
+
 Task
 ********
 
@@ -201,6 +234,8 @@ Topic Analyzer puts to use the best parts of unsupervised clustering and manual 
 
 Topic Analyzer allows user to look inside each cluster and make the decision about the quality manually. Users can also perform various actions on the cluster: remove documents, add more similar documents, and move documents to another more suitable cluster. Finally, user can choose to label the documents inside the cluster if it has reached a sufficient quality.
 
+Read more about its usage :ref:`here <topic_analyzer>`.
+
 .. _torch_tagger_concept:
 
 Torch Tagger
@@ -208,13 +243,16 @@ Torch Tagger
 
 While Taggers and Tagger Groups use classical machine learning to produce binary classification models, Texta Toolkit also incorporates deep neural models for binary and multi-class text classification.
 As the models are all programmed using PyTorch, the TTK’s component is called Torch Tagger.
+
 It allows for the user to use several state-of-art text classification models, including fastText, TextRNN using bi-direction LSTM networks, RCNN using recurrent convolutional neural nets.
 Since all models have been developed using PyTorch, introducing new models is fairly straightforward.
 TorchTagger models also include the possibility to use pre-trained word vectors (e.g. Word2Vec trained in TTK) in the embedding layer of the models.
 To create data processing pipelines, Torch Tagger uses torchtext package.
 Torch Tagger has been validated on monolingual toxic comment detection, reaching accuracy and F1-score of 96%.
+Read more about its usage :ref:`here <torch_tagger>`.
 
-.. _uaa:
+.. _uaa_concept:
 
 UUA server
 **********
+User Account and Authentication is an identity management service for making sure that only selected users have access to certain datasets. Read more about it :ref:`here <uua>`.

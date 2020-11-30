@@ -45,7 +45,11 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
@@ -86,8 +90,10 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
@@ -135,18 +141,18 @@
 <span id="create-embedding"></span><h2>Create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="gui">
 <h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
-<p>Navigate to <strong>Models -&gt; Embeddings</strong> and click on the <strong>CREATE</strong> button on top-left. Choose the name for you embedding (<em>Description</em>).
-Define the query and select indices on which the query will be executed. If you leave <em>Query</em> empty, it will take all documents from the selected indices.
-If you have any searches defined in your project, they will appear in a dropdown menu if you click on the field <em>Query</em> - you can use existing searches as queries.</p>
-<p>Choose <em>fields</em> on which the embedding will be trained. The selected fields should contain textual data.</p>
+<p>Navigate to <strong>Models -&gt; Embeddings</strong> and click on the <strong>CREATE</strong> button on top-left. Choose the name for you <a class="reference internal" href="terminology.html#embedding-concept"><span class="std std-ref">embedding</span></a> (<em>Description</em>).
+Define the <a class="reference internal" href="terminology.html#query-concept"><span class="std std-ref">query</span></a> and select indices on which the <a class="reference internal" href="terminology.html#query-concept"><span class="std std-ref">query</span></a> will be executed. If you leave <em>Query</em> empty, it will take all documents from the selected indices.
+If you have any searches defined in your <a class="reference internal" href="terminology.html#project-concept"><span class="std std-ref">project</span></a>, they will appear in a dropdown menu if you click on the field <em>Query</em> - you can use existing searches as queries.</p>
+<p>Choose <em>fields</em> on which the <a class="reference internal" href="terminology.html#embedding-concept"><span class="std std-ref">embedding</span></a> will be trained. The selected fields should contain textual data.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is recommended to use lemmatized or tokenized data. Lemmatization is especially useful with morphologically complex languages. You can tokenize and lemmatize the data with MLP.</p>
+<p>It is recommended to use lemmatized or tokenized data. Lemmatization is especially useful with morphologically complex languages. You can tokenize and lemmatize the data with <a class="reference internal" href="terminology.html#mlp"><span class="std std-ref">MLP</span></a>.</p>
 </div>
 <p>Field <em>Number of dimensions</em> defines the length of the word vectors.
 100-200 dimensions is usually a good place to start with.
 Field <em>Minimum frequency</em> sets how many times a word must occur in the data in minimum in order to
-get included into the embedding. Again, you can leave it with the default value <em>5</em> if you are unsure which value to pick.</p>
+get included into the <a class="reference internal" href="terminology.html#embedding-concept"><span class="std std-ref">embedding</span></a>. Again, you can leave it with the default value <em>5</em> if you are unsure which value to pick.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The quality of the embedding depends on the size of the dataset. The larger the better.</p>
@@ -176,7 +182,7 @@ get included into the embedding. Again, you can leave it with the default value 
 <h2>View<a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>GUI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Navigate to <strong>Models -&gt; Embeddings</strong> to view existing embeddings.
+<p>Navigate to <strong>Models -&gt; Embeddings</strong> to view existing <a class="reference internal" href="terminology.html#embedding-concept"><span class="std std-ref">embedding</span></a>.
 If any of your embeddings is still training, the view will show you the progress of the training (<a class="reference internal" href="#embedding-view"><span class="std std-numref">Fig. 48</span></a>).
 Besides than that, the view shows you general information about your embeddings.</p>
 <div class="figure align-default" id="id10">

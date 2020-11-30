@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Regex Tagger Group &#8212; TEXTA Toolkit 2 documentation</title>
+    <title>Creation &#8212; TEXTA Toolkit 2 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,7 +16,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Torch Tagger" href="torch_tagger.html" />
-    <link rel="prev" title="Regex Tagger" href="regex_tagger.html" />
+    <link rel="prev" title="Creation" href="regex_tagger.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -45,7 +45,11 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
@@ -59,21 +63,50 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Regex Tagger Group</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gui">GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Creation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#apply-tagger-group">Apply Tagger Group</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#delete">Delete</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#edit">Edit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#multitag-docs">Multitag Docs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tag-random-doc">Tag Random Doc</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tag-text">Tag Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#apply-tagger-group">Apply Tagger Group</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rtg-apply-parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#delete">Delete</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#edit">Edit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#multitag-docs">Multitag Docs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tag-random-doc">Tag Random Doc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tag-text">Tag Text</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">API</a></li>
 </ul>
 </li>
 </ul>
@@ -88,7 +121,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="regex_tagger.html" title="previous chapter">Regex Tagger</a></li>
+      <li>Previous: <a href="regex_tagger.html" title="previous chapter">Creation</a></li>
       <li>Next: <a href="torch_tagger.html" title="next chapter">Torch Tagger</a></li>
   </ul></li>
 </ul>
@@ -120,21 +153,23 @@
           <div class="body" role="main">
             
   <p><a class="reference external" href="https://docs.texta.ee/v2/regex_tagger_group.html">EN</a>
-<a class="reference external" href="https://docs.texta.ee/v2/et/regex_tagger_group.html">ET</a></p>
-<div class="section" id="regex-tagger-group">
-<h1>Regex Tagger Group<a class="headerlink" href="#regex-tagger-group" title="Permalink to this headline">¶</a></h1>
+<a class="reference external" href="https://docs.texta.ee/v2/et/regex_tagger_group.html">ET</a>
+.. _regex_tagger_group:
+####################
+Regex Tagger Group
+####################</p>
 <p>Regex Tagger Group allows combining multiple <a class="reference external" href="https://docs.texta.ee/v2/regex_tagger.html">Regex Tagger</a> models into a group which can then be used for tagging documents. The resulting tags are formatted as <a class="reference external" href="https://docs.texta.ee/v2/terminology.html#fact">Texta Facts</a>.</p>
 <p><strong>API Reference</strong>: <a class="reference external" href="http://localhost:8000/api/v1/redoc/#tag/projects-greater-regex_tagger_groups">http://localhost:8000/api/v1/redoc/#tag/projects-greater-regex_tagger_groups</a></p>
 <div class="section" id="creation">
-<h2>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">¶</a></h2>
+<h1>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Regex Tagger Group can be created only if at least one <a class="reference external" href="https://docs.texta.ee/v2/regex_tagger.html">Regex Tagger</a> model exists.</p>
 </div>
 <div class="section" id="parameters">
-<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="input">
-<h4>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
+<h3>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h3>
 <dl>
 <dt><strong>regex_taggers</strong>:</dt><dd><p>Regex Tagger models to be added to the group.</p>
 </dd>
@@ -151,7 +186,7 @@
 </dl>
 </div>
 <div class="section" id="output">
-<h4>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h4>
+<h3>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h3>
 <dl class="simple">
 <dt><strong>id</strong>:</dt><dd><p>ID of the created Regex Tagger Group</p>
 </dd>
@@ -171,7 +206,7 @@
 </div>
 </div>
 <div class="section" id="gui">
-<h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
+<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
 <p>For creating a new Regex Tagger Group, navigate to <cite>“Models” -&gt; “Regex Tagger Groups”</cite> as seen in <a class="reference internal" href="#rtg-nav"><span class="std std-numref">Fig. 83</span></a>.</p>
 <div class="figure align-center" id="id22">
 <span id="rtg-nav"></span><a class="reference internal image-reference" href="_images/rtg_nav.png"><img alt="_images/rtg_nav.png" src="_images/rtg_nav.png" style="width: 500pt;" /></a>
@@ -199,7 +234,7 @@
 </div>
 </div>
 <div class="section" id="api">
-<h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <p>Reference:  <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_create">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_create</a></p>
 <p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/</strong></p>
 <p>Example:</p>
@@ -329,27 +364,27 @@
 </div>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="apply-tagger-group">
-<h3>Apply Tagger Group<a class="headerlink" href="#apply-tagger-group" title="Permalink to this headline">¶</a></h3>
-<p>Function <cite>“Apply Tagger Group”</cite> enables applying Regex Tagger Group to one or many datasets indexed in Elasticsearch. Results are added to the field <strong>“texta_facts”</strong> accordingly:</p>
+<h2>Apply Tagger Group<a class="headerlink" href="#apply-tagger-group" title="Permalink to this headline">¶</a></h2>
+<p>Function <cite>“Apply Tagger Group”</cite> enables applying Regex Tagger Group to one or many datasets indexed in <a class="reference internal" href="terminology.html#elasticsearch"><span class="std std-ref">Elasticsearch</span></a>. Results are added to the field <strong>“texta_facts”</strong> accordingly:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>RegexTaggerGroup.description -&gt; texta_fact.fact <span class="o">(</span>API<span class="o">)</span> / texta_fact.fact_name <span class="o">(</span>GUI<span class="o">)</span>
 RegexTagger.description -&gt; texta_fact.str_val / texta_fact.fact_value <span class="o">(</span>GUI<span class="o">)</span>
 </pre></div>
 </div>
 <div class="section" id="rtg-apply-parameters">
-<span id="id2"></span><h4>Parameters<a class="headerlink" href="#rtg-apply-parameters" title="Permalink to this headline">¶</a></h4>
+<span id="id2"></span><h3>Parameters<a class="headerlink" href="#rtg-apply-parameters" title="Permalink to this headline">¶</a></h3>
 <dl>
 <dt><strong>description</strong>:</dt><dd><p>Name of the application task.</p>
 </dd>
-<dt><strong>indices</strong>:</dt><dd><p>List of Elasticsearch indices (datasets) onto which the selected models are applied. NB! Indices should be formatted as dicts, where key = “name” and value = &lt;index_name&gt;, e.g:</p>
+<dt><strong>indices</strong>:</dt><dd><p>List of Elasticsearch <a class="reference internal" href="terminology.html#index-concept"><span class="std std-ref">indices</span></a> (datasets) onto which the selected models are applied. NB! Indices should be formatted as dicts, where key = “name” and value = &lt;index_name&gt;, e.g:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my_dataset&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 </dd>
 <dt><strong>fields</strong>:</dt><dd><p>List of fields onto which the selected models are applied.</p>
 </dd>
-<dt><strong>query</strong>:</dt><dd><p>Specified Elasticsearch Search query.</p>
+<dt><strong>query</strong>:</dt><dd><p>Specified Elasticsearch Search <a class="reference internal" href="terminology.html#query-concept"><span class="std std-ref">query</span></a>.</p>
 </dd>
 <dt><strong>bulk_size</strong>:</dt><dd><p>Number of documents processed in one batch.</p>
 </dd>
@@ -364,8 +399,8 @@ RegexTagger.description -&gt; texta_fact.str_val / texta_fact.fact_value <span c
 </dl>
 </div>
 <div class="section" id="id3">
-<h4>GUI<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<p>For applying one or multiple Regex Tagger Group(s) to a dataset indexed in Elasticsearch, navigate to <cite>“Models” -&gt; “Regex Tagger Groups”</cite> as seen in <a class="reference internal" href="#rtg-nav"><span class="std std-numref">Fig. 83</span></a>. Click on the button <cite>“Apply Regex Tagger Group”</cite> as seen in <a class="reference internal" href="#rtg-apply"><span class="std std-numref">Fig. 88</span></a>.</p>
+<h3>GUI<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>For applying one or multiple Regex Tagger Group(s) to a dataset indexed in <a class="reference internal" href="terminology.html#elasticsearch"><span class="std std-ref">Elasticsearch</span></a>, navigate to <cite>“Models” -&gt; “Regex Tagger Groups”</cite> as seen in <a class="reference internal" href="#rtg-nav"><span class="std std-numref">Fig. 83</span></a>. Click on the button <cite>“Apply Regex Tagger Group”</cite> as seen in <a class="reference internal" href="#rtg-apply"><span class="std std-numref">Fig. 88</span></a>.</p>
 <div class="figure align-center" id="id27">
 <span id="rtg-apply"></span><a class="reference internal image-reference" href="_images/apply_rtg.png"><img alt="_images/apply_rtg.png" src="_images/apply_rtg.png" style="width: 400pt;" /></a>
 <p class="caption"><span class="caption-number">Fig. 88 </span><span class="caption-text"><em>“Apply Regex Tagger Group” button</em></span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
@@ -387,7 +422,7 @@ RegexTagger.description -&gt; texta_fact.str_val / texta_fact.fact_value <span c
 </div>
 </div>
 <div class="section" id="id4">
-<h4>API<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<h3>API<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>Reference:  <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_apply_tagger_group">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_apply_tagger_group</a></p>
 <p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/{id}/apply_tagger_group/</strong></p>
 <p>Example:</p>
@@ -412,14 +447,14 @@ RegexTagger.description -&gt; texta_fact.str_val / texta_fact.fact_value <span c
 </div>
 </div>
 <div class="section" id="delete">
-<h3>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+<h2>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
 <p>Function <cite>“Delete”</cite> allows deleting existing Regex Tagger Groups.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Deleting a Regex Tagger Group <strong>does NOT</strong> delete Regex Tagger models belonging to the group.</p>
 </div>
 <div class="section" id="id5">
-<h4>GUI<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<h3>GUI<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>For deleting a Regex Tagger Group through GUI, navigate to <cite>“Models” -&gt; “Regex Tagger Groups”</cite> as seen in <a class="reference internal" href="#rtg-nav"><span class="std std-numref">Fig. 83</span></a>. There are two options for deleting a Regex Tagger Group:</p>
 <p><strong>Option 1</strong>:</p>
 <p>Select the Regex Tagger Group you wish to delete by navigating to the options panel denoted with three vertical dots and select the option <cite>“Delete”</cite> from the selection menu as seen in <a class="reference internal" href="#rtg-delete"><span class="std std-numref">Fig. 92</span></a>.</p>
@@ -440,7 +475,7 @@ RegexTagger.description -&gt; texta_fact.str_val / texta_fact.fact_value <span c
 </div>
 </div>
 <div class="section" id="id6">
-<h4>API<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<h3>API<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>Reference: <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_delete">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_delete</a></p>
 <p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/{id}/</strong></p>
 <p>Example:</p>
@@ -451,9 +486,9 @@ RegexTagger.description -&gt; texta_fact.str_val / texta_fact.fact_value <span c
 </div>
 </div>
 <div class="section" id="edit">
-<h3>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h3>
+<h2>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id7">
-<h4>GUI<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<h3>GUI<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>For editing an existing Regex Tagger Group, select the Regex Tagger Group you wish to edit and navigate to the options panel by clicking on the three vertical dots at the end of the Regex Tagger Group row.
 Select the option <cite>“Edit”</cite> as seen in <a class="reference internal" href="#rtg-edit"><span class="std std-numref">Fig. 95</span></a>.</p>
 <div class="figure align-center" id="id34">
@@ -467,7 +502,7 @@ Select the option <cite>“Edit”</cite> as seen in <a class="reference interna
 </div>
 </div>
 <div class="section" id="id8">
-<h4>API<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<h3>API<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>Reference:  <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_update">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_update</a></p>
 <p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/{id}/</strong></p>
 <p>Example:</p>
@@ -483,7 +518,7 @@ Select the option <cite>“Edit”</cite> as seen in <a class="reference interna
 </div>
 </div>
 <div class="section" id="multitag-docs">
-<h3>Multitag Docs<a class="headerlink" href="#multitag-docs" title="Permalink to this headline">¶</a></h3>
+<h2>Multitag Docs<a class="headerlink" href="#multitag-docs" title="Permalink to this headline">¶</a></h2>
 <p>Function <cite>“Multitag Docs”</cite> enables tagging one or many documents with multiple Regex Tagger Group models at once. Results are added to the field <strong>“texta_facts”</strong> accordingly:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>RegexTaggerGroup.description -&gt; texta_fact.fact <span class="o">(</span>API<span class="o">)</span> / texta_fact.fact_name <span class="o">(</span>GUI<span class="o">)</span>
 RegexTagger.description -&gt; texta_fact.str_val <span class="o">(</span>API<span class="o">)</span> / texta_fact.fact_value <span class="o">(</span>GUI<span class="o">)</span>
@@ -492,9 +527,9 @@ field -&gt; texta_fact.doc_path
 </pre></div>
 </div>
 <div class="section" id="id9">
-<h4>Parameters<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<h3>Parameters<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id10">
-<h5>Input<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
+<h4>Input<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <dl>
 <dt><strong>docs</strong>:</dt><dd><p>Documents to tag as a list of JSON dicts, e.g:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
@@ -520,7 +555,7 @@ field -&gt; texta_fact.doc_path
 </div>
 </div>
 <div class="section" id="id11">
-<h4>API<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<h3>API<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>Reference:  <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_multitag_docs">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_multitag_docs</a></p>
 <p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/multitag_docs/</strong></p>
 <p>Example:</p>
@@ -638,12 +673,12 @@ field -&gt; texta_fact.doc_path
 </div>
 </div>
 <div class="section" id="tag-random-doc">
-<h3>Tag Random Doc<a class="headerlink" href="#tag-random-doc" title="Permalink to this headline">¶</a></h3>
+<h2>Tag Random Doc<a class="headerlink" href="#tag-random-doc" title="Permalink to this headline">¶</a></h2>
 <p>Function <cite>“Tag Random Doc”</cite> provides support for testing a Regex Tagger Group on a randomly selected document from a certain predefined dataset.</p>
 <div class="section" id="id12">
-<h4>Parameters<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<h3>Parameters<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id13">
-<h5>Input<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h5>
+<h4>Input<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
 <dl>
 <dt><strong>indices</strong>:</dt><dd><p>List of Elasticsearch indices (dataset) onto which the selected models are applied. NB! Indices should be formatted as dicts, where key = “name” and value = &lt;index_name&gt;, e.g:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my_dataset&quot;</span><span class="p">}</span>
@@ -655,7 +690,7 @@ field -&gt; texta_fact.doc_path
 </dl>
 </div>
 <div class="section" id="id14">
-<h5>Output<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
+<h4>Output<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
 <dl>
 <dt><strong>tagger_group_id</strong>:</dt><dd><p>ID of the Regex Tagger Group used for tagging.</p>
 </dd>
@@ -683,7 +718,7 @@ field -&gt; texta_fact.doc_path
 </div>
 </div>
 <div class="section" id="id15">
-<h4>GUI<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<h3>GUI<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <p>For tagging a random document with an existing Regex Tagger Group model, navigate to <cite>“Models” -&gt; “Regex Tagger Groups”</cite> as seen in <a class="reference internal" href="#rtg-nav"><span class="std std-numref">Fig. 83</span></a>. Select the model you wish to use and navigate to the options panel denoted with three vertical dots. Select the option “Tag Random Doc” from the selection menu as seen in <a class="reference internal" href="#rtg-random-doc"><span class="std std-numref">Fig. 97</span></a>.</p>
 <div class="figure align-center" id="id36">
 <span id="rtg-random-doc"></span><a class="reference internal image-reference" href="_images/rtg_random_doc.png"><img alt="_images/rtg_random_doc.png" src="_images/rtg_random_doc.png" style="width: 150pt;" /></a>
@@ -710,7 +745,7 @@ field -&gt; texta_fact.doc_path
 </div>
 </div>
 <div class="section" id="id16">
-<h4>API<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<h3>API<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p>Reference:  <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_random_doc">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_random_doc</a></p>
 <p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/{id}/tag_random_doc/</strong></p>
 <p>Example:</p>
@@ -778,19 +813,19 @@ field -&gt; texta_fact.doc_path
 </div>
 </div>
 <div class="section" id="tag-text">
-<h3>Tag Text<a class="headerlink" href="#tag-text" title="Permalink to this headline">¶</a></h3>
+<h2>Tag Text<a class="headerlink" href="#tag-text" title="Permalink to this headline">¶</a></h2>
 <p>Function <cite>“Tag Text”</cite> enables tagging a single text with a selected Regex Tagger Group by applying all the models belonging in the group to the selected text.</p>
 <div class="section" id="id17">
-<h4>Parameters<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<h3>Parameters<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id18">
-<h5>Input<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h5>
+<h4>Input<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
 <dl class="simple">
 <dt><strong>text</strong>:</dt><dd><p>Text to tag.</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="id19">
-<h5>Output<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h5>
+<h4>Output<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
 <dl>
 <dt><strong>tagger_group_id</strong>:</dt><dd><p>ID of the Regex Tagger Group used for tagging.</p>
 </dd>
@@ -818,7 +853,7 @@ field -&gt; texta_fact.doc_path
 </div>
 </div>
 <div class="section" id="id20">
-<h4>GUI<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<h3>GUI<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
 <p>For tagging a text with an existing Regex Tagger Group model, navigate to <cite>“Models” -&gt; “Regex Tagger Groups”</cite> as seen in <a class="reference internal" href="#rtg-nav"><span class="std std-numref">Fig. 83</span></a>. Select the model you wish to use and navigate to the options panel denoted with three vertical dots. Select option “Tag Text” from the selection menu as seen in <a class="reference internal" href="#rtg-tag-text"><span class="std std-numref">Fig. 102</span></a>.</p>
 <div class="figure align-center" id="id41">
 <span id="rtg-tag-text"></span><a class="reference internal image-reference" href="_images/rtg_tag_text.png"><img alt="_images/rtg_tag_text.png" src="_images/rtg_tag_text.png" style="width: 150pt;" /></a>
@@ -840,7 +875,7 @@ field -&gt; texta_fact.doc_path
 </div>
 </div>
 <div class="section" id="id21">
-<h4>API<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<h3>API<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <p>Reference:  <a class="reference external" href="http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_text">http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_text</a></p>
 <p>Endpoint <strong>/projects/{project_pk}/regex_tagger_groups/{id}/tag_text/</strong></p>
 <p>Example:</p>
@@ -891,7 +926,6 @@ field -&gt; texta_fact.doc_path
   <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>

@@ -106,7 +106,7 @@ Name your Anonymizer model by filling the field `Description` and modify default
 	*Filled Anonymizer creation view*
 
 
-The created Anonymizer can now be seen as the first (or only, if no previous Anonymizers exist under the project) row in the table of Anonymizers (:numref:`anonymizer_list`).
+The created Anonymizer can now be seen as the first (or only, if no previous Anonymizers exist under the :ref:`project <project_concept>`) row in the table of Anonymizers (:numref:`anonymizer_list`).
 
 .. _anonymizer_list:
 .. figure:: images/anonymizer/anonymizer_list.png

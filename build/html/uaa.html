@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Third-Party Authentication &#8212; TEXTA Toolkit 2 documentation</title>
+    <title>Configuring the UAA server locally &#8212; TEXTA Toolkit 2 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -45,14 +45,11 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Third-Party Authentication</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#configuring-the-uaa-server-locally">Configuring the UAA server locally</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tests">Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#notes-on-authentication">Notes on authentication</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuring the UAA server locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#tests">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#notes-on-authentication">Notes on authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
@@ -66,10 +63,13 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
 </ul>
 
@@ -109,13 +109,14 @@
           <div class="body" role="main">
             
   <p><a class="reference external" href="https://docs.texta.ee/uua.html">EN</a>
-<a class="reference external" href="https://docs.texta.ee/et/uua.html">ET</a></p>
-<div class="section" id="third-party-authentication">
-<h1>Third-Party Authentication<a class="headerlink" href="#third-party-authentication" title="Permalink to this headline">¶</a></h1>
-<p>Toolkit can also be authenticated using UAA provided by <a class="reference external" href="https://docs.cloudfoundry.org/concepts/architecture/uaa.html">CloudFoundry</a>.
+<a class="reference external" href="https://docs.texta.ee/et/uua.html">ET</a>
+.. _uua:
+Third-Party Authentication
+==============================</p>
+<p>Toolkit can also be authenticated using <a class="reference internal" href="terminology.html#uaa-concept"><span class="std std-ref">UAA</span></a> provided by <a class="reference external" href="https://docs.cloudfoundry.org/concepts/architecture/uaa.html">CloudFoundry</a>.
 This requires some configuration, both on the UAA server and in Toolkit.</p>
 <div class="section" id="configuring-the-uaa-server-locally">
-<h2>Configuring the UAA server locally<a class="headerlink" href="#configuring-the-uaa-server-locally" title="Permalink to this headline">¶</a></h2>
+<h1>Configuring the UAA server locally<a class="headerlink" href="#configuring-the-uaa-server-locally" title="Permalink to this headline">¶</a></h1>
 <p>The UAA server will require configuring a client application for toolkit, eg setting the <code class="docutils literal notranslate"><span class="pre">redirect_uri</span></code>.
 An example “login” client is already provided in UAA by default, which will be used for the example.</p>
 <p>Example:</p>
@@ -143,7 +144,7 @@ An example “login” client is already provided in UAA by default, which will 
 <p><strong>NOTE:</strong> One caveat one might encounter is getting authentication errors when trying to log in with the email. Even though the log in form asks for the “email” and “password”, it actually sends the <strong>username</strong> and password. Therefore, try logging in with the username(type it into the email field)/password instead.</p>
 </div>
 <div class="section" id="configuring-the-toolkit-server">
-<h2>Configuring the Toolkit server<a class="headerlink" href="#configuring-the-toolkit-server" title="Permalink to this headline">¶</a></h2>
+<h1>Configuring the Toolkit server<a class="headerlink" href="#configuring-the-toolkit-server" title="Permalink to this headline">¶</a></h1>
 <p>To configure the Toolkit server client application, UAA related environment variables need to be set:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TEXTA_USE_UAA</span></code> expects input “False” to disable UAA, which will otherwise be enabled.</p></li>
@@ -155,7 +156,7 @@ An example “login” client is already provided in UAA by default, which will 
 </ul>
 </div>
 <div class="section" id="using-uaa-on-the-front-end">
-<h2>Using UAA on the front-end<a class="headerlink" href="#using-uaa-on-the-front-end" title="Permalink to this headline">¶</a></h2>
+<h1>Using UAA on the front-end<a class="headerlink" href="#using-uaa-on-the-front-end" title="Permalink to this headline">¶</a></h1>
 <p>To use UAA with the Angular front-end, it needs to be configured in an <cite>environment.ts</cite> file.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">useCloudFoundryUAA</span></code> is a boolean. If false, the UAA login option will be hidden.</p></li>
@@ -182,21 +183,20 @@ An example “login” client is already provided in UAA by default, which will 
 <p>This will then redirect you to the UAA login screen. After logging in, if the login was successful, it will redirect you back to the Toolkit front-end.</p>
 </div>
 <div class="section" id="tests">
-<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h2>
+<h1>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h1>
 <p>To run tests on the Toolkit backend, run:
 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">test</span> <span class="pre">toolkit.uaa_auth</span></code></p>
 <p>Tests on the front-end are carried through Cypress, in the <code class="docutils literal notranslate"><span class="pre">uaa.e2e-spec.js</span></code> file.</p>
 <p><strong>NOTE:</strong> The UAA server has to be running and configured in order for the tests to work.</p>
 </div>
 <div class="section" id="notes-on-authentication">
-<h2>Notes on authentication<a class="headerlink" href="#notes-on-authentication" title="Permalink to this headline">¶</a></h2>
+<h1>Notes on authentication<a class="headerlink" href="#notes-on-authentication" title="Permalink to this headline">¶</a></h1>
 <p>Upon a successful login to the UAA server, sends a callback to the Toolkit <code class="docutils literal notranslate"><span class="pre">redirect_uri</span></code> callback, through which another request to the UAA server will be made to obtain an <code class="docutils literal notranslate"><span class="pre">access_token</span></code> and a <code class="docutils literal notranslate"><span class="pre">refresh_token</span></code>.</p>
 <p>To authenticate Toolkit with the <code class="docutils literal notranslate"><span class="pre">access_token</span></code>, it needs to be attached to the <code class="docutils literal notranslate"><span class="pre">Authorization</span></code> (<code class="docutils literal notranslate"><span class="pre">HTTP_AUTHORIZATION</span></code>) header as a <code class="docutils literal notranslate"><span class="pre">Bearer</span></code> token in requests. Example: <code class="docutils literal notranslate"><span class="pre">Authorization:</span> <span class="pre">Bearer</span> <span class="pre">71428a9f2fb44c52be3c17f2fae405f5</span></code>.</p>
 <p>On every request to the Toolkit REST backend, the Toolkit REST backend will send a request to the UAA server to check whether the token is still valid. If not, it will give a 401 response.</p>
 <p>Upon a 401 Unauthorized response from the server, the <code class="docutils literal notranslate"><span class="pre">refresh_token</span></code> token will be automatically sent by the frontend to Toolkit REST backend’s <strong>uaa/refresh-token</strong> endpoint with the <code class="docutils literal notranslate"><span class="pre">refresh_token</span></code> attached to the request body under the field <code class="docutils literal notranslate"><span class="pre">refresh_token</span></code>.
 On the Toolkit REST backend, the refresh token will be used to make a request to the UAA server’s <strong>/oauth/token</strong> endpoint to get a new <code class="docutils literal notranslate"><span class="pre">access_token</span></code>. If the <code class="docutils literal notranslate"><span class="pre">refresh_token</span></code> is invalid or expired, the Toolkit REST backend’s <strong>uaa/refresh-token</strong> endpoint will give a 403 response.</p>
 <p>For reference: <a class="reference external" href="https://docs.cloudfoundry.org/api/uaa/version/74.24.0/index.html#refresh-token">https://docs.cloudfoundry.org/api/uaa/version/74.24.0/index.html#refresh-token</a></p>
-</div>
 </div>
 
 

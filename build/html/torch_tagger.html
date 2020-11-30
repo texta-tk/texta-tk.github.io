@@ -16,7 +16,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Bert Tagger" href="bert_tagger.html" />
-    <link rel="prev" title="Regex Tagger Group" href="regex_tagger_group.html" />
+    <link rel="prev" title="Creation" href="regex_tagger_group.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -45,7 +45,11 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
@@ -59,16 +63,35 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Torch Tagger</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#useage">Useage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#application">Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fine-tuning">Fine-Tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#useage">Useage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#application">Application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#fine-tuning">Fine-Tuning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">API</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
 </ul>
 
@@ -76,7 +99,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="regex_tagger_group.html" title="previous chapter">Regex Tagger Group</a></li>
+      <li>Previous: <a href="regex_tagger_group.html" title="previous chapter">Creation</a></li>
       <li>Next: <a href="bert_tagger.html" title="next chapter">Bert Tagger</a></li>
   </ul></li>
 </ul>
@@ -107,8 +130,8 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="torch-tagger">
-<h1>Torch Tagger<a class="headerlink" href="#torch-tagger" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>Torch Tagger<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="creation">
 <h2>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="gui">
@@ -137,20 +160,20 @@
 </div>
 <div class="section" id="useage">
 <h2>Useage<a class="headerlink" href="#useage" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>GUI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-</div>
 <div class="section" id="id2">
-<h3>API<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>GUI<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id3">
+<h3>API<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="application">
 <h2>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>GUI<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-</div>
 <div class="section" id="id4">
-<h3>API<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>GUI<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id5">
+<h3>API<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="tag-text">
 <h4>Tag text<a class="headerlink" href="#tag-text" title="Permalink to this headline">¶</a></h4>
 <p>Endpoint: <strong>/projects/{project_pk}/torchtaggers/{id}/tag_text/</strong></p>
@@ -178,11 +201,11 @@
 <div class="section" id="fine-tuning">
 <h2>Fine-Tuning<a class="headerlink" href="#fine-tuning" title="Permalink to this headline">¶</a></h2>
 <p>Siia tulevad parameetrid.</p>
-<div class="section" id="id5">
-<h3>GUI<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-</div>
 <div class="section" id="id6">
-<h3>API<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>GUI<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id7">
+<h3>API<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>

@@ -1,8 +1,10 @@
+.. _dataset_importer:
+
 ##################
 Dataset Importer
 ##################
 
-Dataset Importer allows the user to insert **jsonlines**, **csv** and **excel** files into Elasticsearch
+Dataset Importer allows the user to insert **jsonlines**, **csv** and **excel** files into :ref:`Elasticsearch <elasticsearch>`.
 to make them accessible by the Toolkit. Please note that this process reads the whole
 file into the memory and can thus create memory issues when trying to process bigger files. It is advisable to split such
 files up into smaller chunks and process each one separately.
@@ -16,7 +18,7 @@ GUI
 You can upload a new dataset from a file to Toolkit via Dataset Importer under Tools (see :numref:`importing_loc`).
 Click on the **CREATE** button which opens a table in :numref:`importing`. There you can describe your dataset (*Task description*), give it a name (*Dataset name*) and choose the file to be uploaded (you can browse it via the folder button). When uploading an .csv file, you can add the separator (usually a comma). Then hit **Create**. You will see the uploading process and metadata of the dataset under the Dataset Importer in the TTK. You can delete the uploaded dataset by clicking on the three dots under actions. 
 
-Now you can add this data to your project and use it with the name you gave to it. 
+Now you can add this data to your :ref:`project <project_concept>` and use it with the name you gave to it. 
 
 .. _importing_loc:
 .. figure:: images/dataset_importer_loc.png
@@ -35,7 +37,7 @@ Parameters:
 ===========
 
 * description - Normal description to separate any given task from the other ones.
-* index - Name of the newly created index, please note that Elasticsearch index naming restrictions apply.
+* index - Name of the newly created index, please note that Elasticsearch :ref:`index <index_concept>` naming restrictions apply.
 * separator - Only needed for .csv files, defaults to a coma (,). Allows to configure the separator for csv files.
 
 
