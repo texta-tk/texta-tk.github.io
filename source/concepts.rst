@@ -1,6 +1,7 @@
 `EN <https://docs.texta.ee/concepts.html>`_
 `ET <https://docs.texta.ee/et/concepts.html>`_
 
+
 Main Concepts
 ========================
 
