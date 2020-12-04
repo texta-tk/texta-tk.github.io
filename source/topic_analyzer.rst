@@ -6,7 +6,7 @@ Topic Analyzer
 
 .. note::
 
-	There exists an API for topic analyzer too, but the magic of the analyzer dissappears when using API which is why API instructions are not given here.
+	There exists an API for topic analyzer too, but the magic of the analyzer dissappears when using API.
 
 .. _create_TA:
 
