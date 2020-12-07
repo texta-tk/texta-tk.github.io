@@ -4,26 +4,27 @@
 Dataset Importer
 ##################
 
-Dataset Importer allows the user to insert **jsonlines**, **csv** and **excel** files into :ref:`Elasticsearch <elasticsearch>`.
-to make them accessible by the Toolkit. Please note that this process reads the whole
-file into the memory and can thus create memory issues when trying to process bigger files. It is advisable to split such
-files up into smaller chunks and process each one separately.
-
-This whole process is asynchronous so the response to the call will be instantaneous and it since it takes a bit time
-to load the file into the memory, the first 10 seconds might not display any signs of the progress changing.
+Dataset Importer is a tool for uploading **JSON Lines**, **CSV** and **Excel** files into :ref:`Elasticsearch <elasticsearch>` to make them accessible for TEXTA Toolkit.
 
 GUI
 ****
 
-You can upload a new dataset from a file to Toolkit via Dataset Importer under Tools (see :numref:`importing_loc`).
-Click on the **CREATE** button which opens a table in :numref:`importing`. There you can describe your dataset (*Task description*), give it a name (*Dataset name*) and choose the file to be uploaded (you can browse it via the folder button). When uploading an .csv file, you can add the separator (usually a comma). Then hit **Create**. You will see the uploading process and metadata of the dataset under the Dataset Importer in the TTK. You can delete the uploaded dataset by clicking on the three dots under actions. 
+| You can navigate to the Dataset Importer by clicking on the "Dataset Importer" button located under the Tools dropdown menu. (:numref:`importing_loc`).
+| Click on the **CREATE** button to open up a new form (:numref:`importing`).
 
-Now you can add this data to your :ref:`project <project_concept>` and use it with the name you gave to it. 
+| Here you can:
+
+1. Set a description for the import task
+2. Set the Dataset name
+3. Specify a separator for **CSV** files (usually a comma)
+4. Browse and choose the file to be uploaded by clicking on the folder button.
+
+Click on the **Create** button to start the Importer Task. Upon completion you can add the dataset to your :ref:`project <project_concept>`.
 
 .. _importing_loc:
 .. figure:: images/dataset_importer_loc.png
 	
-	*Importing a new dataset*
+	*Navigating to dataset importer*
 
 .. _importing:
 .. figure:: images/dataset_importer.png
@@ -38,7 +39,8 @@ Parameters:
 
 * description - Normal description to separate any given task from the other ones.
 * index - Name of the newly created index, please note that Elasticsearch :ref:`index <index_concept>` naming restrictions apply.
-* separator - Only needed for .csv files, defaults to a coma (,). Allows to configure the separator for csv files.
+* separator - Only needed for .csv files, defaults to a comma (,). Allows to configure the separator for csv files.
+* file - File to import (**JSON Lines**, **CSV**, **Excel**)
 
 
 Example:

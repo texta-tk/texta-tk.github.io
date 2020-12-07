@@ -81,7 +81,7 @@ The Toolkit comes with several predefined fact names that are used by our Multil
 +----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
 | LOC      | Location    | Name of a location, gotten statistically.                                                                                    |
 +----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
-| COMPANY  | Company     | Names of companies registered in Estonia, gotten from `Estonian Open Data <https://opendata.riik.ee/datasets/ariregister/>`_.  |
+| COMPANY  | Company     | Names of companies registered in Estonia, gotten from `Estonian Open Data <https://opendata.riik.ee/datasets/ariregister/>`_.|
 +----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
 | ADDR     | Address     | Estonian address, gotten from `Estonian Open Data <https://opendata.riik.ee/datasets/aadressiandmed/>`_.                     |
 +----------+-------------+------------------------------------------------------------------------------------------------------------------------------+
@@ -255,4 +255,4 @@ Read more about its usage :ref:`here <torch_tagger>`.
 
 UUA server
 **********
-User Account and Authentication is an identity management service for making sure that only selected users have access to certain datasets. Read more about it :ref:`here<uua>`.
+User Account and Authentication is an identity management service for making sure that only selected users have access to certain datasets. Read more about it :ref:`here <uaa>`.

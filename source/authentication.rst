@@ -1,16 +1,100 @@
-`EN <https://docs.texta.ee/uua.html>`_
-`ET <https://docs.texta.ee/et/uua.html>`_
+`EN <https://docs.texta.ee/authentication.html>`_
+`ET <https://docs.texta.ee/et/authentication.html>`_
 
-.. _uua:
+.. _authentication:
+
+################
+Authentication
+################
+
+| To use Texta Toolkit, you must first need to authenticate with either:
+
+1. Through :ref:`UAA <uaa_concept>` (Disabled by default) (see :numref:`login` item 1)
+2. By creating a new Texta Toolkit account (see :numref:`login` item 2)
+
+.. _login:
+.. figure:: images/login.png
+
+    *Login Screen at Startup*
+
+.. _registration:
+
+Registration
+*************
+
+GUI
+===
+
+API
+===
+Endpoint: **/rest-auth/registration/**
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST "http://localhost:8000/api/v1/rest-auth/registration/" \
+    -H  "accept: application/json" \
+    -H  "Content-Type: application/json" \
+    -d '{
+            "username": "myname",
+            "email": "myname@example.com",
+            "password1": "a123s456789",
+            "password2": "a123s456789"
+        }'
+
+Response:
+
+.. code-block:: json
+
+    {"key":"7cd98b388e85b82bd084c80418d56a185b3a35ba"}
+
+Response is the Token key that you will later use to authenticate requests.
+
+
+Logging in
+***********
+
+.. note::
+    | Initial superuser account:
+
+    | *username:* admin
+    | *password:* 1234
+
+API
+===
+
+Endpoint: **/rest-auth/login/**
+
+Example:
+
+.. code-block:: bash
+
+    curl -X POST "http://localhost:8000/api/v1/rest-auth/login/" \
+    -H "Content-Type: application/json" \
+    -d '{
+            "username": "admin",
+            "password": "1234"
+        }'
+
+Response:
+
+.. code-block:: json
+
+    {"key":"8229898dccf960714a9fa22662b214005aa2b049"}
+
+Response is the Token key that you will later use to authenticate requests.
+
+.. _uaa:
 
 Third-Party Authentication
-==============================
+***************************
 
 Toolkit can also be authenticated using :ref:`UAA <uaa_concept>` provided by `CloudFoundry <https://docs.cloudfoundry.org/concepts/architecture/uaa.html>`_.
 This requires some configuration, both on the UAA server and in Toolkit.
 
 Configuring the UAA server locally
-----------------------------------
+====================================
 
 The UAA server will require configuring a client application for toolkit, eg setting the ``redirect_uri``.
 An example "login" client is already provided in UAA by default, which will be used for the example.
@@ -45,7 +129,7 @@ For further reference:
 
 
 Configuring the Toolkit server
-------------------------------
+==============================
 To configure the Toolkit server client application, UAA related environment variables need to be set:
 
 - ``TEXTA_USE_UAA`` expects input "False" to disable UAA, which will otherwise be enabled.
@@ -57,7 +141,7 @@ To configure the Toolkit server client application, UAA related environment vari
 
 
 Using UAA on the front-end
---------------------------
+===========================
 To use UAA with the Angular front-end, it needs to be configured in an `environment.ts` file.
 
 - ``useCloudFoundryUAA`` is a boolean. If false, the UAA login option will be hidden.
@@ -89,7 +173,7 @@ To log in using UAA, click on the "log in with CloudFoundry" button on the login
 This will then redirect you to the UAA login screen. After logging in, if the login was successful, it will redirect you back to the Toolkit front-end.
 
 Tests
------------------
+======
 To run tests on the Toolkit backend, run:
 ``python manage.py test toolkit.uaa_auth``
 
@@ -99,7 +183,7 @@ Tests on the front-end are carried through Cypress, in the ``uaa.e2e-spec.js`` f
 
 
 Notes on authentication
------------------------
+========================
 
 Upon a successful login to the UAA server, sends a callback to the Toolkit ``redirect_uri`` callback, through which another request to the UAA server will be made to obtain an ``access_token`` and a ``refresh_token``.
 
