@@ -31,8 +31,6 @@ If you have any searches defined in your :ref:`project <project_concept>`, they 
 API
 ===
 
-TODO
-
 Endpoint: **/projects/{project_pk}/torchtaggers/**
 
 Example:
@@ -70,7 +68,14 @@ Navigate to **Models -> Torch Tagger**. Existing torch taggers are showed in the
 API
 ===
 
-TODO
+Endpoint: **/projects/{project_pk}/torchtaggers/**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X GET "http://localhost:8000/api/v1/projects/11/torchtaggers/" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049"
 
 Detailed view
 *************
@@ -86,12 +91,17 @@ Navigate to **Models -> Torch Tagger**. Click on the torch tagger you would like
 
 	*Torch tagger details*
 
-====
-
 API
 ===
 
-TODO
+Endpoint: **/projects/{project_pk}/torchtaggers/{id}**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X GET "http://localhost:8000/api/v1/projects/11/torchtaggers/23/" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049"
 
 Delete
 ********
@@ -104,7 +114,14 @@ Navigate to **Models -> Torch Tagger**. Select model which you would like to del
 API
 ===
 
-TODO
+Endpoint: **/projects/{project_pk}/torchtaggers/{id}**
+
+Example:
+
+.. code-block:: bash
+
+        curl -X DELETE "http://localhost:8000/api/v1/projects/11/torchtaggers/23/" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049"
 
 Tag text
 ********
@@ -130,7 +147,7 @@ Example:
 
 .. code-block:: bash
 
-        curl -X POST "http://localhost:8000/api/v1/projects/11/torchtaggers/1/tag_text/" \
+        curl -X POST "http://localhost:8000/api/v1/projects/11/torchtaggers/23/tag_text/" \
         -H "accept: application/json" \
         -H "Content-Type: application/json" \
         -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
@@ -165,4 +182,11 @@ Navigate to **Models -> Torch Tagger**, click on the three dots under **Actions*
 API
 ===
 
-TODO
+Endpoint: **/projects/{project_pk}/torchtaggers/{id}/**
+
+.. code-block:: bash
+
+        curl -X PATCH "http://localhost:8000/api/v1/projects/11/torchtaggers/23/" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -H "Content-Type: application/json" \
+        -d '{"description": "astrophysics yo"}'
