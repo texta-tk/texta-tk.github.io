@@ -111,5 +111,20 @@ Another way to select a project is from the list on the top-right corner (:numre
     
 Permissions
 ***********
-    
-Project resources (including indices) are shared among the users with access to the project. **Only superusers can edit projects.**
+Resource sharing and user permissions are handled by two basic principles: user groups and isolated Projects.
+
+There are currently only two user groups, administrators and normal users. Administrators have free access and editing rights to ALL resources
+available on a Toolkit instance. Admins are capable of user management (creating/editing/deleting users),
+index management (create/delete/open-close Elasticsearch indices) and Project management (creating/deleting/editing index access/assigning users).
+On the other end, normal users can only access resources and Elasticsearch data through the use of Projects.
+
+Projects are a way of isolating information and resources from other users. They are exclusively created by Administrators
+who then assign which users will have access to the Project and which Elasticsearch indices they are allowed to view.
+For any given Toolkit functionality, a user will have to choose a Project they have permissions for and "activate" it. Then
+everything they create will be isolated inside the Project and only members of the same Project will have access to it.
+Trying to access resources of a Project the user is not part of or the data of an Elasticsearch index the Project has no
+rights to will results in a 'Permission Denied' error.
+
+Please note that Project access is universal to all the users part of it, any user inside the Project can create new resources
+or delete existing ones. To avoid a situation where one user deletes the necessary resources of another user in the same Project,
+careful planning and communication is necessary.

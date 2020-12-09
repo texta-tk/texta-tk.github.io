@@ -4,7 +4,8 @@
 Health
 #######
 
-One can check the health of a running Toolkit instance - information about the availability of services (e.g. :ref:`Elasticsearch <elasticsearch>`) and system resources (e.g. disk, memory, GPU usage, etc.)
+One can check the health of a running Toolkit instance - information about the availability of services
+(e.g. :ref:`Elasticsearch <elasticsearch>`) and system resources (e.g. disk, memory, GPU usage, etc.)
 
 GUI
 ****
