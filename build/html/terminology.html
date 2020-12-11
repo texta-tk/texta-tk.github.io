@@ -44,12 +44,11 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
@@ -130,7 +129,7 @@
 <p>Here are described the main concepts related to TEXTA Toolkit (TTK).</p>
 <div class="section" id="anonymizer">
 <span id="anonymizer-concept"></span><h2>Anonymizer<a class="headerlink" href="#anonymizer" title="Permalink to this headline">¶</a></h2>
-<p>Anonymizer is a tool for anonymizing names in a text based on a predefined list of names. Each name detected from the text will be substituted with randomly generated pair of initials. You can read more about it <a class="reference internal" href="anonymizer.html#anonymizer"><span class="std std-ref">here</span></a>.</p>
+<p>Anonymizer is a tool for anonymizing names in a text-based on a predefined list of names. Each name detected from the text will be substituted with randomly generated pair of initials. You can read more about it <a class="reference internal" href="anonymizer.html#anonymizer"><span class="std std-ref">here</span></a>.</p>
 </div>
 <div class="section" id="bert-tagger">
 <span id="bert-tagger-concept"></span><h2>Bert Tagger<a class="headerlink" href="#bert-tagger" title="Permalink to this headline">¶</a></h2>
@@ -142,7 +141,7 @@
 </div>
 <div class="section" id="elasticsearch">
 <span id="id1"></span><h2>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h2>
-<p>Elasticsearch is a distributed, open source search and analytics engine and database for all types of data. You can read more about it <a class="reference external" href="https://www.elastic.co/what-is/elasticsearch">here</a>.</p>
+<p>Elasticsearch is a distributed, open-source search and analytics engine and database for all types of data. You can read more about it <a class="reference external" href="https://www.elastic.co/what-is/elasticsearch">here</a>.</p>
 </div>
 <div class="section" id="embedding">
 <span id="embedding-concept"></span><h2>Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h2>
@@ -164,12 +163,12 @@ TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support m
 </div>
 <p>Facts are objects with following properties:</p>
 <ul class="simple">
-<li><p>fact - name for the annotation (e.g. PER, LOC, or any arbitrary string)</p></li>
-<li><p>str_val - string value for the annotation (e.g. “Donald Trump” for PER). Values don’t need to match annotated text segmements.</p></li>
+<li><p>fact - a name for the annotation (e.g. PER, LOC, or any arbitrary string)</p></li>
+<li><p>str_val - string value for the annotation (e.g. “Donald Trump” for PER). Values don’t need to match annotated text segments.</p></li>
 <li><p>doc_path - path to the field containing the annotated string (e.g. “text”, “text.author”, “comment.text.author”, etc.)</p></li>
 <li><p>spans - JSON string containing the start and end positions in the annotated string</p></li>
 </ul>
-<p>Toolkit comes with several predefined fact names that are used by our Multilingual Processor:</p>
+<p>The Toolkit comes with several predefined fact names that are used by our Multilingual Processor:</p>
 <table class="docutils align-default" id="factnames">
 <colgroup>
 <col style="width: 7%" />
@@ -197,7 +196,7 @@ TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support m
 </tr>
 <tr class="row-odd"><td><p>COMPANY</p></td>
 <td><p>Company</p></td>
-<td><p>Names of company registered in Estonia, gotten from <a class="reference external" href="https://opendata.riik.ee/datasets/ariregister/">Estonian Open Data</a>.</p></td>
+<td><p>Names of companies registered in Estonia, gotten from <a class="reference external" href="https://opendata.riik.ee/datasets/ariregister/">Estonian Open Data</a>.</p></td>
 </tr>
 <tr class="row-even"><td><p>ADDR</p></td>
 <td><p>Address</p></td>
@@ -229,7 +228,7 @@ TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support m
 <div><p>Table 1. <em>Predefined Fact Names used by Multilingual Processor</em></p>
 </div></blockquote>
 <p>It is important to notice that COMPANY and ADDR identify only companies and addresses registered in Estonian Open Data.
-It won’t tag any foreign company nor address while ORG and LOC identifies all of them.</p>
+It won’t tag any foreign company nor address while ORG and LOC identify all of them.</p>
 </div>
 <div class="section" id="field">
 <span id="field-concept"></span><h2>Field<a class="headerlink" href="#field" title="Permalink to this headline">¶</a></h2>
@@ -253,16 +252,16 @@ It won’t tag any foreign company nor address while ORG and LOC identifies all 
 </div>
 <div class="section" id="project">
 <span id="project-concept"></span><h2>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
-<p>Project is the main unit of access and management for datasets and resources (embeddings, text classifiers, etc.). A project is defined by its description, list of Elasticsearch indices related to the project (this is where the data is!), and a list of users who can access the project and it’s resources. All resources in TTK belong to some project and by adding or removing users, one can manage their access to the project.</p>
+<p>Project is the main unit of access and management for datasets and resources (embeddings, text classifiers, etc.). A project is defined by its description, list of Elasticsearch indices related to the project (this is where the data is!), and a list of users who can access the project and its resources. All resources in TTK belong to some project and by adding or removing users, one can manage their access to the project.</p>
 <p>Project is active when it is chosen in the upper panel on the right. Read more about projects <a class="reference internal" href="projects.html#project"><span class="std std-ref">here</span></a>.</p>
 </div>
 <div class="section" id="query">
 <span id="query-concept"></span><h2>Query<a class="headerlink" href="#query" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html">Elasticsearch’s query</a> is basically a little json command that retrieves objects with given attributes from Elasticsearch. It can be thought of as subset of the dataset the query is performed on. Queries can be used in various Toolkit’s tools and it can be saved under the <a class="reference internal" href="#search-concept"><span class="std std-ref">Searcher</span></a> as saved search for using it later or in other tools.</p>
+<p><a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html">Elasticsearch’s query</a> is a little JSON command that retrieves objects with given attributes from Elasticsearch. It can be thought of as subset of the dataset the query is performed on. Queries can be used in various Toolkit’s tools and it can be saved under the <a class="reference internal" href="#search-concept"><span class="std std-ref">Searcher</span></a> as saved search for using it later or in other tools.</p>
 </div>
 <div class="section" id="regex-tagger">
 <span id="regex-tagger-concept"></span><h2>Regex Tagger<a class="headerlink" href="#regex-tagger" title="Permalink to this headline">¶</a></h2>
-<p>Regex Tagger is a tool for tagging texts based on pattern matches. The user can define patterns (words/phrases/regexes) to search from the text and fine tune a variation of parameters to extract specific information and tag the text based on the information retrieved. Read more about its usage <a class="reference internal" href="regex_tagger.html#regex-tagger"><span class="std std-ref">here</span></a>.</p>
+<p>Regex Tagger is a tool for tagging texts based on pattern matches. The user can define patterns (words/phrases/regexes) to search from the text and fine-tune a variety of parameters to extract specific information and tag the text based on the information retrieved. Read more about its usage <a class="reference internal" href="regex_tagger.html#regex-tagger"><span class="std std-ref">here</span></a>.</p>
 </div>
 <div class="section" id="regex-tagger-group">
 <span id="regex-tagger-group-concept"></span><h2>Regex Tagger Group<a class="headerlink" href="#regex-tagger-group" title="Permalink to this headline">¶</a></h2>
@@ -275,7 +274,7 @@ It won’t tag any foreign company nor address while ORG and LOC identifies all 
 <li><p>Making a copy of an index;</p></li>
 <li><p>Merging multiple indices into one;</p></li>
 <li><p>Making a random subset of an index;</p></li>
-<li><p>Making a subset based on predefined query;</p></li>
+<li><p>Making a subset based on a predefined query;</p></li>
 <li><p>Renaming fields;</p></li>
 <li><p>Updating Elasticsearch field types.</p></li>
 </ul>
@@ -283,7 +282,7 @@ It won’t tag any foreign company nor address while ORG and LOC identifies all 
 </div>
 <div class="section" id="search">
 <span id="search-concept"></span><h2>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h2>
-<p>One of the most central component in TTK is Search, which is used to define subsets of data for training text classification models and performing various aggregations. Search is managed via GUI and can contain one or more constraints on feature values (e.g. strings and dates). Documents matching the search criteria can be used in various actions/functionalities in TTK, e.g. extraction of relevant keywords, data summarisation and exploration, and training text classifiers. Read more about it <a class="reference internal" href="searcher.html#searcher"><span class="std std-ref">here</span></a>.</p>
+<p>One of the most central components in TTK is Search, which is used to define subsets of data for training text classification models and performing various aggregations. Search is managed via GUI and can contain one or more constraints on feature values (e.g. strings and dates). Documents matching the search criteria can be used in various actions/functionalities in TTK, e.g. extraction of relevant keywords, data summarization and exploration, and training text classifiers. Read more about it <a class="reference internal" href="searcher.html#searcher"><span class="std std-ref">here</span></a>.</p>
 </div>
 <div class="section" id="tagger-group">
 <span id="tagger-group-concept"></span><h2>Tagger Group<a class="headerlink" href="#tagger-group" title="Permalink to this headline">¶</a></h2>
@@ -291,7 +290,7 @@ It won’t tag any foreign company nor address while ORG and LOC identifies all 
 As its name suggests, Tagger Groups incorporate multiple (binary) taggers, which are executed in parallel to produce a list of tags to the user.
 Tagger Group has been successfully tested with over 6000 binary models and prediction times are usually less than 1 second.
 To achieve this, TTK has employed a hybrid approach for multi-label tagging, which uses unsupervised machine learning (document vectors) to limit the number of binary models used for prediction.
-In such scenario input document is compared to training data to determine most probable models to produce valid tags.
+In such a scenario, the input document is compared to training data to determine the most probable models to produce valid tags.
 Read more about it <a class="reference internal" href="tagger.html#tagger"><span class="std std-ref">here</span></a>.</p>
 </div>
 <div class="section" id="tagger">
@@ -299,21 +298,21 @@ Read more about it <a class="reference internal" href="tagger.html#tagger"><span
 <p>Taggers are monolingual binary text classifiers used to predict tags for documents, e.g. whether a tweet is toxic or talking about Brexit.
 Taggers are trained using a subset of documents defined by a TTK search or a raw Elasticsearch query (big ugly JSON object).
 The subset of documents defines the “positive” set of examples (the documents about the topic being tagged), whilst “negative” examples will be selected automatically (to be unlike the positive ones).
-TTK taggers are trained using scikit-learn pipelines and includes models like logistic regression and SVM.
-TTK automatically splits the training data into training and testing data (by default 80-20) and applies grid search combined with k-fold cross validation to identify best hyperparameters.
-SVM model is also used for feature selection to remove unimportant features from the model making it smaller.
+TTK taggers are trained using scikit-learn pipelines and include models like logistic regression and SVM.
+TTK automatically splits the training data into training and testing data (by default 80-20) and applies grid search combined with k-fold cross-validation to identify best hyperparameters.
+An SVM model is also used for feature selection to remove unimportant features from the model making it smaller.
 For features, both word-based and character-based n-grams are used.
 Read more about it <a class="reference internal" href="tagger_group.html#tagger-group"><span class="std std-ref">here</span></a>.</p>
 </div>
 <div class="section" id="task">
 <span id="id4"></span><h2>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
-<p>TEXTA Toolkit allows to build several different statistical models to process the text. The training process is initiated via TTK API or GUI, which results in creating of the object in TTK data model and starting the asynchronous training task. Tasks are data objects for keeping track of training progress of trainable statistical models.</p>
+<p>TEXTA Toolkit allows building several different statistical models to process the text. The training process is initiated via TTK API or GUI, which results in creating the object in TTK data model and starting the asynchronous training task. Tasks are data objects for keeping track of the training progress of trainable statistical models.</p>
 </div>
 <div class="section" id="topic-analyzer">
 <span id="topic-analyzer-concept"></span><h2>Topic Analyzer<a class="headerlink" href="#topic-analyzer" title="Permalink to this headline">¶</a></h2>
-<p>Topic Analyzer is a tool that detects groups of similar documents in the data. It can be used for example to explore the structure of the unlabeled data in order to get the understanding about what it contains. However, the main purpose of the tool is to take it one step further and make actual use of one’s exploration by transforming their discoveries into the labelling. It can then be used to build supervised machine learning models.</p>
-<p>Topic Analyzer puts to use the best parts of unsupervised clustering and manual labelling. While clustering is a fast and efficient method to create groups of rather similar texts, it still lacks preciseness required to use these clusters as a labelling of the data. For example, while some clusters may indeed contain similar documents, some other will completely fail in capturing the similarity and most of them will probably be so-and-so.</p>
-<p>Topic Analyzer allows user to look inside each cluster and make the decision about the quality manually. Users can also perform various actions on the cluster: remove documents, add more similar documents, and move documents to another more suitable cluster. Finally, user can choose to label the documents inside the cluster if it has reached a sufficient quality.</p>
+<p>Topic Analyzer is a tool that detects groups of similar documents in the data. It can be used for example to explore the structure of the unlabeled data to get an understanding of what it contains. However, the main purpose of the tool is to take it one step further and make actual use of one’s exploration by transforming their discoveries into the labelling. It can then be used to build supervised machine learning models.</p>
+<p>Topic Analyzer puts to use the best parts of unsupervised clustering and manual labelling. While clustering is a fast and efficient method to create groups of rather similar texts, it still lacks preciseness required to use these clusters as labelling of the data. For example, while some clusters may indeed contain similar documents, some other will completely fail in capturing the similarity and most of them will probably be so-and-so.</p>
+<p>Topic Analyzer allows user to look inside each cluster and make the decision about the quality manually. Users can also perform various actions on the cluster: remove documents, add more similar documents, and move documents to another more suitable cluster. Finally, the user can choose to label the documents inside the cluster if it has reached a sufficient quality.</p>
 <p>Read more about its usage <a class="reference internal" href="topic_analyzer.html#topic-analyzer"><span class="std std-ref">here</span></a>.</p>
 </div>
 <div class="section" id="torch-tagger">
@@ -329,7 +328,7 @@ Read more about its usage <a class="reference internal" href="torch_tagger.html#
 </div>
 <div class="section" id="uua-server">
 <span id="uaa-concept"></span><h2>UUA server<a class="headerlink" href="#uua-server" title="Permalink to this headline">¶</a></h2>
-<p>User Account and Authentication is an identity management service for making sure that only selected users have access to certain datasets. Read more about it <a class="reference internal" href="uaa.html#uua"><span class="std std-ref">here</span></a>.</p>
+<p>User Account and Authentication is an identity management service for making sure that only selected users have access to certain datasets. Read more about it <a class="reference internal" href="authentication.html#uaa"><span class="std std-ref">here</span></a>.</p>
 </div>
 </div>
 

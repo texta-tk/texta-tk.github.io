@@ -15,7 +15,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Creation" href="regex_tagger.html" />
+    <link rel="next" title="Regex Tagger" href="regex_tagger.html" />
     <link rel="prev" title="Tagger" href="tagger.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -45,16 +45,11 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
@@ -81,10 +76,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
@@ -96,7 +89,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="tagger.html" title="previous chapter">Tagger</a></li>
-      <li>Next: <a href="regex_tagger.html" title="next chapter">Creation</a></li>
+      <li>Next: <a href="regex_tagger.html" title="next chapter">Regex Tagger</a></li>
   </ul></li>
 </ul>
 </div>
@@ -171,7 +164,7 @@ Tagger Group trains several models at once. That means, it can predict several l
 </div>
 <div class="figure align-default" id="id2">
 <span id="create-tagger-group"></span><img alt="_images/create_tagger_group.png" src="_images/create_tagger_group.png" />
-<p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text"><em>Creating a Tagger Group</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text"><em>Creating a Tagger Group</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="simple">
 <dt>Whenever we create new Tagger Group models, we can track its progress from the table under <em>Task</em>. If we click on the job, we can see all the training info, how long did it took, and check how successful it was. Let’s not forget that:</dt><dd><ol class="arabic simple">
@@ -183,7 +176,7 @@ Tagger Group trains several models at once. That means, it can predict several l
 </dl>
 <div class="figure align-default" id="id3">
 <span id="figure-16"></span><a class="reference internal image-reference" href="_images/created_tagger_group.png"><img alt="_images/created_tagger_group.png" src="_images/created_tagger_group.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 60 </span><span class="caption-text"><em>Created Tagger Group</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text"><em>Created Tagger Group</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>In the table view, you can also select several Tagger Groups and delete them all at once by clicking on the dustbin button next to the <em>CREATE</em> button in the top-left. If you have several Tagger Groups, you can search for the right one by their description or task status. If you have models on several pages you can change pages in the top-right.</p>
 </div>

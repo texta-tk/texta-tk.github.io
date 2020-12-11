@@ -45,16 +45,11 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
@@ -82,10 +77,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
@@ -172,7 +165,7 @@ Tagger Group trains several models at once. That means, it can predict several l
 </div>
 <div class="figure align-default" id="id5">
 <span id="create-tagger"></span><img alt="_images/create_tagger.png" src="_images/create_tagger.png" />
-<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text"><em>Creating Bribe_tag tagger</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text"><em>Creating Bribe_tag tagger</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>Whenever a new Tagger model is created, you can track its progress from the table under <em>Task</em>. If you click on the job, you can see all the training info, how long did it took, and check how successful it was. Let’s not forget that:</p>
 <blockquote>
@@ -186,7 +179,7 @@ Tagger Group trains several models at once. That means, it can predict several l
 <p>In the table view, you can also select several models and delete them all at once by clicking on the dustbin button next to the <em>CREATE</em> button in the top-left. If you have several models, you can search for the right one by their description or task status. If you have models on several pages you can change pages in the top-right.</p>
 <div class="figure align-default" id="id6">
 <span id="tagger-result"></span><a class="reference internal image-reference" href="_images/tagger_result.png"><img alt="_images/tagger_result.png" src="_images/tagger_result.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text"><em>Bribe_tag tagger</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text"><em>Bribe_tag tagger</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="api">
@@ -225,7 +218,7 @@ Tagger Group trains several models at once. That means, it can predict several l
 <p><em>Stop words</em> is for adding stop words. Stop words are words that the model does not consider while looking for clues of similarities. It is wise to add the most frequent words in the list like <em>am</em>, <em>on</em>, <em>in</em>, <em>are</em>. Separate the words with space (‘ ‘).</p>
 <div class="figure align-default" id="id7">
 <span id="id2"></span><a class="reference internal image-reference" href="_images/stop_words.png"><img alt="_images/stop_words.png" src="_images/stop_words.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text"><em>Adding stop words</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text"><em>Adding stop words</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>API endpoint <strong>/projects/{project_pk}/taggers/{id}/stop_words/</strong></p>
 </div>
@@ -234,7 +227,7 @@ Tagger Group trains several models at once. That means, it can predict several l
 <p><em>Tag text</em> is to check how does the model work. If you click on that a window opens. You can paste there some text, choose to lemmatize it (necessary if your model was trained on a lemmatized text), and post it. You then receive the result (True if this text gets the tag and False otherwise) and the probability. Probability shows how confident is your model in its prediction.</p>
 <div class="figure align-default" id="id8">
 <span id="id3"></span><a class="reference internal image-reference" href="_images/tag_text.png"><img alt="_images/tag_text.png" src="_images/tag_text.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text"><em>Tagging a random written/pasted text</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text"><em>Tagging a random written/pasted text</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>API endpoint <strong>/projects/{project_pk}/taggers/{id}/tag_text/</strong></p>
 <p>Example:</p>
@@ -263,7 +256,7 @@ Tagger Group trains several models at once. That means, it can predict several l
 <p><em>Tag doc</em> is similar to <em>Tag text</em>, except the input is in the JSON format.</p>
 <div class="figure align-default" id="id9">
 <span id="id4"></span><a class="reference internal image-reference" href="_images/tag_doc.png"><img alt="_images/tag_doc.png" src="_images/tag_doc.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text"><em>Tagging a random written/pasted text in json format</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text"><em>Tagging a random written/pasted text in json format</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>API endpoint <strong>/projects/{project_pk}/taggers/{id}/tag_doc/</strong></p>
 </div>

@@ -44,12 +44,11 @@
 <h3>Navigation</h3>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
@@ -131,12 +130,24 @@ This documentation contains information about installing and running <strong>TEX
 <li class="toctree-l2"><a class="reference internal" href="installation.html#api-reference">API Reference</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Third-Party Authentication</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="uaa.html#configuring-the-uaa-server-locally">Configuring the UAA server locally</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#registration">Registration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#logging-in">Logging in</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#id3">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html#third-party-authentication">Third-Party Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#configuring-the-uaa-server-locally">Configuring the UAA server locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#tests">Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication.html#notes-on-authentication">Notes on authentication</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a><ul>
@@ -166,7 +177,12 @@ This documentation contains information about installing and running <strong>TEX
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="mlp.html#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mlp.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlp.html#api">API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mlp.html#applying-mlp-on-a-list-of-texts">Applying MLP on a list of texts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlp.html#applying-mlp-on-a-list-of-dictionaries">Applying MLP on a list of dictionaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlp.html#applying-mlp-on-index">Applying MLP on index</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a><ul>
@@ -174,19 +190,6 @@ This documentation contains information about installing and running <strong>TEX
 <li class="toctree-l3"><a class="reference internal" href="reindexer.html#parameters">Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reindexer.html#gui">GUI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reindexer.html#api">API</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="registration.html#id1">Registration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="registration.html#gui">GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="registration.html#api">API</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="registration.html#logging-in">Logging in</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="registration.html#id2">GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="registration.html#id3">API</a></li>
 </ul>
 </li>
 </ul>
@@ -263,9 +266,22 @@ This documentation contains information about installing and running <strong>TEX
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic_analyzer.html#grouping-the-data">Grouping the data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic_analyzer.html#evaluating-clusters">Evaluating clusters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic_analyzer.html#operations-with-cluster">Operations with cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topic_analyzer.html#create">Create</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="topic_analyzer.html#gui">GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="topic_analyzer.html#viewing-clusters">Viewing clusters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="topic_analyzer.html#id2">GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="topic_analyzer.html#viewing-documents-inside-cluster">Viewing documents inside cluster</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="topic_analyzer.html#id3">GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="topic_analyzer.html#operations-with-the-cluster">Operations with the cluster</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="topic_analyzer.html#id4">GUI</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a><ul>
@@ -343,24 +359,34 @@ This documentation contains information about installing and running <strong>TEX
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#creation">Creation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#create">Create</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="torch_tagger.html#gui">GUI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="torch_tagger.html#api">API</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#useage">Useage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#view">View</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="torch_tagger.html#id2">GUI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="torch_tagger.html#id3">API</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#application">Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#detailed-view">Detailed view</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="torch_tagger.html#id4">GUI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="torch_tagger.html#id5">API</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#fine-tuning">Fine-Tuning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#delete">Delete</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="torch_tagger.html#id6">GUI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="torch_tagger.html#id7">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#tag-text">Tag text</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="torch_tagger.html#id8">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="torch_tagger.html#id9">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="torch_tagger.html#change-name-of-a-tagger">Change name of a tagger</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="torch_tagger.html#id10">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="torch_tagger.html#id11">API</a></li>
 </ul>
 </li>
 </ul>

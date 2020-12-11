@@ -45,16 +45,11 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Search</a><ul>
@@ -79,10 +74,8 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
@@ -133,12 +126,12 @@
 <p class="admonition-title">Note</p>
 <p>To use the <strong>Search</strong> <a class="reference internal" href="terminology.html#project-concept"><span class="std std-ref">project</span></a> and <a class="reference internal" href="terminology.html#index-concept"><span class="std std-ref">indices</span></a> must be selected from the upper right panel.</p>
 </div>
-<p>The Search’s graphical interface (<a class="reference internal" href="#search-panel"><span class="std std-numref">Fig. 31</span></a>) consists of three panels.
+<p>The Search’s graphical interface (<a class="reference internal" href="#search-panel"><span class="std std-numref">Fig. 30</span></a>) consists of three panels.
 These are <a class="reference internal" href="#currentsearch"><span class="std std-ref">Current Search</span></a>, <a class="reference internal" href="#savedsearches"><span class="std std-ref">Saved Searches</span></a>, and <a class="reference internal" href="#aggregations"><span class="std std-ref">Aggregations</span></a>.
 By default the panel of Current Search open. Clicking on the name of the panel collapses or opens that panel.</p>
 <div class="figure align-default" id="id9">
 <span id="search-panel"></span><img alt="_images/search_panel.png" src="_images/search_panel.png" />
-<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text"><em>Search panels</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text"><em>Search panels</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -163,7 +156,7 @@ The search returns documents where each word occurs at least in one of the field
 <p>To use Simple Search, select it on the Current Search panel and type in the words you want to search for (<a class="reference internal" href="#id1"><span class="std std-ref">field</span></a> values).</p>
 <div class="figure align-default" id="id10">
 <span id="id1"></span><img alt="_images/simple_search.png" src="_images/simple_search.png" />
-<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text"><em>Simple search</em></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text"><em>Simple search</em></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="advanced-search">
@@ -175,7 +168,7 @@ Click anywhere in the toolkit to close the fields’ selection. You should see a
 You can remove the constraint by clicking on the ‘X’-sign on the upper right corner of the box.</p>
 <div class="figure align-default" id="id11">
 <span id="string-search"></span><img alt="_images/string_search.png" src="_images/string_search.png" />
-<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text"><em>Advanced search</em></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text"><em>Advanced search</em></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="string-constraint">
 <h5>String constraint<a class="headerlink" href="#string-constraint" title="Permalink to this headline">¶</a></h5>
@@ -247,7 +240,7 @@ Since the Slop is 2, it also matches the phrase if it has 0-2 words between the 
 You can choose the time range by clicking on the little calendar on the right.</p>
 <div class="figure align-default" id="id14">
 <span id="id2"></span><img alt="_images/date_constraint.png" src="_images/date_constraint.png" />
-<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text"><em>Date constraint</em></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text"><em>Date constraint</em></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="texta-facts-constraint">
@@ -256,18 +249,18 @@ You can choose the time range by clicking on the little calendar on the right.</
 <p><strong>Creating a constraint over fact names</strong></p>
 <div class="figure align-default" id="id15">
 <span id="tag-constraint3"></span><img alt="_images/tag_constraint3.png" src="_images/tag_constraint3.png" />
-<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text"><em>Fact name constraint with or</em>. Outputs all documents that contain at least one of the given fact name.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text"><em>Fact name constraint with or</em>. Outputs all documents that contain at least one of the given fact name.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Using different constraints for different fact names</strong></p>
 <p>In order to use different constraints for different fact names, you need to select field <strong>texta_facts[fact_name]</strong> multiple times.</p>
 <div class="figure align-default" id="id16">
 <span id="tag-constraint1"></span><img alt="_images/tag_constraint1.png" src="_images/tag_constraint1.png" />
-<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text"><em>Fact name constraint</em>. Outputs documents that contain an ORG fact and definitely not PER fact.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text"><em>Fact name constraint</em>. Outputs documents that contain an ORG fact and definitely not PER fact.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Creating a constraint over fact values</strong></p>
 <div class="figure align-default" id="id17">
 <span id="tag-constraint2"></span><img alt="_images/tag_constraint2.png" src="_images/tag_constraint2.png" />
-<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text"><em>Fact value constraint</em>. Outputs documents that have an ORG fact with either value “NATO” or value “European Union” in it (or both).</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text"><em>Fact value constraint</em>. Outputs documents that have an ORG fact with either value “NATO” or value “European Union” in it (or both).</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="search-options">
@@ -301,26 +294,26 @@ You can choose the time range by clicking on the little calendar on the right.</
 </table>
 <div class="figure align-default" id="id19">
 <span id="id3"></span><img alt="_images/search_options.png" src="_images/search_options.png" />
-<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text"><em>Search Options</em></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text"><em>Search Options</em></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="advanced-search-examples">
 <h5>Advanced Search examples<a class="headerlink" href="#advanced-search-examples" title="Permalink to this headline">¶</a></h5>
 <div class="figure align-default" id="id20">
 <span id="search-example1"></span><img alt="_images/search_example1.png" src="_images/search_example1.png" />
-<p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text"><em>Regex String Constraint</em>. Search for documents that have either “payoff” or “bribe[a-z]{0,2}” in it.The latter condition means that word ‘bribe’ can have 0-2 extra letters (e.g “bribe”, “bribed”, “bribery”) in the end.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text"><em>Regex String Constraint</em>. Search for documents that have either “payoff” or “bribe[a-z]{0,2}” in it.The latter condition means that word ‘bribe’ can have 0-2 extra letters (e.g “bribe”, “bribed”, “bribery”) in the end.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id21">
 <span id="search-combination"></span><img alt="_images/search_combination.png" src="_images/search_combination.png" />
-<p class="caption"><span class="caption-number">Fig. 40 </span><span class="caption-text"><em>Combination of constraints</em>. Search for documents published in 2014, contain LOC facts with values “Russia” and “Ukraine” and the word “invasion”.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text"><em>Combination of constraints</em>. Search for documents published in 2014, contain LOC facts with values “Russia” and “Ukraine” and the word “invasion”.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="browsing-search-results">
 <h5>Browsing Search results<a class="headerlink" href="#browsing-search-results" title="Permalink to this headline">¶</a></h5>
-<p>After clicking the “Search” button, the matching documents are shown. (see <a class="reference internal" href="#search-results"><span class="std std-numref">Fig. 41</span></a>).</p>
+<p>After clicking the “Search” button, the matching documents are shown. (see <a class="reference internal" href="#search-results"><span class="std std-numref">Fig. 40</span></a>).</p>
 <div class="figure align-default" id="id22">
 <span id="search-results"></span><a class="reference internal image-reference" href="_images/search_results.png"><img alt="_images/search_results.png" src="_images/search_results.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text"><em>Example search results</em></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 40 </span><span class="caption-text"><em>Example search results</em></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>You can choose the columns that we would like to see from the drop-down menu right above the results.
 You can select or deselect all of them together (<em>Select all</em>) or by clicking on them separately.</p>
@@ -328,7 +321,7 @@ You can select or deselect all of them together (<em>Select all</em>) or by clic
 <p>Use arrows in the upper right to navigate between pages. You can also choose how many items per page you would like to see (also in the upper right corner).</p>
 <div class="figure align-default" id="id23">
 <span id="search-rt"></span><img alt="_images/search_results_toggle.png" src="_images/search_results_toggle.png" />
-<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text"><em>Select Fields for Search Results</em></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text"><em>Select Fields for Search Results</em></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -358,16 +351,16 @@ Or you might just want to save a search for browsing it later: to open it in the
 <h3>GUI<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>Aggregations tool allows us to aggregate the data.
 For example, we can use it to perform simple aggregations - retrieve item and word distributions.</p>
-<p>For instance, let’s assume we have a dataset containing posts from Estonian Reddit. We can use an aggregation over field <em>post_title</em> to find the most popular threads (see <a class="reference internal" href="#significant-items"><span class="std std-numref">Fig. 43</span></a>).</p>
+<p>For instance, let’s assume we have a dataset containing posts from Estonian Reddit. We can use an aggregation over field <em>post_title</em> to find the most popular threads (see <a class="reference internal" href="#significant-items"><span class="std std-numref">Fig. 42</span></a>).</p>
 <div class="figure align-default" id="id24">
 <span id="significant-items"></span><img alt="_images/reddit_title.png" src="_images/reddit_title.png" />
-<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text"><em>Significant items</em></span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text"><em>Significant items</em></span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <p>Now, knowing that the most popular thread is <em>Coronavirus megathread</em>, we might want to know what are the words that characterize the dataset when compared to other threads.
-In Texta Toolkit such words are called <strong>significant words</strong> and can be found with aggregations tool (see <a class="reference internal" href="#significant-words"><span class="std std-numref">Fig. 44</span></a>).</p>
+In Texta Toolkit such words are called <strong>significant words</strong> and can be found with aggregations tool (see <a class="reference internal" href="#significant-words"><span class="std std-numref">Fig. 43</span></a>).</p>
 <div class="figure align-default" id="id25">
 <span id="significant-words"></span><img alt="_images/significant_words.png" src="_images/significant_words.png" />
-<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text"><em>Significant words</em></span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text"><em>Significant words</em></span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -377,23 +370,23 @@ In Texta Toolkit such words are called <strong>significant words</strong> and ca
 </dl>
 </div>
 <p>Besides these simple words and items aggregations shown above, there is still so much more that you can do with the tool.</p>
-<p>For example, you can examine the distribution of the data over time (see <a class="reference internal" href="#simple-time-aggregation"><span class="std std-numref">Fig. 45</span></a>). Note that to produce such graphs, you must have a proper date field (in Texta date format) in the data.</p>
+<p>For example, you can examine the distribution of the data over time (see <a class="reference internal" href="#simple-time-aggregation"><span class="std std-numref">Fig. 44</span></a>). Note that to produce such graphs, you must have a proper date field (in Texta date format) in the data.</p>
 <div class="figure align-default" id="id26">
 <span id="simple-time-aggregation"></span><img alt="_images/time_aggregations.png" src="_images/time_aggregations.png" />
-<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text"><em>Time aggregation</em></span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text"><em>Time aggregation</em></span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
-<p>If you have <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">texta_facts</span></a> added to your data, you can visualize the frequencies of the values of one or more <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">facts</span></a> (see <a class="reference internal" href="#facts-aggre"><span class="std std-numref">Fig. 46</span></a>).
-Note that on top of the plot in figure <a class="reference internal" href="#facts-aggre"><span class="std std-numref">Fig. 46</span></a>, there is a list with three visualization options. You can click on them to change how the results are displayed -
+<p>If you have <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">texta_facts</span></a> added to your data, you can visualize the frequencies of the values of one or more <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">facts</span></a> (see <a class="reference internal" href="#facts-aggre"><span class="std std-numref">Fig. 45</span></a>).
+Note that on top of the plot in figure <a class="reference internal" href="#facts-aggre"><span class="std std-numref">Fig. 45</span></a>, there is a list with three visualization options. You can click on them to change how the results are displayed -
 whether hierarchically, as a table, or as a plot.</p>
 <div class="figure align-default" id="id27">
 <span id="facts-aggre"></span><img alt="_images/facts_aggre.png" src="_images/facts_aggre.png" />
-<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text"><em>Facts aggregation</em></span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text"><em>Facts aggregation</em></span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p>By creating a set of saved searches, we can visualize the time distribution of multiple subsets at once. For example, if we have a news articles datasets, we might
-want to know how often different politicians were mentioned in the news in different time periods (see <a class="reference internal" href="#saved-searches-aggre"><span class="std std-numref">Fig. 47</span></a>).</p>
+want to know how often different politicians were mentioned in the news in different time periods (see <a class="reference internal" href="#saved-searches-aggre"><span class="std std-numref">Fig. 46</span></a>).</p>
 <div class="figure align-default" id="id28">
 <span id="saved-searches-aggre"></span><img alt="_images/saved_searches_aggre.png" src="_images/saved_searches_aggre.png" />
-<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text"><em>Saved searches aggregation</em></span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text"><em>Saved searches aggregation</em></span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

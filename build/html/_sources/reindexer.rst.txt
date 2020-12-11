@@ -42,7 +42,7 @@ Parameters
   Random subset size. If defined, new index is constructed of given number of random documents. If left empty, all the documents in the source index (or in accordance with restricted search :ref:`query <query_concept>`) are reindexed.
 
 **field_type**:
-  List of new Elasticsearch :ref:`field <field>` types in the following format:
+  List of new Elasticsearch :ref:`field<field_concept>` types in the following format:
 
   .. code-block:: json
 

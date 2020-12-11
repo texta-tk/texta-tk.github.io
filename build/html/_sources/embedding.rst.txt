@@ -134,7 +134,7 @@ Apply phraser
 GUI
 =====
 
-Navigate to **Models -> Embeddings** and click on the three dots under **Actions** and choose **Phrase** (:numref:`embedding_actions`).
+Navigate to **Models -> Embeddings**, click on the three dots under **Actions** and choose **Phrase** (:numref:`embedding_actions`).
 Insert text that you want to phrase and click **Post**. You should see phrased version of the text (:numref:`apply_phraser`).
 
 .. _apply_phraser:

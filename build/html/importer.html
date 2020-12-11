@@ -45,11 +45,7 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Dataset Importer</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
@@ -62,7 +58,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
@@ -71,10 +66,8 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
@@ -118,24 +111,30 @@
             
   <div class="section" id="dataset-importer">
 <span id="id1"></span><h1>Dataset Importer<a class="headerlink" href="#dataset-importer" title="Permalink to this headline">¶</a></h1>
-<p>Dataset Importer allows the user to insert <strong>jsonlines</strong>, <strong>csv</strong> and <strong>excel</strong> files into <a class="reference internal" href="terminology.html#elasticsearch"><span class="std std-ref">Elasticsearch</span></a>.
-to make them accessible by the Toolkit. Please note that this process reads the whole
-file into the memory and can thus create memory issues when trying to process bigger files. It is advisable to split such
-files up into smaller chunks and process each one separately.</p>
-<p>This whole process is asynchronous so the response to the call will be instantaneous and it since it takes a bit time
-to load the file into the memory, the first 10 seconds might not display any signs of the progress changing.</p>
+<p>Dataset Importer is a tool for uploading <strong>JSON Lines</strong>, <strong>CSV</strong> and <strong>Excel</strong> files into <a class="reference internal" href="terminology.html#elasticsearch"><span class="std std-ref">Elasticsearch</span></a> to make them accessible for TEXTA Toolkit.</p>
 <div class="section" id="gui">
 <h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
-<p>You can upload a new dataset from a file to Toolkit via Dataset Importer under Tools (see <a class="reference internal" href="#importing-loc"><span class="std std-numref">Fig. 15</span></a>).
-Click on the <strong>CREATE</strong> button which opens a table in <a class="reference internal" href="#importing"><span class="std std-numref">Fig. 16</span></a>. There you can describe your dataset (<em>Task description</em>), give it a name (<em>Dataset name</em>) and choose the file to be uploaded (you can browse it via the folder button). When uploading an .csv file, you can add the separator (usually a comma). Then hit <strong>Create</strong>. You will see the uploading process and metadata of the dataset under the Dataset Importer in the TTK. You can delete the uploaded dataset by clicking on the three dots under actions.</p>
-<p>Now you can add this data to your <a class="reference internal" href="terminology.html#project-concept"><span class="std std-ref">project</span></a> and use it with the name you gave to it.</p>
+<div class="line-block">
+<div class="line">You can navigate to the Dataset Importer by clicking on the “Dataset Importer” button located under the Tools dropdown menu. (<a class="reference internal" href="#importing-loc"><span class="std std-numref">Fig. 16</span></a>).</div>
+<div class="line">Click on the <strong>CREATE</strong> button to open up a new form (<a class="reference internal" href="#importing"><span class="std std-numref">Fig. 17</span></a>).</div>
+</div>
+<div class="line-block">
+<div class="line">Here you can:</div>
+</div>
+<ol class="arabic simple">
+<li><p>Set a description for the import task</p></li>
+<li><p>Set the Dataset name</p></li>
+<li><p>Specify a separator for <strong>CSV</strong> files (usually a comma)</p></li>
+<li><p>Browse and choose the file to be uploaded by clicking on the folder button.</p></li>
+</ol>
+<p>Click on the <strong>Create</strong> button to start the Importer Task. Upon completion you can add the dataset to your <a class="reference internal" href="terminology.html#project-concept"><span class="std std-ref">project</span></a>.</p>
 <div class="figure align-default" id="id2">
 <span id="importing-loc"></span><img alt="_images/dataset_importer_loc.png" src="_images/dataset_importer_loc.png" />
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text"><em>Importing a new dataset</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text"><em>Navigating to dataset importer</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id3">
 <span id="importing"></span><img alt="_images/dataset_importer.png" src="_images/dataset_importer.png" />
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text"><em>Importing a new dataset</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text"><em>Importing a new dataset</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="api">
@@ -145,7 +144,8 @@ Click on the <strong>CREATE</strong> button which opens a table in <a class="ref
 <ul class="simple">
 <li><p>description - Normal description to separate any given task from the other ones.</p></li>
 <li><p>index - Name of the newly created index, please note that Elasticsearch <a class="reference internal" href="terminology.html#index-concept"><span class="std std-ref">index</span></a> naming restrictions apply.</p></li>
-<li><p>separator - Only needed for .csv files, defaults to a coma (,). Allows to configure the separator for csv files.</p></li>
+<li><p>separator - Only needed for .csv files, defaults to a comma (,). Allows to configure the separator for csv files.</p></li>
+<li><p>file - File to import (<strong>JSON Lines</strong>, <strong>CSV</strong>, <strong>Excel</strong>)</p></li>
 </ul>
 </div>
 <div class="section" id="example">

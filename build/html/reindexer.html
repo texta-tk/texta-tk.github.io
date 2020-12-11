@@ -15,7 +15,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Registration" href="registration.html" />
+    <link rel="next" title="Health" href="health.html" />
     <link rel="prev" title="MLP" href="mlp.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -45,11 +45,7 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
@@ -62,7 +58,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
@@ -71,10 +66,8 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
@@ -86,7 +79,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="mlp.html" title="previous chapter">MLP</a></li>
-      <li>Next: <a href="registration.html" title="next chapter">Registration</a></li>
+      <li>Next: <a href="health.html" title="next chapter">Health</a></li>
   </ul></li>
 </ul>
 </div>
@@ -146,7 +139,7 @@
 </dd>
 <dt><strong>random_size</strong>:</dt><dd><p>Random subset size. If defined, new index is constructed of given number of random documents. If left empty, all the documents in the source index (or in accordance with restricted search <a class="reference internal" href="terminology.html#query-concept"><span class="std std-ref">query</span></a>) are reindexed.</p>
 </dd>
-<dt><strong>field_type</strong>:</dt><dd><p>List of new Elasticsearch <span class="xref std std-ref">field</span> types in the following format:</p>
+<dt><strong>field_type</strong>:</dt><dd><p>List of new Elasticsearch <a class="reference internal" href="terminology.html#field-concept"><span class="std std-ref">field</span></a> types in the following format:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="nt">&quot;field_name&quot;</span><span class="p">:</span> <span class="s2">&quot;new_field_type&quot;</span><span class="p">}]</span>
 </pre></div>
 </div>
@@ -155,30 +148,30 @@
 </div>
 <div class="section" id="gui">
 <h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
-<p>For creating a new Reindexing task, navigate to <cite>“Tools” -&gt; “Reindexer”</cite> as seen in <a class="reference internal" href="#reindexer-navigation"><span class="std std-numref">Fig. 19</span></a>.</p>
+<p>For creating a new Reindexing task, navigate to <cite>“Tools” -&gt; “Reindexer”</cite> as seen in <a class="reference internal" href="#reindexer-navigation"><span class="std std-numref">Fig. 21</span></a>.</p>
 <div class="figure align-center" id="id2">
 <span id="reindexer-navigation"></span><a class="reference internal image-reference" href="_images/reindexer_nav.png"><img alt="_images/reindexer_nav.png" src="_images/reindexer_nav.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text"><em>Reindexer navigation</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text"><em>Reindexer navigation</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>If the navigation is successful, you should see a panel similar to <a class="reference internal" href="#reindexer-create-button"><span class="std std-numref">Fig. 20</span></a> with <cite>“Create”</cite> button in the top left corner of the page.</p>
+<p>If the navigation is successful, you should see a panel similar to <a class="reference internal" href="#reindexer-create-button"><span class="std std-numref">Fig. 22</span></a> with <cite>“Create”</cite> button in the top left corner of the page.</p>
 <div class="figure align-center" id="id3">
 <span id="reindexer-create-button"></span><a class="reference internal image-reference" href="_images/reindexer_create_button.png"><img alt="_images/reindexer_create_button.png" src="_images/reindexer_create_button.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text"><em>Reindexer creation button</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text"><em>Reindexer creation button</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p>Clicking on the <cite>“Create”</cite> button opens a new modal window with title <cite>“New Reindexer”</cite> as depicted in <a class="reference internal" href="#reindexer-create-new"><span class="std std-numref">Fig. 21</span></a>.</p>
+<p>Clicking on the <cite>“Create”</cite> button opens a new modal window with title <cite>“New Reindexer”</cite> as depicted in <a class="reference internal" href="#reindexer-create-new"><span class="std std-numref">Fig. 23</span></a>.</p>
 <div class="figure align-center" id="id4">
 <span id="reindexer-create-new"></span><a class="reference internal image-reference" href="_images/reindexer_create_new.png"><img alt="_images/reindexer_create_new.png" src="_images/reindexer_create_new.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text"><em>Empty Reindexer creation view</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text"><em>Empty Reindexer creation view</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p>Fill the required fields and click on the <cite>“Create”</cite> button in the bottom right corner of the window (<a class="reference internal" href="#reindexer-create"><span class="std std-numref">Fig. 22</span></a>).</p>
+<p>Fill the required fields and click on the <cite>“Create”</cite> button in the bottom right corner of the window (<a class="reference internal" href="#reindexer-create"><span class="std std-numref">Fig. 24</span></a>).</p>
 <div class="figure align-center" id="id5">
 <span id="reindexer-create"></span><a class="reference internal image-reference" href="_images/reindexer_create.png"><img alt="_images/reindexer_create.png" src="_images/reindexer_create.png" style="width: 500pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text"><em>Filled Reindexer creation view</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text"><em>Filled Reindexer creation view</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
-<p>The created Reindexer can now be seen as the first (or only, if no previous Reindexers exist under the <a class="reference internal" href="terminology.html#project-concept"><span class="std std-ref">project</span></a>) row in the table of Reindex tasks (<a class="reference internal" href="#reindexer-task-list"><span class="std std-numref">Fig. 23</span></a>).</p>
+<p>The created Reindexer can now be seen as the first (or only, if no previous Reindexers exist under the <a class="reference internal" href="terminology.html#project-concept"><span class="std std-ref">project</span></a>) row in the table of Reindex tasks (<a class="reference internal" href="#reindexer-task-list"><span class="std std-numref">Fig. 25</span></a>).</p>
 <div class="figure align-center" id="id6">
 <span id="reindexer-task-list"></span><a class="reference internal image-reference" href="_images/reindexer_task_list.png"><img alt="_images/reindexer_task_list.png" src="_images/reindexer_task_list.png" style="width: 600pt;" /></a>
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text"><em>List of Reindexer tasks.</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text"><em>List of Reindexer tasks.</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="api">

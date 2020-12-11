@@ -45,16 +45,11 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
@@ -90,10 +85,8 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
@@ -183,11 +176,11 @@ get included into the <a class="reference internal" href="terminology.html#embed
 <div class="section" id="id1">
 <h3>GUI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Navigate to <strong>Models -&gt; Embeddings</strong> to view existing <a class="reference internal" href="terminology.html#embedding-concept"><span class="std std-ref">embedding</span></a>.
-If any of your embeddings is still training, the view will show you the progress of the training (<a class="reference internal" href="#embedding-view"><span class="std std-numref">Fig. 48</span></a>).
+If any of your embeddings is still training, the view will show you the progress of the training (<a class="reference internal" href="#embedding-view"><span class="std std-numref">Fig. 47</span></a>).
 Besides than that, the view shows you general information about your embeddings.</p>
 <div class="figure align-default" id="id10">
 <span id="embedding-view"></span><img alt="_images/embedding_view.png" src="_images/embedding_view.png" />
-<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text"><em>Embedding view</em></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text"><em>Embedding view</em></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id2">
@@ -204,10 +197,10 @@ Besides than that, the view shows you general information about your embeddings.
 <h2>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
 <h3>GUI<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>Navigate to <strong>Models -&gt; Embeddings</strong> and click on the three dots under <strong>Actions</strong> column and choose <strong>Delete</strong> (<a class="reference internal" href="#embedding-actions"><span class="std std-numref">Fig. 49</span></a>).</p>
+<p>Navigate to <strong>Models -&gt; Embeddings</strong> and click on the three dots under <strong>Actions</strong> column and choose <strong>Delete</strong> (<a class="reference internal" href="#embedding-actions"><span class="std std-numref">Fig. 48</span></a>).</p>
 <div class="figure align-default" id="id11">
 <span id="embedding-actions"></span><img alt="_images/embedding_actions.png" src="_images/embedding_actions.png" />
-<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text"><em>Embedding actions</em></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text"><em>Embedding actions</em></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id4">
@@ -224,7 +217,7 @@ Besides than that, the view shows you general information about your embeddings.
 <h2>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id5">
 <h3>GUI<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>Navigate to <strong>Models -&gt; Embeddings</strong> and click on the three dots under <strong>Actions</strong> column and choose <strong>Edit</strong> (<a class="reference internal" href="#embedding-actions"><span class="std std-numref">Fig. 49</span></a>).</p>
+<p>Navigate to <strong>Models -&gt; Embeddings</strong> and click on the three dots under <strong>Actions</strong> column and choose <strong>Edit</strong> (<a class="reference internal" href="#embedding-actions"><span class="std std-numref">Fig. 48</span></a>).</p>
 </div>
 <div class="section" id="id6">
 <h3>API<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
@@ -242,11 +235,11 @@ Besides than that, the view shows you general information about your embeddings.
 <h2>Apply phraser<a class="headerlink" href="#apply-phraser" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id7">
 <h3>GUI<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>Navigate to <strong>Models -&gt; Embeddings</strong> and click on the three dots under <strong>Actions</strong> and choose <strong>Phrase</strong> (<a class="reference internal" href="#embedding-actions"><span class="std std-numref">Fig. 49</span></a>).
-Insert text that you want to phrase and click <strong>Post</strong>. You should see phrased version of the text (<a class="reference internal" href="#id8"><span class="std std-numref">Fig. 50</span></a>).</p>
+<p>Navigate to <strong>Models -&gt; Embeddings</strong>, click on the three dots under <strong>Actions</strong> and choose <strong>Phrase</strong> (<a class="reference internal" href="#embedding-actions"><span class="std std-numref">Fig. 48</span></a>).
+Insert text that you want to phrase and click <strong>Post</strong>. You should see phrased version of the text (<a class="reference internal" href="#id8"><span class="std std-numref">Fig. 49</span></a>).</p>
 <div class="figure align-default" id="id12">
 <span id="id8"></span><img alt="_images/phraser_gui.png" src="_images/phraser_gui.png" />
-<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text"><em>Apply phraser</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text"><em>Apply phraser</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id9">

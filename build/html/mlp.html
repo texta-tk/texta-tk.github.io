@@ -45,20 +45,20 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">MLP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#applying-mlp-on-a-list-of-texts">Applying MLP on a list of texts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#applying-mlp-on-a-list-of-dictionaries">Applying MLP on a list of dictionaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#applying-mlp-on-index">Applying MLP on index</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
@@ -67,10 +67,8 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
@@ -115,24 +113,52 @@
   <div class="section" id="mlp">
 <span id="mlp-p"></span><h1>MLP<a class="headerlink" href="#mlp" title="Permalink to this headline">¶</a></h1>
 <p>Preprocessing the data is a standard procedure in machine learning which in TTK can be done via MLP (<a class="reference internal" href="terminology.html#mlp"><span class="std std-ref">MultiLingual Preprocessor</span></a>) module.</p>
+<p>TEXTA MLP (Multilingual Processor) is an additional module of TEXTA created for the sake of processing and enriching textual data.
+Capable of processing multiple languages, it’s features include the lemmatization of text, Named Entity extraction, entity linking
+and more. To make access to the module more efficient and smoother, it has been integrated directly into the Toolkit. Choosing which
+features the user wants to apply on their text is handled by selecting “Analyzers”.</p>
+<p>Analyzers are a way of selecting how you want your data to be processed, whether you only want lemmatization or Entity extraction.
+Currently, the following analyzers are supported:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>lemmas - Adds a lemmatized version of the original text.</p></li>
+<li><p>pos_tags - Adds the Part Of Speech tags of every token in the text.</p></li>
+<li><p>transliteration - Adds a representation of scripted languages (Russian, Arabic) in the latin alphabet.</p></li>
+<li><p>ner - Adds Named Entities in Texta Fact format (Please note that NER for Estonian is currently not available).</p></li>
+<li><p>entities - Keyword based Entity Extraction, used to extract information like predefined addresses.</p></li>
+<li><p>namemail - Extracts name-email pairs from text in Texta Facts format.</p></li>
+<li><p>bounded - Links existing Texta Facts together by the basis of it belonging to the same Entity and returns a new Texta Fact.</p></li>
+</ul>
+</div></blockquote>
+<p>Users can apply the MLP to a singular text of their own choosing or apply it to multiple Elasticsearch indices at once.</p>
 <div class="section" id="gui">
 <h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
 <p>Navigate to <strong>Tools -&gt; MLP</strong>. Click <strong>Create</strong> button to define a new MLP worker. Select indices and fields on which you want to apply MLP. Since preprocessing the data is quite time-consuming process, it is strongly recommended to select only fields on which applying MLP is actually useful. That is, the fields which you are going to use later to create lexicons or train models on. Lastly, select analyzers which you would like to apply.</p>
 <div class="figure align-default" id="id1">
 <span id="create-mlp"></span><img alt="_images/create_MLP_worker.png" src="_images/create_MLP_worker.png" />
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text"><em>Creating a MLP worker</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text"><em>Creating a MLP worker</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The worker adds new fields containing the results to the dataset. You can see the list of fields using Search.</p>
 <div class="figure align-default" id="id2">
 <span id="mlp-fields"></span><img alt="_images/MLP_fields.png" src="_images/MLP_fields.png" />
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text"><em>Newly added fields containing results of MLP</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text"><em>Newly added fields containing results of MLP</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>For applying MLP on a single instance of text, click on the “Apply to text” button inside <strong>Tools -&gt; MLP</strong>.</p>
+<div class="figure align-default" id="id3">
+<span id="mlp-ontext"></span><img alt="_images/MLP_ontext.png" src="_images/MLP_ontext.png" />
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text"><em>Applying MLP on a single instance of text.</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>For convenience purposes the Toolkit supports several input types along with processing
+several Elasticsearch indices at once, the latter however is a time consuming process depending
+on the size of the index and the length of the processed fields.</p>
+<div class="section" id="applying-mlp-on-a-list-of-texts">
+<h3>Applying MLP on a list of texts<a class="headerlink" href="#applying-mlp-on-a-list-of-texts" title="Permalink to this headline">¶</a></h3>
 <p>Endpoint: <strong>/mlp/texts/</strong></p>
 <p>Example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/embeddings/&quot;</span> <span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/mlp/texts/&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
@@ -153,6 +179,86 @@
     <span class="p">}</span>
 <span class="p">]</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="applying-mlp-on-a-list-of-dictionaries">
+<h3>Applying MLP on a list of dictionaries<a class="headerlink" href="#applying-mlp-on-a-list-of-dictionaries" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/mlp/docs/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/mlp/texts/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;docs&quot;: [{&quot;comment&quot;: &quot;Ettepanek minna üle neljapäevasele töönädalale lükati tagasi.&quot;}],</span>
+<span class="s1">        &quot;fields_to_parse&quot;: [&quot;comment&quot;]</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Ettepanek minna üle neljapäevasele töönädalale lükati tagasi.&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;comment_mlp&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Ettepanek minna üle neljapäevasele töönädalale lükati tagasi .&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;lang&quot;</span><span class="p">:</span> <span class="s2">&quot;et&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;lemmas&quot;</span><span class="p">:</span> <span class="s2">&quot;ettepanek minema üle neljapäevane töönädal lükkama tagasi .&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pos_tags&quot;</span><span class="p">:</span> <span class="s2">&quot;S V K A S V D Z&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;texta_facts&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="applying-mlp-on-index">
+<h3>Applying MLP on index<a class="headerlink" href="#applying-mlp-on-index" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/mlp_index/</strong>
+<em>Withholding the analyzers field will make it default into using all analyzers which is time-insufficient.</em></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/mlp_index/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;indices&quot;: [{&quot;name&quot;: &quot;embedding_index&quot;}],</span>
+<span class="s1">        &quot;description&quot;: &quot;lemmas for embedding index&quot;,</span>
+<span class="s1">        &quot;fields&quot;: [&quot;comment_content&quot;, &quot;comment_title&quot;]</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://rest-dev.texta.ee/api/v1/projects/109/mlp_index/17/&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;author_username&quot;</span><span class="p">:</span> <span class="s2">&quot;texta&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;indices&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+            <span class="nt">&quot;is_open&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://rest-dev.texta.ee/api/v1/index/30/&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;embedding_index&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;lemmas for embedding index&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;task&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">153759</span><span class="p">,</span>
+        <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;created&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;progress&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="nt">&quot;step&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="s2">&quot;[]&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;time_started&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-12-09T10:28:59.856498+02:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;last_update&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;time_completed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;num_processed&quot;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;match_all&quot;</span><span class="p">:</span> <span class="p">{}}},</span>
+    <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;comment_content&quot;</span><span class="p">,</span> <span class="s2">&quot;comment_title&quot;</span><span class="p">],</span>
+    <span class="nt">&quot;analyzers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;all&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

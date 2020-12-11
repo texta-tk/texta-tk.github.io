@@ -26,12 +26,11 @@ Contents:
     :maxdepth: 3
 
     installation
-    uaa
+    authentication
     anonymizer
     importer
     mlp
     reindexer
-    registration
     health
     projects
     searcher
