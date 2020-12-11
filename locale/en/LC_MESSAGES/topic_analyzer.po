@@ -9,103 +9,144 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"POT-Creation-Date: 2020-12-11 15:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.8.0\n"
 
-#: ../../source/topic_analyzer.rst:3
+#: ../../source/topic_analyzer.rst:5
 msgid "Topic Analyzer"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:8
+#: ../../source/topic_analyzer.rst:9
 msgid ""
-"Topic Analyzer is a tool that helps us to find groups of similar "
-"documents from the data and transform these groups into labels."
-msgstr ""
-
-#: ../../source/topic_analyzer.rst:11
-msgid "Grouping the data"
-msgstr ""
-
-#: ../../source/topic_analyzer.rst:12
-msgid ""
-"To create a new grouping (or clustering, as we name it) navigate to "
-"Models -> Clustering and click \"Create\". Similarly to Tagger Group "
-"object, you have to give it a name (*Description*) and select indices and"
-" fields based on which the grouping will be done. Additionally one can "
-"restrict the set of documents to be used in clustering by specifying the "
-"filter with a *Query* parameter."
+"There exists an API for topic analyzer too, but the magic of the analyzer"
+" dissappears when using API."
 msgstr ""
 
 #: ../../source/topic_analyzer.rst:14
-msgid ""
-"If desired, one can do some fine-tuning as well by choosing clustering "
-"algorithm and vectorizer and specifying the number of clusters (*Num "
-"clusters*) and the number of document vector dimensions (*Num dims*)."
+msgid "Create"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:18
+#: ../../source/topic_analyzer.rst:17 ../../source/topic_analyzer.rst:64
+#: ../../source/topic_analyzer.rst:89 ../../source/topic_analyzer.rst:97
+msgid "GUI"
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:19
+msgid ""
+"Navigate to **Tools -> Topic Analyzer** and click on the **CREATE** "
+"button on top-left. Choose the name for your :ref:`Analyzer "
+"<topic_analyzer_concept>` (*Description*). Define the :ref:`query "
+"<query_concept>` and select indices on which the :ref:`query "
+"<query_concept>` will be executed. If you leave *Query* empty, it will "
+"take all documents from the selected indices. If you have any searches "
+"defined in your :ref:`project <project_concept>`, they will appear in a "
+"dropdown menu if you click on the field *Query* - you can use existing "
+"searches as queries."
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:23
+msgid ""
+"Choose *fields* on which the clustering is done. The selected fields "
+"should contain textual data."
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:26
+msgid ""
+"It is recommended to use lemmatized or tokenized data. Lemmatization is "
+"especially useful with morphologically complex languages. You can "
+"tokenize and lemmatize the data with :ref:`MLP <mlp>`."
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:28
+msgid ""
+"*Embedding* - if selected then its phraser is used for tokenization. You "
+"can leave it empty as well."
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:30
+msgid ""
+"*Keywords filter* - defines a filter (as a regular expression) for "
+"unwanted significant words."
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:32
+msgid "*Stopwords* - custom stopwords to ignore during clustering."
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:34
+msgid ""
+"*Clustering algorithm* - an algorithm to use for clustering. "
+"Minibatchkmeans is a time efficient variant of kmeans with a potential "
+"tradeff in quality. *Vectorizer* - a method for creating document "
+"vectors."
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:37
+msgid "*Document limit* - number of documents that will be clustered."
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:39
+msgid "*Num cluster* - number of final clusters."
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:41
+msgid "*Num dims* - maximum possible dimension of document vectors."
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:43
+msgid "*Num topics* - number of dimensions when *Use LSI* is selected."
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:45
+msgid ""
+"*Use LSI* - if selected then high dimensional document-term vectors are "
+"reduced into lower dimensional vectors that base on \"topics\"."
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:49
 msgid "**How to choose the number of clusters?**"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:20
+#: ../../source/topic_analyzer.rst:51
 msgid ""
-"General advice would be to better have too many clusters than too few. "
+"General advice would is to better have too many clusters than too few. "
 "Think about how many documents you are planning to cluster and choose the"
 " number so that the average cluster is small enough to inspect it "
 "manually with ease. For example, if you are going to cluster 1000 "
 "documents to 50 clusters then average cluster would contain 20 documents."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:22
-msgid ""
-"Instead of using document-term matrix for clustering, we can also use "
-"compressed approximation of this matrix (with parameter *Use LSI*) which "
-"is constructed before the clustering process begins. However, LSI also "
-"requires the number of topics (dimensions in low-rank matrix) to be "
-"specified (*Num topics*)."
-msgstr ""
-
-#: ../../source/topic_analyzer.rst:24
-msgid ""
-"In some cases we may already have some knowledge about the data that we "
-"are about to cluster. For example, we may be aware of some domain-"
-"specific stopwords which we would like to ignore. As name already "
-"suggests, these can be listed in the field *Stopwords*."
-msgstr ""
-
-#: ../../source/topic_analyzer.rst:30
+#: ../../source/topic_analyzer.rst:57
 msgid "Figure 17. *Creating a Clustering*"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:34
-msgid "Evaluating clusters"
+#: ../../source/topic_analyzer.rst:61
+msgid "Viewing clusters"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:36
+#: ../../source/topic_analyzer.rst:66
 msgid ""
-"To see the clusters, click *View clusters* under Actions. This view gives"
-" us an overwiew about obtained clusters. For each cluster the document "
-"count and average cosine similarity between its documents is shown. "
-"Additionally, a list of significant words for each cluster is given - it "
-"is a list of words that, when compared to other documents, appear notably"
-" often in documents which belong to that cluster."
+"Click *View clusters* under Actions. You will see an overwiew about "
+"obtained clusters. For each cluster the document count and average cosine"
+" similarity between its documents is given as well as a list of "
+"significant words."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:43
+#: ../../source/topic_analyzer.rst:73
 msgid "Figure 18. *Clusters view*"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:47
+#: ../../source/topic_analyzer.rst:77
 msgid "**Interpreting document count**"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:49
+#: ../../source/topic_analyzer.rst:79
 msgid ""
 "Cluster with significantly larger document count often indicates that the"
 " clustering algorithm has failed to separate these documents by the "
@@ -118,11 +159,11 @@ msgid ""
 "increasing the number of clusters might help as well."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:51
+#: ../../source/topic_analyzer.rst:81
 msgid "**Interpreting average similarity**"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:53
+#: ../../source/topic_analyzer.rst:83
 msgid ""
 "Average similarity is an average cosine similarity between all the "
 "documents in the cluster. It ranges between 0 and 1 and higher score "
@@ -133,62 +174,224 @@ msgid ""
 "low althought fixing that cluster would be very easy."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:55
+#: ../../source/topic_analyzer.rst:86
+msgid "Viewing documents inside cluster"
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:91
 msgid ""
-"To see content of a cluster, simply click on a cluster that is in your "
-"interest, this opens you a Cluster Details view."
+"Click on a cluster that is in your interest, this opens you a detailed "
+"view of a cluster content."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:58
-msgid "Operations with cluster"
+#: ../../source/topic_analyzer.rst:94
+msgid "Operations with the cluster"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:59
+#: ../../source/topic_analyzer.rst:100
+msgid "Tag documents"
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:102
 msgid ""
-"Cluster Details view allows us to inspect actual documents belonging to a"
-" cluster."
+"If the cluster contains documents from the same topic it is advisable to "
+"tag the documets and delete the cluster. Click on **Tag** button. This "
+"operation adds a texta_fact to each of the document in the cluster, with "
+"specified name and a string value. **From now on, these documents will be"
+" ignored in further clustering processes**"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:61
+#: ../../source/topic_analyzer.rst:106
+msgid "Delete documents"
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:108
 msgid ""
-"If we are satisfied with what it contains, we can tag the content by "
-"clicking \"Tag\" button. This operation adds a texta_fact to each of the "
-"document in the cluster, with specified name and a string value. **From "
-"now on, these documents will be ignored in further clustering "
-"processes**."
+"This functionality is useful if some documents in the cluster are from a "
+"different topic and you want to remove them - select the documents that "
+"you want to remove and click on **trash bin** icon."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:63
+#: ../../source/topic_analyzer.rst:111
+msgid "Add more documents"
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:113
 msgid ""
-"If not satisfied, we probably want to do some corrections in the cluster "
-"content manually, that is, remove some documents from it. This can be "
-"done by selecting the documents that we want to remove and clicking on "
-"trash bin icon. Note that these documents will not be ignored in further "
-"clustering process."
+"You might want to know whether there exists more documents similar to the"
+" ones in the cluster, and if so, add those to the cluster as well, so you"
+" could tag them all together. Click on a \"More like this\" button to "
+"query similar documents. In the opened view, select document which you "
+"would like to add to the cluster and click on a **+** button."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:65
+#: ../../source/topic_analyzer.rst:117
+msgid "Delete the cluster"
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:119
 msgid ""
-"We could also be interested in whether there is more documents in the "
-"index that are similar to the ones in given cluster. If indeed there is, "
-"we might want to add those documents to the cluster as well, so we could "
-"tag them all together."
+"It is advisable to delete the cluster after you have tagged it. Click on "
+"**Delete** button to do it."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:67
-msgid ""
-"To query similar documents, click on a \"More like this\" button. In the "
-"opened view, select document which you would like to add to the cluster "
-"and click on a \"+\" button."
-msgstr ""
-
-#: ../../source/topic_analyzer.rst:74
+#: ../../source/topic_analyzer.rst:126
 msgid "Figure 19. *Cluster details view*"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:77
-msgid ""
-"There is an API for topic analyzer, but the magic of the analyzer "
-"dissappears when using API."
-msgstr ""
+#~ msgid ""
+#~ "Topic Analyzer is a tool that "
+#~ "helps us to find groups of similar"
+#~ " documents from the data and "
+#~ "transform these groups into labels."
+#~ msgstr ""
+
+#~ msgid "Grouping the data"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To create a new grouping (or "
+#~ "clustering, as we name it) navigate "
+#~ "to Models -> Clustering and click "
+#~ "\"Create\". Similarly to Tagger Group "
+#~ "object, you have to give it a "
+#~ "name (*Description*) and select indices "
+#~ "and fields based on which the "
+#~ "grouping will be done. Additionally one"
+#~ " can restrict the set of documents"
+#~ " to be used in clustering by "
+#~ "specifying the filter with a *Query* "
+#~ "parameter."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If desired, one can do some "
+#~ "fine-tuning as well by choosing "
+#~ "clustering algorithm and vectorizer and "
+#~ "specifying the number of clusters (*Num"
+#~ " clusters*) and the number of "
+#~ "document vector dimensions (*Num dims*)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "General advice would be to better "
+#~ "have too many clusters than too "
+#~ "few. Think about how many documents "
+#~ "you are planning to cluster and "
+#~ "choose the number so that the "
+#~ "average cluster is small enough to "
+#~ "inspect it manually with ease. For "
+#~ "example, if you are going to "
+#~ "cluster 1000 documents to 50 clusters"
+#~ " then average cluster would contain "
+#~ "20 documents."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Instead of using document-term matrix"
+#~ " for clustering, we can also use "
+#~ "compressed approximation of this matrix "
+#~ "(with parameter *Use LSI*) which is "
+#~ "constructed before the clustering process "
+#~ "begins. However, LSI also requires the"
+#~ " number of topics (dimensions in "
+#~ "low-rank matrix) to be specified "
+#~ "(*Num topics*)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In some cases we may already have"
+#~ " some knowledge about the data that"
+#~ " we are about to cluster. For "
+#~ "example, we may be aware of some"
+#~ " domain-specific stopwords which we "
+#~ "would like to ignore. As name "
+#~ "already suggests, these can be listed"
+#~ " in the field *Stopwords*."
+#~ msgstr ""
+
+#~ msgid "Evaluating clusters"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To see the clusters, click *View "
+#~ "clusters* under Actions. This view gives"
+#~ " us an overwiew about obtained "
+#~ "clusters. For each cluster the document"
+#~ " count and average cosine similarity "
+#~ "between its documents is shown. "
+#~ "Additionally, a list of significant "
+#~ "words for each cluster is given -"
+#~ " it is a list of words that,"
+#~ " when compared to other documents, "
+#~ "appear notably often in documents which"
+#~ " belong to that cluster."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To see content of a cluster, "
+#~ "simply click on a cluster that is"
+#~ " in your interest, this opens you "
+#~ "a Cluster Details view."
+#~ msgstr ""
+
+#~ msgid "Operations with cluster"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Cluster Details view allows us to "
+#~ "inspect actual documents belonging to a"
+#~ " cluster."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If we are satisfied with what it"
+#~ " contains, we can tag the content "
+#~ "by clicking \"Tag\" button. This "
+#~ "operation adds a texta_fact to each "
+#~ "of the document in the cluster, "
+#~ "with specified name and a string "
+#~ "value. **From now on, these documents"
+#~ " will be ignored in further "
+#~ "clustering processes**."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If not satisfied, we probably want "
+#~ "to do some corrections in the "
+#~ "cluster content manually, that is, "
+#~ "remove some documents from it. This "
+#~ "can be done by selecting the "
+#~ "documents that we want to remove "
+#~ "and clicking on trash bin icon. "
+#~ "Note that these documents will not "
+#~ "be ignored in further clustering "
+#~ "process."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We could also be interested in "
+#~ "whether there is more documents in "
+#~ "the index that are similar to the"
+#~ " ones in given cluster. If indeed "
+#~ "there is, we might want to add "
+#~ "those documents to the cluster as "
+#~ "well, so we could tag them all "
+#~ "together."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To query similar documents, click on "
+#~ "a \"More like this\" button. In "
+#~ "the opened view, select document which"
+#~ " you would like to add to the"
+#~ " cluster and click on a \"+\" "
+#~ "button."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "There is an API for topic "
+#~ "analyzer, but the magic of the "
+#~ "analyzer dissappears when using API."
+#~ msgstr ""
 

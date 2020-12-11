@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-22 11:58+0300\n"
+"POT-Creation-Date: 2020-12-11 15:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../source/projects.rst:1
 msgid ""
@@ -24,28 +24,28 @@ msgid ""
 "<https://docs.texta.ee/v2/et/projects.html>`_"
 msgstr ""
 
-#: ../../source/projects.rst:6
+#: ../../source/projects.rst:9
 msgid "Projects"
 msgstr "Projektid"
 
-#: ../../source/projects.rst:8
+#: ../../source/projects.rst:11
 msgid "API reference: http://localhost:8000/api/v1/redoc/#tag/projects"
 msgstr "API viide: http://localhost:8000/api/v1/redoc/#tag/projects"
 
-#: ../../source/projects.rst:11
+#: ../../source/projects.rst:14
 msgid "Create"
 msgstr "Loomine"
 
-#: ../../source/projects.rst:14 ../../source/projects.rst:53
-#: ../../source/projects.rst:77
+#: ../../source/projects.rst:17 ../../source/projects.rst:56
+#: ../../source/projects.rst:80
 msgid "GUI"
 msgstr ""
 
-#: ../../source/projects.rst:16
+#: ../../source/projects.rst:19
 msgid "Before we can start working with the data, we need to create a project."
 msgstr "Enne andmetega tööle asumist tuleb luua projekt."
 
-#: ../../source/projects.rst:18
+#: ../../source/projects.rst:21
 msgid ""
 "Click on the **CREATE** button on the top-left of the front page. Fill in"
 " the title field - this will be the name of your project; select users "
@@ -57,11 +57,11 @@ msgstr ""
 " kasutajad, kes peaksid saama ligipääsuõiguse projektile ning väljal "
 "*indices* vali indeksid, millega sa projektis tööle hakkad."
 
-#: ../../source/projects.rst:22
+#: ../../source/projects.rst:25
 msgid "You can select more than one index."
 msgstr "Projekti saab valida rohkem kui ühe indeksi."
 
-#: ../../source/projects.rst:24
+#: ../../source/projects.rst:27
 msgid ""
 "We can see the newly created project in the list on the front page "
 "(:numref:`project_list`)."
@@ -69,24 +69,24 @@ msgstr ""
 "Vastloodud projekt ilmub nähtavale avalehel projektide nimekirjas "
 "(:numref:`project_list`)."
 
-#: ../../source/projects.rst:29
+#: ../../source/projects.rst:32
 msgid "*Projects list*"
 msgstr "*Projektide nimekiri*"
 
-#: ../../source/projects.rst:33 ../../source/projects.rst:61
-#: ../../source/projects.rst:87
+#: ../../source/projects.rst:36 ../../source/projects.rst:64
+#: ../../source/projects.rst:90
 msgid "API"
 msgstr ""
 
-#: ../../source/projects.rst:35
+#: ../../source/projects.rst:38
 msgid "API endpoint: **/projects/**"
 msgstr "API otspunkt: **/projects/**"
 
-#: ../../source/projects.rst:50
+#: ../../source/projects.rst:53
 msgid "Edit"
 msgstr "Muutmine"
 
-#: ../../source/projects.rst:55
+#: ../../source/projects.rst:58
 msgid ""
 "On the front page, click on three dots under **Action** column "
 "(:numref:`project_actions`) and choose **Edit**."
@@ -94,19 +94,19 @@ msgstr ""
 "Vajuta avalehel kolmele punktile **Action** veerus "
 "(:numref:`project_actions`) ja vali **Edit**."
 
-#: ../../source/projects.rst:58
+#: ../../source/projects.rst:61
 msgid "Only superusers can edit the project."
 msgstr "Ainult administraatori õigustega kasutajad saavad projekti muuta."
 
-#: ../../source/projects.rst:63 ../../source/projects.rst:89
+#: ../../source/projects.rst:66 ../../source/projects.rst:92
 msgid "API endpoint: **/projects/{project_pk}/**"
 msgstr "API otspunkt: **/projects/{project_pk}/**"
 
-#: ../../source/projects.rst:74
+#: ../../source/projects.rst:77
 msgid "Delete"
 msgstr "Kustutamine"
 
-#: ../../source/projects.rst:79
+#: ../../source/projects.rst:82
 msgid ""
 "On the front page, click on three dots under **Action** column "
 "(:numref:`project_actions`) and choose **Delete**."
@@ -114,15 +114,15 @@ msgstr ""
 "Vajuta avalehel kolmele punktile **Action** veerus "
 "(:numref:`project_actions`) ja vali **Delete**."
 
-#: ../../source/projects.rst:84
+#: ../../source/projects.rst:87
 msgid "*Project actions*"
 msgstr "*Projekti toimingud*"
 
-#: ../../source/projects.rst:97
+#: ../../source/projects.rst:100
 msgid "Navigate between Projects"
 msgstr "Projektide vahel navigeerimine"
 
-#: ../../source/projects.rst:98
+#: ../../source/projects.rst:101
 msgid ""
 "To start working on the project, we need to activate it - click on three "
 "dots under **Action** column (:numref:`project_actions`) and choose "
@@ -136,26 +136,58 @@ msgstr ""
 " ülemisest paremast nurgast (:numref:`user_projects`). Sealses nimekirjas"
 " on näha kõik projektid, mille liige sa oled."
 
-#: ../../source/projects.rst:102
+#: ../../source/projects.rst:105
 msgid "Only one project can be activated at a time."
 msgstr "Korraga saab aktiveerida ainult ühe projekti."
 
-#: ../../source/projects.rst:107
+#: ../../source/projects.rst:110
 msgid "*User projects*"
 msgstr "*Kasutaja projektid*"
 
-#: ../../source/projects.rst:110
+#: ../../source/projects.rst:113
 msgid "Permissions"
 msgstr "Õigused"
 
-#: ../../source/projects.rst:112
+#: ../../source/projects.rst:114
 msgid ""
-"Project resources (including indices) are shared among the users with "
-"access to the project. **Only superusers can edit projects.**"
+"Resource sharing and user permissions are handled by two basic "
+"principles: user groups and isolated Projects."
 msgstr ""
-"Projekti ressursidele (sealhulgas indeksitele) on ligipääs kõigil "
-"projekti liikmetel. **Ainult administraatoritel on õigus projekti "
-"muuta.**"
+
+#: ../../source/projects.rst:116
+msgid ""
+"There are currently only two user groups, administrators and normal "
+"users. Administrators have free access and editing rights to ALL "
+"resources available on a Toolkit instance. Admins are capable of user "
+"management (creating/editing/deleting users), index management "
+"(create/delete/open-close Elasticsearch indices) and Project management "
+"(creating/deleting/editing index access/assigning users). On the other "
+"end, normal users can only access resources and Elasticsearch data "
+"through the use of Projects."
+msgstr ""
+
+#: ../../source/projects.rst:121
+msgid ""
+"Projects are a way of isolating information and resources from other "
+"users. They are exclusively created by Administrators who then assign "
+"which users will have access to the Project and which Elasticsearch "
+"indices they are allowed to view. For any given Toolkit functionality, a "
+"user will have to choose a Project they have permissions for and "
+"\"activate\" it. Then everything they create will be isolated inside the "
+"Project and only members of the same Project will have access to it. "
+"Trying to access resources of a Project the user is not part of or the "
+"data of an Elasticsearch index the Project has no rights to will results "
+"in a 'Permission Denied' error."
+msgstr ""
+
+#: ../../source/projects.rst:128
+msgid ""
+"Please note that Project access is universal to all the users part of it,"
+" any user inside the Project can create new resources or delete existing "
+"ones. To avoid a situation where one user deletes the necessary resources"
+" of another user in the same Project, careful planning and communication "
+"is necessary."
+msgstr ""
 
 #~ msgid ""
 #~ "**API example** (`reference "
@@ -185,4 +217,15 @@ msgstr ""
 #~ "`EN <https://docs.texta.ee/v2/regex_tagger.html>`_ `ET "
 #~ "<https://docs.texta.ee/v2/et/regex_tagger.html>`_"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "Project resources (including indices) are "
+#~ "shared among the users with access "
+#~ "to the project. **Only superusers can"
+#~ " edit projects.**"
+#~ msgstr ""
+#~ "Projekti ressursidele (sealhulgas indeksitele) "
+#~ "on ligipääs kõigil projekti liikmetel. "
+#~ "**Ainult administraatoritel on õigus projekti"
+#~ " muuta.**"
 

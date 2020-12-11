@@ -42,6 +42,5 @@ Contents:
     regex_tagger
     regex_tagger_group
     torch_tagger
-    bert_tagger
     use_cases
     terminology

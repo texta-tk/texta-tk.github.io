@@ -35,3 +35,9 @@ Changing in English version and translating:
 `sphinx-intl update -p build/gettext -l en -l et` (this adds the changes you made in English files to the Estonian .po files, but does not delete translations made before in case those were not changed in English. The changed texts are marked with "#, fuzzy")
 - translate Estonian with going to locale/et/LC_MESSAGES and adding translations in .po files.
 - push it to git
+
+If you want to check your translations or English versions, use:
+
+`sphinx-build -b html -D language=en source public`
+and
+`sphinx-build -b html -D language=et source public/et`
