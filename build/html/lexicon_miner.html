@@ -61,6 +61,7 @@
 <li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
 </ul>
@@ -102,7 +103,7 @@
             
   <div class="section" id="lexicon-miner">
 <span id="lexiconminer"></span><h1>Lexicon Miner<a class="headerlink" href="#lexicon-miner" title="Permalink to this headline">¶</a></h1>
-<p>Texta Toolkit enables the creation of topic-related lexicons. In order to build lexicons, you must have an <a class="reference internal" href="terminology.html#embedding-concept"><span class="std std-ref">Embedding</span></a> model <a class="reference internal" href="embedding.html#create-embedding"><span class="std std-ref">previously trained</span></a> .</p>
+<p>Texta Toolkit enables the creation of topic-related <span class="xref std std-ref">lexicons</span>. In order to build lexicons, we must have an <a class="reference internal" href="terminology.html#embedding-concept"><span class="std std-ref">Embedding</span></a> model <a class="reference internal" href="embedding.html#create-embedding"><span class="std std-ref">previously trained</span></a> .</p>
 <p>For creating a lexicon, type the name of the lexicon in the “New lexicon slot” under “Lexicons” and press enter. After clicking on the newly created lexicon, provide some seed words (like ‘sport’ if you are after finding sport-related terms).</p>
 <p>The process of creating (or expanding) the lexicon is iterative. Keep asking for suggestions (with “New Suggestions” button) and from those pick the ones that make sense. Keep asking for suggestions until you get no more meaningful responses. Words you didn’t choose appear under the lexicon as negative words. These are considered as the opposite of the meanings we are looking for while generating new suggestions. You can erase words from the negative words list simply by clicking on it.</p>
 <p>To add a suitable word to the lexicon from the Suggestions list, you simply have to click on it. Alternatevly you can type yourself some words you have come up while reading through the suggestions into the list. If you want to delete something you already chose you can erase the verb from the list.</p>

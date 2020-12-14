@@ -9,156 +9,144 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"POT-Creation-Date: 2020-10-27 12:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.6.0\n"
 
-#: ../../source/reindexer.rst:2
+#: ../../source/reindexer.rst:1
 msgid ""
 "`EN <https://docs.texta.ee/v2/reindexer.html>`_ `ET "
 "<https://docs.texta.ee/v2/et/reindexer.html>`_"
 msgstr ""
 
-#: ../../source/reindexer.rst:7
+#: ../../source/reindexer.rst:6
 msgid "Reindexer"
 msgstr ""
 
-#: ../../source/reindexer.rst:9
+#: ../../source/reindexer.rst:8
 msgid ""
 "Reindexer is a tool for making copies or subsets of Elasticsearch "
 ":ref:`indices <index_concept>`. Reindexer can be used for various data "
 "management tasks:"
 msgstr ""
-"Reindexer on tööriist Elasticsearchi :ref:`indeksitest <index_concept>` "
-"koopiate või alamhulkade loomiseks. Reindexeri on võimalik kasutada "
-"järgnevate ülesannete teostamiseks: "
+"Reindexer on tööriist Elasticsearchi "
+":ref:`indeksitest <index_concept>` koopiate või alamhulkade loomiseks. Reindexeri on võimalik kasutada järgnevate ülesannete teostamiseks: "
 
-#: ../../source/reindexer.rst:11
+
+#: ../../source/reindexer.rst:10
 msgid "Making a copy of an index;"
 msgstr "Andmestikust koopia loomiseks;"
 
-#: ../../source/reindexer.rst:12
+#: ../../source/reindexer.rst:11
 msgid "Merging multiple indices into one;"
 msgstr "Mitme andmestiku liitmiseks;"
 
-#: ../../source/reindexer.rst:13
+#: ../../source/reindexer.rst:12
 msgid "Making a random subset of an index;"
 msgstr "Alusandmestikust juhuslikult valitud dokumentidega alamhulga loomiseks;"
 
-#: ../../source/reindexer.rst:14
-#, fuzzy
-msgid "Making a subset based on predefined :ref:`query <query_concept>`;"
+#: ../../source/reindexer.rst:13
+msgid "Making a subset based on predefined query;"
 msgstr "Eeldefineeritud kitsenduste alusel andmestiku alamhulga loomiseks;"
 
-#: ../../source/reindexer.rst:15
+#: ../../source/reindexer.rst:14
 msgid "Renaming fields;"
 msgstr "Väljade ümbernimetamiseks;"
 
-#: ../../source/reindexer.rst:16
-#, fuzzy
-msgid "Updating Elasticsearch :ref:`field <field_concept>` types."
+#: ../../source/reindexer.rst:15
+msgid "Updating Elasticsearch field types."
 msgstr "Väljade Elasticsearchi andmetüübi muutmiseks."
 
-#: ../../source/reindexer.rst:19
+#: ../../source/reindexer.rst:18
 msgid "Creation"
 msgstr "Loomine"
 
-#: ../../source/reindexer.rst:24
+#: ../../source/reindexer.rst:23
 msgid "Parameters"
 msgstr "Parameetrid"
 
-#: ../../source/reindexer.rst:27
+#: ../../source/reindexer.rst:26
 msgid "**description**:"
 msgstr ""
 
-#: ../../source/reindexer.rst:27
+#: ../../source/reindexer.rst:26
 msgid "Name of the Reindexing task."
 msgstr "Reindekeerimise protsessi nimi."
 
-#: ../../source/reindexer.rst:30
+#: ../../source/reindexer.rst:29
 msgid "**indices**:"
 msgstr ""
 
-#: ../../source/reindexer.rst:30
-#, fuzzy
-msgid ""
-"List of Elasticsearch :ref:`indices <index_concept>` (datasets) to "
-"reindex."
+#: ../../source/reindexer.rst:29
+msgid "List of Elasticsearch indices (datasets) to reindex."
 msgstr "Nimekiri reindekseeritavatest Elasticsearchi indeksitest."
 
-#: ../../source/reindexer.rst:33
+#: ../../source/reindexer.rst:32
 msgid "**fields**:"
 msgstr ""
 
-#: ../../source/reindexer.rst:33
+#: ../../source/reindexer.rst:32
 msgid ""
 "List of fields to reindex, i.e. transfer to the new index. By default, "
 "all the fields in the source index are selected."
 msgstr ""
-"Nimekiri uude andmestikku ülekantavatest väljadest. Vaikimisi on valitud "
-"kõik väljad."
+"Nimekiri uude andmestikku ülekantavatest väljadest. Vaikimisi "
+"on valitud kõik väljad."
 
-#: ../../source/reindexer.rst:36
+#: ../../source/reindexer.rst:35
 msgid "**query**:"
 msgstr ""
 
-#: ../../source/reindexer.rst:36
-#, fuzzy
+#: ../../source/reindexer.rst:35
 msgid ""
-"Specified Elasticsearch Search :ref:`query <query_concept>`. If left "
-"empty (and `random_size` is not defined), all documents from the source "
-"index are transferred to the new one."
+"Specified Elasticsearch Search query. If left empty (and `random_size` is"
+" not defined), all documents from the source index are transferred to the"
+" new one."
 msgstr ""
-"Eeldefineeritud Elasticsearchi otsingupäring. Välja tühjaks jätmisel "
-"(juhul kui `random_size` parameeter on samuti väärtustamata), kantakse "
-"uude andmestikku üle kõik lähteandmestiku dokumendid."
+"Eeldefineeritud Elasticsearchi otsingupäring. Välja tühjaks jätmisel (juhul kui `random_size` parameeter"
+" on samuti väärtustamata), kantakse uude andmestikku üle kõik lähteandmestiku dokumendid."
 
-#: ../../source/reindexer.rst:39
+#: ../../source/reindexer.rst:38
 msgid "**new_index**:"
 msgstr ""
 
-#: ../../source/reindexer.rst:39
+#: ../../source/reindexer.rst:38
 msgid "Name of the target index."
 msgstr "Uue indeksi (andmestiku) nimi."
 
-#: ../../source/reindexer.rst:42
+#: ../../source/reindexer.rst:41
 msgid "**random_size**:"
 msgstr ""
 
-#: ../../source/reindexer.rst:42
-#, fuzzy
+#: ../../source/reindexer.rst:41
 msgid ""
 "Random subset size. If defined, new index is constructed of given number "
 "of random documents. If left empty, all the documents in the source index"
-" (or in accordance with restricted search :ref:`query <query_concept>`) "
-"are reindexed."
+" (or in accordance with restricted search query) are reindexed."
 msgstr ""
-"Juhusliku alamhulga suurus. Välja väärtustamisel koostatakse uus indeks "
-"(andmestik) valitud arvust juhuslikest dokumentidest. Välja väärtustamata"
-" jätmisel kantakse uude andmestikku üle kõik lähteandmestiku (või "
-"kitsendatud otsingupäringule `query` vastavad) dokumendid."
+"Juhusliku alamhulga suurus. Välja väärtustamisel koostatakse uus indeks (andmestik) valitud arvust juhuslikest "
+"dokumentidest. Välja väärtustamata jätmisel kantakse uude andmestikku üle kõik lähteandmestiku "
+"(või kitsendatud otsingupäringule `query` vastavad) dokumendid."
 
-#: ../../source/reindexer.rst:50
+
+#: ../../source/reindexer.rst:49
 msgid "**field_type**:"
 msgstr ""
 
-#: ../../source/reindexer.rst:45
-#, fuzzy
-msgid ""
-"List of new Elasticsearch :ref:`field<field_concept>` types in the "
-"following format:"
+#: ../../source/reindexer.rst:44
+msgid "List of new Elasticsearch field types in the following format:"
 msgstr "Nimekiri Elasticsearchi väljatüüpidest järgnevas vormingus:"
 
-#: ../../source/reindexer.rst:53
+#: ../../source/reindexer.rst:52
 msgid "GUI"
 msgstr ""
 
-#: ../../source/reindexer.rst:56
+#: ../../source/reindexer.rst:55
 msgid ""
 "For creating a new Reindexing task, navigate to `\"Tools\" -> "
 "\"Reindexer\"` as seen in :numref:`reindexer_navigation`."
@@ -166,68 +154,63 @@ msgstr ""
 "Uue reindekseerimisprotsessi loomiseks navigeeri: `\"Tools\" -> "
 "\"Reindexer\"` nagu kujutatud joonisel :numref:`reindexer_navigation`."
 
-#: ../../source/reindexer.rst:63
+#: ../../source/reindexer.rst:62
 msgid "*Reindexer navigation*"
 msgstr "*Navigatsioon Reindexeri tööriistani*"
 
-#: ../../source/reindexer.rst:65
+#: ../../source/reindexer.rst:64
 msgid ""
 "If the navigation is successful, you should see a panel similar to "
 ":numref:`reindexer_create_button` with `\"Create\"` button in the top "
 "left corner of the page."
 msgstr ""
 "Eduka navigatsiooni korral peaksid nägema joonisega "
-":numref:`reindexer_create_button` analoogset lehte, mille ülemises "
-"vasakus nurgas asub nupp nimega `\"Create\"`."
+":numref:`reindexer_create_button` analoogset lehte, mille ülemises vasakus nurgas asub nupp "
+"nimega `\"Create\"`."
 
-#: ../../source/reindexer.rst:72
+#: ../../source/reindexer.rst:71
 msgid "*Reindexer creation button*"
 msgstr "*Reindexeri loomisnupp*"
 
-#: ../../source/reindexer.rst:74
+#: ../../source/reindexer.rst:73
 msgid ""
 "Clicking on the `\"Create\"` button opens a new modal window with title "
 "`\"New Reindexer\"` as depicted in :numref:`reindexer_create_new`."
 msgstr ""
 "`\"Create\"` nupule vajutamise tagajärjel avaneb uus aken pealkirjaga "
-"`\"New Reindexer\"` nagu kujutatud joonisel "
-":numref:`reindexer_create_new`."
+"`\"New Reindexer\"` nagu kujutatud joonisel :numref:`reindexer_create_new`."
 
-#: ../../source/reindexer.rst:81
+#: ../../source/reindexer.rst:80
 msgid "*Empty Reindexer creation view*"
 msgstr "*Tühi Reindexeri loomisaken*"
 
-#: ../../source/reindexer.rst:83
+#: ../../source/reindexer.rst:82
 msgid ""
 "Fill the required fields and click on the `\"Create\"` button in the "
 "bottom right corner of the window (:numref:`reindexer_create`)."
 msgstr ""
-"Täida nõutud väljad ja vajuta nupule `\"Create\"` akna alumises paremas "
-"nurgas (:numref:`reindexer_create`)."
+"Täida nõutud väljad ja vajuta nupule `\"Create\"` akna alumises paremas nurgas (:numref:`reindexer_create`)."
 
-#: ../../source/reindexer.rst:90
+#: ../../source/reindexer.rst:89
 msgid "*Filled Reindexer creation view*"
 msgstr "*Täidetud Reindexeri loomisaken*"
 
-#: ../../source/reindexer.rst:92
-#, fuzzy
+#: ../../source/reindexer.rst:91
 msgid ""
 "The created Reindexer can now be seen as the first (or only, if no "
-"previous Reindexers exist under the :ref:`project <project_concept>`) row"
-" in the table of Reindex tasks (:numref:`reindexer_task_list`)."
-msgstr ""
-"Loodud Reindexer ilmub nüüd reindekseerimisprotsesside tabelisse "
-"(:numref:`reindexer_task_list`)."
+"previous Reindexers exist under the project) row in the table of Reindex "
+"tasks (:numref:`reindexer_task_list`)."
+msgstr "Loodud Reindexer ilmub nüüd reindekseerimisprotsesside tabelisse (:numref:`reindexer_task_list`)."
 
-#: ../../source/reindexer.rst:99
+#: ../../source/reindexer.rst:98
 msgid "*List of Reindexer tasks.*"
 msgstr "*Reindekseerimisprotsesside tabel*"
 
-#: ../../source/reindexer.rst:102
+#: ../../source/reindexer.rst:101
 msgid "API"
 msgstr ""
 
-#: ../../source/reindexer.rst:104
+#: ../../source/reindexer.rst:103
 msgid ""
 "Reference:  "
 "`<http://localhost:8000/api/v1/redoc/#operation/projects_reindexer_create>`_"
@@ -235,15 +218,14 @@ msgstr ""
 "Viide:  "
 "`<http://localhost:8000/api/v1/redoc/#operation/projects_reindexer_create>`_"
 
-#: ../../source/reindexer.rst:107
+#: ../../source/reindexer.rst:106
 msgid "Endpoint **/projects/{project_pk}/reindexer/**"
 msgstr "Otspunkt **/projects/{project_pk}/reindexer/**"
 
-#: ../../source/reindexer.rst:109
+#: ../../source/reindexer.rst:108
 msgid "Example:"
 msgstr "Näide:"
 
-#: ../../source/reindexer.rst:124
+#: ../../source/reindexer.rst:123
 msgid "Response:"
 msgstr "Vastus:"
-

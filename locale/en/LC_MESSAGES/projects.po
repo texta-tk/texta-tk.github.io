@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"POT-Creation-Date: 2020-11-02 10:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,28 +24,28 @@ msgid ""
 "<https://docs.texta.ee/v2/et/projects.html>`_"
 msgstr ""
 
-#: ../../source/projects.rst:9
+#: ../../source/projects.rst:6
 msgid "Projects"
 msgstr ""
 
-#: ../../source/projects.rst:11
+#: ../../source/projects.rst:8
 msgid "API reference: http://localhost:8000/api/v1/redoc/#tag/projects"
 msgstr ""
 
-#: ../../source/projects.rst:14
+#: ../../source/projects.rst:11
 msgid "Create"
 msgstr ""
 
-#: ../../source/projects.rst:17 ../../source/projects.rst:56
-#: ../../source/projects.rst:80
+#: ../../source/projects.rst:14 ../../source/projects.rst:53
+#: ../../source/projects.rst:77
 msgid "GUI"
 msgstr ""
 
-#: ../../source/projects.rst:19
+#: ../../source/projects.rst:16
 msgid "Before we can start working with the data, we need to create a project."
 msgstr ""
 
-#: ../../source/projects.rst:21
+#: ../../source/projects.rst:18
 msgid ""
 "Click on the **CREATE** button on the top-left of the front page. Fill in"
 " the title field - this will be the name of your project; select users "
@@ -53,66 +53,66 @@ msgid ""
 " are going to work with in the project."
 msgstr ""
 
-#: ../../source/projects.rst:25
+#: ../../source/projects.rst:22
 msgid "You can select more than one index."
 msgstr ""
 
-#: ../../source/projects.rst:27
+#: ../../source/projects.rst:24
 msgid ""
 "We can see the newly created project in the list on the front page "
 "(:numref:`project_list`)."
 msgstr ""
 
-#: ../../source/projects.rst:32
+#: ../../source/projects.rst:29
 msgid "*Projects list*"
 msgstr ""
 
-#: ../../source/projects.rst:36 ../../source/projects.rst:64
-#: ../../source/projects.rst:90
+#: ../../source/projects.rst:33 ../../source/projects.rst:61
+#: ../../source/projects.rst:87
 msgid "API"
 msgstr ""
 
-#: ../../source/projects.rst:38
+#: ../../source/projects.rst:35
 msgid "API endpoint: **/projects/**"
 msgstr ""
 
-#: ../../source/projects.rst:53
+#: ../../source/projects.rst:50
 msgid "Edit"
 msgstr ""
 
-#: ../../source/projects.rst:58
+#: ../../source/projects.rst:55
 msgid ""
 "On the front page, click on three dots under **Action** column "
 "(:numref:`project_actions`) and choose **Edit**."
 msgstr ""
 
-#: ../../source/projects.rst:61
+#: ../../source/projects.rst:58
 msgid "Only superusers can edit the project."
 msgstr ""
 
-#: ../../source/projects.rst:66 ../../source/projects.rst:92
+#: ../../source/projects.rst:63 ../../source/projects.rst:89
 msgid "API endpoint: **/projects/{project_pk}/**"
 msgstr ""
 
-#: ../../source/projects.rst:77
+#: ../../source/projects.rst:74
 msgid "Delete"
 msgstr ""
 
-#: ../../source/projects.rst:82
+#: ../../source/projects.rst:79
 msgid ""
 "On the front page, click on three dots under **Action** column "
 "(:numref:`project_actions`) and choose **Delete**."
 msgstr ""
 
-#: ../../source/projects.rst:87
+#: ../../source/projects.rst:84
 msgid "*Project actions*"
 msgstr ""
 
-#: ../../source/projects.rst:100
+#: ../../source/projects.rst:97
 msgid "Navigate between Projects"
 msgstr ""
 
-#: ../../source/projects.rst:101
+#: ../../source/projects.rst:98
 msgid ""
 "To start working on the project, we need to activate it - click on three "
 "dots under **Action** column (:numref:`project_actions`) and choose "
@@ -121,57 +121,22 @@ msgid ""
 "projects that you are a member of."
 msgstr ""
 
-#: ../../source/projects.rst:105
+#: ../../source/projects.rst:102
 msgid "Only one project can be activated at a time."
 msgstr ""
 
-#: ../../source/projects.rst:110
+#: ../../source/projects.rst:107
 msgid "*User projects*"
 msgstr ""
 
-#: ../../source/projects.rst:113
+#: ../../source/projects.rst:110
 msgid "Permissions"
 msgstr ""
 
-#: ../../source/projects.rst:114
+#: ../../source/projects.rst:112
 msgid ""
-"Resource sharing and user permissions are handled by two basic "
-"principles: user groups and isolated Projects."
-msgstr ""
-
-#: ../../source/projects.rst:116
-msgid ""
-"There are currently only two user groups, administrators and normal "
-"users. Administrators have free access and editing rights to ALL "
-"resources available on a Toolkit instance. Admins are capable of user "
-"management (creating/editing/deleting users), index management "
-"(create/delete/open-close Elasticsearch indices) and Project management "
-"(creating/deleting/editing index access/assigning users). On the other "
-"end, normal users can only access resources and Elasticsearch data "
-"through the use of Projects."
-msgstr ""
-
-#: ../../source/projects.rst:121
-msgid ""
-"Projects are a way of isolating information and resources from other "
-"users. They are exclusively created by Administrators who then assign "
-"which users will have access to the Project and which Elasticsearch "
-"indices they are allowed to view. For any given Toolkit functionality, a "
-"user will have to choose a Project they have permissions for and "
-"\"activate\" it. Then everything they create will be isolated inside the "
-"Project and only members of the same Project will have access to it. "
-"Trying to access resources of a Project the user is not part of or the "
-"data of an Elasticsearch index the Project has no rights to will results "
-"in a 'Permission Denied' error."
-msgstr ""
-
-#: ../../source/projects.rst:128
-msgid ""
-"Please note that Project access is universal to all the users part of it,"
-" any user inside the Project can create new resources or delete existing "
-"ones. To avoid a situation where one user deletes the necessary resources"
-" of another user in the same Project, careful planning and communication "
-"is necessary."
+"Project resources (including indices) are shared among the users with "
+"access to the project. **Only superusers can edit projects.**"
 msgstr ""
 
 #~ msgid "Creating a Project"
@@ -263,12 +228,5 @@ msgstr ""
 #~ msgid ""
 #~ "`EN <https://docs.texta.ee/v2/regex_tagger.html>`_ `ET "
 #~ "<https://docs.texta.ee/v2/et/regex_tagger.html>`_"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Project resources (including indices) are "
-#~ "shared among the users with access "
-#~ "to the project. **Only superusers can"
-#~ " edit projects.**"
 #~ msgstr ""
 

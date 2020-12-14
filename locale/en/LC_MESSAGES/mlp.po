@@ -9,91 +9,31 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"POT-Creation-Date: 2020-10-01 19:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.4.0\n"
 
-#: ../../source/mlp.rst:5
+#: ../../source/mlp.rst:3
 msgid "MLP"
 msgstr ""
 
-#: ../../source/mlp.rst:7
+#: ../../source/mlp.rst:5
 msgid ""
 "Preprocessing the data is a standard procedure in machine learning which "
 "in TTK can be done via MLP (:ref:`MultiLingual Preprocessor <mlp>`) "
 "module."
 msgstr ""
 
-#: ../../source/mlp.rst:9
-msgid ""
-"TEXTA MLP (Multilingual Processor) is an additional module of TEXTA "
-"created for the sake of processing and enriching textual data. Capable of"
-" processing multiple languages, it's features include the lemmatization "
-"of text, Named Entity extraction, entity linking and more. To make access"
-" to the module more efficient and smoother, it has been integrated "
-"directly into the Toolkit. Choosing which features the user wants to "
-"apply on their text is handled by selecting \"Analyzers\"."
-msgstr ""
-
-#: ../../source/mlp.rst:14
-msgid ""
-"Analyzers are a way of selecting how you want your data to be processed, "
-"whether you only want lemmatization or Entity extraction. Currently, the "
-"following analyzers are supported:"
-msgstr ""
-
-#: ../../source/mlp.rst:16
-msgid "lemmas - Adds a lemmatized version of the original text."
-msgstr ""
-
-#: ../../source/mlp.rst:17
-msgid "pos_tags - Adds the Part Of Speech tags of every token in the text."
-msgstr ""
-
-#: ../../source/mlp.rst:18
-msgid ""
-"transliteration - Adds a representation of scripted languages (Russian, "
-"Arabic) in the latin alphabet."
-msgstr ""
-
-#: ../../source/mlp.rst:19
-msgid ""
-"ner - Adds Named Entities in Texta Fact format (Please note that NER for "
-"Estonian is currently not available)."
-msgstr ""
-
-#: ../../source/mlp.rst:20
-msgid ""
-"entities - Keyword based Entity Extraction, used to extract information "
-"like predefined addresses."
-msgstr ""
-
-#: ../../source/mlp.rst:21
-msgid "namemail - Extracts name-email pairs from text in Texta Facts format."
-msgstr ""
-
-#: ../../source/mlp.rst:22
-msgid ""
-"bounded - Links existing Texta Facts together by the basis of it "
-"belonging to the same Entity and returns a new Texta Fact."
-msgstr ""
-
-#: ../../source/mlp.rst:24
-msgid ""
-"Users can apply the MLP to a singular text of their own choosing or apply"
-" it to multiple Elasticsearch indices at once."
-msgstr ""
-
-#: ../../source/mlp.rst:27
+#: ../../source/mlp.rst:8
 msgid "GUI"
 msgstr ""
 
-#: ../../source/mlp.rst:28
+#: ../../source/mlp.rst:9
 msgid ""
 "Navigate to **Tools -> MLP**. Click **Create** button to define a new MLP"
 " worker. Select indices and fields on which you want to apply MLP. Since "
@@ -104,73 +44,33 @@ msgid ""
 "like to apply."
 msgstr ""
 
-#: ../../source/mlp.rst:33
+#: ../../source/mlp.rst:14
 msgid "*Creating a MLP worker*"
 msgstr ""
 
-#: ../../source/mlp.rst:35
+#: ../../source/mlp.rst:16
 msgid ""
 "The worker adds new fields containing the results to the dataset. You can"
 " see the list of fields using Search."
 msgstr ""
 
-#: ../../source/mlp.rst:40
+#: ../../source/mlp.rst:21
 msgid "*Newly added fields containing results of MLP*"
 msgstr ""
 
-#: ../../source/mlp.rst:42
-msgid ""
-"For applying MLP on a single instance of text, click on the \"Apply to "
-"text\" button inside **Tools -> MLP**."
-msgstr ""
-
-#: ../../source/mlp.rst:47
-msgid "*Applying MLP on a single instance of text.*"
-msgstr ""
-
-#: ../../source/mlp.rst:50
+#: ../../source/mlp.rst:26
 msgid "API"
 msgstr ""
 
-#: ../../source/mlp.rst:52
-msgid ""
-"For convenience purposes the Toolkit supports several input types along "
-"with processing several Elasticsearch indices at once, the latter however"
-" is a time consuming process depending on the size of the index and the "
-"length of the processed fields."
-msgstr ""
-
-#: ../../source/mlp.rst:57
-msgid "Applying MLP on a list of texts"
-msgstr ""
-
-#: ../../source/mlp.rst:59
+#: ../../source/mlp.rst:28
 msgid "Endpoint: **/mlp/texts/**"
 msgstr ""
 
-#: ../../source/mlp.rst:61 ../../source/mlp.rst:94 ../../source/mlp.rst:131
+#: ../../source/mlp.rst:30
 msgid "Example:"
 msgstr ""
 
-#: ../../source/mlp.rst:73 ../../source/mlp.rst:107 ../../source/mlp.rst:145
+#: ../../source/mlp.rst:42
 msgid "Response:"
-msgstr ""
-
-#: ../../source/mlp.rst:90
-msgid "Applying MLP on a list of dictionaries"
-msgstr ""
-
-#: ../../source/mlp.rst:92
-msgid "Endpoint: **/mlp/docs/**"
-msgstr ""
-
-#: ../../source/mlp.rst:126
-msgid "Applying MLP on index"
-msgstr ""
-
-#: ../../source/mlp.rst:128
-msgid ""
-"Endpoint: **/mlp_index/** *Withholding the analyzers field will make it "
-"default into using all analyzers which is time-insufficient.*"
 msgstr ""
 
