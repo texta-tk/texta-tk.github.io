@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-02 10:40+0200\n"
+"POT-Creation-Date: 2020-12-11 15:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,128 +22,131 @@ msgstr ""
 msgid "Embedding"
 msgstr ""
 
-#: ../../source/embedding.rst:6
+#: ../../source/embedding.rst:8
 msgid "Create"
 msgstr ""
 
-#: ../../source/embedding.rst:9 ../../source/embedding.rst:55
-#: ../../source/embedding.rst:84 ../../source/embedding.rst:110
-#: ../../source/embedding.rst:133
+#: ../../source/embedding.rst:11 ../../source/embedding.rst:57
+#: ../../source/embedding.rst:86 ../../source/embedding.rst:112
+#: ../../source/embedding.rst:135
 msgid "GUI"
 msgstr ""
 
-#: ../../source/embedding.rst:11
+#: ../../source/embedding.rst:13
 msgid ""
 "Navigate to **Models -> Embeddings** and click on the **CREATE** button "
-"on top-left. Choose the name for you embedding (*Description*). Define "
-"the query and select indices on which the query will be executed. If you "
-"leave *Query* empty, it will take all documents from the selected "
-"indices. If you have any searches defined in your project, they will "
-"appear in a dropdown menu if you click on the field *Query* - you can use"
-" existing searches as queries."
+"on top-left. Choose the name for you :ref:`embedding <embedding_concept>`"
+" (*Description*). Define the :ref:`query <query_concept>` and select "
+"indices on which the :ref:`query <query_concept>` will be executed. If "
+"you leave *Query* empty, it will take all documents from the selected "
+"indices. If you have any searches defined in your :ref:`project "
+"<project_concept>`, they will appear in a dropdown menu if you click on "
+"the field *Query* - you can use existing searches as queries."
 msgstr ""
 
-#: ../../source/embedding.rst:15
+#: ../../source/embedding.rst:17
 msgid ""
-"Choose *fields* on which the embedding will be trained. The selected "
-"fields should contain textual data."
-msgstr ""
-
-#: ../../source/embedding.rst:18
-msgid ""
-"It is recommended to use lemmatized or tokenized data. Lemmatization is "
-"especially useful with morphologically complex languages. You can "
-"tokenize and lemmatize the data with MLP."
+"Choose *fields* on which the :ref:`embedding <embedding_concept>` will be"
+" trained. The selected fields should contain textual data."
 msgstr ""
 
 #: ../../source/embedding.rst:20
 msgid ""
+"It is recommended to use lemmatized or tokenized data. Lemmatization is "
+"especially useful with morphologically complex languages. You can "
+"tokenize and lemmatize the data with :ref:`MLP <mlp>`."
+msgstr ""
+
+#: ../../source/embedding.rst:22
+msgid ""
 "Field *Number of dimensions* defines the length of the word vectors. "
 "100-200 dimensions is usually a good place to start with. Field *Minimum "
 "frequency* sets how many times a word must occur in the data in minimum "
-"in order to get included into the embedding. Again, you can leave it with"
-" the default value *5* if you are unsure which value to pick."
+"in order to get included into the :ref:`embedding <embedding_concept>`. "
+"Again, you can leave it with the default value *5* if you are unsure "
+"which value to pick."
 msgstr ""
 
-#: ../../source/embedding.rst:26
+#: ../../source/embedding.rst:28
 msgid ""
 "The quality of the embedding depends on the size of the dataset. The "
 "larger the better."
 msgstr ""
 
-#: ../../source/embedding.rst:29 ../../source/embedding.rst:68
-#: ../../source/embedding.rst:95 ../../source/embedding.rst:116
-#: ../../source/embedding.rst:144
+#: ../../source/embedding.rst:31 ../../source/embedding.rst:70
+#: ../../source/embedding.rst:97 ../../source/embedding.rst:118
+#: ../../source/embedding.rst:146
 msgid "API"
 msgstr ""
 
-#: ../../source/embedding.rst:31 ../../source/embedding.rst:70
-#: ../../source/embedding.rst:146
+#: ../../source/embedding.rst:33 ../../source/embedding.rst:72
+#: ../../source/embedding.rst:148
 msgid "Endpoint: **/projects/{project_pk}/embeddings/**"
 msgstr ""
 
-#: ../../source/embedding.rst:33 ../../source/embedding.rst:72
-#: ../../source/embedding.rst:99 ../../source/embedding.rst:148
+#: ../../source/embedding.rst:35 ../../source/embedding.rst:74
+#: ../../source/embedding.rst:101 ../../source/embedding.rst:150
 msgid "Example:"
 msgstr ""
 
-#: ../../source/embedding.rst:52
+#: ../../source/embedding.rst:54
 msgid "View"
 msgstr ""
 
-#: ../../source/embedding.rst:57
+#: ../../source/embedding.rst:59
 msgid ""
-"Navigate to **Models -> Embeddings** to view existing embeddings. If any "
-"of your embeddings is still training, the view will show you the progress"
-" of the training (:numref:`embedding_view`). Besides than that, the view "
-"shows you general information about your embeddings."
+"Navigate to **Models -> Embeddings** to view existing :ref:`embedding "
+"<embedding_concept>`. If any of your embeddings is still training, the "
+"view will show you the progress of the training "
+"(:numref:`embedding_view`). Besides than that, the view shows you general"
+" information about your embeddings."
 msgstr ""
 
-#: ../../source/embedding.rst:65
+#: ../../source/embedding.rst:67
 msgid "*Embedding view*"
 msgstr ""
 
-#: ../../source/embedding.rst:81
+#: ../../source/embedding.rst:83
 msgid "Delete"
 msgstr ""
 
-#: ../../source/embedding.rst:86
+#: ../../source/embedding.rst:88
 msgid ""
 "Navigate to **Models -> Embeddings** and click on the three dots under "
 "**Actions** column and choose **Delete** (:numref:`embedding_actions`)."
 msgstr ""
 
-#: ../../source/embedding.rst:92
+#: ../../source/embedding.rst:94
 msgid "*Embedding actions*"
 msgstr ""
 
-#: ../../source/embedding.rst:97 ../../source/embedding.rst:118
+#: ../../source/embedding.rst:99 ../../source/embedding.rst:120
 msgid "Endpoint: **/projects/{project_pk}/embeddings/{embedding_id}**"
 msgstr ""
 
-#: ../../source/embedding.rst:107
+#: ../../source/embedding.rst:109
 msgid "Edit"
 msgstr ""
 
-#: ../../source/embedding.rst:112
+#: ../../source/embedding.rst:114
 msgid ""
 "Navigate to **Models -> Embeddings** and click on the three dots under "
 "**Actions** column and choose **Edit** (:numref:`embedding_actions`)."
 msgstr ""
 
-#: ../../source/embedding.rst:130
+#: ../../source/embedding.rst:132
 msgid "Apply phraser"
 msgstr ""
 
-#: ../../source/embedding.rst:135
+#: ../../source/embedding.rst:137
 msgid ""
-"Navigate to **Models -> Embeddings** and click on the three dots under "
+"Navigate to **Models -> Embeddings**, click on the three dots under "
 "**Actions** and choose **Phrase** (:numref:`embedding_actions`). Insert "
 "text that you want to phrase and click **Post**. You should see phrased "
 "version of the text (:numref:`apply_phraser`)."
 msgstr ""
 
-#: ../../source/embedding.rst:141
+#: ../../source/embedding.rst:143
 msgid "*Apply phraser*"
 msgstr ""
 
@@ -240,5 +243,71 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Figure 12. *Create embedding with saved search*"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Navigate to **Models -> Embeddings** and"
+#~ " click on the **CREATE** button on"
+#~ " top-left. Choose the name for "
+#~ "you embedding (*Description*). Define the "
+#~ "query and select indices on which "
+#~ "the query will be executed. If you"
+#~ " leave *Query* empty, it will take"
+#~ " all documents from the selected "
+#~ "indices. If you have any searches "
+#~ "defined in your project, they will "
+#~ "appear in a dropdown menu if you"
+#~ " click on the field *Query* - "
+#~ "you can use existing searches as "
+#~ "queries."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Choose *fields* on which the embedding"
+#~ " will be trained. The selected fields"
+#~ " should contain textual data."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It is recommended to use lemmatized "
+#~ "or tokenized data. Lemmatization is "
+#~ "especially useful with morphologically complex"
+#~ " languages. You can tokenize and "
+#~ "lemmatize the data with MLP."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Field *Number of dimensions* defines the"
+#~ " length of the word vectors. 100-200"
+#~ " dimensions is usually a good place"
+#~ " to start with. Field *Minimum "
+#~ "frequency* sets how many times a "
+#~ "word must occur in the data in "
+#~ "minimum in order to get included "
+#~ "into the embedding. Again, you can "
+#~ "leave it with the default value "
+#~ "*5* if you are unsure which value"
+#~ " to pick."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Navigate to **Models -> Embeddings** to"
+#~ " view existing embeddings. If any of"
+#~ " your embeddings is still training, "
+#~ "the view will show you the "
+#~ "progress of the training "
+#~ "(:numref:`embedding_view`). Besides than that, "
+#~ "the view shows you general information"
+#~ " about your embeddings."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Navigate to **Models -> Embeddings** and"
+#~ " click on the three dots under "
+#~ "**Actions** and choose **Phrase** "
+#~ "(:numref:`embedding_actions`). Insert text that "
+#~ "you want to phrase and click "
+#~ "**Post**. You should see phrased version"
+#~ " of the text (:numref:`apply_phraser`)."
 #~ msgstr ""
 

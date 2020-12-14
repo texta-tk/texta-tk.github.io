@@ -4,7 +4,7 @@
 Lexicon Miner
 ##############
 
-Texta Toolkit enables the creation of topic-related :ref:`lexicons`. In order to build lexicons, we must have an :ref:`Embedding <embedding_concept>` model :ref:`previously trained <create_embedding>` .
+Texta Toolkit enables the creation of topic-related lexicons. In order to build lexicons, you must have an :ref:`Embedding <embedding_concept>` model :ref:`previously trained <create_embedding>` .
 
 For creating a lexicon, type the name of the lexicon in the "New lexicon slot" under "Lexicons" and press enter. After clicking on the newly created lexicon, provide some seed words (like 'sport' if you are after finding sport-related terms).
 

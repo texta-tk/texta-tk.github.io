@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-22 11:58+0300\n"
+"POT-Creation-Date: 2020-12-11 15:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../source/searcher.rst:1
 msgid ""
@@ -23,11 +23,11 @@ msgid ""
 "<https://docs.texta.ee/v2/et/searcher.html>`_"
 msgstr ""
 
-#: ../../source/searcher.rst:6
+#: ../../source/searcher.rst:8
 msgid "Search"
 msgstr "Otsing (Search)"
 
-#: ../../source/searcher.rst:8
+#: ../../source/searcher.rst:10
 msgid ""
 "The Search application allows users to perform searches and aggregations "
 "over the data. Search results can be used as input to machine learning "
@@ -37,15 +37,15 @@ msgstr ""
 "agregatsioone. Lisaks on otsingutulemusi võimalik anda sisendiks "
 "masinõppemudelitele."
 
-#: ../../source/searcher.rst:11
-msgid ""
-"To use the **Search** project and indices must be selected from the upper"
-" right panel."
-msgstr ""
-"Enne otsingu kasutamist tuleb ülevalt paremast nurgast valida projekt ja "
-"indeksid, mille peal otsingut tehakse."
-
 #: ../../source/searcher.rst:13
+msgid ""
+"To use the **Search** :ref:`project <project_concept>` and :ref:`indices "
+"<index_concept>` must be selected from the upper right panel."
+msgstr ""
+"Enne otsingu kasutamist tuleb ülevalt paremast nurgast valida :ref:`projekt <project_concept>` ja "
+":ref:`indeksid <index_concept>`, mille peal otsingut tehakse."
+
+#: ../../source/searcher.rst:15
 msgid ""
 "The Search's graphical interface (:numref:`search_panel`) consists of "
 "three panels. These are :ref:`Current Search <currentsearch>`, "
@@ -56,15 +56,15 @@ msgstr ""
 "Otsingu graafiline kasutajaliides (:numref:`search_panel`) koosneb "
 "kolmest paneelist. Nendeks on praegune otsing (:ref:`Current Search "
 "<currentsearch>`), salvestatud otsingud (:ref:`Saved Searches "
-"<savedsearches>`) ja agregatsioonid (:ref:`Aggregations <aggregations>`). "
-"Vaikimisi on avatud praegune otsing. Alamosa avamiseks ja sulgemiseks "
+"<savedsearches>`) ja agregatsioonid (:ref:`Aggregations <aggregations>`)."
+" Vaikimisi on avatud praegune otsing. Alamosa avamiseks ja sulgemiseks "
 "kliki vastava osa nimele."
 
-#: ../../source/searcher.rst:20
+#: ../../source/searcher.rst:22
 msgid "*Search panels*"
 msgstr "Otsingurakenduse alamosad"
 
-#: ../../source/searcher.rst:23
+#: ../../source/searcher.rst:25
 msgid ""
 "The Searcher will only look into the datasets that are selected on the "
 "top-right panel."
@@ -72,16 +72,16 @@ msgstr ""
 "Otsing teostatakse ainult indeksitel, mille kasutaja on ülemises paremas "
 "nurgas olevast indeksite menüüst valinud."
 
-#: ../../source/searcher.rst:28
+#: ../../source/searcher.rst:30
 msgid "Current Search"
 msgstr "Praegune otsing"
 
-#: ../../source/searcher.rst:31 ../../source/searcher.rst:233
-#: ../../source/searcher.rst:252
+#: ../../source/searcher.rst:33 ../../source/searcher.rst:235
+#: ../../source/searcher.rst:254
 msgid "GUI"
 msgstr ""
 
-#: ../../source/searcher.rst:33
+#: ../../source/searcher.rst:35
 msgid ""
 "Current Search is a tool for simple data browsing. It also allows us to "
 "create filters to only search for documents in our interest. For the "
@@ -95,7 +95,7 @@ msgstr ""
 "väljadele seda rakendatakse. Filtreid saab luua nii lihtsas otsingus "
 "(Simple Search) kui ka detailses otsingus (Advanced Search)."
 
-#: ../../source/searcher.rst:38
+#: ../../source/searcher.rst:40
 msgid ""
 "Current Search doesn't differentiate lower and upper case (except regex "
 "constraint). This means that searching for \"President\" also matches "
@@ -104,14 +104,15 @@ msgid ""
 msgstr ""
 "Praegune otsing ei erista väikest ja suurt tähte (välja arvatud "
 "regulaaravaldisfiltrite puhul). See tähendab, et näiteks kui otsida sõna "
-"\"President\" siis kuvatakse ka dokumendid, kus leidub sõna "\"president\". "
-"Kui sinu otsing on siiski tõstutundlik, tuleb kasutada regulaaravaldisfiltreid (vt. allpool)."
+"\"President\" siis kuvatakse ka dokumendid, kus leidub sõna "
+"\"\"president\". Kui sinu otsing on siiski tõstutundlik, tuleb kasutada "
+"regulaaravaldisfiltreid (vt. allpool)."
 
-#: ../../source/searcher.rst:42
+#: ../../source/searcher.rst:44
 msgid "Simple Search"
 msgstr "Lihtne otsing (Simple Search)"
 
-#: ../../source/searcher.rst:44
+#: ../../source/searcher.rst:46
 msgid ""
 "Simple search searches for a word or words on all fields in the chosen "
 "dataset(s). Multiple words must be separated with space (\" \"). The "
@@ -123,7 +124,7 @@ msgstr ""
 "(\" \"). Otsing kuvab kõik dokumendid, kus iga etteantud sõna leidub "
 "vähemalt ühel väljadest."
 
-#: ../../source/searcher.rst:49
+#: ../../source/searcher.rst:51
 msgid ""
 "To use Simple Search, select it on the Current Search panel and type in "
 "the words you want to search for (:ref:`field <simple_search>` values)."
@@ -131,15 +132,15 @@ msgstr ""
 "Lihtsa ostingu kasutamiseks vali see praeguse otsingu paneelilt ja "
 "sisesta lahtrisse sõnad, mida sa soovid väljadelt otsida."
 
-#: ../../source/searcher.rst:54
+#: ../../source/searcher.rst:56
 msgid "*Simple search*"
 msgstr "*Lihtne otsing*"
 
-#: ../../source/searcher.rst:57
+#: ../../source/searcher.rst:59
 msgid "Advanced Search"
 msgstr "Detailne otsing"
 
-#: ../../source/searcher.rst:59
+#: ../../source/searcher.rst:61
 msgid ""
 "Advanced search allows us to create different constraints for different "
 "fields. There are three types of constraints we can use: string "
@@ -149,7 +150,7 @@ msgstr ""
 "tüüpe on kokku kolm: tekstifiltrid, kuupäevafiltrid ja texta_facts "
 "väljale rakendatavad filtrid."
 
-#: ../../source/searcher.rst:62
+#: ../../source/searcher.rst:64
 msgid ""
 "To use Advanced Search, select it on the Current Search panel. After that"
 " select fields on which you want to use your constraint. Click anywhere "
@@ -161,18 +162,18 @@ msgstr ""
 "Detailse otsingu kasutamiseks vali see praeguse otsingu paneelilt. "
 "Seejärel vali väljad, millel sa tahad filtrit rakendada. Rippenüü "
 "sulgemiseks kliki väljaspool seda menüüd. Avaneb kast, mille sees saad "
-"luua soovitud fitri (:numref:`string_search`). Filtri kustutamiseks "
-"kliki kasti üleval paremas nurgas oleval 'X'-märgil."
+"luua soovitud fitri (:numref:`string_search`). Filtri kustutamiseks kliki"
+" kasti üleval paremas nurgas oleval 'X'-märgil."
 
-#: ../../source/searcher.rst:69
+#: ../../source/searcher.rst:71
 msgid "*Advanced search*"
 msgstr "*Detailne otsing*"
 
-#: ../../source/searcher.rst:73
+#: ../../source/searcher.rst:75
 msgid "String constraint"
 msgstr "Tekstifiltrid"
 
-#: ../../source/searcher.rst:75
+#: ../../source/searcher.rst:77
 msgid ""
 "Different search strings must be written to different lines. The search "
 "strings must be tied with one of the **Operator** from the table below:"
@@ -180,97 +181,97 @@ msgstr ""
 "Eri otsingusõnad tuleb kirjutada eraldi ridadele. Otsisõnu peab siduma "
 "loogikaoperaator (**Operator**) alljärgnevast tabelist:"
 
-#: ../../source/searcher.rst:78
+#: ../../source/searcher.rst:80
 msgid "Operators"
 msgstr "Loogikaoperaatorid"
 
-#: ../../source/searcher.rst:82
+#: ../../source/searcher.rst:84
 msgid "Operator"
 msgstr "Operaator"
 
-#: ../../source/searcher.rst:83 ../../source/searcher.rst:99
-#: ../../source/searcher.rst:170
+#: ../../source/searcher.rst:85 ../../source/searcher.rst:101
+#: ../../source/searcher.rst:172
 msgid "Meaning"
 msgstr "Selgitus"
 
-#: ../../source/searcher.rst:84
+#: ../../source/searcher.rst:86
 msgid "and"
 msgstr "ja (and)"
 
-#: ../../source/searcher.rst:85
+#: ../../source/searcher.rst:87
 msgid "all of the search strings (lines) are matched in the document"
 msgstr "kõik (eri ridadel) olevad otsisõnad või -fraasid peavad dokumendis esinema"
 
-#: ../../source/searcher.rst:86
+#: ../../source/searcher.rst:88
 msgid "or"
 msgstr "või (or)"
 
-#: ../../source/searcher.rst:87
+#: ../../source/searcher.rst:89
 msgid "at least one of the search string (lines) is matched in the document"
 msgstr ""
 "vähemalt üks (eri ridadel) olevatest otsisõnadest või -fraasidest peab "
 "dokumendis esinema"
 
-#: ../../source/searcher.rst:88
+#: ../../source/searcher.rst:90
 msgid "not"
 msgstr "ei (not)"
 
-#: ../../source/searcher.rst:89
+#: ../../source/searcher.rst:91
 msgid "the document must not match any of the given search string"
 msgstr "dokumendis ei tohi esineda ühtegi etteantud otsisõna -või fraasi"
 
-#: ../../source/searcher.rst:92
+#: ../../source/searcher.rst:94
 msgid "You must also choose a **Match** rule. These are given in the table below:"
 msgstr ""
 "Samuti tuleb sul valida reegel otsisõna sobitamiseks (**Match**). Need on"
 " toodud alljärgnevas tabelis:"
 
-#: ../../source/searcher.rst:94
+#: ../../source/searcher.rst:96
 msgid "Match"
 msgstr "Sobitusreeglid"
 
-#: ../../source/searcher.rst:98
+#: ../../source/searcher.rst:100
 msgid "Match rule"
 msgstr "Reegel"
 
-#: ../../source/searcher.rst:100
+#: ../../source/searcher.rst:102
 msgid "phrase prefix"
 msgstr "prefiks (phrase prefix)"
 
-#: ../../source/searcher.rst:101
+#: ../../source/searcher.rst:103
 msgid ""
 "matches the beginning of the words (endings can differ, e.g. searching "
 "for 'bribe' gives us 'bribe', 'bribery', 'bribetaking', etc)"
 msgstr ""
 "sobivad kõik sõnad või fraasid, mille algus vastab otsisõnele. Näiteks "
-"otsisõne 'jook' korral tagastaks ka dokumendid, kus sisaldub sõna 'jooksma', "
-"'jooksin' jne"
+"otsisõne 'jook' korral tagastaks ka dokumendid, kus sisaldub sõna "
+"'jooksma', 'jooksin' jne"
 
-#: ../../source/searcher.rst:102
+#: ../../source/searcher.rst:104
 msgid "word"
 msgstr "sõna (word)"
 
-#: ../../source/searcher.rst:103
+#: ../../source/searcher.rst:105
 msgid "finds exact word written (similar to simple search)"
 msgstr ""
 "dokumendis peab leiduma otsisõne täpselt etteantud kujul (sarnaselt "
 "lihtsale otsingule)"
 
-#: ../../source/searcher.rst:104
+#: ../../source/searcher.rst:106
 msgid "phrase"
 msgstr "fraas (phrase)"
 
-#: ../../source/searcher.rst:105
+#: ../../source/searcher.rst:107
 msgid "finds exact match for a phrase (more than one word in one line)"
 msgstr ""
 "dokumendis peab leiduma otsifraas (rohkem kui üks sõna reas) täpselt "
 "etteantud kujul"
 
-#: ../../source/searcher.rst:106
+#: ../../source/searcher.rst:108
 msgid "regex"
 msgstr "regulaaravaldis"
 
-#: ../../source/searcher.rst:107
+#: ../../source/searcher.rst:109
 msgid ""
 "takes the input as `a regular expression <https://www.rexegg.com/regex-"
 "quickstart.html>`_ and searches document accordingly. Nb! This is "
@@ -280,7 +281,7 @@ msgstr ""
 "/regex-quickstart.html>`_ vastav sõne. NB! Kasutada tuleb "
 ":ref:`Elasticsearch'i <elasticsearch>` süntaksit."
 
-#: ../../source/searcher.rst:109
+#: ../../source/searcher.rst:111
 msgid ""
 "Finally, there is a value called **Slop**. If any of your search strings "
 "contains multiple words, then this defines how many words can be between "
@@ -291,7 +292,7 @@ msgstr ""
 "sõnast, siis **Slop** määrab, kui mitu muud sõna tohib sinu määratud "
 "otsisõnade vahel olla."
 
-#: ../../source/searcher.rst:112
+#: ../../source/searcher.rst:114
 msgid ""
 "In figure :ref:`field <string_search>`, the string constraint is on the "
 "field named \"text\". The search will return documents that have either "
@@ -299,28 +300,28 @@ msgid ""
 "the Slop is 2, it also matches the phrase if it has 0-2 words between the"
 " words (e.g \"president Barack Obama\")."
 msgstr ""
-"Joonisel :numref:`string_search` on tekstifilter loodud väljale "
-"*text*. Otsing kuvab dokumendid, kus leidub kas fraas \"president "
-"Obama\" või \"president Trump\" või mõlemad. Kuna parameetri **Slop** "
-"väärtus on 2, võib fraasi sõnade vahel olla 0-2 muud sõna. Seega tagastab"
-" otsing ka näiteks dokumendi, kus leidub fraas \"president Barack "
-"Obama\")."
+"Joonisel :numref:`string_search` on tekstifilter loodud väljale *text*. "
+"Otsing kuvab dokumendid, kus leidub kas fraas \"president Obama\" või "
+"\"president Trump\" või mõlemad. Kuna parameetri **Slop** väärtus on 2, "
+"võib fraasi sõnade vahel olla 0-2 muud sõna. Seega tagastab otsing ka "
+"näiteks dokumendi, kus leidub fraas \"president Barack Obama\")."
 
-#: ../../source/searcher.rst:117
+#: ../../source/searcher.rst:119
 msgid ""
 "You can use an existing :ref:`lexicon <lexiconminer>` to create "
 "constraints. This can be done via button **Add lexicon** (visible only if"
-" there exist any lexicons in the project.\""
+" there exist any lexicons in the :ref:`project <project_concept>`."
 msgstr ""
-"Otsisõnadena võib ka kasutada juba olemasolevat :ref:`leksikoni <lexiconminer>`. "
-"Seda saab teha, klikkides otsingupaneelil nupule **Add "
-"lexicon** (nähtav ainultsiis, kui oled mõne leksikoni juba projekti lisanud."
+"Otsisõnadena võib ka kasutada juba olemasolevat :ref:`leksikoni "
+"<lexiconminer>`. Seda saab teha, klikkides otsingupaneelil nupule **Add "
+"lexicon** (nähtav ainult siis, kui oled mõne leksikoni juba :ref:`projekti <project_concept>` "
+"lisanud."
 
-#: ../../source/searcher.rst:120
+#: ../../source/searcher.rst:122
 msgid "Date constraint"
 msgstr "Kuupäevafiltrid"
 
-#: ../../source/searcher.rst:122
+#: ../../source/searcher.rst:124
 msgid ""
 "Date constraint is for fields with type date. This outputs only documents"
 " where the field value is within the chosen time range (starting day "
@@ -332,15 +333,15 @@ msgstr ""
 "kaasa arvatud ja lõppkuupäev välja arvatud). Ajavahemiku saad valida, "
 "klikkides väikesele kalendri ikoonile."
 
-#: ../../source/searcher.rst:128
+#: ../../source/searcher.rst:130
 msgid "*Date constraint*"
 msgstr "*Kuupäevafilter*"
 
-#: ../../source/searcher.rst:131
+#: ../../source/searcher.rst:133
 msgid "Texta_facts constraint"
 msgstr "Välja *texta_facts* filter"
 
-#: ../../source/searcher.rst:133
+#: ../../source/searcher.rst:135
 msgid ""
 "Texta_facts constraint allows us to find documents with certain "
 ":ref:`fact <texta_fact>` names or fact values."
@@ -348,11 +349,11 @@ msgstr ""
 "Välja *texta_facts* filter võimaldab dokumente filtreerida :ref:`faktide "
 "<texta_fact>` nimede ja väärtuste järgi."
 
-#: ../../source/searcher.rst:135
+#: ../../source/searcher.rst:137
 msgid "**Creating a constraint over fact names**"
 msgstr "**Fakti nime järgi filtreerimine**"
 
-#: ../../source/searcher.rst:140
+#: ../../source/searcher.rst:142
 msgid ""
 "*Fact name constraint with or*. Outputs all documents that contain at "
 "least one of the given fact name."
@@ -360,11 +361,11 @@ msgstr ""
 "*Fakti nime filter operaatoriga or*. Kuvab kõik dokumendid, mille küljes "
 "on fakt vähemalt ühe etteantud fakti nimega."
 
-#: ../../source/searcher.rst:143
+#: ../../source/searcher.rst:145
 msgid "**Using different constraints for different fact names**"
 msgstr "**Erimevatel faktinimedel erinevate filtrite kasutamine**"
 
-#: ../../source/searcher.rst:145
+#: ../../source/searcher.rst:147
 msgid ""
 "In order to use different constraints for different fact names, you need "
 "to select field **texta_facts[fact_name]** multiple times."
@@ -372,7 +373,7 @@ msgstr ""
 "Selleks, et lisada erinevatele faktinimedele erinevaid filreid, tuleb "
 "väljade menüüst valida välja **texta_facts[fact_name]** mitu korda."
 
-#: ../../source/searcher.rst:150
+#: ../../source/searcher.rst:152
 msgid ""
 "*Fact name constraint*. Outputs documents that contain an ORG fact and "
 "definitely not PER fact."
@@ -380,11 +381,11 @@ msgstr ""
 "*Fakti nime filter*. Kuvab dokumendid, mille küljes on fakt nimega ORG ja"
 " kindlasti mitte fakti nimega PER."
 
-#: ../../source/searcher.rst:152
+#: ../../source/searcher.rst:154
 msgid "**Creating a constraint over fact values**"
 msgstr "**Fakti väärtuse järgi filtreerimine**"
 
-#: ../../source/searcher.rst:157
+#: ../../source/searcher.rst:159
 msgid ""
 "*Fact value constraint*. Outputs documents that have an ORG fact with "
 "either value \"NATO\" or value \"European Union\" in it (or both)."
@@ -393,63 +394,63 @@ msgstr ""
 "fakt nimega ORG, mille väärtuseks on kas \"NATO\" või  \"European Union\""
 " või mõlemad."
 
-#: ../../source/searcher.rst:161
+#: ../../source/searcher.rst:163
 msgid "Search Options"
 msgstr "Lisavalikud otsingutulemuste kuvamisel"
 
-#: ../../source/searcher.rst:163
+#: ../../source/searcher.rst:165
 msgid "Look at the table below for the meanings of search options."
 msgstr "Alljärgnevas tabelis on kirjeldatud otsingutulemuste kuvamise lisavalikud."
 
-#: ../../source/searcher.rst:165
+#: ../../source/searcher.rst:167
 msgid "Search options"
 msgstr "Lisavalikud"
 
-#: ../../source/searcher.rst:169
+#: ../../source/searcher.rst:171
 msgid "Option"
 msgstr "Valik"
 
-#: ../../source/searcher.rst:171
+#: ../../source/searcher.rst:173
 msgid "Highlight facts"
 msgstr "Esiletõstetud faktid (Highlight facts)"
 
-#: ../../source/searcher.rst:172
+#: ../../source/searcher.rst:174
 msgid "highlights all the facts in the text"
 msgstr "kõik teksis esinevad faktid on värviliselt esile tõstetud"
 
-#: ../../source/searcher.rst:173
+#: ../../source/searcher.rst:175
 msgid "Only highlight matching facts"
 msgstr "Tõsta esile ainult sobitatud faktid (Only highlight matching facts)"
 
-#: ../../source/searcher.rst:174
+#: ../../source/searcher.rst:176
 msgid "highlights only the facts that were looked for"
 msgstr "esile on tõstetud ainult faktid, mille alusel otsing tehti"
 
-#: ../../source/searcher.rst:175
+#: ../../source/searcher.rst:177
 msgid "Highlight searcher matches"
 msgstr "Tõsta esile otsingu sobitused (Highlight searcher matches)"
 
-#: ../../source/searcher.rst:176
+#: ../../source/searcher.rst:178
 msgid "highlights string constraints' matches"
 msgstr "esile on tõstetud kohad, mis sobituvad tekstifiltritega"
 
-#: ../../source/searcher.rst:177
+#: ../../source/searcher.rst:179
 msgid "Show short version"
 msgstr "Näita lühiversiooni"
 
-#: ../../source/searcher.rst:178
+#: ../../source/searcher.rst:180
 msgid "shows certain amount of words before and after the match"
 msgstr "näitab ainult väikest tekstiosa enne ja pärast otsingufiltri sobitust"
 
-#: ../../source/searcher.rst:183
+#: ../../source/searcher.rst:185
 msgid "*Search Options*"
 msgstr "*Lisavalikud*"
 
-#: ../../source/searcher.rst:186
+#: ../../source/searcher.rst:188
 msgid "Advanced Search examples"
 msgstr "Näidisotsingud"
 
-#: ../../source/searcher.rst:191
+#: ../../source/searcher.rst:193
 msgid ""
 "*Regex String Constraint*. Search for documents that have either "
 "\"payoff\" or \"bribe[a-z]{0,2}\" in it.The latter condition means that "
@@ -461,7 +462,7 @@ msgstr ""
 "regulaaravaldis ütleb et sõna “bribe“ lõpus võib esineda 0-2 lisatähte "
 "(näiteks sobiksid sõnad “bribe”, “bribed” ja “bribery”)."
 
-#: ../../source/searcher.rst:196
+#: ../../source/searcher.rst:198
 msgid ""
 "*Combination of constraints*. Search for documents published in 2014, "
 "contain LOC facts with values \"Russia\" and \"Ukraine\" and the word "
@@ -471,11 +472,11 @@ msgstr ""
 "milles leidub fakt nimega LOC väärtustega \"Russia\" ja \"Ukraine\" ja "
 "sõna \"invasion\"."
 
-#: ../../source/searcher.rst:200
+#: ../../source/searcher.rst:202
 msgid "Browsing Search results"
 msgstr "Otsingutulemuste sirvimine"
 
-#: ../../source/searcher.rst:202
+#: ../../source/searcher.rst:204
 msgid ""
 "After clicking the “Search” button, the matching documents are shown. "
 "(see :numref:`search_results`)."
@@ -483,11 +484,11 @@ msgstr ""
 "Klikkides nupule **Search** kuvatakse otsingufiltritele vastavad "
 "dokumendid. (vt :numref:`search_results`)."
 
-#: ../../source/searcher.rst:208
+#: ../../source/searcher.rst:210
 msgid "*Example search results*"
 msgstr "*Näidis otsingutulemustest*"
 
-#: ../../source/searcher.rst:210
+#: ../../source/searcher.rst:212
 msgid ""
 "You can choose the columns that we would like to see from the drop-down "
 "menu right above the results. You can select or deselect all of them "
@@ -495,15 +496,15 @@ msgid ""
 msgstr ""
 "Otsingutulemuste kohal olevast rippmenüüst on võimalik valida väljad, "
 "mida tulemustes kuvatakse. Neid saab lisada ja eemaldada nii ühekaupa kui"
-" ka korraga valiku *Select all* abil (vt :numref:`search_rt`)."
+" ka korraga valiku *Select all* abil."
 
-#: ../../source/searcher.rst:213
+#: ../../source/searcher.rst:215
 msgid ""
 "It is possible to hide the constraint panels with the *Toggle drawer* "
 "button."
-msgstr "Nupp *Toggle drawer* peidab otsingupaneeli (vt :numref:`search_rt`)."
+msgstr "Nupp *Toggle drawer* peidab otsingupaneeli."
 
-#: ../../source/searcher.rst:215
+#: ../../source/searcher.rst:217
 msgid ""
 "Use arrows in the upper right to navigate between pages. You can also "
 "choose how many items per page you would like to see (also in the upper "
@@ -513,15 +514,15 @@ msgstr ""
 "nurgas olevaid noolekesi. Samast kohast on võimalik valida, mitu "
 "dokumendi ühel lehel kuvatakse."
 
-#: ../../source/searcher.rst:220
+#: ../../source/searcher.rst:222
 msgid "*Select Fields for Search Results*"
 msgstr "*Tulemustest kuvatavate väljade valimine*"
 
-#: ../../source/searcher.rst:223 ../../source/searcher.rst:242
+#: ../../source/searcher.rst:225 ../../source/searcher.rst:244
 msgid "API"
 msgstr ""
 
-#: ../../source/searcher.rst:225
+#: ../../source/searcher.rst:227
 msgid ""
 "API for scrolling can be found `here <https://rest-"
 "dev.texta.ee/api/v1/projects/1/scroll/>`_."
@@ -529,11 +530,11 @@ msgstr ""
 "API tugi tulemuste lehtsemiseks on leitav `siit <https://rest-"
 "dev.texta.ee/api/v1/projects/1/scroll/>`_."
 
-#: ../../source/searcher.rst:230
+#: ../../source/searcher.rst:232
 msgid "Saved Searches"
 msgstr "Salvestatud otsingud"
 
-#: ../../source/searcher.rst:235
+#: ../../source/searcher.rst:237
 msgid ""
 "To save a search, click on the **disk** icon in the upper right corner of"
 " the Current Search panel. Saved searches can be used in other "
@@ -552,17 +553,17 @@ msgstr ""
 "hiljem uuesti sirvida: salvestatud otsingu aktiveerimiseks kliki selle "
 "nimel."
 
-#: ../../source/searcher.rst:239
+#: ../../source/searcher.rst:241
 msgid ""
 "If you are curious, you can see the actual :ref:`Elasticsearch "
-"<elasticsearch>` query behind the search by clicking on the **eye** icon "
-"next to the disk icon."
+"<elasticsearch>` :ref:`query <query_concept>` behind the search by "
+"clicking on the **eye** icon next to the disk icon."
 msgstr ""
 "Juhul, kui sind huvitab, kuidas sinu koostatud otsingule vastav "
-":ref:`Elasticsearchi <elasticsearch>` päring päriselt välja näeb, kliki "
+":ref:`Elasticsearchi <elasticsearch>` :ref:`päring <query_concept>` päriselt välja näeb, kliki "
 "silmaikoonile (asub otsingu salvestusnupu kõrval)."
 
-#: ../../source/searcher.rst:244
+#: ../../source/searcher.rst:246
 msgid ""
 "API support for saving searches can be found `here <https://rest-"
 "dev.texta.ee/api/v1/projects/1/searches/>`_."
@@ -570,11 +571,11 @@ msgstr ""
 "API tugi otsingute salvestamiseks on leitav `siit <https://rest-"
 "dev.texta.ee/api/v1/projects/1/searches/>`_."
 
-#: ../../source/searcher.rst:249
+#: ../../source/searcher.rst:251
 msgid "Aggregations"
 msgstr "Agregatsioonid (aggregations)"
 
-#: ../../source/searcher.rst:254
+#: ../../source/searcher.rst:256
 msgid ""
 "Aggregations tool allows us to aggregate the data. For example, we can "
 "use it to perform simple aggregations - retrieve item and word "
@@ -584,22 +585,22 @@ msgstr ""
 "seda kasutada selleks, et leida välja väärtuste või sõnade "
 "sagedusjaotusi."
 
-#: ../../source/searcher.rst:257
+#: ../../source/searcher.rst:259
 msgid ""
 "For instance, let's assume we have a dataset containing posts from "
 "Estonian Reddit. We can use an aggregation over field *post_title* to "
 "find the most popular threads (see :numref:`significant_items`)."
 msgstr ""
-"Eeldame illustreerimise eesmärgil, et meil on Toolkitis andmestik mingist "
-"ajaperioodist pärit eestikeelsete Redditi postitustega. Me saame "
+"Eeldame illustreerimise eesmärgil, et meil on Toolkitis andmestik mingist"
+" ajaperioodist pärit eestikeelsete Redditi postitustega. Me saame "
 "agregeerida selle andmestiku välja *post_title*, et leida antud "
 "ajapeperioodi poplaarseim lõim (vt. :numref:`significant_items`)."
 
-#: ../../source/searcher.rst:262
+#: ../../source/searcher.rst:264
 msgid "*Significant items*"
 msgstr "*Iseloomulikud väärtused (significant items)*"
 
-#: ../../source/searcher.rst:264
+#: ../../source/searcher.rst:266
 msgid ""
 "Now, knowing that the most popular thread is *Coronavirus megathread*, we"
 " might want to know what are the words that characterize the dataset when"
@@ -613,15 +614,15 @@ msgstr ""
 "sõnade kohta kasutusel mõiste **significant words** ja need saab samuti "
 "tuvastada agregeerimise abil (vt :numref:`significant_words`)."
 
-#: ../../source/searcher.rst:270
+#: ../../source/searcher.rst:272
 msgid "*Significant words*"
 msgstr "*Iseloomulikud sõnad (significant words)*"
 
-#: ../../source/searcher.rst:273
+#: ../../source/searcher.rst:275
 msgid "**How are the significance scores calculated?**"
 msgstr "**Kuidas significance-skoori arvitatakse**?"
 
-#: ../../source/searcher.rst:274
+#: ../../source/searcher.rst:276
 msgid ""
 "In brief, a term is considered significant if there is a noticeable "
 "difference in the frequency in which a term appears in the subset and in "
@@ -631,7 +632,7 @@ msgstr ""
 "otsingule vastavates dokumentides märgatavalt rohkem kui ülejäänud "
 "dokumentides."
 
-#: ../../source/searcher.rst:277
+#: ../../source/searcher.rst:279
 msgid ""
 "Besides these simple words and items aggregations shown above, there is "
 "still so much more that you can do with the tool."
@@ -640,40 +641,41 @@ msgstr ""
 "agregeerimist. Tegelikult aga võimaldab agregatsioonide tööriist teha "
 "väga palju rohkemat."
 
-#: ../../source/searcher.rst:279
+#: ../../source/searcher.rst:281
 msgid ""
 "For example, you can examine the distribution of the data over time (see "
 ":numref:`simple_time_aggregation`). Note that to produce such graphs, you"
 " must have a proper date field (in Texta date format) in the data."
 msgstr ""
 "Näiteks saab sellega uurida andmete jaotust üle huvipakkuva ajaperioodi. "
-"(vt. :numref:`simple_time_aggregation`). NB! Selliste graafikute tegemiseks "
-"peab kuupäeva sisaldav väli olema korrektselt kuupäevaformaadis."
+"(vt. :numref:`simple_time_aggregation`). NB! Selliste graafikute "
+"tegemiseks peab kuupäeva sisaldav väli olema korrektselt "
+"kuupäevaformaadis."
 
-#: ../../source/searcher.rst:284
+#: ../../source/searcher.rst:286
 msgid "*Time aggregation*"
 msgstr "*Ajaagregatsioon*"
 
-#: ../../source/searcher.rst:286
+#: ../../source/searcher.rst:288
 msgid ""
-"If you have texta_facts added to your data, you can visualize the "
-"frequencies of the values of one or more facts (see "
-":numref:`facts_aggre`). Note that on top of the plot in figure "
-":numref:`facts_aggre`, there is a list with three visualization options. "
-"You can click on them to change how the results are displayed - whether "
-"hierarchically, as a table, or as a plot."
+"If you have :ref:`texta_facts <texta_fact>` added to your data, you can "
+"visualize the frequencies of the values of one or more :ref:`facts "
+"<texta_fact>` (see :numref:`facts_aggre`). Note that on top of the plot "
+"in figure :numref:`facts_aggre`, there is a list with three visualization"
+" options. You can click on them to change how the results are displayed -"
+" whether hierarchically, as a table, or as a plot."
 msgstr ""
-"Kui sul on dokumentidel küljes ka faktid, saad nende väärtuste "
+"Kui sul on dokumentidel küljes ka :ref:`faktid <texta_fact>`, saad nende väärtuste "
 "esinemissagedust samuti visualiseerida (vt. :numref:`facts_aggre`). "
 "Joonisel :numref:`facts_aggre` on üleval keskel näha kolm ikooni. Neil "
 "klikkides saad muuta tulemuste visualiseerimise viisi - kas "
 "hierarhiliselt, tabelina või graafikuna."
 
-#: ../../source/searcher.rst:293
+#: ../../source/searcher.rst:295
 msgid "*Facts aggregation*"
 msgstr "*Faktide agregeerimine*"
 
-#: ../../source/searcher.rst:295
+#: ../../source/searcher.rst:297
 msgid ""
 "By creating a set of saved searches, we can visualize the time "
 "distribution of multiple subsets at once. For example, if we have a news "
@@ -687,7 +689,7 @@ msgstr ""
 "poliitikuid on eri ajaperioodidel uudistes mainitud (vt. "
 ":numref:`saved_searches_aggre`)."
 
-#: ../../source/searcher.rst:301
+#: ../../source/searcher.rst:303
 msgid "*Saved searches aggregation*"
 msgstr "*Salvestatud otsingute agregeerimine*"
 
