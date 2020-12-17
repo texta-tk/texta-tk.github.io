@@ -16,7 +16,7 @@ Installation Using Docker (recommended)
 Install Docker
 ++++++++++++++
 
-The easiest way to run TEXTA Toolkit is to use our prebuilt Docker images from our registries. For doing so, one needs to install *Docker* and *docker-compose*:
+The easiest way to run TEXTA Toolkit is to use prebuilt Docker images from TEXTA registries. For doing so, one needs to install *Docker* and *docker-compose*:
 
 .. code-block:: bash
 
@@ -55,7 +55,7 @@ Run TEXTA Toolkit
 +++++++++++++++++
 
 .. note::
-    Before running TEXTA Toolkit, one should have 2 files in our current working directory:
+    Before running TEXTA Toolkit, one should have 2 files in current working directory:
 
     * docker-compose.yaml
 

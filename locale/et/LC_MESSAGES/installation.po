@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-17 12:15+0200\n"
+"POT-Creation-Date: 2020-12-17 12:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,8 +44,8 @@ msgstr ""
 
 #: ../../source/installation.rst:19
 msgid ""
-"The easiest way to run TEXTA Toolkit is to use our prebuilt Docker images"
-" from our registries. For doing so, one needs to install *Docker* and "
+"The easiest way to run TEXTA Toolkit is to use prebuilt Docker images "
+"from TEXTA registries. For doing so, one needs to install *Docker* and "
 "*docker-compose*:"
 msgstr ""
 
@@ -107,8 +107,8 @@ msgstr ""
 
 #: ../../source/installation.rst:58
 msgid ""
-"Before running TEXTA Toolkit, one should have 2 files in our current "
-"working directory:"
+"Before running TEXTA Toolkit, one should have 2 files in current working "
+"directory:"
 msgstr ""
 
 #: ../../source/installation.rst:60
@@ -346,5 +346,19 @@ msgstr ""
 #~ "let's use it to build the "
 #~ "environment. After the environment is "
 #~ "built, let's activate it:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The easiest way to run TEXTA "
+#~ "Toolkit is to use our prebuilt "
+#~ "Docker images from our registries. For"
+#~ " doing so, one needs to install "
+#~ "*Docker* and *docker-compose*:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Before running TEXTA Toolkit, one should"
+#~ " have 2 files in our current "
+#~ "working directory:"
 #~ msgstr ""
 
