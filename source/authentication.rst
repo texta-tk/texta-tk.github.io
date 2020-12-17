@@ -108,7 +108,7 @@ Example:
 - Now authenticate as the example "login" client by running ``$ uaac token client get login -s loginsecret``
 - Create a new example user by running ``uaac user add test1 --emails test1@test1.com --password test1``
 
-The UAA server is now configured. We can already send a request to the ``redirect_uri`` callback through logging in the UAA server using the **/uaa/oauth/authorize** OAuth endpoint of the UAA server.
+The UAA server is now configured. One can already send a request to the ``redirect_uri`` callback through logging in the UAA server using the **/uaa/oauth/authorize** OAuth endpoint of the UAA server.
 
 The **oauth/authorize** URL needs to be sent with the proper parameters:
 
@@ -116,10 +116,10 @@ http://localhost:8080/uaa/oauth/authorize?response_type=code&client_id=login&sco
 
 To break it down:
 
-- ``response_type=code`` Lets the server know we want a code in response.
-- ``client_id=login`` Is the name/id of our client application we have on the UAA server/
+- ``response_type=code`` Lets the server know to add a code in response.
+- ``client_id=login`` Is the name/id of the client application on the UAA server/
 - ``scope=openid`` Is the OAuth scope which toolkit uses in order to authenticate/create the user on Toolkit's side with the email and password.
-- ``redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fapi%2Fv1%2Fuaa/callback`` is the same ``redirect_uri`` we set on the client application before, except its encoded in order to use it as a parameter.
+- ``redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fapi%2Fv1%2Fuaa/callback`` is the same ``redirect_uri`` set on the client application before, except its encoded in order to use it as a parameter.
 
 For further reference:
 - https://docs.cloudfoundry.org/api/uaa/version/74.24.0/index.html
