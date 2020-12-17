@@ -26,38 +26,38 @@ msgstr ""
 
 #: ../../source/installation.rst:7
 msgid "Installation"
-msgstr ""
+msgstr "Installimine"
 
 #: ../../source/installation.rst:10
 msgid "Installation Using Docker (recommended)"
-msgstr ""
+msgstr "Install Dockeriga"
 
 #: ../../source/installation.rst:14
 msgid ""
 "Currently all installation examples for system dependencies are only "
 "shown for Debian-based systems."
-msgstr ""
+msgstr "Hetkel on kõik näited tehtud Debiani baasil."
 
 #: ../../source/installation.rst:17
 msgid "Install Docker"
-msgstr ""
+msgstr "Installi Docker"
 
 #: ../../source/installation.rst:19
 msgid ""
 "The easiest way to run TEXTA Toolkit is to use prebuilt Docker images "
 "from TEXTA registries. For doing so, one needs to install *Docker* and "
 "*docker-compose*:"
-msgstr ""
+msgstr "Lihtsaim viis TEXTA Toolkiti installimiseks on kasutada Dockeri pilte TEXTA registrist. Selleks tuleb installida *Docker* ja *docker-compose*."
 
 #: ../../source/installation.rst:26
 msgid ""
 "To run :ref:`Elasticsearch <elasticsearch>` in Docker, one needs to "
 "increase maximum map count parameter for virtual memory:"
-msgstr ""
+msgstr "Selleks, et edukalt Elasticsearchi Dockeris pruukida, tuleb tõsta parameetri *maximum map count* väärtust:"
 
 #: ../../source/installation.rst:33
 msgid "Configure docker-compose"
-msgstr ""
+msgstr "Konfigureeri docker-compose"
 
 #: ../../source/installation.rst:35
 msgid ""
