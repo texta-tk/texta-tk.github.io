@@ -1,5 +1,7 @@
 version: '3'
 
+# NOTE: This is an example setup. This is NOT a production-ready solution!
+
 services:
 
   texta-elasticsearch:
