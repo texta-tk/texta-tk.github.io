@@ -1,3 +1,6 @@
+`EN <https://docs.texta.ee/torch_tagger.html>`_
+`ET <https://docs.texta.ee/et/torch_tagger.html>`_
+
 .. _torch_tagger:
 
 #############

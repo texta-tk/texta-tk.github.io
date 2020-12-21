@@ -1,5 +1,5 @@
-`EN <https://docs.texta.ee/v2/searcher.html>`_
-`ET <https://docs.texta.ee/v2/et/searcher.html>`_
+`EN <https://docs.texta.ee/searcher.html>`_
+`ET <https://docs.texta.ee/et/searcher.html>`_
 
 .. _searcher:
 

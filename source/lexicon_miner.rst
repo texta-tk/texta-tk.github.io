@@ -1,3 +1,6 @@
+`EN <https://docs.texta.ee/lexicon_miner.html>`_
+`ET <https://docs.texta.ee/et/lexicon_miner.html>`_
+
 .. _lexiconminer:
 
 ##############

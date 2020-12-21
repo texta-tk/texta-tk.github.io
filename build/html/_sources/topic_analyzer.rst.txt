@@ -1,3 +1,6 @@
+`EN <https://docs.texta.ee/topic_analyzer.html>`_
+
+
 .. _topic_analyzer:
 
 ##############

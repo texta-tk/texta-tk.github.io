@@ -4,12 +4,11 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"POT-Creation-Date: 2020-12-21 13:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +19,8 @@ msgstr ""
 
 #: ../../source/regex_tagger.rst:1
 msgid ""
-"`EN <https://docs.texta.ee/v2/regex_tagger.html>`_ `ET "
-"<https://docs.texta.ee/v2/et/regex_tagger.html>`_"
+"`EN <https://docs.texta.ee/regex_tagger.html>`_ `ET "
+"<https://docs.texta.ee/et/regex_tagger.html>`_"
 msgstr ""
 
 #: ../../source/regex_tagger.rst:8
@@ -390,9 +389,9 @@ msgid ""
 "`\"Create\"` button in the bottom right corner of the window "
 "(:numref:`regex_tagger_create_view`)."
 msgstr ""
-"Täida nõutud :ref:`väljad <field_concept>`, muuda soovi korral vaikeparameetreid ning vajuta "
-"siis \"`\"Create\"` nupule all paremas nurgas (vt. "
-":numref:`regex_tagger_create_view`)."
+"Täida nõutud :ref:`väljad <field_concept>`, muuda soovi korral "
+"vaikeparameetreid ning vajuta siis \"`\"Create\"` nupule all paremas "
+"nurgas (vt. :numref:`regex_tagger_create_view`)."
 
 #: ../../source/regex_tagger.rst:174
 msgid "*Filled Regex Tagger creation view*"
@@ -670,8 +669,8 @@ msgstr ""
 "Nupule vajutamise tagajärjel avaneb uus aken pealkirjaga `\"Tag Random "
 "Doc\"`. Vali menüüst pealkirjaga `\"Indices\"` andmestik(ud), mille seast"
 " juhuslik dokument valida  ning menüüst pealkirjaga `\"Select Fields\"` "
-"dokumendi :ref:`väljad <field_concept>`, mida märgendamiseks kasutada. Seejärel vajuta akna "
-"alumises paremas nurgas asuvale nupule `\"Tag\"` "
+"dokumendi :ref:`väljad <field_concept>`, mida märgendamiseks kasutada. "
+"Seejärel vajuta akna alumises paremas nurgas asuvale nupule `\"Tag\"` "
 "(:numref:`regex_tagger_tag_random_doc_mw`)."
 
 #: ../../source/regex_tagger.rst:468
@@ -707,10 +706,10 @@ msgid ""
 " can view their content by clicking on the arrow icon at the end of each "
 "field (:numref:`rt_tag_random_doc_other_fields`.)"
 msgstr ""
-"PS! Dokumendi :ref:`völjad <field_concept>`, mida kasutaja märgendamiseks ei valinud või kust "
-"märgendeid ei leitud, on vaikimisi suletud. Soovi korral on neid võimalik"
-" aga avada klikkides nooleikoonil vastava välja sektsiooni lõpus "
-"(:numref:`rt_tag_random_doc_other_fields`)."
+"PS! Dokumendi :ref:`völjad <field_concept>`, mida kasutaja märgendamiseks"
+" ei valinud või kust märgendeid ei leitud, on vaikimisi suletud. Soovi "
+"korral on neid võimalik aga avada klikkides nooleikoonil vastava välja "
+"sektsiooni lõpus (:numref:`rt_tag_random_doc_other_fields`)."
 
 #: ../../source/regex_tagger.rst:493
 msgid "*\"Tag Random Doc\" collapsing/uncollapsing fields.*"
@@ -810,4 +809,9 @@ msgstr ""
 #: ../../source/regex_tagger.rst:633
 msgid "Endpoint **/projects/{project_pk}/regex_taggers/{id}/tag_text/**"
 msgstr "Otspunkt **/projects/{project_pk}/regex_taggers/{id}/tag_text/**"
+
+#~ msgid ""
+#~ "`EN <https://docs.texta.ee/v2/regex_tagger.html>`_ `ET "
+#~ "<https://docs.texta.ee/v2/et/regex_tagger.html>`_"
+#~ msgstr ""
 

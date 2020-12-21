@@ -36,7 +36,8 @@ msgstr "Install Dockeriga"
 msgid ""
 "Currently all installation examples for system dependencies are only "
 "shown for Debian-based systems."
-msgstr "Hetkel on kõik näited tehtud Debiani baasil."
+msgstr ""
+"Hetkel on kõik näited tehtud Debiani baasil."
 
 #: ../../source/installation.rst:17
 msgid "Install Docker"

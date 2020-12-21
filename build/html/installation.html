@@ -15,7 +15,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Configuring the UAA server locally" href="uaa.html" />
+    <link rel="next" title="Authentication" href="authentication.html" />
     <link rel="prev" title="Texta Toolkit" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -62,16 +62,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#api-reference">API Reference</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html">Configuring the UAA server locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#configuring-the-toolkit-server">Configuring the Toolkit server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#using-uaa-on-the-front-end">Using UAA on the front-end</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#tests">Tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uaa.html#notes-on-authentication">Notes on authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
@@ -80,12 +75,9 @@
 <li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html#usage">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
 </ul>
@@ -95,7 +87,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">Texta Toolkit</a></li>
-      <li>Next: <a href="uaa.html" title="next chapter">Configuring the UAA server locally</a></li>
+      <li>Next: <a href="authentication.html" title="next chapter">Authentication</a></li>
   </ul></li>
 </ul>
 </div>
@@ -137,28 +129,30 @@
 </div>
 <div class="section" id="install-docker">
 <h3>Install Docker<a class="headerlink" href="#install-docker" title="Permalink to this headline">¶</a></h3>
-<p>The easiest way to run TEXTA Toolkit is to use our prebuilt Docker images from our registries. For doing so, one needs to install <em>Docker</em> and <em>docker-compose</em>:</p>
+<p>The easiest way to run TEXTA Toolkit is to use prebuilt Docker images from TEXTA registries. For doing so, one needs to install <em>Docker</em> and <em>docker-compose</em>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
 sudo apt-get install docker docker-compose -y
 </pre></div>
 </div>
-<p>To run <a class="reference internal" href="terminology.html#elasticsearch"><span class="std std-ref">Elasticsearch</span></a> in Docker, we need to increase maximum map count parameter for virtual memory:</p>
+<p>To run <a class="reference internal" href="terminology.html#elasticsearch"><span class="std std-ref">Elasticsearch</span></a> in Docker, one needs to increase maximum map count parameter for virtual memory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo sysctl -w vm.max_map_count<span class="o">=</span><span class="m">262144</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="configure-docker-compose">
 <h3>Configure docker-compose<a class="headerlink" href="#configure-docker-compose" title="Permalink to this headline">¶</a></h3>
-<p>We are using <em>docker-compose</em> to build an ecosystem of services to support our needs. This is all defined in a file called <strong>docker-compose.yaml</strong>.
-To successfully run TEXTA Toolkit we need to define following services:</p>
+<p>The ecosystem is built using <em>docker-compose</em>. This is all defined in a file called <strong>docker-compose.yaml</strong>.
+To successfully run TEXTA Toolkit one needs to define following services:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="terminology.html#elasticsearch"><span class="std std-ref">Elasticsearch</span></a> for storing the documents (one can also run it without Docker)</p></li>
 <li><p>Redis for managing message queues in TK (one can also run it without Docker)</p></li>
 <li><p>MySQL or Postgres for storing user and <a class="reference internal" href="terminology.html#project-concept"><span class="std std-ref">project</span></a> data (can also be run without Docker)</p></li>
-<li><p>TEXTA Toolkit RESTful API for backend: docker.texta.ee/texta/texta-rest:latest</p></li>
+<li><p>TEXTA Toolkit RESTful API &amp; GUI: docker.texta.ee/texta/texta-rest:latest</p></li>
 </ul>
-<p>For executing aforementioned services we have preconfigured an example <strong>docker-compose.yaml</strong> file:</p>
+<p>For executing aforementioned services one needs to have preconfigured <strong>docker-compose.yaml</strong> file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s1">&#39;3&#39;</span>
+
+<span class="c1"># NOTE: This is an example setup. This is NOT a production-ready solution!</span>
 
 <span class="n">services</span><span class="p">:</span>
 
@@ -167,7 +161,7 @@ To successfully run TEXTA Toolkit we need to define following services:</p>
     <span class="n">restart</span><span class="p">:</span> <span class="n">on</span><span class="o">-</span><span class="n">failure</span>
     <span class="n">image</span><span class="p">:</span> <span class="n">docker</span><span class="o">.</span><span class="n">elastic</span><span class="o">.</span><span class="n">co</span><span class="o">/</span><span class="n">elasticsearch</span><span class="o">/</span><span class="n">elasticsearch</span><span class="o">-</span><span class="n">oss</span><span class="p">:</span><span class="mf">6.7</span><span class="o">.</span><span class="mi">2</span>
     <span class="n">ports</span><span class="p">:</span>
-      <span class="o">-</span> <span class="mi">9200</span><span class="p">:</span><span class="mi">9200</span>
+      <span class="o">-</span> <span class="mi">9200</span>
     <span class="n">environment</span><span class="p">:</span>
      <span class="o">-</span> <span class="n">bootstrap</span><span class="o">.</span><span class="n">memory_lock</span><span class="o">=</span><span class="n">true</span>
     <span class="n">ulimits</span><span class="p">:</span>
@@ -182,14 +176,14 @@ To successfully run TEXTA Toolkit we need to define following services:</p>
     <span class="n">image</span><span class="p">:</span> <span class="n">redis</span>
     <span class="n">restart</span><span class="p">:</span> <span class="n">on</span><span class="o">-</span><span class="n">failure</span>
     <span class="n">ports</span><span class="p">:</span>
-    <span class="o">-</span> <span class="mi">6379</span><span class="p">:</span><span class="mi">6379</span>
+    <span class="o">-</span> <span class="mi">6379</span>
 
   <span class="n">texta</span><span class="o">-</span><span class="n">postgres</span><span class="p">:</span>
     <span class="n">container_name</span><span class="p">:</span> <span class="n">texta</span><span class="o">-</span><span class="n">postgres</span>
     <span class="n">image</span><span class="p">:</span> <span class="n">postgres</span><span class="p">:</span><span class="mi">11</span>
     <span class="n">restart</span><span class="p">:</span> <span class="n">on</span><span class="o">-</span><span class="n">failure</span>
     <span class="n">ports</span><span class="p">:</span>
-      <span class="o">-</span> <span class="mi">5432</span><span class="p">:</span><span class="mi">5432</span>
+      <span class="o">-</span> <span class="mi">5432</span>
     <span class="n">environment</span><span class="p">:</span>
       <span class="n">POSTGRES_DATABASE</span><span class="p">:</span> <span class="n">docker</span>
       <span class="n">POSTGRES_USER</span><span class="p">:</span> <span class="n">docker</span>
@@ -254,14 +248,13 @@ To successfully run TEXTA Toolkit we need to define following services:</p>
 <h3>Run TEXTA Toolkit<a class="headerlink" href="#run-texta-toolkit" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Before running TEXTA Toolkit, we should have 2 files in our current working directory:</p>
+<p>Before running TEXTA Toolkit, one should have 2 files in current working directory:</p>
 <ul class="simple">
 <li><p>docker-compose.yaml</p></li>
 <li><p>env</p></li>
 </ul>
 </div>
-<p>With the <strong>docker-compose.yaml</strong> and <strong>env</strong> files present and accounted for,
-let’s pull the images and start the services by executing the following commands in the same directory with <strong>docker-compose.yaml</strong> and <strong>env</strong>:</p>
+<p>With the <strong>docker-compose.yaml</strong> and <strong>env</strong> files present and accounted for, pull the images and start the services by executing the following commands in the same directory with <strong>docker-compose.yaml</strong> and <strong>env</strong>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo docker-compose pull
 sudo docker-compose up
 </pre></div>
@@ -295,8 +288,8 @@ sudo docker-compose up
 <p>If you want to develop TEXTA Toolkit, want more control over how you run it, or seriously dislike Docker, it is also possible to install Toolkit using Anaconda (or Miniconda as shown in following examples).</p>
 <div class="section" id="install-miniconda">
 <h3>Install Miniconda<a class="headerlink" href="#install-miniconda" title="Permalink to this headline">¶</a></h3>
-<p>First we need to download and install Miniconda to manage Python environments.
-We choose Miniconda over Anaconda because it’s smaller in size, but Toolkit works well with both.</p>
+<p>First one needs to download and install Miniconda to manage Python environments.
+Miniconda is chosen over Anaconda because it’s smaller in size, but Toolkit works well with both.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh
 </pre></div>
@@ -316,7 +309,7 @@ sh Miniconda3-latest-Linux-x86_64.sh
 </div>
 <div class="section" id="build-the-environment">
 <h3>Build the Environment<a class="headerlink" href="#build-the-environment" title="Permalink to this headline">¶</a></h3>
-<p>Now that we have <strong>environment.yaml</strong> file from the texta-rest repository, let’s use it to build the environment.
+<p>Now that <strong>environment.yaml</strong> file from the texta-rest repository is present, let’s use it to build the environment.
 After the environment is built, let’s activate it:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yaml
 conda activate texta-rest

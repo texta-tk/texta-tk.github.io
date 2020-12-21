@@ -1,3 +1,6 @@
+`EN <https://docs.texta.ee/terminology.html>`_
+`ET <https://docs.texta.ee/et/terminology.html>`_
+
 ############
 Terminology
 ############

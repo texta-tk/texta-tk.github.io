@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"POT-Creation-Date: 2020-12-21 13:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,21 +18,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../source/embedding.rst:3
+#: ../../source/embedding.rst:1
+msgid "`EN <https://docs.texta.ee/embedding.html>`_"
+msgstr ""
+
+#: ../../source/embedding.rst:5
 msgid "Embedding"
 msgstr ""
 
-#: ../../source/embedding.rst:8
+#: ../../source/embedding.rst:10
 msgid "Create"
 msgstr ""
 
-#: ../../source/embedding.rst:11 ../../source/embedding.rst:57
-#: ../../source/embedding.rst:86 ../../source/embedding.rst:112
-#: ../../source/embedding.rst:135
+#: ../../source/embedding.rst:13 ../../source/embedding.rst:59
+#: ../../source/embedding.rst:88 ../../source/embedding.rst:114
+#: ../../source/embedding.rst:137
 msgid "GUI"
 msgstr ""
 
-#: ../../source/embedding.rst:13
+#: ../../source/embedding.rst:15
 msgid ""
 "Navigate to **Models -> Embeddings** and click on the **CREATE** button "
 "on top-left. Choose the name for you :ref:`embedding <embedding_concept>`"
@@ -44,20 +48,20 @@ msgid ""
 "the field *Query* - you can use existing searches as queries."
 msgstr ""
 
-#: ../../source/embedding.rst:17
+#: ../../source/embedding.rst:19
 msgid ""
 "Choose *fields* on which the :ref:`embedding <embedding_concept>` will be"
 " trained. The selected fields should contain textual data."
 msgstr ""
 
-#: ../../source/embedding.rst:20
+#: ../../source/embedding.rst:22
 msgid ""
 "It is recommended to use lemmatized or tokenized data. Lemmatization is "
 "especially useful with morphologically complex languages. You can "
 "tokenize and lemmatize the data with :ref:`MLP <mlp>`."
 msgstr ""
 
-#: ../../source/embedding.rst:22
+#: ../../source/embedding.rst:24
 msgid ""
 "Field *Number of dimensions* defines the length of the word vectors. "
 "100-200 dimensions is usually a good place to start with. Field *Minimum "
@@ -67,33 +71,33 @@ msgid ""
 "which value to pick."
 msgstr ""
 
-#: ../../source/embedding.rst:28
+#: ../../source/embedding.rst:30
 msgid ""
 "The quality of the embedding depends on the size of the dataset. The "
 "larger the better."
 msgstr ""
 
-#: ../../source/embedding.rst:31 ../../source/embedding.rst:70
-#: ../../source/embedding.rst:97 ../../source/embedding.rst:118
-#: ../../source/embedding.rst:146
+#: ../../source/embedding.rst:33 ../../source/embedding.rst:72
+#: ../../source/embedding.rst:99 ../../source/embedding.rst:120
+#: ../../source/embedding.rst:148
 msgid "API"
 msgstr ""
 
-#: ../../source/embedding.rst:33 ../../source/embedding.rst:72
-#: ../../source/embedding.rst:148
+#: ../../source/embedding.rst:35 ../../source/embedding.rst:74
+#: ../../source/embedding.rst:150
 msgid "Endpoint: **/projects/{project_pk}/embeddings/**"
 msgstr ""
 
-#: ../../source/embedding.rst:35 ../../source/embedding.rst:74
-#: ../../source/embedding.rst:101 ../../source/embedding.rst:150
+#: ../../source/embedding.rst:37 ../../source/embedding.rst:76
+#: ../../source/embedding.rst:103 ../../source/embedding.rst:152
 msgid "Example:"
 msgstr ""
 
-#: ../../source/embedding.rst:54
+#: ../../source/embedding.rst:56
 msgid "View"
 msgstr ""
 
-#: ../../source/embedding.rst:59
+#: ../../source/embedding.rst:61
 msgid ""
 "Navigate to **Models -> Embeddings** to view existing :ref:`embedding "
 "<embedding_concept>`. If any of your embeddings is still training, the "
@@ -102,43 +106,43 @@ msgid ""
 " information about your embeddings."
 msgstr ""
 
-#: ../../source/embedding.rst:67
+#: ../../source/embedding.rst:69
 msgid "*Embedding view*"
 msgstr ""
 
-#: ../../source/embedding.rst:83
+#: ../../source/embedding.rst:85
 msgid "Delete"
 msgstr ""
 
-#: ../../source/embedding.rst:88
+#: ../../source/embedding.rst:90
 msgid ""
 "Navigate to **Models -> Embeddings** and click on the three dots under "
 "**Actions** column and choose **Delete** (:numref:`embedding_actions`)."
 msgstr ""
 
-#: ../../source/embedding.rst:94
+#: ../../source/embedding.rst:96
 msgid "*Embedding actions*"
 msgstr ""
 
-#: ../../source/embedding.rst:99 ../../source/embedding.rst:120
+#: ../../source/embedding.rst:101 ../../source/embedding.rst:122
 msgid "Endpoint: **/projects/{project_pk}/embeddings/{embedding_id}**"
 msgstr ""
 
-#: ../../source/embedding.rst:109
+#: ../../source/embedding.rst:111
 msgid "Edit"
 msgstr ""
 
-#: ../../source/embedding.rst:114
+#: ../../source/embedding.rst:116
 msgid ""
 "Navigate to **Models -> Embeddings** and click on the three dots under "
 "**Actions** column and choose **Edit** (:numref:`embedding_actions`)."
 msgstr ""
 
-#: ../../source/embedding.rst:132
+#: ../../source/embedding.rst:134
 msgid "Apply phraser"
 msgstr ""
 
-#: ../../source/embedding.rst:137
+#: ../../source/embedding.rst:139
 msgid ""
 "Navigate to **Models -> Embeddings**, click on the three dots under "
 "**Actions** and choose **Phrase** (:numref:`embedding_actions`). Insert "
@@ -146,7 +150,7 @@ msgid ""
 "version of the text (:numref:`apply_phraser`)."
 msgstr ""
 
-#: ../../source/embedding.rst:143
+#: ../../source/embedding.rst:145
 msgid "*Apply phraser*"
 msgstr ""
 

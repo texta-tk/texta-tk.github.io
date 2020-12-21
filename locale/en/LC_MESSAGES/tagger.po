@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"POT-Creation-Date: 2020-12-21 13:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,21 +18,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../source/tagger.rst:4
+#: ../../source/tagger.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/tagger.html>`_ `ET "
+"<https://docs.texta.ee/et/tagger.html>`_"
+msgstr ""
+
+#: ../../source/tagger.rst:7
 msgid "Tagger"
 msgstr ""
 
-#: ../../source/tagger.rst:6
+#: ../../source/tagger.rst:9
 msgid ""
 ":ref:`Tagger <tagger_concept>` operates on saved searches and uses "
 "machine learning."
 msgstr ""
 
-#: ../../source/tagger.rst:11
+#: ../../source/tagger.rst:14
 msgid "**How do Tagger and Tagger Groups differ?**"
 msgstr ""
 
-#: ../../source/tagger.rst:11
+#: ../../source/tagger.rst:14
 msgid ""
 "One model predicts whether a text is positive (True) or negative (False)."
 " That is, whether this text gets the label or not. Tagger trains only one"
@@ -44,37 +50,37 @@ msgid ""
 " size*) a model is trained."
 msgstr ""
 
-#: ../../source/tagger.rst:15
+#: ../../source/tagger.rst:18
 msgid "Creation"
 msgstr ""
 
-#: ../../source/tagger.rst:19
+#: ../../source/tagger.rst:22
 msgid "Parameters"
 msgstr ""
 
-#: ../../source/tagger.rst:22
+#: ../../source/tagger.rst:25
 msgid "**description**:"
 msgstr ""
 
-#: ../../source/tagger.rst:22
+#: ../../source/tagger.rst:25
 msgid ""
 "Name of the Tagger model, which is also used as name of the tag while "
 "tagging the documents."
 msgstr ""
 
-#: ../../source/tagger.rst:25
+#: ../../source/tagger.rst:28
 msgid "**indices**:"
 msgstr ""
 
-#: ../../source/tagger.rst:25
+#: ../../source/tagger.rst:28
 msgid "The indices the model learns from."
 msgstr ""
 
-#: ../../source/tagger.rst:28
+#: ../../source/tagger.rst:31
 msgid "**fields**:"
 msgstr ""
 
-#: ../../source/tagger.rst:28
+#: ../../source/tagger.rst:31
 msgid ""
 "The :ref:`fields <field_concept>` the model learns from. If more than one"
 " fields is chosen, the fields are concatenated together before the "
@@ -84,11 +90,11 @@ msgid ""
 "change to its lemma *eat* and are dealt as one word)."
 msgstr ""
 
-#: ../../source/tagger.rst:31
+#: ../../source/tagger.rst:34
 msgid "**query**:"
 msgstr ""
 
-#: ../../source/tagger.rst:31
+#: ../../source/tagger.rst:34
 msgid ""
 "Searcher's :ref:`query <query_concept>` for the dataset to be trained on."
 " If *Query* is left empty, it will take all data in the active "
@@ -97,32 +103,32 @@ msgid ""
 "- later on, the Tagger tags data similar to this one."
 msgstr ""
 
-#: ../../source/tagger.rst:34
+#: ../../source/tagger.rst:37
 msgid "**embedding**:"
 msgstr ""
 
-#: ../../source/tagger.rst:34
+#: ../../source/tagger.rst:37
 msgid ""
 ":ref:`embedding <embedding_concept>` previously trained on the same "
 "dataset."
 msgstr ""
 
-#: ../../source/tagger.rst:37
+#: ../../source/tagger.rst:40
 msgid "**vectorizer**:"
 msgstr ""
 
-#: ../../source/tagger.rst:37
+#: ../../source/tagger.rst:40
 msgid ""
 "Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about "
 "them `here <https://scikit-"
 "learn.org/stable/modules/feature_extraction.html>`_."
 msgstr ""
 
-#: ../../source/tagger.rst:40
+#: ../../source/tagger.rst:43
 msgid "**classifier**:"
 msgstr ""
 
-#: ../../source/tagger.rst:40
+#: ../../source/tagger.rst:43
 msgid ""
 "`Logistic Regression <https://scikit-"
 "learn.org/stable/modules/linear_model.html#logistic-regression>`_, "
@@ -130,29 +136,29 @@ msgid ""
 "learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_."
 msgstr ""
 
-#: ../../source/tagger.rst:43
+#: ../../source/tagger.rst:46
 msgid "**maximum sample size**:"
 msgstr ""
 
-#: ../../source/tagger.rst:43
+#: ../../source/tagger.rst:46
 msgid ""
 "*The maximum sample size* per class is for limiting the size of data the "
 "model trains on."
 msgstr ""
 
-#: ../../source/tagger.rst:46
+#: ../../source/tagger.rst:49
 msgid "**negative multiplier**:"
 msgstr ""
 
-#: ../../source/tagger.rst:46
+#: ../../source/tagger.rst:49
 msgid "*The negative multiplier* is for changing the ratio of negative examples."
 msgstr ""
 
-#: ../../source/tagger.rst:49
+#: ../../source/tagger.rst:52
 msgid "GUI"
 msgstr ""
 
-#: ../../source/tagger.rst:51
+#: ../../source/tagger.rst:54
 msgid ""
 "Create a new Tagger model by clicking on the 'CREATE' button in the top-"
 "left. Then choose the parameters. After that, all that's left is hitting "
@@ -160,17 +166,17 @@ msgid ""
 "and the result of the tagger."
 msgstr ""
 
-#: ../../source/tagger.rst:54
+#: ../../source/tagger.rst:57
 msgid ""
 "LinearSVC might give an error in case there's not enough data in the "
 "search."
 msgstr ""
 
-#: ../../source/tagger.rst:59
+#: ../../source/tagger.rst:62
 msgid "*Creating Bribe_tag tagger*"
 msgstr ""
 
-#: ../../source/tagger.rst:61
+#: ../../source/tagger.rst:64
 msgid ""
 "Whenever a new Tagger model is created, you can track its progress from "
 "the table under *Task*. If you click on the job, you can see all the "
@@ -178,29 +184,29 @@ msgid ""
 "Let's not forget that:"
 msgstr ""
 
-#: ../../source/tagger.rst:63
+#: ../../source/tagger.rst:66
 msgid ""
 "Recall is the ratio of correctly labeled positives among all true "
 "positives."
 msgstr ""
 
-#: ../../source/tagger.rst:64
+#: ../../source/tagger.rst:67
 msgid ""
 "Precision is the ratio of correctly labeled positives among all instances"
 " that got a positive label."
 msgstr ""
 
-#: ../../source/tagger.rst:65
+#: ../../source/tagger.rst:68
 msgid ""
 "F1 score is the harmonic mean of these two and should be more informative"
 " especially with unbalanced data."
 msgstr ""
 
-#: ../../source/tagger.rst:67
+#: ../../source/tagger.rst:70
 msgid "The three dots under *Actions* gives you a list of extra actions to use."
 msgstr ""
 
-#: ../../source/tagger.rst:69
+#: ../../source/tagger.rst:72
 msgid ""
 "In the table view, you can also select several models and delete them all"
 " at once by clicking on the dustbin button next to the *CREATE* button in"
@@ -209,50 +215,50 @@ msgid ""
 "pages you can change pages in the top-right."
 msgstr ""
 
-#: ../../source/tagger.rst:75
+#: ../../source/tagger.rst:78
 msgid "*Bribe_tag tagger*"
 msgstr ""
 
-#: ../../source/tagger.rst:79
+#: ../../source/tagger.rst:82
 msgid "API"
 msgstr ""
 
-#: ../../source/tagger.rst:81
+#: ../../source/tagger.rst:84
 msgid "Endpoint: **/projects/{project_pk}/taggers/**"
 msgstr ""
 
-#: ../../source/tagger.rst:83 ../../source/tagger.rst:142
+#: ../../source/tagger.rst:86 ../../source/tagger.rst:145
 msgid "Example:"
 msgstr ""
 
-#: ../../source/tagger.rst:103
+#: ../../source/tagger.rst:106
 msgid "The trained tagger endpoint: **/projects/{project_pk}/taggers/{id}/**"
 msgstr ""
 
-#: ../../source/tagger.rst:108
+#: ../../source/tagger.rst:111
 msgid "Usage"
 msgstr ""
 
-#: ../../source/tagger.rst:112
+#: ../../source/tagger.rst:115
 msgid "List features"
 msgstr ""
 
-#: ../../source/tagger.rst:114
+#: ../../source/tagger.rst:117
 msgid ""
 "*List features* lists the word-features and their coefficients that the "
 "model used. Works with models that used Count Vectorizer or Tfldf "
 "Vectorizer since their output is displayable."
 msgstr ""
 
-#: ../../source/tagger.rst:116
+#: ../../source/tagger.rst:119
 msgid "API endpoint: **/projects/{project_pk}/taggers/{id}/list_features/**"
 msgstr ""
 
-#: ../../source/tagger.rst:119
+#: ../../source/tagger.rst:122
 msgid "Stop words"
 msgstr ""
 
-#: ../../source/tagger.rst:120
+#: ../../source/tagger.rst:123
 msgid ""
 "*Stop words* is for adding stop words. Stop words are words that the "
 "model does not consider while looking for clues of similarities. It is "
@@ -260,19 +266,19 @@ msgid ""
 "*are*. Separate the words with space (' ')."
 msgstr ""
 
-#: ../../source/tagger.rst:126
+#: ../../source/tagger.rst:129
 msgid "*Adding stop words*"
 msgstr ""
 
-#: ../../source/tagger.rst:128
+#: ../../source/tagger.rst:131
 msgid "API endpoint **/projects/{project_pk}/taggers/{id}/stop_words/**"
 msgstr ""
 
-#: ../../source/tagger.rst:131
+#: ../../source/tagger.rst:134
 msgid "Tag text"
 msgstr ""
 
-#: ../../source/tagger.rst:132
+#: ../../source/tagger.rst:135
 msgid ""
 "*Tag text* is to check how does the model work. If you click on that a "
 "window opens. You can paste there some text, choose to lemmatize it "
@@ -282,74 +288,74 @@ msgid ""
 "model in its prediction."
 msgstr ""
 
-#: ../../source/tagger.rst:138
+#: ../../source/tagger.rst:141
 msgid "*Tagging a random written/pasted text*"
 msgstr ""
 
-#: ../../source/tagger.rst:140
+#: ../../source/tagger.rst:143
 msgid "API endpoint **/projects/{project_pk}/taggers/{id}/tag_text/**"
 msgstr ""
 
-#: ../../source/tagger.rst:155
+#: ../../source/tagger.rst:158
 msgid "Response:"
 msgstr ""
 
-#: ../../source/tagger.rst:168
+#: ../../source/tagger.rst:171
 msgid "Tag doc"
 msgstr ""
 
-#: ../../source/tagger.rst:169
+#: ../../source/tagger.rst:172
 msgid ""
 "*Tag doc* is similar to *Tag text*, except the input is in the JSON "
 "format."
 msgstr ""
 
-#: ../../source/tagger.rst:175
+#: ../../source/tagger.rst:178
 msgid "*Tagging a random written/pasted text in json format*"
 msgstr ""
 
-#: ../../source/tagger.rst:177
+#: ../../source/tagger.rst:180
 msgid "API endpoint **/projects/{project_pk}/taggers/{id}/tag_doc/**"
 msgstr ""
 
-#: ../../source/tagger.rst:180
+#: ../../source/tagger.rst:183
 msgid "Tag random doc"
 msgstr ""
 
-#: ../../source/tagger.rst:181
+#: ../../source/tagger.rst:184
 msgid ""
 "*Tag random doc* takes a random instance from your dataset, displays it, "
 "and returns the result and the probability of this result being correct."
 msgstr ""
 
-#: ../../source/tagger.rst:183
+#: ../../source/tagger.rst:186
 msgid "API endpoint **/projects/{project_pk}/taggers/{id}/tag_random_doc/**"
 msgstr ""
 
-#: ../../source/tagger.rst:186
+#: ../../source/tagger.rst:189
 msgid "Edit"
 msgstr ""
 
-#: ../../source/tagger.rst:187
+#: ../../source/tagger.rst:190
 msgid "*Edit* is for changing the description. Only in GUI."
 msgstr ""
 
-#: ../../source/tagger.rst:191
+#: ../../source/tagger.rst:194
 msgid "Retrain tagger"
 msgstr ""
 
-#: ../../source/tagger.rst:192
+#: ../../source/tagger.rst:195
 msgid ""
 "*Retrain tagger* retrains the whole tagger model with all the chosen "
 "parameters. It's useful in case your dataset changes or you have added "
 "some stop words. Only in GUI."
 msgstr ""
 
-#: ../../source/tagger.rst:195
+#: ../../source/tagger.rst:198
 msgid "Delete"
 msgstr ""
 
-#: ../../source/tagger.rst:197
+#: ../../source/tagger.rst:200
 msgid "*Delete* is for deleting the model. Only in GUI."
 msgstr ""
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"POT-Creation-Date: 2020-12-21 13:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,8 @@ msgstr ""
 
 #: ../../source/projects.rst:1
 msgid ""
-"`EN <https://docs.texta.ee/v2/projects.html>`_ `ET "
-"<https://docs.texta.ee/v2/et/projects.html>`_"
+"`EN <https://docs.texta.ee/projects.html>`_ `ET "
+"<https://docs.texta.ee/et/projects.html>`_"
 msgstr ""
 
 #: ../../source/projects.rst:9
@@ -270,5 +270,10 @@ msgstr ""
 #~ "shared among the users with access "
 #~ "to the project. **Only superusers can"
 #~ " edit projects.**"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`EN <https://docs.texta.ee/v2/projects.html>`_ `ET "
+#~ "<https://docs.texta.ee/v2/et/projects.html>`_"
 #~ msgstr ""
 

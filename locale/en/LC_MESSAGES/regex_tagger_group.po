@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"POT-Creation-Date: 2020-12-21 13:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,8 @@ msgstr ""
 
 #: ../../source/regex_tagger_group.rst:1
 msgid ""
-"`EN <https://docs.texta.ee/v2/regex_tagger_group.html>`_ `ET "
-"<https://docs.texta.ee/v2/et/regex_tagger_group.html>`_"
+"`EN <https://docs.texta.ee/regex_tagger_group.html>`_ `ET "
+"<https://docs.texta.ee/et/regex_tagger_group.html>`_"
 msgstr ""
 
 #: ../../source/regex_tagger_group.rst:8
@@ -916,5 +916,10 @@ msgstr ""
 #~ "in :numref:`rtg_nav`. Click on the "
 #~ "button `\"Apply Regex Tagger Group\"` as"
 #~ " seen in :numref:`rtg_apply`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`EN <https://docs.texta.ee/v2/regex_tagger_group.html>`_ "
+#~ "`ET <https://docs.texta.ee/v2/et/regex_tagger_group.html>`_"
 #~ msgstr ""
 

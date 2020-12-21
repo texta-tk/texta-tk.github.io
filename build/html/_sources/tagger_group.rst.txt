@@ -1,3 +1,6 @@
+`EN <https://docs.texta.ee/tagger_group.html>`_
+`ET <https://docs.texta.ee/et/tagger_group.html>`_
+
 .. _tagger_group:
 #############
 Tagger Group

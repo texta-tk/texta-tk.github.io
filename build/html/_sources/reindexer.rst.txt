@@ -1,6 +1,6 @@
 .. _reindexer:
-`EN <https://docs.texta.ee/v2/reindexer.html>`_
-`ET <https://docs.texta.ee/v2/et/reindexer.html>`_
+`EN <https://docs.texta.ee/reindexer.html>`_
+`ET <https://docs.texta.ee/et/reindexer.html>`_
 
 ############
 Reindexer

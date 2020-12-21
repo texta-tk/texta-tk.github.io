@@ -1,5 +1,5 @@
-`EN <https://docs.texta.ee/v2/anonymizer.html>`_
-`ET <https://docs.texta.ee/v2/et/anonymizer.html>`_
+`EN <https://docs.texta.ee/anonymizer.html>`_
+`ET <https://docs.texta.ee/et/anonymizer.html>`_
 
 .. _anonymizer:
 

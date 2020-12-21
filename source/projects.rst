@@ -1,5 +1,5 @@
-`EN <https://docs.texta.ee/v2/projects.html>`_
-`ET <https://docs.texta.ee/v2/et/projects.html>`_
+`EN <https://docs.texta.ee/projects.html>`_
+`ET <https://docs.texta.ee/et/projects.html>`_
 
 
 .. _project:

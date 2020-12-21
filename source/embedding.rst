@@ -1,3 +1,5 @@
+`EN <https://docs.texta.ee/embedding.html>`_
+
 #########
 Embedding
 #########

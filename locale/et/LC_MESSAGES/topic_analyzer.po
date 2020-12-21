@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"POT-Creation-Date: 2020-12-21 13:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,26 +18,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../source/topic_analyzer.rst:5
+#: ../../source/topic_analyzer.rst:1
+msgid "`EN <https://docs.texta.ee/topic_analyzer.html>`_"
+msgstr ""
+
+#: ../../source/topic_analyzer.rst:8
 msgid "Topic Analyzer"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:9
+#: ../../source/topic_analyzer.rst:12
 msgid ""
 "There exists an API for topic analyzer too, but the magic of the analyzer"
 " dissappears when using API."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:14
+#: ../../source/topic_analyzer.rst:17
 msgid "Create"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:17 ../../source/topic_analyzer.rst:64
-#: ../../source/topic_analyzer.rst:89 ../../source/topic_analyzer.rst:97
+#: ../../source/topic_analyzer.rst:20 ../../source/topic_analyzer.rst:67
+#: ../../source/topic_analyzer.rst:92 ../../source/topic_analyzer.rst:100
 msgid "GUI"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:19
+#: ../../source/topic_analyzer.rst:22
 msgid ""
 "Navigate to **Tools -> Topic Analyzer** and click on the **CREATE** "
 "button on top-left. Choose the name for your :ref:`Analyzer "
@@ -50,36 +54,36 @@ msgid ""
 "searches as queries."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:23
+#: ../../source/topic_analyzer.rst:26
 msgid ""
 "Choose *fields* on which the clustering is done. The selected fields "
 "should contain textual data."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:26
+#: ../../source/topic_analyzer.rst:29
 msgid ""
 "It is recommended to use lemmatized or tokenized data. Lemmatization is "
 "especially useful with morphologically complex languages. You can "
 "tokenize and lemmatize the data with :ref:`MLP <mlp>`."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:28
+#: ../../source/topic_analyzer.rst:31
 msgid ""
 "*Embedding* - if selected then its phraser is used for tokenization. You "
 "can leave it empty as well."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:30
+#: ../../source/topic_analyzer.rst:33
 msgid ""
 "*Keywords filter* - defines a filter (as a regular expression) for "
 "unwanted significant words."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:32
+#: ../../source/topic_analyzer.rst:35
 msgid "*Stopwords* - custom stopwords to ignore during clustering."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:34
+#: ../../source/topic_analyzer.rst:37
 msgid ""
 "*Clustering algorithm* - an algorithm to use for clustering. "
 "Minibatchkmeans is a time efficient variant of kmeans with a potential "
@@ -87,33 +91,33 @@ msgid ""
 "vectors."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:37
+#: ../../source/topic_analyzer.rst:40
 msgid "*Document limit* - number of documents that will be clustered."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:39
+#: ../../source/topic_analyzer.rst:42
 msgid "*Num cluster* - number of final clusters."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:41
+#: ../../source/topic_analyzer.rst:44
 msgid "*Num dims* - maximum possible dimension of document vectors."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:43
+#: ../../source/topic_analyzer.rst:46
 msgid "*Num topics* - number of dimensions when *Use LSI* is selected."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:45
+#: ../../source/topic_analyzer.rst:48
 msgid ""
 "*Use LSI* - if selected then high dimensional document-term vectors are "
 "reduced into lower dimensional vectors that base on \"topics\"."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:49
+#: ../../source/topic_analyzer.rst:52
 msgid "**How to choose the number of clusters?**"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:51
+#: ../../source/topic_analyzer.rst:54
 msgid ""
 "General advice would is to better have too many clusters than too few. "
 "Think about how many documents you are planning to cluster and choose the"
@@ -122,15 +126,15 @@ msgid ""
 "documents to 50 clusters then average cluster would contain 20 documents."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:57
+#: ../../source/topic_analyzer.rst:60
 msgid "Figure 17. *Creating a Clustering*"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:61
+#: ../../source/topic_analyzer.rst:64
 msgid "Viewing clusters"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:66
+#: ../../source/topic_analyzer.rst:69
 msgid ""
 "Click *View clusters* under Actions. You will see an overwiew about "
 "obtained clusters. For each cluster the document count and average cosine"
@@ -138,15 +142,15 @@ msgid ""
 "significant words."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:73
+#: ../../source/topic_analyzer.rst:76
 msgid "Figure 18. *Clusters view*"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:77
+#: ../../source/topic_analyzer.rst:80
 msgid "**Interpreting document count**"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:79
+#: ../../source/topic_analyzer.rst:82
 msgid ""
 "Cluster with significantly larger document count often indicates that the"
 " clustering algorithm has failed to separate these documents by the "
@@ -159,11 +163,11 @@ msgid ""
 "increasing the number of clusters might help as well."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:81
+#: ../../source/topic_analyzer.rst:84
 msgid "**Interpreting average similarity**"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:83
+#: ../../source/topic_analyzer.rst:86
 msgid ""
 "Average similarity is an average cosine similarity between all the "
 "documents in the cluster. It ranges between 0 and 1 and higher score "
@@ -174,25 +178,25 @@ msgid ""
 "low althought fixing that cluster would be very easy."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:86
+#: ../../source/topic_analyzer.rst:89
 msgid "Viewing documents inside cluster"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:91
+#: ../../source/topic_analyzer.rst:94
 msgid ""
 "Click on a cluster that is in your interest, this opens you a detailed "
 "view of a cluster content."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:94
+#: ../../source/topic_analyzer.rst:97
 msgid "Operations with the cluster"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:100
+#: ../../source/topic_analyzer.rst:103
 msgid "Tag documents"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:102
+#: ../../source/topic_analyzer.rst:105
 msgid ""
 "If the cluster contains documents from the same topic it is advisable to "
 "tag the documets and delete the cluster. Click on **Tag** button. This "
@@ -201,22 +205,22 @@ msgid ""
 " ignored in further clustering processes**"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:106
+#: ../../source/topic_analyzer.rst:109
 msgid "Delete documents"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:108
+#: ../../source/topic_analyzer.rst:111
 msgid ""
 "This functionality is useful if some documents in the cluster are from a "
 "different topic and you want to remove them - select the documents that "
 "you want to remove and click on **trash bin** icon."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:111
+#: ../../source/topic_analyzer.rst:114
 msgid "Add more documents"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:113
+#: ../../source/topic_analyzer.rst:116
 msgid ""
 "You might want to know whether there exists more documents similar to the"
 " ones in the cluster, and if so, add those to the cluster as well, so you"
@@ -225,17 +229,17 @@ msgid ""
 "would like to add to the cluster and click on a **+** button."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:117
+#: ../../source/topic_analyzer.rst:120
 msgid "Delete the cluster"
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:119
+#: ../../source/topic_analyzer.rst:122
 msgid ""
 "It is advisable to delete the cluster after you have tagged it. Click on "
 "**Delete** button to do it."
 msgstr ""
 
-#: ../../source/topic_analyzer.rst:126
+#: ../../source/topic_analyzer.rst:129
 msgid "Figure 19. *Cluster details view*"
 msgstr ""
 

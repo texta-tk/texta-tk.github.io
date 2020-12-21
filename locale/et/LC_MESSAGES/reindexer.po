@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"POT-Creation-Date: 2020-12-21 13:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,8 @@ msgstr ""
 
 #: ../../source/reindexer.rst:2
 msgid ""
-"`EN <https://docs.texta.ee/v2/reindexer.html>`_ `ET "
-"<https://docs.texta.ee/v2/et/reindexer.html>`_"
+"`EN <https://docs.texta.ee/reindexer.html>`_ `ET "
+"<https://docs.texta.ee/et/reindexer.html>`_"
 msgstr ""
 
 #: ../../source/reindexer.rst:7
@@ -52,7 +52,9 @@ msgstr "Alusandmestikust juhuslikult valitud dokumentidega alamhulga loomiseks;"
 
 #: ../../source/reindexer.rst:14
 msgid "Making a subset based on predefined :ref:`query <query_concept>`;"
-msgstr "Eeldefineeritud kitsenduste ehk :ref:`päringute <query_concept>` alusel andmestiku alamhulga loomiseks;"
+msgstr ""
+"Eeldefineeritud kitsenduste ehk :ref:`päringute <query_concept>` alusel "
+"andmestiku alamhulga loomiseks;"
 
 #: ../../source/reindexer.rst:15
 msgid "Renaming fields;"
@@ -86,7 +88,9 @@ msgstr ""
 msgid ""
 "List of Elasticsearch :ref:`indices <index_concept>` (datasets) to "
 "reindex."
-msgstr "Nimekiri reindekseeritavatest Elasticsearchi :ref:`indeksitest <index_concept>` (andmestikest)."
+msgstr ""
+"Nimekiri reindekseeritavatest Elasticsearchi :ref:`indeksitest "
+"<index_concept>` (andmestikest)."
 
 #: ../../source/reindexer.rst:33
 msgid "**fields**:"
@@ -110,9 +114,10 @@ msgid ""
 "empty (and `random_size` is not defined), all documents from the source "
 "index are transferred to the new one."
 msgstr ""
-"Eeldefineeritud Elasticsearchi :ref:`otsingupäring <query_concept>`. Välja tühjaks jätmisel "
-"(juhul kui `random_size` parameeter on samuti väärtustamata), kantakse "
-"uude andmestikku üle kõik lähteandmestiku dokumendid."
+"Eeldefineeritud Elasticsearchi :ref:`otsingupäring <query_concept>`. "
+"Välja tühjaks jätmisel (juhul kui `random_size` parameeter on samuti "
+"väärtustamata), kantakse uude andmestikku üle kõik lähteandmestiku "
+"dokumendid."
 
 #: ../../source/reindexer.rst:39
 msgid "**new_index**:"
@@ -136,7 +141,8 @@ msgstr ""
 "Juhusliku alamhulga suurus. Välja väärtustamisel koostatakse uus indeks "
 "(andmestik) valitud arvust juhuslikest dokumentidest. Välja väärtustamata"
 " jätmisel kantakse uude andmestikku üle kõik lähteandmestiku (või "
-"kitsendatud otsingupäringule \":ref:`query <query_concept>`\" vastavad) dokumendid."
+"kitsendatud otsingupäringule \":ref:`query <query_concept>`\" vastavad) "
+"dokumendid."
 
 #: ../../source/reindexer.rst:50
 msgid "**field_type**:"
@@ -146,7 +152,9 @@ msgstr ""
 msgid ""
 "List of new Elasticsearch :ref:`field<field_concept>` types in the "
 "following format:"
-msgstr "Nimekiri Elasticsearchi :ref:`väljatüüpidest<field_concept>` järgnevas vormingus:"
+msgstr ""
+"Nimekiri Elasticsearchi :ref:`väljatüüpidest<field_concept>` järgnevas "
+"vormingus:"
 
 #: ../../source/reindexer.rst:53
 msgid "GUI"
@@ -239,4 +247,9 @@ msgstr "Näide:"
 #: ../../source/reindexer.rst:124
 msgid "Response:"
 msgstr "Vastus:"
+
+#~ msgid ""
+#~ "`EN <https://docs.texta.ee/v2/reindexer.html>`_ `ET "
+#~ "<https://docs.texta.ee/v2/et/reindexer.html>`_"
+#~ msgstr ""
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"POT-Creation-Date: 2020-12-21 13:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../source/health.rst:5
-msgid "Health"
+#: ../../source/health.rst:1
+msgid "`EN <https://docs.texta.ee/health.html>`_"
 msgstr ""
 
 #: ../../source/health.rst:7
+msgid "Health"
+msgstr ""
+
+#: ../../source/health.rst:9
 msgid ""
 "One can check the health of a running Toolkit instance - information "
 "about the availability of services (e.g. :ref:`Elasticsearch "
@@ -30,26 +34,26 @@ msgid ""
 "etc.)"
 msgstr ""
 
-#: ../../source/health.rst:11
+#: ../../source/health.rst:13
 msgid "GUI"
 msgstr ""
 
-#: ../../source/health.rst:12
+#: ../../source/health.rst:14
 msgid ""
 "On the **Projects page** (also Toolkit's home page) we can see technical "
 "information about TEXTA Toolkit's server on the right "
 "(:numref:`server_status`)."
 msgstr ""
 
-#: ../../source/health.rst:17
+#: ../../source/health.rst:19
 msgid "*Toolkit Status*"
 msgstr ""
 
-#: ../../source/health.rst:21
+#: ../../source/health.rst:23
 msgid "API"
 msgstr ""
 
-#: ../../source/health.rst:23
+#: ../../source/health.rst:25
 msgid "The **/health** endpoint is for operating statistics."
 msgstr ""
 

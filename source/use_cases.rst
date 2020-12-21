@@ -1,5 +1,5 @@
-`EN <https://www.youtube.com/watch?v=dc2Z7CL4Cv0>`_
-`ET <https://www.youtube.com/watch?v=dQw4w9WgXcQ>`_
+`EN <https://docs.texta.ee/use_cases.html>`_
+`ET <https://docs.texta.ee/et/use_cases.html>`_
 
 ################
 Use Cases

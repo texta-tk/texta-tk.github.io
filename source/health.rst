@@ -1,3 +1,5 @@
+`EN <https://docs.texta.ee/health.html>`_
+
 .. _health:
 
 #######

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"POT-Creation-Date: 2020-12-21 13:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,8 @@ msgstr ""
 
 #: ../../source/regex_tagger_group.rst:1
 msgid ""
-"`EN <https://docs.texta.ee/v2/regex_tagger_group.html>`_ `ET "
-"<https://docs.texta.ee/v2/et/regex_tagger_group.html>`_"
+"`EN <https://docs.texta.ee/regex_tagger_group.html>`_ `ET "
+"<https://docs.texta.ee/et/regex_tagger_group.html>`_"
 msgstr ""
 
 #: ../../source/regex_tagger_group.rst:8
@@ -297,8 +297,9 @@ msgid ""
 "Results are added to the field **\"texta_facts\"** accordingly:"
 msgstr ""
 "Funktsioon `\"Apply Tagger Group\"` on mõeldud Regex Tagger Groupi "
-"rakendamiseks :ref:`Elasticsearchis <elasticsearch>` indekseeritud andmestikele. Märgendamise "
-"tulemused kajastuvad väljas **\"texta_facts\"** järgnevalt:"
+"rakendamiseks :ref:`Elasticsearchis <elasticsearch>` indekseeritud "
+"andmestikele. Märgendamise tulemused kajastuvad väljas "
+"**\"texta_facts\"** järgnevalt:"
 
 #: ../../source/regex_tagger_group.rst:275
 msgid "Name of the application task."
@@ -315,9 +316,10 @@ msgid ""
 "which the selected models are applied. NB! Indices should be formatted as"
 " dicts, where key = \"name\" and value = <index_name>, e.g:"
 msgstr ""
-"Elasticsearchis indekseeritud :ref:`indeksid <index_concept>` (andmestikud), millele valitud mudel(id) "
-"rakendada. NB! Admestikud peavad olema vormindatud JSON sõnastikena, "
-"milles võti = \"name\" ja väärtus = <andmestiku_nimi>, nt:"
+"Elasticsearchis indekseeritud :ref:`indeksid <index_concept>` "
+"(andmestikud), millele valitud mudel(id) rakendada. NB! Admestikud peavad"
+" olema vormindatud JSON sõnastikena, milles võti = \"name\" ja väärtus = "
+"<andmestiku_nimi>, nt:"
 
 #: ../../source/regex_tagger_group.rst:285
 #: ../../source/regex_tagger_group.rst:512
@@ -374,10 +376,10 @@ msgid ""
 "\"Regex Tagger Groups\"` as seen in :numref:`rtg_nav`. Click on the "
 "button `\"Apply Regex Tagger Group\"` as seen in :numref:`rtg_apply`."
 msgstr ""
-"Regex Taggeri Groupi(de) rakendamiseks :ref:`Elasticsearchi <elasticsearch>` indekseeritud "
-"andmestikele, navigeeri `\"Models\" -> \"Regex Tagger Groups\"` nagu "
-"kujutatud joonisel :numref:`rtg_nav`. Vajuta nupule `\"Apply Regex Tagger"
-" Group\"` (:numref:`rtg_apply`)."
+"Regex Taggeri Groupi(de) rakendamiseks :ref:`Elasticsearchi "
+"<elasticsearch>` indekseeritud andmestikele, navigeeri `\"Models\" -> "
+"\"Regex Tagger Groups\"` nagu kujutatud joonisel :numref:`rtg_nav`. "
+"Vajuta nupule `\"Apply Regex Tagger Group\"` (:numref:`rtg_apply`)."
 
 #: ../../source/regex_tagger_group.rst:312
 msgid "*\"Apply Regex Tagger Group\" button*"
@@ -959,5 +961,10 @@ msgid "Endpoint **/projects/{project_pk}/regex_tagger_groups/{id}/tag_text/**"
 msgstr "Otspunkt **/projects/{project_pk}/regex_tagger_groups/{id}/tag_text/**"
 
 #~ msgid "*\"Tag Text\" negatiivne tulemus*"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`EN <https://docs.texta.ee/v2/regex_tagger_group.html>`_ "
+#~ "`ET <https://docs.texta.ee/v2/et/regex_tagger_group.html>`_"
 #~ msgstr ""
 
