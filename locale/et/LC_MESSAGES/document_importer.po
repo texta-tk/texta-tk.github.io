@@ -31,14 +31,16 @@ msgid ""
 "Document importer provides API endpoints for adding, deleting and "
 "replacing documents one by one in or into a certain index in an easy way."
 msgstr ""
+"Dokumendi Importija (Document Importer) annab API otspunktid dokumentide kindlasse või uude"
+" indeksisse lisamise, seal asendamise või sealt kustutamise tarbeks."
 
 #: ../../source/document_importer.rst:12
 msgid "Importing a document"
-msgstr ""
+msgstr "Dokumendi importimine"
 
 #: ../../source/document_importer.rst:15 ../../source/document_importer.rst:90
 msgid "Parameters"
-msgstr ""
+msgstr "Parameetrid"
 
 #: ../../source/document_importer.rst:25
 msgid "**documents**:"
@@ -49,28 +51,36 @@ msgid ""
 "Collection of raw Elasticsearch documents. Each element in the list has "
 "following fields:"
 msgstr ""
+"Elasticsearchi dokumentide kogum. Listi igal elemendil on "
+"järgnevad väljad:"
 
 #: ../../source/document_importer.rst:19
 msgid ""
 "\"_id\": Under which id should Elasticsearch insert the document, without"
 " this Elasticsearch will generate one itself."
 msgstr ""
+"\"_id\": millise id alla Elasticsearch dokumendi paneb. Kui see on puudu,"
+" genereerib Elasticsearch id ise."
 
 #: ../../source/document_importer.rst:21
 msgid ""
 "\"_index\": Under which already existing index should Elasticsearch "
 "insert the document."
 msgstr ""
+"\"_index\": millise juba olemas oleva Elasticsearchi indeksi alla "
+"dokument läheb."
 
 #: ../../source/document_importer.rst:23
 msgid ""
 "\"_type\": Should be the same value as index, specifies the Elasticsearch"
 " doc_type."
 msgstr ""
+"\"_type\": peab olema sama indeksiga sama väärtus, täpsustab Elasticsearchi"
+" doc_type'i."
 
 #: ../../source/document_importer.rst:25
 msgid "\"_source\": Actual content of the document."
-msgstr ""
+msgstr "\"_source\": dokumendi tegelik sisu."
 
 #: ../../source/document_importer.rst:28
 msgid "**split_text_in_fields**:"
@@ -78,47 +88,51 @@ msgstr ""
 
 #: ../../source/document_importer.rst:28
 msgid "Specifies which text fields should be split into smaller pieces."
-msgstr ""
+msgstr "täpsustab, millised tekstiväljad jaotatakse väiksemateks osadeks"
 
 #: ../../source/document_importer.rst:32
 msgid ""
 "If the documents do not have \"_index\" and \"_type\" field, the name of "
 "the index is generated automatically."
 msgstr ""
+"Kui dokumentidel ei ole \"_index\" ja \"_type\" välju, genereeritakse "
+"indeksi nimi automaatselt."
 
 #: ../../source/document_importer.rst:36
 msgid "Examples"
-msgstr ""
+msgstr "Näited"
 
 #: ../../source/document_importer.rst:38
 msgid "Endpoint: **/projects/{project_pk}/document_importer/**"
-msgstr ""
+msgstr "Otspunkt (endpoint): **/projects/{project_pk}/document_importer/**"
 
 #: ../../source/document_importer.rst:40
 msgid "Example with index name added automatically and no splitting:"
-msgstr ""
+msgstr "Näide, kus indeksi nimi lisatakse automaatselt ning tekste ei jaotata mitmeks:"
 
 #: ../../source/document_importer.rst:53
 msgid "Example with given index name and splitting:"
-msgstr ""
+msgstr "Näide, kus indeksi nimi on kaasa antud ning teksti jaotatakse mitmeks:"
 
 #: ../../source/document_importer.rst:67
 msgid "Viewing a document"
-msgstr ""
+msgstr "Dokumendi vaatamine"
 
 #: ../../source/document_importer.rst:69 ../../source/document_importer.rst:79
 msgid ""
 "Endpoint: "
 "**projects/{project_pk}/document_importer/{index_name}/{document_id}/**"
 msgstr ""
+"Otspunkt: "
+"**projects/{project_pk}/document_importer/{index_name}/{document_id}/**"
 
 #: ../../source/document_importer.rst:77
 msgid "Deleting a document"
-msgstr ""
+msgstr "Dokumendi kustutamine"
 
 #: ../../source/document_importer.rst:87
 msgid "Updating split document"
-msgstr ""
+msgstr "Mitmeks jagatud dokumendi uuendamine"
 
 #: ../../source/document_importer.rst:91
 msgid "**id_field**:"
@@ -129,6 +143,8 @@ msgid ""
 "Which field to use as the ID marker to categorize split documents into a "
 "single entity."
 msgstr ""
+"Millist välja kasutada ID markerina, et kategoriseerida mitmeks jagatud dokumente "
+"tagasi üheks üksuseks."
 
 #: ../../source/document_importer.rst:93
 msgid "**id_value**:"
@@ -139,6 +155,8 @@ msgid ""
 "Value of the ID field by which you categorize split documents into a "
 "single entity."
 msgstr ""
+"asendatava dokumendi ID välja "
+"väärtus."
 
 #: ../../source/document_importer.rst:95
 msgid "**text_field**:"
@@ -146,7 +164,7 @@ msgstr ""
 
 #: ../../source/document_importer.rst:96
 msgid "Specifies the name of the text field you wish to update."
-msgstr ""
+msgstr "Täpsustab tekstivälja, mida soovid uuendada"
 
 #: ../../source/document_importer.rst:98
 msgid "**content**:"
@@ -154,15 +172,17 @@ msgstr ""
 
 #: ../../source/document_importer.rst:98
 msgid "New content that the old one will be updated with."
-msgstr ""
+msgstr "Sisu, millega valitud tekstiväli asendatakse"
 
 #: ../../source/document_importer.rst:101
 msgid "Example"
-msgstr ""
+msgstr "Näide"
 
 #: ../../source/document_importer.rst:103
 msgid ""
 "Endpoint: "
 "**projects/{project_pk}/document_importer/{index_name}/update_split**"
 msgstr ""
+"Otspunkt: "
+"**projects/{project_pk}/document_importer/{index_name}/update_split**"
 
