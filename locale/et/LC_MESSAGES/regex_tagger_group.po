@@ -1,0 +1,963 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/regex_tagger_group.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/v2/regex_tagger_group.html>`_ `ET "
+"<https://docs.texta.ee/v2/et/regex_tagger_group.html>`_"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:8
+msgid "Regex Tagger Group"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:10
+msgid ""
+"Regex Tagger Group allows combining multiple `Regex Tagger "
+"<https://docs.texta.ee/v2/regex_tagger.html>`_ models into a group which "
+"can then be used for tagging documents. The resulting tags are formatted "
+"as `Texta Facts <https://docs.texta.ee/v2/terminology.html#fact>`_."
+msgstr ""
+"Regex Tagger Group (Regex Taggerite grupp) on tööriist `Regex Taggeri "
+"<https://docs.texta.ee/v2/regex_tagger.html>`_ mudelite grupeerimiseks, "
+"et neid seejäral andmete märgendamiseks kasutada. Tulemuseks saadud "
+"märgendid on vormindatud `Texta Facts "
+"<https://docs.texta.ee/v2/terminology.html#fact>`_ formaadis."
+
+#: ../../source/regex_tagger_group.rst:12
+msgid ""
+"**API Reference**: `<http://localhost:8000/api/v1/redoc/#tag/projects-"
+"greater-regex_tagger_groups>`_"
+msgstr ""
+"**API viide**: `<http://localhost:8000/api/v1/redoc/#tag/projects-"
+"greater-regex_tagger_groups>`_"
+
+#: ../../source/regex_tagger_group.rst:15
+msgid "Creation"
+msgstr "Loomine"
+
+#: ../../source/regex_tagger_group.rst:18
+msgid ""
+"Regex Tagger Group can be created only if at least one `Regex Tagger "
+"<https://docs.texta.ee/v2/regex_tagger.html>`_ model exists."
+msgstr ""
+"Regex Tagger Groupi on võimalik luua üksnes juhul, kui eksisteerib "
+"vähemalt üks `Regex Taggeri "
+"<https://docs.texta.ee/v2/regex_tagger.html>`_ mudel."
+
+#: ../../source/regex_tagger_group.rst:21
+#: ../../source/regex_tagger_group.rst:272
+#: ../../source/regex_tagger_group.rst:488
+#: ../../source/regex_tagger_group.rst:650
+#: ../../source/regex_tagger_group.rst:829
+msgid "Parameters"
+msgstr "Parameetrid"
+
+#: ../../source/regex_tagger_group.rst:24
+#: ../../source/regex_tagger_group.rst:491
+#: ../../source/regex_tagger_group.rst:653
+#: ../../source/regex_tagger_group.rst:832
+msgid "Input"
+msgstr "Sisend"
+
+#: ../../source/regex_tagger_group.rst:27
+#: ../../source/regex_tagger_group.rst:55
+msgid "**regex_taggers**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:27
+msgid "Regex Tagger models to be added to the group."
+msgstr "Gruppi lisatavad Regex Taggeri mudelid."
+
+#: ../../source/regex_tagger_group.rst:44
+#: ../../source/regex_tagger_group.rst:64
+#: ../../source/regex_tagger_group.rst:275
+msgid "**description**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:30
+msgid ""
+"Name of the Regex Tagger Group, which will also be used as the name of "
+"the tag while tagging the documents. The name can be found in the "
+"following field after tagging:"
+msgstr ""
+"Regex Taggeri Groupi nimi, mida kasutatakse hiljem ühtlasi dokumentide "
+"märgendina. Märgendamise käigus lisatakse Regex Taggeri Groupi nimi "
+"järgnevale väljale:"
+
+#: ../../source/regex_tagger_group.rst:32
+msgid "API:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:38
+msgid "GUI:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:47
+#: ../../source/regex_tagger_group.rst:668
+#: ../../source/regex_tagger_group.rst:838
+msgid "Output"
+msgstr "Väljund"
+
+#: ../../source/regex_tagger_group.rst:49
+msgid "**id**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:49
+msgid "ID of the created Regex Tagger Group"
+msgstr "Loodud Regex Tagger Groupi ID."
+
+#: ../../source/regex_tagger_group.rst:52
+msgid "**url**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:52
+msgid "URL of the created Regex Tagger Group"
+msgstr "Loodud Regex Tagger Groupi URL."
+
+#: ../../source/regex_tagger_group.rst:55
+msgid "IDs of Regex Taggers present in the group."
+msgstr "Gruppi kuuluvate Regex Taggeri mudelite ID-d."
+
+#: ../../source/regex_tagger_group.rst:58
+msgid "**author_username**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:58
+msgid "Creator of the Regex Tagger Group."
+msgstr "Regex Tagger Groupi looja."
+
+#: ../../source/regex_tagger_group.rst:61
+msgid "**task**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:61
+msgid "Celery task connected with the group."
+msgstr "Grupiga seotud Celery protsess."
+
+#: ../../source/regex_tagger_group.rst:64
+msgid "Name of the Regex Tagger Group."
+msgstr "Loodud Regex Tagger Groupi nimi."
+
+#: ../../source/regex_tagger_group.rst:67
+msgid "**tagger_info**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:67
+msgid "Parameters of each Regex Tagger present in the group."
+msgstr "Iga gruppi kuuluva Regex Taggeri mudeli parameetrid."
+
+#: ../../source/regex_tagger_group.rst:70
+#: ../../source/regex_tagger_group.rst:303
+#: ../../source/regex_tagger_group.rst:382
+#: ../../source/regex_tagger_group.rst:435
+#: ../../source/regex_tagger_group.rst:702
+#: ../../source/regex_tagger_group.rst:872
+msgid "GUI"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:72
+msgid ""
+"For creating a new Regex Tagger Group, navigate to `\"Models\" -> \"Regex"
+" Tagger Groups\"` as seen in :numref:`rtg_nav`."
+msgstr ""
+"Uue Regex Tagger Groupi loomiseks navigeeri `\"Models\" -> \"Regex Tagger"
+" Groups\"` nagu kujutatud joonisel :numref:`rtg_nav`."
+
+#: ../../source/regex_tagger_group.rst:79
+msgid "*\"Regex Tagger Group\" navigation*"
+msgstr "*Navigatsioon Regex Tagger Groupini*"
+
+#: ../../source/regex_tagger_group.rst:81
+msgid ""
+"If the navigation is successful, you should see a panel similar to "
+":numref:`rtg_create_button` with the `\"Create\"` button in the top left "
+"corner of the page."
+msgstr ""
+"Eduka navigatsiooni korral peaksid nägema joonisega "
+":numref:`rtg_create_button` sarnast lehekülge, mille ülemises vasaskus "
+"nurgas asub nupp nimega `\"Create\"`."
+
+#: ../../source/regex_tagger_group.rst:88
+msgid "*\"Regex Tagger Group\" creation button*"
+msgstr "*Regex Tagger Groupi loomisnupp*"
+
+#: ../../source/regex_tagger_group.rst:90
+msgid ""
+"Clicking on the `\"Create\"` button opens a modal window with text `\"New"
+" Regex Tagger Group\"` as depicted in :numref:`new_rtg`."
+msgstr ""
+"`\"Create\"` nupule vajutamise tagajärjel avaneb uus aken pealkirjaga "
+"`\"New Regex Tagger Group\"` nagu kujutatud joonisel :numref:`new_rtg`."
+
+#: ../../source/regex_tagger_group.rst:97
+msgid "*Empty \"Regex Tagger Group\" creation view*"
+msgstr "*Täitmata väljadega \"Regex Tagger Group\" loomisaken*"
+
+#: ../../source/regex_tagger_group.rst:99
+msgid ""
+"Name the new Regex Tagger Group by filling in the field `\"Description\"`"
+" and select Regex Tagger models to add to the group from the Regex "
+"Taggers' selection menu below. If finished, click on the `\"Create\"` "
+"button in the bottom right corner of the window "
+"(:numref:`new_rtg_create`)."
+msgstr ""
+"Anna Regex Tagger Groupile nimi sisestades see väljale `\"Description\"` "
+"ning vali gruppi lisatavad Regex Taggeri mudelid mudelite välja`\"Regex "
+"Taggers\"` alt avanevast valikmenüüst. Valitud sisendparameetritega Regex"
+" Taggeri Groupi loomiseks vajuta akna almuses paremas nurgas asuvale "
+"nupule `\"Create\"` (:numref:`new_rtg_create`)."
+
+#: ../../source/regex_tagger_group.rst:106
+msgid "*Filled \"Regex Tagger Group\" creation view*"
+msgstr "*Täidetud väljadega \"Regex Tagger Groupi\" loomisaken*"
+
+#: ../../source/regex_tagger_group.rst:108
+msgid ""
+"The created Regex Tagger Group can now be seen as the first (or only, if "
+"no previous Regex Tagger Groups exist under the project) row in the table"
+" of Regex Tagger Groups (:numref:`rtg_list`)."
+msgstr ""
+"Loodud Regex Tagger Group ilmub nüüd Regex Tagger Groupide tabelisse "
+"(:numref:`rtg_list`)."
+
+#: ../../source/regex_tagger_group.rst:115
+msgid "*List of Regex Tagger Groups.*"
+msgstr "*Nimekiri eksisteerivatest Regex Tagger Groupidest.*"
+
+#: ../../source/regex_tagger_group.rst:119
+#: ../../source/regex_tagger_group.rst:342
+#: ../../source/regex_tagger_group.rst:418
+#: ../../source/regex_tagger_group.rst:457
+#: ../../source/regex_tagger_group.rst:519
+#: ../../source/regex_tagger_group.rst:749
+#: ../../source/regex_tagger_group.rst:911
+msgid "API"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:121
+msgid ""
+"Reference:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_create>`_"
+msgstr ""
+"Viide:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_create>`_"
+
+#: ../../source/regex_tagger_group.rst:123
+msgid "Endpoint **/projects/{project_pk}/regex_tagger_groups/**"
+msgstr "Otspunkt **/projects/{project_pk}/regex_tagger_groups/**"
+
+#: ../../source/regex_tagger_group.rst:125
+#: ../../source/regex_tagger_group.rst:348
+#: ../../source/regex_tagger_group.rst:424
+#: ../../source/regex_tagger_group.rst:463
+#: ../../source/regex_tagger_group.rst:525
+#: ../../source/regex_tagger_group.rst:755
+#: ../../source/regex_tagger_group.rst:917
+msgid "Example:"
+msgstr "Näide:"
+
+#: ../../source/regex_tagger_group.rst:139
+#: ../../source/regex_tagger_group.rst:364
+#: ../../source/regex_tagger_group.rst:551
+#: ../../source/regex_tagger_group.rst:769
+#: ../../source/regex_tagger_group.rst:930
+msgid "Response:"
+msgstr "Vastus:"
+
+#: ../../source/regex_tagger_group.rst:256
+msgid "Usage"
+msgstr "Kasutamine"
+
+#: ../../source/regex_tagger_group.rst:259
+msgid "Apply Tagger Group"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:261
+msgid ""
+"Function `\"Apply Tagger Group\"` enables applying Regex Tagger Group to "
+"one or many datasets indexed in :ref:`Elasticsearch <elasticsearch>`. "
+"Results are added to the field **\"texta_facts\"** accordingly:"
+msgstr ""
+"Funktsioon `\"Apply Tagger Group\"` on mõeldud Regex Tagger Groupi "
+"rakendamiseks :ref:`Elasticsearchis <elasticsearch>` indekseeritud andmestikele. Märgendamise "
+"tulemused kajastuvad väljas **\"texta_facts\"** järgnevalt:"
+
+#: ../../source/regex_tagger_group.rst:275
+msgid "Name of the application task."
+msgstr "Rakendusprotsessi nimi."
+
+#: ../../source/regex_tagger_group.rst:282
+#: ../../source/regex_tagger_group.rst:661
+msgid "**indices**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:278
+msgid ""
+"List of Elasticsearch :ref:`indices <index_concept>` (datasets) onto "
+"which the selected models are applied. NB! Indices should be formatted as"
+" dicts, where key = \"name\" and value = <index_name>, e.g:"
+msgstr ""
+"Elasticsearchis indekseeritud :ref:`indeksid <index_concept>` (andmestikud), millele valitud mudel(id) "
+"rakendada. NB! Admestikud peavad olema vormindatud JSON sõnastikena, "
+"milles võti = \"name\" ja väärtus = <andmestiku_nimi>, nt:"
+
+#: ../../source/regex_tagger_group.rst:285
+#: ../../source/regex_tagger_group.rst:512
+#: ../../source/regex_tagger_group.rst:665
+msgid "**fields**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:285
+#: ../../source/regex_tagger_group.rst:512
+#: ../../source/regex_tagger_group.rst:664
+msgid "List of fields onto which the selected models are applied."
+msgstr "Nimekiri väljadest, millele valitud mudeleid rakendada."
+
+#: ../../source/regex_tagger_group.rst:288
+msgid "**query**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:288
+msgid "Specified Elasticsearch Search :ref:`query <query_concept>`."
+msgstr "Elasticsearci Search :ref:`päring <query_concept>`."
+
+#: ../../source/regex_tagger_group.rst:291
+msgid "**bulk_size**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:291
+msgid "Number of documents processed in one batch."
+msgstr "Ühes partiis töödeldavate dokumentide arv."
+
+#: ../../source/regex_tagger_group.rst:294
+msgid "**max_chunk_bytes**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:294
+msgid "TODO"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:300
+msgid "**regex_tagger_groups**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:297
+msgid "Regex Tagger Groups to apply."
+msgstr "Rakendatavad Regex Tagger Groupid."
+
+#: ../../source/regex_tagger_group.rst:300
+msgid "Only supported in GUI."
+msgstr "Toetatud ainult graafilises kasutajaliideses."
+
+#: ../../source/regex_tagger_group.rst:305
+msgid ""
+"For applying one or multiple Regex Tagger Group(s) to a dataset indexed "
+"in :ref:`Elasticsearch <elasticsearch>`, navigate to `\"Models\" -> "
+"\"Regex Tagger Groups\"` as seen in :numref:`rtg_nav`. Click on the "
+"button `\"Apply Regex Tagger Group\"` as seen in :numref:`rtg_apply`."
+msgstr ""
+"Regex Taggeri Groupi(de) rakendamiseks :ref:`Elasticsearchi <elasticsearch>` indekseeritud "
+"andmestikele, navigeeri `\"Models\" -> \"Regex Tagger Groups\"` nagu "
+"kujutatud joonisel :numref:`rtg_nav`. Vajuta nupule `\"Apply Regex Tagger"
+" Group\"` (:numref:`rtg_apply`)."
+
+#: ../../source/regex_tagger_group.rst:312
+msgid "*\"Apply Regex Tagger Group\" button*"
+msgstr "*Nupp \"Apply Regex Tagger Group\"*"
+
+#: ../../source/regex_tagger_group.rst:314
+msgid ""
+"Clicking on the button opens a new modal window with the title `\"Apply "
+"Regex Tagger Group to indices\"`. Fill the required fields (see also: "
+":ref:`application parameters <rtg_apply_parameters>`). PS! Leave the "
+"field `\"Query\"` empty if you wish to apply the models to all of the "
+"documents in the selected dataset(s). If finished, click on the button "
+"`\"Apply\"` in the bottom right corner of the panel "
+"(:numref:`rtg_apply_window`)."
+msgstr ""
+"Nupule vajutamise tagajärjel avaneb uus modaalaken pealkirjaga `\"Apply "
+"Regex Tagger Group to indices\"`. Täida nõutud väljas (vt. ka: "
+":ref:`parameetrid <rtg_apply_parameters>`). PS! Jäta väli `\"Query\"` "
+"tühjaks, kui soovid mudeleid rakendada kõikidele andmestikus olevatele "
+"dokumentidele. Pärast nõutud väljade täitmist, vajuta akna alumises "
+"paremas nurgas asetsevale nupule `\"Apply\"` "
+"(:numref:`rtg_apply_window`)."
+
+#: ../../source/regex_tagger_group.rst:321
+msgid "*\"Apply Regex Tagger Group\" window*"
+msgstr "*\"Apply Regex Tagger Group\" aken*"
+
+#: ../../source/regex_tagger_group.rst:323
+msgid ""
+"If the application task creation was successful, the Task status of the "
+"selected Regex Tagger Group models should now be `\"created\"` or "
+"`\"running\"` as seen in :numref:`rtg_apply_running`."
+msgstr ""
+"Kui rakendamise protsessi loomine õnnestus, kuvatakse valitud Regex "
+"Tagger Groupi mudeli(te) \"Task\" väljas staatus `\"created\"` või "
+"`\"running\"` nagu kujutatud joonisel :numref:`rtg_apply_running`."
+
+#: ../../source/regex_tagger_group.rst:330
+msgid "*\"Apply Regex Tagger Group\" task has started*"
+msgstr "*\"Apply Regex Tagger Group\" protsess on edukalt loodud*"
+
+#: ../../source/regex_tagger_group.rst:332
+msgid ""
+"If the application process is finished, you can now browse the results in"
+" Search (:numref:`rtg_apply_searcher`). The created tags can be found "
+"from the field `\"texta_facts\"`."
+msgstr ""
+"Pärast märgendamise protsessi lõpule jõudmist, saab tulemusi näha Search "
+"vaates (:numref:`rtg_apply_searcher`). Loodud märgendid asuvad väljal "
+"`\"texta_facts\"`."
+
+#: ../../source/regex_tagger_group.rst:339
+msgid "*\"Apply Regex Tagger Group\" output in Search.*"
+msgstr "*\"Apply Regex Tagger Group\" väljund Search vaates.*"
+
+#: ../../source/regex_tagger_group.rst:344
+msgid ""
+"Reference:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_apply_tagger_group>`_"
+msgstr ""
+"Viide:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_apply_tagger_group>`_"
+
+#: ../../source/regex_tagger_group.rst:346
+msgid ""
+"Endpoint "
+"**/projects/{project_pk}/regex_tagger_groups/{id}/apply_tagger_group/**"
+msgstr ""
+"Otspunkt "
+"**/projects/{project_pk}/regex_tagger_groups/{id}/apply_tagger_group/**"
+
+#: ../../source/regex_tagger_group.rst:373
+msgid "Delete"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:375
+msgid "Function `\"Delete\"` allows deleting existing Regex Tagger Groups."
+msgstr "Funktsioon `\"Delete\"` võimaldab Regex Tagger Groupide kustutamist."
+
+#: ../../source/regex_tagger_group.rst:379
+msgid ""
+"Deleting a Regex Tagger Group **does NOT** delete Regex Tagger models "
+"belonging to the group."
+msgstr ""
+"Regex Tagger Groupi kustutamisel **EI** kustu sellesse kuulunud Regex "
+"Taggeri mudelid."
+
+#: ../../source/regex_tagger_group.rst:384
+msgid ""
+"For deleting a Regex Tagger Group through GUI, navigate to `\"Models\" ->"
+" \"Regex Tagger Groups\"` as seen in :numref:`rtg_nav`. There are two "
+"options for deleting a Regex Tagger Group:"
+msgstr ""
+"Regex Tagger Groupi kustutamiseks navigeeri `\"Models\" -> \"Regex Tagger"
+" Groups\"` nagu kujutatud joonisel :numref:`rtg_nav`. Regex Tagger Groupi"
+" kustutamiseks on kaks võimalust:"
+
+#: ../../source/regex_tagger_group.rst:386
+msgid "**Option 1**:"
+msgstr "**Variant 1:**"
+
+#: ../../source/regex_tagger_group.rst:388
+msgid ""
+"Select the Regex Tagger Group you wish to delete by navigating to the "
+"options panel denoted with three vertical dots and select the option "
+"`\"Delete\"` from the selection menu as seen in :numref:`rtg_delete`."
+msgstr ""
+"Vali Regex Tagger Group, mida soovid kustutada, avades vastava grupi rea "
+"lõpus asuvale kolmele vertikaalsele punktile klikkides valikmenüü. Vali "
+"avanenud menüüst `\"Delete\"` nagu kujutatud joonisel "
+":numref:`rtg_delete`."
+
+#: ../../source/regex_tagger_group.rst:395
+msgid "*Delete a single Regex Tagger Group*"
+msgstr "*Regex Tagger Groupi kustutamine*"
+
+#: ../../source/regex_tagger_group.rst:397
+msgid "**Option 2**:"
+msgstr "**Variant 2:**"
+
+#: ../../source/regex_tagger_group.rst:399
+msgid ""
+"Select the model(s) you wish to delete by clicking on the selection boxes"
+" in front of the Regex Tagger Groups(s). If all the models you wish to "
+"delete are selected, click on the red recycle bin icon beside the "
+"`\"Create\"` button in the top left corner of the page. "
+"(:numref:`rtg_bulk_delete`)."
+msgstr ""
+"Tee märge kõikide mudelite ette, mida kustutada soovid. Seejärel vajuta "
+"lehe ülemises vasakus nurgas asuvale punasele prügikastiikooniile Regex "
+"Tagger Groupi mudelite tabeli kohal. (:numref:`rtg_bulk_delete`)."
+
+#: ../../source/regex_tagger_group.rst:406
+msgid "*Bulk delete Regex Tagger Group(s)*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:408
+msgid ""
+"After following all the previously described steps (for either of the two"
+" options), the interface should now ask your confirmation for finishing "
+"the process (:numref:`rtg_delete_confirm`). Agree by clicking on the "
+"button `\"Delete\"`."
+msgstr ""
+"Pärast emma-kumma versiooni eelkirjeldatud sammude läbimist küsitakse "
+"enne mudeli(te) lõplikku kustutamist kasutajalt kinnitust "
+"(:numref:`rtg_delete_confirm`). Vajuta protsessi lõpuleviimiseks "
+"kinnituskanas nupule `\"Delete\"`."
+
+#: ../../source/regex_tagger_group.rst:415
+msgid "*Delete Regex Tagger Group(s) confirmation*"
+msgstr "*Regex Tagger Groupi(de) kustutamise kinnitusaken.*"
+
+#: ../../source/regex_tagger_group.rst:420
+msgid ""
+"Reference: "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_delete>`_"
+msgstr ""
+"Viide: "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_delete>`_"
+
+#: ../../source/regex_tagger_group.rst:422
+#: ../../source/regex_tagger_group.rst:461
+msgid "Endpoint **/projects/{project_pk}/regex_tagger_groups/{id}/**"
+msgstr "Otspunkt **/projects/{project_pk}/regex_tagger_groups/{id}/**"
+
+#: ../../source/regex_tagger_group.rst:432
+msgid "Edit"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:437
+msgid ""
+"For editing an existing Regex Tagger Group, select the Regex Tagger Group"
+" you wish to edit and navigate to the options panel by clicking on the "
+"three vertical dots at the end of the Regex Tagger Group row. Select the "
+"option `\"Edit\"` as seen in :numref:`rtg_edit`."
+msgstr ""
+"Regex Tagger Groupi muutmiseks navigeeri vastava grupi valikmenüüle "
+"vajutades kolmele vertikaalsele punktile valitud Regex Tagger Groupi rea "
+"lõpus. Vali avanenud menüüst `\"Edit\"` nagu kujutatud joonisel "
+":numref:`rtg_edit`."
+
+#: ../../source/regex_tagger_group.rst:445
+msgid "*Regex Tagger Group -> Edit*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:447
+msgid ""
+"Clicking on the option opens a new modal window with text `\"Edit Regex "
+"Tagger Group\"`. Make your modifications and click  on the `\"Apply\"` "
+"button in the bottom right corner of the modal window for finishing the "
+"process (:numref:`rtg_edit_window`.)"
+msgstr ""
+"Valiku sooritamise tagajärjel avaneb uus aken pealkirjaga `\"Edit Regex "
+"Tagger Group\"`. Tee soovitud muudatused ning vajuta nende jõustumiseks "
+"akna alumises paremas nurgas asuvale nupule `\"Apply\"` "
+"(:numref:`rtg_edit_window`)."
+
+#: ../../source/regex_tagger_group.rst:454
+msgid "*\"Edit Regex Tagger Group\" window*"
+msgstr "*Muutmisaken \"Edit Regex Tagger Group\"*"
+
+#: ../../source/regex_tagger_group.rst:459
+msgid ""
+"Reference:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_update>`_"
+msgstr ""
+"Viide:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_update>`_"
+
+#: ../../source/regex_tagger_group.rst:476
+msgid "Multitag Docs"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:478
+msgid ""
+"Function `\"Multitag Docs\"` enables tagging one or many documents with "
+"multiple Regex Tagger Group models at once. Results are added to the "
+"field **\"texta_facts\"** accordingly:"
+msgstr ""
+"Funktsioon `\"Multitag Docs\"` võimaldab mitme Regex Taggeri Groupi "
+"üheaegset rakendamist etteantud dokumentidele. Iga dokumendi märgendid "
+"kajastuvad vastavale dokumendile lisatud väljas **\"texta_facts\"** "
+"järgneva loogika alusel:"
+
+#: ../../source/regex_tagger_group.rst:509
+msgid "**docs**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:494
+msgid "Documents to tag as a list of JSON dicts, e.g:"
+msgstr "Märgendatavad dokumendid vormindatud JSON sõnastikuna, nt:"
+
+#: ../../source/regex_tagger_group.rst:516
+msgid "**tagger_groups**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:515
+msgid "List of the Regex Tagger Group ID-s to use for tagging."
+msgstr "Nimekiri märgendamiseks kasutatavate Regex Tagger Groupide ID-dest."
+
+#: ../../source/regex_tagger_group.rst:521
+msgid ""
+"Reference:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_multitag_docs>`_"
+msgstr ""
+"Viide:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_multitag_docs>`_"
+
+#: ../../source/regex_tagger_group.rst:523
+msgid "Endpoint **/projects/{project_pk}/regex_tagger_groups/multitag_docs/**"
+msgstr "Otspunkt **/projects/{project_pk}/regex_tagger_groups/multitag_docs/**"
+
+#: ../../source/regex_tagger_group.rst:645
+msgid "Tag Random Doc"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:647
+msgid ""
+"Function `\"Tag Random Doc\"` provides support for testing a Regex Tagger"
+" Group on a randomly selected document from a certain predefined dataset."
+msgstr ""
+"Funktsioon `\"Tag Random Doc\"` võimaldab loodud Regex Tagger Groupe "
+"testida kindlaks määratud andmestikust juhuslikult valitud dokumendi "
+"märgendamisega."
+
+#: ../../source/regex_tagger_group.rst:656
+msgid ""
+"List of Elasticsearch indices (dataset) onto which the selected models "
+"are applied. NB! Indices should be formatted as dicts, where key = "
+"\"name\" and value = <index_name>, e.g:"
+msgstr ""
+"Nimekiri Elasticsearchis indekseeritud andmestikest, millele mudeleid "
+"rakendada. NB! Andmestikud peavad olema vormindatud JSON sõnastikuna, "
+"milles võti = \"name\" ja väärtus = <indeksi_nimi>, nt:"
+
+#: ../../source/regex_tagger_group.rst:671
+#: ../../source/regex_tagger_group.rst:841
+msgid "**tagger_group_id**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:671
+#: ../../source/regex_tagger_group.rst:841
+msgid "ID of the Regex Tagger Group used for tagging."
+msgstr "Märgendamiseks kasutatatud Regex Tagger Groupi ID."
+
+#: ../../source/regex_tagger_group.rst:674
+#: ../../source/regex_tagger_group.rst:844
+msgid "**tagger_group_tag**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:674
+#: ../../source/regex_tagger_group.rst:844
+msgid ""
+"Name of the Regex Tagger Group used for tagging, i.e. Regex Tagger Group "
+"description."
+msgstr ""
+"Märgendamiseks kasutatud Regex Tagger Groupi nimi (ehk Regex Tagger "
+"Groupi `description` väärtus)."
+
+#: ../../source/regex_tagger_group.rst:677
+#: ../../source/regex_tagger_group.rst:847
+msgid "**result**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:677
+#: ../../source/regex_tagger_group.rst:847
+msgid "Boolean value indicating if any matches were detected."
+msgstr ""
+"Binaarväärtus, mis väljendab, kas dokumendile leiti valitud mudelitega "
+"märgendeid või mitte."
+
+#: ../../source/regex_tagger_group.rst:680
+msgid "**document**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:680
+msgid "The randomly selected document."
+msgstr "Juhuslikult valitud dokument."
+
+#: ../../source/regex_tagger_group.rst:699
+#: ../../source/regex_tagger_group.rst:869
+msgid "**matches**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:683
+#: ../../source/regex_tagger_group.rst:853
+msgid "Detected matches in the \"texta_facts\" format."
+msgstr "Leitud märgendid \"texta_facts\" formaadis."
+
+#: ../../source/regex_tagger_group.rst:686
+#: ../../source/regex_tagger_group.rst:856
+msgid "**fact**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:686
+#: ../../source/regex_tagger_group.rst:856
+msgid "Name of the Regex Tagger Group (same as corresponding tagger_group_tag)."
+msgstr ""
+"Regex Tagger Groupi nimi (sama, mis parameetri `tagger_group_tag` "
+"väärtus)."
+
+#: ../../source/regex_tagger_group.rst:689
+#: ../../source/regex_tagger_group.rst:859
+msgid "**str_val**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:689
+#: ../../source/regex_tagger_group.rst:859
+msgid "Name of the Regex Tagger model."
+msgstr "Regex Taggeri mudeli nimi."
+
+#: ../../source/regex_tagger_group.rst:692
+#: ../../source/regex_tagger_group.rst:862
+msgid "**doc_path**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:692
+msgid "Name of the field from where the match was detected."
+msgstr "Välja nimi, kust märgend tuvastati."
+
+#: ../../source/regex_tagger_group.rst:695
+#: ../../source/regex_tagger_group.rst:865
+msgid "**spans**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:695
+msgid "Position of the detected match in the input field."
+msgstr "Tuvastatud märgendi aktiveerinud mustri asukoht tekstis."
+
+#: ../../source/regex_tagger_group.rst:699
+#: ../../source/regex_tagger_group.rst:869
+msgid "**source**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:698
+#: ../../source/regex_tagger_group.rst:868
+msgid ""
+"Dict given as JSON string containing corresponding Regex Tagger Group ID "
+"and Regex Tagger ID."
+msgstr ""
+"JSON string formaadis sõnastik võtmetega Regex Tagger Group ID ja Regex "
+"Tagger ID."
+
+#: ../../source/regex_tagger_group.rst:704
+msgid ""
+"For tagging a random document with an existing Regex Tagger Group model, "
+"navigate to `\"Models\" -> \"Regex Tagger Groups\"` as seen in "
+":numref:`rtg_nav`. Select the model you wish to use and navigate to the "
+"options panel denoted with three vertical dots. Select the option \"Tag "
+"Random Doc\" from the selection menu as seen in :numref:`rtg_random_doc`."
+msgstr ""
+"Juhusliku dokumendi märgendamiseks Regex Tagger Group mudeliga navigeeri "
+"`\"Models\" -> \"Regex Tagger Groups\"` nagu kujutatud joonisel "
+":numref:`rtg_nav`. Vali mudel, mida märgendamiseks kasutada ning ava "
+"vastava mudeli valikmenüü vajutades mudeli rea lõpus olevale kolmele "
+"vertikaalsele punktile. Vali avanenud menüüst \"Tag \"Random Doc\" nagu "
+"kujutatud joonisel :numref:`rtg_random_doc`."
+
+#: ../../source/regex_tagger_group.rst:711
+msgid "*\"Tag Random Doc\" option in the selection menu*"
+msgstr "*\"Tag Random Doc\" valikmenüüs*"
+
+#: ../../source/regex_tagger_group.rst:714
+msgid ""
+"Selecting the option opens a new modal window with the title `\"Tag "
+"Random Doc\"`. Select the index or indices you wish to use from the "
+"`\"Indices\"` selection menu displayed in the window after clicking on "
+"the corresponding section and select the field(s) you wish to use from "
+"the `\"Select Fields\"` selection menu below. If finished, click on the "
+"button `\"Tag\"` in the bottom right corner of the panel "
+"(:numref:`rtg_tag_random_doc_tag`)."
+msgstr ""
+"Nupule vajutamise tagajärjel avaneb uus aken pealkirjaga `\"Tag Random "
+"Doc\"`. Vali menüüst pealkirjaga `\"Indices\"` andmestik(ud), mille seast"
+" juhuslik dokument valida  ning menüüst pealkirjaga `\"Select Fields\"` "
+"dokumendi väljad, mida märgendamiseks kasutada. Seejärel vajuta akna "
+"alumises paremas nurgas asuvale nupule `\"Tag\"` "
+"(:numref:`rtg_tag_random_doc_tag`)."
+
+#: ../../source/regex_tagger_group.rst:721
+msgid "*Regex Tagger Group \"Tag Random Doc\" window.*"
+msgstr "*\"Tag Random Doc\" aken enne märgendamist.*"
+
+#: ../../source/regex_tagger_group.rst:723
+msgid ""
+"The results are displayed in the same modal window as seen in "
+":numref:`rtg_tag_random_output` if any matches were detected. If no "
+"matches where found, the text `\"No matches found\"` is displayed as seen"
+" in :numref:`rtg_tag_random_neg_output`."
+msgstr ""
+"Märgendamise tulemused kuvatakse samas aknas. Joonis "
+":numref:`rtg_tag_random_output` kujutab positiivset märgendamise tulemust"
+" (juhuslikult valitud dokumendist leiti valitud mudeliga märgendid). "
+"Joonis :numref:`rtg_tag_random_neg_output` kujutab negatiivset "
+"märgendamise tulemust (juhuslikult valitud dokumendist valitud mudeliga "
+"märgendeid ei tuvastatud)."
+
+#: ../../source/regex_tagger_group.rst:730
+msgid "*\"Tag Random Doc\" positive output*"
+msgstr "*\"Tag Random Doc\" positiivne tulemus*"
+
+#: ../../source/regex_tagger_group.rst:737
+msgid "*\"Tag Random Doc\" negative output*"
+msgstr "*\"Tag Random Doc\" negatiivne tulemus*"
+
+#: ../../source/regex_tagger_group.rst:739
+msgid ""
+"PS! The fields in the document not selected by the user and/or not "
+"containing any matches are by default collapsed, but you can view their "
+"content by clicking on the arrow icon at the end of each field "
+"(:numref:`rtg_tag_random_doc_other_fields`.)"
+msgstr ""
+"PS! Dokumendi väljad, mida kasutaja märgendamiseks ei valinud või kust "
+"märgendeid ei leitud, on vaikimisi suletud. Soovi korral on neid võimalik"
+" aga avada klikkides nooleikoonil vastava välja sektsiooni lõpus "
+"(:numref:`rtg_tag_random_doc_other_fields`)."
+
+#: ../../source/regex_tagger_group.rst:746
+msgid "*\"Tag Random Doc\" collapsing/uncollapsing fields.*"
+msgstr "*\"Tag Random Doc\" väljade avamine ja sulgemine.*"
+
+#: ../../source/regex_tagger_group.rst:751
+msgid ""
+"Reference:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_random_doc>`_"
+msgstr ""
+"Viide:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_random_doc>`_"
+
+#: ../../source/regex_tagger_group.rst:753
+msgid ""
+"Endpoint "
+"**/projects/{project_pk}/regex_tagger_groups/{id}/tag_random_doc/**"
+msgstr ""
+"Otspunkt "
+"**/projects/{project_pk}/regex_tagger_groups/{id}/tag_random_doc/**"
+
+#: ../../source/regex_tagger_group.rst:824
+msgid "Tag Text"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:826
+msgid ""
+"Function `\"Tag Text\"` enables tagging a single text with a selected "
+"Regex Tagger Group by applying all the models belonging in the group to "
+"the selected text."
+msgstr ""
+"Funktsioon `\"Tag Text\"` võimaldab üksiku teksti märgendamist valitud "
+"Regex Tagger Groupi kuuluvate Regex Tagger mudelitega."
+
+#: ../../source/regex_tagger_group.rst:835
+#: ../../source/regex_tagger_group.rst:850
+msgid "**text**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:835
+msgid "Text to tag."
+msgstr "Märgendatav tekst."
+
+#: ../../source/regex_tagger_group.rst:850
+msgid "Input text."
+msgstr "Sisendtekst."
+
+#: ../../source/regex_tagger_group.rst:862
+msgid ""
+"Name of the field from where the match was detected. Always \"text\" in "
+"the current endpoint."
+msgstr "Välja nimi, kust märgendid tuvastati. Antud juhul alati \"text\"."
+
+#: ../../source/regex_tagger_group.rst:865
+msgid "Position of the detected match in the text."
+msgstr "Tuvastatud märgendi aktiveerinud mustri asukoht tekstis."
+
+#: ../../source/regex_tagger_group.rst:874
+msgid ""
+"For tagging a text with an existing Regex Tagger Group model, navigate to"
+" `\"Models\" -> \"Regex Tagger Groups\"` as seen in :numref:`rtg_nav`. "
+"Select the model you wish to use and navigate to the options panel "
+"denoted with three vertical dots. Select option \"Tag Text\" from the "
+"selection menu as seen in :numref:`rtg_tag_text`."
+msgstr ""
+"Teksti märgendamiseks Regex Tagger Group mudeliga navigeeri `\"Models\" "
+"-> \"Regex Tagger Groups\"` nagu kujutatud joonisel :numref:`rtg_nav`. "
+"Vali mudel, mida märgendamiseks kasutada soovid ning ava valikmenüü "
+"vajutades kolmele vertikaalsele punktile valitud mudeli rea lõpus. Vali "
+"avanenud menüüst \"Tag Text\" nagu kujutatud joonisel "
+":numref:`rtg_tag_text`."
+
+#: ../../source/regex_tagger_group.rst:881
+msgid "*\"Tag Text\" option in the selection menu*"
+msgstr "*\"Tag Text\" valikmenüüs*"
+
+#: ../../source/regex_tagger_group.rst:884
+msgid ""
+"Selecting the option opens a new modal window with the title `\"Tag "
+"Text\"`. Insert the text you wish to tag and click on the button "
+"`\"Tag\"` in the bottom right corner of the panel "
+"(:numref:`rtg_tag_text_filled`)."
+msgstr ""
+"Nupule vajutamise tagajärjel avaneb uus aken pealkirjaga `\"Tag Text\"`. "
+"Sisesta tekst, mida märgendada, ning vajuta akna alumises paremas nurgas "
+"asuvale nupule `\"Tag\"` (:numref:`rtg_tag_text_filled`)."
+
+#: ../../source/regex_tagger_group.rst:891
+msgid "*Regex Tagger Group \"Tag Text\" window.*"
+msgstr "*Teksti märgendamise aken \"Tag Text\".*"
+
+#: ../../source/regex_tagger_group.rst:893
+msgid ""
+"The results are displayed in the same modal window as seen in "
+":numref:`rtg_tag_text_output`, if any matches where detected. If no "
+"matches where found, the text `\"No matches found\"` is displayed as seen"
+" in :numref:`rtg_tag_text_neg_output`."
+msgstr ""
+"Tulemused kuvatakse samas aknas. Joonis :numref:`rtg_tag_text_output` "
+"kujutab positiivset märgendamise tulemust (tekstist leiti valitud "
+"mudeliga märgendid) ja joonis :numref:`rtg_tag_text_neg_output` kujutab "
+"negatiivset märgendamise tulemust (tekstist valitud mudeliga märgendeid "
+"ei leitud)."
+
+#: ../../source/regex_tagger_group.rst:900
+msgid "*\"Tag Text\" positive output*"
+msgstr "*\"Tag Text\" positiivne tulemus*"
+
+#: ../../source/regex_tagger_group.rst:907
+msgid "*\"Tag Text\" negative output*"
+msgstr "*\"Tag Text\" negatiivne tulemus*"
+
+#: ../../source/regex_tagger_group.rst:913
+msgid ""
+"Reference:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_text>`_"
+msgstr ""
+"Viide:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_text>`_"
+
+#: ../../source/regex_tagger_group.rst:915
+msgid "Endpoint **/projects/{project_pk}/regex_tagger_groups/{id}/tag_text/**"
+msgstr "Otspunkt **/projects/{project_pk}/regex_tagger_groups/{id}/tag_text/**"
+
+#~ msgid "*\"Tag Text\" negatiivne tulemus*"
+#~ msgstr ""
+

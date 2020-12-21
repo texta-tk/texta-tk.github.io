@@ -1,0 +1,338 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/use_cases.rst:1
+msgid ""
+"`EN <https://www.youtube.com/watch?v=dc2Z7CL4Cv0>`_ `ET "
+"<https://www.youtube.com/watch?v=dQw4w9WgXcQ>`_"
+msgstr ""
+
+#: ../../source/use_cases.rst:6
+msgid "Use Cases"
+msgstr ""
+
+#: ../../source/use_cases.rst:8
+msgid ""
+"This chapter describes how to use Texta Toolkit's different tools to "
+"answer some research questions."
+msgstr ""
+
+#: ../../source/use_cases.rst:11
+msgid "How to search for a topic if you don't know enough topic words?"
+msgstr ""
+
+#: ../../source/use_cases.rst:12
+msgid ""
+"Research question: *What is the frequency of sport-related documents "
+"through time?\"*"
+msgstr ""
+
+#: ../../source/use_cases.rst:14 ../../source/use_cases.rst:83
+#: ../../source/use_cases.rst:122
+msgid "Pre-requirements:"
+msgstr ""
+
+#: ../../source/use_cases.rst:16 ../../source/use_cases.rst:85
+#: ../../source/use_cases.rst:124
+msgid ""
+"A :ref:`project <project_concept>` with the sputnik newspaper articles "
+"dataset is :ref:`created <project>`."
+msgstr ""
+
+#: ../../source/use_cases.rst:17 ../../source/use_cases.rst:86
+#: ../../source/use_cases.rst:125
+msgid "This project is active (chosen on the upper panel in the right)."
+msgstr ""
+
+#: ../../source/use_cases.rst:20
+msgid "Train an embedding"
+msgstr ""
+
+#: ../../source/use_cases.rst:22
+msgid ""
+"Go to Models > Embeddings. Click on \"CREATE\" in the top-left. Create an"
+" :ref:`Embedding <embedding_concept>` (:numref:`embedding_pic`). Read "
+"more about the creating parameters :ref:`here <create_embedding>`."
+msgstr ""
+
+#: ../../source/use_cases.rst:27
+msgid "*Creating an embedding for sputnik*"
+msgstr ""
+
+#: ../../source/use_cases.rst:29
+msgid ""
+"This step might take a while. After the :ref:`embedding "
+"<embedding_concept>` model is trained, the Lexicon Miner can be used."
+msgstr ""
+
+#: ../../source/use_cases.rst:32
+msgid "Use Lexicon Miner"
+msgstr ""
+
+#: ../../source/use_cases.rst:34
+msgid ""
+"Use the :ref:`Lexicon Miner <lexiconminer>` for mining other words than "
+"just \"sport\"."
+msgstr ""
+
+#: ../../source/use_cases.rst:39
+msgid "*Providing some seed words for before hitting \"New Suggestions\"*"
+msgstr ""
+
+#: ../../source/use_cases.rst:41
+msgid ""
+"Provide some seedwords (example in :numref:`miner`), hit \"New "
+"Suggestions\", click on suitable terms and repeat as long as the "
+"suggestions contain suitable terms. Then hit \"Save\"."
+msgstr ""
+
+#: ../../source/use_cases.rst:44
+msgid "Search"
+msgstr ""
+
+#: ../../source/use_cases.rst:46
+msgid ""
+"Go to the Search page. As this example :ref:`embedding "
+"<embedding_concept>` was trained on lemmas :ref:`field <field_concept>`, "
+"choose the same field in the Advanced Search. Click on \"Add lexicon\" "
+"button and choose the saved lexicon."
+msgstr ""
+
+#: ../../source/use_cases.rst:51
+msgid "*Add lexicon for the search constraint*"
+msgstr ""
+
+#: ../../source/use_cases.rst:53
+msgid ""
+"Choose the operator \"or\". Match stays default (\"Phrase prefix\") and "
+"Slop also (\"0\"). Click on Search."
+msgstr ""
+
+#: ../../source/use_cases.rst:55
+msgid "You now have more results than just searching the term \"sport\"!"
+msgstr ""
+
+#: ../../source/use_cases.rst:58
+msgid "Bonus: aggregate over time"
+msgstr ""
+
+#: ../../source/use_cases.rst:60
+msgid "Research question: *When are sport-related articles published?*"
+msgstr ""
+
+#: ../../source/use_cases.rst:62
+msgid ""
+"In order to aggregate the documents over time, open the Aggregations "
+"panel and choose the date :ref:`field <field_concept>` (in Texta date "
+"format). Configure other options as shown in :numref:`aggregate_sport` or"
+" leave them as default. Click on \"Aggregate\"."
+msgstr ""
+
+#: ../../source/use_cases.rst:67
+msgid "*Active sport-topic search results' aggregation over date field*"
+msgstr ""
+
+#: ../../source/use_cases.rst:69
+msgid ""
+"The aggregation outputs a line chart with the results. The X-axis is the "
+"raw frequency, Y-axis is the date."
+msgstr ""
+
+#: ../../source/use_cases.rst:74
+msgid ""
+"*Line chart of sport-related articles from 1th of January 2011 to 1th of "
+"January 2015*"
+msgstr ""
+
+#: ../../source/use_cases.rst:76
+msgid ""
+"You can see that most sport-related articles are published in August 2012"
+" and February 2014. These, surprise-surprise, overlap with the times of "
+"Summer Olympics (27th of July to 12th of August 2012) and Winter Olympics"
+" (7th of February to 23rd of February 2014)."
+msgstr ""
+
+#: ../../source/use_cases.rst:79
+msgid "When is this term most frequently used?"
+msgstr ""
+
+#: ../../source/use_cases.rst:81
+msgid ""
+"Research question: *How frequent are the terms \"communism\" and "
+"\"communists\" in Sputnik through time?*"
+msgstr ""
+
+#: ../../source/use_cases.rst:87
+msgid ":ref:`Searcher <searcher>` is open."
+msgstr ""
+
+#: ../../source/use_cases.rst:90
+msgid "Search term(s)"
+msgstr ""
+
+#: ../../source/use_cases.rst:92
+msgid ""
+"Click on \"Advanced search\" and choose the :ref:`field <field_concept>` "
+"with the content in it (\"article_text\"). :numref:`search_communism` "
+"describes the search constraint for finding documents with words that "
+"start with \"communis\" (e.g \"communism\", \"communist\", "
+"\"communists\") - operator is \"and\" or \"or\", match is \"Phrase "
+"prefix\" and there is no slop. Click on \"Search\"."
+msgstr ""
+
+#: ../../source/use_cases.rst:97
+msgid "*Search constraint for finding communism-related articles*"
+msgstr ""
+
+#: ../../source/use_cases.rst:99
+msgid ""
+"Now the table displays all the documents that the searcher with this "
+"constraint filtered out. This search result is now *active*. If you want,"
+" you can save it for later, but as the Aggregation works on active "
+"searches, leave it as it is."
+msgstr ""
+
+#: ../../source/use_cases.rst:102
+msgid "Aggregate over time"
+msgstr ""
+
+#: ../../source/use_cases.rst:104
+msgid ""
+"To aggregate the documents over time, open the Aggregations panel and "
+"choose the date :ref:`field <field_concept>` (in Texta date format). "
+"Other options can be left as they are. Click on \"Aggregate\"."
+msgstr ""
+
+#: ../../source/use_cases.rst:109
+msgid "*Active search results' aggregation over date field*"
+msgstr ""
+
+#: ../../source/use_cases.rst:111
+msgid ""
+"The aggregation outputs a line chart with the results. The X-axis is the "
+"raw frequency, Y-axis is the date (you can change the unit on the "
+"Aggregation panel under Interval)."
+msgstr ""
+
+#: ../../source/use_cases.rst:113
+msgid "See more aggregating examples under :ref:`Search <aggregations>`."
+msgstr ""
+
+#: ../../source/use_cases.rst:117
+msgid "Does my new document belong to this subset?"
+msgstr ""
+
+#: ../../source/use_cases.rst:119
+msgid ""
+"Goal: *To train a classifier that detects whether a certain document "
+"belongs to the chosen subset of documents or not*"
+msgstr ""
+
+#: ../../source/use_cases.rst:128
+msgid "Create a subset of positive documents"
+msgstr ""
+
+#: ../../source/use_cases.rst:130
+msgid ""
+"When the user already has the dataset tagged in some way (dataset "
+"contains a certain Tag field with the tag, for example), they can use the"
+" Searcher to filter the tagged documents out as the positive examples and"
+" save it."
+msgstr ""
+
+#: ../../source/use_cases.rst:132
+msgid ""
+"When the dataset does not already contain the tagged documents, the user "
+"can train an :ref:`embedding <embedding_concept>` and use the Lexicon "
+"Miner and/or the Searcher for creating some theme-related subset. There "
+"is an example of that in the first use case above."
+msgstr ""
+
+#: ../../source/use_cases.rst:134
+msgid ""
+"This use case follows the first scenario and saves a subset of documents "
+"with \"Middle East\" in its rubric field (see "
+":numref:`search_middleeast`). These will be positive examples similar to "
+"which the trained tagger later on tags also as positive. The user saves "
+"the search via floppy disk icon near the Current Search panel."
+msgstr ""
+
+#: ../../source/use_cases.rst:139
+msgid ""
+"*Search constraint for finding articles with \"Middle East\" in the "
+"rubric field*"
+msgstr ""
+
+#: ../../source/use_cases.rst:142
+msgid "Train the classifier"
+msgstr ""
+
+#: ../../source/use_cases.rst:144
+msgid ""
+"Under Models > :ref:`Taggers <tagger>` a classifier (tagger) can be "
+"trained. User clicks on the \"CREATE\" button in the top left and chooses"
+" suitable parameters in the pop-up window. The saved search is chosen as "
+"the :ref:`query <query_concept>`. Fields \"article_text_mlp.text\" and "
+"\"title\" will be just concatenated together. User can test different "
+"vectorizers and classifiers and their parameters by training different "
+"classifiers with the same positive dataset or leave them default."
+msgstr ""
+
+#: ../../source/use_cases.rst:149
+msgid "*Creating a classifier for tagging Middle East-related articles*"
+msgstr ""
+
+#: ../../source/use_cases.rst:151
+msgid ""
+"After hitting the \"Create\"-button (scroll down a bit if necessary) all "
+"left to do is to wait a bit until the classifier finishes training."
+msgstr ""
+
+#: ../../source/use_cases.rst:154
+msgid "Test the classifier"
+msgstr ""
+
+#: ../../source/use_cases.rst:156
+msgid ""
+"The easiest way to quickly test the new classifier is to use \"tag random"
+" doc\" under the three dots under Actions. This takes a random document "
+"from the dataset and outputs the tagger's result and probability of that "
+"result being correct."
+msgstr ""
+
+#: ../../source/use_cases.rst:161
+msgid "*Tag random doc*"
+msgstr ""
+
+#: ../../source/use_cases.rst:166
+msgid "*Random doc is not Middle East themed and tagger outputs correctly False*"
+msgstr ""
+
+#: ../../source/use_cases.rst:171
+msgid "*Random doc is Middle East themed and tagger outputs correctly True*"
+msgstr ""
+
+#: ../../source/use_cases.rst:173
+msgid ""
+"User can also paste their text into \"tag text\" box for classification "
+"or use the new tagger via API. Read more about these options :ref:`here "
+"<tagger_usage>`."
+msgstr ""
+

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-22 12:14+0300\n"
+"POT-Creation-Date: 2020-10-01 19:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/uaa.rst:5
-msgid "Authenticating Toolkit through CloudFoundry UAA"
+msgid "Third-Party Authentication"
 msgstr ""
 
 #: ../../source/uaa.rst:7
@@ -299,12 +299,4 @@ msgid ""
 "https://docs.cloudfoundry.org/api/uaa/version/74.24.0/index.html#refresh-"
 "token"
 msgstr ""
-
-#~ msgid ""
-#~ "`In English <https://docs.texta.ee/uua.html>`_ "
-#~ "`eesti keeles <https://docs.texta.ee/et/uua.html>`_"
-#~ msgstr ""
-
-#~ msgid "Figure 1. *Log In With CloudFoundry Screen on the Angular Front-end*"
-#~ msgstr ""
 

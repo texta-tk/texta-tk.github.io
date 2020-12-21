@@ -16,14 +16,14 @@ Installation Using Docker (recommended)
 Install Docker
 ++++++++++++++
 
-The easiest way to run TEXTA Toolkit is to use our prebuilt Docker images from our registries. For doing so, one needs to install *Docker* and *docker-compose*:
+The easiest way to run TEXTA Toolkit is to use prebuilt Docker images from TEXTA registries. For doing so, one needs to install *Docker* and *docker-compose*:
 
 .. code-block:: bash
 
     sudo apt-get update
     sudo apt-get install docker docker-compose -y
 
-To run Elasticsearch in Docker, we need to increase maximum map count parameter for virtual memory:
+To run :ref:`Elasticsearch <elasticsearch>` in Docker, one needs to increase maximum map count parameter for virtual memory:
 
 .. code-block:: bash
 
@@ -32,18 +32,18 @@ To run Elasticsearch in Docker, we need to increase maximum map count parameter 
 Configure docker-compose
 ++++++++++++++++++++++++
 
-We are using *docker-compose* to build an ecosystem of services to support our needs. This is all defined in a file called **docker-compose.yaml**.
-To successfully run TEXTA Toolkit we need to define following services:
+The ecosystem is built using *docker-compose*. This is all defined in a file called **docker-compose.yaml**.
+To successfully run TEXTA Toolkit one needs to define following services:
 
-* Elasticsearch for storing the documents (one can also run it without Docker)
+* :ref:`Elasticsearch <elasticsearch>` for storing the documents (one can also run it without Docker)
 
 * Redis for managing message queues in TK (one can also run it without Docker)
 
-* MySQL or Postgres for storing user and project data (can also be run without Docker)
+* MySQL or Postgres for storing user and :ref:`project <project_concept>` data (can also be run without Docker)
 
-* TEXTA Toolkit RESTful API for backend: docker.texta.ee/texta/texta-rest:latest
+* TEXTA Toolkit RESTful API & GUI: docker.texta.ee/texta/texta-rest:latest
 
-For executing aforementioned services we have preconfigured an example **docker-compose.yaml** file:
+For executing aforementioned services one needs to have preconfigured **docker-compose.yaml** file:
 
 .. literalinclude:: files/docker-compose.yaml
 
@@ -55,14 +55,13 @@ Run TEXTA Toolkit
 +++++++++++++++++
 
 .. note::
-    Before running TEXTA Toolkit, we should have 2 files in our current working directory:
+    Before running TEXTA Toolkit, one should have 2 files in current working directory:
 
     * docker-compose.yaml
 
     * env
 
-With the **docker-compose.yaml** and **env** files present and accounted for,
-let's pull the images and start the services by executing the following commands in the same directory with **docker-compose.yaml** and **env**:
+With the **docker-compose.yaml** and **env** files present and accounted for, pull the images and start the services by executing the following commands in the same directory with **docker-compose.yaml** and **env**:
 
 .. code-block:: bash
 
@@ -105,8 +104,8 @@ If you want to develop TEXTA Toolkit, want more control over how you run it, or 
 Install Miniconda
 +++++++++++++++++
 
-First we need to download and install Miniconda to manage Python environments.
-We choose Miniconda over Anaconda because it's smaller in size, but Toolkit works well with both.
+First one needs to download and install Miniconda to manage Python environments.
+Miniconda is chosen over Anaconda because it's smaller in size, but Toolkit works well with both.
 
 .. code-block:: bash
 
@@ -132,7 +131,7 @@ Now, let's clone the repository and move to **texta-rest** direcory:
 Build the Environment
 ++++++++++++++++++++++
 
-Now that we have **environment.yaml** file from the texta-rest repository, let's use it to build the environment.
+Now that **environment.yaml** file from the texta-rest repository is present, let's use it to build the environment.
 After the environment is built, let's activate it:
 
 .. code-block:: bash
@@ -172,3 +171,21 @@ And in another terminal run the Celery worker responsible for asynchronous tasks
 .. code-block:: bash
 
     celery -A toolkit.taskman worker -l info
+    
+Browsable API
+-------------
+
+* http://localhost:8000/api/v1/
+
+TODO
+
+.. _api_reference:
+
+API Reference
+-------------
+
+Reference for Toolkit API is available when running the Toolkit:
+
+* http://localhost:8000/api/v1/swagger/
+
+* http://localhost:8000/api/v1/redoc/

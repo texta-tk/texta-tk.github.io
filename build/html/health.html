@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health &#8212; TEXTA Toolkit 2 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Projects" href="projects.html" />
+    <link rel="prev" title="Reindexer" href="reindexer.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Health</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="reindexer.html" title="previous chapter">Reindexer</a></li>
+      <li>Next: <a href="projects.html" title="next chapter">Projects</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="health">
+<span id="id1"></span><h1>Health<a class="headerlink" href="#health" title="Permalink to this headline">¶</a></h1>
+<p>One can check the health of a running Toolkit instance - information about the availability of services
+(e.g. <a class="reference internal" href="terminology.html#elasticsearch"><span class="std std-ref">Elasticsearch</span></a>) and system resources (e.g. disk, memory, GPU usage, etc.)</p>
+<div class="section" id="gui">
+<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
+<p>On the <strong>Projects page</strong> (also Toolkit’s home page) we can see technical information about TEXTA Toolkit’s server on the right (<a class="reference internal" href="#server-status"><span class="std std-numref">Fig. 26</span></a>).</p>
+<div class="figure align-default" id="id2">
+<span id="server-status"></span><img alt="_images/server_status.png" src="_images/server_status.png" />
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text"><em>Toolkit Status</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>/health</strong> endpoint is for operating statistics.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;services&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;elastic&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://elastic-dev.texta.ee:9200&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;alive&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;elastic-dev&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="s2">&quot;6.8.13&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;tagline&quot;</span><span class="p">:</span> <span class="s2">&quot;You Know, for Search&quot;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;redis&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;alive&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;5.0.3&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;expired_keys&quot;</span><span class="p">:</span> <span class="mi">171569</span><span class="p">,</span>
+      <span class="s2">&quot;used_memory&quot;</span><span class="p">:</span> <span class="s2">&quot;6.30M&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;total_memory&quot;</span><span class="p">:</span> <span class="s2">&quot;110.16G&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;disk&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;free&quot;</span><span class="p">:</span> <span class="mf">147.62432479858398</span><span class="p">,</span>
+      <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mf">1599.4990272521973</span><span class="p">,</span>
+      <span class="s2">&quot;used&quot;</span><span class="p">:</span> <span class="mf">1451.8747024536133</span><span class="p">,</span>
+      <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;GB&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;memory&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;free&quot;</span><span class="p">:</span> <span class="mf">83.84971237182617</span><span class="p">,</span>
+      <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mf">110.16153717041016</span><span class="p">,</span>
+      <span class="s2">&quot;used&quot;</span><span class="p">:</span> <span class="mf">25.42589569091797</span><span class="p">,</span>
+      <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;GB&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;cpu&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;percent&quot;</span><span class="p">:</span> <span class="mf">3.5</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;gpu&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">&quot;devices&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;GeForce GTX 1060 6GB&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;GeForce GTX 1060 6GB&quot;</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;toolkit&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;2.12.0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;active_tasks&quot;</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020 TEXTA.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/health.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

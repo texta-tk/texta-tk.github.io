@@ -1,0 +1,920 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-11 15:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/regex_tagger_group.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/v2/regex_tagger_group.html>`_ `ET "
+"<https://docs.texta.ee/v2/et/regex_tagger_group.html>`_"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:8
+msgid "Regex Tagger Group"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:10
+msgid ""
+"Regex Tagger Group allows combining multiple `Regex Tagger "
+"<https://docs.texta.ee/v2/regex_tagger.html>`_ models into a group which "
+"can then be used for tagging documents. The resulting tags are formatted "
+"as `Texta Facts <https://docs.texta.ee/v2/terminology.html#fact>`_."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:12
+msgid ""
+"**API Reference**: `<http://localhost:8000/api/v1/redoc/#tag/projects-"
+"greater-regex_tagger_groups>`_"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:15
+msgid "Creation"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:18
+msgid ""
+"Regex Tagger Group can be created only if at least one `Regex Tagger "
+"<https://docs.texta.ee/v2/regex_tagger.html>`_ model exists."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:21
+#: ../../source/regex_tagger_group.rst:272
+#: ../../source/regex_tagger_group.rst:488
+#: ../../source/regex_tagger_group.rst:650
+#: ../../source/regex_tagger_group.rst:829
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:24
+#: ../../source/regex_tagger_group.rst:491
+#: ../../source/regex_tagger_group.rst:653
+#: ../../source/regex_tagger_group.rst:832
+msgid "Input"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:27
+#: ../../source/regex_tagger_group.rst:55
+msgid "**regex_taggers**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:27
+msgid "Regex Tagger models to be added to the group."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:44
+#: ../../source/regex_tagger_group.rst:64
+#: ../../source/regex_tagger_group.rst:275
+msgid "**description**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:30
+msgid ""
+"Name of the Regex Tagger Group, which will also be used as the name of "
+"the tag while tagging the documents. The name can be found in the "
+"following field after tagging:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:32
+msgid "API:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:38
+msgid "GUI:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:47
+#: ../../source/regex_tagger_group.rst:668
+#: ../../source/regex_tagger_group.rst:838
+msgid "Output"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:49
+msgid "**id**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:49
+msgid "ID of the created Regex Tagger Group"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:52
+msgid "**url**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:52
+msgid "URL of the created Regex Tagger Group"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:55
+msgid "IDs of Regex Taggers present in the group."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:58
+msgid "**author_username**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:58
+msgid "Creator of the Regex Tagger Group."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:61
+msgid "**task**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:61
+msgid "Celery task connected with the group."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:64
+msgid "Name of the Regex Tagger Group."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:67
+msgid "**tagger_info**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:67
+msgid "Parameters of each Regex Tagger present in the group."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:70
+#: ../../source/regex_tagger_group.rst:303
+#: ../../source/regex_tagger_group.rst:382
+#: ../../source/regex_tagger_group.rst:435
+#: ../../source/regex_tagger_group.rst:702
+#: ../../source/regex_tagger_group.rst:872
+msgid "GUI"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:72
+msgid ""
+"For creating a new Regex Tagger Group, navigate to `\"Models\" -> \"Regex"
+" Tagger Groups\"` as seen in :numref:`rtg_nav`."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:79
+msgid "*\"Regex Tagger Group\" navigation*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:81
+msgid ""
+"If the navigation is successful, you should see a panel similar to "
+":numref:`rtg_create_button` with the `\"Create\"` button in the top left "
+"corner of the page."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:88
+msgid "*\"Regex Tagger Group\" creation button*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:90
+msgid ""
+"Clicking on the `\"Create\"` button opens a modal window with text `\"New"
+" Regex Tagger Group\"` as depicted in :numref:`new_rtg`."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:97
+msgid "*Empty \"Regex Tagger Group\" creation view*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:99
+msgid ""
+"Name the new Regex Tagger Group by filling in the field `\"Description\"`"
+" and select Regex Tagger models to add to the group from the Regex "
+"Taggers' selection menu below. If finished, click on the `\"Create\"` "
+"button in the bottom right corner of the window "
+"(:numref:`new_rtg_create`)."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:106
+msgid "*Filled \"Regex Tagger Group\" creation view*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:108
+msgid ""
+"The created Regex Tagger Group can now be seen as the first (or only, if "
+"no previous Regex Tagger Groups exist under the project) row in the table"
+" of Regex Tagger Groups (:numref:`rtg_list`)."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:115
+msgid "*List of Regex Tagger Groups.*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:119
+#: ../../source/regex_tagger_group.rst:342
+#: ../../source/regex_tagger_group.rst:418
+#: ../../source/regex_tagger_group.rst:457
+#: ../../source/regex_tagger_group.rst:519
+#: ../../source/regex_tagger_group.rst:749
+#: ../../source/regex_tagger_group.rst:911
+msgid "API"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:121
+msgid ""
+"Reference:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_create>`_"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:123
+msgid "Endpoint **/projects/{project_pk}/regex_tagger_groups/**"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:125
+#: ../../source/regex_tagger_group.rst:348
+#: ../../source/regex_tagger_group.rst:424
+#: ../../source/regex_tagger_group.rst:463
+#: ../../source/regex_tagger_group.rst:525
+#: ../../source/regex_tagger_group.rst:755
+#: ../../source/regex_tagger_group.rst:917
+msgid "Example:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:139
+#: ../../source/regex_tagger_group.rst:364
+#: ../../source/regex_tagger_group.rst:551
+#: ../../source/regex_tagger_group.rst:769
+#: ../../source/regex_tagger_group.rst:930
+msgid "Response:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:256
+msgid "Usage"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:259
+msgid "Apply Tagger Group"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:261
+msgid ""
+"Function `\"Apply Tagger Group\"` enables applying Regex Tagger Group to "
+"one or many datasets indexed in :ref:`Elasticsearch <elasticsearch>`. "
+"Results are added to the field **\"texta_facts\"** accordingly:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:275
+msgid "Name of the application task."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:282
+#: ../../source/regex_tagger_group.rst:661
+msgid "**indices**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:278
+msgid ""
+"List of Elasticsearch :ref:`indices <index_concept>` (datasets) onto "
+"which the selected models are applied. NB! Indices should be formatted as"
+" dicts, where key = \"name\" and value = <index_name>, e.g:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:285
+#: ../../source/regex_tagger_group.rst:512
+#: ../../source/regex_tagger_group.rst:665
+msgid "**fields**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:285
+#: ../../source/regex_tagger_group.rst:512
+#: ../../source/regex_tagger_group.rst:664
+msgid "List of fields onto which the selected models are applied."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:288
+msgid "**query**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:288
+msgid "Specified Elasticsearch Search :ref:`query <query_concept>`."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:291
+msgid "**bulk_size**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:291
+msgid "Number of documents processed in one batch."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:294
+msgid "**max_chunk_bytes**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:294
+msgid "TODO"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:300
+msgid "**regex_tagger_groups**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:297
+msgid "Regex Tagger Groups to apply."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:300
+msgid "Only supported in GUI."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:305
+msgid ""
+"For applying one or multiple Regex Tagger Group(s) to a dataset indexed "
+"in :ref:`Elasticsearch <elasticsearch>`, navigate to `\"Models\" -> "
+"\"Regex Tagger Groups\"` as seen in :numref:`rtg_nav`. Click on the "
+"button `\"Apply Regex Tagger Group\"` as seen in :numref:`rtg_apply`."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:312
+msgid "*\"Apply Regex Tagger Group\" button*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:314
+msgid ""
+"Clicking on the button opens a new modal window with the title `\"Apply "
+"Regex Tagger Group to indices\"`. Fill the required fields (see also: "
+":ref:`application parameters <rtg_apply_parameters>`). PS! Leave the "
+"field `\"Query\"` empty if you wish to apply the models to all of the "
+"documents in the selected dataset(s). If finished, click on the button "
+"`\"Apply\"` in the bottom right corner of the panel "
+"(:numref:`rtg_apply_window`)."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:321
+msgid "*\"Apply Regex Tagger Group\" window*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:323
+msgid ""
+"If the application task creation was successful, the Task status of the "
+"selected Regex Tagger Group models should now be `\"created\"` or "
+"`\"running\"` as seen in :numref:`rtg_apply_running`."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:330
+msgid "*\"Apply Regex Tagger Group\" task has started*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:332
+msgid ""
+"If the application process is finished, you can now browse the results in"
+" Search (:numref:`rtg_apply_searcher`). The created tags can be found "
+"from the field `\"texta_facts\"`."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:339
+msgid "*\"Apply Regex Tagger Group\" output in Search.*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:344
+msgid ""
+"Reference:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_apply_tagger_group>`_"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:346
+msgid ""
+"Endpoint "
+"**/projects/{project_pk}/regex_tagger_groups/{id}/apply_tagger_group/**"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:373
+msgid "Delete"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:375
+msgid "Function `\"Delete\"` allows deleting existing Regex Tagger Groups."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:379
+msgid ""
+"Deleting a Regex Tagger Group **does NOT** delete Regex Tagger models "
+"belonging to the group."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:384
+msgid ""
+"For deleting a Regex Tagger Group through GUI, navigate to `\"Models\" ->"
+" \"Regex Tagger Groups\"` as seen in :numref:`rtg_nav`. There are two "
+"options for deleting a Regex Tagger Group:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:386
+msgid "**Option 1**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:388
+msgid ""
+"Select the Regex Tagger Group you wish to delete by navigating to the "
+"options panel denoted with three vertical dots and select the option "
+"`\"Delete\"` from the selection menu as seen in :numref:`rtg_delete`."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:395
+msgid "*Delete a single Regex Tagger Group*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:397
+msgid "**Option 2**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:399
+msgid ""
+"Select the model(s) you wish to delete by clicking on the selection boxes"
+" in front of the Regex Tagger Groups(s). If all the models you wish to "
+"delete are selected, click on the red recycle bin icon beside the "
+"`\"Create\"` button in the top left corner of the page. "
+"(:numref:`rtg_bulk_delete`)."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:406
+msgid "*Bulk delete Regex Tagger Group(s)*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:408
+msgid ""
+"After following all the previously described steps (for either of the two"
+" options), the interface should now ask your confirmation for finishing "
+"the process (:numref:`rtg_delete_confirm`). Agree by clicking on the "
+"button `\"Delete\"`."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:415
+msgid "*Delete Regex Tagger Group(s) confirmation*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:420
+msgid ""
+"Reference: "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_delete>`_"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:422
+#: ../../source/regex_tagger_group.rst:461
+msgid "Endpoint **/projects/{project_pk}/regex_tagger_groups/{id}/**"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:432
+msgid "Edit"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:437
+msgid ""
+"For editing an existing Regex Tagger Group, select the Regex Tagger Group"
+" you wish to edit and navigate to the options panel by clicking on the "
+"three vertical dots at the end of the Regex Tagger Group row. Select the "
+"option `\"Edit\"` as seen in :numref:`rtg_edit`."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:445
+msgid "*Regex Tagger Group -> Edit*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:447
+msgid ""
+"Clicking on the option opens a new modal window with text `\"Edit Regex "
+"Tagger Group\"`. Make your modifications and click  on the `\"Apply\"` "
+"button in the bottom right corner of the modal window for finishing the "
+"process (:numref:`rtg_edit_window`.)"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:454
+msgid "*\"Edit Regex Tagger Group\" window*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:459
+msgid ""
+"Reference:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_update>`_"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:476
+msgid "Multitag Docs"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:478
+msgid ""
+"Function `\"Multitag Docs\"` enables tagging one or many documents with "
+"multiple Regex Tagger Group models at once. Results are added to the "
+"field **\"texta_facts\"** accordingly:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:509
+msgid "**docs**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:494
+msgid "Documents to tag as a list of JSON dicts, e.g:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:516
+msgid "**tagger_groups**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:515
+msgid "List of the Regex Tagger Group ID-s to use for tagging."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:521
+msgid ""
+"Reference:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_multitag_docs>`_"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:523
+msgid "Endpoint **/projects/{project_pk}/regex_tagger_groups/multitag_docs/**"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:645
+msgid "Tag Random Doc"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:647
+msgid ""
+"Function `\"Tag Random Doc\"` provides support for testing a Regex Tagger"
+" Group on a randomly selected document from a certain predefined dataset."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:656
+msgid ""
+"List of Elasticsearch indices (dataset) onto which the selected models "
+"are applied. NB! Indices should be formatted as dicts, where key = "
+"\"name\" and value = <index_name>, e.g:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:671
+#: ../../source/regex_tagger_group.rst:841
+msgid "**tagger_group_id**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:671
+#: ../../source/regex_tagger_group.rst:841
+msgid "ID of the Regex Tagger Group used for tagging."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:674
+#: ../../source/regex_tagger_group.rst:844
+msgid "**tagger_group_tag**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:674
+#: ../../source/regex_tagger_group.rst:844
+msgid ""
+"Name of the Regex Tagger Group used for tagging, i.e. Regex Tagger Group "
+"description."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:677
+#: ../../source/regex_tagger_group.rst:847
+msgid "**result**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:677
+#: ../../source/regex_tagger_group.rst:847
+msgid "Boolean value indicating if any matches were detected."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:680
+msgid "**document**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:680
+msgid "The randomly selected document."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:699
+#: ../../source/regex_tagger_group.rst:869
+msgid "**matches**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:683
+#: ../../source/regex_tagger_group.rst:853
+msgid "Detected matches in the \"texta_facts\" format."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:686
+#: ../../source/regex_tagger_group.rst:856
+msgid "**fact**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:686
+#: ../../source/regex_tagger_group.rst:856
+msgid "Name of the Regex Tagger Group (same as corresponding tagger_group_tag)."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:689
+#: ../../source/regex_tagger_group.rst:859
+msgid "**str_val**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:689
+#: ../../source/regex_tagger_group.rst:859
+msgid "Name of the Regex Tagger model."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:692
+#: ../../source/regex_tagger_group.rst:862
+msgid "**doc_path**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:692
+msgid "Name of the field from where the match was detected."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:695
+#: ../../source/regex_tagger_group.rst:865
+msgid "**spans**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:695
+msgid "Position of the detected match in the input field."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:699
+#: ../../source/regex_tagger_group.rst:869
+msgid "**source**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:698
+#: ../../source/regex_tagger_group.rst:868
+msgid ""
+"Dict given as JSON string containing corresponding Regex Tagger Group ID "
+"and Regex Tagger ID."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:704
+msgid ""
+"For tagging a random document with an existing Regex Tagger Group model, "
+"navigate to `\"Models\" -> \"Regex Tagger Groups\"` as seen in "
+":numref:`rtg_nav`. Select the model you wish to use and navigate to the "
+"options panel denoted with three vertical dots. Select the option \"Tag "
+"Random Doc\" from the selection menu as seen in :numref:`rtg_random_doc`."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:711
+msgid "*\"Tag Random Doc\" option in the selection menu*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:714
+msgid ""
+"Selecting the option opens a new modal window with the title `\"Tag "
+"Random Doc\"`. Select the index or indices you wish to use from the "
+"`\"Indices\"` selection menu displayed in the window after clicking on "
+"the corresponding section and select the field(s) you wish to use from "
+"the `\"Select Fields\"` selection menu below. If finished, click on the "
+"button `\"Tag\"` in the bottom right corner of the panel "
+"(:numref:`rtg_tag_random_doc_tag`)."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:721
+msgid "*Regex Tagger Group \"Tag Random Doc\" window.*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:723
+msgid ""
+"The results are displayed in the same modal window as seen in "
+":numref:`rtg_tag_random_output` if any matches were detected. If no "
+"matches where found, the text `\"No matches found\"` is displayed as seen"
+" in :numref:`rtg_tag_random_neg_output`."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:730
+msgid "*\"Tag Random Doc\" positive output*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:737
+msgid "*\"Tag Random Doc\" negative output*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:739
+msgid ""
+"PS! The fields in the document not selected by the user and/or not "
+"containing any matches are by default collapsed, but you can view their "
+"content by clicking on the arrow icon at the end of each field "
+"(:numref:`rtg_tag_random_doc_other_fields`.)"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:746
+msgid "*\"Tag Random Doc\" collapsing/uncollapsing fields.*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:751
+msgid ""
+"Reference:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_random_doc>`_"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:753
+msgid ""
+"Endpoint "
+"**/projects/{project_pk}/regex_tagger_groups/{id}/tag_random_doc/**"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:824
+msgid "Tag Text"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:826
+msgid ""
+"Function `\"Tag Text\"` enables tagging a single text with a selected "
+"Regex Tagger Group by applying all the models belonging in the group to "
+"the selected text."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:835
+#: ../../source/regex_tagger_group.rst:850
+msgid "**text**:"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:835
+msgid "Text to tag."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:850
+msgid "Input text."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:862
+msgid ""
+"Name of the field from where the match was detected. Always \"text\" in "
+"the current endpoint."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:865
+msgid "Position of the detected match in the text."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:874
+msgid ""
+"For tagging a text with an existing Regex Tagger Group model, navigate to"
+" `\"Models\" -> \"Regex Tagger Groups\"` as seen in :numref:`rtg_nav`. "
+"Select the model you wish to use and navigate to the options panel "
+"denoted with three vertical dots. Select option \"Tag Text\" from the "
+"selection menu as seen in :numref:`rtg_tag_text`."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:881
+msgid "*\"Tag Text\" option in the selection menu*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:884
+msgid ""
+"Selecting the option opens a new modal window with the title `\"Tag "
+"Text\"`. Insert the text you wish to tag and click on the button "
+"`\"Tag\"` in the bottom right corner of the panel "
+"(:numref:`rtg_tag_text_filled`)."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:891
+msgid "*Regex Tagger Group \"Tag Text\" window.*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:893
+msgid ""
+"The results are displayed in the same modal window as seen in "
+":numref:`rtg_tag_text_output`, if any matches where detected. If no "
+"matches where found, the text `\"No matches found\"` is displayed as seen"
+" in :numref:`rtg_tag_text_neg_output`."
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:900
+msgid "*\"Tag Text\" positive output*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:907
+msgid "*\"Tag Text\" negative output*"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:913
+msgid ""
+"Reference:  "
+"`<http://localhost:8000/api/v1/redoc/#operation/projects_regex_tagger_groups_tag_text>`_"
+msgstr ""
+
+#: ../../source/regex_tagger_group.rst:915
+msgid "Endpoint **/projects/{project_pk}/regex_tagger_groups/{id}/tag_text/**"
+msgstr ""
+
+#~ msgid ""
+#~ ":ref:`Regex Tagger Group "
+#~ "<regex_tagger_group_concept>` is a Tagger for"
+#~ " Regexer, read more under the "
+#~ "terminology. \"Üleliigsed seletused välja, "
+#~ "kuna need tulevad terminoloogia alla\"."
+#~ msgstr ""
+
+#~ msgid "Iga tagger all on: Creation, Useage, Application, Fine-tuning"
+#~ msgstr ""
+
+#~ msgid "Creation, tase 2"
+#~ msgstr ""
+
+#~ msgid "GUI, tase 3"
+#~ msgstr ""
+
+#~ msgid "Esimese alapealkirja alapealkiri, tase 4"
+#~ msgstr ""
+
+#~ msgid "No kui veel on vaja alapealkirjatada, siis see on tase 5"
+#~ msgstr ""
+
+#~ msgid "API, tase 3"
+#~ msgstr ""
+
+#~ msgid "Siin viidatakse joonisele :numref:`importing_loc2`."
+#~ msgstr ""
+
+#~ msgid "*See on joonis*"
+#~ msgstr ""
+
+#~ msgid "Application"
+#~ msgstr ""
+
+#~ msgid "Siia tulevad parameetrid."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":ref:`Regex Tagger Group "
+#~ "<regex_tagger_group_concept>` allows combining "
+#~ "multiple :ref:`Regex Tagger <regex_tagger_concept>`"
+#~ " models. For example, we can combine"
+#~ " Regex Tagger models \"cat\", \"dog\", "
+#~ "\"squirrel\" under a single Regex Tagger"
+#~ " Group with unified name \"animals\"."
+#~ msgstr ""
+
+#~ msgid "Useage"
+#~ msgstr ""
+
+#~ msgid "Fine-Tuning"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Clicking on the button opens a new"
+#~ " modal window with the title `\"Apply"
+#~ " Regex Tagger Group to indices\"`. "
+#~ "Fill the required fields (see also: "
+#~ "application parameters `<rtg_apply_parameters>`). "
+#~ "PS! Leave the field `\"Query\"` empty"
+#~ " if you wish to apply the "
+#~ "models to all of the documents in"
+#~ " the selected dataset(s). If finished, "
+#~ "click on the button `\"Apply\"` in "
+#~ "the bottom right corner of the "
+#~ "panel (:numref:`rtg_apply_window`)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The results are displayed in the "
+#~ "same modal window as seen in "
+#~ ":numref:`rtg_tag_random_output` if any matches "
+#~ "where detected. If no matches where "
+#~ "found, the text `\"No matches found\"`"
+#~ " is displayed as seen in in "
+#~ ":numref:`rtg_tag_random_neg_output`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Function `\"Apply Tagger Group\"` enables "
+#~ "applying Regex Tagger Group to one "
+#~ "or many datasets indexed in "
+#~ "Elasticsearch. Results are added to the"
+#~ " field **\"texta_facts\"** accordingly:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "List of Elasticsearch indices (datasets) "
+#~ "onto which the selected models are "
+#~ "applied. NB! Indices should be formatted"
+#~ " as dicts, where key = \"name\" "
+#~ "and value = <index_name>, e.g:"
+#~ msgstr ""
+
+#~ msgid "Specified Elasticsearch Search query."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For applying one or multiple Regex "
+#~ "Tagger Group(s) to a dataset indexed "
+#~ "in Elasticsearch, navigate to `\"Models\" "
+#~ "-> \"Regex Tagger Groups\"` as seen "
+#~ "in :numref:`rtg_nav`. Click on the "
+#~ "button `\"Apply Regex Tagger Group\"` as"
+#~ " seen in :numref:`rtg_apply`."
+#~ msgstr ""
+

@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Torch Tagger &#8212; TEXTA Toolkit 2 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bert Tagger" href="bert_tagger.html" />
+    <link rel="prev" title="Regex Tagger Group" href="regex_tagger_group.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Torch Tagger</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create">Create</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#view">View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#detailed-view">Detailed view</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#delete">Delete</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tag-text">Tag text</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#change-name-of-a-tagger">Change name of a tagger</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="regex_tagger_group.html" title="previous chapter">Regex Tagger Group</a></li>
+      <li>Next: <a href="bert_tagger.html" title="next chapter">Bert Tagger</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="torch-tagger">
+<span id="id1"></span><h1>Torch Tagger<a class="headerlink" href="#torch-tagger" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="create">
+<h2>Create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="gui">
+<h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to <strong>Models -&gt; Torch Tagger</strong> and click on the <strong>CREATE</strong> button on top-left. Choose the name for your <a class="reference internal" href="terminology.html#torch-tagger-concept"><span class="std std-ref">Torch Tagger</span></a> (<em>Description</em>).
+Select indices and fields on which the tagger will be trained. The selected fields should contain textual data. When <a class="reference internal" href="terminology.html#query-concept"><span class="std std-ref">query</span></a> is specified, only documents matching to the query are used for training.
+If you leave <em>Query</em> empty, it will take all documents from the selected indices.
+If you have any searches defined in your <a class="reference internal" href="terminology.html#project-concept"><span class="std std-ref">project</span></a>, they will appear in a dropdown menu if you click on the field <em>Query</em> - you can use existing searches as queries.</p>
+<p><em>Model architecture</em> - an algorithm to use for training the tagger.</p>
+<p><em>Embedding</em> - word embeddings which are used to convert input text to a machine readable format. If not selected, embedding will be trained on the run.</p>
+<p><em>Fact name</em> - name of the fact that the model will learn to predict.</p>
+<p><em>Minimum sample size</em> - minimum number of samples per fact value that the model needs in order to learn to predict that value. If there are less samples with that fact value in the data than the model will just ignore that value during training and will later never predict that value.</p>
+<p><em>Maximum sample size</em> - maximum number of samples per fact value that the model will use to learn to predict that value. If there are more samples with that fact value in the data than the model will just pick <em>n</em> first.</p>
+<p><em>Number of epochs</em> - number of times the entire training dataset will be passed throught the model.</p>
+</div>
+<div class="section" id="api">
+<h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/projects/{project_pk}/torchtaggers/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/torchtaggers/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;description&quot;: &quot;My Torch Tagger&quot;,</span>
+<span class="s1">        &quot;fields&quot;: [&quot;comment_content_clean.text&quot;],</span>
+<span class="s1">        &quot;model_architecture&quot;: &quot;TextRNN&quot;,</span>
+<span class="s1">        &quot;embedding&quot;: 2,</span>
+<span class="s1">        &quot;num_epochs&quot;: 5,</span>
+<span class="s1">        &quot;fact_name&quot;: &quot;TEEMA&quot;,</span>
+<span class="s1">        &quot;indices&quot;: [{&quot;name&quot;: &quot;texta_test_index&quot;}]</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="view">
+<h2>View<a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>GUI<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to <strong>Models -&gt; Torch Tagger</strong>. Existing torch taggers are showed in the view (see <a class="reference internal" href="#torch-view"><span class="std std-numref">Fig. 105</span></a>).</p>
+<div class="figure align-default" id="id12">
+<span id="torch-view"></span><img alt="_images/torch_view.png" src="_images/torch_view.png" />
+<p class="caption"><span class="caption-number">Fig. 105 </span><span class="caption-text"><em>Torch tagger view</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>API<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/projects/{project_pk}/torchtaggers/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/torchtaggers/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="detailed-view">
+<h2>Detailed view<a class="headerlink" href="#detailed-view" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>GUI<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to <strong>Models -&gt; Torch Tagger</strong>. Click on the torch tagger you would like to see in detail (see <a class="reference internal" href="#torch-details-view"><span class="std std-numref">Fig. 106</span></a>).</p>
+<div class="figure align-default" id="id13">
+<span id="torch-details-view"></span><img alt="_images/torch_details_view.png" src="_images/torch_details_view.png" />
+<p class="caption"><span class="caption-number">Fig. 106 </span><span class="caption-text"><em>Torch tagger details</em></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>API<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/projects/{project_pk}/torchtaggers/{id}</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/torchtaggers/23/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="delete">
+<h2>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>GUI<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to <strong>Models -&gt; Torch Tagger</strong>. Select model which you would like to delete and click on the <strong>trash bin</strong> icon next to <strong>Create</strong>.</p>
+</div>
+<div class="section" id="id7">
+<h3>API<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/projects/{project_pk}/torchtaggers/{id}</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X DELETE <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/torchtaggers/23/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tag-text">
+<h2>Tag text<a class="headerlink" href="#tag-text" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>GUI<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to <strong>Models -&gt; Torch Tagger</strong>, click on the three dots under <strong>Actions</strong> column and choose <strong>Tag Text</strong> (<a class="reference internal" href="#torch-actions"><span class="std std-numref">Fig. 108</span></a>).
+Insert text that you want to tag. Check <em>Lemmatize</em> if the text should be lemmatized first. If the tagger is trained on lemmatized data then
+then the input should also be lemmatized and vice versa. Finally click <strong>Post</strong>. You should see predicted label  (<a class="reference internal" href="#torch-tag"><span class="std std-numref">Fig. 107</span></a>).</p>
+<div class="figure align-default" id="id14">
+<span id="torch-tag"></span><img alt="_images/torch_tag.png" src="_images/torch_tag.png" />
+<p class="caption"><span class="caption-number">Fig. 107 </span><span class="caption-text"><em>Torch tagger prediction</em></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>API<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/projects/{project_pk}/torchtaggers/{id}/tag_text/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/torchtaggers/23/tag_text/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;text&quot;: &quot;Life on Earth&quot;,</span>
+<span class="s1">        &quot;lemmatize&quot;: false</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="s2">&quot;astrophysics&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;probability&quot;</span><span class="p">:</span> <span class="mf">0.6474205851554871</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="change-name-of-a-tagger">
+<h2>Change name of a tagger<a class="headerlink" href="#change-name-of-a-tagger" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>GUI<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to <strong>Models -&gt; Torch Tagger</strong>, click on the three dots under <strong>Actions</strong> column and choose <strong>Edit</strong> (<a class="reference internal" href="#torch-actions"><span class="std std-numref">Fig. 108</span></a>).</p>
+<div class="figure align-default" id="id15">
+<span id="torch-actions"></span><img alt="_images/torch_actions.png" src="_images/torch_actions.png" />
+<p class="caption"><span class="caption-number">Fig. 108 </span><span class="caption-text"><em>Tag text with Torch Tagger</em></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>API<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/projects/{project_pk}/torchtaggers/{id}/</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X PATCH <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/torchtaggers/23/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{&quot;description&quot;: &quot;astrophysics yo&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020 TEXTA.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/torch_tagger.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tagger Group &#8212; TEXTA Toolkit 2 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Regex Tagger" href="regex_tagger.html" />
+    <link rel="prev" title="Tagger" href="tagger.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tagger Group</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#models-list">Models list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-text">Tag text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-doc">Tag doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-random-doc">Tag random doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit">Edit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#models-retrain">Models retrain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete">Delete</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger.html">Regex Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="tagger.html" title="previous chapter">Tagger</a></li>
+      <li>Next: <a href="regex_tagger.html" title="next chapter">Regex Tagger</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>Tagger Group<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="terminology.html#tagger-group-concept"><span class="std std-ref">Tagger Group</span></a>  is for training multiple classes at once and it also uses tags in the dataset given.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt><strong>How do Tagger and Tagger Groups differ?</strong></dt><dd><p>One model predicts whether a text is positive (True) or negative (False). That is, whether this text gets the label or not. Tagger trains only one model and predicts whether a text is similar to the dataset it was trained on or not.
+Tagger Group trains several models at once. That means, it can predict several labels at once. Tagger Group trains on <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">facts</span></a>. You can have several values under a certain <a class="reference internal" href="terminology.html#texta-fact"><span class="std std-ref">fact</span></a> and for each value (if it has high enough frequency (<em>Minimum sample size</em>) a model is trained.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="creation">
+<h2>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt><strong>description</strong>:</dt><dd><p>Name of the Tagger model, which is also used as name of the tag while tagging the documents.</p>
+</dd>
+<dt><strong>indices</strong>:</dt><dd><p>The indices the model learns from.</p>
+</dd>
+<dt><strong>fields</strong>:</dt><dd><p>The <a class="reference internal" href="terminology.html#field-concept"><span class="std std-ref">fields</span></a> the model learns from. If more than one fields is chosen, the fields are concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (<em>eaten</em>, <em>eats</em> and <em>ate</em> will change to its lemma <em>eat</em> and are dealt as one word).</p>
+</dd>
+<dt><strong>query</strong>:</dt><dd><p>Searcher’s <a class="reference internal" href="terminology.html#query-concept"><span class="std std-ref">query</span></a> for the dataset to be trained on. If <em>Query</em> is left empty, it will take all data in the active <a class="reference internal" href="terminology.html#project-concept"><span class="std std-ref">project</span></a> as an input. You can also use saved searches as your desired input. This input will be the positive examples - later on, the Tagger tags data similar to this one.</p>
+</dd>
+<dt><strong>embedding</strong>:</dt><dd><p><a class="reference internal" href="terminology.html#embedding-concept"><span class="std std-ref">Embedding</span></a> previously trained on the same dataset.</p>
+</dd>
+<dt><strong>vectorizer</strong>:</dt><dd><p>Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them <a class="reference external" href="https://scikit-learn.org/stable/modules/feature_extraction.html">here</a>.</p>
+</dd>
+<dt><strong>classifier</strong>:</dt><dd><p><a class="reference external" href="https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression">Logistic Regression</a>, <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html">LinearSVC</a>.</p>
+</dd>
+<dt><strong>maximum sample size</strong>:</dt><dd><p><em>The maximum sample size</em> per class is for limiting the size of data the model trains on.</p>
+</dd>
+<dt><strong>negative multiplier</strong>:</dt><dd><p><em>The negative multiplier</em> is for changing the ratio of negative examples.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="gui">
+<h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
+<p>Create a new Tagger Group model by clicking on the ‘CREATE’ button in the top-left. Then choose the parameters. After that, all that’s left is hitting the “Create”-button (scroll down a bit), seeing the training process and the result of the tagger.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>LinearSVC might give an error in case there’s not enough data in the search.</p>
+</div>
+<div class="figure align-default" id="id2">
+<span id="create-tagger-group"></span><img alt="_images/create_tagger_group.png" src="_images/create_tagger_group.png" />
+<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text"><em>Creating a Tagger Group</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>Whenever we create new Tagger Group models, we can track its progress from the table under <em>Task</em>. If we click on the job, we can see all the training info, how long did it took, and check how successful it was. Let’s not forget that:</dt><dd><ol class="arabic simple">
+<li><p>Recall is the ratio of correctly labeled positives among all true positives. Avg.recall is the average of all the models’ recalls.</p></li>
+<li><p>Precision is the ratio of correctly labeled positives among all instances that got a positive label. Avg.precision is the average of all the models’ precisions.</p></li>
+<li><p>F1 score is the harmonic mean of these two and should be more informative especially with unbalanced data. Avg.F1_score is the average of all the models’ F1 scores.</p></li>
+</ol>
+</dd>
+</dl>
+<div class="figure align-default" id="id3">
+<span id="figure-16"></span><a class="reference internal image-reference" href="_images/created_tagger_group.png"><img alt="_images/created_tagger_group.png" src="_images/created_tagger_group.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text"><em>Created Tagger Group</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the table view, you can also select several Tagger Groups and delete them all at once by clicking on the dustbin button next to the <em>CREATE</em> button in the top-left. If you have several Tagger Groups, you can search for the right one by their description or task status. If you have models on several pages you can change pages in the top-right.</p>
+</div>
+<div class="section" id="api">
+<h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint: <strong>/projects/{project_pk}/tagger_groups/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/tagger_groups/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;description&quot;: &quot;My tagger group&quot;,</span>
+<span class="s1">        &quot;fact_name&quot;: &quot;TEEMA&quot;,</span>
+<span class="s1">        &quot;minimum_sample_size&quot;: 50,</span>
+<span class="s1">        &quot;tagger&quot;:</span>
+<span class="s1">                {</span>
+<span class="s1">                    &quot;tagger_params&quot;: {</span>
+<span class="s1">                        &quot;fields&quot;: [</span>
+<span class="s1">                            &quot;lemmas&quot;</span>
+<span class="s1">                        ],</span>
+<span class="s1">                        &quot;vectorizer&quot;: &quot;Hashing Vectorizer&quot;,</span>
+<span class="s1">                        &quot;classifier&quot;: &quot;Logistic Regression&quot;</span>
+<span class="s1">                    },</span>
+<span class="s1">                }</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Trained Tagger Group endpoint: <strong>/projects/{project_pk}/tagger_groups/{id}/</strong></p>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="models-list">
+<h3>Models list<a class="headerlink" href="#models-list" title="Permalink to this headline">¶</a></h3>
+<p><em>Models list</em> displays the models the Tagger Group trained. You can inspect which kind of labels were trained.</p>
+<p>API endpoint: <strong>/projects/{project_pk}/tagger_groups/{id}/models_list/</strong></p>
+</div>
+<div class="section" id="tag-text">
+<h3>Tag text<a class="headerlink" href="#tag-text" title="Permalink to this headline">¶</a></h3>
+<p><em>Tag text</em> is to check how does the model work. If you click on that, a window opens. You can paste there some text, choose to lemmatize it (necessary if our model was trained on a lemmatized text), and choose to use NER and post it. You then receive the result (all the labels which model predicted True for this text) and the probability of this label is true. Probability shows how confident is this model in its prediction. <em>Number of similar documents</em> is the number of most similar documents to the document in question. Tags given to these documents are tested on the document to be tagged.</p>
+<p>API endpoint: <strong>/projects/{project_pk}/tagger_groups/{id}/tag_text/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/11/tagger_groups/1/tag_text/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;text&quot;: &quot;AINUS ettepanek - alla põhihariduse isikutele sõidulubasid mitte anda - sai kriitika osaliseks.&quot;,</span>
+<span class="s1">        &quot;lemmatize&quot;: true,</span>
+<span class="s1">        &quot;use_ner&quot;: false,</span>
+<span class="s1">        &quot;n_similar_docs&quot;: 10,</span>
+<span class="s1">        &quot;n_candidate_tags&quot;: 10,</span>
+<span class="s1">        &quot;feedback_enabled&quot;: false</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;probability&quot;</span><span class="p">:</span> <span class="mf">0.6659222999240199</span><span class="p">,</span>
+        <span class="nt">&quot;tagger_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;probability&quot;</span><span class="p">:</span> <span class="mf">0.5107991699285356</span><span class="p">,</span>
+        <span class="nt">&quot;tagger_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tag-doc">
+<h3>Tag doc<a class="headerlink" href="#tag-doc" title="Permalink to this headline">¶</a></h3>
+<p><em>Tag doc</em> is similar to <em>Tag text</em>, except the input is in the JSON format. <em>Number of similar documents</em> is the number of most similar documents to the document in question. Tags given to these documents are tested on the document to be tagged.</p>
+<p>API endpoint <strong>/projects/{project_pk}/tagger_groups/{id}/tag_doc/</strong></p>
+</div>
+<div class="section" id="tag-random-doc">
+<h3>Tag random doc<a class="headerlink" href="#tag-random-doc" title="Permalink to this headline">¶</a></h3>
+<p><em>Tag random doc</em> takes a random instance from your dataset, displays it, and returns the positive results of your models and the probability of these results being correct.</p>
+<p>API endpoint <strong>/projects/{project_pk}/tagger_groups/{id}/tag_random_doc/</strong></p>
+</div>
+<div class="section" id="edit">
+<h3>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h3>
+<p><em>Edit</em> is for changing the description.</p>
+</div>
+<div class="section" id="models-retrain">
+<h3>Models retrain<a class="headerlink" href="#models-retrain" title="Permalink to this headline">¶</a></h3>
+<p><em>Models retrain</em> retrains all of the Tagger Group models with all the chosen parameters. It’s useful in case your dataset changes or you have added some stop words.</p>
+<p>API endpoint <strong>/projects/{project_pk}/tagger_groups/{id}/models_retrain/</strong></p>
+</div>
+<div class="section" id="delete">
+<h3>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+<p><em>Delete</em> is for deleting the model.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020 TEXTA.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tagger_group.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

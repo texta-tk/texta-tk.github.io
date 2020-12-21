@@ -1,0 +1,17 @@
+.. _lexiconminer:
+
+##############
+Lexicon Miner
+##############
+
+Texta Toolkit enables the creation of topic-related lexicons. In order to build lexicons, you must have an :ref:`Embedding <embedding_concept>` model :ref:`previously trained <create_embedding>` .
+
+For creating a lexicon, type the name of the lexicon in the "New lexicon slot" under "Lexicons" and press enter. After clicking on the newly created lexicon, provide some seed words (like 'sport' if you are after finding sport-related terms).
+
+The process of creating (or expanding) the lexicon is iterative. Keep asking for suggestions (with "New Suggestions" button) and from those pick the ones that make sense. Keep asking for suggestions until you get no more meaningful responses. Words you didn't choose appear under the lexicon as negative words. These are considered as the opposite of the meanings we are looking for while generating new suggestions. You can erase words from the negative words list simply by clicking on it. 
+
+To add a suitable word to the lexicon from the Suggestions list, you simply have to click on it. Alternatevly you can type yourself some words you have come up while reading through the suggestions into the list. If you want to delete something you already chose you can erase the verb from the list.
+
+Don't forget to save the lexicon when you are ready!
+
+

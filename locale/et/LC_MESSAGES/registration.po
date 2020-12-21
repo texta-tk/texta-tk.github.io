@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/registration.rst:3 ../../source/registration.rst:7
+msgid "Registration"
+msgstr ""
+
+#: ../../source/registration.rst:10 ../../source/registration.rst:73
+msgid "GUI"
+msgstr ""
+
+#: ../../source/registration.rst:11
+msgid ""
+"Since TEXTA Toolkit is a web application, we have to navigate to the "
+"corresponding address in our browser (e.g. `http://localhost/`). We are "
+"welcomed by a login page as depicted in Figure 1."
+msgstr ""
+
+#: ../../source/registration.rst:18
+msgid "Figure 1. *Login Screen at Startup*"
+msgstr ""
+
+#: ../../source/registration.rst:20
+msgid "One can also register new users using the registration screen:"
+msgstr ""
+
+#: ../../source/registration.rst:26
+msgid "Figure 2. *Registration Screen*"
+msgstr ""
+
+#: ../../source/registration.rst:30
+msgid ""
+"When running for the first time, check the default superuser account "
+"**admin** created during installation."
+msgstr ""
+
+#: ../../source/registration.rst:32
+msgid ""
+"After login have several navigation options in the upper panel. We can "
+"see our projects (also projected as the home page) and we can work with "
+"our projects via :ref:`Search <search>`, :ref:`Lexicons <lexicons>`, "
+":ref:`Models <models>` and :ref:`Tools <tools>`."
+msgstr ""
+
+#: ../../source/registration.rst:39
+msgid "Figure 3. *Top Panel for Navigation*"
+msgstr ""
+
+#: ../../source/registration.rst:43 ../../source/registration.rst:77
+msgid "API"
+msgstr ""
+
+#: ../../source/registration.rst:44
+msgid "Endpoint: **/rest-auth/registration/**"
+msgstr ""
+
+#: ../../source/registration.rst:46 ../../source/registration.rst:81
+msgid "Example:"
+msgstr ""
+
+#: ../../source/registration.rst:60 ../../source/registration.rst:92
+msgid "Response:"
+msgstr ""
+
+#: ../../source/registration.rst:66 ../../source/registration.rst:98
+msgid ""
+"Response is the Token key that you will later need to authenticate "
+"requests."
+msgstr ""
+
+#: ../../source/registration.rst:70
+msgid "Logging in"
+msgstr ""
+
+#: ../../source/registration.rst:74
+msgid "TODO"
+msgstr ""
+
+#: ../../source/registration.rst:79
+msgid "Endpoint: **/rest-auth/login/**"
+msgstr ""
+

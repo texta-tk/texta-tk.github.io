@@ -1,0 +1,398 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-17 12:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.1\n"
+
+#: ../../source/authentication.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/authentication.html>`_ `ET "
+"<https://docs.texta.ee/et/authentication.html>`_"
+msgstr ""
+
+#: ../../source/authentication.rst:8
+msgid "Authentication"
+msgstr ""
+
+#: ../../source/authentication.rst:10
+msgid "To use Texta Toolkit, you must first need to authenticate with either:"
+msgstr ""
+
+#: ../../source/authentication.rst:12
+msgid ""
+"Through :ref:`UAA <uaa_concept>` (Disabled by default) (see "
+":numref:`login` item 1)"
+msgstr ""
+
+#: ../../source/authentication.rst:13
+msgid "By creating a new Texta Toolkit account (see :numref:`login` item 2)"
+msgstr ""
+
+#: ../../source/authentication.rst:18
+msgid "*Login Screen at Startup*"
+msgstr ""
+
+#: ../../source/authentication.rst:23
+msgid "Registration"
+msgstr ""
+
+#: ../../source/authentication.rst:26
+msgid "GUI"
+msgstr ""
+
+#: ../../source/authentication.rst:29 ../../source/authentication.rst:65
+msgid "API"
+msgstr ""
+
+#: ../../source/authentication.rst:30
+msgid "Endpoint: **/rest-auth/registration/**"
+msgstr ""
+
+#: ../../source/authentication.rst:32 ../../source/authentication.rst:69
+#: ../../source/authentication.rst:102
+msgid "Example:"
+msgstr ""
+
+#: ../../source/authentication.rst:46 ../../source/authentication.rst:80
+msgid "Response:"
+msgstr ""
+
+#: ../../source/authentication.rst:52 ../../source/authentication.rst:86
+msgid ""
+"Response is the Token key that you will later use to authenticate "
+"requests."
+msgstr ""
+
+#: ../../source/authentication.rst:56
+msgid "Logging in"
+msgstr ""
+
+#: ../../source/authentication.rst
+msgid "Initial superuser account:"
+msgstr ""
+
+#: ../../source/authentication.rst
+msgid "*username:* admin"
+msgstr ""
+
+#: ../../source/authentication.rst
+msgid "*password:* 1234"
+msgstr ""
+
+#: ../../source/authentication.rst:67
+msgid "Endpoint: **/rest-auth/login/**"
+msgstr ""
+
+#: ../../source/authentication.rst:91
+msgid "Third-Party Authentication"
+msgstr ""
+
+#: ../../source/authentication.rst:93
+msgid ""
+"Toolkit can also be authenticated using :ref:`UAA <uaa_concept>` provided"
+" by `CloudFoundry "
+"<https://docs.cloudfoundry.org/concepts/architecture/uaa.html>`_. This "
+"requires some configuration, both on the UAA server and in Toolkit."
+msgstr ""
+
+#: ../../source/authentication.rst:97
+msgid "Configuring the UAA server locally"
+msgstr ""
+
+#: ../../source/authentication.rst:99
+msgid ""
+"The UAA server will require configuring a client application for toolkit,"
+" eg setting the ``redirect_uri``. An example \"login\" client is already "
+"provided in UAA by default, which will be used for the example."
+msgstr ""
+
+#: ../../source/authentication.rst:104
+msgid ""
+"First, deploy the UAA server locally and install the CF UAA Command Line "
+"Client (UAAC) as detailed `here "
+"<https://docs.cloudfoundry.org/concepts/architecture/uaa.html#quickstart>`_."
+msgstr ""
+
+#: ../../source/authentication.rst:105
+msgid ""
+"Target the local UAA server by running ``$ uaac target "
+"http://localhost:8080/uaa``"
+msgstr ""
+
+#: ../../source/authentication.rst:106
+msgid ""
+"Authenticate as the default \"admin\" client by running ``$ uaac token "
+"client get admin -s adminsecret``"
+msgstr ""
+
+#: ../../source/authentication.rst:107
+msgid ""
+"Update the example \"login\" client's ``redirect_uri`` by running ``$ "
+"uaac client update login --redirect_uri "
+"http://localhost:8000/api/v1/uaa/callback``."
+msgstr ""
+
+#: ../../source/authentication.rst:108
+msgid ""
+"Now authenticate as the example \"login\" client by running ``$ uaac "
+"token client get login -s loginsecret``"
+msgstr ""
+
+#: ../../source/authentication.rst:109
+msgid ""
+"Create a new example user by running ``uaac user add test1 --emails "
+"test1@test1.com --password test1``"
+msgstr ""
+
+#: ../../source/authentication.rst:111
+msgid ""
+"The UAA server is now configured. One can already send a request to the "
+"``redirect_uri`` callback through logging in the UAA server using the "
+"**/uaa/oauth/authorize** OAuth endpoint of the UAA server."
+msgstr ""
+
+#: ../../source/authentication.rst:113
+msgid "The **oauth/authorize** URL needs to be sent with the proper parameters:"
+msgstr ""
+
+#: ../../source/authentication.rst:115
+#, python-format
+msgid "http://localhost:8080/uaa/oauth/authorize?response_type=code&client_id=login&scope=openid&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fapi%2Fv1%2Fuaa/callback"
+msgstr ""
+
+#: ../../source/authentication.rst:117
+msgid "To break it down:"
+msgstr ""
+
+#: ../../source/authentication.rst:119
+msgid "``response_type=code`` Lets the server know to add a code in response."
+msgstr ""
+
+#: ../../source/authentication.rst:120
+msgid ""
+"``client_id=login`` Is the name/id of the client application on the UAA "
+"server/"
+msgstr ""
+
+#: ../../source/authentication.rst:121
+msgid ""
+"``scope=openid`` Is the OAuth scope which toolkit uses in order to "
+"authenticate/create the user on Toolkit's side with the email and "
+"password."
+msgstr ""
+
+#: ../../source/authentication.rst:122
+#, python-format
+msgid ""
+"``redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fapi%2Fv1%2Fuaa/callback`` "
+"is the same ``redirect_uri`` set on the client application before, except"
+" its encoded in order to use it as a parameter."
+msgstr ""
+
+#: ../../source/authentication.rst:124
+msgid ""
+"For further reference: - "
+"https://docs.cloudfoundry.org/api/uaa/version/74.24.0/index.html - "
+"https://www.oauth.com/"
+msgstr ""
+
+#: ../../source/authentication.rst:128
+msgid ""
+"**NOTE:** One caveat one might encounter is getting authentication errors"
+" when trying to log in with the email. Even though the log in form asks "
+"for the \"email\" and \"password\", it actually sends the **username** "
+"and password. Therefore, try logging in with the username(type it into "
+"the email field)/password instead."
+msgstr ""
+
+#: ../../source/authentication.rst:132
+msgid "Configuring the Toolkit server"
+msgstr ""
+
+#: ../../source/authentication.rst:133
+msgid ""
+"To configure the Toolkit server client application, UAA related "
+"environment variables need to be set:"
+msgstr ""
+
+#: ../../source/authentication.rst:135
+msgid ""
+"``TEXTA_USE_UAA`` expects input \"False\" to disable UAA, which will "
+"otherwise be enabled."
+msgstr ""
+
+#: ../../source/authentication.rst:136
+msgid ""
+"``TEXTA_UAA_URL`` needs to be the URL of the UAA server, eg "
+"http://localhost:8080/uaa"
+msgstr ""
+
+#: ../../source/authentication.rst:137
+msgid ""
+"``TEXTA_UAA_REDIRECT_URI`` needs to be the ``redirect_uri`` as set on the"
+" UAA server client, eg http://localhost:8000/api/v1/uaa/callback"
+msgstr ""
+
+#: ../../source/authentication.rst:138
+msgid ""
+"``TEXTA_UAA_FRONT_REDIRECT_URL`` needs to be the URL of the Angular "
+"frontend, where the Toolkit server will redirect the user after a "
+"successful ``redirect_uri`` callback, eg http://localhost:4200/oauth"
+msgstr ""
+
+#: ../../source/authentication.rst:139
+msgid "``TEXTA_UAA_CLIENT_ID`` needs to be the client ID, eg ``login``"
+msgstr ""
+
+#: ../../source/authentication.rst:140
+msgid ""
+"``TEXTA_UAA_CLIENT_SECRET`` needs to be the client application's secret, "
+"eg ``loginsecret``"
+msgstr ""
+
+#: ../../source/authentication.rst:144
+msgid "Using UAA on the front-end"
+msgstr ""
+
+#: ../../source/authentication.rst:145
+msgid ""
+"To use UAA with the Angular front-end, it needs to be configured in an "
+"`environment.ts` file."
+msgstr ""
+
+#: ../../source/authentication.rst:147
+msgid ""
+"``useCloudFoundryUAA`` is a boolean. If false, the UAA login option will "
+"be hidden."
+msgstr ""
+
+#: ../../source/authentication.rst:148
+msgid "``uaaConf`` is an object with fields for UAA parameters, eg:"
+msgstr ""
+
+#: ../../source/authentication.rst:165
+msgid ""
+"To log in using UAA, click on the \"log in with CloudFoundry\" button on "
+"the login dialog:"
+msgstr ""
+
+#: ../../source/authentication.rst:171
+msgid "Figure 22. *Log In With CloudFoundry Screen on the Angular Front-end*"
+msgstr ""
+
+#: ../../source/authentication.rst:173
+msgid ""
+"This will then redirect you to the UAA login screen. After logging in, if"
+" the login was successful, it will redirect you back to the Toolkit "
+"front-end."
+msgstr ""
+
+#: ../../source/authentication.rst:176
+msgid "Tests"
+msgstr ""
+
+#: ../../source/authentication.rst:177
+msgid ""
+"To run tests on the Toolkit backend, run: ``python manage.py test "
+"toolkit.uaa_auth``"
+msgstr ""
+
+#: ../../source/authentication.rst:180
+msgid ""
+"Tests on the front-end are carried through Cypress, in the ``uaa.e2e-"
+"spec.js`` file."
+msgstr ""
+
+#: ../../source/authentication.rst:182
+msgid ""
+"**NOTE:** The UAA server has to be running and configured in order for "
+"the tests to work."
+msgstr ""
+
+#: ../../source/authentication.rst:186
+msgid "Notes on authentication"
+msgstr ""
+
+#: ../../source/authentication.rst:188
+msgid ""
+"Upon a successful login to the UAA server, sends a callback to the "
+"Toolkit ``redirect_uri`` callback, through which another request to the "
+"UAA server will be made to obtain an ``access_token`` and a "
+"``refresh_token``."
+msgstr ""
+
+#: ../../source/authentication.rst:190
+msgid ""
+"To authenticate Toolkit with the ``access_token``, it needs to be "
+"attached to the ``Authorization`` (``HTTP_AUTHORIZATION``) header as a "
+"``Bearer`` token in requests. Example: ``Authorization: Bearer "
+"71428a9f2fb44c52be3c17f2fae405f5``."
+msgstr ""
+
+#: ../../source/authentication.rst:192
+msgid ""
+"On every request to the Toolkit REST backend, the Toolkit REST backend "
+"will send a request to the UAA server to check whether the token is still"
+" valid. If not, it will give a 401 response."
+msgstr ""
+
+#: ../../source/authentication.rst:194
+msgid ""
+"Upon a 401 Unauthorized response from the server, the ``refresh_token`` "
+"token will be automatically sent by the frontend to Toolkit REST "
+"backend's **uaa/refresh-token** endpoint with the ``refresh_token`` "
+"attached to the request body under the field ``refresh_token``. On the "
+"Toolkit REST backend, the refresh token will be used to make a request to"
+" the UAA server's **/oauth/token** endpoint to get a new "
+"``access_token``. If the ``refresh_token`` is invalid or expired, the "
+"Toolkit REST backend's **uaa/refresh-token** endpoint will give a 403 "
+"response."
+msgstr ""
+
+#: ../../source/authentication.rst:197
+msgid ""
+"For reference: "
+"https://docs.cloudfoundry.org/api/uaa/version/74.24.0/index.html#refresh-"
+"token"
+msgstr ""
+
+#~ msgid ""
+#~ "The UAA server is now configured. "
+#~ "We can already send a request to"
+#~ " the ``redirect_uri`` callback through "
+#~ "logging in the UAA server using "
+#~ "the **/uaa/oauth/authorize** OAuth endpoint of"
+#~ " the UAA server."
+#~ msgstr ""
+
+#~ msgid "``response_type=code`` Lets the server know we want a code in response."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``client_id=login`` Is the name/id of "
+#~ "our client application we have on "
+#~ "the UAA server/"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fapi%2Fv1%2Fuaa/callback``"
+#~ " is the same ``redirect_uri`` we set"
+#~ " on the client application before, "
+#~ "except its encoded in order to use"
+#~ " it as a parameter."
+#~ msgstr ""
+

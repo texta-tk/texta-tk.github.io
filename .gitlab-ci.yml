@@ -10,7 +10,7 @@ pages:
     - sphinx-build -b html -D language=en source public
     - sphinx-build -b html -D language=et source public/et
     - ssh-add <(echo "$STAGING_PRIVATE_KEY")
-    - scp -r public/* texta-docs@web.texta.ee:/opt/docs/
+    - scp -r public/* texta-docs@web.texta.ee:/opt/docs/v2/
   artifacts:
     paths:
     - public

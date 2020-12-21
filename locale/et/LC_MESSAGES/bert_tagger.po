@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../source/bert_tagger.rst:3
+msgid "Bert Tagger"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:5
+msgid "TODO"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:8
+msgid "Creation"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:11 ../../source/bert_tagger.rst:20
+#: ../../source/bert_tagger.rst:29 ../../source/bert_tagger.rst:40
+msgid "GUI"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:14 ../../source/bert_tagger.rst:23
+#: ../../source/bert_tagger.rst:32 ../../source/bert_tagger.rst:43
+msgid "API"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:17
+msgid "Useage"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:26
+msgid "Application"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:35
+msgid "Fine-Tuning"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:37
+msgid "Siia tulevad parameetrid."
+msgstr ""
+

@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regex Tagger &#8212; TEXTA Toolkit 2 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Regex Tagger Group" href="regex_tagger_group.html" />
+    <link rel="prev" title="Tagger Group" href="tagger_group.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/toolkit_logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anonymizer.html">Anonymizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="importer.html">Dataset Importer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mlp.html">MLP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reindexer.html">Reindexer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="health.html">Health</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searcher.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lexicon_miner.html">Lexicon Miner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topic_analyzer.html">Topic Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tagger.html">Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tagger_group.html">Tagger Group</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Regex Tagger</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creation">Creation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#delete">Delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#duplicate">Duplicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit">Edit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-random-doc">Tag Random Doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag-text">Tag Text</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="regex_tagger_group.html">Regex Tagger Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="torch_tagger.html">Torch Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bert_tagger.html">Bert Tagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="tagger_group.html" title="previous chapter">Tagger Group</a></li>
+      <li>Next: <a href="regex_tagger_group.html" title="next chapter">Regex Tagger Group</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <p><a class="reference external" href="https://docs.texta.ee/v2/regex_tagger.html">EN</a>
+<a class="reference external" href="https://docs.texta.ee/v2/et/regex_tagger.html">ET</a></p>
+<div class="section" id="regex-tagger">
+<span id="id1"></span><h1>Regex Tagger<a class="headerlink" href="#regex-tagger" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="terminology.html#regex-tagger-concept"><span class="std std-ref">Regex Tagger</span></a> is a tool for tagging texts based on predefined <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> , i.e. regexes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Regex Tagger is built on <a class="reference external" href="https://docs.python.org/3/library/re.html">Python’s regex module</a> and thus it’s important to use the same syntax while constructing your patterns.</p>
+</div>
+<div class="section" id="creation">
+<h2>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">¶</a></h2>
+<p>The following section covers everything we need to know about creating Regex Taggers. For getting an overview of the input parameters, see subsection <a class="reference internal" href="#creation-parameters"><span class="std std-ref">Parameters</span></a>; for creating a Regex Tagger via graphical user interface, see subsection <a class="reference internal" href="#creation-gui"><span class="std std-ref">GUI</span></a>; for creating a Regex Tagger via API, see subsection <a class="reference internal" href="#creation-api"><span class="std std-ref">API</span></a>.</p>
+<div class="section" id="parameters">
+<span id="creation-parameters"></span><h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<p>The following section gives an overview of Regex Tagger input parameters.</p>
+<dl class="simple" id="param-description">
+<dt><strong>description</strong>:</dt><dd><p>Name of the Regex Tagger model, which is also used as name of the tag while tagging the documents.</p>
+</dd>
+</dl>
+<dl id="param-lexicon">
+<dt><strong>lexicon</strong>:</dt><dd><p>List of lexicon entries to match (as comma-separated strings in API or newline-separated strings in GUI).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lexicon entries can either be regular words (e.g. “cat”), phrases (e.g. “black cat”), or regular expressions containing regex wildcard characters(e.g. “d{2}-d{2}-d{4}”).</p>
+</div>
+</dd>
+</dl>
+<dl class="simple" id="param-counter-lexicon">
+<dt><strong>counter_lexicon</strong>:</dt><dd><p>List of annulling lexicon entries, which cancel out nearby (see parameter <a class="reference internal" href="#param-counter-slop"><span class="std std-ref">counter_slop</span></a>) main lexicon matches. Annulling lexicon entries can similarly to main lexicon entries be regular words, phrases, or regular expressions.</p>
+</dd>
+</dl>
+<dl id="param-operator">
+<dt><strong>operator</strong>:</dt><dd><p>Logical operation for matching words in the lexicon.</p>
+<dl class="simple">
+<dt>Supported options:</dt><dd><dl class="simple">
+<dt>or:</dt><dd><p>Return positive result if at least one lexicon entry is found.</p>
+</dd>
+<dt>and:</dt><dd><p>Return positive result only if all lexicon entries are found (NB! pay attention to <a class="reference internal" href="#param-required-words"><span class="std std-ref">required_words</span></a> parameter!)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl id="param-required-words">
+<dt><strong>required_words</strong>:</dt><dd><p>Required minimum ratio of detected lexicon entries to all the lexicon entries for a positive result. E.g. if we have a lexicon consisting of 4 entries and “required_words” = 1.0, all 4 of these entries must appear in the text for positive outcome; if “required_words” = 0.5, only half of the lexicon entries must appear in the text etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Has effect only if “operator” = “and”.</p>
+</div>
+</dd>
+</dl>
+<dl id="param-match-type">
+<dt><strong>match_type</strong>:</dt><dd><p>Specifies how the lexicon entries are matched.</p>
+<dl class="simple">
+<dt>Supported options:</dt><dd><dl class="simple">
+<dt>prefix:</dt><dd><p>Lexicon entry should appear at the beginning of the word/phrase in the text. Subsequent alphanumeric characters are allowed. E.g. Lexicon entry “cat” matches the words “cat” and “caterpillar”, but would not match the word “scattered”.</p>
+</dd>
+<dt>exact:</dt><dd><p>Lexicon entry should match the word/phrase in the text exactly. No preceeding or subsequent characters are allowed. E.g. Lexicon entry “cat” matches the word “cat”, but would not match the words “caterpillar”, and “scattered”.</p>
+</dd>
+<dt>subword:</dt><dd><p>Lexicon entry should match a part of the word/phrase in the text. Preceeding and subsequent characters are allowed. E.g. Lexicon entry “cat” matches the words “cat”, “caterpillar”, and “scattered”.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="simple" id="param-phrase-slop">
+<dt><strong>phrase_slop</strong>:</dt><dd><p>Number of non-lexicon words allowed between lexicon entry words.</p>
+</dd>
+</dl>
+<dl class="simple" id="param-counter-slop">
+<dt><strong>counter_slop</strong>:</dt><dd><p>Number of non-lexicon words allowed between main lexion entries and counter lexicon entries for the latter to have annulling effect.</p>
+</dd>
+</dl>
+<dl class="simple" id="param-return-fuzzy-match">
+<dt><strong>return_fuzzy_match</strong>:</dt><dd><p>If enabled, return the whole alphanumeric string sequence matched, otherwise only the (sub)section exactly matching the original lexicon entry.</p>
+</dd>
+</dl>
+<dl id="param-n-allowed-edits">
+<dt><strong>n_allowed_edits</strong>:</dt><dd><p>Number of allowed character changes between lexicon entry and matched string sequence, i.e. <a class="reference external" href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>One edit is considered as one of the following:</p>
+<ul class="simple">
+<li><p>missing a character, e.g. “cat” -&gt; “ct”</p></li>
+<li><p>adding a character, e.g. “cat” -&gt; “catt”</p></li>
+<li><p>substituting a character, e.g. “cat” -&gt; “kat”</p></li>
+</ul>
+</div>
+</dd>
+</dl>
+<dl class="simple" id="param-ignore-case">
+<dt><strong>ignore_case</strong>:</dt><dd><p>If set true, ignore case while detecting matches.</p>
+</dd>
+</dl>
+<dl id="param-ignore-punctuation">
+<dt><strong>ignore punctuation</strong>:</dt><dd><p>If enabled, ignore end-of-sentence characters between lexicon entry words and/or counter lexicon entries and lexicon entries.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ignored end-of-sentence characters are: [“.”, “!”, “?”]</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be careful with using the parameter as end-of-sentence characters are detected naively based on list. This means that the parameter restriction applies even if the detected end-of-sentence character doesn’t actually denote the end of a sentence, e.g. each “.” is detected as end-of-sentence character in the sentence “George R.R. Martin and J.R.R. Tolkien went fishing”.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="gui">
+<span id="creation-gui"></span><h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
+<p>For creating a new Regex Tagger model, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 60</span></a>.</p>
+<div class="figure align-center" id="id12">
+<span id="regex-tagger-navigation"></span><a class="reference internal image-reference" href="_images/regex_taggers_nav.png"><img alt="_images/regex_taggers_nav.png" src="_images/regex_taggers_nav.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 60 </span><span class="caption-text"><em>Regex Taggers navigation</em></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p>If the navigation is successful, you should see a panel similar to <a class="reference internal" href="#regex-tagger-create-button"><span class="std std-numref">Fig. 61</span></a> with <cite>“Create”</cite> button in the top left corner of the page.</p>
+<div class="figure align-center" id="id13">
+<span id="regex-tagger-create-button"></span><a class="reference internal image-reference" href="_images/regex_taggers_create_1.png"><img alt="_images/regex_taggers_create_1.png" src="_images/regex_taggers_create_1.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 61 </span><span class="caption-text"><em>Regex Tagger creation button</em></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<p>Clicking on the <cite>“Create”</cite> button opens a modal window with text <cite>“New Regex Tagger”</cite> as depicted in <a class="reference internal" href="#regex-tagger-new-regex-tagger"><span class="std std-numref">Fig. 62</span></a>.</p>
+<div class="figure align-center" id="id14">
+<span id="regex-tagger-new-regex-tagger"></span><a class="reference internal image-reference" href="_images/regex_taggers_new_regex_tagger_mw.png"><img alt="_images/regex_taggers_new_regex_tagger_mw.png" src="_images/regex_taggers_new_regex_tagger_mw.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text"><em>Empty Regex Tagger creation view</em></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>Fill the required <a class="reference internal" href="terminology.html#field-concept"><span class="std std-ref">fields</span></a> and click on the <cite>“Create”</cite> button in the bottom right corner of the window (<a class="reference internal" href="#regex-tagger-create-view"><span class="std std-numref">Fig. 63</span></a>).</p>
+<div class="figure align-center" id="id15">
+<span id="regex-tagger-create-view"></span><a class="reference internal image-reference" href="_images/regex_taggers_create_2.png"><img alt="_images/regex_taggers_create_2.png" src="_images/regex_taggers_create_2.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 63 </span><span class="caption-text"><em>Filled Regex Tagger creation view</em></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<p>The created Regex Tagger can now be seen as the first (or only, if no previous Regex Taggers exist under the project) row in the table of Regex Tagger models (<a class="reference internal" href="#regex-taggers-list"><span class="std std-numref">Fig. 64</span></a>).</p>
+<div class="figure align-center" id="id16">
+<span id="regex-taggers-list"></span><a class="reference internal image-reference" href="_images/regex_taggers_list.png"><img alt="_images/regex_taggers_list.png" src="_images/regex_taggers_list.png" style="width: 600pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 64 </span><span class="caption-text"><em>List of Regex Taggers.</em></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="api">
+<span id="creation-api"></span><h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<p>Endpoint <strong>/projects/{project_pk}/regex_taggers/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/1/regex_taggers/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">            &quot;description&quot;: &quot;cat&quot;,</span>
+<span class="s1">            &quot;lexicon&quot;: [&quot;cat&quot;, &quot;kitten&quot;, &quot;kitty&quot;],</span>
+<span class="s1">            &quot;counter_lexicon&quot;: [&quot;no&quot;, &quot;not&quot;, &quot;nor&quot;, &quot;neither&quot;],</span>
+<span class="s1">            &quot;operator&quot;: &quot;or&quot;,</span>
+<span class="s1">            &quot;match_type&quot;: &quot;prefix&quot;,</span>
+<span class="s1">            &quot;required_words&quot;: 1.0,</span>
+<span class="s1">            &quot;phrase_slop&quot;: 0,</span>
+<span class="s1">            &quot;counter_slop&quot;: 0,</span>
+<span class="s1">            &quot;n_allowed_edits&quot;: 0,</span>
+<span class="s1">            &quot;return_fuzzy_match&quot;: true,</span>
+<span class="s1">            &quot;ignore_case&quot;: true,</span>
+<span class="s1">            &quot;ignore_punctuation&quot;: false</span>
+<span class="s1">        }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">131</span><span class="p">,</span>
+        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:8000/api/v1/projects/1/regex_taggers/131/&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;author_username&quot;</span><span class="p">:</span> <span class="s2">&quot;my_username&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;lexicon&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="s2">&quot;cat&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;kitten&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;kitty&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;counter_lexicon&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="s2">&quot;no&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;not&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;nor&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;neither&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;or&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;match_type&quot;</span><span class="p">:</span> <span class="s2">&quot;prefix&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;required_words&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="nt">&quot;phrase_slop&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;counter_slop&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;n_allowed_edits&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;return_fuzzy_match&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;ignore_case&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;ignore_punctuation&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;tagger_groups&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>The following section covers all functions supported by Regex Tagger. PS! Some of the functions can only be applied through API as they have no meaningful usage scenarios in GUI.</p>
+<div class="section" id="delete">
+<h3>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+<p>Function <cite>“Delete”</cite> allows deleting existing Regex Tagger models.</p>
+<div class="section" id="id2">
+<h4>GUI<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>For deleting a Regex Tagger model through GUI, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 60</span></a>. There are two options for deleting a Regex Tagger model:</p>
+<p><strong>Option 1</strong>:</p>
+<p>Select the model you wish to delete by navigating to the options panel denoted with three vertical dots as seen in <a class="reference internal" href="#regex-tagger-list-v2"><span class="std std-numref">Fig. 77</span></a> and select option <cite>“Delete”</cite> from the selection menu as seen in <a class="reference internal" href="#regex-tagger-delete"><span class="std std-numref">Fig. 65</span></a>.</p>
+<div class="figure align-center" id="id17">
+<span id="regex-tagger-delete"></span><a class="reference internal image-reference" href="_images/regex_taggers_delete.png"><img alt="_images/regex_taggers_delete.png" src="_images/regex_taggers_delete.png" style="width: 180pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 65 </span><span class="caption-text"><em>Delete a single Regex Tagger</em></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Option 2</strong>:</p>
+<p>Select the model(s) you wish to delete by clicking on the selection boxes in front of Regex Tagger model(s) (<a class="reference internal" href="#regex-tagger-bulk-delete"><span class="std std-numref">Fig. 66</span></a>). If all the models you wish to delete are selected, click on the red recycle bin icon beside <cite>“Create”</cite> button in the top left corner of the page.</p>
+<div class="figure align-center" id="id18">
+<span id="regex-tagger-bulk-delete"></span><a class="reference internal image-reference" href="_images/regex_tagger_bulk_delete.png"><img alt="_images/regex_tagger_bulk_delete.png" src="_images/regex_tagger_bulk_delete.png" style="width: 350pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 66 </span><span class="caption-text"><em>Bulk delete Regex Tagger(s)</em></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id19">
+<span id="regex-tagger-delete-confirmation"></span><a class="reference internal image-reference" href="_images/regex_tagger_delete_ask.png"><img alt="_images/regex_tagger_delete_ask.png" src="_images/regex_tagger_delete_ask.png" style="width: 200pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 67 </span><span class="caption-text"><em>Delete Regex Tagger(s) confirmation</em></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<p>After following all the previously described steps (for either of the two options), the interface should now ask your confirmation for finishing the process (<a class="reference internal" href="#regex-tagger-delete-confirmation"><span class="std std-numref">Fig. 67</span></a>). Agree by clicking on the button <cite>“Delete”</cite>.</p>
+</div>
+<div class="section" id="id3">
+<h4>API<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>Endpoint <strong>/projects/{project_pk}/regex_taggers/{id}/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X DELETE <span class="s2">&quot;http://localhost:8000/api/v1/projects/1/regex_taggers/131/&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="duplicate">
+<h3>Duplicate<a class="headerlink" href="#duplicate" title="Permalink to this headline">¶</a></h3>
+<p>Function <cite>Duplicate</cite> allows making a copy of an existing Regex Tagger. It is especially useful if you are fine-tuning a specific model but aren’t sure that the modifications will actually improve it - just make a copy before you start editing.</p>
+<div class="section" id="id4">
+<h4>GUI<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>For duplicating a Regex Tagger model, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 60</span></a>. Select the model you wish to duplicate and navigate to options panel denoted with three vertical dots as seen in <a class="reference internal" href="#regex-tagger-list-v2"><span class="std std-numref">Fig. 77</span></a>.</p>
+<div class="figure align-center" id="id20">
+<span id="regex-tagger-duplicate"></span><a class="reference internal image-reference" href="_images/regex_taggers_duplicate.png"><img alt="_images/regex_taggers_duplicate.png" src="_images/regex_taggers_duplicate.png" style="width: 180pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 68 </span><span class="caption-text"><em>Duplicate Regex Tagger</em></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>Select option “Duplicate” from the selection menu as seen in <a class="reference internal" href="#regex-tagger-duplicate"><span class="std std-numref">Fig. 68</span></a>.</p>
+<div class="figure align-center" id="id21">
+<span id="regex-tagger-duplicate-list"></span><a class="reference internal image-reference" href="_images/duplicate_list.png"><img alt="_images/duplicate_list.png" src="_images/duplicate_list.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 69 </span><span class="caption-text"><em>Duplicated Regex Tagger</em></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p>Selecting the option instantly triggers the duplication process and the duplicated Regex Tagger model appears in the list of Regex Tagger models with name <cite>“&lt;source_tagger_name&gt;_copy”</cite> (<a class="reference internal" href="#regex-tagger-duplicate-list"><span class="std std-numref">Fig. 69</span></a>).</p>
+</div>
+<div class="section" id="id5">
+<h4>API<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>Endpoint <strong>/projects/{project_pk}/regex_taggers/{id}/duplicate/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/1/regex_taggers/131/duplicate/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{}&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Tagger duplicated successfully!&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;duplicate_id&quot;</span><span class="p">:</span> <span class="mi">134</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="edit">
+<h3>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h3>
+<p>Function <cite>“Edit”</cite> allows editing existing Regex Tagger models.</p>
+<div class="section" id="id6">
+<h4>GUI<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>For editing a Regex Tagger model, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 60</span></a>. Select the model you wish to edit and navigate to options panel denoted with three vertical dots as seen in <a class="reference internal" href="#regex-tagger-list-v2"><span class="std std-numref">Fig. 77</span></a>.</p>
+<div class="figure align-center" id="id22">
+<span id="regex-tagger-edit"></span><a class="reference internal image-reference" href="_images/regex_taggers_edit.png"><img alt="_images/regex_taggers_edit.png" src="_images/regex_taggers_edit.png" style="width: 180pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 70 </span><span class="caption-text"><em>Edit Regex Tagger</em></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p>Select option “Edit” from the selection menu as seen in <a class="reference internal" href="#regex-tagger-edit"><span class="std std-numref">Fig. 70</span></a>.</p>
+<div class="figure align-center" id="id23">
+<span id="regex-tagger-edit-modal"></span><a class="reference internal image-reference" href="_images/regex_taggers_edit_modal.png"><img alt="_images/regex_taggers_edit_modal.png" src="_images/regex_taggers_edit_modal.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text"><em>Edit Regex Tagger modal window</em></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<p>Selecting the option opens a new modal window <cite>“Edit Regex Tagger”</cite>. Make your modifications and click on <cite>“Submit”</cite> button in the bottom right corner of the panel (<a class="reference internal" href="#regex-tagger-edit-modal"><span class="std std-numref">Fig. 71</span></a>).</p>
+</div>
+<div class="section" id="id7">
+<h4>API<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>Endpoint <strong>/projects/{project_pk}/regex_taggers/{id}/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X PATCH <span class="s2">&quot;http://localhost:8000/api/v1/projects/1/regex_taggers/131/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;counter_slop&quot;: 2</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">131</span><span class="p">,</span>
+        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://rest-dev.texta.ee/api/v1/projects/1/regex_taggers/131/&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;author_username&quot;</span><span class="p">:</span> <span class="s2">&quot;my_username&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;lexicon&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="s2">&quot;cat&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;kitten&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;kitty&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;counter_lexicon&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="s2">&quot;no&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;not&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;nor&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;neither&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;or&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;match_type&quot;</span><span class="p">:</span> <span class="s2">&quot;prefix&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;required_words&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="nt">&quot;phrase_slop&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;counter_slop&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nt">&quot;n_allowed_edits&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;return_fuzzy_match&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;ignore_case&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;ignore_punctuation&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;tagger_groups&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tag-random-doc">
+<h3>Tag Random Doc<a class="headerlink" href="#tag-random-doc" title="Permalink to this headline">¶</a></h3>
+<p><cite>“Tag Random Doc”</cite> is a helpful function for testing Regex Tagger models on random documents.</p>
+<div class="section" id="id8">
+<h4>GUI<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>For tagging a random document with an existing Regex Tagger model, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 60</span></a>. Select the model you wish to use and navigate to the options panel denoted with three vertical dots. Select the option “Tag Random Doc” from the selection menu as seen in <a class="reference internal" href="#regex-tagger-tag-random-doc"><span class="std std-numref">Fig. 72</span></a>.</p>
+<div class="figure align-center" id="id24">
+<span id="regex-tagger-tag-random-doc"></span><a class="reference internal image-reference" href="_images/regex_taggers_tag_random_doc.png"><img alt="_images/regex_taggers_tag_random_doc.png" src="_images/regex_taggers_tag_random_doc.png" style="width: 180pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 72 </span><span class="caption-text"><em>“Tag Random Doc” option in the selection menu</em></span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<p>Selecting the option opens a new modal window with the title <cite>“Tag Random Doc”</cite>. Select the index or indices you wish to use from the <cite>“Indices”</cite> selection menu displayed in the window after clicking on the corresponding section and select the <a class="reference internal" href="terminology.html#field-concept"><span class="std std-ref">field(s)</span></a> you wish to use from the <cite>“Select Fields”</cite> selection menu below. If finished, click on the button <cite>“Tag”</cite> in the bottom right corner of the panel (<a class="reference internal" href="#regex-tagger-tag-random-doc-mw"><span class="std std-numref">Fig. 73</span></a>).</p>
+<div class="figure align-center" id="id25">
+<span id="regex-tagger-tag-random-doc-mw"></span><a class="reference internal image-reference" href="_images/regex_tagger_tag_random_doc_mw.png"><img alt="_images/regex_tagger_tag_random_doc_mw.png" src="_images/regex_tagger_tag_random_doc_mw.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 73 </span><span class="caption-text"><em>Regex Tagger “Tag Random Doc” window.</em></span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+<p>The results are displayed in the same modal window as seen in <a class="reference internal" href="#regex-tagger-tag-random-pos"><span class="std std-numref">Fig. 74</span></a> if any matches were detected. If no matches where found, the text <cite>“No matches found”</cite> is displayed as seen in <a class="reference internal" href="#regex-tagger-tag-random-neg"><span class="std std-numref">Fig. 75</span></a>.</p>
+<div class="figure align-center" id="id26">
+<span id="regex-tagger-tag-random-pos"></span><a class="reference internal image-reference" href="_images/regex_tagger_tag_random_pos.png"><img alt="_images/regex_tagger_tag_random_pos.png" src="_images/regex_tagger_tag_random_pos.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 74 </span><span class="caption-text"><em>“Tag Random Doc” positive output</em></span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id27">
+<span id="regex-tagger-tag-random-neg"></span><a class="reference internal image-reference" href="_images/regex_tagger_tag_random_neg.png"><img alt="_images/regex_tagger_tag_random_neg.png" src="_images/regex_tagger_tag_random_neg.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 75 </span><span class="caption-text"><em>“Tag Random Doc” negative output</em></span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<p>PS! The <a class="reference internal" href="terminology.html#field-concept"><span class="std std-ref">fields</span></a> in the document not selected by the user and/or not containing any matches are by default collapsed, but you can view their content by clicking on the arrow icon at the end of each field (<a class="reference internal" href="#rt-tag-random-doc-other-fields"><span class="std std-numref">Fig. 76</span></a>.)</p>
+<div class="figure align-center" id="id28">
+<span id="rt-tag-random-doc-other-fields"></span><a class="reference internal image-reference" href="_images/tag_random_doc_other_fields.png"><img alt="_images/tag_random_doc_other_fields.png" src="_images/tag_random_doc_other_fields.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text"><em>“Tag Random Doc” collapsing/uncollapsing fields.</em></span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id9">
+<h4>API<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>Endpoint <strong>/projects/{project_pk}/regex_taggers/{id}/tag_random_doc/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/1/regex_taggers/138/tag_random_doc/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;indices&quot;: [{&quot;name&quot;: &quot;imdb_reviews&quot;}],</span>
+<span class="s1">    &quot;fields&quot;: [&quot;review_text&quot;]</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+<p>Response (positive):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="nt">&quot;tagger_id&quot;</span><span class="p">:</span> <span class="mi">138</span><span class="p">,</span>
+        <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;matches&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                        <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;awesome&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[787, 794]]&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextagger_id\&quot;: 138}&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                        <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;good&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[911, 915]]&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextagger_id\&quot;: 138}&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                        <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;good&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[1032, 1036]]&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;review_text&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextagger_id\&quot;: 138}&quot;</span>
+                <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;document&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;review_text&quot;</span><span class="p">:</span> <span class="s2">&quot;I for one was very anxious to watch this movie. Though I knew it was going to be another type of movie in the style of Revenge of the Nerds, I was still impressed. There is plenty of truth to the fact of this type of learning and believe very strongly that it should be allowed in a \&quot;new style of schooling\&quot;. Conventional teaching methods do not always teach students what they need to know or should know or want to know. This approach to teaching should be further sought out in true academic courses. While there still was too much of the partying scenes, it obviously had to be thrown in there - for Hollywood&#39;s sake of making a comedy about college...even though we all know that life isn&#39;t really like that by any means. A touch unbelievable, still funny and with a killer ending. Awesome ending. Crucial to the entire story and very surprising. Without the final scene, the movie would have been half as good. I liked this movie and it didn&#39;t have to have overly amounts of swearing or nudity or gross out jokes for it to be good. Great crew and cast, story and even the generic typecasting of the obligatory \&quot;Hampton frat members\&quot; was well done. American Pie 1, 2 3 and American Wedding or whatever clones it makes doers not measure up to this by 1/3. Far better than most comedies about first year College with no demeaning stupid jokes to make somebody throw up with. I liked it, even though it was simple...it was interesting and even had heart...my only regret for watching this movie is that it wasn&#39;t longer.&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;doc_id&quot;</span><span class="p">:</span> <span class="s2">&quot;efa2c957ce7c4588b91ef25ad2306390&quot;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Response (negative):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="nt">&quot;tagger_id&quot;</span><span class="p">:</span> <span class="mi">138</span><span class="p">,</span>
+        <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;positive&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;matches&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;document&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;review_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Previous comments encouraged me to check this out when it showed up on TCM, but it was a severe disappointment. Lupe Valdez is great, but doesn&#39;t get enough screen time. Frank Morgan and Eugene Palette play familiar but promising characters, but the script leaves them stranded. The movie revolves around the ego of Lee Tracy&#39;s character, who is at best a self-centered, physically and verbally abusive jerk. The reactions of \&quot;the public\&quot; are poorly thought-out and unbelievable, making the \&quot;shenanigans\&quot; seem like contrivances of a bad writer. And it strains credulity that the Lupe Velez character could fall for him. The \&quot;stinging one-liners\&quot; mentioned in another review must be dependent on the observer, since I didn&#39;t even notice that an attempt was being made.&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;negative&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;train&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;doc_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6eec458e238d4cf58882b50e8df82855&quot;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tag-text">
+<h3>Tag Text<a class="headerlink" href="#tag-text" title="Permalink to this headline">¶</a></h3>
+<p>Function <cite>“Tag Text”</cite> enables tagging a single text with a selected Regex Tagger model.</p>
+<div class="section" id="id10">
+<h4>GUI<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>For tagging a text with an existing Regex Tagger model, navigate to <cite>“Models” -&gt; “Regex Taggers”</cite> as seen in <a class="reference internal" href="#regex-tagger-navigation"><span class="std std-numref">Fig. 60</span></a>.</p>
+<div class="figure align-center" id="id29">
+<span id="regex-tagger-list-v2"></span><a class="reference internal image-reference" href="_images/regex_taggers_list_v2.png"><img alt="_images/regex_taggers_list_v2.png" src="_images/regex_taggers_list_v2.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 77 </span><span class="caption-text"><em>List of existing Regex Tagger models</em></span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</div>
+<p>Select the model you wish to use and navigate to options panel denoted with three vertical dots as seen in <a class="reference internal" href="#regex-tagger-list-v2"><span class="std std-numref">Fig. 77</span></a>.</p>
+<div class="figure align-center" id="id30">
+<span id="regex-tagger-tag-text"></span><a class="reference internal image-reference" href="_images/regex_taggers_tag_text.png"><img alt="_images/regex_taggers_tag_text.png" src="_images/regex_taggers_tag_text.png" style="width: 180pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 78 </span><span class="caption-text"><em>Tag Text option in selection menu</em></span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</div>
+<p>Select option “Tag Text” from the selection menu as seen in <a class="reference internal" href="#regex-tagger-tag-text"><span class="std std-numref">Fig. 78</span></a>.</p>
+<div class="figure align-center" id="id31">
+<span id="regex-tagger-tag-text-modal"></span><a class="reference internal image-reference" href="_images/regex_tagger_tag_text_modal.png"><img alt="_images/regex_tagger_tag_text_modal.png" src="_images/regex_tagger_tag_text_modal.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 79 </span><span class="caption-text"><em>Tag Text modal window</em></span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+</div>
+<p>Selecting the option opens a new modal window <cite>“Tag Text”</cite>. Insert the text you wish to tag and click on the button <cite>“Tag”</cite> in the bottom right corner of the panel (<a class="reference internal" href="#regex-tagger-tag-text-modal"><span class="std std-numref">Fig. 79</span></a>).</p>
+<div class="figure align-center" id="id32">
+<span id="regex-tagger-tag-text-pos-output"></span><a class="reference internal image-reference" href="_images/regex_taggers_tag_text_pos_output.png"><img alt="_images/regex_taggers_tag_text_pos_output.png" src="_images/regex_taggers_tag_text_pos_output.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 80 </span><span class="caption-text"><em>Tag Text positive output</em></span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id33">
+<span id="regex-tagger-tag-text-neg-output"></span><a class="reference internal image-reference" href="_images/regex_taggers_tag_text_neg_output.png"><img alt="_images/regex_taggers_tag_text_neg_output.png" src="_images/regex_taggers_tag_text_neg_output.png" style="width: 500pt;" /></a>
+<p class="caption"><span class="caption-number">Fig. 81 </span><span class="caption-text"><em>Tag Text negative output</em></span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+</div>
+<p>The results are displayed in the same modal window as seen in <a class="reference internal" href="#regex-tagger-tag-text-pos-output"><span class="std std-numref">Fig. 80</span></a> if any matches where detected. If no matches where found, the text <cite>“No matches found”</cite> is displayed as seen in in <a class="reference internal" href="#regex-tagger-tag-text-neg-output"><span class="std std-numref">Fig. 81</span></a>.</p>
+</div>
+<div class="section" id="id11">
+<h4>API<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<p>Endpoint <strong>/projects/{project_pk}/regex_taggers/{id}/tag_text/</strong></p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="s2">&quot;http://localhost:8000/api/v1/projects/1/regex_taggers/131/tag_text/&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049&quot;</span> <span class="se">\</span>
+-d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;text&quot;: &quot;one cat, two dogs and seven kittens&quot;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;tagger_id&quot;</span><span class="p">:</span> <span class="mi">131</span><span class="p">,</span>
+    <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;one cat, two dogs and seven kittens&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;matches&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[4, 7]]&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextagger_id\&quot;: 131}&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;fact&quot;</span><span class="p">:</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;str_val&quot;</span><span class="p">:</span> <span class="s2">&quot;kittens&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;spans&quot;</span><span class="p">:</span> <span class="s2">&quot;[[28, 35]]&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;doc_path&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;regextagger_id\&quot;: 131}&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020 TEXTA.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/regex_tagger.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
