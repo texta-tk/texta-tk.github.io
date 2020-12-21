@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-21 13:46+0200\n"
+"POT-Creation-Date: 2020-12-21 14:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,11 +26,11 @@ msgstr ""
 
 #: ../../source/terminology.rst:6
 msgid "Terminology"
-msgstr ""
+msgstr "Terminoloogia"
 
 #: ../../source/terminology.rst:8
 msgid "Here are described the main concepts related to TEXTA Toolkit (TTK)."
-msgstr ""
+msgstr "Siin kirjeldatakse TEXTA Toolkitiga (TTK) seotud põhilisi termineid."
 
 #: ../../source/terminology.rst:13
 msgid "Anonymizer"
@@ -43,6 +43,10 @@ msgid ""
 "substituted with randomly generated pair of initials. You can read more "
 "about it :ref:`here <anonymizer>`."
 msgstr ""
+"Anonymizer ehk Anonüümija on tööriist vabatekstis esinevate isikunimede nimekirja alusel"
+"anonüümimiseks. Iga tekstist tuvastatud nimekirjas leiduv "
+"snimi asendatatkse juhuslikult genereeritud initsiaalidega. Loe rohkem selle kohta "
+":ref:`siit <anonymizer>`."
 
 #: ../../source/terminology.rst:20
 msgid "Bert Tagger"
@@ -55,8 +59,11 @@ msgid ""
 " word embeddings. Read more about its Toolkit implementation :ref:`here "
 "<bert_tagger>`."
 msgstr ""
+"Bert Tagger kasutab Google'i `Kahesuunalist Enkodeerija "
+"Esitusi Transformeris <https://arxiv.org/abs/1810.04805>`_"
+" sõnavektorite tarbeks."
 
-#: ../../source/terminology.rst:27
+#: ../../source/terminology.rst:27 ../../source/terminology.rst:34
 msgid "Dataset Importer"
 msgstr ""
 
@@ -66,23 +73,39 @@ msgid ""
 "Elasticsearch to make them accessible for the Toolkit. Read more about "
 "the usage :ref:`here <dataset_importer>`."
 msgstr ""
+"Dataset Importer ehk Andmestike Importija on tööriist failide mugavaks laadimiseks"
+"Elasticsearchi, et teha need Toolkitile kättesaadavaks. Loe selle kasutuse kohta rohkem "
+":ref:`siit <dataset_importer>`."
 
-#: ../../source/terminology.rst:34
+#: ../../source/terminology.rst:36
+msgid ""
+"Document importer provides API endpoints for adding, deleting and "
+"replacing documents one by one in or into a certain index in an easy way."
+" Read more about the usage :ref:`here <document_importer>`."
+msgstr ""
+"Document Importer ehk Dokumendi Importija on kolm API otspunkti dokumentide üks-haaval "
+"lisamiseks, kustutamiseks ja asendamiseks kindlas indeksis."
+" Loe nende kasutuse kohta rohkem :ref:`siit <document_importer>`."
+
+#: ../../source/terminology.rst:41
 msgid "Elasticsearch"
 msgstr ""
 
-#: ../../source/terminology.rst:36
+#: ../../source/terminology.rst:43
 msgid ""
 "Elasticsearch is a distributed, open-source search and analytics engine "
 "and database for all types of data. You can read more about it `here "
 "<https://www.elastic.co/what-is/elasticsearch>`_."
 msgstr ""
+"Elasticsearch on hajus vabavaraline otsingu ja analüüsi mootor ning andmebaas igasuguste"
+"andmete hoiustamiseks. Loe selle kohta rohkem `siit "
+"<https://www.elastic.co/what-is/elasticsearch>`_."
 
-#: ../../source/terminology.rst:41
+#: ../../source/terminology.rst:48
 msgid "Embedding"
 msgstr ""
 
-#: ../../source/terminology.rst:43
+#: ../../source/terminology.rst:50
 msgid ""
 "`Embedding <https://en.wikipedia.org/wiki/Word_embedding>`_ is a "
 "statistical model describing the distributional properties of words and "
@@ -96,245 +119,282 @@ msgid ""
 "employ cross-lingual embeddings developed by EMBEDDIA to support "
 "multilingual text classification."
 msgstr ""
+"`Embedding ehk sõnavektor <https://en.wikipedia.org/wiki/Word_embedding>`_ on "
+"statistiline mudel, mis kirjeldab sõnade ja fraaside distributiivseid "
+"omadusi, võimaldades arvutada sõnade ja fraaside vahelisi semantilisi sarnasusi."
+"TTK-s kasutatakse sõnavektoreid kontekstuaalselt sarnaste võtmesõnade "
+"otsimiseks Lexicon Mineris, et laiendada otsingutulemusi Searcheris."
+"Vektoreid saab kasutada ka närvivõrkudel põhinevates klassifikaatorites  "
+"(:ref:`Taggers <tagger_concept>`, :ref:`Tagger Groups "
+"<tagger_group_concept>`, :ref:` Torch Tagger <torch_tagger_concept>`, "
+":ref:`Taggers <bert_tagger_concept>`). Varsti ilmuvad TTK-sse "
+"ka keelteülesed sõnavektorid, mida arendatakse EMBEDDIA projektis "
+"mitmekeelse teksti klassifitseerimise tarbeks."
 
-#: ../../source/terminology.rst:51
+#: ../../source/terminology.rst:58
 msgid "Fact"
-msgstr ""
+msgstr "Fakt"
 
-#: ../../source/terminology.rst:53
+#: ../../source/terminology.rst:60
 msgid "In TTK text annotations are regarded as facts:"
-msgstr ""
+msgstr "TTK-s käsitletakse tekstimärgendeid faktidena:"
 
-#: ../../source/terminology.rst:64
+#: ../../source/terminology.rst:71
 msgid "Facts are objects with following properties:"
-msgstr ""
+msgstr "Faktid on objektid järgnevate tunnustega:"
 
-#: ../../source/terminology.rst:66
+#: ../../source/terminology.rst:73
 msgid "fact - a name for the annotation (e.g. PER, LOC, or any arbitrary string)"
-msgstr ""
+msgstr "fakt - märgendi nimi (nt PER, LOC, või suvaline sõne)"
 
-#: ../../source/terminology.rst:68
+#: ../../source/terminology.rst:75
 msgid ""
 "str_val - string value for the annotation (e.g. \"Donald Trump\" for "
 "PER). Values don't need to match annotated text segments."
 msgstr ""
 
-#: ../../source/terminology.rst:70
+#: ../../source/terminology.rst:77
 msgid ""
 "doc_path - path to the field containing the annotated string (e.g. "
 "\"text\", \"text.author\", \"comment.text.author\", etc.)"
 msgstr ""
+"doc_path - tee väljani, mis sisaldab endas märgentatud sõnet. (Nt. "
+"\"text\", \"text.author\", \"comment.text.author\", etc.)"
 
-#: ../../source/terminology.rst:72
+#: ../../source/terminology.rst:79
 msgid ""
 "spans - JSON string containing the start and end positions in the "
 "annotated string"
 msgstr ""
+"spans - JSON sõne, mis sisaldab märgendatud sõne algus- ja "
+"lõpupositsooni."
 
-#: ../../source/terminology.rst:74
+#: ../../source/terminology.rst:81
 msgid ""
 "The Toolkit comes with several predefined fact names that are used by our"
 " Multilingual Processor:"
 msgstr ""
+"Toolkitis on eeldefineeritud faktid, mida kasutab"
+" Mitmekeelne Eeltöötleja:"
 
-#: ../../source/terminology.rst:79
+#: ../../source/terminology.rst:86
 msgid "Label"
-msgstr ""
+msgstr "Silt"
 
-#: ../../source/terminology.rst:79
+#: ../../source/terminology.rst:86
 msgid "Meaning"
-msgstr ""
+msgstr "Tähendus"
 
-#: ../../source/terminology.rst:79
+#: ../../source/terminology.rst:86
 msgid "Comment"
-msgstr ""
+msgstr "Kommentaar"
 
-#: ../../source/terminology.rst:81
+#: ../../source/terminology.rst:88
 msgid "PER"
 msgstr ""
 
-#: ../../source/terminology.rst:81
+#: ../../source/terminology.rst:88
 msgid "Persona"
 msgstr ""
 
-#: ../../source/terminology.rst:81
+#: ../../source/terminology.rst:88
 msgid "Name of a person."
-msgstr ""
+msgstr "Inimese nimi"
 
-#: ../../source/terminology.rst:83
+#: ../../source/terminology.rst:90
 msgid "ORG"
 msgstr ""
 
-#: ../../source/terminology.rst:83
+#: ../../source/terminology.rst:90
 msgid "Organisation"
-msgstr ""
+msgstr "Organisatsioon"
 
-#: ../../source/terminology.rst:83
+#: ../../source/terminology.rst:90
 msgid "Name of an organisation, gotten statistically."
-msgstr ""
+msgstr "Organisatsiooni nimi, saadud statistiliselt."
 
-#: ../../source/terminology.rst:85
+#: ../../source/terminology.rst:92
 msgid "LOC"
 msgstr ""
 
-#: ../../source/terminology.rst:85
+#: ../../source/terminology.rst:92
 msgid "Location"
-msgstr ""
+msgstr "Asukoht"
 
-#: ../../source/terminology.rst:85
+#: ../../source/terminology.rst:92
 msgid "Name of a location, gotten statistically."
-msgstr ""
+msgstr "Asukoha nimi, saadud statistiliselt"
 
-#: ../../source/terminology.rst:87
+#: ../../source/terminology.rst:94
 msgid "COMPANY"
 msgstr ""
 
-#: ../../source/terminology.rst:87
+#: ../../source/terminology.rst:94
 msgid "Company"
-msgstr ""
+msgstr "Ettevõte"
 
-#: ../../source/terminology.rst:87
+#: ../../source/terminology.rst:94
 msgid ""
 "Names of companies registered in Estonia, gotten from `Estonian Open Data"
 " <https://opendata.riik.ee/datasets/ariregister/>`_."
 msgstr ""
+"Eestis registreeritud ettevõtete nimed, saadud `Estonian Open Data'st"
+" <https://opendata.riik.ee/datasets/ariregister/>`_."
 
-#: ../../source/terminology.rst:89
+#: ../../source/terminology.rst:96
 msgid "ADDR"
 msgstr ""
 
-#: ../../source/terminology.rst:89
+#: ../../source/terminology.rst:96
 msgid "Address"
-msgstr ""
+msgstr "Aadress"
 
-#: ../../source/terminology.rst:89
+#: ../../source/terminology.rst:96
 msgid ""
 "Estonian address, gotten from `Estonian Open Data "
 "<https://opendata.riik.ee/datasets/aadressiandmed/>`_."
 msgstr ""
+"Eesti aadress, saadud`Estonian Open Data'st "
+"<https://opendata.riik.ee/datasets/aadressiandmed/>`_."
 
-#: ../../source/terminology.rst:91
+#: ../../source/terminology.rst:98
 msgid "DRUG"
 msgstr ""
 
-#: ../../source/terminology.rst:91
+#: ../../source/terminology.rst:98
 msgid "Drug"
-msgstr ""
+msgstr "Ravim"
 
-#: ../../source/terminology.rst:91
+#: ../../source/terminology.rst:98
 msgid "Name of a medicine."
-msgstr ""
+msgstr "Ravimi nimi"
 
-#: ../../source/terminology.rst:93
+#: ../../source/terminology.rst:100
 msgid "SUBSTANCE"
 msgstr ""
 
-#: ../../source/terminology.rst:93
+#: ../../source/terminology.rst:100
 msgid "Substance"
-msgstr ""
+msgstr "Koostisosa"
 
-#: ../../source/terminology.rst:93
+#: ../../source/terminology.rst:100
 msgid "Ingredient of a drug."
-msgstr ""
+msgstr "Ravimi koostisosa"
 
-#: ../../source/terminology.rst:95
+#: ../../source/terminology.rst:102
 msgid "EML"
 msgstr ""
 
-#: ../../source/terminology.rst:95
+#: ../../source/terminology.rst:102
 msgid "E-mail"
 msgstr ""
 
-#: ../../source/terminology.rst:95
+#: ../../source/terminology.rst:102
 msgid "E-mail address."
-msgstr ""
+msgstr "E-maili aadress"
 
-#: ../../source/terminology.rst:97
+#: ../../source/terminology.rst:104
 msgid "PHO"
 msgstr ""
 
-#: ../../source/terminology.rst:97
+#: ../../source/terminology.rst:104
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
-#: ../../source/terminology.rst:97
+#: ../../source/terminology.rst:104
 msgid "Phone number."
-msgstr ""
+msgstr "Telefoninumber"
 
-#: ../../source/terminology.rst:99
+#: ../../source/terminology.rst:106
 msgid "TEXTA_TAG"
 msgstr ""
 
-#: ../../source/terminology.rst:99
+#: ../../source/terminology.rst:106
 msgid "Own tag"
-msgstr ""
+msgstr "Oma märgend"
 
-#: ../../source/terminology.rst:99
+#: ../../source/terminology.rst:106
 msgid "Tags we have trained in the Taggers under Models"
-msgstr ""
+msgstr "Märgend, mis on treenitud Taggeriga"
 
-#: ../../source/terminology.rst:102
+#: ../../source/terminology.rst:109
 msgid "Table 1. *Predefined Fact Names used by Multilingual Processor*"
-msgstr ""
+msgstr "Tabel 1. *Eeldefineeritud Faktide Nimed, mida kasutab Mitmekeelne Eeltöötleja*"
 
-#: ../../source/terminology.rst:104
+#: ../../source/terminology.rst:111
 msgid ""
 "It is important to notice that COMPANY and ADDR identify only companies "
 "and addresses registered in Estonian Open Data. It won't tag any foreign "
 "company nor address while ORG and LOC identify all of them."
 msgstr ""
+"Oluline on märgata, et COMPANY ja ADDR märgendavad vaid neid ettevõtteid"
+"ja aadresse, mis on registreeritud Estonian Open Datas. See ei märgenda ühtegi "
+"välismaa firmat või aadressi. ORG ja LOC märgendavad kõiki."
 
-#: ../../source/terminology.rst:110
+#: ../../source/terminology.rst:117
 msgid "Field"
-msgstr ""
+msgstr "Väli"
 
-#: ../../source/terminology.rst:112
+#: ../../source/terminology.rst:119
 msgid ""
 "Each document is a collection of fields. Field is a separated piece of "
 "information in that document. For example, we can have an article with "
 "fields containing the text, the date of publishing, headline, etc."
 msgstr ""
+"Iga dokument on väljade kogum. Väli on eraldatud informatsioonikild antud "
+"dokumendi kohta. Näiteks võivad artiklil olla väljad, "
+"mis sisaldavad artikli sisu tekstina, avaldamiskuupäeva, pealkirja jne."
 
-#: ../../source/terminology.rst:118
+#: ../../source/terminology.rst:125
 msgid "Health"
 msgstr ""
 
-#: ../../source/terminology.rst:119
+#: ../../source/terminology.rst:126
 msgid ""
 "Server health is a comprehensive overview of the status and performance "
 "of individual servers. It includes hardware parameters and, in our case, "
 "the TTK version numbers and the state of needed services. See :ref:`here "
 "<health>` how to check TTK's health."
 msgstr ""
+"Serveri tervis annab ülevaate erinevate serverite staatustest ja jõudlusest, "
+"sealhulgas ka riistvara parameetreid ja TTK puhul TTK versiooninumbreid ja kasutatavate "
+"teenuste seisundeid. Loe rohkem :ref:`siit <health>`, kuidas kontrollida TTK tervist."
 
-#: ../../source/terminology.rst:124
+#: ../../source/terminology.rst:131
 msgid "Index"
-msgstr ""
+msgstr "Indeks"
 
-#: ../../source/terminology.rst:126
+#: ../../source/terminology.rst:133
 msgid ""
 "`Elasticsearch's index <https://www.elastic.co/blog/what-is-an-"
 "elasticsearch-index>`_ is a collection of documents in Elasticsearch. In "
 "Search output the table consists of all the suitable documents filtered "
 "out from that index and one row indicates a document."
 msgstr ""
+"`Elasticsearchi indeks <https://www.elastic.co/blog/what-is-an-"
+"elasticsearch-index>`_ on dokumentide kogum Elasticsearchis. "
+"Searcher-i väljund koosneb sobivatest väljafiltreeritud dokumentidest "
+"antud indeksi(te)st ning üks rida on üks dokument."
 
-#: ../../source/terminology.rst:131
+#: ../../source/terminology.rst:138
 msgid "Lexicon miner"
 msgstr ""
 
-#: ../../source/terminology.rst:132
+#: ../../source/terminology.rst:139
 msgid ""
 "Lexicon Miner is a tool for creating topic-related lexicon. It uses "
 ":ref:'embeddings <embedding_concept>' for finding words used in similar "
 "context. Read more about its usage :ref:`here <lexiconminer>`."
 msgstr ""
+"Lexicon Mineri abil saab luua temaatiliste sõnade leksikone. See kasutab"
+":ref:'sõnavektoreid <embedding_concept>' sarnases kontekstis kasutatud sõnade "
+"leidmiseks. Loe rohkem selle kasutuse kohta :ref:`siit <lexiconminer>`."
 
-#: ../../source/terminology.rst:138
+#: ../../source/terminology.rst:145
 msgid "Multilingual Preprocessor (MLP)"
-msgstr ""
+msgstr "Mitmekeelne Eeltöötleja (MLP)"
 
-#: ../../source/terminology.rst:140
+#: ../../source/terminology.rst:147
 msgid ""
 "MLP offers different analyzing options that give more features "
 "(information) for machine learning applications in TTK and helps to parse"
@@ -342,11 +402,12 @@ msgid ""
 "about the usage :ref:`here <mlp_p>`."
 msgstr ""
 
-#: ../../source/terminology.rst:145
+
+#: ../../source/terminology.rst:152
 msgid "Project"
 msgstr ""
 
-#: ../../source/terminology.rst:147
+#: ../../source/terminology.rst:154
 msgid ""
 "Project is the main unit of access and management for datasets and "
 "resources (embeddings, text classifiers, etc.). A project is defined by "
@@ -357,17 +418,17 @@ msgid ""
 "project."
 msgstr ""
 
-#: ../../source/terminology.rst:149
+#: ../../source/terminology.rst:156
 msgid ""
 "Project is active when it is chosen in the upper panel on the right. Read"
 " more about projects :ref:`here <project>`."
 msgstr ""
 
-#: ../../source/terminology.rst:154
+#: ../../source/terminology.rst:161
 msgid "Query"
 msgstr ""
 
-#: ../../source/terminology.rst:156
+#: ../../source/terminology.rst:163
 msgid ""
 "`Elasticsearch's query "
 "<https://www.elastic.co/guide/en/elasticsearch/reference/current/query-"
@@ -378,11 +439,11 @@ msgid ""
 "<search_concept>` as saved search for using it later or in other tools."
 msgstr ""
 
-#: ../../source/terminology.rst:161
+#: ../../source/terminology.rst:168
 msgid "Regex Tagger"
 msgstr ""
 
-#: ../../source/terminology.rst:163
+#: ../../source/terminology.rst:170
 msgid ""
 "Regex Tagger is a tool for tagging texts based on pattern matches. The "
 "user can define patterns (words/phrases/regexes) to search from the text "
@@ -391,60 +452,60 @@ msgid ""
 "usage :ref:`here<regex_tagger>`."
 msgstr ""
 
-#: ../../source/terminology.rst:168
+#: ../../source/terminology.rst:175
 msgid "Regex Tagger Group"
 msgstr ""
 
-#: ../../source/terminology.rst:170
+#: ../../source/terminology.rst:177
 msgid ""
 "Regex Tagger Group allows combining different Regex Taggers. Read more "
 "about its usage :ref:`here<regex_tagger_group>`."
 msgstr ""
 
-#: ../../source/terminology.rst:175
+#: ../../source/terminology.rst:182
 msgid "Reindexer"
 msgstr ""
 
-#: ../../source/terminology.rst:177
+#: ../../source/terminology.rst:184
 msgid ""
 "Reindexer is a tool for making copies or subsets of Elasticsearch "
 ":ref:`indices <index_concept>`. Reindexer can be used for various data "
 "management tasks:"
 msgstr ""
 
-#: ../../source/terminology.rst:179
+#: ../../source/terminology.rst:186
 msgid "Making a copy of an index;"
 msgstr ""
 
-#: ../../source/terminology.rst:180
+#: ../../source/terminology.rst:187
 msgid "Merging multiple indices into one;"
 msgstr ""
 
-#: ../../source/terminology.rst:181
+#: ../../source/terminology.rst:188
 msgid "Making a random subset of an index;"
 msgstr ""
 
-#: ../../source/terminology.rst:182
+#: ../../source/terminology.rst:189
 msgid "Making a subset based on a predefined query;"
 msgstr ""
 
-#: ../../source/terminology.rst:183
+#: ../../source/terminology.rst:190
 msgid "Renaming fields;"
 msgstr ""
 
-#: ../../source/terminology.rst:184
+#: ../../source/terminology.rst:191
 msgid "Updating Elasticsearch field types."
 msgstr ""
 
-#: ../../source/terminology.rst:186
+#: ../../source/terminology.rst:193
 msgid "Read more about it :ref:`here <reindexer>`."
 msgstr ""
 
-#: ../../source/terminology.rst:192
+#: ../../source/terminology.rst:199
 msgid "Search"
 msgstr ""
 
-#: ../../source/terminology.rst:194
+#: ../../source/terminology.rst:201
 msgid ""
 "One of the most central components in TTK is Search, which is used to "
 "define subsets of data for training text classification models and "
@@ -456,11 +517,11 @@ msgid ""
 "more about it :ref:`here <searcher>`."
 msgstr ""
 
-#: ../../source/terminology.rst:199
+#: ../../source/terminology.rst:206
 msgid "Tagger Group"
 msgstr ""
 
-#: ../../source/terminology.rst:201
+#: ../../source/terminology.rst:208
 msgid ""
 "Tagger Group is an extension to TTK’s binary taggers to support "
 "monolingual multi-label classification. As its name suggests, Tagger "
@@ -475,11 +536,11 @@ msgid ""
 "tags. Read more about it :ref:`here <tagger>`."
 msgstr ""
 
-#: ../../source/terminology.rst:211
+#: ../../source/terminology.rst:218
 msgid "Tagger"
 msgstr ""
 
-#: ../../source/terminology.rst:213
+#: ../../source/terminology.rst:220
 msgid ""
 "Taggers are monolingual binary text classifiers used to predict tags for "
 "documents, e.g. whether a tweet is toxic or talking about Brexit. Taggers"
@@ -497,11 +558,11 @@ msgid ""
 "n-grams are used. Read more about it :ref:`here <tagger_group>`."
 msgstr ""
 
-#: ../../source/terminology.rst:225
+#: ../../source/terminology.rst:232
 msgid "Task"
 msgstr ""
 
-#: ../../source/terminology.rst:227
+#: ../../source/terminology.rst:234
 msgid ""
 "TEXTA Toolkit allows building several different statistical models to "
 "process the text. The training process is initiated via TTK API or GUI, "
@@ -510,11 +571,11 @@ msgid ""
 "the training progress of trainable statistical models."
 msgstr ""
 
-#: ../../source/terminology.rst:232
+#: ../../source/terminology.rst:239
 msgid "Topic Analyzer"
 msgstr ""
 
-#: ../../source/terminology.rst:234
+#: ../../source/terminology.rst:241
 msgid ""
 "Topic Analyzer is a tool that detects groups of similar documents in the "
 "data. It can be used for example to explore the structure of the "
@@ -525,7 +586,7 @@ msgid ""
 "models."
 msgstr ""
 
-#: ../../source/terminology.rst:236
+#: ../../source/terminology.rst:243
 msgid ""
 "Topic Analyzer puts to use the best parts of unsupervised clustering and "
 "manual labelling. While clustering is a fast and efficient method to "
@@ -536,7 +597,7 @@ msgid ""
 "probably be so-and-so."
 msgstr ""
 
-#: ../../source/terminology.rst:238
+#: ../../source/terminology.rst:245
 msgid ""
 "Topic Analyzer allows user to look inside each cluster and make the "
 "decision about the quality manually. Users can also perform various "
@@ -546,15 +607,15 @@ msgid ""
 "sufficient quality."
 msgstr ""
 
-#: ../../source/terminology.rst:240
+#: ../../source/terminology.rst:247
 msgid "Read more about its usage :ref:`here <topic_analyzer>`."
 msgstr ""
 
-#: ../../source/terminology.rst:245
+#: ../../source/terminology.rst:252
 msgid "Torch Tagger"
 msgstr ""
 
-#: ../../source/terminology.rst:247
+#: ../../source/terminology.rst:254
 msgid ""
 "While Taggers and Tagger Groups use classical machine learning to produce"
 " binary classification models, Texta Toolkit also incorporates deep "
@@ -563,7 +624,7 @@ msgid ""
 "Torch Tagger."
 msgstr ""
 
-#: ../../source/terminology.rst:250
+#: ../../source/terminology.rst:257
 msgid ""
 "It allows for the user to use several state-of-art text classification "
 "models, including fastText, TextRNN using bi-direction LSTM networks, "
@@ -577,319 +638,13 @@ msgid ""
 " about its usage :ref:`here <torch_tagger>`."
 msgstr ""
 
-#: ../../source/terminology.rst:260
+#: ../../source/terminology.rst:267
 msgid "UUA server"
 msgstr ""
 
-#: ../../source/terminology.rst:261
+#: ../../source/terminology.rst:268
 msgid ""
 "User Account and Authentication is an identity management service for "
 "making sure that only selected users have access to certain datasets. "
 "Read more about it :ref:`here <uaa>`."
 msgstr ""
-
-#~ msgid ""
-#~ "Embedding is a statistical model "
-#~ "describing the distributional properties of"
-#~ " words and phrases, which enables the"
-#~ " computation of similarity between words"
-#~ " and phrases. In TTK, embeddings are"
-#~ " used for finding contextually similar "
-#~ "keywords to extend search results and"
-#~ " building lexicons. Furthermore, vectors "
-#~ "from word embeddings can also be "
-#~ "used in neural classification models in"
-#~ " Texta Toolkit. TTK currently only "
-#~ "supports Word2Vec embeddings, but work "
-#~ "is being done to incorporate state "
-#~ "of the art embedding models (e.g. "
-#~ "BERT from Google Research). Furthermore, "
-#~ "TTK will also employ cross-lingual "
-#~ "embeddings developed by EMBEDDIA to "
-#~ "support multilingual text classification."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Here are described the main concepts "
-#~ "related to TEXTA Toolkit (TTK). .. "
-#~ "_anonymizer_concept:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Anonymizer is a tool for anonymizing "
-#~ "names in a text based on a "
-#~ "predefined list of names. Each name "
-#~ "detected from the text will be "
-#~ "substituted with randomly generated pair "
-#~ "of initials. You can read more "
-#~ "about it :ref:`here <anonymizer>`."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Elasticsearch is a distributed, open "
-#~ "source search and analytics engine and"
-#~ " database for all types of data. "
-#~ "You can read more about it "
-#~ ":ref:`here <https://www.elastic.co/what-"
-#~ "is/elasticsearch>`_."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Embedding is a statistical model "
-#~ "describing the distributional properties of"
-#~ " words and phrases, which enables the"
-#~ " computation of similarity between words"
-#~ " and phrases. In TTK, embeddings are"
-#~ " used for finding contextually similar "
-#~ "keywords to extend search results (by"
-#~ " building lexicons). Furthermore, vectors "
-#~ "from word embeddings can also be "
-#~ "used in neural classification models "
-#~ "(:ref:`Taggers <tagger_concept>`, :ref:`Tagger "
-#~ "Groups <tagger_group_concept>`, :ref:` Torch "
-#~ "Tagger <torch_tagger_concept>`) in Texta "
-#~ "Toolkit. TTK currently only supports "
-#~ "Word2Vec embeddings, but work is being"
-#~ " done to incorporate state of the "
-#~ "art embedding models (e.g. BERT from "
-#~ "Google Research). Furthermore, TTK will "
-#~ "also employ cross-lingual embeddings "
-#~ "developed by EMBEDDIA to support "
-#~ "multilingual text classification."
-#~ msgstr ""
-
-#~ msgid "fact - name for the annotation (e.g. PER, LOC, or any arbitrary string)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "str_val - string value for the "
-#~ "annotation (e.g. \"Donald Trump\" for "
-#~ "PER). Values don't need to match "
-#~ "annotated text segmements."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Toolkit comes with several predefined "
-#~ "fact names that are used by our"
-#~ " Multilingual Processor:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Names of company registered in Estonia,"
-#~ " gotten from `Estonian Open Data "
-#~ "<https://opendata.riik.ee/datasets/ariregister/>`_."
-#~ msgstr ""
-
-#~ msgid "Tags we have trained in :ref:`the Taggers under Models <texttaggers>`"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "It is important to notice that "
-#~ "COMPANY and ADDR identify only companies"
-#~ " and addresses registered in Estonian "
-#~ "Open Data. It won't tag any "
-#~ "foreign company nor address while ORG"
-#~ " and LOC identifies all of them."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Index is a collection of documents "
-#~ "in Elasticsearch. In Search output the"
-#~ " table consists of all the suitable"
-#~ " documents filtered out from that "
-#~ "index and one row indicates a "
-#~ "document."
-#~ msgstr ""
-
-#~ msgid "Multilingual Preprocessor"
-#~ msgstr ""
-
-#~ msgid "TODO"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Project is the main unit of access"
-#~ " and management for datasets and "
-#~ "resources (embeddings, text classifiers, "
-#~ "etc.). A project is defined by its"
-#~ " description, list of Elasticsearch indices"
-#~ " related to the project (this is "
-#~ "where the data is!), and a list"
-#~ " of users who can access the "
-#~ "project and it’s resources. All "
-#~ "resources in TTK belong to some "
-#~ "project and by adding or removing "
-#~ "users, one can manage their access "
-#~ "to the project."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Regex Tagger is a tool for tagging"
-#~ " texts based on pattern matches. The"
-#~ " user can define patterns "
-#~ "(words/phrases/regexes) to search from the "
-#~ "text and fine tune a variation of"
-#~ " parameters to extract specific information"
-#~ " and tag the text based on the"
-#~ " information retrieved."
-#~ msgstr ""
-
-#~ msgid "Regex Tagger Group allows combining different Regex Taggers."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "One of the most central component "
-#~ "in TTK is Search, which is used"
-#~ " to define subsets of data for "
-#~ "training text classification models and "
-#~ "performing various aggregations. Search is "
-#~ "managed via GUI and can contain "
-#~ "one or more constraints on feature "
-#~ "values (e.g. strings and dates). "
-#~ "Documents matching the search criteria "
-#~ "can be used in various "
-#~ "actions/functionalities in TTK, e.g. "
-#~ "extraction of relevant keywords, data "
-#~ "summarisation and exploration, and training"
-#~ " text classifiers."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Tagger Group is an extension to "
-#~ "TTK’s binary taggers to support "
-#~ "monolingual multi-label classification. As "
-#~ "its name suggests, Tagger Groups "
-#~ "incorporate multiple (binary) taggers, which"
-#~ " are executed in parallel to produce"
-#~ " a list of tags to the user."
-#~ " Tagger Group has been successfully "
-#~ "tested with over 6000 binary models "
-#~ "and prediction times are usually less"
-#~ " than 1 second. To achieve this, "
-#~ "TTK has employed a hybrid approach "
-#~ "for multi-label tagging, which uses "
-#~ "unsupervised machine learning (document "
-#~ "vectors) to limit the number of "
-#~ "binary models used for prediction. In"
-#~ " such scenario input document is "
-#~ "compared to training data to determine"
-#~ " most probable models to produce "
-#~ "valid tags."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Taggers are monolingual binary text "
-#~ "classifiers used to predict tags for "
-#~ "documents, e.g. whether a tweet is "
-#~ "toxic or talking about Brexit. Taggers"
-#~ " are trained using a subset of "
-#~ "documents defined by a TTK search "
-#~ "or a raw Elasticsearch query (big "
-#~ "ugly JSON object). The subset of "
-#~ "documents defines the “positive” set of"
-#~ " examples (the documents about the "
-#~ "topic being tagged), whilst “negative” "
-#~ "examples will be selected automatically "
-#~ "(to be unlike the positive ones). "
-#~ "TTK taggers are trained using scikit-"
-#~ "learn pipelines and includes models like"
-#~ " logistic regression and SVM. TTK "
-#~ "automatically splits the training data "
-#~ "into training and testing data (by "
-#~ "default 80-20) and applies grid search"
-#~ " combined with k-fold cross validation "
-#~ "to identify best hyperparameters. SVM "
-#~ "model is also used for feature "
-#~ "selection to remove unimportant features "
-#~ "from the model making it smaller. "
-#~ "For features, both word-based and "
-#~ "character-based n-grams are used."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "TEXTA Toolkit allows to build several"
-#~ " different statistical models to process"
-#~ " the text. The training process is"
-#~ " initiated via TTK API or GUI, "
-#~ "which results in creating of the "
-#~ "object in TTK data model and "
-#~ "starting the asynchronous training task. "
-#~ "Tasks are data objects for keeping "
-#~ "track of training progress of trainable"
-#~ " statistical models."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Topic Analyzer is a tool that "
-#~ "detects groups of similar documents in"
-#~ " the data. It can be used for"
-#~ " example to explore the structure of"
-#~ " the unlabeled data in order to "
-#~ "get the understanding about what it "
-#~ "contains. However, the main purpose of"
-#~ " the tool is to take it one "
-#~ "step further and make actual use "
-#~ "of one's exploration by transforming "
-#~ "their discoveries into the labelling. It"
-#~ " can then be used to build "
-#~ "supervised machine learning models."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Topic Analyzer puts to use the "
-#~ "best parts of unsupervised clustering "
-#~ "and manual labelling. While clustering "
-#~ "is a fast and efficient method to"
-#~ " create groups of rather similar "
-#~ "texts, it still lacks preciseness "
-#~ "required to use these clusters as "
-#~ "a labelling of the data. For "
-#~ "example, while some clusters may indeed"
-#~ " contain similar documents, some other "
-#~ "will completely fail in capturing the"
-#~ " similarity and most of them will "
-#~ "probably be so-and-so."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Topic Analyzer allows user to look "
-#~ "inside each cluster and make the "
-#~ "decision about the quality manually. "
-#~ "Users can also perform various actions"
-#~ " on the cluster: remove documents, "
-#~ "add more similar documents, and move "
-#~ "documents to another more suitable "
-#~ "cluster. Finally, user can choose to "
-#~ "label the documents inside the cluster"
-#~ " if it has reached a sufficient "
-#~ "quality."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "While Taggers and Tagger Groups use "
-#~ "classical machine learning to produce "
-#~ "binary classification models, Texta Toolkit"
-#~ " also incorporates deep neural models "
-#~ "for binary and multi-class text "
-#~ "classification. As the models are all"
-#~ " programmed using PyTorch, the TTK’s "
-#~ "component is called Torch Tagger. It "
-#~ "allows for the user to use several"
-#~ " state-of-art text classification "
-#~ "models, including fastText, TextRNN using "
-#~ "bi-direction LSTM networks, RCNN using"
-#~ " recurrent convolutional neural nets. Since"
-#~ " all models have been developed using"
-#~ " PyTorch, introducing new models is "
-#~ "fairly straightforward. TorchTagger models "
-#~ "also include the possibility to use "
-#~ "pre-trained word vectors (e.g. Word2Vec"
-#~ " trained in TTK) in the embedding "
-#~ "layer of the models. To create "
-#~ "data processing pipelines, Torch Tagger "
-#~ "uses torchtext package. Torch Tagger has"
-#~ " been validated on monolingual toxic "
-#~ "comment detection, reaching accuracy and "
-#~ "F1-score of 96%."
-#~ msgstr ""
-

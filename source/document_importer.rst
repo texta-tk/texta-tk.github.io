@@ -7,7 +7,7 @@
 Document Importer
 ##################
 
-Document importer provides API endpoints for adding, deleting and replacing documents one by one in or into a certain index in an easy way.
+:ref:`Document Importer <document_importer_concept>` (Document Importer) provides API endpoints for adding, deleting and replacing documents one by one in or into a certain index in an easy way.
 
 Importing a document
 *********************
@@ -110,7 +110,7 @@ Endpoint: **projects/{project_pk}/document_importer/{index_name}/update_split**
   -H "Content-Type: application/json" \
   -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
   -d '{
-        "content": "general kenobi! Here is a very long text that should be splitted and now there's more text I forgot to add before and am replacing now",
+        "content": "general kenobi! Here is a very long text that should be splitted and now there is more text I forgot to add before and am replacing now",
         "text_field": "hello",
         "id_value": "uuid",
         "id_field": "aa15-ghh4-41af-af51"
