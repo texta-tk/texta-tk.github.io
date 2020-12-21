@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-21 13:57+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/document_importer.rst:1
+msgid "`EN <https://docs.texta.ee/document_importer.html>`_"
+msgstr ""
+
+#: ../../source/document_importer.rst:7
+msgid "Document Importer"
+msgstr ""
+
+#: ../../source/document_importer.rst:9
+msgid ""
+"Document importer provides API endpoints for adding, deleting and "
+"replacing documents one by one in or into a certain index in an easy way."
+msgstr ""
+
+#: ../../source/document_importer.rst:12
+msgid "Importing a document"
+msgstr ""
+
+#: ../../source/document_importer.rst:15 ../../source/document_importer.rst:90
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/document_importer.rst:25
+msgid "**documents**:"
+msgstr ""
+
+#: ../../source/document_importer.rst:17
+msgid ""
+"Collection of raw Elasticsearch documents. Each element in the list has "
+"following fields:"
+msgstr ""
+
+#: ../../source/document_importer.rst:19
+msgid ""
+"\"_id\": Under which id should Elasticsearch insert the document, without"
+" this Elasticsearch will generate one itself."
+msgstr ""
+
+#: ../../source/document_importer.rst:21
+msgid ""
+"\"_index\": Under which already existing index should Elasticsearch "
+"insert the document."
+msgstr ""
+
+#: ../../source/document_importer.rst:23
+msgid ""
+"\"_type\": Should be the same value as index, specifies the Elasticsearch"
+" doc_type."
+msgstr ""
+
+#: ../../source/document_importer.rst:25
+msgid "\"_source\": Actual content of the document."
+msgstr ""
+
+#: ../../source/document_importer.rst:28
+msgid "**split_text_in_fields**:"
+msgstr ""
+
+#: ../../source/document_importer.rst:28
+msgid "Specifies which text fields should be split into smaller pieces."
+msgstr ""
+
+#: ../../source/document_importer.rst:32
+msgid ""
+"If the documents do not have \"_index\" and \"_type\" field, the name of "
+"the index is generated automatically."
+msgstr ""
+
+#: ../../source/document_importer.rst:36
+msgid "Examples"
+msgstr ""
+
+#: ../../source/document_importer.rst:38
+msgid "Endpoint: **/projects/{project_pk}/document_importer/**"
+msgstr ""
+
+#: ../../source/document_importer.rst:40
+msgid "Example with index name added automatically and no splitting:"
+msgstr ""
+
+#: ../../source/document_importer.rst:53
+msgid "Example with given index name and splitting:"
+msgstr ""
+
+#: ../../source/document_importer.rst:67
+msgid "Viewing a document"
+msgstr ""
+
+#: ../../source/document_importer.rst:69 ../../source/document_importer.rst:79
+msgid ""
+"Endpoint: "
+"**projects/{project_pk}/document_importer/{index_name}/{document_id}/**"
+msgstr ""
+
+#: ../../source/document_importer.rst:77
+msgid "Deleting a document"
+msgstr ""
+
+#: ../../source/document_importer.rst:87
+msgid "Updating split document"
+msgstr ""
+
+#: ../../source/document_importer.rst:91
+msgid "**id_field**:"
+msgstr ""
+
+#: ../../source/document_importer.rst:92
+msgid ""
+"Which field to use as the ID marker to categorize split documents into a "
+"single entity."
+msgstr ""
+
+#: ../../source/document_importer.rst:93
+msgid "**id_value**:"
+msgstr ""
+
+#: ../../source/document_importer.rst:94
+msgid ""
+"Value of the ID field by which you categorize split documents into a "
+"single entity."
+msgstr ""
+
+#: ../../source/document_importer.rst:95
+msgid "**text_field**:"
+msgstr ""
+
+#: ../../source/document_importer.rst:96
+msgid "Specifies the name of the text field you wish to update."
+msgstr ""
+
+#: ../../source/document_importer.rst:98
+msgid "**content**:"
+msgstr ""
+
+#: ../../source/document_importer.rst:98
+msgid "New content that the old one will be updated with."
+msgstr ""
+
+#: ../../source/document_importer.rst:101
+msgid "Example"
+msgstr ""
+
+#: ../../source/document_importer.rst:103
+msgid ""
+"Endpoint: "
+"**projects/{project_pk}/document_importer/{index_name}/update_split**"
+msgstr ""
+

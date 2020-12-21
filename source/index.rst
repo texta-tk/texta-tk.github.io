@@ -29,6 +29,7 @@ Contents:
     authentication
     anonymizer
     importer
+    document_importer
     mlp
     reindexer
     health
