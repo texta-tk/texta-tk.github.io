@@ -1,4 +1,5 @@
 `EN <https://docs.texta.ee/document_importer.html>`_
+`ET <https://docs.texta.ee/et/document_importer.html>`_
 
 .. _document_importer:
 
