@@ -200,18 +200,6 @@ Search
 
 One of the most central components in TTK is Search, which is used to define subsets of data for training text classification models and performing various aggregations. Search is managed via GUI and can contain one or more constraints on feature values (e.g. strings and dates). Documents matching the search criteria can be used in various actions/functionalities in TTK, e.g. extraction of relevant keywords, data summarization and exploration, and training text classifiers. Read more about it :ref:`here <searcher>`.
 
-.. _tagger_group_concept:
-
-Tagger Group
-****************
-
-Tagger Group is an extension to TTK’s binary taggers to support monolingual multi-label classification.
-As its name suggests, Tagger Groups incorporate multiple (binary) taggers, which are executed in parallel to produce a list of tags to the user.
-Tagger Group has been successfully tested with over 6000 binary models and prediction times are usually less than 1 second.
-To achieve this, TTK has employed a hybrid approach for multi-label tagging, which uses unsupervised machine learning (document vectors) to limit the number of binary models used for prediction.
-In such a scenario, the input document is compared to training data to determine the most probable models to produce valid tags. 
-Read more about it :ref:`here <tagger>`.
-
 .. _tagger_concept:
 
 Tagger
@@ -224,6 +212,18 @@ TTK taggers are trained using scikit-learn pipelines and include models like log
 TTK automatically splits the training data into training and testing data (by default 80-20) and applies grid search combined with k-fold cross-validation to identify best hyperparameters.
 An SVM model is also used for feature selection to remove unimportant features from the model making it smaller.
 For features, both word-based and character-based n-grams are used.
+Read more about it :ref:`here <tagger>`.
+
+.. _tagger_group_concept:
+
+Tagger Group
+****************
+
+Tagger Group is an extension to TTK’s binary taggers to support monolingual multi-label classification.
+As its name suggests, Tagger Groups incorporate multiple (binary) taggers, which are executed in parallel to produce a list of tags to the user.
+Tagger Group has been successfully tested with over 6000 binary models and prediction times are usually less than 1 second.
+To achieve this, TTK has employed a hybrid approach for multi-label tagging, which uses unsupervised machine learning (document vectors) to limit the number of binary models used for prediction.
+In such a scenario, the input document is compared to training data to determine the most probable models to produce valid tags. 
 Read more about it :ref:`here <tagger_group>`.
 
 .. _task:
