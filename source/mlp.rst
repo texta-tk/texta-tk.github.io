@@ -13,6 +13,15 @@ Capable of processing multiple languages, it's features include the lemmatizatio
 and more. To make access to the module more efficient and smoother, it has been integrated directly into the Toolkit. Choosing which
 features the user wants to apply on their text is handled by selecting "Analyzers".
 
+Users can apply the MLP to a singular text of their own choosing or apply it to multiple Elasticsearch indices at once.
+
+For convenience purposes the Toolkit supports several input types along with processing
+several Elasticsearch indices at once, the latter however is a time consuming process depending
+on the size of the index and the length of the processed fields.
+
+Analyzers
+**********
+
 Analyzers are a way of selecting how you want your data to be processed, whether you only want lemmatization or Entity extraction.
 Currently, the following analyzers are supported:
     * lemmas - Adds a lemmatized version of the original text.
@@ -23,10 +32,12 @@ Currently, the following analyzers are supported:
     * namemail - Extracts name-email pairs from text in Texta Facts format.
     * bounded - Links existing Texta Facts together by the basis of it belonging to the same Entity and returns a new Texta Fact.
 
-Users can apply the MLP to a singular text of their own choosing or apply it to multiple Elasticsearch indices at once.
+Creating
+********
 
 GUI
-****
+===
+
 Navigate to **Tools -> MLP**. Click **Create** button to define a new MLP worker. Select indices and fields on which you want to apply MLP. Since preprocessing the data is quite time-consuming process, it is strongly recommended to select only fields on which applying MLP is actually useful. That is, the fields which you are going to use later to create lexicons or train models on. Lastly, select analyzers which you would like to apply.
 
 .. _create_MLP:
@@ -40,23 +51,58 @@ The worker adds new fields containing the results to the dataset. You can see th
 .. figure:: images/MLP_fields.png
 
 	*Newly added fields containing results of MLP*
-    
+	
+Applying
+********
+
+Applying MLP on a single text instance
+=============================================
+
+GUI
+------------
+
 For applying MLP on a single instance of text, click on the "Apply to text" button inside **Tools -> MLP**.
 
 .. _MLP-ontext:
 .. figure:: images/MLP_ontext.png
 
     *Applying MLP on a single instance of text.*
-
+    
 API
-****
+------------
 
-For convenience purposes the Toolkit supports several input types along with processing
-several Elasticsearch indices at once, the latter however is a time consuming process depending
-on the size of the index and the length of the processed fields.
+Endpoint: **/mlp/texts/**
+
+This takes input in list format. Just use a single-element list.
+
+Example:
+
+.. code-block:: bash
+
+        curl -X POST "http://localhost:8000/api/v1/projects/11/mlp/texts/" \
+        -H "accept: application/json" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+        -d '{
+                "texts": ["Mis su nimi on?"]
+            }'
+
+Response:
+
+.. code-block:: json
+
+        [
+            {
+                "text": {"text":"Mis su nimi on ?","lang":"et","lemmas":"mis sina nimi olema ?","pos_tags":"P P S V Z"},
+                "texta_facts":[]
+            }
+        ]
 
 Applying MLP on a list of texts
-===============================
+================================
+
+API
+------------
 
 Endpoint: **/mlp/texts/**
 
@@ -89,7 +135,10 @@ Response:
 
 
 Applying MLP on a list of dictionaries
-======================================
+=======================================
+
+API
+------------
 
 Endpoint: **/mlp/docs/**
 
@@ -125,9 +174,13 @@ Response:
 
 
 Applying MLP on index
-=====================
+======================
+
+API
+------------
 
 Endpoint: **/mlp_index/**
+
 *Withholding the analyzers field will make it default into using all analyzers which is time-insufficient.*
 
 Example:

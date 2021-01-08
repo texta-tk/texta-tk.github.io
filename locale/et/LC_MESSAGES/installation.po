@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-17 12:20+0200\n"
+"POT-Creation-Date: 2021-01-08 15:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.1\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../source/installation.rst:1
 msgid ""
@@ -24,201 +24,204 @@ msgid ""
 "<https://docs.texta.ee/et/installation.html>`_"
 msgstr ""
 
-#: ../../source/installation.rst:7
+#: ../../source/installation.rst:8
 msgid "Installation"
 msgstr "Installimine"
 
-#: ../../source/installation.rst:10
+#: ../../source/installation.rst:11
 msgid "Installation Using Docker (recommended)"
 msgstr "Install Dockeriga"
 
-#: ../../source/installation.rst:14
+#: ../../source/installation.rst:15
 msgid ""
 "Currently all installation examples for system dependencies are only "
 "shown for Debian-based systems."
-msgstr ""
-"Hetkel on kõik näited tehtud Debiani baasil."
+msgstr "Hetkel on kõik näited tehtud Debiani baasil."
 
-#: ../../source/installation.rst:17
+#: ../../source/installation.rst:18
 msgid "Install Docker"
 msgstr "Installi Docker"
 
-#: ../../source/installation.rst:19
+#: ../../source/installation.rst:20
 msgid ""
 "The easiest way to run TEXTA Toolkit is to use prebuilt Docker images "
-"from TEXTA registries. For doing so, one needs to install *Docker* and "
+"from TEXTA registries. For that, one needs to install *Docker* and "
 "*docker-compose*:"
-msgstr "Lihtsaim viis TEXTA Toolkiti installimiseks on kasutada Dockeri pilte TEXTA registrist. Selleks tuleb installida *Docker* ja *docker-compose*."
+msgstr ""
+"Lihtsaim viis TEXTA Toolkiti installimiseks on kasutada Dockeri pilte "
+"TEXTA registrist. Selleks tuleb installida *Docker* ja *docker-compose*."
 
-#: ../../source/installation.rst:26
+#: ../../source/installation.rst:27
 msgid ""
 "To run :ref:`Elasticsearch <elasticsearch>` in Docker, one needs to "
 "increase maximum map count parameter for virtual memory:"
-msgstr "Selleks, et edukalt Elasticsearchi Dockeris pruukida, tuleb tõsta parameetri *maximum map count* väärtust:"
+msgstr ""
+"Selleks, et edukalt :ref:`Elasticsearchi <elasticsearch>` Dockeris "
+"pruukida, tuleb tõsta parameetri *maximum map count* väärtust:"
 
-#: ../../source/installation.rst:33
+#: ../../source/installation.rst:34
 msgid "Configure docker-compose"
 msgstr "Konfigureeri docker-compose"
 
-#: ../../source/installation.rst:35
+#: ../../source/installation.rst:36
 msgid ""
 "The ecosystem is built using *docker-compose*. This is all defined in a "
 "file called **docker-compose.yaml**. To successfully run TEXTA Toolkit "
 "one needs to define following services:"
 msgstr ""
 
-#: ../../source/installation.rst:38
+#: ../../source/installation.rst:39
 msgid ""
 ":ref:`Elasticsearch <elasticsearch>` for storing the documents (one can "
 "also run it without Docker)"
 msgstr ""
 
-#: ../../source/installation.rst:40
+#: ../../source/installation.rst:41
 msgid ""
 "Redis for managing message queues in TK (one can also run it without "
 "Docker)"
 msgstr ""
 
-#: ../../source/installation.rst:42
+#: ../../source/installation.rst:43
 msgid ""
 "MySQL or Postgres for storing user and :ref:`project <project_concept>` "
 "data (can also be run without Docker)"
 msgstr ""
 
-#: ../../source/installation.rst:44
+#: ../../source/installation.rst:45
 msgid "TEXTA Toolkit RESTful API & GUI: docker.texta.ee/texta/texta-rest:latest"
 msgstr ""
 
-#: ../../source/installation.rst:46
+#: ../../source/installation.rst:47
 msgid ""
 "For executing aforementioned services one needs to have preconfigured "
 "**docker-compose.yaml** file:"
 msgstr ""
 
-#: ../../source/installation.rst:50
+#: ../../source/installation.rst:51
 msgid ""
 "The compose file is used in combination with **env** file located in the "
 "same directory as *docker-compose.yaml* containing environment variables "
 "needed for operating TEXTA Toolkit:"
 msgstr ""
 
-#: ../../source/installation.rst:55
+#: ../../source/installation.rst:56
 msgid "Run TEXTA Toolkit"
 msgstr ""
 
-#: ../../source/installation.rst:58
+#: ../../source/installation.rst:59
 msgid ""
 "Before running TEXTA Toolkit, one should have 2 files in current working "
 "directory:"
 msgstr ""
 
-#: ../../source/installation.rst:60
+#: ../../source/installation.rst:61
 msgid "docker-compose.yaml"
 msgstr ""
 
-#: ../../source/installation.rst:62
+#: ../../source/installation.rst:63
 msgid "env"
 msgstr ""
 
-#: ../../source/installation.rst:64
+#: ../../source/installation.rst:65
 msgid ""
 "With the **docker-compose.yaml** and **env** files present and accounted "
 "for, pull the images and start the services by executing the following "
 "commands in the same directory with **docker-compose.yaml** and **env**:"
 msgstr ""
 
-#: ../../source/installation.rst:71
+#: ../../source/installation.rst:72
 msgid "For running in detached mode, use the *-d* flag:"
 msgstr ""
 
-#: ../../source/installation.rst:78
+#: ../../source/installation.rst:79
 msgid "TEXTA Toolkit's dockerized version comes with a default superuser account:"
 msgstr ""
 
-#: ../../source/installation.rst:80 ../../source/installation.rst:159
+#: ../../source/installation.rst:81 ../../source/installation.rst:160
 msgid "**user:** admin"
 msgstr ""
 
-#: ../../source/installation.rst:82 ../../source/installation.rst:161
+#: ../../source/installation.rst:83 ../../source/installation.rst:162
 msgid "**password:** 1234"
 msgstr ""
 
-#: ../../source/installation.rst:84
+#: ../../source/installation.rst:85
 msgid "When running, TEXTA Toolkit's GUI should be available at:"
 msgstr ""
 
-#: ../../source/installation.rst:86
+#: ../../source/installation.rst:87
 msgid "http://localhost"
 msgstr ""
 
-#: ../../source/installation.rst:88
+#: ../../source/installation.rst:89
 msgid "and API at:"
 msgstr ""
 
-#: ../../source/installation.rst:90
+#: ../../source/installation.rst:91
 msgid "http://localhost/api/v1/"
 msgstr ""
 
-#: ../../source/installation.rst:92
+#: ../../source/installation.rst:93
 msgid "For stopping the services:"
 msgstr ""
 
-#: ../../source/installation.rst:100
+#: ../../source/installation.rst:101
 msgid "Installation for Development"
 msgstr ""
 
-#: ../../source/installation.rst:102
+#: ../../source/installation.rst:103
 msgid ""
 "If you want to develop TEXTA Toolkit, want more control over how you run "
 "it, or seriously dislike Docker, it is also possible to install Toolkit "
 "using Anaconda (or Miniconda as shown in following examples)."
 msgstr ""
 
-#: ../../source/installation.rst:105
+#: ../../source/installation.rst:106
 msgid "Install Miniconda"
 msgstr ""
 
-#: ../../source/installation.rst:107
+#: ../../source/installation.rst:108
 msgid ""
 "First one needs to download and install Miniconda to manage Python "
 "environments. Miniconda is chosen over Anaconda because it's smaller in "
 "size, but Toolkit works well with both."
 msgstr ""
 
-#: ../../source/installation.rst:115
+#: ../../source/installation.rst:116
 msgid "Also, let's permanently put Conda binaries to **PATH** variable:"
 msgstr ""
 
-#: ../../source/installation.rst:122
+#: ../../source/installation.rst:123
 msgid "Clone the Repository"
 msgstr ""
 
-#: ../../source/installation.rst:124
+#: ../../source/installation.rst:125
 msgid "Now, let's clone the repository and move to **texta-rest** direcory:"
 msgstr ""
 
-#: ../../source/installation.rst:132
+#: ../../source/installation.rst:133
 msgid "Build the Environment"
 msgstr ""
 
-#: ../../source/installation.rst:134
+#: ../../source/installation.rst:135
 msgid ""
 "Now that **environment.yaml** file from the texta-rest repository is "
 "present, let's use it to build the environment. After the environment is "
 "built, let's activate it:"
 msgstr ""
 
-#: ../../source/installation.rst:143
+#: ../../source/installation.rst:144
 msgid "Migrate & Run Toolkit"
 msgstr ""
 
-#: ../../source/installation.rst:145
+#: ../../source/installation.rst:146
 msgid ""
 "After the environment has been created and activated, let's prepare the "
 "database:"
 msgstr ""
 
-#: ../../source/installation.rst:151
+#: ../../source/installation.rst:152
 msgid ""
 "Running the **migrate.py** script will prepare Django migrations and "
 "execute them. It is necessary to run the script every time the source "
@@ -228,47 +231,47 @@ msgid ""
 " model."
 msgstr ""
 
-#: ../../source/installation.rst:157
+#: ../../source/installation.rst:158
 msgid ""
 "Running **migrate.py** will also create a default superuser account with "
 "following credentials:"
 msgstr ""
 
-#: ../../source/installation.rst:163
+#: ../../source/installation.rst:164
 msgid "Finally let's run the development server:"
 msgstr ""
 
-#: ../../source/installation.rst:169
+#: ../../source/installation.rst:170
 msgid ""
 "And in another terminal run the Celery worker responsible for "
 "asynchronous tasks:"
 msgstr ""
 
-#: ../../source/installation.rst:176
+#: ../../source/installation.rst:177
 msgid "Browsable API"
 msgstr ""
 
-#: ../../source/installation.rst:178
+#: ../../source/installation.rst:179
 msgid "http://localhost:8000/api/v1/"
 msgstr ""
 
-#: ../../source/installation.rst:180
+#: ../../source/installation.rst:181
 msgid "TODO"
 msgstr ""
 
-#: ../../source/installation.rst:185
+#: ../../source/installation.rst:186
 msgid "API Reference"
 msgstr ""
 
-#: ../../source/installation.rst:187
+#: ../../source/installation.rst:188
 msgid "Reference for Toolkit API is available when running the Toolkit:"
 msgstr ""
 
-#: ../../source/installation.rst:189
+#: ../../source/installation.rst:190
 msgid "http://localhost:8000/api/v1/swagger/"
 msgstr ""
 
-#: ../../source/installation.rst:191
+#: ../../source/installation.rst:192
 msgid "http://localhost:8000/api/v1/redoc/"
 msgstr ""
 

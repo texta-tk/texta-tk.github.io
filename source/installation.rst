@@ -1,6 +1,7 @@
 `EN <https://docs.texta.ee/installation.html>`_
 `ET <https://docs.texta.ee/et/installation.html>`_
 
+
 .. _installation:
 
 Installation
@@ -16,7 +17,7 @@ Installation Using Docker (recommended)
 Install Docker
 ++++++++++++++
 
-The easiest way to run TEXTA Toolkit is to use prebuilt Docker images from TEXTA registries. For doing so, one needs to install *Docker* and *docker-compose*:
+The easiest way to run TEXTA Toolkit is to use prebuilt Docker images from TEXTA registries. For that, one needs to install *Docker* and *docker-compose*:
 
 .. code-block:: bash
 
