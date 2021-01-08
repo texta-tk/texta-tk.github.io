@@ -26,7 +26,7 @@ msgstr ""
 
 #: ../../source/health.rst:8
 msgid "Health"
-msgstr ""
+msgstr "Seisund (Health)"
 
 #: ../../source/health.rst:10
 msgid ""
@@ -35,6 +35,10 @@ msgid ""
 "<elasticsearch>`) and system resources (e.g. disk, memory, GPU usage, "
 "etc.)"
 msgstr ""
+"Töötav Toolkit kuvab oma seisundit: informatsiooni "
+"teenuste (nt :ref:`Elasticsearchi "
+"<elasticsearch>`) ja süsteemi ressurside (nt ketta, mälu GPU kasutus jne) "
+"saadavuse kohta."
 
 #: ../../source/health.rst:14
 msgid "GUI"
@@ -46,10 +50,13 @@ msgid ""
 "information about TEXTA Toolkit's server on the right "
 "(:numref:`server_status`)."
 msgstr ""
+"**Projektide** lehel (ehk Toolkiti avalehel) kuvatakse TEXTA Toolkiti "
+"serveri kohta tehnilist infot paremal "
+"(:numref:`server_status`)."
 
 #: ../../source/health.rst:20
 msgid "*Toolkit Status*"
-msgstr ""
+msgstr "*Toolkiti staatus*"
 
 #: ../../source/health.rst:24
 msgid "API"
@@ -57,16 +64,5 @@ msgstr ""
 
 #: ../../source/health.rst:26
 msgid "The **/health** endpoint is for operating statistics."
-msgstr ""
-
-#~ msgid ""
-#~ "One can check the health of a "
-#~ "running Toolkit instance - information "
-#~ "about the availability of services (e.g."
-#~ " Elasticsearch) and system resources (e.g."
-#~ " disk, memory, GPU usage, etc.)"
-#~ msgstr ""
-
-#~ msgid "`EN <https://docs.texta.ee/health.html>`_"
-#~ msgstr ""
+msgstr "**/health** otspunkt on statistika manageerimiseks."
 

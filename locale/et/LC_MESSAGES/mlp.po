@@ -34,6 +34,9 @@ msgid ""
 "in TTK can be done via MLP (:ref:`MultiLingual Preprocessor <mlp>`) "
 "module."
 msgstr ""
+"Andmete eeltöötlemine on standardne protseduur masinõppes. TTK-s "
+"saab seda teha MLP mooduli (:ref:`MultiLingual Preprocessor <mlp>`) "
+"abil."
 
 #: ../../source/mlp.rst:12
 msgid ""
@@ -45,12 +48,19 @@ msgid ""
 "directly into the Toolkit. Choosing which features the user wants to "
 "apply on their text is handled by selecting \"Analyzers\"."
 msgstr ""
+"TEXTA MLP (mitmekeelne eeltöötleja) on lisamoodul TEXTA-s, mis loodi "
+"tekstiandmete eeltöötlemiseks ja rikastamiseks. See suudab erinevates keeltes "
+"lemmatiseerida, tunda ära nimiolemeid, tuvastada seotud olemite gruppe jne. "
+"MLP kergemaks kasutamiseks on see lisatud Toolkitti. \"Analyzer\"-te alt saab"
+"valida, milliseid analüsaatoreid teksti peal rakendatakse."
 
 #: ../../source/mlp.rst:17
 msgid ""
 "Users can apply the MLP to a singular text of their own choosing or apply"
 " it to multiple Elasticsearch indices at once."
 msgstr ""
+"Kasutajad saavad rakendada MLP-d ühele tekstile või "
+"mitmele Elasticsearchi indeksile korraga."
 
 #: ../../source/mlp.rst:19
 msgid ""
@@ -59,10 +69,13 @@ msgid ""
 " is a time consuming process depending on the size of the index and the "
 "length of the processed fields."
 msgstr ""
+"Mugavuse huvides toetab Toolkit erinevaid sisendi tüüpe, sh mitme Elasticsearchi indeksi korraga töötlemist. "
+"Viimane on siiski väga aeganõudev sõltuvalt indeksi suurusest ja "
+"töödeldavate väljade pikkusest."
 
 #: ../../source/mlp.rst:24
 msgid "Analyzers"
-msgstr ""
+msgstr "Analüsaatorid"
 
 #: ../../source/mlp.rst:26
 msgid ""
@@ -70,46 +83,56 @@ msgid ""
 "whether you only want lemmatization or Entity extraction. Currently, the "
 "following analyzers are supported:"
 msgstr ""
+"Analüsaatorite abil saab valida, mis viisil andmeid töödeldakse: "
+"kas soovid ainult lemmatiseerimist või ka näiteks olemituvastust. Hetkel toetatakse "
+"järgnevaid analüsaaotreid:"
 
 #: ../../source/mlp.rst:29
 msgid "lemmas - Adds a lemmatized version of the original text."
-msgstr ""
+msgstr "lemmas - Lisab originaalteksti lemmatiseeritud versiooni."
 
 #: ../../source/mlp.rst:30
 msgid "pos_tags - Adds the Part Of Speech tags of every token in the text."
-msgstr ""
+msgstr "pos_tags - Lisab sõnaliigi märgendi igale tekstiühikule. "
 
 #: ../../source/mlp.rst:31
 msgid ""
 "transliteration - Adds a representation of scripted languages (Russian, "
 "Arabic) in the latin alphabet."
 msgstr ""
+"transliteration -  litereerib ladina tähestikku teistes tähestikes "
+"kirjutatud keeled (vene, araabia)."
 
 #: ../../source/mlp.rst:32
 msgid ""
 "ner - Adds Named Entities in Texta Fact format (Please note that NER for "
 "Estonian is currently not available)."
 msgstr ""
+"ner - Lisab nimeolemid Texta fakti formaadis (NER eesti keelele "
+"ei ole hetkel saadaval)."
 
 #: ../../source/mlp.rst:33
 msgid ""
 "entities - Keyword based Entity Extraction, used to extract information "
 "like predefined addresses."
 msgstr ""
+"entities - Võtmesõnadel põhinev olemituvastus, kasutatakse informatsiooni nagu näiteks eeldefineeritud aadresside eraldamiseks."
 
 #: ../../source/mlp.rst:34
 msgid "namemail - Extracts name-email pairs from text in Texta Facts format."
-msgstr ""
+msgstr "namemail - Tuvastab nime-mailide paarid tekstist Texta fakti formaadis."
 
 #: ../../source/mlp.rst:35
 msgid ""
 "bounded - Links existing Texta Facts together by the basis of it "
 "belonging to the same Entity and returns a new Texta Fact."
 msgstr ""
+"bounded - Ühendab olemasolevad Texta faktid kokku sama olemi juurde "
+"kuuluvateks gruppideks ja tagastab grupi Texta faktina."
 
 #: ../../source/mlp.rst:38
 msgid "Creating"
-msgstr ""
+msgstr "Loomine"
 
 #: ../../source/mlp.rst:41 ../../source/mlp.rst:64
 msgid "GUI"
@@ -125,38 +148,48 @@ msgid ""
 "lexicons or train models on. Lastly, select analyzers which you would "
 "like to apply."
 msgstr ""
+"Navigeeri **Tools -> MLP**. Vajuta **Create** nuppu ja defineeri uus MLP "
+"töö. Vali indeksid ja väljad, millele tahad MLP-d rakendada. "
+"Kuna andmete eeltöötlemine on üsna aeganõudev protsess, soovitame "
+"valida vaid need väljad, kus MLP rakendamine tegelikult ka "
+"on kasulik. See tähendab välju, mille põhjal plaanid hiljem treenida mudeleid või luua "
+"leksikone. Viimaseks vali analüsaatorid, mida soovid rakendada."
 
 #: ../../source/mlp.rst:48
 msgid "*Creating a MLP worker*"
-msgstr ""
+msgstr "MLP töö loomine"
 
 #: ../../source/mlp.rst:50
 msgid ""
 "The worker adds new fields containing the results to the dataset. You can"
 " see the list of fields using Search."
 msgstr ""
+"MLP tulemused pannakse andmestikku uutesse väljadesse. "
+"Neid saab näha Searcheris väljade nimekirjas."
 
 #: ../../source/mlp.rst:55
 msgid "*Newly added fields containing results of MLP*"
-msgstr ""
+msgstr "*Uued väljad andmestikus MLP tulemustega*"
 
 #: ../../source/mlp.rst:58
 msgid "Applying"
-msgstr ""
+msgstr "Rakendamine"
 
 #: ../../source/mlp.rst:61
 msgid "Applying MLP on a single text instance"
-msgstr ""
+msgstr "MLP rakendamine ühele tekstile"
 
 #: ../../source/mlp.rst:66
 msgid ""
 "For applying MLP on a single instance of text, click on the \"Apply to "
 "text\" button inside **Tools -> MLP**."
 msgstr ""
+"MLP ühele tekstilõigule rakendamiseks, vajuta \"Apply to "
+"text\" nupule kohas **Tools -> MLP**."
 
 #: ../../source/mlp.rst:71
 msgid "*Applying MLP on a single instance of text.*"
-msgstr ""
+msgstr "*MLP rakendamine ühele tekstilõigule.*"
 
 #: ../../source/mlp.rst:74 ../../source/mlp.rst:107 ../../source/mlp.rst:143
 #: ../../source/mlp.rst:182
@@ -165,55 +198,46 @@ msgstr ""
 
 #: ../../source/mlp.rst:76 ../../source/mlp.rst:109
 msgid "Endpoint: **/mlp/texts/**"
-msgstr ""
+msgstr "Otspunkt: **/mlp/texts/**"
 
 #: ../../source/mlp.rst:78
 msgid "This takes input in list format. Just use a single-element list."
-msgstr ""
+msgstr "See võtab sisendiks järjendi (listi). Kasuta lihtsalt üheelemendilist järjendit."
 
 #: ../../source/mlp.rst:80 ../../source/mlp.rst:111 ../../source/mlp.rst:147
 #: ../../source/mlp.rst:188
 msgid "Example:"
-msgstr ""
+msgstr "Näide:"
 
 #: ../../source/mlp.rst:92 ../../source/mlp.rst:123 ../../source/mlp.rst:160
 #: ../../source/mlp.rst:202
 msgid "Response:"
-msgstr ""
+msgstr "Vastus:"
 
 #: ../../source/mlp.rst:104
 msgid "Applying MLP on a list of texts"
-msgstr ""
+msgstr "MLP rakendamine tekstijärjendile"
 
 #: ../../source/mlp.rst:140
 msgid "Applying MLP on a list of dictionaries"
-msgstr ""
+msgstr "MLP rakendamine sõnastikujärjendile"
 
 #: ../../source/mlp.rst:145
 msgid "Endpoint: **/mlp/docs/**"
-msgstr ""
+msgstr "Otspunkt: **/mlp/docs/**"
 
 #: ../../source/mlp.rst:179
 msgid "Applying MLP on index"
-msgstr ""
+msgstr "MLP rakendamine indeksile"
 
 #: ../../source/mlp.rst:184
 msgid "Endpoint: **/mlp_index/**"
-msgstr ""
+msgstr "Otspunkt: **/mlp_index/**"
 
 #: ../../source/mlp.rst:186
 msgid ""
 "*Withholding the analyzers field will make it default into using all "
 "analyzers which is time-insufficient.*"
 msgstr ""
-
-#~ msgid ""
-#~ "Endpoint: **/mlp_index/** *Withholding the "
-#~ "analyzers field will make it default "
-#~ "into using all analyzers which is "
-#~ "time-insufficient.*"
-#~ msgstr ""
-
-#~ msgid "`EN <https://docs.texta.ee/mlp.html>`_"
-#~ msgstr ""
-
+"'analyzers' välja mitte kasutamine rakendab vaikimisi kõik analüsaatorid, tehes "
+"eeltöötlemise protsessi aeganõudvaks."
