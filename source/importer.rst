@@ -1,3 +1,6 @@
+`EN <https://docs.texta.ee/importer.html>`_
+`ET <https://docs.texta.ee/et/importer.html>`_
+
 .. _dataset_importer:
 
 ##################

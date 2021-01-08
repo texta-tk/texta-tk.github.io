@@ -1,4 +1,5 @@
 `EN <https://docs.texta.ee/health.html>`_
+`ET <https://docs.texta.ee/et/health.html>`_
 
 .. _health:
 

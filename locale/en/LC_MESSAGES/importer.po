@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-08 14:42+0200\n"
+"POT-Creation-Date: 2021-01-08 16:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,106 +18,112 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../source/importer.rst:5
+#: ../../source/importer.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/importer.html>`_ `ET "
+"<https://docs.texta.ee/et/importer.html>`_"
+msgstr ""
+
+#: ../../source/importer.rst:8
 msgid "Dataset Importer"
 msgstr ""
 
-#: ../../source/importer.rst:7
+#: ../../source/importer.rst:10
 msgid ""
 "Dataset Importer is a tool for uploading **JSON Lines**, **CSV** and "
 "**Excel** files into :ref:`Elasticsearch <elasticsearch>` to make them "
 "accessible for TEXTA Toolkit."
 msgstr ""
 
-#: ../../source/importer.rst:10
+#: ../../source/importer.rst:13
 msgid "Creation"
 msgstr ""
 
-#: ../../source/importer.rst:13
+#: ../../source/importer.rst:16
 msgid "Parameters:"
 msgstr ""
 
-#: ../../source/importer.rst:15
+#: ../../source/importer.rst:18
 msgid ""
 "description - Normal description to separate any given task from the "
 "other ones."
 msgstr ""
 
-#: ../../source/importer.rst:16
+#: ../../source/importer.rst:19
 msgid ""
 "index - Name of the newly created index, please note that Elasticsearch "
 ":ref:`index <index_concept>` naming restrictions apply."
 msgstr ""
 
-#: ../../source/importer.rst:17
+#: ../../source/importer.rst:20
 msgid ""
 "separator - Only needed for .csv files, defaults to a comma (,). Allows "
 "to configure the separator for csv files."
 msgstr ""
 
-#: ../../source/importer.rst:18
+#: ../../source/importer.rst:21
 msgid "file - File to import (**JSON Lines**, **CSV**, **Excel**)"
 msgstr ""
 
-#: ../../source/importer.rst:21
+#: ../../source/importer.rst:24
 msgid "GUI"
 msgstr ""
 
-#: ../../source/importer.rst:23
+#: ../../source/importer.rst:26
 msgid ""
 "You can navigate to the Dataset Importer by clicking on the \"Dataset "
 "Importer\" button located under the Tools dropdown menu. "
 "(:numref:`importing_loc`)."
 msgstr ""
 
-#: ../../source/importer.rst:24
+#: ../../source/importer.rst:27
 msgid ""
 "Click on the **CREATE** button to open up a new form "
 "(:numref:`importing`)."
 msgstr ""
 
-#: ../../source/importer.rst:26
+#: ../../source/importer.rst:29
 msgid "Here you can:"
 msgstr ""
 
-#: ../../source/importer.rst:28
+#: ../../source/importer.rst:31
 msgid "Set a description for the import task"
 msgstr ""
 
-#: ../../source/importer.rst:29
+#: ../../source/importer.rst:32
 msgid "Set the Dataset name"
 msgstr ""
 
-#: ../../source/importer.rst:30
+#: ../../source/importer.rst:33
 msgid "Specify a separator for **CSV** files (usually a comma)"
 msgstr ""
 
-#: ../../source/importer.rst:31
+#: ../../source/importer.rst:34
 msgid ""
 "Browse and choose the file to be uploaded by clicking on the folder "
 "button."
 msgstr ""
 
-#: ../../source/importer.rst:33
+#: ../../source/importer.rst:36
 msgid ""
 "Click on the **Create** button to start the Importer Task. Upon "
 "completion you can add the dataset to your :ref:`project "
 "<project_concept>`."
 msgstr ""
 
-#: ../../source/importer.rst:38
+#: ../../source/importer.rst:41
 msgid "*Navigating to dataset importer*"
 msgstr ""
 
-#: ../../source/importer.rst:43
+#: ../../source/importer.rst:46
 msgid "*Importing a new dataset*"
 msgstr ""
 
-#: ../../source/importer.rst:46
+#: ../../source/importer.rst:49
 msgid "API"
 msgstr ""
 
-#: ../../source/importer.rst:48
+#: ../../source/importer.rst:51
 msgid "@ is special syntax for reading the binary of the given file name."
 msgstr ""
 

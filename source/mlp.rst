@@ -1,4 +1,5 @@
 `EN <https://docs.texta.ee/mlp.html>`_
+`ET <https://docs.texta.ee/et/mlp.html>`_
 
 .. _mlp_p:
 
@@ -24,6 +25,7 @@ Analyzers
 
 Analyzers are a way of selecting how you want your data to be processed, whether you only want lemmatization or Entity extraction.
 Currently, the following analyzers are supported:
+
     * lemmas - Adds a lemmatized version of the original text.
     * pos_tags - Adds the Part Of Speech tags of every token in the text.
     * transliteration - Adds a representation of scripted languages (Russian, Arabic) in the latin alphabet.

@@ -1,4 +1,6 @@
 `EN <https://docs.texta.ee/embedding.html>`_
+`ET <https://docs.texta.ee/et/embedding.html>`_
+
 
 #########
 Embedding
