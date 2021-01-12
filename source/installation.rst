@@ -137,8 +137,11 @@ After the environment is built, let's activate it:
 
 .. code-block:: bash
 
-    conda env create -f environment.yaml
+    conda env create -f environment-nogpu.yaml
     conda activate texta-rest
+    
+.. note::
+    If you want Toolkit to use GPU, use environment-gpu.yaml instead.
 
 Migrate & Run Toolkit
 ++++++++++++++++++++++
@@ -167,7 +170,7 @@ Finally let's run the development server:
 
     python manage.py runserver
 
-And in another terminal run the Celery worker responsible for asynchronous tasks:
+And in another terminal (with same conda environment and in the same folder) run the Celery worker responsible for asynchronous tasks:
 
 .. code-block:: bash
 
