@@ -26,28 +26,31 @@ msgstr ""
 
 #: ../../source/use_cases.rst:6
 msgid "Use Cases"
-msgstr ""
+msgstr "Kasutuslood"
 
 #: ../../source/use_cases.rst:8
 msgid ""
 "This chapter describes how to use Texta Toolkit's different tools to "
 "answer some research questions."
 msgstr ""
+"Siin näidatakse, kuidas kasutada erinevaid Texta Toolkiti tööriistu erinevatele uurimisküsimusele"
+"vastamiseks"
 
 #: ../../source/use_cases.rst:11
 msgid "How to search for a topic if you don't know enough topic words?"
-msgstr ""
+msgstr "Kuidas otsida kindla teemaga artikleid, kui Sa ei tea piisavalt teemasõnu?"
 
 #: ../../source/use_cases.rst:12
 msgid ""
 "Research question: *What is the frequency of sport-related documents "
 "through time?\"*"
 msgstr ""
+"Uurimisküsimus: *Milline on sporditeemaliste dokumentide sagedus läbi aja?*"
 
 #: ../../source/use_cases.rst:14 ../../source/use_cases.rst:83
 #: ../../source/use_cases.rst:122
 msgid "Pre-requirements:"
-msgstr ""
+msgstr "Eeldused:"
 
 #: ../../source/use_cases.rst:16 ../../source/use_cases.rst:85
 #: ../../source/use_cases.rst:124
@@ -55,15 +58,17 @@ msgid ""
 "A :ref:`project <project_concept>` with the sputnik newspaper articles "
 "dataset is :ref:`created <project>`."
 msgstr ""
+":ref:`Projekt <project_concept>` ajalehe Sputnik artiklitega "
+"on :ref:`loodud <project>`."
 
 #: ../../source/use_cases.rst:17 ../../source/use_cases.rst:86
 #: ../../source/use_cases.rst:125
 msgid "This project is active (chosen on the upper panel in the right)."
-msgstr ""
+msgstr "See projekt on aktiivne (valitud ülaplaneelil paremal)."
 
 #: ../../source/use_cases.rst:20
 msgid "Train an embedding"
-msgstr ""
+msgstr "Treeni keelemudel (embedding)"
 
 #: ../../source/use_cases.rst:22
 msgid ""
@@ -71,30 +76,37 @@ msgid ""
 " :ref:`Embedding <embedding_concept>` (:numref:`embedding_pic`). Read "
 "more about the creating parameters :ref:`here <create_embedding>`."
 msgstr ""
+"Mine Models > Embeddings. Klõpsa \"CREATE\"-nupul ülal vasakul. "
+"Loo :ref:`keelemudel <embedding_concept>` (:numref:`embedding_pic`). "
+"Loe rohkem keelemudelite parameetrite kohta :ref:`siit <create_embedding>`."
 
 #: ../../source/use_cases.rst:27
 msgid "*Creating an embedding for sputnik*"
-msgstr ""
+msgstr "*Sputniku keelemudeli loomine*"
 
 #: ../../source/use_cases.rst:29
 msgid ""
 "This step might take a while. After the :ref:`embedding "
 "<embedding_concept>` model is trained, the Lexicon Miner can be used."
 msgstr ""
+"See võib võtta natukene aega. Kui :ref:`keelemudel "
+"<embedding_concept>` on treenitud, saab kasutada Lexicon Minerit."
 
 #: ../../source/use_cases.rst:32
 msgid "Use Lexicon Miner"
-msgstr ""
+msgstr "Kasuta Lexicon Minerit"
 
 #: ../../source/use_cases.rst:34
 msgid ""
 "Use the :ref:`Lexicon Miner <lexiconminer>` for mining other words than "
 "just \"sport\"."
 msgstr ""
+"Kasuta :ref:`Lexicon Minerit <lexiconminer>` sproditeemaliste sõnade "
+"kaevandamiseks."
 
 #: ../../source/use_cases.rst:39
 msgid "*Providing some seed words for before hitting \"New Suggestions\"*"
-msgstr ""
+msgstr "*Seemnesõnade sisestamine enne \"New Suggestions\"-nupule vajutamist*"
 
 #: ../../source/use_cases.rst:41
 msgid ""
@@ -102,10 +114,13 @@ msgid ""
 "Suggestions\", click on suitable terms and repeat as long as the "
 "suggestions contain suitable terms. Then hit \"Save\"."
 msgstr ""
+"Sisesta mõned seemnesõnad (näidis :numref:`miner`), klõpsa \"New "
+"Suggestions\"-nupul, vajuta sobivatele terminitele ja korda tegevust "
+"kuni soovitused (suggestions) sisaldavad veel sobivaid termineid. Seejärel vajuta \"Save\"."
 
 #: ../../source/use_cases.rst:44
 msgid "Search"
-msgstr ""
+msgstr "Otsi dokumente"
 
 #: ../../source/use_cases.rst:46
 msgid ""
@@ -114,24 +129,30 @@ msgid ""
 "choose the same field in the Advanced Search. Click on \"Add lexicon\" "
 "button and choose the saved lexicon."
 msgstr ""
+"Mine Otsingu (Search) lehele. Kuna :ref:`keelemudel "
+"<embedding_concept>` treeniti lemmade :ref:`väljal <field_concept>`, "
+"tuleb valida sama väli ka Advanced Searchis. Vajuta \"Add lexicon\"-nupule "
+"ja vali salvestatud leksikon."
 
 #: ../../source/use_cases.rst:51
 msgid "*Add lexicon for the search constraint*"
-msgstr ""
+msgstr "*Lisa leksikon otsingufiltritesse*"
 
 #: ../../source/use_cases.rst:53
 msgid ""
 "Choose the operator \"or\". Match stays default (\"Phrase prefix\") and "
 "Slop also (\"0\"). Click on Search."
 msgstr ""
+"Vali operaator \"or\". Match jääb vaikimisi \"Phrase prefix\", samuti "
+"jääb vaikimisi Slop (\"0\"). Vajuta Search."
 
 #: ../../source/use_cases.rst:55
 msgid "You now have more results than just searching the term \"sport\"!"
-msgstr ""
+msgstr "Nüüd saad rohkem tulemusi, kui otsid lihtsalt terminit \"sport\"!"
 
 #: ../../source/use_cases.rst:58
 msgid "Bonus: aggregate over time"
-msgstr ""
+msgstr "Lisa"
 
 #: ../../source/use_cases.rst:60
 msgid "Research question: *When are sport-related articles published?*"
