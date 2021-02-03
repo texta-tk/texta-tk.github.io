@@ -33,8 +33,8 @@ msgid ""
 "This chapter describes how to use Texta Toolkit's different tools to "
 "answer some research questions."
 msgstr ""
-"Siin näidatakse, kuidas kasutada erinevaid Texta Toolkiti tööriistu erinevatele uurimisküsimusele"
-"vastamiseks"
+"Siin näidatakse, kuidas kasutada erinevaid Texta Toolkiti tööriistu erinevatele uurimisküsimusele "
+"vastamiseks."
 
 #: ../../source/use_cases.rst:11
 msgid "How to search for a topic if you don't know enough topic words?"
@@ -156,7 +156,7 @@ msgstr "Lisa"
 
 #: ../../source/use_cases.rst:60
 msgid "Research question: *When are sport-related articles published?*"
-msgstr ""
+msgstr "Uurimisküsimus: *Kas spordiga seotud artiklite arvukus varieerub ajas?*"
 
 #: ../../source/use_cases.rst:62
 msgid ""
@@ -165,22 +165,27 @@ msgid ""
 "format). Configure other options as shown in :numref:`aggregate_sport` or"
 " leave them as default. Click on \"Aggregate\"."
 msgstr ""
+"Ava Aggregations paneel ja vali kuupäeva :ref:`väli <field_concept>` (Texta kuupäeva formaadis) dokumentide agregeerimiseks ajagraafikul."
+"Seadista teisi valikuid nagu on näidatud :numref:`aggregate_sport` või"
+" jäta need vaikimisi. Vajuta \"Aggregate\"- nupule."
 
 #: ../../source/use_cases.rst:67
 msgid "*Active sport-topic search results' aggregation over date field*"
-msgstr ""
+msgstr "*Aktiivse spordi-teemalise otsingu tulemuste agregatsioon kuupäevaväljal*"
 
 #: ../../source/use_cases.rst:69
 msgid ""
 "The aggregation outputs a line chart with the results. The X-axis is the "
 "raw frequency, Y-axis is the date."
 msgstr ""
+"See väljastab joondiagrammi, mille X-teljel on sagedus ja Y-teljel kuupäev."
 
 #: ../../source/use_cases.rst:74
 msgid ""
 "*Line chart of sport-related articles from 1th of January 2011 to 1th of "
 "January 2015*"
 msgstr ""
+"*Joondiagramm spodriteemaliste artiklite kohta vahemikus 01.01.2011-01.01.2015*"
 
 #: ../../source/use_cases.rst:76
 msgid ""
@@ -189,24 +194,29 @@ msgid ""
 "Summer Olympics (27th of July to 12th of August 2012) and Winter Olympics"
 " (7th of February to 23rd of February 2014)."
 msgstr ""
+"Jooniselt on näha, et enim sporditeemalisi artikleid avaladati 2012. aasta"
+" augustis ning 2014. aasta veebruaris. Need kattuvad, üllatus-üllatus, "
+"suveolümpia (27.07.2012-12.08.2012) ja taliolümpia (07.02.2014-23.02.2014) kuupäevadega."
 
 #: ../../source/use_cases.rst:79
 msgid "When is this term most frequently used?"
-msgstr ""
+msgstr "Millal on see termin kõige rohkem kasutusel olnud?"
 
 #: ../../source/use_cases.rst:81
 msgid ""
 "Research question: *How frequent are the terms \"communism\" and "
 "\"communists\" in Sputnik through time?*"
 msgstr ""
+"Uurimisküsimus: *Kui sagedalt kasutatakse termineid \"communism\" ja "
+"\"communists\" Sputniku andmestikus läbi aja?*"
 
 #: ../../source/use_cases.rst:87
 msgid ":ref:`Searcher <searcher>` is open."
-msgstr ""
+msgstr ":ref:`Searcher <searcher>` on avatud."
 
 #: ../../source/use_cases.rst:90
 msgid "Search term(s)"
-msgstr ""
+msgstr "Otsi termit/termineid"
 
 #: ../../source/use_cases.rst:92
 msgid ""
@@ -217,10 +227,15 @@ msgid ""
 "\"communists\") - operator is \"and\" or \"or\", match is \"Phrase "
 "prefix\" and there is no slop. Click on \"Search\"."
 msgstr ""
+"Vajuta \"Advanced search\" nupule ja vali :ref:`väli <field_concept>`, "
+"millel on artikli sisu (\"article_text\"). :numref:`search_communism` kujutab "
+"otsingupiiranguid, mis tagastavad dokumente, kus on sõnad, mis algavad tähtedega \"communis\" (nt \"communism\", \"communist\", "
+"\"communists\") - operaator on \"and\" või \"or\", match on \"Phrase "
+"prefix\" ning slop on 0. Vajuta \"Search\"-nupule."
 
 #: ../../source/use_cases.rst:97
 msgid "*Search constraint for finding communism-related articles*"
-msgstr ""
+msgstr "*Otsingupiirangud kommunismiga seotud artiklite leidmiseks inglise keeles*"
 
 #: ../../source/use_cases.rst:99
 msgid ""
@@ -229,10 +244,14 @@ msgid ""
 " you can save it for later, but as the Aggregation works on active "
 "searches, leave it as it is."
 msgstr ""
+"Nüüd kuvatakse tablis kõik dokumendid (tegelikult esimesed 10000), mille"
+" need piirangud välja filtreerisid. Otsingutulemus on nüüd *aktiivne*. "
+"Soovi korral võib selle pärastiseks salvestada, aga kuna agregeerimine töötab "
+"aktiivsete otsingute põhjal, jäta tulemus nii nagu on."
 
 #: ../../source/use_cases.rst:102
 msgid "Aggregate over time"
-msgstr ""
+msgstr "Agregeeri üle aja"
 
 #: ../../source/use_cases.rst:104
 msgid ""
@@ -240,10 +259,13 @@ msgid ""
 "choose the date :ref:`field <field_concept>` (in Texta date format). "
 "Other options can be left as they are. Click on \"Aggregate\"."
 msgstr ""
+"Ava Aggregations paneel ja vali kuupäeva :ref:`väli <field_concept>` (Texta kuupäeva formaadis) dokumentide agregeerimiseks ajagraafikul."
+"Seadista teisi valikuid nagu on näidatud :numref:`aggregate_sport` või"
+" jäta need vaikimisi. Vajuta \"Aggregate\"- nupule."
 
 #: ../../source/use_cases.rst:109
 msgid "*Active search results' aggregation over date field*"
-msgstr ""
+msgstr "*Aktiivse otsingu agregatsioon üle kuupäeva välja"
 
 #: ../../source/use_cases.rst:111
 msgid ""
@@ -251,24 +273,29 @@ msgid ""
 "raw frequency, Y-axis is the date (you can change the unit on the "
 "Aggregation panel under Interval)."
 msgstr ""
+"Agregeerimisetulemused väljastatakse joondiagrammil. X-teljel on "
+"sagedus, Y-teljel on kuupäev (intervalli on võimalik muuta "
+"Aggregation paneelil Interval valiku all, kui kuupäevaformaat seda võimaldab)"
 
 #: ../../source/use_cases.rst:113
 msgid "See more aggregating examples under :ref:`Search <aggregations>`."
-msgstr ""
+msgstr "Vaata rohkem agregeerimise näiteid :ref:`Search <aggregations>` all."
 
 #: ../../source/use_cases.rst:117
 msgid "Does my new document belong to this subset?"
-msgstr ""
+msgstr "Kas mu uus dokument kuulub sellesse alamhulka?"
 
 #: ../../source/use_cases.rst:119
 msgid ""
 "Goal: *To train a classifier that detects whether a certain document "
 "belongs to the chosen subset of documents or not*"
 msgstr ""
+"Eesmärk: *Treenida klassifitseerija, mis ennustab, kas teatud dokument"
+"kuulub valitud dokumentide alamhulka või mitte*"
 
 #: ../../source/use_cases.rst:128
 msgid "Create a subset of positive documents"
-msgstr ""
+msgstr "Loo positiivsete dokumentide alamhulk"
 
 #: ../../source/use_cases.rst:130
 msgid ""
@@ -277,6 +304,8 @@ msgid ""
 " Searcher to filter the tagged documents out as the positive examples and"
 " save it."
 msgstr ""
+"Kui kasutajal juba on andmestik mingil moel märgendatud (näiteks on andmestikus "
+"teatud märgendiväli vastava märgendiga), saavad nad kasutada Searcherit nende dokumentide kui positiivsete näidete välja filtreerimiseks ja salvestamiseks salvestatud otsinguga."
 
 #: ../../source/use_cases.rst:132
 msgid ""
@@ -285,6 +314,9 @@ msgid ""
 "Miner and/or the Searcher for creating some theme-related subset. There "
 "is an example of that in the first use case above."
 msgstr ""
+"Kui andmestikus ei ole eelnevalt märgendatud dokumente, saab kasutaja "
+"treenida :ref:`embeddingu <embedding_concept>` ning kasutada Lexicon "
+"Minerit ja Searcherit vastavateemalise alamhulga loomiseks. Esimeses kasutusloos on selle kohta näide."
 
 #: ../../source/use_cases.rst:134
 msgid ""
@@ -294,16 +326,21 @@ msgid ""
 "which the trained tagger later on tags also as positive. The user saves "
 "the search via floppy disk icon near the Current Search panel."
 msgstr ""
+"See kasutuslugu järgib esimest stsenaariumit ning salvestab sisuga \"Middle East\" rubric väljaga dokumentide "
+"alamhulga (vt :numref:`search_middleeast`). Nendest saavad positiivsed näited, mille sarnaseid treenitav mudel positiivseks ennustama hakkab. "
+"Kasutaja salvestab otsingu vajutades disketi ikoonile Current Searchi paneelil."
 
 #: ../../source/use_cases.rst:139
 msgid ""
 "*Search constraint for finding articles with \"Middle East\" in the "
 "rubric field*"
 msgstr ""
+"*Otsingu piirangud, mis leiavad artiklid, mille rubric väljal on \"Middle East\" "
+""
 
 #: ../../source/use_cases.rst:142
 msgid "Train the classifier"
-msgstr ""
+msgstr "Treeni klassifitseerija"
 
 #: ../../source/use_cases.rst:144
 msgid ""
@@ -315,20 +352,24 @@ msgid ""
 "vectorizers and classifiers and their parameters by training different "
 "classifiers with the same positive dataset or leave them default."
 msgstr ""
+"Models > :ref:`Taggers <tagger>` all saab treenida klassifitseerija "
+"ehk taggeri ehk märgendaja. Kasutaja klõpsab \"CREATE\"-nupule ülal vasakul ning valib sobivad parameetrid ilumunud aknas. Salvestatud otsing valitakse kui :ref:`päring (query) <query_concept>`. Väljad \"article_text_mlp.text\" ja "
+"\"title\" kleebitakse enne treenimist kokku üheks sisendiks. Kasutaja saab testida erinevaid vektoriseerijaid ja klassifitseerijaid oma parameetritega treenides erinevaid klassifitseerijaid sama alamhulga peal. Soovi korral võib treenida ka vaikimisi parameetritega."
 
 #: ../../source/use_cases.rst:149
 msgid "*Creating a classifier for tagging Middle East-related articles*"
-msgstr ""
+msgstr "*Artiklite, mille tegelik rubriik (rubric väli) on Middle East, klassifitseerija loomine*"
 
 #: ../../source/use_cases.rst:151
 msgid ""
 "After hitting the \"Create\"-button (scroll down a bit if necessary) all "
 "left to do is to wait a bit until the classifier finishes training."
 msgstr ""
+"Pärast \"Create\"-nupu vajutamist (vajadusel keri pisut alla), jääb üle vaid oodata, kuni klassifitseerija treenib."
 
 #: ../../source/use_cases.rst:154
 msgid "Test the classifier"
-msgstr ""
+msgstr "Testi klassifitseerijat"
 
 #: ../../source/use_cases.rst:156
 msgid ""
@@ -337,6 +378,9 @@ msgid ""
 "from the dataset and outputs the tagger's result and probability of that "
 "result being correct."
 msgstr ""
+"Kergeim viis kiiresti testida uue klassifitseerija tulemusi on kasutada \"tag random"
+" doc\" valikut kolme nupu all (Actioni all). See võtab juhusliku dokumendi "
+"andmestikust ning väljastab taggeri tulemuse ja selle õigsuse tõenäosuse (probability)."
 
 #: ../../source/use_cases.rst:161
 msgid "*Tag random doc*"
@@ -344,11 +388,11 @@ msgstr ""
 
 #: ../../source/use_cases.rst:166
 msgid "*Random doc is not Middle East themed and tagger outputs correctly False*"
-msgstr ""
+msgstr "*Juhuslik dokument ei ole Middle East teemaline ning tagger väljastab False (mitte märgendada)*"
 
 #: ../../source/use_cases.rst:171
 msgid "*Random doc is Middle East themed and tagger outputs correctly True*"
-msgstr ""
+msgstr "*Juhuslik dokument on Middle East teemaline ja tagger väljastab õigesti True (märgendada)*"
 
 #: ../../source/use_cases.rst:173
 msgid ""
@@ -356,9 +400,5 @@ msgid ""
 "or use the new tagger via API. Read more about these options :ref:`here "
 "<tagger_usage>`."
 msgstr ""
-
-#~ msgid ""
-#~ "`EN <https://www.youtube.com/watch?v=dc2Z7CL4Cv0>`_ `ET"
-#~ " <https://www.youtube.com/watch?v=dQw4w9WgXcQ>`_"
-#~ msgstr ""
-
+"Kasutaja saab ka oma teksti testida \"tag text\" valikuga või taggerit API kaudu kasutades. Loe rohkem nende valikute kohta :ref:`siit "
+"<tagger_usage>`."
