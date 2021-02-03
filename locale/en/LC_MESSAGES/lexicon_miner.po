@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-03 14:03+0200\n"
+"POT-Creation-Date: 2021-02-03 16:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/lexicon_miner.rst:22
-msgid "**negatives_used/negatives**:"
+msgid "**negatives_used**:"
 msgstr ""
 
 #: ../../source/lexicon_miner.rst:22
@@ -254,5 +254,8 @@ msgstr ""
 #~ " list. If you want to delete "
 #~ "something you already chose you can "
 #~ "erase the verb from the list."
+#~ msgstr ""
+
+#~ msgid "**negatives_used/negatives**:"
 #~ msgstr ""
 

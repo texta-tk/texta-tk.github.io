@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-03 14:03+0200\n"
+"POT-Creation-Date: 2021-02-03 16:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,6 @@ msgid "Lexicon Miner"
 msgstr ""
 
 #: ../../source/lexicon_miner.rst:10
-#, fuzzy
 msgid ""
 "Texta Toolkit enables the creation of topic-related lexicons which can be"
 " used to expand the Searcher's results (e.g. defining classes for "
@@ -37,17 +36,19 @@ msgid ""
 ":ref:`Embedding <embedding_concept>` model :ref:`previously trained "
 "<create_embedding>` ."
 msgstr ""
-"Texta Toolkiti abil saab luua temaatiliste sõnade leksikone. Leksikonide "
+"Texta Toolkiti abil saab luua temaatiliste sõnade leksikone, mida saab "
+"kasutada Otsingu (Searcheri) tulemuste laiendamiseks (nt "
+"klassifitseerijate tarbeks klasside määratlemiseks). Leksikonide "
 "loomiseks peab olemas olema :ref:`varem treenitud <embedding_concept>` "
 ":ref:`Embeddingu <embedding_concept>` mudel."
 
 #: ../../source/lexicon_miner.rst:13
 msgid "Usage"
-msgstr ""
+msgstr "Kasutus"
 
 #: ../../source/lexicon_miner.rst:16
 msgid "Parameters"
-msgstr ""
+msgstr "Parameetrid"
 
 #: ../../source/lexicon_miner.rst:19
 msgid "**positives_used**:"
@@ -59,9 +60,12 @@ msgid ""
 " positive input for the model's similarity search. In GUI called "
 "\"positives\"."
 msgstr ""
+"Nimekiri sõnadest, millele sarnaseid sõnu (sarnases kontekstis "
+"kasutatavaid sõnu) soovitakse leida. Need on positiivne sisend mudeli "
+"sarnasusotsingule. GUI-s nimetatud kui \"positives\"."
 
 #: ../../source/lexicon_miner.rst:22
-msgid "**negatives_used/negatives**:"
+msgid "**negatives_used**:"
 msgstr ""
 
 #: ../../source/lexicon_miner.rst:22
@@ -71,6 +75,8 @@ msgid ""
 "negative input for the model's similarity search. In GUI called "
 "\"negatives\"."
 msgstr ""
+"Nimekiri sõnadest, millele sarnaseid sõnu EI soovita leida või vanad soovitused, mis ei jõudnud positiivsete sõnade listi. Need on negatiivne sisend mudeli sarnasusotsingule. GUI-s nimetatud kui "
+"\"negatives\"."
 
 #: ../../source/lexicon_miner.rst:25
 msgid "**positives_unused**:"
@@ -81,6 +87,7 @@ msgid ""
 "List of words already mined out, but not to be used in the model's "
 "similarity search. These won't occur in the output (suggestions list)."
 msgstr ""
+"Nimekiri sõnadest, mis on juba välja kaevandatud (ehk valitud), kuid mida ei soovita kasutada mudeli sarnasusotsingus. Need ei esine soovituste (Suggestions) nimekirjas."
 
 #: ../../source/lexicon_miner.rst:28
 msgid "**negatives_unused**:"
@@ -92,6 +99,7 @@ msgid ""
 "used as negatives in the models' similarity search. These won't occur in "
 "the output (suggestions list)."
 msgstr ""
+"Nimekiri soovitustest, mida ei valitud, kuid mida ei kasutata mudeli sarnasusotsingus negatiivsete sõnadena. Need ei esine soovituste  (Suggestions) nimekirjas."
 
 #: ../../source/lexicon_miner.rst:31
 msgid "**n**:"
@@ -99,7 +107,7 @@ msgstr ""
 
 #: ../../source/lexicon_miner.rst:31
 msgid "The number of output words. In GUI it's by default 20."
-msgstr ""
+msgstr "Väljastatavate sõnade hulk. GUI-s on see vaikimisi 20."
 
 #: ../../source/lexicon_miner.rst:34
 msgid "GUI"
@@ -112,6 +120,7 @@ msgid ""
 "and press enter. The new lexicon appears in the table. Click on the "
 "lexicon's row. Lexicon's mining view opens."
 msgstr ""
+"Leksikoni loomiseks vajuta \"CREATE\"-nuppu \"Lexicons\" all, kirjuta leksikoni nimi "\"Description\" vahemikku ja vajuta enetrit. Uus leksikon ilmub tabelisse. Vajuta selle leksikoni reale. Leksikoni kaevandamise vaade avaneb."
 
 #: ../../source/lexicon_miner.rst:38
 msgid ""
@@ -119,12 +128,14 @@ msgid ""
 "words (like 'sport' if you are after finding sport-related terms) in the "
 "Positives list separated by a newline."
 msgstr ""
+"Vali Toolkitis treenitud sõnavektor, millega töötada soovid. Trüki sisse mõned seemnesõnad (nt 'sport', kui soovid leida sporditeemalisi artikleid) Positives nimekirja. Kirjuta iga sõna eraldi reale."
 
 #: ../../source/lexicon_miner.rst:40
 msgid ""
 "The process of creating (or expanding) the lexicon is iterative. Keep "
 "asking for suggestions via:"
 msgstr ""
+"Leksikoni loomise (või laiendamise) protsess on iteratiivne. Küsi uusi soovitusi kahe nupu abil:"
 
 #: ../../source/lexicon_miner.rst:42
 msgid ""
@@ -132,10 +143,12 @@ msgid ""
 " list where they are used as the opposites in the model's similarity "
 "search."
 msgstr ""
+"**New Suggestions** nupp, mis tõstab valikust välja jäänud sõnad Negatives listi, "
+"kus neid kasutatakse negatiivsete sõnadena mudeli sarnasusotsingus."
 
 #: ../../source/lexicon_miner.rst:44
 msgid "or"
-msgstr ""
+msgstr "või"
 
 #: ../../source/lexicon_miner.rst:46
 msgid ""
@@ -145,6 +158,8 @@ msgid ""
 "new suggestions after clearing the list, use the New Suggestions button "
 "again."
 msgstr ""
+"**Clear Suggestions** nupp, mis tõstab valikust välja jäänud sõnad Negatives unused listi, "
+"kus neid ei kasutata mudeli sarnasusotsingus. Samas ei soovitata neid enam uuesti. Uute soovituste saamiseks pärast selle nupu kasutamist, vajuta uuesti New Suggestions nupule."
 
 #: ../../source/lexicon_miner.rst:48
 msgid ""
@@ -154,9 +169,13 @@ msgid ""
 "while storing (but not mining with) the already mined out words in the "
 "Positives unused list."
 msgstr ""
+"Vali soovitustest (Suggestions) need sõnad, mis tunduvad sobivad, neile klõpsates. "
+"Küsi soovitusi uuesti, kuni enam ei tule ühtegi sobivat soovitust. "
+"Sa võid proovida laiendada leksikoni ka ühe või kahe seemnesõnaga, hoides "
+"juba välja kaevandatud sõnu Positives unused listis."
 
 #: ../../source/lexicon_miner.rst:50
-#, fuzzy
+
 msgid ""
 "To add a suitable word to the lexicon from the Suggestions list, you "
 "simply have to click on it. Alternatively, you can type yourself some "
@@ -165,60 +184,9 @@ msgid ""
 msgstr ""
 "Sobiva sõna leksikoni lisamiseks tuleb sellele klõpsata Suggestion "
 "nimekirjast. Alternatiivselt võid ise tükkida nimekirja sõnu, mille peale"
-" tulid soovituste nimekirja lehitsedes. Soovi korral on võimalik juba "
-"valitud sõnu leksikonist kustutada."
+" tulid soovituste nimekirja lehitsedes."
 
 #: ../../source/lexicon_miner.rst:52
 msgid "Don't forget to save the lexicon when you are ready!"
 msgstr "Ära unusta leksikoni salvestada, kui oled valmis!"
-
-#~ msgid "When we’re ready, we can save the lexicon."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "For creating a lexicon, type the "
-#~ "name of the lexicon in the \"New"
-#~ " lexicon slot\" under \"Lexicons\" and "
-#~ "press enter. After clicking on the "
-#~ "newly created lexicon, provide some seed"
-#~ " words (like 'sport' if you are "
-#~ "after finding sport-related terms)."
-#~ msgstr ""
-#~ "Uue leksikoni loomiseks kirjuta leksikoni "
-#~ "nimi \"New lexicon slot\"-i sisse "
-#~ "(\"Lexicons\"-i all) ja vajuta enteri "
-#~ "klahvi. Seejärel klõpsa uue leksikoni "
-#~ "nimele ja sisesta mõned seemnesõnad (nt"
-#~ " 'sport', kui otsid  sporditemaatilisi "
-#~ "sõnu)."
-
-#~ msgid ""
-#~ "The process of creating (or expanding)"
-#~ " the lexicon is iterative. Keep "
-#~ "asking for suggestions (with \"New "
-#~ "Suggestions\" button) and from those "
-#~ "pick the ones that make sense. "
-#~ "Keep asking for suggestions until you"
-#~ " get no more meaningful responses. "
-#~ "Words you didn't choose appear under "
-#~ "the lexicon as negative words. These "
-#~ "are considered as the opposite of "
-#~ "the meanings we are looking for "
-#~ "while generating new suggestions. You "
-#~ "can erase words from the negative "
-#~ "words list simply by clicking on "
-#~ "it."
-#~ msgstr ""
-#~ "Leksikoni loomine (või täiendamine) on "
-#~ "iteratiivne protsess. Uusi soovitusi saab "
-#~ "pidevalt juurde küsida ning nende seast"
-#~ " tuleb valida need, mis tunduvad "
-#~ "loogilised. Uusi soovitusi tasub juurde "
-#~ "küsida, kuni ükski neist ei ole "
-#~ "enam tähenduslikult sobiv. Valimata jäänud "
-#~ "sõnad ilmuvad leksikoni alla negatiivsete "
-#~ "näidetena. Neid võetakse otsitavate tähenduste"
-#~ " vastandtähendustena. Sõnu saab negatiivsete "
-#~ "sõnade listist kustutada nende peale "
-#~ "klõpsates."
 

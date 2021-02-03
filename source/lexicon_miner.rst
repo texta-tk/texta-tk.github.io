@@ -18,7 +18,7 @@ Parameters
 **positives_used**:
 	List of words similar to which suggestions are to be found. These are the positive input for the model's similarity search. In GUI called "positives".
 	
-**negatives_used/negatives**:
+**negatives_used**:
 	List of words similar of which suggestions are NOT to be found or old suggestions that didn't make it to the positives' list. These are the negative input for the model's similarity search. In GUI called "negatives".
 	
 **positives_unused**:
