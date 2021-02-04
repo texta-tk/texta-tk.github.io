@@ -168,7 +168,7 @@ To log in using UAA, click on the "log in with CloudFoundry" button on the login
 
 .. figure:: images/uaa_front_login.png
 
-    Figure 22. *Log In With CloudFoundry Screen on the Angular Front-end*
+    *Log In With CloudFoundry Screen on the Angular Front-end*
 
 This will then redirect you to the UAA login screen. After logging in, if the login was successful, it will redirect you back to the Toolkit front-end.
 

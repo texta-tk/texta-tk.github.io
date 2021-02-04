@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-17 12:15+0200\n"
+"POT-Creation-Date: 2021-02-04 08:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.1\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../source/authentication.rst:1
 msgid ""
@@ -26,29 +26,31 @@ msgstr ""
 
 #: ../../source/authentication.rst:8
 msgid "Authentication"
-msgstr ""
+msgstr "Autentimine"
 
 #: ../../source/authentication.rst:10
 msgid "To use Texta Toolkit, you must first need to authenticate with either:"
-msgstr ""
+msgstr "Texta Toolkiti kasutamiseks, peab ennast esiteks autentima:"
 
 #: ../../source/authentication.rst:12
 msgid ""
 "Through :ref:`UAA <uaa_concept>` (Disabled by default) (see "
 ":numref:`login` item 1)"
 msgstr ""
+"Läbi :ref:`UAA <uaa_concept>` (vaikimisi maha keeratud) (see "
+":numref:`login` valik 1)"
 
 #: ../../source/authentication.rst:13
 msgid "By creating a new Texta Toolkit account (see :numref:`login` item 2)"
-msgstr ""
+msgstr "või luues Texta Toolkitti konto (vaata :numref:`login` valik 2)"
 
 #: ../../source/authentication.rst:18
 msgid "*Login Screen at Startup*"
-msgstr ""
+msgstr "*Logimisvaade alustades*"
 
 #: ../../source/authentication.rst:23
 msgid "Registration"
-msgstr ""
+msgstr "Registreerimine"
 
 #: ../../source/authentication.rst:26
 msgid "GUI"
@@ -60,46 +62,47 @@ msgstr ""
 
 #: ../../source/authentication.rst:30
 msgid "Endpoint: **/rest-auth/registration/**"
-msgstr ""
+msgstr "Otspunkt: **/rest-auth/registration/**"
 
 #: ../../source/authentication.rst:32 ../../source/authentication.rst:69
 #: ../../source/authentication.rst:102
 msgid "Example:"
-msgstr ""
+msgstr "Näide:"
 
 #: ../../source/authentication.rst:46 ../../source/authentication.rst:80
 msgid "Response:"
-msgstr ""
+msgstr "Vastus:"
 
 #: ../../source/authentication.rst:52 ../../source/authentication.rst:86
 msgid ""
 "Response is the Token key that you will later use to authenticate "
 "requests."
 msgstr ""
+"Vastuseks on võti, mida hiljem saab kasutada päringute autentimiseks."
 
 #: ../../source/authentication.rst:56
 msgid "Logging in"
-msgstr ""
+msgstr "Sisse logimine"
 
 #: ../../source/authentication.rst
 msgid "Initial superuser account:"
-msgstr ""
+msgstr "Esialgne superkasutaja konto:"
 
 #: ../../source/authentication.rst
 msgid "*username:* admin"
-msgstr ""
+msgstr "*kasutajanimi:* admin"
 
 #: ../../source/authentication.rst
 msgid "*password:* 1234"
-msgstr ""
+msgstr "*parool:* 1234"
 
 #: ../../source/authentication.rst:67
 msgid "Endpoint: **/rest-auth/login/**"
-msgstr ""
+msgstr "Otspunkt: **/rest-auth/login/**"
 
 #: ../../source/authentication.rst:91
 msgid "Third-Party Authentication"
-msgstr ""
+msgstr "Kolmanda osapoole autentimine"
 
 #: ../../source/authentication.rst:93
 msgid ""
@@ -108,10 +111,14 @@ msgid ""
 "<https://docs.cloudfoundry.org/concepts/architecture/uaa.html>`_. This "
 "requires some configuration, both on the UAA server and in Toolkit."
 msgstr ""
+"Toolkiti saab autentida ka kasutades :ref:`UAA-d <uaa_concept>`, mida pakub"
+" `CloudFoundry "
+"<https://docs.cloudfoundry.org/concepts/architecture/uaa.html>`_. "
+"See nõuab veidi konfigureerimist nii UAA serveris kui ka Toolkitis."
 
 #: ../../source/authentication.rst:97
 msgid "Configuring the UAA server locally"
-msgstr ""
+msgstr "UAA serveri lokaalne konfigureerimine"
 
 #: ../../source/authentication.rst:99
 msgid ""
@@ -119,25 +126,32 @@ msgid ""
 " eg setting the ``redirect_uri``. An example \"login\" client is already "
 "provided in UAA by default, which will be used for the example."
 msgstr ""
-
+"UAA serveris on vaja konfigureerida kliendi rakendust (Toolkitti), määrates ``redirect_uri`` väärtuse. \"Login\" kliendi näide on juba UAA poolt vaikimisi kaasa antud. Selle näite jaoks on seda sama kasutatud. "
 #: ../../source/authentication.rst:104
 msgid ""
 "First, deploy the UAA server locally and install the CF UAA Command Line "
 "Client (UAAC) as detailed `here "
 "<https://docs.cloudfoundry.org/concepts/architecture/uaa.html#quickstart>`_."
 msgstr ""
+"Esiteks paigalda UAA server lokaalselt ja installi CF UAA Command Line "
+"Client (UAAC) nagu on kirjeldatud `siin "
+"<https://docs.cloudfoundry.org/concepts/architecture/uaa.html#quickstart>`_."
 
 #: ../../source/authentication.rst:105
 msgid ""
 "Target the local UAA server by running ``$ uaac target "
 "http://localhost:8080/uaa``"
 msgstr ""
+"Jooksuta ``$ uaac target "
+"http://localhost:8080/uaa``"
 
 #: ../../source/authentication.rst:106
 msgid ""
 "Authenticate as the default \"admin\" client by running ``$ uaac token "
 "client get admin -s adminsecret``"
 msgstr ""
+"Autendi vaikimisi \"admin\" klient, jooksutades ``$ uaac token "
+"client get admin -s adminsecret``"
 
 #: ../../source/authentication.rst:107
 msgid ""
@@ -145,18 +159,25 @@ msgid ""
 "uaac client update login --redirect_uri "
 "http://localhost:8000/api/v1/uaa/callback``."
 msgstr ""
+"Uuenda näidis \"login\" kliendi`redirect_uri`` jooksutades ``$ "
+"uaac client update login --redirect_uri "
+"http://localhost:8000/api/v1/uaa/callback``."
 
 #: ../../source/authentication.rst:108
 msgid ""
 "Now authenticate as the example \"login\" client by running ``$ uaac "
 "token client get login -s loginsecret``"
 msgstr ""
+"Nüüd autendi ennast kui näidis \"login\" klient jooksutades ``$ uaac "
+"token client get login -s loginsecret``"
 
 #: ../../source/authentication.rst:109
 msgid ""
 "Create a new example user by running ``uaac user add test1 --emails "
 "test1@test1.com --password test1``"
 msgstr ""
+"Loo uus näidiskasutaja jooksutades ``uaac user add test1 --emails "
+"test1@test1.com --password test1``"
 
 #: ../../source/authentication.rst:111
 msgid ""
@@ -164,10 +185,13 @@ msgid ""
 "``redirect_uri`` callback through logging in the UAA server using the "
 "**/uaa/oauth/authorize** OAuth endpoint of the UAA server."
 msgstr ""
+"UAA server on nüüd konfigureeritud. Testimiseks võib saata päring "
+"``redirect_uri``-le logides UAA serverisse  "
+"**/uaa/oauth/authorize** OAuth otspunkti kaudu."
 
 #: ../../source/authentication.rst:113
 msgid "The **oauth/authorize** URL needs to be sent with the proper parameters:"
-msgstr ""
+msgstr "**oauth/authorize** URL-ile peab saatma päringu õigete parameetritega:"
 
 #: ../../source/authentication.rst:115
 #, python-format
@@ -176,17 +200,17 @@ msgstr ""
 
 #: ../../source/authentication.rst:117
 msgid "To break it down:"
-msgstr ""
+msgstr "Lahtiseletatult:"
 
 #: ../../source/authentication.rst:119
 msgid "``response_type=code`` Lets the server know to add a code in response."
-msgstr ""
+msgstr "``response_type=code`` annab serverile teada, et vastusesse tuleb lisada kood."
 
 #: ../../source/authentication.rst:120
 msgid ""
 "``client_id=login`` Is the name/id of the client application on the UAA "
 "server/"
-msgstr ""
+msgstr "``client_id=login`` on kliendi rakenduse nimi/id UAA-s."
 
 #: ../../source/authentication.rst:121
 msgid ""
@@ -194,6 +218,7 @@ msgid ""
 "authenticate/create the user on Toolkit's side with the email and "
 "password."
 msgstr ""
+"``scope=openid``on OAuth-i 'scope', mida Toolkit kasutab, et autentida või luua emaili ja parooliga kasutaja Toolkiti poolele."
 
 #: ../../source/authentication.rst:122
 #, python-format
@@ -202,6 +227,9 @@ msgid ""
 "is the same ``redirect_uri`` set on the client application before, except"
 " its encoded in order to use it as a parameter."
 msgstr ""
+"``redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fapi%2Fv1%2Fuaa/callback`` "
+"on sama ``redirect_uri``, mis ennist määratud kliendi rakendusele, ainult, et see"
+" on nüüd kodeeritud, et seda saaks kasutada parameetrina."
 
 #: ../../source/authentication.rst:124
 msgid ""
@@ -209,6 +237,9 @@ msgid ""
 "https://docs.cloudfoundry.org/api/uaa/version/74.24.0/index.html - "
 "https://www.oauth.com/"
 msgstr ""
+"Rohkem infot saab siit: - "
+"https://docs.cloudfoundry.org/api/uaa/version/74.24.0/index.html - "
+"https://www.oauth.com/"
 
 #: ../../source/authentication.rst:128
 msgid ""
@@ -218,34 +249,46 @@ msgid ""
 "and password. Therefore, try logging in with the username(type it into "
 "the email field)/password instead."
 msgstr ""
+"**MÄRKUS:** e-mailiga sisse logides võib saada autentimiserroreid. "
+"Kuigi sisse logimise vorm küsib e-maili ja parooli, saadab see tegelikult **kasutajanime** ja parooli. "
+"Seega tasub errorit saades proovida sisse logida hoopis kasutajanime (trüki see e-maili välja) "
+"ja parooliga."
 
 #: ../../source/authentication.rst:132
 msgid "Configuring the Toolkit server"
-msgstr ""
+msgstr "Toolkiti serveri konfigureerimine"
 
 #: ../../source/authentication.rst:133
 msgid ""
 "To configure the Toolkit server client application, UAA related "
 "environment variables need to be set:"
 msgstr ""
+"Toolkiti serveri kliendirakenduse konfigureerimiseks tuleb määrata UAA-ga "
+"seotud keskkonnamuutjad (environment variables):"
 
 #: ../../source/authentication.rst:135
 msgid ""
 "``TEXTA_USE_UAA`` expects input \"False\" to disable UAA, which will "
 "otherwise be enabled."
 msgstr ""
+"``TEXTA_USE_UAA`` sisend peab UAA blokeerimiseks olema \"False\", "
+"vastasel juhul on see lubatud."
 
 #: ../../source/authentication.rst:136
 msgid ""
 "``TEXTA_UAA_URL`` needs to be the URL of the UAA server, eg "
 "http://localhost:8080/uaa"
 msgstr ""
+"``TEXTA_UAA_URL`` peab olema UAA serveri URL, nt "
+"http://localhost:8080/uaa"
 
 #: ../../source/authentication.rst:137
 msgid ""
 "``TEXTA_UAA_REDIRECT_URI`` needs to be the ``redirect_uri`` as set on the"
 " UAA server client, eg http://localhost:8000/api/v1/uaa/callback"
 msgstr ""
+"``TEXTA_UAA_REDIRECT_URI`` peab olema sama ``redirect_uri``, mis on määratud"
+" UAA serveri kliendis, nt http://localhost:8000/api/v1/uaa/callback"
 
 #: ../../source/authentication.rst:138
 msgid ""
@@ -253,46 +296,57 @@ msgid ""
 "frontend, where the Toolkit server will redirect the user after a "
 "successful ``redirect_uri`` callback, eg http://localhost:4200/oauth"
 msgstr ""
+"``TEXTA_UAA_FRONT_REDIRECT_URL`` peab olema Angular "
+"eessüsteemi URL, kuhu Toolkiti server suunab oma kasutaja pärast "
+"õnnestunud ``redirect_uri`` tagasihelistust (callback), nt http://localhost:4200/oauth"
 
 #: ../../source/authentication.rst:139
 msgid "``TEXTA_UAA_CLIENT_ID`` needs to be the client ID, eg ``login``"
-msgstr ""
+msgstr "``TEXTA_UAA_CLIENT_ID`` peab olema kliendi ID, nt ``login``"
 
 #: ../../source/authentication.rst:140
 msgid ""
 "``TEXTA_UAA_CLIENT_SECRET`` needs to be the client application's secret, "
 "eg ``loginsecret``"
 msgstr ""
+"``TEXTA_UAA_CLIENT_SECRET`` peab olema kliendi rakenduse saladus, "
+"nt ``loginsecret``"
 
 #: ../../source/authentication.rst:144
 msgid "Using UAA on the front-end"
-msgstr ""
+msgstr "UAA eessüsteemi (front-end) kasutamine"
 
 #: ../../source/authentication.rst:145
 msgid ""
 "To use UAA with the Angular front-end, it needs to be configured in an "
 "`environment.ts` file."
 msgstr ""
+"UAA koos Angular eesüsteemiga peab olema konfigureeritud "
+"`environment.ts` failis."
 
 #: ../../source/authentication.rst:147
 msgid ""
 "``useCloudFoundryUAA`` is a boolean. If false, the UAA login option will "
 "be hidden."
 msgstr ""
+"``useCloudFoundryUAA`` on tõeväärtustüübis. Kui see on False, on UAA sisse logimisvõimalus "
+"peidetud."
 
 #: ../../source/authentication.rst:148
 msgid "``uaaConf`` is an object with fields for UAA parameters, eg:"
-msgstr ""
+msgstr "``uaaConf`` on objekt väljadega UAA parameetrite jaoks, nt:"
 
 #: ../../source/authentication.rst:165
 msgid ""
 "To log in using UAA, click on the \"log in with CloudFoundry\" button on "
 "the login dialog:"
 msgstr ""
+"UAA-d kasutades sisse logimiseks, klõpsa \"log in with CloudFoundry\" nupule "
+"sisse logimise aknas:"
 
 #: ../../source/authentication.rst:171
-msgid "Figure 22. *Log In With CloudFoundry Screen on the Angular Front-end*"
-msgstr ""
+msgid "*Log In With CloudFoundry Screen on the Angular Front-end*"
+msgstr "*Logi Sisse CloudFoundry valikuga Angular eesüsteemis*"
 
 #: ../../source/authentication.rst:173
 msgid ""
@@ -300,32 +354,40 @@ msgid ""
 " the login was successful, it will redirect you back to the Toolkit "
 "front-end."
 msgstr ""
+"See suunab kasutaja UAA sisse logimise valikusse. Pärast edukat sisse "
+"logimist suunab see kasutaja tagasi Toolkiti eessüsteemi."
 
 #: ../../source/authentication.rst:176
 msgid "Tests"
-msgstr ""
+msgstr "Testid"
 
 #: ../../source/authentication.rst:177
 msgid ""
 "To run tests on the Toolkit backend, run: ``python manage.py test "
 "toolkit.uaa_auth``"
 msgstr ""
+"Toolkiti tagasüsteemis (backend) testide jooksutamiseks jooksuta: ``python manage.py test "
+"toolkit.uaa_auth``"
 
 #: ../../source/authentication.rst:180
 msgid ""
 "Tests on the front-end are carried through Cypress, in the ``uaa.e2e-"
 "spec.js`` file."
 msgstr ""
+"Eessüsteemis on testid tehtud Cypressiga ``uaa.e2e-"
+"spec.js`` failis."
 
 #: ../../source/authentication.rst:182
 msgid ""
 "**NOTE:** The UAA server has to be running and configured in order for "
 "the tests to work."
 msgstr ""
+"**MÄRKUS**: UAA server peab testide töötamiseks olema käivitatud ja "
+"konfigureeritud."
 
 #: ../../source/authentication.rst:186
 msgid "Notes on authentication"
-msgstr ""
+msgstr "Märkuseid autentimise kotha"
 
 #: ../../source/authentication.rst:188
 msgid ""
@@ -334,6 +396,10 @@ msgid ""
 "UAA server will be made to obtain an ``access_token`` and a "
 "``refresh_token``."
 msgstr ""
+"Pärast edukat UAA serverisse sisse logimist saadab UAA server tagasihelistuse (callbacki) "
+"Toolkiti ``redirect_uri`` tagasihelistusse (callbacki), läbi mille tehakse teine päring "
+"UAA serverisse, et saada ``access_token`` ja "
+"``refresh_token``."
 
 #: ../../source/authentication.rst:190
 msgid ""
@@ -342,6 +408,10 @@ msgid ""
 "``Bearer`` token in requests. Example: ``Authorization: Bearer "
 "71428a9f2fb44c52be3c17f2fae405f5``."
 msgstr ""
+"Toolkiti ``access_token``-iga autentimiseks on vaja see lisada päringutes "
+" ``Authorization`` (``HTTP_AUTHORIZATION``) päisesse kui "
+"``Bearer`` token. Näide: ``Authorization: Bearer "
+"71428a9f2fb44c52be3c17f2fae405f5``."
 
 #: ../../source/authentication.rst:192
 msgid ""
@@ -349,6 +419,9 @@ msgid ""
 "will send a request to the UAA server to check whether the token is still"
 " valid. If not, it will give a 401 response."
 msgstr ""
+"Iga päringuga Toolkit REST tagasüsteemi saadab Toolkit RESTi "
+"tagasüsteem päringu UAA serverisse, et kontrollida, kas token ikka veel "
+"kehtib. Kui see nii ei ole, tagastab see 401 vastuse."
 
 #: ../../source/authentication.rst:194
 msgid ""
@@ -362,6 +435,14 @@ msgid ""
 "Toolkit REST backend's **uaa/refresh-token** endpoint will give a 403 "
 "response."
 msgstr ""
+"Sellisel juhul saadab eessüsteem automaatselt ``refresh_token`` "
+"tokeni Toolkit RESTi tagasüsteemi "
+"**uaa/refresh-token** otspunkti koos ``refresh_token``-iga "
+"(päringus väljal ``refresh_token``). "
+"Toolkit REST tagasüsteemis kasutatakse 'refresh' tokenit UAA serveri **/oauth/token** otspunkti saadetud päringus uue ``access_token``-i saamiseks."
+" Kui ``refresh_token`` pole valiidne või on aegunud, tagastab "
+"Toolkit REST tagasüsteemi **uaa/refresh-token** otspunkt 403 "
+"vastuse."
 
 #: ../../source/authentication.rst:197
 msgid ""
@@ -369,30 +450,6 @@ msgid ""
 "https://docs.cloudfoundry.org/api/uaa/version/74.24.0/index.html#refresh-"
 "token"
 msgstr ""
-
-#~ msgid ""
-#~ "The UAA server is now configured. "
-#~ "We can already send a request to"
-#~ " the ``redirect_uri`` callback through "
-#~ "logging in the UAA server using "
-#~ "the **/uaa/oauth/authorize** OAuth endpoint of"
-#~ " the UAA server."
-#~ msgstr ""
-
-#~ msgid "``response_type=code`` Lets the server know we want a code in response."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "``client_id=login`` Is the name/id of "
-#~ "our client application we have on "
-#~ "the UAA server/"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "``redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fapi%2Fv1%2Fuaa/callback``"
-#~ " is the same ``redirect_uri`` we set"
-#~ " on the client application before, "
-#~ "except its encoded in order to use"
-#~ " it as a parameter."
-#~ msgstr ""
-
+"Edasiseks lugemiseks: "
+"https://docs.cloudfoundry.org/api/uaa/version/74.24.0/index.html#refresh-"
+"token"
