@@ -57,7 +57,7 @@ Choose *fields* on which the clustering is done. The selected fields should cont
 
 .. figure:: images/create_clustering.png
 
-    Figure 17. *Creating a Clustering*
+    *Creating a Clustering*
 
 
 Viewing clusters
@@ -73,7 +73,7 @@ Click *View clusters* under Actions. You will see an overwiew about obtained clu
 .. figure:: images/clusters_view.png
     :width: 100 %
 
-    Figure 18. *Clusters view*
+    *Clusters view*
 
 .. note::
 
@@ -126,6 +126,6 @@ It is advisable to delete the cluster after you have tagged it. Click on **Delet
 .. figure:: images/cluster_details_view.png
     :width: 100 %
 
-    Figure 19. *Cluster details view*
+    *Cluster details view*
 
 

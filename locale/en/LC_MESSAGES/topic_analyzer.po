@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-21 13:46+0200\n"
+"POT-Creation-Date: 2021-02-18 08:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,7 +127,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/topic_analyzer.rst:60
-msgid "Figure 17. *Creating a Clustering*"
+msgid "*Creating a Clustering*"
 msgstr ""
 
 #: ../../source/topic_analyzer.rst:64
@@ -143,7 +143,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/topic_analyzer.rst:76
-msgid "Figure 18. *Clusters view*"
+msgid "*Clusters view*"
 msgstr ""
 
 #: ../../source/topic_analyzer.rst:80
@@ -240,7 +240,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/topic_analyzer.rst:129
-msgid "Figure 19. *Cluster details view*"
+msgid "*Cluster details view*"
 msgstr ""
 
 #~ msgid ""
@@ -397,5 +397,14 @@ msgstr ""
 #~ "There is an API for topic "
 #~ "analyzer, but the magic of the "
 #~ "analyzer dissappears when using API."
+#~ msgstr ""
+
+#~ msgid "Figure 17. *Creating a Clustering*"
+#~ msgstr ""
+
+#~ msgid "Figure 18. *Clusters view*"
+#~ msgstr ""
+
+#~ msgid "Figure 19. *Cluster details view*"
 #~ msgstr ""
 
