@@ -9,50 +9,430 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 19:43+0300\n"
+"POT-Creation-Date: 2021-02-18 08:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.8.0\n"
 
-#: ../../source/bert_tagger.rst:3
-msgid "Bert Tagger"
-msgstr ""
-
-#: ../../source/bert_tagger.rst:5
-msgid "TODO"
+#: ../../source/bert_tagger.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/bert_tagger.html>`_ `ET "
+"<https://docs.texta.ee/et/bert_tagger.html>`_"
 msgstr ""
 
 #: ../../source/bert_tagger.rst:8
-msgid "Creation"
+msgid "BERT Tagger"
 msgstr ""
 
-#: ../../source/bert_tagger.rst:11 ../../source/bert_tagger.rst:20
-#: ../../source/bert_tagger.rst:29 ../../source/bert_tagger.rst:40
-msgid "GUI"
-msgstr ""
-
-#: ../../source/bert_tagger.rst:14 ../../source/bert_tagger.rst:23
-#: ../../source/bert_tagger.rst:32 ../../source/bert_tagger.rst:43
-msgid "API"
+#: ../../source/bert_tagger.rst:10
+msgid ""
+":ref:`BERT Tagger <bert_tagger_concept>` is a tool for fine-tuning `BERT "
+"models <https://en.wikipedia.org/wiki/BERT_(language_model)>`_ and using "
+"the fine-tuned models for text classification."
 msgstr ""
 
 #: ../../source/bert_tagger.rst:17
-msgid "Useage"
+msgid "Creation"
 msgstr ""
 
-#: ../../source/bert_tagger.rst:26
-msgid "Application"
+#: ../../source/bert_tagger.rst:19
+msgid ""
+"The following section covers everything we need to know about creating "
+"BERT Taggers. For getting an overview of the input parameters, see "
+"subsection :ref:`Parameters <bert_creation_parameters>`; for creating a "
+"BERT Tagger via graphical user interface, see subsection :ref:`GUI "
+"<bert_creation_gui>`; for creating BERT Tagger via API, see subsection "
+":ref:`API <bert_creation_api>`."
 msgstr ""
 
-#: ../../source/bert_tagger.rst:35
-msgid "Fine-Tuning"
+#: ../../source/bert_tagger.rst:26 ../../source/bert_tagger.rst:312
+msgid "Parameters"
 msgstr ""
 
-#: ../../source/bert_tagger.rst:37
-msgid "Siia tulevad parameetrid."
+#: ../../source/bert_tagger.rst:28
+msgid "The following section gives an overview of BERT Tagger's input parameters."
 msgstr ""
+
+#: ../../source/bert_tagger.rst:33
+msgid "**description**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:33
+msgid "Name of the fine-tuned BERT Tagger model."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:42
+msgid "**indices**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:38
+msgid ""
+"List of Elasticsearch :ref:`indices <index_concept>` containing the data "
+"being used for training the model. NB! Indices should be formatted as "
+"list of dicts, where key = \"name\" and value = <index_name>, e.g:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:48
+msgid "**query**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:47
+msgid ""
+"Elasticsearch query :ref:`query <query_concept>` in JSON string format "
+"(in API) or as saved :ref:`Search <search_concept>` (in GUI). For "
+"**binary classification**, the documents corresponding to the specified "
+"query are used as positive examples."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:53
+msgid "**fields**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:53
+msgid ""
+"List of fields from the selected index/indices which are used as input "
+"data for training."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:59
+msgid "**maximum_sample_size**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:58
+msgid "Maximum number of positive examples."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:65
+msgid "**minimum_sample_size**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:64
+msgid "Minimum number of positive examples."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:70
+msgid "**fact_name**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:70
+msgid ""
+"Fact name used for **multiclass classification**. NB! The selected fact "
+"should have at least two unique values!"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:75
+msgid "**bert_model**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:75
+msgid ""
+"Name of the pretrained BERT model to use. NB! Only previously downloaded "
+"models can be used. If the model you wish to use is not currently "
+"available, download it via endpoint "
+"/bert_taggers/download_pretrained_model."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:84
+msgid "**num_epochs**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:80
+msgid "Number of epochs to train the model."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:84
+msgid ""
+"It is advisable to use the default value (2) as training more than 2 "
+"epochs usually leads to overfitting."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:89
+msgid "**learning_rate**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:89
+msgid ""
+"Tuning parameter in an optimization algorithm that determines the step "
+"size at each iteration while moving toward a minimum of a loss function."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:94
+msgid "**eps**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:94
+msgid "Small term added to the denominator to improve numerical stability."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:103
+msgid "**max_length**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:99
+msgid "Maximum number of tokens used for training."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:103
+msgid ""
+"If the value is higher, the results are usually better as bigger "
+"proportion of each input text is used, but setting the value too high "
+"might lead to memory problems. Setting the value higher also results in "
+"longer training time."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:108
+msgid "**batch_size**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:108
+msgid ""
+"Batch size used for training. NB! Autoscaled based on param `max_length` "
+"if the inserted size is too large to avoid memory errors."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:113
+msgid "**split_ratio**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:113
+msgid ""
+"Proportion of documents used for training; the others are used for "
+"validation."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:118
+msgid "**negative_multiplier**:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:118
+msgid ""
+"Multiplier determining the number of negative examples. If set to 1, the "
+"number of negative examples is equal to the number of positive examples; "
+"if set to 0.5, the number of negative examples is half the number of "
+"positive examples; if set to 2, the number of negative examples is 2 "
+"times the bigger than the number of positive examples etc."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:123 ../../source/bert_tagger.rst:274
+#: ../../source/bert_tagger.rst:321 ../../source/bert_tagger.rst:383
+#: ../../source/bert_tagger.rst:464
+msgid "GUI"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:125
+msgid ""
+"For creating a new BERT Tagger model, navigate to `\"Models\" -> \"Bert "
+"Taggers\"`. Click on the button **\"CREATE\"** in the upper left corner "
+"of the page (:numref:`bert_tagger_create_button`)."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:131
+msgid "*BERT Tagger creation button*"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:133
+msgid ""
+"After clicking on the button, a new BERT Tagger creation window should "
+"open. Fill the required fields and modify the parameters you wish to "
+"change, then click on the button **\"Create\"** in the bottom right "
+"corner of the window (:numref:`bert_tagger_create_window`). A new row "
+"containing the information about the created tagger should now appear in "
+"the list of all BERT taggers with status \"created\" or \"training\"."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:139
+msgid "*BERT Tagger creation window*"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:141
+msgid ""
+"If the training process is finished (status == \"completed\"), you can "
+"view plots, various training parameters and evaluation results by "
+"clicking on the corresponding row."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:147
+msgid "*BERT Tagger row*"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:153
+msgid "*BERT Tagger's ROC curve and confusion matrix.*"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:159
+msgid "*BERT Tagger's training and validation parameter values.*"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:166
+msgid ""
+"*BERT Tagger's estimated results with equal number of positive and "
+"negative examples.*"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:172
+msgid "*BERT Tagger's estimated results with low number of positive examples.*"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:180 ../../source/bert_tagger.rst:281
+#: ../../source/bert_tagger.rst:326 ../../source/bert_tagger.rst:389
+#: ../../source/bert_tagger.rst:422 ../../source/bert_tagger.rst:469
+msgid "API"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:182
+msgid "Endpoint **/projects/{project_pk}/bert_taggers/**"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:184 ../../source/bert_tagger.rst:285
+#: ../../source/bert_tagger.rst:331 ../../source/bert_tagger.rst:393
+#: ../../source/bert_tagger.rst:426 ../../source/bert_tagger.rst:474
+msgid "Example:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:201 ../../source/bert_tagger.rst:341
+#: ../../source/bert_tagger.rst:405 ../../source/bert_tagger.rst:436
+msgid "Response:"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:259
+msgid "Usage"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:261
+msgid "The following section covers all functions supported by BERT Tagger."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:265
+msgid "Download Pretrained Model"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:267
+msgid ""
+"`\"download_pretrained_model\"` allows downloading pretrained BERT models"
+" available in `Hugging Face <https://huggingface.co/models>`_."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:271
+msgid ""
+"Downloading the model might take some time (but usually not over 30 "
+"seconds), so be patient if nothing seems to happen at first!"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:276 ../../source/bert_tagger.rst:323
+#: ../../source/bert_tagger.rst:385 ../../source/bert_tagger.rst:466
+msgid "TODO"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:283
+msgid ""
+"Endpoint "
+"**/projects/{project_pk}/bert_taggers/download_pretrained_model/**"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:297
+msgid "Response (negative):"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:307
+msgid "Tag Random Doc"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:309
+msgid ""
+"`\"Tag Random Doc\"` allows applying a BERT tagger model to a random "
+"document in an index."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:315
+msgid "**indices**"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:315
+msgid ""
+"List of indices from where the random document is retrieved. Default to "
+"the indices used for training the model."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:318
+msgid "**fields**"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:318
+msgid ""
+"List of document fields onto which the tagger will be applied. Default to"
+" the fields used for training the model."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:329
+msgid "Endpoint **/projects/{project_pk}/bert_taggers/{id}/tag_random_doc/**"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:378
+msgid "Tag Text"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:380
+msgid ""
+"`\"Tag Text\"` enables tagging a single text with a fine-tuned BERT "
+"Tagger model."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:391
+msgid "Endpoint **/projects/{project_pk}/bert_taggers/{id}/tag_text/**"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:417
+msgid "Available Models"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:419
+msgid ""
+"`\"Available Models\"` returns a list of currently available pretrained "
+"BERT models."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:424
+msgid "Endpoint **/projects/{project_pk}/bert_taggers/available_models/**"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:455
+msgid "The list will vary depending on which models have been downloaded."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:459
+msgid "Epoch Reports"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:461
+msgid ""
+"`\"Epoch Reports\"` returns a list of reports of the results at end of "
+"each epoch. The number of reports == value of param `num_epochs`."
+msgstr ""
+
+#: ../../source/bert_tagger.rst:472
+msgid "Endpoint **/projects/{project_pk}/bert_taggers/{id}/epoch_reports/**"
+msgstr ""
+
+#: ../../source/bert_tagger.rst:483
+msgid "Response (positive):"
+msgstr ""
+
+#~ msgid "Bert Tagger"
+#~ msgstr ""
+
+#~ msgid "Useage"
+#~ msgstr ""
+
+#~ msgid "Application"
+#~ msgstr ""
+
+#~ msgid "Fine-Tuning"
+#~ msgstr ""
+
+#~ msgid "Siia tulevad parameetrid."
+#~ msgstr ""
 
