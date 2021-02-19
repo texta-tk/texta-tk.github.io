@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-19 12:45+0200\n"
+"POT-Creation-Date: 2021-02-19 12:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Generated-By: Babel 2.6.0\n"
 
 #: ../../source/index_splitting_tool.rst:4
-msgid "Tool for splitting indices"
+msgid "Index Splitter"
 msgstr ""
 
 #: ../../source/index_splitting_tool.rst:7
@@ -27,8 +27,8 @@ msgid "Create"
 msgstr ""
 
 #: ../../source/index_splitting_tool.rst:12
-#: ../../source/index_splitting_tool.rst:83
-#: ../../source/index_splitting_tool.rst:105
+#: ../../source/index_splitting_tool.rst:84
+#: ../../source/index_splitting_tool.rst:106
 msgid "GUI"
 msgstr ""
 
@@ -87,19 +87,31 @@ msgstr ""
 #: ../../source/index_splitting_tool.rst:37
 msgid ""
 "**random** - splits the data completely randomly. Test index will contain"
-" the fraction of documents defined by *test_size*. **original** - splits "
-"the data by preserving the original distribution of given fact's "
-"(*fact_name*) values. Test index will contain the fraction of documents "
-"defined by *test_size*. Note that the distribution is not guaranteed to "
-"be preserved if you have multiple facts with the same name associated "
-"with a document. **equal** - splits the data so that each value of the "
-"fact (*fact_name*) is represented a fixed amount (*test_size*) of times "
-"in the test index. **custom** - splits the data so that the fact's values"
-" in the test index will follow your custom distribution "
-"(*custom_distribution*)."
+" the fraction of documents defined by *test_size*."
 msgstr ""
 
-#: ../../source/index_splitting_tool.rst:44
+#: ../../source/index_splitting_tool.rst:39
+msgid ""
+"**original** - splits the data by preserving the original distribution of"
+" given fact's (*fact_name*) values. Test index will contain the fraction "
+"of documents defined by *test_size*. Note that the distribution is not "
+"guaranteed to be preserved if you have multiple facts with the same name "
+"associated with a document."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:43
+msgid ""
+"**equal** - splits the data so that each value of the fact (*fact_name*) "
+"is represented a fixed amount (*test_size*) of times in the test index."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:45
+msgid ""
+"**custom** - splits the data so that the fact's values in the test index "
+"will follow your custom distribution (*custom_distribution*)."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:47
 msgid ". _index_splitting_create: .. figure:: images/index_splitter/create.png"
 msgstr ""
 
@@ -107,8 +119,8 @@ msgstr ""
 msgid "width"
 msgstr ""
 
-#: ../../source/index_splitting_tool.rst:47
-#: ../../source/index_splitting_tool.rst:55
+#: ../../source/index_splitting_tool.rst:49
+#: ../../source/index_splitting_tool.rst:56
 msgid "500pt"
 msgstr ""
 
@@ -116,39 +128,39 @@ msgstr ""
 msgid "align"
 msgstr ""
 
-#: ../../source/index_splitting_tool.rst:48
-#: ../../source/index_splitting_tool.rst:56
+#: ../../source/index_splitting_tool.rst:50
+#: ../../source/index_splitting_tool.rst:57
 msgid "center"
 msgstr ""
 
-#: ../../source/index_splitting_tool.rst:50
+#: ../../source/index_splitting_tool.rst:52
 msgid ""
 "If the task is successful, the newly created indices are added to the "
 "project."
 msgstr ""
 
-#: ../../source/index_splitting_tool.rst:52
+#: ../../source/index_splitting_tool.rst:54
 msgid ""
 ". _index_splitting_indices: .. figure:: "
 "images/index_splitter/new_indices.png"
 msgstr ""
 
-#: ../../source/index_splitting_tool.rst:59
-#: ../../source/index_splitting_tool.rst:90
-#: ../../source/index_splitting_tool.rst:110
+#: ../../source/index_splitting_tool.rst:60
+#: ../../source/index_splitting_tool.rst:91
+#: ../../source/index_splitting_tool.rst:111
 msgid "API"
 msgstr ""
 
-#: ../../source/index_splitting_tool.rst:61
-#: ../../source/index_splitting_tool.rst:92
+#: ../../source/index_splitting_tool.rst:62
+#: ../../source/index_splitting_tool.rst:93
 msgid "Endpoint: **/projects/{project_pk}/index_splitter/**"
 msgstr ""
 
-#: ../../source/index_splitting_tool.rst:80
+#: ../../source/index_splitting_tool.rst:81
 msgid "View"
 msgstr ""
 
-#: ../../source/index_splitting_tool.rst:85
+#: ../../source/index_splitting_tool.rst:86
 msgid ""
 "Navigate to **Tools** -> **Index Splitter**  to view existing index "
 "splitting tasks. If any of your tasks is still running, the view will "
@@ -156,17 +168,17 @@ msgid ""
 "general information about the tasks."
 msgstr ""
 
-#: ../../source/index_splitting_tool.rst:102
+#: ../../source/index_splitting_tool.rst:103
 msgid "Delete"
 msgstr ""
 
-#: ../../source/index_splitting_tool.rst:107
+#: ../../source/index_splitting_tool.rst:108
 msgid ""
-"Navigate to **Tools** -> **Index Splitter** select the task you want to "
-"delete and click on trash icon to delete it."
+"Navigate to **Tools** -> **Index Splitter** and select the task you want "
+"to delete and click on trash icon to delete it."
 msgstr ""
 
-#: ../../source/index_splitting_tool.rst:112
+#: ../../source/index_splitting_tool.rst:113
 msgid "Endpoint: **/projects/{project_pk}/index_splitter/{index_splitter_id}/**"
 msgstr ""
 
@@ -220,5 +232,38 @@ msgstr ""
 #~ " so that the fact's values in "
 #~ "test index will follow your custom "
 #~ "distribution (*custom_distribution*)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**random** - splits the data completely"
+#~ " randomly. Test index will contain "
+#~ "the fraction of documents defined by "
+#~ "*test_size*. **original** - splits the "
+#~ "data by preserving the original "
+#~ "distribution of given fact's (*fact_name*) "
+#~ "values. Test index will contain the "
+#~ "fraction of documents defined by "
+#~ "*test_size*. Note that the distribution "
+#~ "is not guaranteed to be preserved "
+#~ "if you have multiple facts with "
+#~ "the same name associated with a "
+#~ "document. **equal** - splits the data"
+#~ " so that each value of the fact"
+#~ " (*fact_name*) is represented a fixed "
+#~ "amount (*test_size*) of times in the "
+#~ "test index. **custom** - splits the "
+#~ "data so that the fact's values in"
+#~ " the test index will follow your "
+#~ "custom distribution (*custom_distribution*)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Navigate to **Tools** -> **Index "
+#~ "Splitter** select the task you want "
+#~ "to delete and click on trash icon"
+#~ " to delete it."
+#~ msgstr ""
+
+#~ msgid "Tool for splitting indices"
 #~ msgstr ""
 

@@ -1,6 +1,6 @@
 
 ###########################
-Tool for splitting indices
+Index Splitter
 ###########################
 
 Create
@@ -35,15 +35,17 @@ use a custom distribution, you can define it in the last field (*custom_distribu
     *Distributions*
 
     **random** - splits the data completely randomly. Test index will contain the fraction of documents defined by *test_size*.
-    **original** - splits the data by preserving the original distribution of given fact's (*fact_name*) values. 
+
+    **original** - splits the data by preserving the original distribution of given fact's (*fact_name*) values. 	
     Test index will contain the fraction of documents defined by *test_size*. Note that the distribution
     is not guaranteed to be preserved if you have multiple facts with the same name associated with a document.
+
     **equal** - splits the data so that each value of the fact (*fact_name*) is represented a fixed amount (*test_size*) of times in the test index.
+   
     **custom** - splits the data so that the fact's values in the test index will follow your custom distribution (*custom_distribution*).
 
 . _index_splitting_create:
 .. figure:: images/index_splitter/create.png
-
    :width: 500pt
    :align: center
 
@@ -51,7 +53,6 @@ If the task is successful, the newly created indices are added to the project.
 
 . _index_splitting_indices:
 .. figure:: images/index_splitter/new_indices.png
-
    :width: 500pt
    :align: center
 
@@ -104,7 +105,7 @@ Delete
 GUI
 ====
 
-Navigate to **Tools** -> **Index Splitter** select the task you want to delete and click on trash icon to delete it.
+Navigate to **Tools** -> **Index Splitter** and select the task you want to delete and click on trash icon to delete it.
 
 API
 =====
