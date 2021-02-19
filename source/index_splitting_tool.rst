@@ -46,14 +46,12 @@ use a custom distribution, you can define it in the last field (*custom_distribu
 
 .. _index_splitting_create:
 .. figure:: images/index_splitter/create.png
-  :width: 500pt
   :align: center
 
 If the task is successful, the newly created indices are added to the project.
 
 .. _index_splitting_indices:
 .. figure:: images/index_splitter/new_indices.png
-  :width: 500pt
   :align: center
 
 API
