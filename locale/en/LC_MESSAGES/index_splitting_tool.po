@@ -1,0 +1,224 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-19 12:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/index_splitting_tool.rst:4
+msgid "Tool for splitting indices"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:7
+msgid "Create"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:12
+#: ../../source/index_splitting_tool.rst:83
+#: ../../source/index_splitting_tool.rst:105
+msgid "GUI"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:14
+msgid ""
+"Navigate to **Tools** -> **Index Splitter** and click on the **CREATE** "
+"button on top-left. Choose the name for your task (*Description*) and "
+"select indices which are used to create train and test sets. Optionally "
+"you can select fields and query to filter the data (this part is very "
+"similar to :ref:`reindexer <reindexer>`)."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:19
+msgid ""
+"Scroll size is used to limit the size ElasticSearch's batches to avoid "
+"timeout errors."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:21
+msgid ""
+"Define the names of the train and test set. *Test size* represents a "
+"percentage with \"random\" or \"original\" distribution and a quantity "
+"with \"equal\" or \"custom\" distribution."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:24
+msgid ""
+"*Fact name* is the fact based on which the split will be made in case of "
+"\"original\" or \"equal\" distribution."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:26
+msgid ""
+"*Str val* is the value of fact base on which the split will be made. Use "
+"this if you have multiple values associated with the fact and you want to"
+" specify which value should have the defined distribution in both sets."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:29
+msgid ""
+"*Distribution* specifies the way you want your data to be split. In case "
+"you want to use a custom distribution, you can define it in the last "
+"field (*custom_distribution*)."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:32
+msgid ""
+"*Custom_distribution* is a dictionary containing custom label "
+"distribution with keys as labels and values as quantities."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:35
+msgid "*Distributions*"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:37
+msgid ""
+"**random** - splits the data completely randomly. Test index will contain"
+" the fraction of documents defined by *test_size*. **original** - splits "
+"the data by preserving the original distribution of given fact's "
+"(*fact_name*) values. Test index will contain the fraction of documents "
+"defined by *test_size*. Note that the distribution is not guaranteed to "
+"be preserved if you have multiple facts with the same name associated "
+"with a document. **equal** - splits the data so that each value of the "
+"fact (*fact_name*) is represented a fixed amount (*test_size*) of times "
+"in the test index. **custom** - splits the data so that the fact's values"
+" in the test index will follow your custom distribution "
+"(*custom_distribution*)."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:44
+msgid ". _index_splitting_create: .. figure:: images/index_splitter/create.png"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst
+msgid "width"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:47
+#: ../../source/index_splitting_tool.rst:55
+msgid "500pt"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst
+msgid "align"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:48
+#: ../../source/index_splitting_tool.rst:56
+msgid "center"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:50
+msgid ""
+"If the task is successful, the newly created indices are added to the "
+"project."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:52
+msgid ""
+". _index_splitting_indices: .. figure:: "
+"images/index_splitter/new_indices.png"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:59
+#: ../../source/index_splitting_tool.rst:90
+#: ../../source/index_splitting_tool.rst:110
+msgid "API"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:61
+#: ../../source/index_splitting_tool.rst:92
+msgid "Endpoint: **/projects/{project_pk}/index_splitter/**"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:80
+msgid "View"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:85
+msgid ""
+"Navigate to **Tools** -> **Index Splitter**  to view existing index "
+"splitting tasks. If any of your tasks is still running, the view will "
+"show you the progress of the task. Besides than that, the view shows you "
+"general information about the tasks."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:102
+msgid "Delete"
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:107
+msgid ""
+"Navigate to **Tools** -> **Index Splitter** select the task you want to "
+"delete and click on trash icon to delete it."
+msgstr ""
+
+#: ../../source/index_splitting_tool.rst:112
+msgid "Endpoint: **/projects/{project_pk}/index_splitter/{index_splitter_id}/**"
+msgstr ""
+
+#~ msgid ""
+#~ "Scroll size is used to limit the"
+#~ " size ElasticSearch's batches in order "
+#~ "to avoid timeout errors."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Define the names of train and test"
+#~ " set. *Test size* represents a "
+#~ "percentage with \"random\" or \"original\" "
+#~ "distribution and a quantity with "
+#~ "\"equal\" or \"custom\" distribution."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "*Fact name* is the the fact based"
+#~ " on which the split will be "
+#~ "made in case of \"original\" or "
+#~ "\"equal\" distribution."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "*Distribution* specifies they way you "
+#~ "want your data to be splitted. In"
+#~ " case you want to use a custom"
+#~ " distribution, you can define it in"
+#~ " the last field (*custom_distribution*)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**random** - splits the data completely"
+#~ " randomly. Test index will contain "
+#~ "the fraction of documents defined by "
+#~ "*test_size*. **original** - splits the "
+#~ "data by preserving the original "
+#~ "distribution of given fact's (*fact_name*) "
+#~ "values. Test index will contain the "
+#~ "fraction of documents defined by "
+#~ "*test_size*. Note that the distribution "
+#~ "is not guaranteed to be preserved "
+#~ "if you have multiple facts with "
+#~ "the same name associated with a "
+#~ "document. **equal** - splits the data"
+#~ " so that each value of the fact"
+#~ " (*fact_name*) is represented fixed amount"
+#~ " (*test_size*) of times in the test"
+#~ " index. **custom** - splits the data"
+#~ " so that the fact's values in "
+#~ "test index will follow your custom "
+#~ "distribution (*custom_distribution*)."
+#~ msgstr ""
+

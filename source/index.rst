@@ -32,6 +32,7 @@ Contents:
     document_importer
     mlp
     reindexer
+    index_splitting_tool
     health
     projects
     searcher
