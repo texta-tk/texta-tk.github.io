@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-19 12:55+0200\n"
+"POT-Creation-Date: 2021-02-19 13:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,38 +111,10 @@ msgid ""
 "will follow your custom distribution (*custom_distribution*)."
 msgstr ""
 
-#: ../../source/index_splitting_tool.rst:47
-msgid ". _index_splitting_create: .. figure:: images/index_splitter/create.png"
-msgstr ""
-
-#: ../../source/index_splitting_tool.rst
-msgid "width"
-msgstr ""
-
-#: ../../source/index_splitting_tool.rst:49
-#: ../../source/index_splitting_tool.rst:56
-msgid "500pt"
-msgstr ""
-
-#: ../../source/index_splitting_tool.rst
-msgid "align"
-msgstr ""
-
-#: ../../source/index_splitting_tool.rst:50
-#: ../../source/index_splitting_tool.rst:57
-msgid "center"
-msgstr ""
-
 #: ../../source/index_splitting_tool.rst:52
 msgid ""
 "If the task is successful, the newly created indices are added to the "
 "project."
-msgstr ""
-
-#: ../../source/index_splitting_tool.rst:54
-msgid ""
-". _index_splitting_indices: .. figure:: "
-"images/index_splitter/new_indices.png"
 msgstr ""
 
 #: ../../source/index_splitting_tool.rst:60
@@ -265,5 +237,25 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Tool for splitting indices"
+#~ msgstr ""
+
+#~ msgid ". _index_splitting_create: .. figure:: images/index_splitter/create.png"
+#~ msgstr ""
+
+#~ msgid "width"
+#~ msgstr ""
+
+#~ msgid "500pt"
+#~ msgstr ""
+
+#~ msgid "align"
+#~ msgstr ""
+
+#~ msgid "center"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ". _index_splitting_indices: .. figure:: "
+#~ "images/index_splitter/new_indices.png"
 #~ msgstr ""
 
