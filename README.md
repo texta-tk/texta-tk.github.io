@@ -8,6 +8,10 @@ For testing the documentation locally, use following command to build HTML:
 
 If Sphinx not installed:
 
+`apt-get install python3-sphinx`
+
+`apt-get install sphinx-intl`
+
 `pip install sphinx`
 
 How to translate or change things?
