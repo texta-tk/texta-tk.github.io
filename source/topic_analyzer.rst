@@ -37,7 +37,7 @@ Choose *fields* on which the clustering is done. The selected fields should cont
 *Clustering algorithm* - an algorithm to use for clustering. Minibatchkmeans is a time efficient variant of kmeans with a potential tradeff in quality.
 *Vectorizer* - a method for creating document vectors.
 
-*Document limit* - number of documents that will be clustered.
+*Document limit* - number of documents that will be clustered. Possible maximum is 10000.
 
 *Num cluster* - number of final clusters.
 
