@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-11 08:12+0300\n"
+"POT-Creation-Date: 2021-05-11 13:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,9 @@ msgid ""
 msgstr ""
 
 #: ../../source/topic_analyzer.rst:40
-msgid "*Document limit* - number of documents that will be clustered."
+msgid ""
+"*Document limit* - number of documents that will be clustered. Possible "
+"maximum is 10000."
 msgstr ""
 
 #: ../../source/topic_analyzer.rst:42
@@ -411,5 +413,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "`EN <https://docs.texta.ee/topic_analyzer.html>`_"
+#~ msgstr ""
+
+#~ msgid "*Document limit* - number of documents that will be clustered."
 #~ msgstr ""
 
