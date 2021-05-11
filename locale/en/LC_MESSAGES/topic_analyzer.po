@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-18 08:58+0200\n"
+"POT-Creation-Date: 2021-05-11 08:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,9 @@ msgstr ""
 "Generated-By: Babel 2.8.0\n"
 
 #: ../../source/topic_analyzer.rst:1
-msgid "`EN <https://docs.texta.ee/topic_analyzer.html>`_"
+msgid ""
+"`EN <https://docs.texta.ee/topic_analyzer.html>`_ `ET "
+"<https://docs.texta.ee/et/topic_analyzer.html>`_"
 msgstr ""
 
 #: ../../source/topic_analyzer.rst:8
@@ -406,5 +408,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Figure 19. *Cluster details view*"
+#~ msgstr ""
+
+#~ msgid "`EN <https://docs.texta.ee/topic_analyzer.html>`_"
 #~ msgstr ""
 
