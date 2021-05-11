@@ -1,5 +1,5 @@
 `EN <https://docs.texta.ee/topic_analyzer.html>`_
-
+`ET <https://docs.texta.ee/et/topic_analyzer.html>`_
 
 .. _topic_analyzer:
 
