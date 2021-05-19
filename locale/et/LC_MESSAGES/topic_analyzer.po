@@ -32,7 +32,8 @@ msgstr "Teemaanalüsaator"
 msgid ""
 "There exists an API for topic analyzer too, but the magic of the analyzer"
 " dissappears when using API."
-msgstr "Kuigi teemaanalüsaatorit saab kasutada ka API kaudu, seisneb selle peamine väärtus on siiski "
+msgstr ""
+"Kuigi teemaanalüsaatorit saab kasutada ka API kaudu, seisneb selle peamine väärtus on siiski "
 "graafilises kasutajaliideses ning seetõttu pole API kasutamist siin kirjeldatud."
 
 #: ../../source/topic_analyzer.rst:17
@@ -119,7 +120,8 @@ msgstr ""
 msgid ""
 "*Document limit* - number of documents that will be clustered. Possible "
 "maximum is 10000."
-msgstr "*Document limit* - klasterdusse minevate dokumentide hulk. Suurim võimalik on 10000 dokumenti."
+msgstr ""
+"*Document limit* - klasterdusse minevate dokumentide hulk. Suurim võimalik on 10000 dokumenti."
 
 #: ../../source/topic_analyzer.rst:42
 msgid "*Num cluster* - number of final clusters."
@@ -238,7 +240,8 @@ msgstr "Dokumentide vaatamine klastri sees"
 msgid ""
 "Click on a cluster that is in your interest, this opens you a detailed "
 "view of a cluster content."
-msgstr "Vajuta klastrile, mis pakub huvi. See avab klastri sisu detailvaates."
+msgstr ""
+"Vajuta klastrile, mis pakub huvi. See avab klastri sisu detailvaates."
 
 #: ../../source/topic_analyzer.rst:97
 msgid "Operations with the cluster"
@@ -308,5 +311,5 @@ msgstr ""
 
 #: ../../source/topic_analyzer.rst:129
 msgid "*Cluster details view*"
-msgstr ""
+msgstr "*Klastri detailvaade*"
 
