@@ -28,3 +28,6 @@ TEXTA_UAA_CLIENT_SECRET=loginsecret
 # Only usable with the X-Pack security
 #TEXTA_ES_USER=elastic
 #TEXTA_ES_PASSWORD=changeme
+
+# Superuser password
+TEXTA_ADMIN_PASSWORD=1234
