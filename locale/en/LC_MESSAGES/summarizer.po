@@ -1,0 +1,130 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-18 16:23+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/summarizer.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/summarizer.html>`_ `ET "
+"<https://docs.texta.ee/et/summarizer.html>`_"
+msgstr ""
+
+#: ../../source/summarizer.rst:6
+msgid "Summarizer"
+msgstr ""
+
+#: ../../source/summarizer.rst:9
+msgid "Apply summarizer to an index"
+msgstr ""
+
+#: ../../source/summarizer.rst:14 ../../source/summarizer.rst:62
+#: ../../source/summarizer.rst:96 ../../source/summarizer.rst:119
+msgid "GUI"
+msgstr ""
+
+#: ../../source/summarizer.rst:16
+msgid ""
+"Navigate to **Tools** -> **Summarizer** and click on the **CREATE** "
+"button on top-left. Choose the name for your task (*Description*). Select"
+" appropriate indices and then fields that contain the textual data you "
+"want to summarize. Select summarization algorithm(s) you wish to use. "
+"Finally, specify the expected size of the summaries either as a ratio to "
+"the original length of the text or as the number of sentences."
+msgstr ""
+
+#: ../../source/summarizer.rst:26
+msgid ""
+"Ratio must be a decimal number between 0 and 1 and the number of "
+"sentences must be specified with a positive integer. The maximum number "
+"of sentences you can have is 100. It is recommended to use ratio if the "
+"index contains many documents with different lengths and you don't know "
+"what would be optimal number of sentences. On the other hand, specify the"
+" length in the number of sentences if you need the ouput strictly to be a"
+" fixed number of sentences."
+msgstr ""
+
+#: ../../source/summarizer.rst:31
+msgid ""
+"If the task is successful then a new field is added to indices which "
+"contains the summaries."
+msgstr ""
+
+#: ../../source/summarizer.rst:38 ../../source/summarizer.rst:76
+#: ../../source/summarizer.rst:103 ../../source/summarizer.rst:125
+msgid "API"
+msgstr ""
+
+#: ../../source/summarizer.rst:40
+msgid "Endpoint: **/projects/{project_pk}/summarizer_index/**"
+msgstr ""
+
+#: ../../source/summarizer.rst:57
+msgid "Apply summarizer to a document"
+msgstr ""
+
+#: ../../source/summarizer.rst:64
+msgid ""
+"Navigate to **Tools** -> **Summarizer** and click on the **Apply to text*"
+" button on top-left. Insert text that you want to summarize. **Note that "
+"sentences must be separated with newlines**. Select summarization "
+"algorithm(s) you wish to use. Finally, specify the expected size of the "
+"summaries and click **Apply**."
+msgstr ""
+
+#: ../../source/summarizer.rst:69
+msgid "You should see summarized text."
+msgstr ""
+
+#: ../../source/summarizer.rst:78
+msgid "Endpoint: **/summarizer/summarize**"
+msgstr ""
+
+#: ../../source/summarizer.rst:93
+msgid "View"
+msgstr ""
+
+#: ../../source/summarizer.rst:98
+msgid ""
+"Navigate to **Tools** -> **Summarizer**  to view existing summarizer "
+"tasks. If any of your tasks is still running, the view will show you the "
+"progress of the task. Besides than that, the view shows you general "
+"information about the task if you click on it."
+msgstr ""
+
+#: ../../source/summarizer.rst:105
+msgid "Endpoint: **/projects/{project_pk}/index_splitter/**"
+msgstr ""
+
+#: ../../source/summarizer.rst:116
+msgid "Delete"
+msgstr ""
+
+#: ../../source/summarizer.rst:121
+msgid ""
+"Navigate to **Tools** -> **Summarizer** and select summarizer tasks that "
+"you want to delete. Then click on the **Trash bin** icon."
+msgstr ""
+
+#: ../../source/summarizer.rst:127
+msgid "Endpoint: **/projects/{project_pk}/summarizer_index/{summarizer_id}**"
+msgstr ""
+
+#: ../../source/summarizer.rst:129
+msgid "Example:"
+msgstr ""
+

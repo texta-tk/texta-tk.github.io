@@ -158,11 +158,7 @@ It is also required to run the script before using Toolkit for the first time to
 
 .. note::
 
-    Running **migrate.py** will also create a default superuser account with following credentials which will be printed into the console:
-
-    **user:** admin
-
-    **password:** {{RandomlyGeneratedHexString}} or the value of the environment variable TEXTA_ADMIN_PASSWORD.
+    Default admin password is defined in the enviroment variable **TEXTA_ADMIN_PASSWORD**=1234. You can change this to a more suitable password. Without the environment variable the default password is generated automatically and can be obtained from the container log.
 
     Users can overwrite the username by running **python migrate.py -u {{username}}** instead.
     In cases where the passwords needs to be overwritten, running **python migrate.py -o** will overwrite the password with whatever value is in the environment variable TEXTA_ADMIN_PASSWORD.
