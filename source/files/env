@@ -9,11 +9,12 @@ TEXTA_DEBUG=False
 TEXTA_LANGUAGE_CODES=et,en,ru
 
 # TK database settings.
-DJANGO_DATABASE_ENGINE=django.db.backends.postgresql
+DJANGO_DATABASE_ENGINE=django.db.backends.mysql
 DJANGO_DATABASE_NAME=docker
 DJANGO_DATABASE_USER=docker
 DJANGO_DATABASE_PASSWORD=docker
-DJANGO_DATABASE_HOST=texta-postgres
+DJANGO_DATABASE_HOST=texta-mariadb
+DJANGO_DATABASE_PORT=3306
 
 # UAA settings for TK
 USE_UAA=False
@@ -27,3 +28,6 @@ TEXTA_UAA_CLIENT_SECRET=loginsecret
 # Only usable with the X-Pack security
 #TEXTA_ES_USER=elastic
 #TEXTA_ES_PASSWORD=changeme
+
+# Superuser password
+TEXTA_ADMIN_PASSWORD=1234

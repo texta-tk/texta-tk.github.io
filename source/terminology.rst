@@ -30,7 +30,7 @@ Dataset Importer is a tool for conveniently uploading files into Elasticsearch t
 
 .. _document_importer_concept:
 
-Dataset Importer
+Document Importer
 *****************
 
 Document importer provides API endpoints for adding, deleting and replacing documents one by one in or into a certain index in an easy way. Read more about the usage :ref:`here <document_importer>`.

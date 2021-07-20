@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-14 17:10+0300\n"
+"POT-Creation-Date: 2021-06-18 16:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.1\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: ../../source/installation.rst:1
 msgid ""
@@ -138,7 +138,7 @@ msgstr ""
 msgid "TEXTA Toolkit's dockerized version comes with a default superuser account:"
 msgstr ""
 
-#: ../../source/installation.rst:81 ../../source/installation.rst:163
+#: ../../source/installation.rst:81
 msgid "**user:** admin"
 msgstr ""
 
@@ -237,67 +237,58 @@ msgstr ""
 
 #: ../../source/installation.rst:161
 msgid ""
-"Running **migrate.py** will also create a default superuser account with "
-"following credentials which will be printed into the console:"
-msgstr "**migrate.py** käivitamine loob samuti admin õigustega konto, mille kasutajanime ja parooli näidetakse konsoolis."
+"Default admin password is defined in the enviroment variable "
+"**TEXTA_ADMIN_PASSWORD**=1234. You can change this to a more suitable "
+"password. Without the environment variable the default password is "
+"generated automatically and can be obtained from the container log."
+msgstr ""
 
-#: ../../source/installation.rst:165
-msgid ""
-"**password:** {{RandomlyGeneratedHexString}} or the value of the "
-"environment variable TEXTA_ADMIN_PASSWORD."
-msgstr "**parool:** {{SuvaliseltLoodudSõne}} või keskkonnamuutuja TEXTA_ADMIN_PASSWORD sisu."
-
-#: ../../source/installation.rst:167
+#: ../../source/installation.rst:163
 msgid ""
 "Users can overwrite the username by running **python migrate.py -u "
 "{{username}}** instead. In cases where the passwords needs to be "
 "overwritten, running **python migrate.py -o** will overwrite the password"
 " with whatever value is in the environment variable TEXTA_ADMIN_PASSWORD."
 msgstr ""
-"Kasutajad saavad loodud admin konto kasutajanime ülekirjutada kasutades hoopis **python migrate.py -u {{kasutajanimi}}. "
-"Juhtudel kui on vaja ülekirjutada parooli saab käivitada **python migrate.py -o**, mis asendab parooli keskkonnamuutuja TEXTA_ADMIN_PASSWORD sisuga."
+"Kasutajad saavad loodud admin konto kasutajanime ülekirjutada kasutades "
+"hoopis **python migrate.py -u {{kasutajanimi}}. Juhtudel kui on vaja "
+"ülekirjutada parooli saab käivitada **python migrate.py -o**, mis asendab"
+" parooli keskkonnamuutuja TEXTA_ADMIN_PASSWORD sisuga."
 
-#: ../../source/installation.rst:170
+#: ../../source/installation.rst:166
 msgid "Finally let's run the development server:"
 msgstr ""
 
-#: ../../source/installation.rst:176
+#: ../../source/installation.rst:172
 msgid ""
 "And in another terminal (with same conda environment and in the same "
 "folder) run the Celery worker responsible for asynchronous tasks:"
 msgstr ""
 
-#: ../../source/installation.rst:183
+#: ../../source/installation.rst:179
 msgid "Browsable API"
 msgstr ""
 
-#: ../../source/installation.rst:185
+#: ../../source/installation.rst:181
 msgid "http://localhost:8000/api/v1/"
 msgstr ""
 
-#: ../../source/installation.rst:187
+#: ../../source/installation.rst:183
 msgid "TODO"
 msgstr ""
 
-#: ../../source/installation.rst:192
+#: ../../source/installation.rst:188
 msgid "API Reference"
 msgstr ""
 
-#: ../../source/installation.rst:194
+#: ../../source/installation.rst:190
 msgid "Reference for Toolkit API is available when running the Toolkit:"
 msgstr ""
 
-#: ../../source/installation.rst:196
+#: ../../source/installation.rst:192
 msgid "http://localhost:8000/api/v1/swagger/"
 msgstr ""
 
-#: ../../source/installation.rst:198
+#: ../../source/installation.rst:194
 msgid "http://localhost:8000/api/v1/redoc/"
 msgstr ""
-
-#~ msgid ""
-#~ "Running **migrate.py** will also create "
-#~ "a default superuser account with "
-#~ "following credentials:"
-#~ msgstr ""
-

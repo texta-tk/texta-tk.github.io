@@ -33,6 +33,7 @@ Contents:
     mlp
     reindexer
     index_splitting_tool
+    summarizer
     health
     projects
     searcher
