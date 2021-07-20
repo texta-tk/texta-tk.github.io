@@ -34,6 +34,7 @@ Contents:
     reindexer
     index_splitting_tool
     summarizer
+    evaluator
     health
     projects
     searcher

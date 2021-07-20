@@ -52,6 +52,14 @@ In TTK, embeddings are used for finding contextually similar keywords to extend 
 Furthermore, vectors from word embeddings can also be used in neural classification models (:ref:`Taggers <tagger_concept>`, :ref:`Tagger Groups <tagger_group_concept>`, :ref:` Torch Tagger <torch_tagger_concept>`, :ref:`Taggers <bert_tagger_concept>`) in Texta Toolkit.
 TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support multilingual text classification.
 
+.. _evaluator_concept:
+
+Evaluator
+**********
+
+Evaluator is a tool for evaluating labels predicted with classification or entity extraction models.
+
+
 .. _texta_fact:
 
 Fact
@@ -223,7 +231,7 @@ Tagger Group is an extension to TTK’s binary taggers to support monolingual mu
 As its name suggests, Tagger Groups incorporate multiple (binary) taggers, which are executed in parallel to produce a list of tags to the user.
 Tagger Group has been successfully tested with over 6000 binary models and prediction times are usually less than 1 second.
 To achieve this, TTK has employed a hybrid approach for multi-label tagging, which uses unsupervised machine learning (document vectors) to limit the number of binary models used for prediction.
-In such a scenario, the input document is compared to training data to determine the most probable models to produce valid tags. 
+In such a scenario, the input document is compared to training data to determine the most probable models to produce valid tags.
 Read more about it :ref:`here <tagger_group>`.
 
 .. _task:

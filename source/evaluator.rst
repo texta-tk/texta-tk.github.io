@@ -7,10 +7,7 @@
 Evaluator
 ################
 
-:ref:`Evaluator <evaluator_concept>` is a tool for evaluating classification/entity extractor models.
-
-
-
+:ref:`Evaluator <evaluator_concept>` is a tool for evaluating labels predicted with classification or entity extractor models. To use the evaluator, your dataset should contain both true and predicted labels formatted as :ref:`Texta Facts <texta_fact>`.
 
 
 Creation
@@ -45,7 +42,7 @@ The following section gives an overview of Evaluator's input parameters.
 .. _param_query:
 
 **query**:
-	 Elasticsearch query :ref:`query <query_concept>` in JSON string format (in API) or as saved :ref:`Search <search_concept>` (in GUI).
+	 Elasticsearch :ref:`query <query_concept>` in JSON string format (in API) or as saved :ref:`Search <search_concept>` (in GUI).
 
 
 .. _param_true_fact_name:
@@ -86,7 +83,7 @@ The following section gives an overview of Evaluator's input parameters.
 
   .. note::
 
-  It is generally advisable to enable it for getting a better understanding of the models. However one should be careful if the number of unique labels is very high (>10 000) as it a) will make the evaluation process slower and b) might lead to memory issues.
+	  It is generally advisable to enable it for getting a better understanding of the models. However, one should be careful if the number of unique labels is very high (>10 000) as it will make the evaluation process slower and might lead to memory issues.
 
 
 .. _param_scroll_size:
@@ -97,7 +94,7 @@ The following section gives an overview of Evaluator's input parameters.
 .. _param_es_timeout:
 
 **es_timeout**:
-	 Todo
+	 After how many minutes of processing one batch of documents (n documents in batch = `scroll_size`) ElasticSearch throws a timeout and the processing is suspended.
 
 
 Output parameters
@@ -119,7 +116,29 @@ Output parameters
 	Indicates whether the labelset under the evaluation was binary (type = "binary") or multilabel/multiclass (type = "multilabel").
 
 **score_after_scroll**:
-	Binary field indicating whether the scores were calculated for each batch separately and the final result was retrieved by averaging the batch scores. The value of this parameter depends on the number of documents to evaluate (``document_count``), the total size of the label set (``n_total_classes``) and the amount of available memory
+	Binary field indicating whether the scores were calculated for each batch separately and the final result was retrieved by averaging the batch scores (i.e. if the value for this parameter has been set to `true`, the results might imprecise). The value of this parameter depends on the number of documents to evaluate (``document_count``), the total size of the label set (``n_total_classes``) and the amount of available memory
+
+**scores_imprecise**:
+	Indicates whether the calculated scores are precise or not. The value for this parameter is directly derived from the values of `score_after_scroll` and `average_function` as for some average functions calculating scores after each scroll has an effect while for others it doesn't.
+
+**precision**:
+ 	`Sklearn's precision score <https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html>`_
+
+**recall**:
+	`Sklearn's recall score <https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html>`_
+
+**f1_score**:
+	`Sklearn's f1-score <https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html>`_
+
+**accuracy**:
+	`Sklearn's accuracy score <https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html>`_
+
+**plot**:
+	Confusion matrix.
+
+	.. note::
+
+		Confusion matrix is generated only if the number of classes is <= **30** as the plot gets too big and hard to interpret with more than 30 classes.
 
 
 
@@ -128,419 +147,389 @@ Output parameters
 GUI
 ==============
 
-For creating a new BERT Tagger model, navigate to `"Models" -> "Bert Taggers"`. Click on the button **"CREATE"** in the upper left corner of the page (:numref:`bert_tagger_create_button`).
+For creating a new Evaluator task, navigate to `"Tools" -> "Evaluator"`. Click on the button **"CREATE"** in the upper left corner of the page.
 
-.. _bert_tagger_create_button:
-.. figure:: images/bert_tagger/create_button.png
+
+
+After clicking on the button, a new Evaluator creation window is opened. Fill the required fields and modify the parameters you wish to change, then click on the button **"Create"** in the bottom right corner of the window :numref:`evaluator_create_window`. A new row containing the information about the created Evaluator should now appear in the list of all Evaluators with a status "created", "training", or "completed" (if not, try refreshing the page).
+
+.. _evaluator_create_window:
+.. figure:: images/evaluator/evaluator_create.png
 	:align: center
+	:width: 500pt
 
-	*BERT Tagger creation button*
+	*Evaluator creation window*
 
-After clicking on the button, a new BERT Tagger creation window should open. Fill the required fields and modify the parameters you wish to change, then click on the button **"Create"** in the bottom right corner of the window (:numref:`bert_tagger_create_window`). A new row containing the information about the created tagger should now appear in the list of all BERT taggers with status "created" or "training".
 
-.. _bert_tagger_create_window:
-.. figure:: images/bert_tagger/new_bert_tagger.png
+After the evaluation task in finished (task status = "completed"), you can see the results and various output parameters by clicking on the row (:numref:`evaluator_output_v1` and :numref:`evaluator_output_v2`).
+
+.. _evaluator_output_v1:
+.. figure:: images/evaluator/evaluator_output_1.png
 	:align: center
+	:width: 500pt
 
-	*BERT Tagger creation window*
-
-If the training process is finished (status == "completed"), you can view plots, various training parameters and evaluation results by clicking on the corresponding row.
-
-.. _bert_tagger_row:
-.. figure:: images/bert_tagger/btagger_row.png
-  :align: center
-
-  *BERT Tagger row*
-
-.. _bert_tagger_plots:
-.. figure:: images/bert_tagger/bt_plots.png
-  :align: center
-
-  *BERT Tagger's ROC curve and confusion matrix.*
-
-.. _bert_tagger_params:
-.. figure:: images/bert_tagger/bt_params.png
-  :align: center
-
-  *BERT Tagger's training and validation parameter values.*
+	*Evaluator output (1)*
 
 
-.. _bert_tagger_slider:
-.. figure:: images/bert_tagger/bt_slider.png
-  :align: center
-
-  *BERT Tagger's estimated results with equal number of positive and negative examples.*
-
-.. _bert_tagger_slider_v2:
-.. figure:: images/bert_tagger/slider_small.png
+.. _evaluator_output_v2:
+.. figure:: images/evaluator/evaluator_output_2.png
 	:align: center
+	:width: 500pt
 
-	*BERT Tagger's estimated results with low number of positive examples.*
+	*Evaluator output (2)*
 
 
-
-
-.. _bert_creation_api:
+	.. _evaluator_creation_api:
 
 API
 ==============
 
-Endpoint **/projects/{project_pk}/bert_taggers/**
+Endpoint **/projects/{project_pk}/evaluators/**
 
 Example:
 
 .. code-block:: bash
 
-	curl -X POST "http://localhost:8000/api/v1/projects/1/bert_taggers/" \
+	curl -X POST "http://localhost:8000/api/v1/projects/1/evaluators/" \
 	-H "accept: application/json" \
 	-H "Content-Type: application/json" \
 	-H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
 	-d '{
-      "description": "war_tagger",
-      "query":"{\"query\":{\"bool\":{\"must\":[],\"filter\":[],\"must_not\":[],\"should\":[{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"war\",\"type\":\"best_fields\",\"slop\":\"0\",\"fields\":[\"article_tags\"]}}],\"minimum_should_match\":1}}]}}],\"minimum_should_match\":1}}}",,
-      "fields": ["article_text"],
-      "indices": [{"name": "sputnik_en"}],
-      "bert_model": "bert-base-cased",
-      "max_length": 64
-  }'
+	    "description": "HS / D1 / est-roberta / max length = 300",
+	    "indices": [{"name": "d1_hate_speech_test_et_v2"}],
+	    "true_fact": "TAG",
+	    "predicted_fact": "EST_ROB_300",
+	    "true_fact_value": "to_delete",
+	    "predicted_fact_value": "to_delete",
+	    "average_function": "binary"
+	}'
 
 Response:
 
 .. code-block:: json
 
-  {
-    "url": "https://rest-dev.texta.ee/api/v1/projects/291/bert_taggers/13/",
-    "author_username": "masula",
-    "id": 13,
-    "description": "war",
-    "query": "{\"query\":{\"bool\":{\"must\":[],\"filter\":[],\"must_not\":[],\"should\":[{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"war\",\"type\":\"best_fields\",\"slop\":\"0\",\"fields\":[\"article_tags\"]}}],\"minimum_should_match\":1}}]}}],\"minimum_should_match\":1}}}",
-    "fields": [
-        "article_text"
-    ],
-    "f1_score": 0.8680497925311204,
-    "precision": 0.8262243285939969,
-    "recall": 0.9143356643356644,
-    "accuracy": 0.8633433605500644,
-    "validation_loss": 0.3219001277039448,
-    "training_loss": 0.27729326468897597,
-    "maximum_sample_size": 10000,
-    "minimum_sample_size": 50,
-    "num_epochs": 2,
-    "plot": "https://rest-dev.texta.ee/data/media/30ea13659e9311ca86faa5cbe2943e.png",
-    "task": {
-        "id": 154069,
-        "status": "completed",
-        "progress": 100.0,
-        "step": "",
-        "errors": "[]",
-        "time_started": "2021-02-12T14:01:16.878193+02:00",
-        "last_update": null,
-        "time_completed": "2021-02-12T14:09:05.597654+02:00",
-        "total": 0,
-        "num_processed": 0
-    },
-    "fact_name": null,
-    "indices": [
-        {
-            "id": 9,
-            "is_open": true,
-            "url": "https://rest-dev.texta.ee/api/v1/index/9/",
-            "name": "sputnik_en"
-        }
-    ],
-    "bert_model": "bert-base-uncased",
-    "learning_rate": 2e-05,
-    "eps": 1e-08,
-    "max_length": 64,
-    "batch_size": 32,
-    "adjusted_batch_size": 26,
-    "split_ratio": 0.8,
-    "negative_multiplier": 1.0,
-    "num_examples": "{\"true\": 5816, \"false\": 5816}",
-    "confusion_matrix": "[[1046, 98], [220, 963]]"
-  }
-
+	{
+	"url": "https://rest-dev.texta.ee/api/v1/projects/1/evaluators/165/",
+	"author_username": "test_user",
+	"id": 165,
+	"description": "HS / D1 / est-roberta / max length = 300",
+	"indices": [
+		{
+		"id": 1758,
+		"is_open": true,
+		"url": "https://rest-dev.texta.ee/api/v2/elastic/index/1758/",
+		"name": "d1_hate_speech_test_et_v2",
+		"description": "",
+		"added_by": "test_user",
+		"test": false,
+		"source": "",
+		"client": "",
+		"domain": "comments",
+		"created_at": "2021-05-07T10:42:36.598000+03:00"
+		}
+	],
+	"query": "{\"query\": {\"match_all\": {}}}",
+	"true_fact": "TAG",
+	"predicted_fact": "EST_ROB_300",
+	"true_fact_value": "to_delete",
+	"predicted_fact_value": "to_delete",
+	"average_function": "binary",
+	"f1_score": 0.8151093439363816,
+	"precision": 0.8102766798418972,
+	"recall": 0.82,
+	"accuracy": 0.814,
+	"confusion_matrix": "[[404, 96], [90, 410]]",
+	"n_true_classes": 2,
+	"n_predicted_classes": 2,
+	"n_total_classes": 2,
+	"evaluation_type": "binary",
+	"scroll_size": 500,
+	"es_timeout": 10,
+	"scores_imprecise": false,
+	"score_after_scroll": false,
+	"document_count": 1000,
+	"add_individual_results": true,
+	"plot": "https://rest-dev.texta.ee/data/media/38a0acdeec9565d02c01204a67e89e.png",
+	"task": {
+		"id": 163520,
+		"status": "completed",
+		"progress": 100.0,
+		"step": "",
+		"errors": "[]",
+		"time_started": "2021-07-20T17:10:42.583184+03:00",
+		"last_update": null,
+		"time_completed": "2021-07-20T17:10:43.129320+03:00",
+		"total": 0,
+		"num_processed": 0
+		}
+	}
 
 Usage
 ********
 
-The following section covers all functions supported by BERT Tagger.
+Individual Results
+=====================
 
-
-Download Pretrained Model
-===========================
-
-`"download_pretrained_model"` allows downloading pretrained BERT models available in `Hugging Face <https://huggingface.co/models>`_.
+While the main view of the Evaluator displays only the average results of all classes, this function can be used for retrieving individual results for each class.
 
 .. note::
 
-  Downloading the model might take some time (but usually not over 30 seconds), so be patient if nothing seems to happen at first!
+	This function is applicable only for evaluating multiclass / multilabel results.
+
+Parameters
+-----------
+
+**min_count**:
+	Retrieve results only for the classes, which true count (the number of true examples for the class) exceeds this value.
+
+**max_count**:
+	Retrieves results only for the classes, which true count (the number of true examples for this class) is smaller than this value.
+
+**metric_restrictions**:
+	Allows setting restrictions for all scores (precision, recall, accuracy, f1) and results are retrieved only for the classes, which satisfy the restrictions.
+
+	The required format for this parameter is the following:
+
+	.. code-block:: bash
+
+		{<metric_i>: {"min_score": <min_score>, "max_score": <max_score>}}
+
+	For example, the following restrictions are requiring that precision should be between 0.7 and 1.0 and recall between 0.5 and 1.0:
+
+  	.. code-block:: json
+
+		{"precision": {"min_score": 0.7, "max_score": 1.0}, "recall": {"min_score": 0.5, "max_score": 1.0}}
+
+	NB! The default restrictions for each metric are: {"min_score": 0, "max_score": 1.0}, so it is not necessary to pass both of these keys, if the purpose is only restricting one of them.
+
+**order_by**:
+	How to order the results? Allowed options are:
+
+		- "alphabetic"
+		- "count"
+		- "precision"
+		- "recall"
+		- "f1_score"
+		- "accuracy"
+
+**order_desc**:
+	Whether the results should be sorted in descending order or not.
+
 
 GUI
-------------
+------
 
-TODO
+Navigate to **Actions** by clicking on the three vertical dots at the end of the Evaluator instance's row and select action "Individual results" by clicking on it (:numref:`evaluator_individual_results`).
 
+.. _evaluator_individual_results:
+.. figure:: images/evaluator/evaluator_individual_results_action.png
+	:align: center
 
+	*Select "Individual results" from Evaluator actions*
+
+Currently, the GUI does not support passing extra parameters for this function and the results are displayed for all the classes in alphabetical order.
 
 API
-------------
+-------
 
-Endpoint **/projects/{project_pk}/bert_taggers/download_pretrained_model/**
+Endpoint **/projects/{project_pk}/evaluators/{evaluator_id}/individual_results/**
+
+GET requests retrieves results for each class as an alphabetically ordered dict:
 
 Example:
 
 .. code-block:: bash
 
-  curl -X DELETE "http://localhost:8000/api/v1/projects/1/bert_taggers/131/" \
-       -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049"
-       -H "Content-Type: application/json" \
-       -d '{
-           "bert_model": "gilf/english-yelp-sentiment"
-         }'
+	curl -X GET "http://localhost:8000/api/v1/projects/1/evaluators/148/individual_results/" \
+	-H "accept: application/json" \
+	-H "Content-Type: application/json" \
+	-H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049"
 
 
-Response (negative):
+Response:
 
 .. code-block:: json
 
-  "Download finished."
+	{
+	    "arts and culture": {
+	        "precision": 0.875,
+	        "recall": 0.84,
+	        "f1_score": 0.8571428571428572,
+	        "accuracy": 0.9787878787878788,
+	        "confusion_matrix": [[302, 3], [4, 21]]
+	    },
+	    "entertainment": {
+	        "precision": 0.0,
+	        "recall": 0.0,
+	        "f1_score": 0.0,
+	        "accuracy": 0.9757575757575757,
+	        "confusion_matrix": [[322, 0], [8, 0]]
+	    },
+	    "sports": {
+	        "precision": 0.5588235294117647,
+	        "recall": 0.76,
+	        "f1_score": 0.6440677966101696,
+	        "accuracy": 0.9363636363636364,
+	        "confusion_matrix": [[290, 15], [6, 19]]
+	    }
+	}
 
 
-
-
-Tag Random Doc
-================
-
-`"Tag Random Doc"` allows applying a BERT tagger model to a random document in an index.
-
-Parameters
-------------
-
-**indices**
-  List of indices from where the random document is retrieved. Default to the indices used for training the model.
-
-**fields**
-  List of document fields onto which the tagger will be applied. Default to the fields used for training the model.
-
-GUI
-------------
-
-TODO
-
-API
-------------
-
-
-Endpoint **/projects/{project_pk}/bert_taggers/{id}/tag_random_doc/**
+POST request allows passing the parameters described above.
 
 Example:
 
 .. code-block:: bash
 
-	curl -X POST "http://localhost:8000/api/v1/projects/1/bert_taggers/138/tag_random_doc/" \
+	curl -X POST "http://localhost:8000/api/v1/projects/1/evaluators/148/individual_results/" \
 	-H "accept: application/json" \
 	-H "Content-Type: application/json" \
 	-H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
-	-d '{}'
-
-Response:
-
-.. code-block:: json
-
-  {
-      "document": {
-          "rubric": "Military & Intelligence",
-          "outgoing_links": "['http://sputniknews.com/tags/tag_AlexanderLukashenko/']",
-          "footnotes": "[]",
-          "url": "https://sputniknews.com/military/201606161041450650-polonez-rocket-system/",
-          "_texta_id": "/var/www/texta/texta/files/dataset_importer/1538327995501026/sputnik_en.csv_175912",
-          "creation_string": "16:18 16.06.2016",
-          "time": "16:18",
-          "title": "Polonez: Belarus Successfully Test-Fires New Multiple Rocket Launch System",
-          "date": "2016-06-16",
-          "article_text": "MINSK (Sputnik) — Belarus has successfully tested its newly developed Polonez multiple launch rocket system, Belarusian President  Alexander Lukashenko  said Thursday. \n \"This is a happy day is terms of security and defense. With a minuscule amount of funding allocated, our military was able to develop and test what has today become Belarusian-made missile armaments. The rocket systems have been launched,\" Lukashenko said during a meeting with Belarusian Prime Minister Andrei Kobyakov and National Bank of Belarus Head Pavel Kallaur, as quoted by the Belarusian Telegraph Agency (BelTA). \n \n                        ©\n                    Sputnik/ Pavel Lisitsyn Iron Fist: Russian Uragan Multiple Rocket Launcher Becoming Deadlier The first missile hit its target with a 1.5 meter (5 foot) accuracy, while the second missile reached its target with a 10-meter accuracy, he added, praising the result and stressing that the system was created within the last two years.\n The prime minister was instructed to award those contributing to the development of the missile system, according to the media outlet. \n The Polonez system was first unveiled at the May 9, 2015 Victory Day Parade in Minsk.",
-          "article_lead": "The Belarusian Polonez multiple launch rocket system has successfully passed tests, President Alexander Lukashenko said.",
-          "article_tags": "['Polonez MLRS', 'Alexander Lukashenko', 'Belarus']",
-          "texta_facts": [
-              {
-                  "spans": "[[0, 0]]",
-                  "str_val": "refugees",
-                  "fact": "TEXTA_TAG",
-                  "doc_path": "article_text"
-              }
-          ]
-      },
-      "prediction": {
-          "probability": 0.8746703267097473,
-          "tagger_id": 13,
-          "result": "false"
-      }
-  }
-
-
-
-Tag Text
-================
-
-`"Tag Text"` enables tagging a single text with a fine-tuned BERT Tagger model.
-
-GUI
------------
-
-TODO
-
-
-API
-------------
-
-Endpoint **/projects/{project_pk}/bert_taggers/{id}/tag_text/**
-
-Example:
-
-.. code-block:: bash
-
-				curl -X POST "http://localhost:8000/api/v1/projects/1/bert_taggers/131/tag_text/" \
-				-H "accept: application/json" \
-				-H "Content-Type: application/json" \
-				-H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
-				-d '{
-					"text": "Ignorance is bliss, right? According to the official US estimates, approximately 2 million civilians died in the Vietnam War while NGOs put death toll at nearly 4 million."
-				    }'
-
-Response:
-
-.. code-block:: json
-
-  {
-      "probability": 0.9773088097572327,
-      "tagger_id": 131,
-      "result": "true"
-  }
-
-
-Available Models
-==================
-
-`"Available Models"` returns a list of currently available pretrained BERT models.
-
-API
-------------
-
-Endpoint **/projects/{project_pk}/bert_taggers/available_models/**
-
-Example:
-
-.. code-block:: bash
-
-				curl -X GET "http://localhost:8000/api/v1/projects/1/available_models/" \
-				-H "Content-Type: application/json" \
-				-H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049"
-
+	-d '{
+		"metric_restrictions": {"precision": {"min_score": 0.5}},
+		"order_by": "f1_score",
+		"order_desc": false
+	}'
 
 
 Response:
 
 .. code-block:: json
 
-  [
-      "bert-base-multilingual-cased",
-      "EMBEDDIA/finest-bert",
-      "bert-base-uncased",
-      "tartuNLP/EstBERT",
-      "textattack/bert-base-uncased-imdb",
-      "unitary/toxic-bert",
-      "ProsusAI/finbert",
-      "distilbert-base-uncased-finetuned-sst-2-english",
-      "prajjwal1/bert-tiny",
-      "gilf/english-yelp-sentiment"
-  ]
+	{
+	  "total": 2,
+	  "filtered_results": {
+	    "sports": {
+	      "precision": 0.5588235294117647,
+	      "recall": 0.76,
+	      "f1_score": 0.6440677966101696,
+	      "accuracy": 0.9363636363636364,
+	      "confusion_matrix": [[290, 15], [6, 19]],
+	      "count": 40
+	    },
+	    "arts and culture": {
+	      "precision": 0.875,
+	      "recall": 0.84,
+	      "f1_score": 0.8571428571428572,
+	      "accuracy": 0.9787878787878788,
+	      "confusion_matrix": [[302, 3], [4, 21]],
+	      "count": 28
+	    }
+	  }
+	}
+
+Filtered Average
+===================
+
+
+This function allows filtering the final (average) result by setting various restrictions. The classes that do not meet the requirements are not included while calculating the final result. This might be useful for excluding outliers that have a strong effect on the average result (classes that have extremely low scores due to very low number of examples etc).
 
 .. note::
 
-  The list will vary depending on which models have been downloaded.
+	This function is applicable only for evaluating multiclass / multilabel results.
+
+Parameters
+-----------
 
 
-Epoch Reports
-================
+**min_count**:
+	Retrieve results only for the classes, which true count (the number of true examples for the class) exceeds this value.
 
-`"Epoch Reports"` returns a list of reports of the results at end of each epoch. The number of reports == value of param `num_epochs`.
+**max_count**:
+	Retrieves results only for the classes, which true count (the number of true examples for this class) is smaller than this value.
+
+**metric_restrictions**:
+	Allows setting restrictions for all scores (precision, recall, accuracy, f1) and results are retrieved only for the classes, which satisfy the restrictions.
+
+	The required format for this parameter is the following:
+
+	.. code-block:: bash
+
+		{<metric_i>: {"min_score": <min_score>, "max_score": <max_score>}}
+
+	For example, the following restrictions are requiring that precision should be between 0.7 and 1.0 and recall between 0.5 and 1.0:
+
+  	.. code-block:: json
+
+		{"precision": {"min_score": 0.7, "max_score": 1.0}, "recall": {"min_score": 0.5, "max_score": 1.0}}
+
+	NB! The default restrictions for each metric are: {"min_score": 0, "max_score": 1.0}, so it is not necessary to pass both of these keys, if the purpose is only restricting one of them.
+
 
 GUI
-------------
+-------
 
-TODO
+Navigate to **Actions** by clicking on the three vertical dots at the end of the Evaluator instance's row and elect action "Filtered average by clicking on it (:numref:`evaluator_filtered_average`).
+
+.. _evaluator_filtered_average:
+.. figure:: images/evaluator/evaluator_filtered_average_action.png
+	:align: center
+
+	*Select "Filtered average" from Evaluator actions*
+
+After clicking on the button, a new window with label "Filtered average" opens and you can apply different restrictions in there by modifying the applicable parameters. After pushing the button "Apply restrictions" in the bottom right corner of the window, the average scores are re-calculated in the same window based on the set restrictions (:numref:`evaluator_filtered_average_window`)
+
+.. _evaluator_filtered_average_window:
+.. figure:: images/evaluator/evaluator_filtered_average.png
+	:align: center
+	:width: 500
+
+	*"Filtered average" window*
+
 
 API
-------------
+-------
 
+Endpoint **/projects/{project_pk}/evaluators/{evaluator_id}/filtered_average/**
 
-Endpoint **/projects/{project_pk}/bert_taggers/{id}/epoch_reports/**
+GET requests retrieves the average result based on all the classes.
 
 Example:
 
 .. code-block:: bash
 
-	curl -X GET "http://localhost:8000/api/v1/projects/1/bert_taggers/138/epoch_reports/" \
+	curl -X GET "http://localhost:8000/api/v1/projects/1/evaluators/148/filtered_average/" \
+	-H "accept: application/json" \
 	-H "Content-Type: application/json" \
-	-H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+	-H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049"
 
 
-Response (positive):
+Response:
 
 .. code-block:: json
 
-  [
-    {
-        "f1_score": 0.86351,
-        "precision": 0.79255,
-        "recall": 0.94843,
-        "confusion_matrix": [
-            [
-                1085,
-                59
-            ],
-            [
-                284,
-                899
-            ]
-        ],
-        "accuracy": 0.8526,
-        "training_loss": 0.40053,
-        "validation_loss": 0.34498,
-        "training_time": "0:02:21",
-        "validation_time": "0:00:10",
-        "area_under_curve": 0.93035,
-        "classes": [
-            "true",
-            "false"
-        ],
-        "epoch": 1
-    },
-    {
-        "f1_score": 0.86805,
-        "precision": 0.82622,
-        "recall": 0.91434,
-        "confusion_matrix": [
-            [
-                1046,
-                98
-            ],
-            [
-                220,
-                963
-            ]
-        ],
-        "accuracy": 0.86334,
-        "training_loss": 0.27729,
-        "validation_loss": 0.3219,
-        "training_time": "0:02:22",
-        "validation_time": "0:00:10",
-        "area_under_curve": 0.93728,
-        "classes": [
-            "true",
-            "false"
-        ],
-        "epoch": 2
-    }
-  ]
+	{
+	    "precision": 0.5965930690458002,
+	    "recall": 0.6007505175983435,
+	    "f1_score": 0.5940300165488676,
+	    "accuracy": 0.9471861471861471,
+	    "count": 14
+	}
+
+POST request allows passing the parameters described above.
+
+Example:
+
+.. code-block:: bash
+
+	curl -X POST "http://localhost:8000/api/v1/projects/1/evaluators/148/filtered_average/" \
+	-H "accept: application/json" \
+	-H "Content-Type: application/json" \
+	-H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+	-d '{
+		"metric_restrictions": {"precision": {"min_score": 0.5}},
+		"min_count": 30
+	}'
+
+
+Response:
+
+.. code-block:: json
+
+	{
+	    "precision": 0.6222408963585434,
+	    "recall": 0.7144347826086956,
+	    "f1_score": 0.6639732109911195,
+	    "accuracy": 0.946060606060606,
+	    "count": 5
+	}
