@@ -208,6 +208,25 @@ Search
 
 One of the most central components in TTK is Search, which is used to define subsets of data for training text classification models and performing various aggregations. Search is managed via GUI and can contain one or more constraints on feature values (e.g. strings and dates). Documents matching the search criteria can be used in various actions/functionalities in TTK, e.g. extraction of relevant keywords, data summarization and exploration, and training text classifiers. Read more about it :ref:`here <searcher>`.
 
+.. _search_query_tagger_concept:
+
+Search Query Tagger
+***********************
+
+Search Query Tagger is a tool for tagging documents based on predefined :ref:`queries <query_concept>`.
+
+.. note::
+  Search Query Tagger is applicable only for tagging documents indexed in :ref:`Elasticsearch <elasticsearch>` and can be only used on :ref:`indices <index_concept>` that contain the same fields as the defined search.
+
+
+.. _search_fields_tagger_concept:
+
+Search Fields Tagger
+***********************
+
+Search Fields Tagger is a tool for converting tags/keywords in a separate field into :ref:`Texta Facts <texta_fact>` as most applications in Texta Toolkit assume that the labels are stored as Texta Facts.
+
+
 .. _tagger_concept:
 
 Tagger

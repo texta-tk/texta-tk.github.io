@@ -54,7 +54,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'TEXTA Toolkit'
-copyright = u'2020 TEXTA'
+copyright = u'2021 TEXTA'
 author = u'TEXTA'
 
 # The version info for the project you're documenting, acts as replacement for

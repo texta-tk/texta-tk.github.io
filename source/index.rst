@@ -47,5 +47,7 @@ Contents:
     regex_tagger_group
     torch_tagger
     bert_tagger
+    search_fields_tagger
+    search_query_tagger
     use_cases
     terminology

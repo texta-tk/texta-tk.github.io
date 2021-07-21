@@ -94,7 +94,7 @@ The following section gives an overview of Evaluator's input parameters.
 .. _param_es_timeout:
 
 **es_timeout**:
-	 After how many minutes of processing one batch of documents (n documents in batch = `scroll_size`) ElasticSearch throws a timeout and the processing is suspended.
+	 After how many minutes of processing one batch of documents (n documents in batch = `scroll_size`) Elasticsearch throws a timeout and the processing is suspended.
 
 
 Output parameters
