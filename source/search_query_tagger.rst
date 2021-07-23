@@ -7,7 +7,7 @@
 Search Query Tagger
 ######################
 
-:ref:`Search Query Tagger <search_query_tagger_concept>` is a tool for tagging documents based on predefined :ref:`queries <query_concept>`.
+:ref:`Search Query Tagger <search_query_tagger_concept>` is a tool for tagging documents based on predefined Elasticsearch :ref:`queries <query_concept>`.
 
 .. note::
 

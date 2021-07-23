@@ -52,6 +52,16 @@ In TTK, embeddings are used for finding contextually similar keywords to extend 
 Furthermore, vectors from word embeddings can also be used in neural classification models (:ref:`Taggers <tagger_concept>`, :ref:`Tagger Groups <tagger_group_concept>`, :ref:` Torch Tagger <torch_tagger_concept>`, :ref:`Taggers <bert_tagger_concept>`) in Texta Toolkit.
 TTK will also employ cross-lingual embeddings developed by EMBEDDIA to support multilingual text classification.
 
+.. _es_analyzer_concept:
+
+ES Analyzer
+**************
+
+ES Analyzer is a tool for applying various :ref:`Elasticsearch <elasticsearch>` analyzers to :ref:`indices <index_concept>`. Currently supported analyzers are:
+
+- Stemmer
+- Tokenizer
+
 .. _evaluator_concept:
 
 Evaluator

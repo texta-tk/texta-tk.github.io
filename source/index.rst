@@ -31,6 +31,7 @@ Contents:
     importer
     document_importer
     mlp
+    es_analyzer
     reindexer
     index_splitting_tool
     summarizer
