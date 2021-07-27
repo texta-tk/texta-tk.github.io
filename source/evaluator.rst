@@ -35,9 +35,9 @@ The following section gives an overview of Evaluator's input parameters.
 **indices**:
 	 List of Elasticsearch :ref:`indices <index_concept>` containing the tags (formatted as :ref:`texta facts <texta_fact>`) to evaluate. NB! Indices should be formatted as list of dicts, where key = "name" and value = <index_name>, e.g:
 
-     .. code-block:: json
+   .. code-block:: json
 
-       [{"name": "my_dataset"}]
+     [{"name": "my_dataset"}]
 
 .. _param_query:
 

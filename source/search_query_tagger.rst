@@ -26,7 +26,7 @@ Parameters
 .. _param_description:
 
 **description**:
-	Name of the Search Query Tagger task. This is necessary only for differentiating between different tasks.
+	Name of the Search Query Tagger task. This is necessary only for differentiating between all the Search Query Tagger tasks in the project.
 
 .. _param_indices:
 
