@@ -130,3 +130,145 @@ Parameters
 
 **es_timeout**:
    After how many minutes of processing one batch of documents (n documents in batch = ``bulk_size``) Elasticsearch throws a timeout and the processing is suspended.
+
+
+GUI
+====================
+
+For creating a new ES Analyzer task, navigate to **"Tools"** -> **"ES Analyzer"** and click on the button **"CREATE"** in the upper left corner of the page. A new window with the title "Apply Elastic Analyzer to Index" opens as a result. Fill all the required fields, select the analyzer (or analyzers) you wish to apply and then click on the button "Create" in the bottom right corner of the window (:numref:`es_analyzer_create`). The new ES Analyzer task should now appear as a new row in the list of ES Analyzer tasks on the same page (if not, try refreshing the page).
+
+
+.. _es_analyzer_create:
+.. figure:: images/es_analyzer/es_analyzer_create_window.png
+ :align: center
+ :width: 500pt
+
+ *ES Analyzer creation window*
+
+
+After the task has finished (status = "completed"), you can view the results in Search. The output of tokenization is stored in the field ``<source_field>_es.tokenized_text`` and the output of stemmer is stored in the field ``<source_field>_es.stems``.
+
+
+API
+===================
+
+Endpoint for /api/v1/ : **/projects/{project_pk}/apply_analyzers/**
+
+Endpoint for /api/v2/ : **/projects/{project_pk}/elastic/apply_analyzers/**
+
+Example:
+
+.. code-block:: bash
+
+	curl -X POST "http://localhost:8000/api/v2/projects/1/elastic/apply_analyzers/" \
+	-H "accept: application/json" \
+	-H "Content-Type: application/json" \
+	-H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
+	-d '{
+	    "strip_html": true,
+	    "indices": [{"name": "article_tags_v2"}],
+	    "analyzers": ["tokenizer"],
+	    "fields": ["ArticleBody"],
+	    "tokenizer": "keyword",
+	    "detect_lang": true,
+	    "description": "strip html"
+	}'
+
+
+Response:
+
+.. code-block:: json
+
+	{
+	  "id": 6,
+	  "url": "http://localhost:8000/api/v2/projects/1/elastic/apply_analyzers/6/",
+	  "author_username": "test_user",
+	  "strip_html": true,
+	  "indices": [
+	  {
+	     "id": 3949,
+	     "is_open": true,
+	     "url": "http://localhost:8000/api/v2/elastic/index/3949/",
+	     "name": "article_tags_v2",
+	     "description": "",
+	     "added_by": "test_user",
+	     "test": true,
+	     "source": "",
+	     "client": "",
+	     "domain": "",
+	     "created_at": "2021-07-27T13:56:46.118000+03:00"
+	  }
+	  ],
+	  "analyzers": [
+		  "tokenizer"
+	  ],
+	  "stemmer_lang": null,
+	  "fields": [
+		  "ArticleBody"
+	  ],
+	  "tokenizer": "keyword",
+	  "es_timeout": 25,
+	  "bulk_size": 100,
+	  "detect_lang": true,
+	  "description": "apply tokenizer",
+	  "task": {
+	     "id": 163542,
+	     "status": "completed",
+	     "progress": 100.0,
+	     "step": "",
+	     "errors": "[]",
+	     "time_started": "2021-07-27T16:58:46.886043+03:00",
+	     "last_update": null,
+	     "time_completed": "2021-07-27T16:59:09.632845+03:00",
+	     "total": 0,
+	     "num_processed": 0
+	  },
+	  "query": "{\"query\": {\"match_all\": {}}}"
+	}
+
+
+Usage
+**********
+
+Removing HTML
+===============
+
+ES Analyzer can be used for removing HTML while otherwise preserving the original format of the text (i.e. without additional tokenization). For doing so, the following parameter combination should be used:
+
+.. code-block:: bash
+
+	strip_html = true
+	analyzers = ["tokenizer"]
+	tokenizer = "keyword"
+
+
+Example output is displayed on :numref:`es_analyzer_tokenizer_output`
+
+
+.. _es_analyzer_tokenizer_output:
+.. figure:: images/es_analyzer/es_analyzer_tokenizer_output.png
+ :align: center
+
+ *ES Analyzer: Removing HTML (result is stored in the field "<source_field>_es.tokenized_text")*
+
+
+Stemming
+===========
+
+To use the ES Analyzer for stemming documents, the advisable parameter combination is the following:
+
+.. code-block:: bash
+
+	strip_html = true
+	analyzers = ["stemmer"]
+	tokenizer = "standard"
+
+
+Example output is displayed on :numref:`es_analyzer_stemmer_output`
+
+
+.. _es_analyzer_stemmer_output:
+.. figure:: images/es_analyzer/es_analyzer_stemmer_output.png
+ :align: center
+
+ *ES Analyzer: Stemming (result is stored in the field "<source_field>_es.stems")*

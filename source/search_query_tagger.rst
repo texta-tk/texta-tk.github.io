@@ -84,7 +84,7 @@ To use the Search Query Tagger, we should first define a search (aka query) rest
   *Defining the search*
 
 
-Now we can navigate to Search Query Tagger (*"Models"* -> *"Search Query Taggers"*) and use the defined search for tagging all the relevant documents. For creating a new Search Query Tagger task, click on the button **"CREATE"** in the upper left corner of the page. A new window with the title "New Search Query Tagger Task" opens as a result. Fill all the required fields and select the search you wish to use for tagging the documents (:numref:`sqt_select_search`). Then click on the the button "Create" in the bottom right corner of the window. The new Search Query Tagger task should now appear as a new row in the list of Search Query Tagger tasks on the same page (if not, try refreshing the page).
+Now we can navigate to Search Query Tagger (*"Models"* -> *"Search Query Taggers"*) and use the defined search for tagging all the relevant documents. For creating a new Search Query Tagger task, click on the button **"CREATE"** in the upper left corner of the page. A new window with the title "New Search Query Tagger Task" opens as a result. Fill all the required fields and select the search you wish to use for tagging the documents (:numref:`sqt_select_search`). Then click on the button "Create" in the bottom right corner of the window. The new Search Query Tagger task should now appear as a new row in the list of Search Query Tagger tasks on the same page (if not, try refreshing the page).
 
 
 .. _sqt_select_search:
