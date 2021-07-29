@@ -7,7 +7,7 @@
 Language Detector
 ######################
 
-:ref:`Language Detector <lang_det_concept>` is a tool for detecting languages of the chosen :ref:`indices <index_concept>` documents. It uses :ref:`langdetect python module <https://pypi.org/project/langdetect/>`_. This is useful for getting a quick overview of the languages presented in your dataset and parse out documents in a certain language for future work.
+:ref:`Language Detector <lang_det_concept>` is a tool for detecting languages of the chosen :ref:`indices <index_concept>` documents. It uses `langdetect python module <https://pypi.org/project/langdetect/>`_. This is useful for getting a quick overview of the languages presented in your dataset and parse out documents in a certain language for future work.
 
 
 Creation
