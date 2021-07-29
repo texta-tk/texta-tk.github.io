@@ -4,12 +4,12 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-29 12:31+0300\n"
+"POT-Creation-Date: 2021-07-29 14:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,29 +26,34 @@ msgstr ""
 
 #: ../../source/language_detector.rst:8
 msgid "Language Detector"
-msgstr ""
+msgstr "Keeletuvasti (Language Detector)"
 
 #: ../../source/language_detector.rst:10
 msgid ""
 ":ref:`Language Detector <lang_det_concept>` is a tool for detecting "
 "languages of the chosen :ref:`indices <index_concept>` documents. It uses"
-" :ref:`langdetect python module <https://pypi.org/project/langdetect/>`_."
-" This is useful for getting a quick overview of the languages presented "
-"in your dataset and parse out documents in a certain language for future "
+" `langdetect python module <https://pypi.org/project/langdetect/>`_. This"
+" is useful for getting a quick overview of the languages presented in "
+"your dataset and parse out documents in a certain language for future "
 "work."
 msgstr ""
+":ref:`Keeletuvasti <lang_det_concept>` abil saab tuvastada valitud "
+":ref:`indeksi <index_concept>` iga dokumendi keelt. Keeletuvasti kasutab "
+"`langdetect python moodulit <https://pypi.org/project/langdetect/>`_. "
+"Selle abil saab kiire ülevaate andmestikus esinevatest keeltest ning "
+"parsida edaspidi  vaid kindlas keeles dokumente."
 
 #: ../../source/language_detector.rst:14
 msgid "Creation"
-msgstr ""
+msgstr "Loomine"
 
 #: ../../source/language_detector.rst:20
 msgid "Parameters"
-msgstr ""
+msgstr "Parameetrid"
 
 #: ../../source/language_detector.rst:26
 msgid "**description**:"
-msgstr ""
+msgstr "**description**:"
 
 #: ../../source/language_detector.rst:25
 msgid ""
@@ -56,10 +61,12 @@ msgid ""
 "for differentiating between all the Language Detector tasks in the "
 "project."
 msgstr ""
+"Keeletuvasti töönimi. See on vajalik vaid selleks, et eristada kõiki "
+"keeletuvasti töid antud projektis."
 
 #: ../../source/language_detector.rst:36
 msgid "**indices**:"
-msgstr ""
+msgstr "**indices**:"
 
 #: ../../source/language_detector.rst:31
 msgid ""
@@ -67,6 +74,9 @@ msgid ""
 "documents to analyze. NB! Indices should be formatted as list of dicts, "
 "where key = \"name\" and value = <index_name>, e.g:"
 msgstr ""
+"Analüüsitavaid dokumente sisaldavad Elasticsearchi :ref:`indeksid "
+"<index_concept>`.NB! Indeksid peavad olema antud sõnastike järjendiga, "
+"kus võti = \"name\" ja väärtus = <index_name>, nt:"
 
 #: ../../source/language_detector.rst:41
 msgid "**fields**:"
@@ -76,7 +86,7 @@ msgstr ""
 msgid ""
 "List of field names (as strings) that are containing the content to "
 "analyze."
-msgstr ""
+msgstr "Analüüsitavate väljade nimede järjend sõnedena."
 
 #: ../../source/language_detector.rst:47
 msgid "**query**:"
@@ -89,6 +99,11 @@ msgid ""
 "the GUI :ref:`saved searches <savedsearches>` can be used. By default "
 "empty and all the documents in the chosen indices are then analyzed."
 msgstr ""
+":ref:`Päring <query_concept>`, millega võetakse indeksist analüüsimisse "
+"minevad dokumendid välja API-s peab päring olema formeeritud JSON sõnena."
+" GUI-s saab kasutada :ref:`salvestatud otsinguid <savedsearches>`. "
+"Vaikimisi on päring tühi ning sel juhul analüüsitakse kõiki dokumente "
+"valitud indeksi(te)s."
 
 #: ../../source/language_detector.rst:50
 msgid "GUI"
@@ -105,31 +120,43 @@ msgid ""
 "should now appear as a new row in the list of Language Detector tasks on "
 "the same page (if not, try refreshing the page)."
 msgstr ""
+"Keeletuvasti töö alustamiseks mine **\"Tools\"** -> **\"Language "
+"Detector\"** ja vajuta **\"CREATE\"**-nupule ülal vasakul.Ilmub uus aken "
+"pealkirjaga \"Apply Language Detector task\". Täida vajalikud väljad ja "
+"vajuta \"Create\"-nupule all paremal nurgas (:numref:`lang_det_create`). "
+"Uus Keeletuvasti töö peaks nüüd ilmuna uue reana Keeletuvasti tööde "
+"nimekirja. (kui ei ilmu, proovi lehe värskendamist)."
 
-#: ../../source/language_detector.rst:63
+#: ../../source/language_detector.rst:58
+msgid "*Language Detector creation window*"
+msgstr "Keeletuvasti töö loomisaken"
+
+#: ../../source/language_detector.rst:61
 msgid ""
 "After the task has finished (status is \"completed\"), you can view the "
-"results in Search. The output of tokenization is stored in the `field "
-"<field_concept>` ``<source_field>_mlp.language_detected``."
+"results in Search. The output of language analysis is stored in the "
+"`field <field_concept>` ``<source_field>_mlp.language_detected``."
 msgstr ""
+"Kui töö on lõpetatud (staatus näitab \"completed\"), saab tulemusivaadata"
+" Searcheris. Keeleanalüüsi tulemus on talletatud"
+"`välja <field_concept>` ``<algne_väli>_mlp.language_detected``."
 
-#: ../../source/language_detector.rst:67
+#: ../../source/language_detector.rst:65
 msgid "API"
 msgstr ""
 
-#: ../../source/language_detector.rst:69
+#: ../../source/language_detector.rst:67
 msgid "Endpoint for /api/v1/ : **/projects/{project_pk}/lang_index/**"
-msgstr ""
+msgstr "Otspunkt /api/v1/-le : **/projects/{project_pk}/lang_index/**"
+
+#: ../../source/language_detector.rst:69
+msgid "Endpoint for /api/v2/ : **/projects/{project_pk}/lang_index/**"
+msgstr "Otspunkt /api/v2/-le : **/projects/{project_pk}/lang_index/**"
 
 #: ../../source/language_detector.rst:71
-msgid "Endpoint for /api/v2/ : **/projects/{project_pk}/lang_index/**"
-msgstr ""
-
-#: ../../source/language_detector.rst:73
 msgid "Example:"
-msgstr ""
+msgstr "Näidis:"
 
-#: ../../source/language_detector.rst:88
+#: ../../source/language_detector.rst:86
 msgid "Response:"
-msgstr ""
-
+msgstr "Vastus:"

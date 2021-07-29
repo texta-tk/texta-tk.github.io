@@ -54,13 +54,11 @@ For creating a new Language Detector task, navigate to **"Tools"** -> **"Languag
 
 .. _lang_det_create:
 .. figure:: images/lang_det/lang_det_GUI.png
- :align: center
- :width: 500pt
 
- 	*Language Detector creation window*
+	*Language Detector creation window*
 
 
-After the task has finished (status is "completed"), you can view the results in Search. The output of tokenization is stored in the `field <field_concept>` ``<source_field>_mlp.language_detected``.
+After the task has finished (status is "completed"), you can view the results in Search. The output of language analysis is stored in the `field <field_concept>` ``<source_field>_mlp.language_detected``.
 
 
 API

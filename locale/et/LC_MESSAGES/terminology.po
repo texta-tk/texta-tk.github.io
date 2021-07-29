@@ -137,9 +137,8 @@ msgstr ""
 "mitmekeelse teksti klassifitseerimise tarbeks."
 
 #: ../../source/terminology.rst:58
-#, fuzzy
 msgid "ES Analyzer"
-msgstr "Teemaanalüsaator"
+msgstr "ES Analyzer"
 
 #: ../../source/terminology.rst:60
 msgid ""
@@ -147,6 +146,9 @@ msgid ""
 "<elasticsearch>` analyzers to :ref:`indices <index_concept>`. Currently "
 "supported analyzers are:"
 msgstr ""
+"ES Analyzer on vahend erinevate :ref:`Elasticsearch-i "
+"<elasticsearch>` analüsaatorite kasutamiseks :ref:`indeksites <index_concept>`.  Hetkel toetatud "
+"analüsaatorid on:"
 
 #: ../../source/terminology.rst:62
 msgid "Stemmer"
@@ -154,7 +156,7 @@ msgstr ""
 
 #: ../../source/terminology.rst:63
 msgid "Tokenizer"
-msgstr ""
+msgstr "Tokeniseerija (Tokenizer)"
 
 #: ../../source/terminology.rst:68
 msgid "Evaluator"
@@ -413,7 +415,7 @@ msgstr ""
 
 #: ../../source/terminology.rst:156
 msgid "Language Detector"
-msgstr ""
+msgstr "Keeletuvasti (Language Detector)"
 
 #: ../../source/terminology.rst:158
 msgid ""
@@ -424,6 +426,11 @@ msgid ""
 "parse out documents in a certain language for future work. Read more "
 "about its usage :ref:`here <lang_det>`."
 msgstr ""
+":ref:`Keeletuvasti <lang_det_concept>` abil saab tuvastada valitud "
+":ref:`indeksi <index_concept>` iga dokumendi keelt. "
+"Selle abil saab kiire ülevaate andmestikus esinevatest keeltest ning "
+"parsida edaspidi vaid kindlas keeles dokumente."
+" Loe selle kohta rohkem :ref:`siit <lang_det>`."
 
 #: ../../source/terminology.rst:163
 msgid "Lexicon miner"
