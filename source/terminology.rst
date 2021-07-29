@@ -150,6 +150,13 @@ Index
 
 `Elasticsearch's index <https://www.elastic.co/blog/what-is-an-elasticsearch-index>`_ is a collection of documents in Elasticsearch. In Search output the table consists of all the suitable documents filtered out from that index and one row indicates a document.
 
+.. _lang_det_concept:
+
+Language Detector
+*****************
+
+Language Detector is a tool for detecting languages of the chosen :ref:`indices <index_concept>` documents. It uses :ref:`langdetect python module <https://pypi.org/project/langdetect/>`_. This is useful for getting a quick overview of the languages presented in your dataset and parse out documents in a certain language for future work. Read more about its usage :ref:`here <lang_det>`.
+
 .. _lexicon_miner_concept:
 
 Lexicon miner

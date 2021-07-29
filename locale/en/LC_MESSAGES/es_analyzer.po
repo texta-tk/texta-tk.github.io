@@ -1,0 +1,321 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-29 12:30+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/es_analyzer.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/es_analyzer.html>`_ `ET "
+"<https://docs.texta.ee/et/es_analyzer.html>`_"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:8
+msgid "ES Analyzer"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:10
+msgid ""
+":ref:`ES Analyzer <es_analyzer_concept>` is a tool for applying various "
+":ref:`Elasticsearch <elasticsearch>` analyzers to :ref:`indices "
+"<index_concept>`. Currently supported analyzers are:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:12
+msgid "Stemmer"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:13
+msgid "Tokenizer"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:18
+msgid "Creation"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:24
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:30
+msgid "**description**:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:29
+msgid ""
+"Name of the ES Analyzer application task. This is necessary only for "
+"differentiating between all the ES Analyzer tasks in the project."
+msgstr ""
+
+#: ../../source/es_analyzer.rst:40
+msgid "**indices**:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:35
+msgid ""
+"List of Elasticsearch :ref:`indices <index_concept>` containing the "
+"documents to analyze. NB! Indices should be formatted as list of dicts, "
+"where key = \"name\" and value = <index_name>, e.g:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:45
+msgid "**fields**:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:45
+msgid ""
+"List of field names (as strings) that are containing the content to "
+"analyze."
+msgstr ""
+
+#: ../../source/es_analyzer.rst:50
+msgid "**query**:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:50
+msgid ""
+"The :ref:`query <query_concept>` restricting the set of documents to "
+"analyze. In the API, the query should be formatted as a JSON string. By "
+"default empty and all the documents in the chosen indices are analyzed."
+msgstr ""
+
+#: ../../source/es_analyzer.rst:59
+msgid "**analyzers**:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:55
+msgid "List of analyzers to be applied. The available options are:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:57
+msgid ""
+"\"tokenizer\" - Tokenizes the content with the tokenizer specified with "
+"param ``tokenizer`` and stores the result in a new field with name "
+"``<source_field>_es.tokenized_text``."
+msgstr ""
+
+#: ../../source/es_analyzer.rst:58
+msgid ""
+"\"stemmer\" - Stems the content while using the tokenizer specified with "
+"param ``tokenizer`` and stores the result in a new field with name "
+"``<source_field>_es.stems``."
+msgstr ""
+
+#: ../../source/es_analyzer.rst:76
+msgid "**tokenizer**:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:64
+msgid ""
+"Tokenizer used for tokenizing the text (used by the stemmer as well!). "
+"The available options are:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:66
+msgid "\"standard\" (default)"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:67
+msgid "\"keyword\""
+msgstr ""
+
+#: ../../source/es_analyzer.rst:68
+msgid "\"letter\""
+msgstr ""
+
+#: ../../source/es_analyzer.rst:69
+msgid "\"lowercase\""
+msgstr ""
+
+#: ../../source/es_analyzer.rst:70
+msgid "\"whitespace\""
+msgstr ""
+
+#: ../../source/es_analyzer.rst:71
+msgid "\"uax_url_email\""
+msgstr ""
+
+#: ../../source/es_analyzer.rst:72
+msgid "\"classic\""
+msgstr ""
+
+#: ../../source/es_analyzer.rst:73
+msgid "\"thai\""
+msgstr ""
+
+#: ../../source/es_analyzer.rst:75
+msgid ""
+"Read more about the differences between the aformentioned tokenizers "
+"`here <https://www.elastic.co/guide/en/elasticsearch/reference/current"
+"/analysis-tokenizers.html#_word_oriented_tokenizers>`_ (all the "
+"tokenizers besides ``keyword``) and `here "
+"<https://www.elastic.co/guide/en/elasticsearch/reference/current"
+"/analysis-tokenizers.html#_structured_text_tokenizers>`_ (``keyword`` "
+"tokenizer)."
+msgstr ""
+
+#: ../../source/es_analyzer.rst:109
+msgid "**stemmer_lang**:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:81
+msgid ""
+"Used by the stemmer to determine the correct analyzer to use. If the "
+"input set of documents is not monolingual, it is advisable to left this "
+"empty and use automatic language detection instead by enabling parameter "
+"``detect_lang``."
+msgstr ""
+
+#: ../../source/es_analyzer.rst:83
+msgid "Supported options are:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:115
+msgid "**detect_lang**:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:114
+msgid ""
+"Whether or not to detect the language of each document automatically. If "
+"the set of documents is monolingual, it is advisable to define the "
+"language via parameter ``stemmer_lang`` and turn the automatic language "
+"detection off; otherwise it should be enabled."
+msgstr ""
+
+#: ../../source/es_analyzer.rst:121
+msgid "**strip_html**:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:120
+msgid "Whether or not to strip the documents from HTML."
+msgstr ""
+
+#: ../../source/es_analyzer.rst:127
+msgid "**bulk_size**:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:126
+msgid "Indicates how many documents are processed per one scroll."
+msgstr ""
+
+#: ../../source/es_analyzer.rst:133
+msgid "**es_timeout**:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:132
+msgid ""
+"After how many minutes of processing one batch of documents (n documents "
+"in batch = ``bulk_size``) Elasticsearch throws a timeout and the "
+"processing is suspended."
+msgstr ""
+
+#: ../../source/es_analyzer.rst:136
+msgid "GUI"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:138
+msgid ""
+"For creating a new ES Analyzer task, navigate to **\"Tools\"** -> **\"ES "
+"Analyzer\"** and click on the button **\"CREATE\"** in the upper left "
+"corner of the page. A new window with the title \"Apply Elastic Analyzer "
+"to Index\" opens as a result. Fill all the required fields, select the "
+"analyzer (or analyzers) you wish to apply and then click on the button "
+"\"Create\" in the bottom right corner of the window "
+"(:numref:`es_analyzer_create`). The new ES Analyzer task should now "
+"appear as a new row in the list of ES Analyzer tasks on the same page (if"
+" not, try refreshing the page)."
+msgstr ""
+
+#: ../../source/es_analyzer.rst:146
+msgid "*ES Analyzer creation window*"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:149
+msgid ""
+"After the task has finished (status = \"completed\"), you can view the "
+"results in Search. The output of tokenization is stored in the field "
+"``<source_field>_es.tokenized_text`` and the output of stemmer is stored "
+"in the field ``<source_field>_es.stems``."
+msgstr ""
+
+#: ../../source/es_analyzer.rst:153
+msgid "API"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:155
+msgid "Endpoint for /api/v1/ : **/projects/{project_pk}/apply_analyzers/**"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:157
+msgid ""
+"Endpoint for /api/v2/ : "
+"**/projects/{project_pk}/elastic/apply_analyzers/**"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:159
+msgid "Example:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:178
+msgid "Response:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:231
+msgid "Usage"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:234
+msgid "Removing HTML"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:236
+msgid ""
+"ES Analyzer can be used for removing HTML while otherwise preserving the "
+"original format of the text (i.e. without additional tokenization). For "
+"doing so, the following parameter combination should be used:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:245
+msgid "Example output is displayed on :numref:`es_analyzer_tokenizer_output`"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:252
+msgid ""
+"*ES Analyzer: Removing HTML (result is stored in the field "
+"\"<source_field>_es.tokenized_text\")*"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:256
+msgid "Stemming"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:258
+msgid ""
+"To use the ES Analyzer for stemming documents, the advisable parameter "
+"combination is the following:"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:267
+msgid "Example output is displayed on :numref:`es_analyzer_stemmer_output`"
+msgstr ""
+
+#: ../../source/es_analyzer.rst:274
+msgid ""
+"*ES Analyzer: Stemming (result is stored in the field "
+"\"<source_field>_es.stems\")*"
+msgstr ""
+

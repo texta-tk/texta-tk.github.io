@@ -1,0 +1,590 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-29 12:30+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/evaluator.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/evaluator.html>`_ `ET "
+"<https://docs.texta.ee/et/evaluator.html>`_"
+msgstr ""
+
+#: ../../source/evaluator.rst:8
+msgid "Evaluator"
+msgstr ""
+
+#: ../../source/evaluator.rst:10
+msgid ""
+":ref:`Evaluator <evaluator_concept>` is a tool for evaluating labels "
+"predicted with classification or entity extractor models. To use the "
+"evaluator, your dataset should contain both true and predicted labels "
+"formatted as :ref:`Texta Facts <texta_fact>`."
+msgstr ""
+
+#: ../../source/evaluator.rst:14
+msgid "Creation"
+msgstr ""
+
+#: ../../source/evaluator.rst:20 ../../source/evaluator.rst:280
+#: ../../source/evaluator.rst:432
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/evaluator.rst:24
+msgid "Input parameters"
+msgstr ""
+
+#: ../../source/evaluator.rst:26
+msgid "The following section gives an overview of Evaluator's input parameters."
+msgstr ""
+
+#: ../../source/evaluator.rst:31
+msgid "**description**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:31
+msgid "Name of the Evaluator model."
+msgstr ""
+
+#: ../../source/evaluator.rst:40
+msgid "**indices**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:36
+msgid ""
+"List of Elasticsearch :ref:`indices <index_concept>` containing the tags "
+"(formatted as :ref:`texta facts <texta_fact>`) to evaluate. NB! Indices "
+"should be formatted as list of dicts, where key = \"name\" and value = "
+"<index_name>, e.g:"
+msgstr ""
+
+#: ../../source/evaluator.rst:46
+msgid "**query**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:45
+msgid ""
+"Elasticsearch :ref:`query <query_concept>` in JSON string format (in API)"
+" or as saved :ref:`Search <search_concept>` (in GUI)."
+msgstr ""
+
+#: ../../source/evaluator.rst:51
+msgid "**true_fact_name**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:51
+msgid ""
+"Name of the fact containing the actual label of the document (e.g. "
+"\"TAG\")."
+msgstr ""
+
+#: ../../source/evaluator.rst:56
+msgid "**predicted_fact_name**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:56
+msgid ""
+"Name of the fact containing the predicted label of the document (e.g. "
+"\"PREDICTED_TAG\")."
+msgstr ""
+
+#: ../../source/evaluator.rst:61
+msgid "**true_fact_value**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:61
+msgid ""
+"Value of the fact containing the actual label of the document (e.g. "
+"\"sports\"). NB! Only necessary for binary classification and should be "
+"left empty for mutliclass/multilabel classification."
+msgstr ""
+
+#: ../../source/evaluator.rst:66
+msgid "**predicted_fact_value**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:66
+msgid ""
+"Value of the fact containing the predicted label of the document (e.g. "
+"\"literature\"). NB! Only necessary for binary classification and should "
+"be left empty for mutliclass/multilabel classification."
+msgstr ""
+
+#: ../../source/evaluator.rst:77
+msgid "**average_function**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:71
+msgid ""
+"Sklearn averaging function used while evaluating the results. Available "
+"options are:"
+msgstr ""
+
+#: ../../source/evaluator.rst:73
+msgid ""
+"``macro`` - Calculate metrics for each label, and find their unweighted "
+"mean. This does not take label imbalance into account."
+msgstr ""
+
+#: ../../source/evaluator.rst:74
+msgid ""
+"``micro`` - Calculate metrics globally by counting the total true "
+"positives, false negatives and false positives."
+msgstr ""
+
+#: ../../source/evaluator.rst:75
+msgid ""
+"``weighted`` - Calculate metrics for each label, and find their average "
+"weighted by support (the number of true instances for each label). This "
+"alters `macro` to account for label imbalance; it can result in an "
+"F-score that is not between precision and recall."
+msgstr ""
+
+#: ../../source/evaluator.rst:76
+msgid ""
+"``binary`` - Only report results for the class specified by pos_label. "
+"**NB! Only applicable for binary classification.**"
+msgstr ""
+
+#: ../../source/evaluator.rst:77
+msgid ""
+"``samples`` - Calculate metrics for each instance, and find their "
+"average. **NB! Only applicable for multiclass/multilabel "
+"classification.**"
+msgstr ""
+
+#: ../../source/evaluator.rst:87
+msgid "**add_individual_results**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:82
+msgid ""
+"Whether to save individual results for each label separately in addition "
+"to the overall (averaged) results.  NB! Only applicable for "
+"multiclass/multilabel classification."
+msgstr ""
+
+#: ../../source/evaluator.rst:86
+msgid ""
+"It is generally advisable to enable it for getting a better understanding"
+" of the models. However, one should be careful if the number of unique "
+"labels is very high (>10 000) as it will make the evaluation process "
+"slower and might lead to memory issues."
+msgstr ""
+
+#: ../../source/evaluator.rst:92
+msgid "**scroll_size**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:92
+msgid "Indicates how many documents are processed per one scroll."
+msgstr ""
+
+#: ../../source/evaluator.rst:98
+msgid "**es_timeout**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:97
+msgid ""
+"After how many minutes of processing one batch of documents (n documents "
+"in batch = `scroll_size`) Elasticsearch throws a timeout and the "
+"processing is suspended."
+msgstr ""
+
+#: ../../source/evaluator.rst:101
+msgid "Output parameters"
+msgstr ""
+
+#: ../../source/evaluator.rst:104
+msgid "**n_true_classes**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:104
+msgid "Number of true classes."
+msgstr ""
+
+#: ../../source/evaluator.rst:107
+msgid "**n_predicted_classes**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:107
+msgid "Number of predicted classes."
+msgstr ""
+
+#: ../../source/evaluator.rst:110
+msgid "**n_total_classes**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:110
+msgid "Number of true and predicted classes combined (as a union)."
+msgstr ""
+
+#: ../../source/evaluator.rst:113
+msgid "**document_count**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:113
+msgid "Number of evaluated documents."
+msgstr ""
+
+#: ../../source/evaluator.rst:116
+msgid "**evaluation_type**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:116
+msgid ""
+"Indicates whether the labelset under the evaluation was binary (type = "
+"\"binary\") or multilabel/multiclass (type = \"multilabel\")."
+msgstr ""
+
+#: ../../source/evaluator.rst:119
+msgid "**score_after_scroll**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:119
+msgid ""
+"Binary field indicating whether the scores were calculated for each batch"
+" separately and the final result was retrieved by averaging the batch "
+"scores (i.e. if the value for this parameter has been set to `true`, the "
+"results might imprecise). The value of this parameter depends on the "
+"number of documents to evaluate (``document_count``), the total size of "
+"the label set (``n_total_classes``) and the amount of available memory"
+msgstr ""
+
+#: ../../source/evaluator.rst:122
+msgid "**scores_imprecise**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:122
+msgid ""
+"Indicates whether the calculated scores are precise or not. The value for"
+" this parameter is directly derived from the values of "
+"`score_after_scroll` and `average_function` as for some average functions"
+" calculating scores after each scroll has an effect while for others it "
+"doesn't."
+msgstr ""
+
+#: ../../source/evaluator.rst:125
+msgid "**precision**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:125
+msgid ""
+"`Sklearn's precision score <https://scikit-"
+"learn.org/stable/modules/generated/sklearn.metrics.precision_score.html>`_"
+msgstr ""
+
+#: ../../source/evaluator.rst:128
+msgid "**recall**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:128
+msgid ""
+"`Sklearn's recall score <https://scikit-"
+"learn.org/stable/modules/generated/sklearn.metrics.recall_score.html>`_"
+msgstr ""
+
+#: ../../source/evaluator.rst:131
+msgid "**f1_score**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:131
+msgid ""
+"`Sklearn's f1-score <https://scikit-"
+"learn.org/stable/modules/generated/sklearn.metrics.recall_score.html>`_"
+msgstr ""
+
+#: ../../source/evaluator.rst:134
+msgid "**accuracy**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:134
+msgid ""
+"`Sklearn's accuracy score <https://scikit-"
+"learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html>`_"
+msgstr ""
+
+#: ../../source/evaluator.rst:143
+msgid "**plot**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:137
+msgid "Confusion matrix."
+msgstr ""
+
+#: ../../source/evaluator.rst:141
+msgid ""
+"Confusion matrix is generated only if the number of classes is <= **30** "
+"as the plot gets too big and hard to interpret with more than 30 classes."
+msgstr ""
+
+#: ../../source/evaluator.rst:148 ../../source/evaluator.rst:320
+#: ../../source/evaluator.rst:460
+msgid "GUI"
+msgstr ""
+
+#: ../../source/evaluator.rst:150
+msgid ""
+"For creating a new Evaluator task, navigate to `\"Tools\" -> "
+"\"Evaluator\"`. Click on the button **\"CREATE\"** in the upper left "
+"corner of the page."
+msgstr ""
+
+#: ../../source/evaluator.rst:154
+msgid ""
+"After clicking on the button, a new Evaluator creation window is opened. "
+"Fill the required fields and modify the parameters you wish to change, "
+"then click on the button **\"Create\"** in the bottom right corner of the"
+" window :numref:`evaluator_create_window`. A new row containing the "
+"information about the created Evaluator should now appear in the list of "
+"all Evaluators with a status \"created\", \"training\", or \"completed\" "
+"(if not, try refreshing the page)."
+msgstr ""
+
+#: ../../source/evaluator.rst:161
+msgid "*Evaluator creation window*"
+msgstr ""
+
+#: ../../source/evaluator.rst:164
+msgid ""
+"After the evaluation task in finished (task status = \"completed\"), you "
+"can see the results and various output parameters by clicking on the row "
+"(:numref:`evaluator_output_v1` and :numref:`evaluator_output_v2`)."
+msgstr ""
+
+#: ../../source/evaluator.rst:171
+msgid "*Evaluator output (1)*"
+msgstr ""
+
+#: ../../source/evaluator.rst:179
+msgid "*Evaluator output (2)*"
+msgstr ""
+
+#: ../../source/evaluator.rst:185 ../../source/evaluator.rst:333
+#: ../../source/evaluator.rst:481
+msgid "API"
+msgstr ""
+
+#: ../../source/evaluator.rst:187
+msgid "Endpoint **/projects/{project_pk}/evaluators/**"
+msgstr ""
+
+#: ../../source/evaluator.rst:189 ../../source/evaluator.rst:339
+#: ../../source/evaluator.rst:380 ../../source/evaluator.rst:487
+#: ../../source/evaluator.rst:511
+msgid "Example:"
+msgstr ""
+
+#: ../../source/evaluator.rst:207 ../../source/evaluator.rst:349
+#: ../../source/evaluator.rst:395 ../../source/evaluator.rst:497
+#: ../../source/evaluator.rst:525
+msgid "Response:"
+msgstr ""
+
+#: ../../source/evaluator.rst:268
+msgid "Usage"
+msgstr ""
+
+#: ../../source/evaluator.rst:271
+msgid "Individual Results"
+msgstr ""
+
+#: ../../source/evaluator.rst:273
+msgid ""
+"While the main view of the Evaluator displays only the average results of"
+" all classes, this function can be used for retrieving individual results"
+" for each class."
+msgstr ""
+
+#: ../../source/evaluator.rst:277 ../../source/evaluator.rst:429
+msgid ""
+"This function is applicable only for evaluating multiclass / multilabel "
+"results."
+msgstr ""
+
+#: ../../source/evaluator.rst:283 ../../source/evaluator.rst:436
+msgid "**min_count**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:283 ../../source/evaluator.rst:436
+msgid ""
+"Retrieve results only for the classes, which true count (the number of "
+"true examples for the class) exceeds this value."
+msgstr ""
+
+#: ../../source/evaluator.rst:286 ../../source/evaluator.rst:439
+msgid "**max_count**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:286 ../../source/evaluator.rst:439
+msgid ""
+"Retrieves results only for the classes, which true count (the number of "
+"true examples for this class) is smaller than this value."
+msgstr ""
+
+#: ../../source/evaluator.rst:303 ../../source/evaluator.rst:457
+msgid "**metric_restrictions**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:289 ../../source/evaluator.rst:442
+msgid ""
+"Allows setting restrictions for all scores (precision, recall, accuracy, "
+"f1) and results are retrieved only for the classes, which satisfy the "
+"restrictions."
+msgstr ""
+
+#: ../../source/evaluator.rst:291 ../../source/evaluator.rst:444
+msgid "The required format for this parameter is the following:"
+msgstr ""
+
+#: ../../source/evaluator.rst:297 ../../source/evaluator.rst:450
+msgid ""
+"For example, the following restrictions are requiring that precision "
+"should be between 0.7 and 1.0 and recall between 0.5 and 1.0:"
+msgstr ""
+
+#: ../../source/evaluator.rst:303 ../../source/evaluator.rst:456
+msgid ""
+"NB! The default restrictions for each metric are: {\"min_score\": 0, "
+"\"max_score\": 1.0}, so it is not necessary to pass both of these keys, "
+"if the purpose is only restricting one of them."
+msgstr ""
+
+#: ../../source/evaluator.rst:313
+msgid "**order_by**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:306
+msgid "How to order the results? Allowed options are:"
+msgstr ""
+
+#: ../../source/evaluator.rst:308
+msgid "\"alphabetic\""
+msgstr ""
+
+#: ../../source/evaluator.rst:309
+msgid "\"count\""
+msgstr ""
+
+#: ../../source/evaluator.rst:310
+msgid "\"precision\""
+msgstr ""
+
+#: ../../source/evaluator.rst:311
+msgid "\"recall\""
+msgstr ""
+
+#: ../../source/evaluator.rst:312
+msgid "\"f1_score\""
+msgstr ""
+
+#: ../../source/evaluator.rst:313
+msgid "\"accuracy\""
+msgstr ""
+
+#: ../../source/evaluator.rst:317
+msgid "**order_desc**:"
+msgstr ""
+
+#: ../../source/evaluator.rst:316
+msgid "Whether the results should be sorted in descending order or not."
+msgstr ""
+
+#: ../../source/evaluator.rst:322
+msgid ""
+"Navigate to **Actions** by clicking on the three vertical dots at the end"
+" of the Evaluator instance's row and select action \"Individual results\""
+" by clicking on it (:numref:`evaluator_individual_results`)."
+msgstr ""
+
+#: ../../source/evaluator.rst:328
+msgid "*Select \"Individual results\" from Evaluator actions*"
+msgstr ""
+
+#: ../../source/evaluator.rst:330
+msgid ""
+"Currently, the GUI does not support passing extra parameters for this "
+"function and the results are displayed for all the classes in "
+"alphabetical order."
+msgstr ""
+
+#: ../../source/evaluator.rst:335
+msgid ""
+"Endpoint "
+"**/projects/{project_pk}/evaluators/{evaluator_id}/individual_results/**"
+msgstr ""
+
+#: ../../source/evaluator.rst:337
+msgid ""
+"GET requests retrieves results for each class as an alphabetically "
+"ordered dict:"
+msgstr ""
+
+#: ../../source/evaluator.rst:378 ../../source/evaluator.rst:509
+msgid "POST request allows passing the parameters described above."
+msgstr ""
+
+#: ../../source/evaluator.rst:422
+msgid "Filtered Average"
+msgstr ""
+
+#: ../../source/evaluator.rst:425
+msgid ""
+"This function allows filtering the final (average) result by setting "
+"various restrictions. The classes that do not meet the requirements are "
+"not included while calculating the final result. This might be useful for"
+" excluding outliers that have a strong effect on the average result "
+"(classes that have extremely low scores due to very low number of "
+"examples etc)."
+msgstr ""
+
+#: ../../source/evaluator.rst:462
+msgid ""
+"Navigate to **Actions** by clicking on the three vertical dots at the end"
+" of the Evaluator instance's row and elect action \"Filtered average by "
+"clicking on it (:numref:`evaluator_filtered_average`)."
+msgstr ""
+
+#: ../../source/evaluator.rst:468
+msgid "*Select \"Filtered average\" from Evaluator actions*"
+msgstr ""
+
+#: ../../source/evaluator.rst:470
+msgid ""
+"After clicking on the button, a new window with label \"Filtered "
+"average\" opens and you can apply different restrictions in there by "
+"modifying the applicable parameters. After pushing the button \"Apply "
+"restrictions\" in the bottom right corner of the window, the average "
+"scores are re-calculated in the same window based on the set restrictions"
+" (:numref:`evaluator_filtered_average_window`)"
+msgstr ""
+
+#: ../../source/evaluator.rst:477
+msgid "*\"Filtered average\" window*"
+msgstr ""
+
+#: ../../source/evaluator.rst:483
+msgid ""
+"Endpoint "
+"**/projects/{project_pk}/evaluators/{evaluator_id}/filtered_average/**"
+msgstr ""
+
+#: ../../source/evaluator.rst:485
+msgid "GET requests retrieves the average result based on all the classes."
+msgstr ""
+

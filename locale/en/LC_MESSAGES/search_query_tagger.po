@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-29 12:30+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/search_query_tagger.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/search_query_tagger.html>`_ `ET "
+"<https://docs.texta.ee/et/search_query_tagger.html>`_"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:8
+msgid "Search Query Tagger"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:10
+msgid ""
+":ref:`Search Query Tagger <search_query_tagger_concept>` is a tool for "
+"tagging documents based on predefined Elasticsearch :ref:`queries "
+"<query_concept>`."
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:14
+msgid ""
+"Search Query Tagger is applicable only for tagging documents indexed in "
+":ref:`Elasticsearch <elasticsearch>` and can only be used on "
+":ref:`indices <index_concept>` that contain the same fields as the "
+"defined search."
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:18
+msgid "Creation"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:24
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:29
+msgid "**description**:"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:29
+msgid ""
+"Name of the Search Query Tagger task. This is necessary only for "
+"differentiating between all the Search Query Tagger tasks in the project."
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:38
+msgid "**indices**:"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:34
+msgid ""
+"List of Elasticsearch :ref:`indices <index_concept>` containing the "
+"documents we wish to tag. NB! Indices should be formatted as list of "
+"dicts, where key = \"name\" and value = <index_name>, e.g:"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:44
+msgid "**fields**:"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:43
+msgid ""
+"List of field names (as strings) to be added as \"doc_path\" in the "
+"generated Texta Facts. The only requirement is that at least one selected"
+" field should be present in each selected index. For example, if we have "
+"two indices A and B, where A consists of fields [\"text\", \"id\"] and B "
+"of fields [\"body\", \"doc_id\"] and the search requires that the word "
+"\"cat\" must be present in either in the field \"text\" or \"body\", then"
+" the possible combinations for fields in Search Query Tagger are: "
+"[\"body\", \"text\"], [\"body\", \"id\"], [\"text\", \"doc_id\"], "
+"[\"id\", \"doc_id\"] as one field for each index should be present. If we"
+" have selected multiple indices and they all contain a field with the "
+"same name (e.g. \"text\"), it is sufficient to only add this field."
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:50
+msgid "**query**:"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:49
+msgid ""
+"The :ref:`query <query_concept>` restricting the set of documents we wish"
+" to tag. In the API, the query should be formatted as a JSON string."
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:56
+msgid "**fact_name**:"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:55
+msgid ""
+"A general label of the tag (e.g. \"TOPIC\") to be added as \"fact\" in "
+":ref:`Texta Facts <texta_fact>`."
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:61
+msgid "**fact_value**:"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:61
+msgid ""
+"A more specific label of the tag (e.g. \"baseball\") to be added as "
+"\"str_val\" in :ref:`Texta Facts <texta_fact>`."
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:66
+msgid "**scroll_size** (GUI) / **bulk_size** (API):"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:66
+msgid "Indicates how many documents are processed per one scroll."
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:72
+msgid "**es_timeout**:"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:71
+msgid ""
+"After how many minutes of processing one batch of documents (n documents "
+"in batch = `scroll_size`) Elasticsearch throws a timeout and the "
+"processing is suspended."
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:75
+msgid "GUI"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:77
+msgid ""
+"To use the Search Query Tagger, we should first define a search (aka "
+"query) restricting the documents we wish to tag (navigate to "
+"**\"Search\"**\"). In the following example, we have restricted the "
+"search to documents containing either the word \"usa\" or \"america\" and"
+" saved it with title \"USA\" (:numref:`sqt_usa_search`)."
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:84
+msgid "*Defining the search*"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:87
+msgid ""
+"Now we can navigate to Search Query Tagger (*\"Models\"* -> *\"Search "
+"Query Taggers\"*) and use the defined search for tagging all the relevant"
+" documents. For creating a new Search Query Tagger task, click on the "
+"button **\"CREATE\"** in the upper left corner of the page. A new window "
+"with the title \"New Search Query Tagger Task\" opens as a result. Fill "
+"all the required fields and select the search you wish to use for tagging"
+" the documents (:numref:`sqt_select_search`). Then click on the button "
+"\"Create\" in the bottom right corner of the window. The new Search Query"
+" Tagger task should now appear as a new row in the list of Search Query "
+"Tagger tasks on the same page (if not, try refreshing the page)."
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:95
+msgid "*Select a predefined search*"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:103
+msgid "*Search Query Tagger creation window*"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:105
+msgid ""
+"After the task has finished (status = \"completed\"), you can view the "
+"results in Search by either using the same query you used for restricting"
+" the search or by searching the newly created fact from field "
+"\"texta_facts[fact_value]\". Either way, there should be a new fact in "
+"field \"texta_facts\" for every document in the restricted search "
+"(:numref:`sqt_created_facts`)."
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:112
+msgid ""
+"*New fact is added to every document corresponding to the predefined "
+"query*"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:114
+msgid ""
+"You can also make sure if all the necessary documents were tagged by "
+"comparing the number of documents restricted by the search (search should"
+" in this case be restricted with the original query - \"USA\" in our "
+"example) (:numref:`sqt_n_search_results`) with the number of relevant "
+"facts returned by an aggregation on field \"texta_facts\" "
+"(:numref:`sqt_aggregations_1` and :numref:`sqt_aggregations_2`)."
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:121
+msgid "*Number of documents corresponding to the query*"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:129
+msgid "*Aggregation on field \"texta_facts\"*"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:136
+msgid "*Number of relevant facts corresponding to the aggregation*"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:140
+msgid "API"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:142
+msgid "Endpoint **/projects/{project_pk}/search_query_tagger/**"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:145
+msgid "Example:"
+msgstr ""
+
+#: ../../source/search_query_tagger.rst:163
+msgid "Response:"
+msgstr ""
+

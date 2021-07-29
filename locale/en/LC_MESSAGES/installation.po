@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-18 16:23+0300\n"
+"POT-Creation-Date: 2021-07-29 12:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -130,98 +130,94 @@ msgstr ""
 msgid "For running in detached mode, use the *-d* flag:"
 msgstr ""
 
-#: ../../source/installation.rst:79
-msgid "TEXTA Toolkit's dockerized version comes with a default superuser account:"
+#: ../../source/installation.rst:79 ../../source/installation.rst:157
+msgid ""
+"Default admin password is defined in the enviroment variable "
+"TEXTA_ADMIN_PASSWORD=1234. You can change this to a more suitable "
+"password. Without the environment variable the default password is "
+"generated automatically and can be obtained from the container log."
 msgstr ""
 
 #: ../../source/installation.rst:81
-msgid "**user:** admin"
-msgstr ""
-
-#: ../../source/installation.rst:83
-msgid "**password:** 1234"
-msgstr ""
-
-#: ../../source/installation.rst:85
 msgid "When running, TEXTA Toolkit's GUI should be available at:"
 msgstr ""
 
-#: ../../source/installation.rst:87
+#: ../../source/installation.rst:83
 msgid "http://localhost"
 msgstr ""
 
-#: ../../source/installation.rst:89
+#: ../../source/installation.rst:85
 msgid "and API at:"
 msgstr ""
 
-#: ../../source/installation.rst:91
+#: ../../source/installation.rst:87
 msgid "http://localhost/api/v1/"
 msgstr ""
 
-#: ../../source/installation.rst:93
+#: ../../source/installation.rst:89
 msgid "For stopping the services:"
 msgstr ""
 
-#: ../../source/installation.rst:101
+#: ../../source/installation.rst:97
 msgid "Installation for Development"
 msgstr ""
 
-#: ../../source/installation.rst:103
+#: ../../source/installation.rst:99
 msgid ""
 "If you want to develop TEXTA Toolkit, want more control over how you run "
 "it, or seriously dislike Docker, it is also possible to install Toolkit "
 "using Anaconda (or Miniconda as shown in following examples)."
 msgstr ""
 
-#: ../../source/installation.rst:106
+#: ../../source/installation.rst:102
 msgid "Install Miniconda"
 msgstr ""
 
-#: ../../source/installation.rst:108
+#: ../../source/installation.rst:104
 msgid ""
 "First one needs to download and install Miniconda to manage Python "
 "environments. Miniconda is chosen over Anaconda because it's smaller in "
 "size, but Toolkit works well with both."
 msgstr ""
 
-#: ../../source/installation.rst:116
+#: ../../source/installation.rst:112
 msgid "Also, let's permanently put Conda binaries to **PATH** variable:"
 msgstr ""
 
-#: ../../source/installation.rst:123
+#: ../../source/installation.rst:119
 msgid "Clone the Repository"
 msgstr ""
 
-#: ../../source/installation.rst:125
+#: ../../source/installation.rst:121
 msgid "Now, let's clone the repository and move to **texta-rest** direcory:"
 msgstr ""
 
-#: ../../source/installation.rst:133
+#: ../../source/installation.rst:129
 msgid "Build the Environment"
 msgstr ""
 
-#: ../../source/installation.rst:135
+#: ../../source/installation.rst:131
 msgid ""
 "Now that **environment.yaml** file from the texta-rest repository is "
 "present, let's use it to build the environment. After the environment is "
 "built, let's activate it:"
 msgstr ""
 
-#: ../../source/installation.rst:144
+#: ../../source/installation.rst:140
 msgid "If you want Toolkit to use GPU, use environment-gpu.yaml instead."
 msgstr ""
 
-#: ../../source/installation.rst:147
+#: ../../source/installation.rst:143
 msgid "Migrate & Run Toolkit"
 msgstr ""
 
-#: ../../source/installation.rst:149
+#: ../../source/installation.rst:145
 msgid ""
 "After the environment has been created and activated, let's prepare the "
 "database:"
 msgstr ""
 
-#: ../../source/installation.rst:155
+#: ../../source/installation.rst:151
 msgid ""
 "Running the **migrate.py** script will prepare Django migrations and "
 "execute them. It is necessary to run the script every time the source "
@@ -231,15 +227,7 @@ msgid ""
 " model."
 msgstr ""
 
-#: ../../source/installation.rst:161
-msgid ""
-"Default admin password is defined in the enviroment variable "
-"**TEXTA_ADMIN_PASSWORD**=1234. You can change this to a more suitable "
-"password. Without the environment variable the default password is "
-"generated automatically and can be obtained from the container log."
-msgstr ""
-
-#: ../../source/installation.rst:163
+#: ../../source/installation.rst:159
 msgid ""
 "Users can overwrite the username by running **python migrate.py -u "
 "{{username}}** instead. In cases where the passwords needs to be "
@@ -247,41 +235,41 @@ msgid ""
 " with whatever value is in the environment variable TEXTA_ADMIN_PASSWORD."
 msgstr ""
 
-#: ../../source/installation.rst:166
+#: ../../source/installation.rst:162
 msgid "Finally let's run the development server:"
 msgstr ""
 
-#: ../../source/installation.rst:172
+#: ../../source/installation.rst:168
 msgid ""
 "And in another terminal (with same conda environment and in the same "
 "folder) run the Celery worker responsible for asynchronous tasks:"
 msgstr ""
 
-#: ../../source/installation.rst:179
+#: ../../source/installation.rst:175
 msgid "Browsable API"
 msgstr ""
 
-#: ../../source/installation.rst:181
+#: ../../source/installation.rst:177
 msgid "http://localhost:8000/api/v1/"
 msgstr ""
 
-#: ../../source/installation.rst:183
+#: ../../source/installation.rst:179
 msgid "TODO"
 msgstr ""
 
-#: ../../source/installation.rst:188
+#: ../../source/installation.rst:184
 msgid "API Reference"
 msgstr ""
 
-#: ../../source/installation.rst:190
+#: ../../source/installation.rst:186
 msgid "Reference for Toolkit API is available when running the Toolkit:"
 msgstr ""
 
-#: ../../source/installation.rst:192
+#: ../../source/installation.rst:188
 msgid "http://localhost:8000/api/v1/swagger/"
 msgstr ""
 
-#: ../../source/installation.rst:194
+#: ../../source/installation.rst:190
 msgid "http://localhost:8000/api/v1/redoc/"
 msgstr ""
 
@@ -407,5 +395,27 @@ msgstr ""
 #~ "**password:** {{RandomlyGeneratedHexString}} or the"
 #~ " value of the environment variable "
 #~ "TEXTA_ADMIN_PASSWORD."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "TEXTA Toolkit's dockerized version comes "
+#~ "with a default superuser account:"
+#~ msgstr ""
+
+#~ msgid "**user:** admin"
+#~ msgstr ""
+
+#~ msgid "**password:** 1234"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Default admin password is defined in "
+#~ "the enviroment variable "
+#~ "**TEXTA_ADMIN_PASSWORD**=1234. You can change "
+#~ "this to a more suitable password. "
+#~ "Without the environment variable the "
+#~ "default password is generated automatically"
+#~ " and can be obtained from the "
+#~ "container log."
 #~ msgstr ""
 

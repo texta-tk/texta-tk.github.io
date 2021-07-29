@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021 TEXTA
+# This file is distributed under the same license as the TEXTA Toolkit
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TEXTA Toolkit 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-29 12:30+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/search_fields_tagger.rst:1
+msgid ""
+"`EN <https://docs.texta.ee/search_fields_tagger.html>`_ `ET "
+"<https://docs.texta.ee/et/search_fields_tagger.html>`_"
+msgstr ""
+
+#: ../../source/search_fields_tagger.rst:8
+msgid "Search Fields Tagger"
+msgstr ""
+
+#: ../../source/search_fields_tagger.rst:10
+msgid ""
+":ref:`Search Fields Tagger <search_fields_tagger_concept>` is a tool for "
+"converting tags/keywords in a separate field into :ref:`Texta Facts "
+"<texta_fact>` as most applications in Texta Toolkit assume that the "
+"labels are stored as Texta Facts."
+msgstr ""
+

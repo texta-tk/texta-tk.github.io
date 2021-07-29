@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TEXTA Toolkit 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-22 13:19+0200\n"
+"POT-Creation-Date: 2021-07-29 12:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,7 +56,7 @@ msgid ""
 "<bert_tagger>`."
 msgstr ""
 
-#: ../../source/terminology.rst:27 ../../source/terminology.rst:34
+#: ../../source/terminology.rst:27
 msgid "Dataset Importer"
 msgstr ""
 
@@ -65,6 +65,10 @@ msgid ""
 "Dataset Importer is a tool for conveniently uploading files into "
 "Elasticsearch to make them accessible for the Toolkit. Read more about "
 "the usage :ref:`here <dataset_importer>`."
+msgstr ""
+
+#: ../../source/terminology.rst:34
+msgid "Document Importer"
 msgstr ""
 
 #: ../../source/terminology.rst:36
@@ -105,208 +109,237 @@ msgid ""
 msgstr ""
 
 #: ../../source/terminology.rst:58
-msgid "Fact"
+msgid "ES Analyzer"
 msgstr ""
 
 #: ../../source/terminology.rst:60
+msgid ""
+"ES Analyzer is a tool for applying various :ref:`Elasticsearch "
+"<elasticsearch>` analyzers to :ref:`indices <index_concept>`. Currently "
+"supported analyzers are:"
+msgstr ""
+
+#: ../../source/terminology.rst:62
+msgid "Stemmer"
+msgstr ""
+
+#: ../../source/terminology.rst:63
+msgid "Tokenizer"
+msgstr ""
+
+#: ../../source/terminology.rst:68
+msgid "Evaluator"
+msgstr ""
+
+#: ../../source/terminology.rst:70
+msgid ""
+"Evaluator is a tool for evaluating labels predicted with classification "
+"or entity extraction models."
+msgstr ""
+
+#: ../../source/terminology.rst:76
+msgid "Fact"
+msgstr ""
+
+#: ../../source/terminology.rst:78
 msgid "In TTK text annotations are regarded as facts:"
 msgstr ""
 
-#: ../../source/terminology.rst:71
+#: ../../source/terminology.rst:89
 msgid "Facts are objects with following properties:"
 msgstr ""
 
-#: ../../source/terminology.rst:73
+#: ../../source/terminology.rst:91
 msgid "fact - a name for the annotation (e.g. PER, LOC, or any arbitrary string)"
 msgstr ""
 
-#: ../../source/terminology.rst:75
+#: ../../source/terminology.rst:93
 msgid ""
 "str_val - string value for the annotation (e.g. \"Donald Trump\" for "
 "PER). Values don't need to match annotated text segments."
 msgstr ""
 
-#: ../../source/terminology.rst:77
+#: ../../source/terminology.rst:95
 msgid ""
 "doc_path - path to the field containing the annotated string (e.g. "
 "\"text\", \"text.author\", \"comment.text.author\", etc.)"
 msgstr ""
 
-#: ../../source/terminology.rst:79
+#: ../../source/terminology.rst:97
 msgid ""
 "spans - JSON string containing the start and end positions in the "
 "annotated string"
 msgstr ""
 
-#: ../../source/terminology.rst:81
+#: ../../source/terminology.rst:99
 msgid ""
 "The Toolkit comes with several predefined fact names that are used by our"
 " Multilingual Processor:"
 msgstr ""
 
-#: ../../source/terminology.rst:86
+#: ../../source/terminology.rst:104
 msgid "Label"
 msgstr ""
 
-#: ../../source/terminology.rst:86
+#: ../../source/terminology.rst:104
 msgid "Meaning"
 msgstr ""
 
-#: ../../source/terminology.rst:86
+#: ../../source/terminology.rst:104
 msgid "Comment"
 msgstr ""
 
-#: ../../source/terminology.rst:88
+#: ../../source/terminology.rst:106
 msgid "PER"
 msgstr ""
 
-#: ../../source/terminology.rst:88
+#: ../../source/terminology.rst:106
 msgid "Persona"
 msgstr ""
 
-#: ../../source/terminology.rst:88
+#: ../../source/terminology.rst:106
 msgid "Name of a person."
 msgstr ""
 
-#: ../../source/terminology.rst:90
+#: ../../source/terminology.rst:108
 msgid "ORG"
 msgstr ""
 
-#: ../../source/terminology.rst:90
+#: ../../source/terminology.rst:108
 msgid "Organisation"
 msgstr ""
 
-#: ../../source/terminology.rst:90
+#: ../../source/terminology.rst:108
 msgid "Name of an organisation, gotten statistically."
 msgstr ""
 
-#: ../../source/terminology.rst:92
+#: ../../source/terminology.rst:110
 msgid "LOC"
 msgstr ""
 
-#: ../../source/terminology.rst:92
+#: ../../source/terminology.rst:110
 msgid "Location"
 msgstr ""
 
-#: ../../source/terminology.rst:92
+#: ../../source/terminology.rst:110
 msgid "Name of a location, gotten statistically."
 msgstr ""
 
-#: ../../source/terminology.rst:94
+#: ../../source/terminology.rst:112
 msgid "COMPANY"
 msgstr ""
 
-#: ../../source/terminology.rst:94
+#: ../../source/terminology.rst:112
 msgid "Company"
 msgstr ""
 
-#: ../../source/terminology.rst:94
+#: ../../source/terminology.rst:112
 msgid ""
 "Names of companies registered in Estonia, gotten from `Estonian Open Data"
 " <https://opendata.riik.ee/datasets/ariregister/>`_."
 msgstr ""
 
-#: ../../source/terminology.rst:96
+#: ../../source/terminology.rst:114
 msgid "ADDR"
 msgstr ""
 
-#: ../../source/terminology.rst:96
+#: ../../source/terminology.rst:114
 msgid "Address"
 msgstr ""
 
-#: ../../source/terminology.rst:96
+#: ../../source/terminology.rst:114
 msgid ""
 "Estonian address, gotten from `Estonian Open Data "
 "<https://opendata.riik.ee/datasets/aadressiandmed/>`_."
 msgstr ""
 
-#: ../../source/terminology.rst:98
+#: ../../source/terminology.rst:116
 msgid "DRUG"
 msgstr ""
 
-#: ../../source/terminology.rst:98
+#: ../../source/terminology.rst:116
 msgid "Drug"
 msgstr ""
 
-#: ../../source/terminology.rst:98
+#: ../../source/terminology.rst:116
 msgid "Name of a medicine."
 msgstr ""
 
-#: ../../source/terminology.rst:100
+#: ../../source/terminology.rst:118
 msgid "SUBSTANCE"
 msgstr ""
 
-#: ../../source/terminology.rst:100
+#: ../../source/terminology.rst:118
 msgid "Substance"
 msgstr ""
 
-#: ../../source/terminology.rst:100
+#: ../../source/terminology.rst:118
 msgid "Ingredient of a drug."
 msgstr ""
 
-#: ../../source/terminology.rst:102
+#: ../../source/terminology.rst:120
 msgid "EML"
 msgstr ""
 
-#: ../../source/terminology.rst:102
+#: ../../source/terminology.rst:120
 msgid "E-mail"
 msgstr ""
 
-#: ../../source/terminology.rst:102
+#: ../../source/terminology.rst:120
 msgid "E-mail address."
 msgstr ""
 
-#: ../../source/terminology.rst:104
+#: ../../source/terminology.rst:122
 msgid "PHO"
 msgstr ""
 
-#: ../../source/terminology.rst:104
+#: ../../source/terminology.rst:122
 msgid "Phone"
 msgstr ""
 
-#: ../../source/terminology.rst:104
+#: ../../source/terminology.rst:122
 msgid "Phone number."
 msgstr ""
 
-#: ../../source/terminology.rst:106
+#: ../../source/terminology.rst:124
 msgid "TEXTA_TAG"
 msgstr ""
 
-#: ../../source/terminology.rst:106
+#: ../../source/terminology.rst:124
 msgid "Own tag"
 msgstr ""
 
-#: ../../source/terminology.rst:106
+#: ../../source/terminology.rst:124
 msgid "Tags we have trained in the Taggers under Models"
 msgstr ""
 
-#: ../../source/terminology.rst:109
+#: ../../source/terminology.rst:127
 msgid "Table 1. *Predefined Fact Names used by Multilingual Processor*"
 msgstr ""
 
-#: ../../source/terminology.rst:111
+#: ../../source/terminology.rst:129
 msgid ""
 "It is important to notice that COMPANY and ADDR identify only companies "
 "and addresses registered in Estonian Open Data. It won't tag any foreign "
 "company nor address while ORG and LOC identify all of them."
 msgstr ""
 
-#: ../../source/terminology.rst:117
+#: ../../source/terminology.rst:135
 msgid "Field"
 msgstr ""
 
-#: ../../source/terminology.rst:119
+#: ../../source/terminology.rst:137
 msgid ""
 "Each document is a collection of fields. Field is a separated piece of "
 "information in that document. For example, we can have an article with "
 "fields containing the text, the date of publishing, headline, etc."
 msgstr ""
 
-#: ../../source/terminology.rst:125
+#: ../../source/terminology.rst:143
 msgid "Health"
 msgstr ""
 
-#: ../../source/terminology.rst:126
+#: ../../source/terminology.rst:144
 msgid ""
 "Server health is a comprehensive overview of the status and performance "
 "of individual servers. It includes hardware parameters and, in our case, "
@@ -314,11 +347,11 @@ msgid ""
 "<health>` how to check TTK's health."
 msgstr ""
 
-#: ../../source/terminology.rst:131
+#: ../../source/terminology.rst:149
 msgid "Index"
 msgstr ""
 
-#: ../../source/terminology.rst:133
+#: ../../source/terminology.rst:151
 msgid ""
 "`Elasticsearch's index <https://www.elastic.co/blog/what-is-an-"
 "elasticsearch-index>`_ is a collection of documents in Elasticsearch. In "
@@ -326,22 +359,36 @@ msgid ""
 "out from that index and one row indicates a document."
 msgstr ""
 
-#: ../../source/terminology.rst:138
+#: ../../source/terminology.rst:156
+msgid "Language Detector"
+msgstr ""
+
+#: ../../source/terminology.rst:158
+msgid ""
+"Language Detector is a tool for detecting languages of the chosen "
+":ref:`indices <index_concept>` documents. It uses :ref:`langdetect python"
+" module <https://pypi.org/project/langdetect/>`_. This is useful for "
+"getting a quick overview of the languages presented in your dataset and "
+"parse out documents in a certain language for future work. Read more "
+"about its usage :ref:`here <lang_det>`."
+msgstr ""
+
+#: ../../source/terminology.rst:163
 msgid "Lexicon miner"
 msgstr ""
 
-#: ../../source/terminology.rst:139
+#: ../../source/terminology.rst:164
 msgid ""
 "Lexicon Miner is a tool for creating topic-related lexicon. It uses "
 ":ref:'embeddings <embedding_concept>' for finding words used in similar "
 "context. Read more about its usage :ref:`here <lexiconminer>`."
 msgstr ""
 
-#: ../../source/terminology.rst:145
+#: ../../source/terminology.rst:170
 msgid "Multilingual Preprocessor (MLP)"
 msgstr ""
 
-#: ../../source/terminology.rst:147
+#: ../../source/terminology.rst:172
 msgid ""
 "MLP offers different analyzing options that give more features "
 "(information) for machine learning applications in TTK and helps to parse"
@@ -349,11 +396,11 @@ msgid ""
 "about the usage :ref:`here <mlp_p>`."
 msgstr ""
 
-#: ../../source/terminology.rst:152
+#: ../../source/terminology.rst:177
 msgid "Project"
 msgstr ""
 
-#: ../../source/terminology.rst:154
+#: ../../source/terminology.rst:179
 msgid ""
 "Project is the main unit of access and management for datasets and "
 "resources (embeddings, text classifiers, etc.). A project is defined by "
@@ -364,17 +411,17 @@ msgid ""
 "project."
 msgstr ""
 
-#: ../../source/terminology.rst:156
+#: ../../source/terminology.rst:181
 msgid ""
 "Project is active when it is chosen in the upper panel on the right. Read"
 " more about projects :ref:`here <project>`."
 msgstr ""
 
-#: ../../source/terminology.rst:161
+#: ../../source/terminology.rst:186
 msgid "Query"
 msgstr ""
 
-#: ../../source/terminology.rst:163
+#: ../../source/terminology.rst:188
 msgid ""
 "`Elasticsearch's query "
 "<https://www.elastic.co/guide/en/elasticsearch/reference/current/query-"
@@ -385,11 +432,11 @@ msgid ""
 "<search_concept>` as saved search for using it later or in other tools."
 msgstr ""
 
-#: ../../source/terminology.rst:168
+#: ../../source/terminology.rst:193
 msgid "Regex Tagger"
 msgstr ""
 
-#: ../../source/terminology.rst:170
+#: ../../source/terminology.rst:195
 msgid ""
 "Regex Tagger is a tool for tagging texts based on pattern matches. The "
 "user can define patterns (words/phrases/regexes) to search from the text "
@@ -398,60 +445,60 @@ msgid ""
 "usage :ref:`here<regex_tagger>`."
 msgstr ""
 
-#: ../../source/terminology.rst:175
+#: ../../source/terminology.rst:200
 msgid "Regex Tagger Group"
 msgstr ""
 
-#: ../../source/terminology.rst:177
+#: ../../source/terminology.rst:202
 msgid ""
 "Regex Tagger Group allows combining different Regex Taggers. Read more "
 "about its usage :ref:`here<regex_tagger_group>`."
 msgstr ""
 
-#: ../../source/terminology.rst:182
+#: ../../source/terminology.rst:207
 msgid "Reindexer"
 msgstr ""
 
-#: ../../source/terminology.rst:184
+#: ../../source/terminology.rst:209
 msgid ""
 "Reindexer is a tool for making copies or subsets of Elasticsearch "
 ":ref:`indices <index_concept>`. Reindexer can be used for various data "
 "management tasks:"
 msgstr ""
 
-#: ../../source/terminology.rst:186
+#: ../../source/terminology.rst:211
 msgid "Making a copy of an index;"
 msgstr ""
 
-#: ../../source/terminology.rst:187
+#: ../../source/terminology.rst:212
 msgid "Merging multiple indices into one;"
 msgstr ""
 
-#: ../../source/terminology.rst:188
+#: ../../source/terminology.rst:213
 msgid "Making a random subset of an index;"
 msgstr ""
 
-#: ../../source/terminology.rst:189
+#: ../../source/terminology.rst:214
 msgid "Making a subset based on a predefined query;"
 msgstr ""
 
-#: ../../source/terminology.rst:190
+#: ../../source/terminology.rst:215
 msgid "Renaming fields;"
 msgstr ""
 
-#: ../../source/terminology.rst:191
+#: ../../source/terminology.rst:216
 msgid "Updating Elasticsearch field types."
 msgstr ""
 
-#: ../../source/terminology.rst:193
+#: ../../source/terminology.rst:218
 msgid "Read more about it :ref:`here <reindexer>`."
 msgstr ""
 
-#: ../../source/terminology.rst:199
+#: ../../source/terminology.rst:224
 msgid "Search"
 msgstr ""
 
-#: ../../source/terminology.rst:201
+#: ../../source/terminology.rst:226
 msgid ""
 "One of the most central components in TTK is Search, which is used to "
 "define subsets of data for training text classification models and "
@@ -463,11 +510,40 @@ msgid ""
 "more about it :ref:`here <searcher>`."
 msgstr ""
 
-#: ../../source/terminology.rst:206
+#: ../../source/terminology.rst:231
+msgid "Search Query Tagger"
+msgstr ""
+
+#: ../../source/terminology.rst:233
+msgid ""
+"Search Query Tagger is a tool for tagging documents based on predefined "
+":ref:`queries <query_concept>`."
+msgstr ""
+
+#: ../../source/terminology.rst:236
+msgid ""
+"Search Query Tagger is applicable only for tagging documents indexed in "
+":ref:`Elasticsearch <elasticsearch>` and can be only used on "
+":ref:`indices <index_concept>` that contain the same fields as the "
+"defined search."
+msgstr ""
+
+#: ../../source/terminology.rst:242
+msgid "Search Fields Tagger"
+msgstr ""
+
+#: ../../source/terminology.rst:244
+msgid ""
+"Search Fields Tagger is a tool for converting tags/keywords in a separate"
+" field into :ref:`Texta Facts <texta_fact>` as most applications in Texta"
+" Toolkit assume that the labels are stored as Texta Facts."
+msgstr ""
+
+#: ../../source/terminology.rst:250
 msgid "Tagger"
 msgstr ""
 
-#: ../../source/terminology.rst:208
+#: ../../source/terminology.rst:252
 msgid ""
 "Taggers are monolingual binary text classifiers used to predict tags for "
 "documents, e.g. whether a tweet is toxic or talking about Brexit. Taggers"
@@ -485,11 +561,11 @@ msgid ""
 "n-grams are used. Read more about it :ref:`here <tagger>`."
 msgstr ""
 
-#: ../../source/terminology.rst:220
+#: ../../source/terminology.rst:264
 msgid "Tagger Group"
 msgstr ""
 
-#: ../../source/terminology.rst:222
+#: ../../source/terminology.rst:266
 msgid ""
 "Tagger Group is an extension to TTK’s binary taggers to support "
 "monolingual multi-label classification. As its name suggests, Tagger "
@@ -504,11 +580,11 @@ msgid ""
 "tags. Read more about it :ref:`here <tagger_group>`."
 msgstr ""
 
-#: ../../source/terminology.rst:232
+#: ../../source/terminology.rst:276
 msgid "Task"
 msgstr ""
 
-#: ../../source/terminology.rst:234
+#: ../../source/terminology.rst:278
 msgid ""
 "TEXTA Toolkit allows building several different statistical models to "
 "process the text. The training process is initiated via TTK API or GUI, "
@@ -517,11 +593,11 @@ msgid ""
 "the training progress of trainable statistical models."
 msgstr ""
 
-#: ../../source/terminology.rst:239
+#: ../../source/terminology.rst:283
 msgid "Topic Analyzer"
 msgstr ""
 
-#: ../../source/terminology.rst:241
+#: ../../source/terminology.rst:285
 msgid ""
 "Topic Analyzer is a tool that detects groups of similar documents in the "
 "data. It can be used for example to explore the structure of the "
@@ -532,7 +608,7 @@ msgid ""
 "models."
 msgstr ""
 
-#: ../../source/terminology.rst:243
+#: ../../source/terminology.rst:287
 msgid ""
 "Topic Analyzer puts to use the best parts of unsupervised clustering and "
 "manual labelling. While clustering is a fast and efficient method to "
@@ -543,7 +619,7 @@ msgid ""
 "probably be so-and-so."
 msgstr ""
 
-#: ../../source/terminology.rst:245
+#: ../../source/terminology.rst:289
 msgid ""
 "Topic Analyzer allows user to look inside each cluster and make the "
 "decision about the quality manually. Users can also perform various "
@@ -553,15 +629,15 @@ msgid ""
 "sufficient quality."
 msgstr ""
 
-#: ../../source/terminology.rst:247
+#: ../../source/terminology.rst:291
 msgid "Read more about its usage :ref:`here <topic_analyzer>`."
 msgstr ""
 
-#: ../../source/terminology.rst:252
+#: ../../source/terminology.rst:296
 msgid "Torch Tagger"
 msgstr ""
 
-#: ../../source/terminology.rst:254
+#: ../../source/terminology.rst:298
 msgid ""
 "While Taggers and Tagger Groups use classical machine learning to produce"
 " binary classification models, Texta Toolkit also incorporates deep "
@@ -570,7 +646,7 @@ msgid ""
 "Torch Tagger."
 msgstr ""
 
-#: ../../source/terminology.rst:257
+#: ../../source/terminology.rst:301
 msgid ""
 "It allows for the user to use several state-of-art text classification "
 "models, including fastText, TextRNN using bi-direction LSTM networks, "
@@ -584,11 +660,11 @@ msgid ""
 " about its usage :ref:`here <torch_tagger>`."
 msgstr ""
 
-#: ../../source/terminology.rst:267
+#: ../../source/terminology.rst:311
 msgid "UUA server"
 msgstr ""
 
-#: ../../source/terminology.rst:268
+#: ../../source/terminology.rst:312
 msgid ""
 "User Account and Authentication is an identity management service for "
 "making sure that only selected users have access to certain datasets. "

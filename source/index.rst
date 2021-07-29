@@ -39,6 +39,7 @@ Contents:
     health
     projects
     searcher
+    language_detector
     lexicon_miner
     embedding
     topic_analyzer
