@@ -10,6 +10,8 @@ BERT Tagger
 :ref:`BERT Tagger <bert_tagger_concept>` is a tool for fine-tuning `BERT models <https://en.wikipedia.org/wiki/BERT_(language_model)>`_ and using the fine-tuned models for text classification.
 
 
+.. role:: raw-html(raw)
+    :format: html
 
 
 
@@ -30,7 +32,7 @@ The following section gives an overview of BERT Tagger's input parameters.
 .. _param_description:
 
 **description**:
-	Name of the fine-tuned BERT Tagger model.
+	Name of the new fine-tuned BERT Tagger model.
 
 .. _param_indices:
 
@@ -69,10 +71,61 @@ The following section gives an overview of BERT Tagger's input parameters.
 **fact_name**:
 	 Fact name used for **multiclass classification**. NB! The selected fact should have at least two unique values!
 
+.. _param_pos_label:
+
+**pos_label**:
+	Fact value used as the positive label while calculating various evaluation scores like precision, recall and f1.
+
+	.. note::
+
+		Defining this parameter is necessary only, if:
+
+		a\) param :ref:`fact name<param_fact_name>` is defined and :raw-html:`<br />`
+		b\) the defined fact name has exactly two unique values.
+
+.. _param_balance:
+
+**balance**:
+	Whether or not to balance the classes for **multiclass classification**. If this parameter is enabled, the examples for each class are sampled with repetitions until their size is either equal to
+
+	a\) the size of the class with the largest number of examples (param :ref:`balance to max limit<param_balance_to_max_limit>` is disabled) or :raw-html:`<br />`
+	b\) the max limit defined with parameter :ref:`maximum sample size<param_maximum_sample_size>` (param :ref:`balance to max limit<param_balance_to_max_limit>` is enabled).
+
+	.. note::
+
+		This parameter has effect only if param :ref:`fact name<param_fact_name>` is defined.
+
+.. _param_use_sentence_shuffle:
+
+**use_sentence_shuffle**:
+	If enabled, the sentences in the additional examples added for balancing are randomly shuffled. This might be useful as the input texts are cut off after a specified limit and shuffling the additional examples will result in a more versatile training data.
+
+	.. note::
+
+		This parameter has effect only if param :ref:`fact name<param_fact_name>` is defined and param :ref:`balance<param_balance>` is enabled.
+
+.. _param_balance_to_max_limit:
+
+**balance_to_max_limit**:
+	If enabled, the examples for each class are sampled with repetitions until the limit set with param :ref:`maximum sample size<param_maximum_sample_size>` is reached.
+
+	.. note::
+
+		This parameter has effect only if param :ref:`fact name<param_fact_name>` is defined and param :ref:`balance<param_balance>` is enabled.
+
+.. _param_checkpoint_model:
+
+**checkpoint_model**:
+	A previously fine-tuned model to further fine-tune on a new data. In API, the value for this parameter should be an ID of the previously fine-tuned model.
+
+	.. note::
+
+		If checkpoint model is selected, the pre-trained model (param :ref:`bert model<param_bert_model>`) is automatically set to the one that was used for training the checkpoint model.
+
 .. _param_bert_model:
 
 **bert_model**:
-	 Name of the pretrained BERT model to use. NB! Only previously downloaded models can be used. If the model you wish to use is not currently available, download it via endpoint /bert_taggers/download_pretrained_model.
+	 Name of the pretrained BERT model to use. NB! Only previously downloaded models can be used. If the model you wish to use is not currently available, download it via the endpoint ``/bert_taggers/download_pretrained_model/`` (in API) or by clicking on the button **"Add pretrained model"** (in GUI).
 
 .. _param_num_epochs:
 

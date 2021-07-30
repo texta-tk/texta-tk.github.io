@@ -1,10 +1,11 @@
 `EN <https://docs.texta.ee/tagger.html>`_
 `ET <https://docs.texta.ee/et/tagger.html>`_
 
+##############
 .. _tagger:
-#######
+
 Tagger
-#######
+##############
 
 :ref:`Tagger <tagger_concept>` operates on saved searches and uses machine learning.
 
@@ -17,36 +18,136 @@ Tagger
 Creation
 **********
 
+.. role:: raw-html(raw)
+    :format: html
+
 
 Parameters
 ===========
 
 **description**:
 	Name of the Tagger model, which is also used as name of the tag while tagging the documents.
-	
+
 **indices**:
 	The indices the model learns from.
-	
+
 **fields**:
 	The :ref:`fields <field_concept>` the model learns from. If more than one fields is chosen, the fields are concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (*eaten*, *eats* and *ate* will change to its lemma *eat* and are dealt as one word).
-	
+
 **query**:
 	Searcher's :ref:`query <query_concept>` for the dataset to be trained on. If *Query* is left empty, it will take all data in the active :ref:`project <project_concept>` as an input. You can also use saved searches as your desired input. This input will be the positive examples - later on, the Tagger tags data similar to this one.
-	
+
 **embedding**:
 	:ref:`embedding <embedding_concept>` previously trained on the same dataset.
-	
+
 **vectorizer**:
 	Hashing Vectorizer, Count Vectorizer, Tfldf Vectorizer - read more about them `here <https://scikit-learn.org/stable/modules/feature_extraction.html>`_.
-	
+
 **classifier**:
 	`Logistic Regression <https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression>`_, `LinearSVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_.
-	
+
 **maximum sample size**:
 	*The maximum sample size* per class is for limiting the size of data the model trains on.
-	
+
+.. _param_minimum_sample_size:
+
+**minimum_sample_size**:
+	 Minimum number of positive examples.
+
 **negative multiplier**:
 	*The negative multiplier* is for changing the ratio of negative examples.
+
+.. _param_fact_name:
+
+**fact_name**:
+	 Fact name used for **multiclass classification**. NB! The selected fact should have at least two unique values!
+
+.. _param_pos_label:
+
+**pos_label**:
+	Fact value used as the positive label while calculating various evaluation scores like precision, recall and f1.
+
+	.. note::
+
+		Defining this parameter is necessary only, if:
+
+		a\) param :ref:`fact name<param_fact_name>` is defined and :raw-html:`<br />`
+		b\) the defined fact name has exactly two unique values.
+
+.. _param_balance:
+
+**balance**:
+	Whether or not to balance the classes for **multiclass classification**. If this parameter is enabled, the examples for each class are sampled with repetitions until their size is either equal to
+
+	a\) the size of the class with the largest number of examples (param :ref:`balance to max limit<param_balance_to_max_limit>` is disabled) or :raw-html:`<br />`
+	b\) the max limit defined with parameter :ref:`maximum sample size<param_maximum_sample_size>` (param :ref:`balance to max limit<param_balance_to_max_limit>` is enabled).
+
+	.. note::
+
+		This parameter has effect only if param :ref:`fact name<param_fact_name>` is defined.
+
+.. _param_balance_to_max_limit:
+
+**balance_to_max_limit**:
+	If enabled, the examples for each class are sampled with repetitions until the limit set with param :ref:`maximum sample size<param_maximum_sample_size>` is reached.
+
+	.. note::
+
+		This parameter has effect only if param :ref:`fact name<param_fact_name>` is defined and param :ref:`balance<param_balance>` is enabled.
+
+.. _param_stopwords:
+
+**stopwords**:
+  List of words ignored while training the classifier.
+
+
+.. _param_ignore_numbers:
+
+**ignore_numbers**:
+  If enabled, all the numbers in the text are ignored as possible features. It is advisable to enable this parameters, unless you know for certain that the numbers in the text convey meaningful information.
+
+.. _param_snowball_language:
+
+**snowball_language**:
+  The language used by the Snowball stemmer.
+
+  .. note::
+
+    This param should be specified only if:
+
+    a\) you wish to stem the data before feeding it to the classification models and :raw-html:`<br />`
+    b\) the input data is monolingual (otherwise it is advisable to use the param :ref:`detect language <param_detect_lang>` instead).
+
+.. _param_detect_lang:
+
+**detect_lang**:
+  If enabled, the language of each document is detected to select an appropriate stemmer.
+
+  .. note::
+
+    This should be selected only if:
+
+    a\) you wish to stem the data before feeding it to the classification models and :raw-html:`<br />`
+    b\) the input data is multilingual (otherwise it is advisable to use the param :ref:`snowball language <param_snowball_language>` instead).
+
+.. _param_scoring_function:
+
+**scoring_function**:
+  Specifies the score used while selecting the best model with k-fold cross-validation. Available options are:
+
+  - "precision"
+  - "recall"
+  - "f1_score"
+  - "accuracy"
+  - "jaccard"
+
+.. _param_score_threshold:
+
+**score_threshold**:
+  Elasticsearch score threshold for filtering out irrelevant examples. All examples below first document's score * score threshold are ignored. Float between 0 and 1. Default: 0.0
+
+
+
 
 GUI
 ====
@@ -60,7 +161,7 @@ Create a new Tagger model by clicking on the 'CREATE' button in the top-left. Th
 .. figure:: images/tagger/create_tagger.png
 
     *Creating Bribe_tag tagger*
-    
+
 Whenever a new Tagger model is created, you can track its progress from the table under *Task*. If you click on the job, you can see all the training info, how long did it took, and check how successful it was. Let's not forget that:
 
 	1. Recall is the ratio of correctly labeled positives among all true positives.
@@ -110,8 +211,8 @@ The trained tagger endpoint: **/projects/{project_pk}/taggers/{id}/**
 Usage
 *******
 
-    
-List features 
+
+List features
 ===============
 
 *List features* lists the word-features and their coefficients that the model used. Works with models that used Count Vectorizer or Tfldf Vectorizer since their output is displayable.
@@ -120,7 +221,7 @@ API endpoint: **/projects/{project_pk}/taggers/{id}/list_features/**
 
 Stop words
 ============
-*Stop words* is for adding stop words. Stop words are words that the model does not consider while looking for clues of similarities. It is wise to add the most frequent words in the list like *am*, *on*, *in*, *are*. Separate the words with space (' '). 
+*Stop words* is for adding stop words. Stop words are words that the model does not consider while looking for clues of similarities. It is wise to add the most frequent words in the list like *am*, *on*, *in*, *are*. Separate the words with space (' ').
 
 .. _stop_words:
 .. figure:: images/tagger/stop_words.png
@@ -132,7 +233,7 @@ API endpoint **/projects/{project_pk}/taggers/{id}/stop_words/**
 
 Tag text
 ==========
-*Tag text* is to check how does the model work. If you click on that a window opens. You can paste there some text, choose to lemmatize it (necessary if your model was trained on a lemmatized text), and post it. You then receive the result (True if this text gets the tag and False otherwise) and the probability. Probability shows how confident is your model in its prediction. 
+*Tag text* is to check how does the model work. If you click on that a window opens. You can paste there some text, choose to lemmatize it (necessary if your model was trained on a lemmatized text), and post it. You then receive the result (True if this text gets the tag and False otherwise) and the probability. Probability shows how confident is your model in its prediction.
 
 .. _tag_text:
 .. figure:: images/tagger/tag_text.png
@@ -169,19 +270,19 @@ Response:
 
 Tag doc
 =========
-*Tag doc* is similar to *Tag text*, except the input is in the JSON format. 
+*Tag doc* is similar to *Tag text*, except the input is in the JSON format.
 
 .. _tag_doc:
 .. figure:: images/tagger/tag_doc.png
     :width: 100 %
 
     *Tagging a random written/pasted text in json format*
-    
+
 API endpoint **/projects/{project_pk}/taggers/{id}/tag_doc/**
 
 Tag random doc
 =================
-*Tag random doc* takes a random instance from your dataset, displays it, and returns the result and the probability of this result being correct. 
+*Tag random doc* takes a random instance from your dataset, displays it, and returns the result and the probability of this result being correct.
 
 API endpoint **/projects/{project_pk}/taggers/{id}/tag_random_doc/**
 
@@ -198,4 +299,3 @@ Delete
 ========
 
 *Delete* is for deleting the model. Only in GUI.
-
