@@ -24,6 +24,11 @@ TEXTA_UAA_URL=http://localhost:8080/uaa
 TEXTA_UAA_CLIENT_ID=login
 TEXTA_UAA_CLIENT_SECRET=loginsecret
 
+TEXTA_UAA_SCOPE_PREFIX=texta
+TEXTA_UAA_SCOPES=openid texta.*
+TEXTA_UAA_PROJECT_ADMIN_SCOPE=texta.project_admin
+TEXTA_UAA_SUPERUSER_SCOPE=texta.admin
+
 # Elastic authentication
 # Only usable with the X-Pack security
 #TEXTA_ES_USER=elastic

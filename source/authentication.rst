@@ -101,31 +101,57 @@ An example "login" client is already provided in UAA by default, which will be u
 
 Example:
 
-- First, deploy the UAA server locally and install the CF UAA Command Line Client (UAAC) as detailed `here <https://docs.cloudfoundry.org/concepts/architecture/uaa.html#quickstart>`_.
+- First, deploy the UAA server locally through gradlew or Tomcat and install the CF UAA Command Line Client (UAAC) as detailed `here <https://docs.cloudfoundry.org/concepts/architecture/uaa.html#quickstart>`_.
 - Target the local UAA server by running ``$ uaac target http://localhost:8080/uaa``
 - Authenticate as the default "admin" client by running ``$ uaac token client get admin -s adminsecret``
-- Update the example "login" client's ``redirect_uri`` by running ``$ uaac client update login --redirect_uri http://localhost:8000/api/v1/uaa/callback``.
+- Update the example "login" client's ``redirect_uri`` by running ``$ uaac client update login --scope openid,texta.* --redirect_uri http://localhost:8000/api/v1/uaa/callback``. Setting openid scopes ensures
+we have access to the /userinfo endpoint of UAA and the scope texta.* ensure that only scopes matching the pattern are returned.
+- Create a group called "texta.admins" with ``$ uaac group add texta.admins``, members of this group will be signed in with the superuser status, which gives
+access to all resources and user information. You can change the name of the scope which gives this functionality through environment variables as described below.
+- Create a group called "texta.project_admin" with ``$ uaac group add texta.project_admin``, members of this group will have project administrator rights to every
+project they have any kind of access to. This includes adding/removing users, deleting the Project and removing indices directly. Adding existing indices is a superuser privilege.
+You can change the name of the scope which gives this functionality through environment variables as described below.
+- Create a group called texta.members with ``$ uaac group add texta.member``. This group will give the users access to TEXTA Toolkit and can be used
+to tie down Projects along with Users that exists in UAA's groups to denote access. This scopes name can be anything as long as it matches the pattern "texta.*".
+
+- Create some users and add them in their respective groups::
+    # This user will be a superuser.
+    $ uaac user add toomas.arusaru --given_name Toomas --family_name Arusaru --emails toomas.arusaru@gmail.com --password 12349876
+    $ uaac member add texta.member toomas.arusaru
+    $ uaac member add texta.admin toomas.arusaru
+
+    # This user will be a Project Administrator.
+    $ uaac user add mati.toom --given_name Mati --family_name Toom --emails mati.toom@gmail.com --password 12349876
+    $ uaac member add texta.member toomas.arusaru
+    $ uaac member add texta.project_admin toomas.arusaru
+
+    # This user will be a normal user with no special privileges.
+    $ uaac user add mari.salumäe --given_name Mari --family_name Salumäe --emails mari.salumae@gmail.com --password 12349876
+    $ uaac member add texta.member toomas.arusaru
+
+
 - Now authenticate as the example "login" client by running ``$ uaac token client get login -s loginsecret``
-- Create a new example user by running ``uaac user add test1 --emails test1@test1.com --password test1``
 
 The UAA server is now configured. One can already send a request to the ``redirect_uri`` callback through logging in the UAA server using the **/uaa/oauth/authorize** OAuth endpoint of the UAA server.
 
 The **oauth/authorize** URL needs to be sent with the proper parameters:
 
-http://localhost:8080/uaa/oauth/authorize?response_type=code&client_id=login&scope=openid&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fapi%2Fv1%2Fuaa/callback
+http://localhost:8080/uaa/oauth/authorize?response_type=code&client_id=login&scope=openid texta.*&redirect_uri=http://localhost:8000/api/v1/uaa/callback
 
 To break it down:
 
 - ``response_type=code`` Lets the server know to add a code in response.
 - ``client_id=login`` Is the name/id of the client application on the UAA server/
-- ``scope=openid`` Is the OAuth scope which toolkit uses in order to authenticate/create the user on Toolkit's side with the email and password.
-- ``redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fapi%2Fv1%2Fuaa/callback`` is the same ``redirect_uri`` set on the client application before, except its encoded in order to use it as a parameter.
+- ``scope=openid texta.*`` Is the OAuth scope which toolkit uses in order to authenticate/create the user on Toolkit's side with the email and password.
+- ``redirect_uri=http://localhost:8000/api/v1/uaa/callback`` is the same ``redirect_uri`` set on the client application before, which will be used to redirect the user to the proper application after a successful login.
 
 For further reference:
 - https://docs.cloudfoundry.org/api/uaa/version/74.24.0/index.html
 - https://www.oauth.com/
 
-**NOTE:** One caveat one might encounter is getting authentication errors when trying to log in with the email. Even though the log in form asks for the "email" and "password", it actually sends the **username** and password. Therefore, try logging in with the username(type it into the email field)/password instead.
+**NOTE:** One caveat one might encounter is getting authentication errors when trying to log in with the email.
+Even though the log in form asks for the "email" and "password", it actually sends the **username** and password.
+Therefore, try logging in with the username(type it into the email field)/password instead.
 
 
 Configuring the Toolkit server
@@ -139,6 +165,13 @@ To configure the Toolkit server client application, UAA related environment vari
 - ``TEXTA_UAA_CLIENT_ID`` needs to be the client ID, eg ``login``
 - ``TEXTA_UAA_CLIENT_SECRET`` needs to be the client application's secret, eg ``loginsecret``
 
+- ``TEXTA_UAA_SCOPES`` contains the scopes which will be used when communicating with UAA, must be the same as the scopes used during client creation/update inside UAA.
+- ``TEXTA_UAA_SUPERUSER_SCOPE`` contains the name of the scope which TEXTA Toolkit will use to check if a user should be given/taken the superuser status.
+- ``TEXTA_UAA_PROJECT_ADMIN_SCOPE`` contains the name of the scope which TEXTA Toolkit will use to check if a user should have Project Administrator privileges
+for any project they have access to.
+- ``TEXTA_UAA_SCOPE_PREFIX`` contains the prefix for limiting access of users into TEXTA Toolkit. Any users who have a scope that matches the pattern "{TEXTA_UAA_SCOPE_PREFIX}.*"
+will be granted access, anyone who doesn't has it denied.
+
 
 Using UAA on the front-end
 ===========================
@@ -149,17 +182,22 @@ To use UAA with the Angular front-end, it needs to be configured in an `environm
 
 .. code-block:: javascript
 
-    uaaConf: {
-        uaaURL: 'http://localhost:8080/uaa/oauth/authorize',
-
-        // Callback URL defined on the UAA server, to which the user will be redirected after logging in on UAA
-        redirect_uri: 'http://localhost:8000/api/v1/uaa/callback',
-        // OAuth 2.0 client application (eg texta_toolkit) id and secret.
-        client_id: 'login',
-        // OAuth 2.0 scope and response_type
-        scope: 'openid',
-        response_type: 'code',
-    }
+{
+      "apiHost":"http://localhost:8000",
+      "apiBasePath":"/api/v1",
+      "apiBasePath2":"/api/v2",
+      "logging":true,
+      "fileFieldReplace":"texta_filepath",
+      "useCloudFoundryUAA":true,
+      "uaaConf":{
+        "uaaURL":"http://localhost:8080",
+        "redirect_uri":"http://localhost:8000/api/v1/uaa/callback",
+        "client_id":"login",
+        "scope":"openid texta.*",
+        "admin_scope": "texta.project_admin", # Must match the value of the environment variable "TEXTA_UAA_SUPERUSER_SCOPE"
+        "response_type":"code"
+      }
+}
 
 
 To log in using UAA, click on the "log in with CloudFoundry" button on the login dialog:
