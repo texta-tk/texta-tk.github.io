@@ -176,9 +176,26 @@ MLP offers different analyzing options that give more features (information) for
 Project
 ********
 
-Project is the main unit of access and management for datasets and resources (embeddings, text classifiers, etc.). A project is defined by its description, list of Elasticsearch indices related to the project (this is where the data is!), and a list of users who can access the project and its resources. All resources in TTK belong to some project and by adding or removing users, one can manage their access to the project.
+Project is the main unit of access and management for datasets and resources (embeddings, text classifiers, etc.).
+A project is defined by its description, list of Elasticsearch indices related to the project (this is where the data is!),
+and a list of users who can access the project and its resources.
+All resources in TTK belong to some project and by adding or removing users, one can manage their access to the project.
+
+Additionally, creators of a project can assign other people with the Project Administrator permission to share the responsibility
+of who should have access to the resources and who shouldn't
 
 Project is active when it is chosen in the upper panel on the right. Read more about projects :ref:`here <project>`.
+
+Project Administrator
+**********************
+
+Project Administrators are users who have been added into the Project to manage it, which can be done either by
+superusers or the author of the Project itself (by default, the Projects author is also its Project Admin).
+Within the permission of a Project Administrator lies: Adding and removing access to users into said Project, removing indices
+from the Project, editing the title of the Project.
+
+Project Administrators who aren't superusers though, lack the option to add existing indices into the Project and
+to search for usernames by a list (users need to be added by username manually).
 
 .. _query_concept:
 
