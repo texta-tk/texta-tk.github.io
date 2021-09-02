@@ -158,19 +158,19 @@ Configuring the Toolkit server
 ==============================
 To configure the Toolkit server client application, UAA related environment variables need to be set:
 
-- ``TEXTA_USE_UAA`` expects input "False" to disable UAA, which will otherwise be enabled.
-- ``TEXTA_UAA_URL`` needs to be the URL of the UAA server, eg http://localhost:8080/uaa
-- ``TEXTA_UAA_REDIRECT_URI`` needs to be the ``redirect_uri`` as set on the UAA server client, eg http://localhost:8000/api/v1/uaa/callback
-- ``TEXTA_UAA_FRONT_REDIRECT_URL`` needs to be the URL of the Angular frontend, where the Toolkit server will redirect the user after a successful ``redirect_uri`` callback, eg http://localhost:4200/oauth
-- ``TEXTA_UAA_CLIENT_ID`` needs to be the client ID, eg ``login``
-- ``TEXTA_UAA_CLIENT_SECRET`` needs to be the client application's secret, eg ``loginsecret``
+- ``TEXTA_USE_UAA`` expects input "False" to disable UAA, which will otherwise be enabled (Default: false).
+- ``TEXTA_UAA_URL`` needs to be the URL of the UAA server (Default: http://localhost:8080).
+- ``TEXTA_UAA_REDIRECT_URI`` needs to be the ``redirect_uri`` as set on the UAA server client (Default: http://localhost:8000/api/v1/uaa/callback)
+- ``TEXTA_UAA_FRONT_REDIRECT_URL`` needs to be the URL of the Angular frontend, where the Toolkit server will redirect the user after a successful ``redirect_uri`` callback (Default:  http://localhost:4200/oauth, should be http://localhost/oauth for Docker setups).
+- ``TEXTA_UAA_CLIENT_ID`` needs to be the client ID (Default: login)
+- ``TEXTA_UAA_CLIENT_SECRET`` needs to be the client application's secret (Default: loginsecret)
 
-- ``TEXTA_UAA_SCOPES`` contains the scopes which will be used when communicating with UAA, must be the same as the scopes used during client creation/update inside UAA.
-- ``TEXTA_UAA_SUPERUSER_SCOPE`` contains the name of the scope which TEXTA Toolkit will use to check if a user should be given/taken the superuser status.
+- ``TEXTA_UAA_SCOPES`` contains the scopes which will be used when communicating with UAA, must be the same as the scopes used during client creation/update inside UAA (Default: openid texta.*).
+- ``TEXTA_UAA_SUPERUSER_SCOPE`` contains the name of the scope which TEXTA Toolkit will use to check if a user should be given/taken the superuser status (Default: texta.admin).
 - ``TEXTA_UAA_PROJECT_ADMIN_SCOPE`` contains the name of the scope which TEXTA Toolkit will use to check if a user should have Project Administrator privileges
-for any project they have access to.
+for any project they have access to (Default: texta.project_admin).
 - ``TEXTA_UAA_SCOPE_PREFIX`` contains the prefix for limiting access of users into TEXTA Toolkit. Any users who have a scope that matches the pattern "{TEXTA_UAA_SCOPE_PREFIX}.*"
-will be granted access, anyone who doesn't has it denied.
+will be granted access, anyone who doesn't has it denied (Default: texta).
 
 
 Using UAA on the front-end
