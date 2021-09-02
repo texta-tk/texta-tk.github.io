@@ -161,7 +161,12 @@ API endpoint: **/projects/{project_pk}/**
 Integrating Projects with UAA
 *****************************
 When using additional UAA functionality, authors of Projects can tie down "scopes" to a Project.
-Any user that matches scopes in UAA will have access rights to the Project. However, the degree of the access depends on which additional scopes the user has. Users that come with a "texta.admin" scope are given full superuser rights as described above whereas users with the "texta.project_admin" scope have Project Administrator priviledges to EVERY Project they have been given access to.
+Any user that matches scopes in UAA will have access rights to the Project. However, the degree of the access depends on
+which additional scopes the user has. Users that come with a "texta.admin" scope are given full superuser rights as described above
+whereas users with the "texta.project_admin" scope have Project Administrator privileges to EVERY Project they have been given access to.
+
+When creating or editing the project, normal user can only apply a scope they already possesses to the project whereas
+superuser can add any scope they wish.
 
 For example:
 
@@ -190,3 +195,13 @@ API endpoint: **/projects/**
             "indices_write": ["update_log", "wos_law"],
             "scopes": ["investigative_report"]
         }'
+
+
+GUI
+===
+
+
+.. _project_list:
+.. figure:: images/project/scopes.png
+
+    *Project creation menu for normal user with ["openid", "texta.ou"] scopes*
