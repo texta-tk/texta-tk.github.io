@@ -159,7 +159,12 @@ Configuring the Toolkit server
 To configure the Toolkit server client application, UAA related environment variables need to be set:
 
 - ``TEXTA_USE_UAA`` expects input "False" to disable UAA, which will otherwise be enabled (Default: false).
-- ``TEXTA_UAA_URL`` needs to be the URL of the UAA server (Default: http://localhost:8080).
+- ``TEXTA_UAA_URL`` needs to be the URL of the UAA server (Default: http://localhost:8080/uaa).
+- ``UAA_OAUTH_TOKEN_URI`` URL from which to get access_tokens (Default: {TEXTA_UAA_URL}/oauth/token").
+- ``UAA_USERINFO_URI`` URL for accessing the user information (Default: {TEXTA_UAA_URL}/userinfo).
+- ``UAA_LOGOUT_URI`` URL from which to log out with (Default: "{TEXTA_UAA_URL}/logout.do").
+- ``UAA_AUTHORIZE_URI`` = URL to authorize authentication (Default: {TEXTA_UAA_URL}/oauth/authorize).
+
 - ``TEXTA_UAA_REDIRECT_URI`` needs to be the ``redirect_uri`` as set on the UAA server client (Default: http://localhost:8000/api/v1/uaa/callback)
 - ``TEXTA_UAA_FRONT_REDIRECT_URL`` needs to be the URL of the Angular frontend, where the Toolkit server will redirect the user after a successful ``redirect_uri`` callback (Default:  http://localhost:4200/oauth, should be http://localhost/oauth for Docker setups).
 - ``TEXTA_UAA_CLIENT_ID`` needs to be the client ID (Default: login)
