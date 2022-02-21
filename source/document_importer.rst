@@ -15,7 +15,7 @@ Importing a document
 Adding documents through the API is the easiest way to integrate existing datasets and systems with TEXTA Toolkit.
 However, for security reasons the users are only allowed to insert documents into indices which are already
 put inside their Project. API users should also be keenly aware that such indices would also need to be set up with a the
-proper schema to work with tools like Tagger and Tagger Groups.
+proper schema to work with tools like Tagger and Tagger Groups, please refer to the Index API documentation.
 
 Parameters
 ===========
