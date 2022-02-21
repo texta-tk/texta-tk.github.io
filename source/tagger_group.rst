@@ -171,6 +171,18 @@ Tag random doc
 
 API endpoint **/projects/{project_pk}/tagger_groups/{id}/tag_random_doc/**
 
+
+Apply to index
+==============
+
+Used to classify every document inside one or several indices with a Tagger Group, this process will scroll through all the
+documents, parse the texts of the given fields and return their results as Texta Facts.
+
+Since this is a long-term tasks, the user will get a response immediately while another processes it.
+
+API endpoint **/projects/{project_pk}/tagger_groups/{id}/apply_to_index/**
+
+
 Edit
 =====
 *Edit* is for changing the description.

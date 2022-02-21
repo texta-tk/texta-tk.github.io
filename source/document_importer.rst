@@ -7,10 +7,15 @@
 Document Importer
 ##################
 
-:ref:`Document Importer <document_importer_concept>` (Document Importer) provides API endpoints for adding, deleting and replacing documents one by one in or into a certain index in an easy way.
+:ref:`Document Importer <document_importer_concept>` (Document Importer) provides API endpoints for adding, deleting and replacing JSON documents inside Elasticsearch indices.
 
 Importing a document
 *********************
+
+Adding documents through the API is the easiest way to integrate existing datasets and systems with TEXTA Toolkit.
+However, for security reasons the users are only allowed to insert documents into indices which are already
+put inside their Project. API users should also be keenly aware that such indices would also need to be set up with a the
+proper schema to work with tools like Tagger and Tagger Groups.
 
 Parameters
 ===========
@@ -21,12 +26,13 @@ Parameters
 	
 	2. "_index": Under which already existing index should Elasticsearch insert the document.
 	
-	3. "_type": Should be the same value as index, specifies the Elasticsearch doc_type.
+	3. "_type": Specifies the doc_type for Elasticsearch documents, should be manually set to "_doc", defaults to "_doc".
 	
-	4. "_source": Actual content of the document.
+	4. "_source": Actual JSON content of the document.
 	
 **split_text_in_fields**:
-	Specifies which text fields should be split into smaller pieces.
+	Specifies which text fields should be split into smaller pieces, defaults to a field with the name "text" if none is given.
+    By default the texts are split at a 3000 character limit!
 	
 .. note::
 
