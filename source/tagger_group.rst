@@ -25,7 +25,7 @@ Parameters
 	Name of the Tagger model, which is also used as name of the tag while tagging the documents.
 	
 **indices**:
-	The indices the model learns from.
+	Names of the indices the model learns from (defaults to every index in the Project).
 	
 **fields**:
 	The :ref:`fields <field_concept>` the model learns from. If more than one fields is chosen, the fields are concatenated together before the learning process. One field is also enough. Usually lemmatized texts are preferred, especially with morphologically complex languages, because it increases the frequency of some words (*eaten*, *eats* and *ate* will change to its lemma *eat* and are dealt as one word).
@@ -90,16 +90,12 @@ Example:
                 "description": "My tagger group",
                 "fact_name": "TEEMA",
                 "minimum_sample_size": 50,
-                "tagger":
-                        {
-			    "tagger_params": {
-				"fields": [
-				    "lemmas"
-				],
-				"vectorizer": "Hashing Vectorizer",
-				"classifier": "Logistic Regression"
-			    },
-                        }
+                "tagger": {
+                    "fields": ["lemmas"],
+                    "vectorizer": "Hashing Vectorizer",
+                    "classifier": "Logistic Regression"
+                }
+
             }'
             
 Trained Tagger Group endpoint: **/projects/{project_pk}/tagger_groups/{id}/**
