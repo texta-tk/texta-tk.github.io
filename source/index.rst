@@ -36,6 +36,7 @@ Contents:
     index_splitting_tool
     summarizer
     evaluator
+    index_creation
     health
     projects
     searcher

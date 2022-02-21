@@ -24,11 +24,12 @@ Parameters
 	
 	1. "_id": Under which id should Elasticsearch insert the document, without this Elasticsearch will generate one itself.
 	
-	2. "_index": Under which already existing index should Elasticsearch insert the document.
+	2. "_index": Under which already existing index should Elasticsearch insert the document. When the index field is missing, all the documents
+will be sent to an index with the name format of: "texta-{DEPLOY_KEY}-import-project-{project_id}" where DEPLOY_KEY by default is "1".
 	
 	3. "_type": Specifies the doc_type for Elasticsearch documents, should be manually set to "_doc", defaults to "_doc".
 	
-	4. "_source": Actual JSON content of the document.
+	4. "_source": Actual JSON content of the document. All documents should follow the same schema as conflicts will cause errors.
 	
 **split_text_in_fields**:
 	Specifies which text fields should be split into smaller pieces, defaults to a field with the name "text" if none is given. By default the texts are split at a 3000 character limit! Users who do not want to have their documents split should set this field to an empty list.
