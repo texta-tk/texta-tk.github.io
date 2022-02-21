@@ -46,6 +46,7 @@ Contents:
     topic_analyzer
     tagger
     tagger_group
+    rakun_keyword_extractor
     regex_tagger
     regex_tagger_group
     torch_tagger

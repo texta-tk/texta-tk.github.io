@@ -204,6 +204,13 @@ Query
 
 `Elasticsearch's query <https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html>`_ is a little JSON command that retrieves objects with given attributes from Elasticsearch. It can be thought of as subset of the dataset the query is performed on. Queries can be used in various Toolkit's tools and it can be saved under the :ref:`Searcher <search_concept>` as saved search for using it later or in other tools.
 
+.. _rakun_keyword_extractor_concept:
+
+Rakun Keyword Extractor
+*************************
+
+Rakun Keyword Extractor is a tool for extracting keywords from texts. The tool is based on an unsupervised graph-based method `RaKUn <https://github.com/EMBEDDIA/RaKUn>`_.
+
 .. _regex_tagger_concept:
 
 Regex Tagger
