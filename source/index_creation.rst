@@ -217,7 +217,7 @@ Delete indices
 Deletes the index from Elasticsearch and removes them from Projects.
 
 .. note::
-    **THIS OPERATION IS NOR REVERSIBLE AND SHOULD BE HANDLED WITH CAUTION!**
+    **THIS OPERATION IS NOT REVERSIBLE AND SHOULD BE HANDLED WITH CAUTION!**
 
 
 Endpoint: **/index/{index_id}/**
