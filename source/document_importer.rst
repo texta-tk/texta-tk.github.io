@@ -31,8 +31,7 @@ Parameters
 	4. "_source": Actual JSON content of the document.
 	
 **split_text_in_fields**:
-	Specifies which text fields should be split into smaller pieces, defaults to a field with the name "text" if none is given.
-    By default the texts are split at a 3000 character limit!
+	Specifies which text fields should be split into smaller pieces, defaults to a field with the name "text" if none is given. By default the texts are split at a 3000 character limit! Users who do not want to have their documents split should set this field to an empty list.
 	
 .. note::
 
