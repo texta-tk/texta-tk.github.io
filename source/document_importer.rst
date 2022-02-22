@@ -42,13 +42,13 @@ will be sent to an index with the name format of: "texta-{DEPLOY_KEY}-import-pro
 Examples
 =========
 
-Endpoint: **/projects/{project_pk}/document_importer/**
+Endpoint: **/projects/{project_pk}/elastic/documents/**
 
 Example with index name added automatically and no splitting:
 
 .. code-block:: bash
 
-  curl -X POST "http://localhost:8000/api/v1/projects/1/document_importer/" \
+  curl -X POST "http://localhost:8000/api/v2/projects/1/elastic/documents/" \
   -H "accept: application/json" \
   -H "Content-Type: application/json" \
   -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
@@ -61,7 +61,7 @@ Example with given index name and splitting:
 
 .. code-block:: bash
 
-  curl -X POST "http://localhost:8000/api/v1/projects/1/document_importer/" \
+  curl -X POST "http://localhost:8000/api/v2/projects/1/elastic/documents/" \
   -H "accept: application/json" \
   -H "Content-Type: application/json" \
   -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
@@ -73,21 +73,21 @@ Example with given index name and splitting:
 Viewing a document
 *******************
 
-Endpoint: **projects/{project_pk}/document_importer/{index_name}/{document_id}/**
+Endpoint: **projects/{project_pk}/elastic/documents/{index_name}/{document_id}/**
 
 .. code-block:: bash
 
-  curl -X GET "http://localhost:8000/api/v1/projects/1/document_importer/texta_text_index/30"
+  curl -X GET "http://localhost:8000/api/v2/projects/1/elastic/documents/texta_text_index/30/"
  
 
 Deleting a document
 ********************
 
-Endpoint: **projects/{project_pk}/document_importer/{index_name}/{document_id}/**
+Endpoint: **projects/{project_pk}/elastic/documents/{index_name}/{document_id}/**
 
 .. code-block:: bash
 
-  curl -X DELETE "http://localhost:8000/api/v1/projects/1/document_importer/texta_text_index/30"
+  curl -X DELETE "http://localhost:8000/api/v2/projects/1/elastic/documents/texta_text_index/30"
   
 
 Updating split document
@@ -107,11 +107,14 @@ Parameters
 Example
 ========
 
-Endpoint: **projects/{project_pk}/document_importer/{index_name}/update_split**
+Endpoint: **projects/{project_pk}/elastic/documents/{index_name}/update_split**
+
+.. note::
+    Lack of trailing "/" is important for this endpoint!
 
 .. code-block:: bash
 
-  curl -X POST "http://localhost:8000/api/v1/projects/1/document_importer/" \
+  curl -X POST "http://localhost:8000/api/v2/projects/1/elastic/documents/texta_test_index/update_split" \
   -H "accept: application/json" \
   -H "Content-Type: application/json" \
   -H "Authorization: Token 8229898dccf960714a9fa22662b214005aa2b049" \
