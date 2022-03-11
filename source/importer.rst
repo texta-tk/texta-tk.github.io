@@ -23,12 +23,12 @@ Parameters:
 .. note::
 
     As ElasticSearch has some restrictions, the datasete name format has the following constraints:
-* Lowercase only
-* Cannot include , /, *, ?, ", <, >, |, space (the character, not the word), ,, #
-* Indices prior to 7.0 could contain a colon (:), but that's been deprecated and won't be supported in 7.0+
-* Cannot start with -, _, +
-* Cannot be . or ..
-* Cannot be longer than 255 characters
+	* Lowercase only
+	* Cannot include , /, *, ?, ", <, >, |, space (the character, not the word), ,, #
+	* Indices prior to 7.0 could contain a colon (:), but that's been deprecated and won't be supported in 7.0+
+	* Cannot start with -, _, +
+	* Cannot be . or ..
+	* Cannot be longer than 255 characters
 
 GUI
 ====
