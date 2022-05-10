@@ -83,7 +83,10 @@ In TTK text annotations are regarded as facts:
         "doc_path": "content.text",
         "fact": "PER",
         "spans": "[[12, 24]]"
-        "str_val": "Donald Trump"
+        "str_val": "Donald Trump",
+        "author": "admin",
+        "id": "f1f34f62-33e8-471d-bb88-78a96f17cca5",
+        "source": "annotator"
     }
 
 Facts are objects with following properties:
@@ -95,6 +98,12 @@ Facts are objects with following properties:
 * doc_path - path to the field containing the annotated string (e.g. "text", "text.author", "comment.text.author", etc.)
 
 * spans - JSON string containing the start and end positions in the annotated string
+
+* author - User that has generated or modified the fact
+
+* id - Auto generated UUID used to identify the fact
+
+* source - The source which has generated or modified the fact
 
 The Toolkit comes with several predefined fact names that are used by our Multilingual Processor:
 
